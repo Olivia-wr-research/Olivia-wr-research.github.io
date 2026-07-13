@@ -1,0 +1,17 @@
+:root {
+  --rw-accent: #35605a;
+  --rw-text: #2b2b2b;
+  --rw-muted: #5f6b6b;
+  --rw-bg-soft: #f7f9f8;
+}
+body { color: var(--rw-text); line-height: 1.65; }
+.hero { padding: 4rem 0 3rem 0; border-bottom: 1px solid #e5e9e7; margin-bottom: 2rem; }
+.hero h1 { font-size: clamp(2.2rem, 5vw, 4rem); margin-bottom: 0.5rem; }
+.subtitle { color: var(--rw-accent); font-size: 1.15rem; font-weight: 600; max-width: 760px; }
+.lead-text { max-width: 780px; font-size: 1.05rem; margin-top: 1.25rem; }
+.button-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+.button-row a { display: inline-block; border: 1px solid var(--rw-accent); border-radius: 4px; padding: 0.55rem 0.8rem; text-decoration: none; color: white; background: var(--rw-accent); }
+.project-card, .topic-card { border-top: 2px solid var(--rw-accent); padding-top: 1rem; margin: 1.6rem 0; }
+.status { color: var(--rw-muted); font-size: 0.95rem; font-weight: 600; }
+.small-note { color: var(--rw-muted); font-size: 0.92rem; }
+@media (max-width: 640px) { .hero { padding-top: 2.5rem; } .button-row { flex-direction: column; } }

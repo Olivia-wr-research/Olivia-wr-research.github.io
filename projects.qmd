@@ -1,0 +1,43 @@
+---
+title: "Projects"
+---
+
+## Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists
+
+::: {.status}
+Working Paper
+:::
+
+**Research question.** How is a scientist's pre-move publication-location exposure associated with observed destination choice among candidate cities?
+
+**Data or material.** I work with event-specific destination-choice data derived from elite biomedical scientist mobility records. Restricted source data are not public.
+
+**Methods.** Event-specific candidate sets, origin-anchored pre-move exposure measures, conditional logit models, and candidate-set and coverage diagnostics.
+
+**Current status.** This is a working paper. I do not publicly release the restricted source data or the full manuscript materials here.
+
+## Global Mobility and Collaboration Networks of Elite Biomedical Scientists
+
+::: {.status}
+Master's Thesis; accepted article; ongoing research extension
+:::
+
+**Master's thesis.** My master's thesis examines the intercity mobility network of top global biomedical scientists from whole-network and ego-network perspectives.
+
+**Accepted article.** A related Chinese article studies the spatial structure and determinants of top global biomedical scientists' mobility from an urban network perspective. I do not list final publication metadata until it is confirmed.
+
+**Ongoing extension.** My current extension builds longitudinal scientist-institution-city data, directed weighted mobility networks, ego-network indicators, and WERGM-based specifications. Raw data are not public.
+
+## Author-Institution Linkage and Geocoding Feasibility Audit
+
+::: {.status}
+Public Code Repository
+:::
+
+**Research question.** How can author-institution-city linkage and geocoding workflows be audited before restricted bibliographic data are used for research on scientific geography or mobility?
+
+**Data or material.** The public repository uses fully synthetic demonstration records. It does not include real Scopus, OpenAlex, ROR, scientist, paper, or institution data.
+
+**Methods.** Schema validation, identifier linkage, deterministic institution normalization, city-country validation, record-level QA, duplicate and confidence diagnostics, and coverage reporting.
+
+**Links.** [https://github.com/Olivia-wr-research/author-institution-city-linkage](https://github.com/Olivia-wr-research/author-institution-city-linkage)

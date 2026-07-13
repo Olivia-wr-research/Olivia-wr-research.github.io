@@ -1,0 +1,8 @@
+.quarto/
+.DS_Store
+*.log
+.env
+.env.*
+
+/.quarto/
+**/*.quarto_ipynb

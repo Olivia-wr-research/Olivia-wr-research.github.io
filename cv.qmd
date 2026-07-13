@@ -1,0 +1,45 @@
+---
+title: "CV"
+---
+
+## Research profile
+
+I am a data-intensive empirical researcher trained in economic geography and regional innovation, with interests in high-skilled mobility, urban and regional development, and innovation networks. My work emphasizes longitudinal multi-source data construction, spatial and network analysis, applied empirical design, and measurement-validity audits.
+
+## Education
+
+**East China Normal University** — M.Sc. in Human Geography, 2023-2026  
+School of Geographic Sciences; economic geography and regional innovation. Thesis: *Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks*.
+
+**Northeast Normal University** — B.Sc. in Human Geography and Urban-Rural Planning, 2019-2023  
+Training in quantitative geography, GIS applications, urban geography, regional analysis, and planning.
+
+## Research interests
+
+Urban and regional economics; labor and high-skilled mobility; regional innovation; science of science; spatial and network data; applied empirical research.
+
+## Publications and research outputs
+
+- **Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective** — accepted article. Final publication metadata will be added after confirmation.
+- **Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks** — master's thesis.
+- **Author-Institution Linkage and Geocoding Feasibility Audit** — public code repository.
+
+## Selected research experience
+
+- Pre-move publication-location exposure and destination choice among elite biomedical scientists.
+- Global mobility and collaboration networks of elite biomedical scientists.
+- Author-institution linkage and geocoding feasibility audit.
+- Technological and brand innovation among leading global R&D firms.
+- Urban resilience from daily nighttime lights.
+
+## Methods and technical skills
+
+Python; R; Stata; GIS; social network analysis; ego-network analysis; conditional logit; ERGM/WERGM; entity resolution; longitudinal multi-source data construction; measurement-validity and coverage audits.
+
+## Honors
+
+Outstanding Student Award, ECNU; Academic Scholarship, ECNU; Third-Class Scholarship, NENU; Innovation and Entrepreneurship Scholarship, NENU; National Undergraduate Innovation Training Program: Excellent Completion / First Place, Project Lead.
+
+## CV PDF
+
+[Download my CV](assets/cv/Ran_Wang_CV_Public.pdf){.btn .btn-primary}

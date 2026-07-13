@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Ran Wang"
+  site-url: "https://Olivia-wr-research.github.io"
+  description: "Ran Wang's academic website on urban and regional economics, high-skilled mobility, scientific networks, and regional innovation."
+  search: true
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Research"
+        href: research.qmd
+      - text: "Projects"
+        href: projects.qmd
+      - text: "CV"
+        href: cv.qmd
+      - text: "Contact"
+        href: contact.qmd
+    right:
+      - text: "GitHub"
+        href: "https://github.com/Olivia-wr-research"
+  page-footer:
+    left: "© 2026 Ran Wang"
+    right: "Built with Quarto"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false
+    smooth-scroll: true
+    link-external-newwindow: true

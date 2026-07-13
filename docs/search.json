@@ -1,0 +1,156 @@
+[
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "CV",
+    "section": "",
+    "text": "I am a data-intensive empirical researcher trained in economic geography and regional innovation, with interests in high-skilled mobility, urban and regional development, and innovation networks. My work emphasizes longitudinal multi-source data construction, spatial and network analysis, applied empirical design, and measurement-validity audits."
+  },
+  {
+    "objectID": "cv.html#research-profile",
+    "href": "cv.html#research-profile",
+    "title": "CV",
+    "section": "",
+    "text": "I am a data-intensive empirical researcher trained in economic geography and regional innovation, with interests in high-skilled mobility, urban and regional development, and innovation networks. My work emphasizes longitudinal multi-source data construction, spatial and network analysis, applied empirical design, and measurement-validity audits."
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "CV",
+    "section": "Education",
+    "text": "Education\nEast China Normal University — M.Sc. in Human Geography, 2023-2026\nSchool of Geographic Sciences; economic geography and regional innovation. Thesis: Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks.\nNortheast Normal University — B.Sc. in Human Geography and Urban-Rural Planning, 2019-2023\nTraining in quantitative geography, GIS applications, urban geography, regional analysis, and planning."
+  },
+  {
+    "objectID": "cv.html#research-interests",
+    "href": "cv.html#research-interests",
+    "title": "CV",
+    "section": "Research interests",
+    "text": "Research interests\nUrban and regional economics; labor and high-skilled mobility; regional innovation; science of science; spatial and network data; applied empirical research."
+  },
+  {
+    "objectID": "cv.html#publications-and-research-outputs",
+    "href": "cv.html#publications-and-research-outputs",
+    "title": "CV",
+    "section": "Publications and research outputs",
+    "text": "Publications and research outputs\n\nSpatial Structure and Determinants of Top Global Biomedical Scientists’ Mobility from an Urban Network Perspective — accepted article. Final publication metadata will be added after confirmation.\nIntercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks — master’s thesis.\nAuthor-Institution Linkage and Geocoding Feasibility Audit — public code repository."
+  },
+  {
+    "objectID": "cv.html#selected-research-experience",
+    "href": "cv.html#selected-research-experience",
+    "title": "CV",
+    "section": "Selected research experience",
+    "text": "Selected research experience\n\nPre-move publication-location exposure and destination choice among elite biomedical scientists.\nGlobal mobility and collaboration networks of elite biomedical scientists.\nAuthor-institution linkage and geocoding feasibility audit.\nTechnological and brand innovation among leading global R&D firms.\nUrban resilience from daily nighttime lights."
+  },
+  {
+    "objectID": "cv.html#methods-and-technical-skills",
+    "href": "cv.html#methods-and-technical-skills",
+    "title": "CV",
+    "section": "Methods and technical skills",
+    "text": "Methods and technical skills\nPython; R; Stata; GIS; social network analysis; ego-network analysis; conditional logit; ERGM/WERGM; entity resolution; longitudinal multi-source data construction; measurement-validity and coverage audits."
+  },
+  {
+    "objectID": "cv.html#honors",
+    "href": "cv.html#honors",
+    "title": "CV",
+    "section": "Honors",
+    "text": "Honors\nOutstanding Student Award, ECNU; Academic Scholarship, ECNU; Third-Class Scholarship, NENU; Innovation and Entrepreneurship Scholarship, NENU; National Undergraduate Innovation Training Program: Excellent Completion / First Place, Project Lead."
+  },
+  {
+    "objectID": "cv.html#cv-pdf",
+    "href": "cv.html#cv-pdf",
+    "title": "CV",
+    "section": "CV PDF",
+    "text": "CV PDF\nDownload my CV"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Working Paper\n\nResearch question. How is a scientist’s pre-move publication-location exposure associated with observed destination choice among candidate cities?\nData or material. I work with event-specific destination-choice data derived from elite biomedical scientist mobility records. Restricted source data are not public.\nMethods. Event-specific candidate sets, origin-anchored pre-move exposure measures, conditional logit models, and candidate-set and coverage diagnostics.\nCurrent status. This is a working paper. I do not publicly release the restricted source data or the full manuscript materials here."
+  },
+  {
+    "objectID": "projects.html#pre-move-publication-location-exposure-and-destination-choice-among-elite-biomedical-scientists",
+    "href": "projects.html#pre-move-publication-location-exposure-and-destination-choice-among-elite-biomedical-scientists",
+    "title": "Projects",
+    "section": "",
+    "text": "Working Paper\n\nResearch question. How is a scientist’s pre-move publication-location exposure associated with observed destination choice among candidate cities?\nData or material. I work with event-specific destination-choice data derived from elite biomedical scientist mobility records. Restricted source data are not public.\nMethods. Event-specific candidate sets, origin-anchored pre-move exposure measures, conditional logit models, and candidate-set and coverage diagnostics.\nCurrent status. This is a working paper. I do not publicly release the restricted source data or the full manuscript materials here."
+  },
+  {
+    "objectID": "projects.html#global-mobility-and-collaboration-networks-of-elite-biomedical-scientists",
+    "href": "projects.html#global-mobility-and-collaboration-networks-of-elite-biomedical-scientists",
+    "title": "Projects",
+    "section": "Global Mobility and Collaboration Networks of Elite Biomedical Scientists",
+    "text": "Global Mobility and Collaboration Networks of Elite Biomedical Scientists\n\nMaster’s Thesis; accepted article; ongoing research extension\n\nMaster’s thesis. My master’s thesis examines the intercity mobility network of top global biomedical scientists from whole-network and ego-network perspectives.\nAccepted article. A related Chinese article studies the spatial structure and determinants of top global biomedical scientists’ mobility from an urban network perspective. I do not list final publication metadata until it is confirmed.\nOngoing extension. My current extension builds longitudinal scientist-institution-city data, directed weighted mobility networks, ego-network indicators, and WERGM-based specifications. Raw data are not public."
+  },
+  {
+    "objectID": "projects.html#author-institution-linkage-and-geocoding-feasibility-audit",
+    "href": "projects.html#author-institution-linkage-and-geocoding-feasibility-audit",
+    "title": "Projects",
+    "section": "Author-Institution Linkage and Geocoding Feasibility Audit",
+    "text": "Author-Institution Linkage and Geocoding Feasibility Audit\n\nPublic Code Repository\n\nResearch question. How can author-institution-city linkage and geocoding workflows be audited before restricted bibliographic data are used for research on scientific geography or mobility?\nData or material. The public repository uses fully synthetic demonstration records. It does not include real Scopus, OpenAlex, ROR, scientist, paper, or institution data.\nMethods. Schema validation, identifier linkage, deterministic institution normalization, city-country validation, record-level QA, duplicate and confidence diagnostics, and coverage reporting.\nLinks. https://github.com/Olivia-wr-research/author-institution-city-linkage"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "I study how elite scientist mobility, publication-location exposure, collaboration networks, and career trajectories are related to the spatial organization of scientific work. I treat scientist mobility as a relational and temporally ordered process, connecting individual career histories with city-level and institutional networks while carefully distinguishing observed affiliations, employment histories, collaboration ties, and mobility events."
+  },
+  {
+    "objectID": "research.html#scientific-mobility-and-knowledge-networks",
+    "href": "research.html#scientific-mobility-and-knowledge-networks",
+    "title": "Research",
+    "section": "",
+    "text": "I study how elite scientist mobility, publication-location exposure, collaboration networks, and career trajectories are related to the spatial organization of scientific work. I treat scientist mobility as a relational and temporally ordered process, connecting individual career histories with city-level and institutional networks while carefully distinguishing observed affiliations, employment histories, collaboration ties, and mobility events."
+  },
+  {
+    "objectID": "research.html#urban-and-regional-innovation",
+    "href": "research.html#urban-and-regional-innovation",
+    "title": "Research",
+    "section": "Urban and Regional Innovation",
+    "text": "Urban and Regional Innovation\nI also study urban opportunity structures, regional innovation, scientific and technological platforms, and talent concentration. This work asks how cities and regions accumulate research capacity, organizational diversity, and knowledge-network positions, and how those conditions are associated with innovation and high-skilled mobility. My emphasis is on careful empirical measurement rather than causal claims beyond the available design."
+  },
+  {
+    "objectID": "research.html#computational-and-spatial-methods",
+    "href": "research.html#computational-and-spatial-methods",
+    "title": "Research",
+    "section": "Computational and Spatial Methods",
+    "text": "Computational and Spatial Methods\nI work with longitudinal multi-source data, conditional logit models, ERGM/WERGM, spatial and network analysis, entity resolution, and measurement audits. I am especially interested in reproducible workflows for building scientist-institution-city data, auditing source coverage, and making the unit of analysis explicit before applying statistical or network models."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "Email: wangran940@163.com\nGitHub: https://github.com/Olivia-wr-research"
+  },
+  {
+    "objectID": "contact.html#contact",
+    "href": "contact.html#contact",
+    "title": "Contact",
+    "section": "",
+    "text": "Email: wangran940@163.com\nGitHub: https://github.com/Olivia-wr-research"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Applied Empirical Research | Urban & Regional Economics |\nHigh-Skilled Mobility and Innovation\n\n\nI study how scientist mobility, knowledge networks, and urban innovation systems are related to the spatial organization of research and innovation. My work combines longitudinal multi-source data construction with spatial, network, and applied empirical methods, with a focus on high-skilled mobility, regional innovation, and measurement-validity audits for complex relational data.\n\n\nResearch Projects Download my CV GitHub"
+  },
+  {
+    "objectID": "index.html#current-focus",
+    "href": "index.html#current-focus",
+    "title": "Home",
+    "section": "Current focus",
+    "text": "Current focus\nI work at the intersection of economic geography, urban and regional economics, science of science, and computational social science. I am particularly interested in how career trajectories, institutional platforms, collaboration relations, and city-level opportunity structures can be measured with defensible longitudinal data."
+  },
+  {
+    "objectID": "index.html#featured-public-project",
+    "href": "index.html#featured-public-project",
+    "title": "Home",
+    "section": "Featured public project",
+    "text": "Featured public project\nAuthor-Institution Linkage and Geocoding Feasibility Audit is a public code repository that demonstrates synthetic author-institution-city linkage, schema validation, linkage and geocoding QA, duplicate and confidence diagnostics, and reproducible documentation. It does not redistribute real Scopus, OpenAlex, or restricted source data."
+  }
+]

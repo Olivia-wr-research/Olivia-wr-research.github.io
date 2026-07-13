@@ -1,0 +1,31 @@
+---
+title: "Home"
+---
+
+::: {.hero}
+# Ran Wang
+
+::: {.subtitle}
+Applied Empirical Research | Urban & Regional Economics |  
+High-Skilled Mobility and Innovation
+:::
+
+::: {.lead-text}
+I study how scientist mobility, knowledge networks, and urban innovation systems are related to the spatial organization of research and innovation. My work combines longitudinal multi-source data construction with spatial, network, and applied empirical methods, with a focus on high-skilled mobility, regional innovation, and measurement-validity audits for complex relational data.
+:::
+
+::: {.button-row}
+[Research](research.qmd)
+[Projects](projects.qmd)
+[Download my CV](assets/cv/Ran_Wang_CV_Public.pdf){.btn .btn-primary}
+[GitHub](https://github.com/Olivia-wr-research)
+:::
+:::
+
+## Current focus
+
+I work at the intersection of economic geography, urban and regional economics, science of science, and computational social science. I am particularly interested in how career trajectories, institutional platforms, collaboration relations, and city-level opportunity structures can be measured with defensible longitudinal data.
+
+## Featured public project
+
+[Author-Institution Linkage and Geocoding Feasibility Audit](https://github.com/Olivia-wr-research/author-institution-city-linkage) is a public code repository that demonstrates synthetic author-institution-city linkage, schema validation, linkage and geocoding QA, duplicate and confidence diagnostics, and reproducible documentation. It does not redistribute real Scopus, OpenAlex, or restricted source data.

@@ -1,0 +1,15 @@
+---
+title: "Research"
+---
+
+## Scientific Mobility and Knowledge Networks
+
+I study how elite scientist mobility, publication-location exposure, collaboration networks, and career trajectories are related to the spatial organization of scientific work. I treat scientist mobility as a relational and temporally ordered process, connecting individual career histories with city-level and institutional networks while carefully distinguishing observed affiliations, employment histories, collaboration ties, and mobility events.
+
+## Urban and Regional Innovation
+
+I also study urban opportunity structures, regional innovation, scientific and technological platforms, and talent concentration. This work asks how cities and regions accumulate research capacity, organizational diversity, and knowledge-network positions, and how those conditions are associated with innovation and high-skilled mobility. My emphasis is on careful empirical measurement rather than causal claims beyond the available design.
+
+## Computational and Spatial Methods
+
+I work with longitudinal multi-source data, conditional logit models, ERGM/WERGM, spatial and network analysis, entity resolution, and measurement audits. I am especially interested in reproducible workflows for building scientist-institution-city data, auditing source coverage, and making the unit of analysis explicit before applying statistical or network models.
