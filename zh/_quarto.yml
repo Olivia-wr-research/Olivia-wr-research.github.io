@@ -1,0 +1,46 @@
+project:
+  type: website
+  output-dir: ../docs/zh
+  render:
+    - index.qmd
+    - research.qmd
+    - projects.qmd
+    - cv.qmd
+    - contact.qmd
+
+lang: zh-CN
+
+website:
+  title: "王冉"
+  site-url: "https://Olivia-wr-research.github.io/zh/"
+  description: "王冉的个人学术网站，展示城市与区域经济学、科学家流动、科学网络和区域创新研究。"
+  search: false
+  navbar:
+    title: "王冉"
+    left:
+      - text: "首页"
+        href: index.qmd
+      - text: "研究"
+        href: research.qmd
+      - text: "项目"
+        href: projects.qmd
+      - text: "简历"
+        href: cv.qmd
+      - text: "联系"
+        href: contact.qmd
+    right:
+      - text: "GitHub"
+        href: "https://github.com/Olivia-wr-research"
+      - text: "EN"
+        href: "/"
+  page-footer:
+    left: "© 2026 王冉"
+    right: "Built with Quarto"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false
+    smooth-scroll: true
+    link-external-newwindow: true

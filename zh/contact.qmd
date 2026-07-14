@@ -1,11 +1,11 @@
 ---
-title: "Contact"
+title: "联系"
 ---
 
-<a class="lang-switch" href="/zh/contact.html">中文</a>
+<a class="lang-switch" href="/contact.html">EN</a>
 
 <section class="panel panel-dark contact-panel">
-<h2>Contact</h2>
+<h2>联系</h2>
 <p><strong>Email</strong><br>
 <a href="mailto:wangran940@163.com">wangran940@163.com</a></p>
 <p><strong>GitHub</strong><br>

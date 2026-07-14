@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "联系",
+    "section": "",
+    "text": "EN\n\n\n联系\n\n\nEmail wangran940@163.com\n\n\nGitHub https://github.com/Olivia-wr-research"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "项目",
+    "section": "",
+    "text": "EN"
+  },
+  {
+    "objectID": "projects.html#研究项目",
+    "href": "projects.html#研究项目",
+    "title": "项目",
+    "section": "研究项目",
+    "text": "研究项目\n\nWorking Paper\n\nPre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists\nStatus. Working Paper\nResearch question. 科学家流动前的论文地点暴露如何与候选城市中的实际目的地选择相关？\nData. 基于精英生物医学科学家流动记录构建的事件层面目的地选择数据。\nMethods. 事件层面候选集、以来源地为参照的流动前暴露测度、条件 logit 模型、候选集检查和覆盖诊断。\nOutput. 工作论文。\n\n\n\nAccepted Article\n\nSpatial Structure and Determinants of Top Global Biomedical Scientists’ Mobility from an Urban Network Perspective\nStatus. Accepted Article\nResearch question. 如何从城市网络视角描述全球顶尖生物医学科学家的流动？\nData. 为该论文整理的科学家流动与城市网络数据。\nMethods. 城市网络分析，以及对空间结构和相关因素的实证分析。\nOutput. 已接受论文。\n\n\n\nMaster’s Thesis\n\nIntercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks\nStatus. Master’s Thesis\nResearch question. 从整体网络和自我中心网络视角看，全球顶尖生物医学科学家的城市间流动网络呈现出哪些模式？\nData. 为硕士论文整理的流动记录和城市层面网络数据。\nMethods. 整体网络分析、自我中心网络分析和流动模式的空间解释。\nOutput. 华东师范大学硕士论文。\n\n\n\nOngoing Research\n\nGlobal Mobility and Collaboration Networks of Elite Biomedical Scientists\nStatus. Ongoing Research\nResearch question. 在纵向科学职业数据中，流动、合作、机构和城市之间如何相互关联？\nData. 正在构建的科学家-机构-城市纵向数据。\nMethods. 有向加权流动网络、自我中心网络指标、合作网络和 WERGM 相关模型设定。\nOutput. 对硕士论文和已接受论文的延伸研究。\n\n\n\nPublic Repository\n\nAuthor-Institution Linkage and Geocoding Feasibility Audit\nStatus. Public Repository\nResearch question. 在将书目数据用于科学地理或流动研究前，如何检查作者-机构-城市链接和地理编码流程？\nData. 完全合成的演示记录。\nMethods. 数据结构校验、标识符链接、机构名称规范化、城市-国家校验、质检、重复诊断、置信度诊断和覆盖报告。\nOutput. 公开 GitHub 仓库。"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "王冉",
+    "section": "",
+    "text": "EN\n\n王冉\n\n\n城市与区域经济学 · 科学家流动 · 区域创新\n\n\n我是一名受经济地理学训练的实证研究者，关注科学家流动、制度平台与区域创新。我使用科学家、机构、论文与城市的纵向数据，并结合离散选择模型、网络分析和空间数据方法开展研究。\n\n\n查看研究 下载简历 研究项目 GitHub\n\n\nPhoto: John Rodenn Castillo / Unsplash\n\n\n\n研究关注\n\n\n我的研究围绕科学家流动、制度平台与区域创新展开，使用科学家、机构、论文和城市层面的纵向关联数据。研究重点包括清晰界定任职、流动、合作与地点之间的关系，并将个体职业轨迹与城市和区域科研系统联系起来。\n\n\n\n\n研究主题\n\n\n科学家流动与目的地选择。 我关注科学家如何在机构和城市之间流动，尤其是流动前可观察到的论文地点暴露与目的地选择之间的关系。当前研究将实际目的地与事件层面的候选城市进行比较。\n\n\n区域创新与城市网络。 这一方向考察城市和区域在科研能力、制度平台以及流动和合作网络位置上的差异。研究强调可观察关联，而不超出研究设计作因果表述。\n\n\n关联数据与网络方法。 我构建科学家-机构-城市数据，并区分任职、论文、合作关系和流动事件。这样的数据结构支持网络分析、空间比较和可复现的数据流程检查。\n\n\n\n\n代表性工作\n\n\nAccepted Article. Spatial Structure and Determinants of Top Global Biomedical Scientists’ Mobility from an Urban Network Perspective.\n\n\nWorking Paper. Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists.\n\n\nPublic Repository. Author-Institution Linkage and Geocoding Feasibility Audit. 查看仓库\n\n\n\n\n快速链接\n\n\n研究 项目 简历 联系"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "研究",
+    "section": "",
+    "text": "EN\n\n\n研究简介\n\n\n我的研究位于经济地理学、城市与区域经济学和科学学的交叉领域。研究关注科学家流动、机构任职、合作关系和城市科研系统如何与知识生产的空间组织相关。\n\n\n我的工作将科学家、机构、论文和城市视为相互关联但需要区分的分析单元。在建模之前，我会明确区分可观察任职、就业经历、合作关系和流动事件。\n\n\n\n\n研究主题\n\n\n科学家流动与职业轨迹。 我研究精英生物医学科学家如何在机构和城市之间流动。当前工作将职业经历、流动前论文地点暴露和目的地选择联系起来，并保持对观察性研究设计边界的说明。\n\n\n区域创新与城市网络。 我研究城市和区域在科研能力、机构多样性以及流动和合作网络位置上的差异。这一方向关注城市科研系统与高技能流动、知识生产模式之间的可观察关系。\n\n\n科学学与关联数据。 我构建并检查连接科学家、机构、论文和地点的数据。目标是在保留链接、覆盖和地理编码不确定性的前提下，使关联数据服务于科学地理研究。\n\n\n\n\n数据与方法\n\n\n\n科学家-机构-城市纵向数据\n\n\n离散选择模型\n\n\n网络分析\n\n\n空间数据方法\n\n\nPython 和 R 中的可复现工作流\n\n\n\n\n\n当前研究议程\n\n\n精英生物医学科学家的目的地选择。 该项目研究科学家流动前的论文地点暴露是否与事件层面候选城市中的最终目的地选择相关。\n\n\n流动与合作网络。 这一方向延伸硕士论文和已接受论文中的城市间流动网络研究，进一步构建科学家-机构-城市纵向数据和有向加权网络指标。\n\n\n作者-机构-城市链接公开流程检查。 公开仓库使用合成记录展示数据结构校验、机构名称规范化、地理编码检查和可复现文档模式。"
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "简历",
+    "section": "",
+    "text": "EN\n\n\n我受人文地理学训练，研究兴趣包括科学家流动、区域创新、城市网络，以及基于纵向关联数据的实证研究。本页为公开简历的简要概览，完整公开版本见 PDF。\n\n\n个人简历\n\n\n下载简历\n\n\n\n\n教育背景\n\n\n华东师范大学。 人文地理学硕士，2023-2026。地理科学学院；研究方向为经济地理与区域创新。\n\n\n东北师范大学。 人文地理与城乡规划学士，2019-2023。接受定量地理、GIS 应用、城市地理、区域分析和规划相关训练。\n\n\n\n\n研究成果\n\n\n\nSpatial Structure and Determinants of Top Global Biomedical Scientists’ Mobility from an Urban Network Perspective — accepted article.\n\n\nIntercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks — 硕士论文。\n\n\nAuthor-Institution Linkage and Geocoding Feasibility Audit — 公开代码仓库。\n\n\n\n\n\n方法与技能\n\n\nPython；R；Stata；GIS；社会网络分析；自我中心网络分析；条件 logit 模型；ERGM/WERGM；实体解析；纵向多源数据构建；覆盖诊断。"
+  }
+]

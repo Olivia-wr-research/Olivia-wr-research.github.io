@@ -2,48 +2,30 @@
 title: "CV"
 ---
 
-::: {.content-shell}
-::: {.cv-intro}
-I am trained in human geography, with research interests in scientific mobility, regional innovation, urban networks, and empirical work using longitudinal relational data. This page provides a concise overview; the public PDF contains the full CV.
-:::
+<a class="lang-switch" href="/zh/cv.html">中文</a>
 
-::: {.cv-download}
-::: {.cv-download-copy}
-## Curriculum Vitae
+<section class="panel panel-light">
+<p>I am trained in human geography, with research interests in scientific mobility, regional innovation, urban networks, and empirical work using longitudinal relational data. This page is a short public overview; the PDF contains the full public CV.</p>
+<h2>Curriculum Vitae</h2>
+<p><a class="btn btn-primary" href="assets/cv/Ran_Wang_CV_Public.pdf">Download CV</a></p>
+</section>
 
-Public CV in PDF format.
-:::
+<section class="panel panel-muted">
+<h2>Education</h2>
+<p><strong>East China Normal University.</strong> M.Sc. in Human Geography, 2023-2026. School of Geographic Sciences; economic geography and regional innovation.</p>
+<p><strong>Northeast Normal University.</strong> B.Sc. in Human Geography and Urban-Rural Planning, 2019-2023. Training in quantitative geography, GIS applications, urban geography, regional analysis, and planning.</p>
+</section>
 
-[Download CV](assets/cv/Ran_Wang_CV_Public.pdf){.btn .btn-primary}
-:::
+<section class="panel panel-light">
+<h2>Research Outputs</h2>
+<ul>
+<li><strong>Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective</strong> — accepted article.</li>
+<li><strong>Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks</strong> — master's thesis.</li>
+<li><strong>Author-Institution Linkage and Geocoding Feasibility Audit</strong> — public code repository.</li>
+</ul>
+</section>
 
-## Education
-
-::: {.summary-grid}
-::: {.summary-card}
-### East China Normal University
-
-M.Sc. in Human Geography, 2023-2026. School of Geographic Sciences; economic geography and regional innovation.
-:::
-
-::: {.summary-card}
-### Northeast Normal University
-
-B.Sc. in Human Geography and Urban-Rural Planning, 2019-2023. Training in quantitative geography, GIS applications, urban geography, regional analysis, and planning.
-:::
-:::
-
-## Research Outputs
-
-::: {.summary-list}
-- **Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective** — accepted article.
-- **Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks** — master's thesis.
-- **Author-Institution Linkage and Geocoding Feasibility Audit** — public code repository.
-:::
-
-## Methods and Skills
-
-::: {.summary-list}
-Python; R; Stata; GIS; social network analysis; ego-network analysis; conditional logit models; ERGM/WERGM; entity resolution; longitudinal multi-source data construction; coverage audits.
-:::
-:::
+<section class="panel panel-dark">
+<h2>Methods and Skills</h2>
+<p>Python; R; Stata; GIS; social network analysis; ego-network analysis; conditional logit models; ERGM/WERGM; entity resolution; longitudinal multi-source data construction; coverage audits.</p>
+</section>

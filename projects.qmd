@@ -2,53 +2,86 @@
 title: "Projects"
 ---
 
-<div class="content-shell">
-  <h2>Research Projects</h2>
+[中文](/zh/projects.html){.lang-switch}
 
-  <div class="project-list">
-    <article class="project-card project-card-wide">
-      <div class="status-badge">Working Paper</div>
-      <h3>Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists</h3>
-      <p><strong>Research question.</strong> How is a scientist's pre-move publication-location exposure associated with observed destination choice among candidate cities?</p>
-      <p><strong>Data.</strong> Event-specific destination-choice data derived from elite biomedical scientist mobility records. Restricted source data are not public.</p>
-      <p><strong>Methods.</strong> Event-specific candidate sets, origin-anchored pre-move exposure measures, conditional logit models, candidate-set checks, and coverage diagnostics.</p>
-      <p><strong>Current output or repository.</strong> Working paper. Restricted source data and full manuscript materials are not publicly released here.</p>
-    </article>
+## Research Projects
 
-    <article class="project-card project-card-wide">
-      <div class="status-badge">Accepted</div>
-      <h3>Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective</h3>
-      <p><strong>Research question.</strong> How can the mobility of top global biomedical scientists be described from an urban network perspective?</p>
-      <p><strong>Data.</strong> Scientist mobility and city-level network data assembled for the article. Public release is not available here.</p>
-      <p><strong>Methods.</strong> Urban network analysis and empirical analysis of spatial structure and associated determinants.</p>
-      <p><strong>Current output or repository.</strong> Accepted article. Final publication metadata will be added after confirmation.</p>
-    </article>
+::: {.project-card}
+[Working Paper]{.status-badge}
 
-    <article class="project-card project-card-wide">
-      <div class="status-badge">Master's Thesis</div>
-      <h3>Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks</h3>
-      <p><strong>Research question.</strong> What patterns appear in the intercity mobility network of top global biomedical scientists from whole-network and ego-network perspectives?</p>
-      <p><strong>Data.</strong> Mobility records and city-level network data assembled for the master's thesis.</p>
-      <p><strong>Methods.</strong> Whole-network analysis, ego-network analysis, and spatial interpretation of mobility patterns.</p>
-      <p><strong>Current output or repository.</strong> Master's thesis completed at East China Normal University.</p>
-    </article>
+### Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists
 
-    <article class="project-card project-card-wide">
-      <div class="status-badge">Ongoing Research</div>
-      <h3>Global Mobility and Collaboration Networks of Elite Biomedical Scientists</h3>
-      <p><strong>Research question.</strong> How are mobility, collaboration, institutions, and cities connected in longitudinal scientific career data?</p>
-      <p><strong>Data.</strong> Longitudinal scientist-institution-city data under construction. Raw data are not public.</p>
-      <p><strong>Methods.</strong> Directed weighted mobility networks, ego-network indicators, collaboration networks, and WERGM-based specifications.</p>
-      <p><strong>Current output or repository.</strong> Ongoing research extension of earlier thesis and article work.</p>
-    </article>
+**Status.** Working Paper
 
-    <article class="project-card">
-      <div class="status-badge">Public Repository</div>
-      <h3>Author-Institution Linkage and Geocoding Feasibility Audit</h3>
-      <p><strong>Research question.</strong> How can author-institution-city linkage and geocoding workflows be audited before restricted bibliographic data are used?</p>
-      <p><strong>Data.</strong> Fully synthetic demonstration records. The repository does not include real Scopus, OpenAlex, ROR, scientist, paper, or institution data.</p>
-      <p><strong>Methods.</strong> Schema validation, identifier linkage, institution normalization, city-country validation, QA checks, duplicate diagnostics, confidence diagnostics, and coverage reporting.</p>
-      <p><strong>Current output or repository.</strong> <a href="https://github.com/Olivia-wr-research/author-institution-city-linkage">Public GitHub repository</a>.</p>
-    </article>
-  </div>
-</div>
+**Research question.** How is a scientist's pre-move publication-location exposure associated with observed destination choice among candidate cities?
+
+**Data.** Event-specific destination-choice data derived from elite biomedical scientist mobility records.
+
+**Methods.** Event-specific candidate sets, origin-anchored pre-move exposure measures, conditional logit models, candidate-set checks, and coverage diagnostics.
+
+**Output.** Working paper.
+:::
+
+::: {.project-card}
+[Accepted Article]{.status-badge}
+
+### Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective
+
+**Status.** Accepted Article
+
+**Research question.** How can the mobility of top global biomedical scientists be described from an urban network perspective?
+
+**Data.** Scientist mobility and city-level network data assembled for the article.
+
+**Methods.** Urban network analysis and empirical analysis of spatial structure and related factors.
+
+**Output.** Accepted article.
+:::
+
+::: {.project-card}
+[Master's Thesis]{.status-badge}
+
+### Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks
+
+**Status.** Master's Thesis
+
+**Research question.** What patterns appear in the intercity mobility network of top global biomedical scientists from whole-network and ego-network perspectives?
+
+**Data.** Mobility records and city-level network data assembled for the master's thesis.
+
+**Methods.** Whole-network analysis, ego-network analysis, and spatial interpretation of mobility patterns.
+
+**Output.** Master's thesis completed at East China Normal University.
+:::
+
+::: {.project-card}
+[Ongoing Research]{.status-badge}
+
+### Global Mobility and Collaboration Networks of Elite Biomedical Scientists
+
+**Status.** Ongoing Research
+
+**Research question.** How are mobility, collaboration, institutions, and cities connected in longitudinal scientific career data?
+
+**Data.** Longitudinal scientist-institution-city data under construction.
+
+**Methods.** Directed weighted mobility networks, ego-network indicators, collaboration networks, and WERGM-based specifications.
+
+**Output.** Ongoing research extension of earlier thesis and article work.
+:::
+
+::: {.project-card}
+[Public Repository]{.status-badge}
+
+### Author-Institution Linkage and Geocoding Feasibility Audit
+
+**Status.** Public Repository
+
+**Research question.** How can author-institution-city linkage and geocoding workflows be audited before bibliographic data are used for research on scientific geography or mobility?
+
+**Data.** Fully synthetic demonstration records.
+
+**Methods.** Schema validation, identifier linkage, institution normalization, city-country validation, QA checks, duplicate diagnostics, confidence diagnostics, and coverage reporting.
+
+**Output.** [Public GitHub repository](https://github.com/Olivia-wr-research/author-institution-city-linkage).
+:::

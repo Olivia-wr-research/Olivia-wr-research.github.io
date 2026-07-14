@@ -1,0 +1,31 @@
+---
+title: "简历"
+---
+
+<a class="lang-switch" href="/cv.html">EN</a>
+
+<section class="panel panel-light">
+<p>我受人文地理学训练，研究兴趣包括科学家流动、区域创新、城市网络，以及基于纵向关联数据的实证研究。本页为公开简历的简要概览，完整公开版本见 PDF。</p>
+<h2>个人简历</h2>
+<p><a class="btn btn-primary" href="../assets/cv/Ran_Wang_CV_Public.pdf">下载简历</a></p>
+</section>
+
+<section class="panel panel-muted">
+<h2>教育背景</h2>
+<p><strong>华东师范大学。</strong> 人文地理学硕士，2023-2026。地理科学学院；研究方向为经济地理与区域创新。</p>
+<p><strong>东北师范大学。</strong> 人文地理与城乡规划学士，2019-2023。接受定量地理、GIS 应用、城市地理、区域分析和规划相关训练。</p>
+</section>
+
+<section class="panel panel-light">
+<h2>研究成果</h2>
+<ul>
+<li><strong>Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective</strong> — accepted article.</li>
+<li><strong>Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks</strong> — 硕士论文。</li>
+<li><strong>Author-Institution Linkage and Geocoding Feasibility Audit</strong> — 公开代码仓库。</li>
+</ul>
+</section>
+
+<section class="panel panel-dark">
+<h2>方法与技能</h2>
+<p>Python；R；Stata；GIS；社会网络分析；自我中心网络分析；条件 logit 模型；ERGM/WERGM；实体解析；纵向多源数据构建；覆盖诊断。</p>
+</section>

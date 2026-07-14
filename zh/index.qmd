@@ -1,0 +1,51 @@
+---
+pagetitle: "王冉 | 个人学术网站"
+page-layout: full
+toc: false
+---
+
+<a class="lang-switch hero-lang" href="/">EN</a>
+
+<div class="hero-name" role="heading" aria-level="1">王冉</div>
+
+<div class="hero-kicker">城市与区域经济学 · 科学家流动 · 区域创新</div>
+
+<div class="hero-summary">我是一名受经济地理学训练的实证研究者，关注科学家流动、制度平台与区域创新。我使用科学家、机构、论文与城市的纵向数据，并结合离散选择模型、网络分析和空间数据方法开展研究。</div>
+
+<div class="hero-actions">
+<a class="btn btn-hero-primary" href="research.html">查看研究</a>
+<a class="btn btn-hero-secondary" href="../assets/cv/Ran_Wang_CV_Public.pdf">下载简历</a>
+<a class="btn btn-hero-outline" href="projects.html">研究项目</a>
+<a class="btn btn-hero-outline" href="https://github.com/Olivia-wr-research">GitHub</a>
+</div>
+
+<div class="photo-credit">Photo: John Rodenn Castillo / Unsplash</div>
+
+<section class="panel panel-light">
+<h2>研究关注</h2>
+<p>我的研究围绕科学家流动、制度平台与区域创新展开，使用科学家、机构、论文和城市层面的纵向关联数据。研究重点包括清晰界定任职、流动、合作与地点之间的关系，并将个体职业轨迹与城市和区域科研系统联系起来。</p>
+</section>
+
+<section class="panel panel-muted">
+<h2>研究主题</h2>
+<p><strong>科学家流动与目的地选择。</strong> 我关注科学家如何在机构和城市之间流动，尤其是流动前可观察到的论文地点暴露与目的地选择之间的关系。当前研究将实际目的地与事件层面的候选城市进行比较。</p>
+<p><strong>区域创新与城市网络。</strong> 这一方向考察城市和区域在科研能力、制度平台以及流动和合作网络位置上的差异。研究强调可观察关联，而不超出研究设计作因果表述。</p>
+<p><strong>关联数据与网络方法。</strong> 我构建科学家-机构-城市数据，并区分任职、论文、合作关系和流动事件。这样的数据结构支持网络分析、空间比较和可复现的数据流程检查。</p>
+</section>
+
+<section class="panel panel-dark">
+<h2>代表性工作</h2>
+<p><strong>Accepted Article.</strong> <em>Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective</em>.</p>
+<p><strong>Working Paper.</strong> <em>Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists</em>.</p>
+<p><strong>Public Repository.</strong> <em>Author-Institution Linkage and Geocoding Feasibility Audit</em>. <a class="text-link" href="https://github.com/Olivia-wr-research/author-institution-city-linkage">查看仓库</a></p>
+</section>
+
+<section class="panel panel-light">
+<h2>快速链接</h2>
+<p>
+<a class="btn btn-primary" href="research.html">研究</a>
+<a class="btn btn-primary" href="projects.html">项目</a>
+<a class="btn btn-primary" href="cv.html">简历</a>
+<a class="btn btn-primary" href="contact.html">联系</a>
+</p>
+</section>
