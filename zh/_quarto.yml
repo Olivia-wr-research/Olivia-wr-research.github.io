@@ -4,9 +4,15 @@ project:
   render:
     - index.qmd
     - research.qmd
+    - publications.qmd
     - projects.qmd
     - cv.qmd
     - contact.qmd
+  resources:
+    - ../assets/img/hero.jpg
+    - ../assets/img/hero-optimized.jpg
+    - ../assets/cv/Ran_Wang_CV_Public.pdf
+    - ../assets/js/language-switch.js
 
 lang: zh-CN
 
@@ -22,6 +28,8 @@ website:
         href: index.qmd
       - text: "研究"
         href: research.qmd
+      - text: "成果"
+        href: publications.qmd
       - text: "项目"
         href: projects.qmd
       - text: "简历"
@@ -44,3 +52,5 @@ format:
     toc: false
     smooth-scroll: true
     link-external-newwindow: true
+    include-after-body:
+      - ../assets/js/language-switch.html

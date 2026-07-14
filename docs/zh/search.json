@@ -4,41 +4,202 @@
     "href": "contact.html",
     "title": "联系",
     "section": "",
-    "text": "EN\n\n\n联系\n\n\nEmail wangran940@163.com\n\n\nGitHub https://github.com/Olivia-wr-research"
+    "text": "邮箱\nwangran940@163.com\nGitHub\nhttps://github.com/Olivia-wr-research"
+  },
+  {
+    "objectID": "contact.html#联系",
+    "href": "contact.html#联系",
+    "title": "联系",
+    "section": "",
+    "text": "邮箱\nwangran940@163.com\nGitHub\nhttps://github.com/Olivia-wr-research"
   },
   {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "项目",
     "section": "",
-    "text": "EN"
+    "text": "核心研究计划\n\n\n\nScientific Mobility, Knowledge Networks, and Urban Innovation\n\n本研究计划关注顶尖科学家在机构与城市之间的职业流动，以及知识联系、合作网络、科研平台和城市创新条件与流动过程之间的关系。研究连接科学家的个体职业轨迹与城市尺度网络结构，基于履历、论文、机构和城市等多源纵向数据，分析科学家流动的空间格局、网络结构与目的地选择。\n\n\n已录用论文\n\n\n\nSpatial Structure and Determinants of Top Global Biomedical Scientists’ Mobility from an Urban Network Perspective\n\n\n\n\n硕士学位论文\n\n\n\nIntercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks\n\n\n\n\n工作论文\n\n\n\nPre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists\n\n研究问题。 科学家迁移前形成的知识空间联系，如何与其后续城市流动和目的地选择相关？\n数据。 基于全球生物医药顶尖科学家的职业流动、论文关联城市和候选目的地数据。\n方法。 构建迁移前知识空间联系指标，并结合事件层面的候选目的地集合和条件Logit模型进行分析。\n当前状态。 工作论文。\n\n\n\n在研项目\n\n\n\nGlobal Mobility and Collaboration Networks of Elite Biomedical Scientists\n\n基于科学家—机构—城市纵向数据，分析城际流动网络、科研合作网络、个体职业轨迹、自我网络指标，以及城市机会与创新条件之间的关联。"
   },
   {
-    "objectID": "projects.html#研究项目",
-    "href": "projects.html#研究项目",
+    "objectID": "projects.html#核心研究计划",
+    "href": "projects.html#核心研究计划",
     "title": "项目",
-    "section": "研究项目",
-    "text": "研究项目\n\nWorking Paper\n\nPre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists\nStatus. Working Paper\nResearch question. 科学家流动前的论文地点暴露如何与候选城市中的实际目的地选择相关？\nData. 基于精英生物医学科学家流动记录构建的事件层面目的地选择数据。\nMethods. 事件层面候选集、以来源地为参照的流动前暴露测度、条件 logit 模型、候选集检查和覆盖诊断。\nOutput. 工作论文。\n\n\n\nAccepted Article\n\nSpatial Structure and Determinants of Top Global Biomedical Scientists’ Mobility from an Urban Network Perspective\nStatus. Accepted Article\nResearch question. 如何从城市网络视角描述全球顶尖生物医学科学家的流动？\nData. 为该论文整理的科学家流动与城市网络数据。\nMethods. 城市网络分析，以及对空间结构和相关因素的实证分析。\nOutput. 已接受论文。\n\n\n\nMaster’s Thesis\n\nIntercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks\nStatus. Master’s Thesis\nResearch question. 从整体网络和自我中心网络视角看，全球顶尖生物医学科学家的城市间流动网络呈现出哪些模式？\nData. 为硕士论文整理的流动记录和城市层面网络数据。\nMethods. 整体网络分析、自我中心网络分析和流动模式的空间解释。\nOutput. 华东师范大学硕士论文。\n\n\n\nOngoing Research\n\nGlobal Mobility and Collaboration Networks of Elite Biomedical Scientists\nStatus. Ongoing Research\nResearch question. 在纵向科学职业数据中，流动、合作、机构和城市之间如何相互关联？\nData. 正在构建的科学家-机构-城市纵向数据。\nMethods. 有向加权流动网络、自我中心网络指标、合作网络和 WERGM 相关模型设定。\nOutput. 对硕士论文和已接受论文的延伸研究。\n\n\n\nPublic Repository\n\nAuthor-Institution Linkage and Geocoding Feasibility Audit\nStatus. Public Repository\nResearch question. 在将书目数据用于科学地理或流动研究前，如何检查作者-机构-城市链接和地理编码流程？\nData. 完全合成的演示记录。\nMethods. 数据结构校验、标识符链接、机构名称规范化、城市-国家校验、质检、重复诊断、置信度诊断和覆盖报告。\nOutput. 公开 GitHub 仓库。"
+    "section": "",
+    "text": "核心研究计划\n\n\n\nScientific Mobility, Knowledge Networks, and Urban Innovation\n\n本研究计划关注顶尖科学家在机构与城市之间的职业流动，以及知识联系、合作网络、科研平台和城市创新条件与流动过程之间的关系。研究连接科学家的个体职业轨迹与城市尺度网络结构，基于履历、论文、机构和城市等多源纵向数据，分析科学家流动的空间格局、网络结构与目的地选择。\n\n\n已录用论文\n\n\n\nSpatial Structure and Determinants of Top Global Biomedical Scientists’ Mobility from an Urban Network Perspective\n\n\n\n\n硕士学位论文\n\n\n\nIntercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks\n\n\n\n\n工作论文\n\n\n\nPre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists\n\n研究问题。 科学家迁移前形成的知识空间联系，如何与其后续城市流动和目的地选择相关？\n数据。 基于全球生物医药顶尖科学家的职业流动、论文关联城市和候选目的地数据。\n方法。 构建迁移前知识空间联系指标，并结合事件层面的候选目的地集合和条件Logit模型进行分析。\n当前状态。 工作论文。\n\n\n\n在研项目\n\n\n\nGlobal Mobility and Collaboration Networks of Elite Biomedical Scientists\n\n基于科学家—机构—城市纵向数据，分析城际流动网络、科研合作网络、个体职业轨迹、自我网络指标，以及城市机会与创新条件之间的关联。"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "王冉",
-    "section": "",
-    "text": "EN\n\n王冉\n\n\n城市与区域经济学 · 科学家流动 · 区域创新\n\n\n我是一名受经济地理学训练的实证研究者，关注科学家流动、制度平台与区域创新。我使用科学家、机构、论文与城市的纵向数据，并结合离散选择模型、网络分析和空间数据方法开展研究。\n\n\n查看研究 下载简历 研究项目 GitHub\n\n\nPhoto: John Rodenn Castillo / Unsplash\n\n\n\n研究关注\n\n\n我的研究围绕科学家流动、制度平台与区域创新展开，使用科学家、机构、论文和城市层面的纵向关联数据。研究重点包括清晰界定任职、流动、合作与地点之间的关系，并将个体职业轨迹与城市和区域科研系统联系起来。\n\n\n\n\n研究主题\n\n\n科学家流动与目的地选择。 我关注科学家如何在机构和城市之间流动，尤其是流动前可观察到的论文地点暴露与目的地选择之间的关系。当前研究将实际目的地与事件层面的候选城市进行比较。\n\n\n区域创新与城市网络。 这一方向考察城市和区域在科研能力、制度平台以及流动和合作网络位置上的差异。研究强调可观察关联，而不超出研究设计作因果表述。\n\n\n关联数据与网络方法。 我构建科学家-机构-城市数据，并区分任职、论文、合作关系和流动事件。这样的数据结构支持网络分析、空间比较和可复现的数据流程检查。\n\n\n\n\n代表性工作\n\n\nAccepted Article. Spatial Structure and Determinants of Top Global Biomedical Scientists’ Mobility from an Urban Network Perspective.\n\n\nWorking Paper. Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists.\n\n\nPublic Repository. Author-Institution Linkage and Geocoding Feasibility Audit. 查看仓库\n\n\n\n\n快速链接\n\n\n研究 项目 简历 联系"
+    "objectID": "projects.html#代表性研究项目",
+    "href": "projects.html#代表性研究项目",
+    "title": "项目",
+    "section": "代表性研究项目",
+    "text": "代表性研究项目\n\n\n合作研究项目\n\n日尺度夜间灯光与城市韧性轨迹研究\n\nDaily Nighttime Lights and Urban Resilience Trajectories\n\n该研究使用日尺度夜间灯光遥感数据，刻画重大外部冲击下城市活动的变化与恢复轨迹。研究以京津冀、长三角和珠三角城市群为对象，构建Fisher Information Light城市韧性代理指标，并使用动态时间规整和聚类方法识别不同城市的韧性变化类型。\n研究问题。 如何利用高频夜间灯光数据识别城市面对短期外部冲击时的活动变化与恢复轨迹？\n数据。 三大城市群48个城市的VIIRS-DNB日尺度夜间灯光数据。\n方法。 夜间灯光遥感处理、Fisher Information、动态时间规整和K均值聚类。\n我的工作。 根据现有公开信息，谨慎概括为参与数据整理、韧性代理指标构建、轨迹比较和聚类分析等工作，不表述为独立完成。\n当前状态。 合作研究项目。\n\n\n\n在研项目\n\n人才流动与中美生物医药创新体系比较\n\nTalent Mobility and Biomedical Innovation Systems in China and the United States\n\n该研究从顶尖科学家培养与职业流动出发，比较中美生物医药创新体系在人才培养、科研产出、专利活动、产业基础和知识转化等方面的特征与差异，关注人才流入、人才回流和科研—产业联系在不同创新体系中的表现。\n研究问题。 顶尖科学家的培养与职业流动模式，如何对应中美生物医药创新体系的结构差异？\n数据。 中美生物医药顶尖科学家履历、论文、专利、机构、城市和产业相关数据。\n方法。 履历分析、多源数据匹配、社会网络分析和比较研究。\n我的工作。 根据现有公开信息，谨慎概括为数据整理、履历匹配、网络构建和比较分析支持，不夸大独立承担程度。\n当前状态。 在研项目。"
+  },
+  {
+    "objectID": "projects.html#早期研究",
+    "href": "projects.html#早期研究",
+    "title": "项目",
+    "section": "早期研究",
+    "text": "早期研究\n\n\n早期研究\n\n疫情冲击下全球贸易网络的演化与产业差异\n\nGlobal Trade Network Evolution and Sectoral Differences under the COVID-19 Shock\n\n该研究使用2019—2021年联合国商品贸易数据，构建全球有向加权贸易网络，分析疫情冲击前后全球商品贸易联系、核心经济体地位和不同类型产品贸易网络的结构变化。\n研究问题。 新冠疫情冲击下，全球商品贸易网络及不同类型产品网络呈现出怎样的结构变化？\n数据。 2019—2021年联合国商品贸易数据库，覆盖219个国家和地区。\n方法。 有向加权网络、社会网络分析、产品类型比较和空间分析。\n我的工作。 根据现有公开信息，谨慎描述为数据整理、贸易网络构建、网络指标计算和空间解释。\n当前状态。 早期研究。"
   },
   {
     "objectID": "research.html",
     "href": "research.html",
     "title": "研究",
     "section": "",
-    "text": "EN\n\n\n研究简介\n\n\n我的研究位于经济地理学、城市与区域经济学和科学学的交叉领域。研究关注科学家流动、机构任职、合作关系和城市科研系统如何与知识生产的空间组织相关。\n\n\n我的工作将科学家、机构、论文和城市视为相互关联但需要区分的分析单元。在建模之前，我会明确区分可观察任职、就业经历、合作关系和流动事件。\n\n\n\n\n研究主题\n\n\n科学家流动与职业轨迹。 我研究精英生物医学科学家如何在机构和城市之间流动。当前工作将职业经历、流动前论文地点暴露和目的地选择联系起来，并保持对观察性研究设计边界的说明。\n\n\n区域创新与城市网络。 我研究城市和区域在科研能力、机构多样性以及流动和合作网络位置上的差异。这一方向关注城市科研系统与高技能流动、知识生产模式之间的可观察关系。\n\n\n科学学与关联数据。 我构建并检查连接科学家、机构、论文和地点的数据。目标是在保留链接、覆盖和地理编码不确定性的前提下，使关联数据服务于科学地理研究。\n\n\n\n\n数据与方法\n\n\n\n科学家-机构-城市纵向数据\n\n\n离散选择模型\n\n\n网络分析\n\n\n空间数据方法\n\n\nPython 和 R 中的可复现工作流\n\n\n\n\n\n当前研究议程\n\n\n精英生物医学科学家的目的地选择。 该项目研究科学家流动前的论文地点暴露是否与事件层面候选城市中的最终目的地选择相关。\n\n\n流动与合作网络。 这一方向延伸硕士论文和已接受论文中的城市间流动网络研究，进一步构建科学家-机构-城市纵向数据和有向加权网络指标。\n\n\n作者-机构-城市链接公开流程检查。 公开仓库使用合成记录展示数据结构校验、机构名称规范化、地理编码检查和可复现文档模式。"
+    "text": "我的研究位于经济地理学、城市与区域经济学和科学学的交叉领域，核心问题是科学家职业流动、知识联系、科研机构和城市创新条件如何在空间上组织，并与城市和区域创新表现相关。\n当前最主要的经验研究对象是全球生物医药顶尖科学家在机构与城市之间的职业流动。城市韧性、中美生物医药创新体系比较和全球贸易网络等研究，则体现了关系数据、纵向比较和空间网络分析能力在不同问题中的延展。"
+  },
+  {
+    "objectID": "research.html#研究概况",
+    "href": "research.html#研究概况",
+    "title": "研究",
+    "section": "",
+    "text": "我的研究位于经济地理学、城市与区域经济学和科学学的交叉领域，核心问题是科学家职业流动、知识联系、科研机构和城市创新条件如何在空间上组织，并与城市和区域创新表现相关。\n当前最主要的经验研究对象是全球生物医药顶尖科学家在机构与城市之间的职业流动。城市韧性、中美生物医药创新体系比较和全球贸易网络等研究，则体现了关系数据、纵向比较和空间网络分析能力在不同问题中的延展。"
+  },
+  {
+    "objectID": "research.html#核心研究方向",
+    "href": "research.html#核心研究方向",
+    "title": "研究",
+    "section": "核心研究方向",
+    "text": "核心研究方向\n\n\n科学家流动与职业轨迹\n研究科学家如何在机构和城市之间流动，如何将个体职业经历组织为纵向数据，并在事件层面候选目的地集合中分析流动目的地选择。\n\n\n城市与区域创新\n关注科学家流动、科研平台、合作网络和城市机会之间的关联，以及不同城市和区域创新体系的结构特征。\n\n\n科学知识网络与关系数据\n构建并检查科学家—机构—论文—城市关联数据，区分任职关系、论文关联城市、合作联系和流动事件。\n\n\n城市韧性与高频空间数据\n日尺度夜间灯光研究将方法扩展到高频空间数据、时间序列轨迹和城市群比较。"
+  },
+  {
+    "objectID": "research.html#数据与方法",
+    "href": "research.html#数据与方法",
+    "title": "研究",
+    "section": "数据与方法",
+    "text": "数据与方法\n\n\n多源纵向数据构建\n科学家—机构—城市匹配与实体解析\n社会网络分析与自我中心网络分析\n事件层面候选目的地集合与 Conditional Logit\nERGM/WERGM 网络模型设定\nGIS、ArcGIS、Python、R、Stata、NetworkX、Gephi 和 Ucinet"
+  },
+  {
+    "objectID": "research.html#当前研究议程",
+    "href": "research.html#当前研究议程",
+    "title": "研究",
+    "section": "当前研究议程",
+    "text": "当前研究议程\n\n\n全球顶尖科学家的流动网络、知识联系与城市创新\n这一核心研究计划关注顶尖科学家在机构与城市之间的职业流动，以及知识空间联系、科研合作网络、科研平台和城市创新条件之间的关联。\n\n\n生物医药顶尖科学家的流动目的地选择\n工作论文关注迁移前知识空间联系如何与生物医药顶尖科学家的后续城市流动和流动目的地选择相关，使用事件层面的候选目的地集合和条件 Logit 模型。\n\n\n比较研究与方法扩展\n中美生物医药创新体系比较、日尺度夜间灯光城市韧性研究和早期全球贸易网络研究，扩展了产业制度分析、高频空间数据和全球网络研究训练。"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "王冉",
+    "section": "",
+    "text": "王冉"
+  },
+  {
+    "objectID": "index.html#研究定位",
+    "href": "index.html#研究定位",
+    "title": "王冉",
+    "section": "研究定位",
+    "text": "研究定位\n我的研究将科学家的个体职业轨迹与城市和区域创新系统联系起来，重点关注顶尖科学家在机构与城市之间的流动、迁移前知识空间联系与流动目的地选择之间的关联，以及流动网络、合作网络与城市创新条件之间的关系。"
+  },
+  {
+    "objectID": "index.html#研究方向",
+    "href": "index.html#研究方向",
+    "title": "王冉",
+    "section": "研究方向",
+    "text": "研究方向\n\n\n科学家流动与职业轨迹\n基于科学家、机构、论文与城市的纵向数据，刻画职业流动、城际流动网络和个体职业轨迹。\n\n\n城市与区域创新\n关注科研平台、合作网络、城市机会与创新条件之间的结构差异和关联关系，不将相关关系直接表述为因果关系。\n\n\n关系数据与空间方法\n通过作者—机构—城市关联、地理编码检查、网络指标和事件层面候选目的地集合，支持可复现的实证研究。"
+  },
+  {
+    "objectID": "index.html#代表性成果",
+    "href": "index.html#代表性成果",
+    "title": "王冉",
+    "section": "代表性成果",
+    "text": "代表性成果\n已录用论文。 城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素\n工作论文。 知识空间联系与全球顶尖科学家的流动网络研究\n\nPre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists\n\n公开研究产出。 作者—机构—城市关联与地理编码可行性审计。查看仓库"
+  },
+  {
+    "objectID": "index.html#代表性项目",
+    "href": "index.html#代表性项目",
+    "title": "王冉",
+    "section": "代表性项目",
+    "text": "代表性项目\n\n\n核心研究计划\n\n全球顶尖科学家的流动网络、知识联系与城市创新\n围绕顶尖科学家职业流动、知识空间联系、科研合作网络和城市创新条件展开的核心研究计划。\n\n\n\n合作研究项目\n\n日尺度夜间灯光与城市韧性轨迹研究\n使用高频夜间灯光数据刻画重大外部冲击下城市活动变化与恢复轨迹的合作研究项目。\n\n\n\n在研项目\n\n人才流动与中美生物医药创新体系比较\n比较中美生物医药创新体系中顶尖科学家培养、职业流动、科研产出、专利活动、产业基础和知识转化特征的在研项目。"
+  },
+  {
+    "objectID": "index.html#快速链接",
+    "href": "index.html#快速链接",
+    "title": "王冉",
+    "section": "快速链接",
+    "text": "快速链接\n\n研究 成果 项目 简历 联系"
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "成果",
+    "section": "",
+    "text": "已录用论文\n\n\n\nSpatial Structure and Determinants of Top Global Biomedical Scientists’ Mobility from an Urban Network Perspective\n\n该论文从城市网络视角分析全球生物医药顶尖科学家流动的空间结构与相关因素。网页仅记录已录用状态，不添加未经确认的期刊元数据、卷期、页码、正式发表年份或期刊链接。"
+  },
+  {
+    "objectID": "publications.html#已录用论文",
+    "href": "publications.html#已录用论文",
+    "title": "成果",
+    "section": "",
+    "text": "已录用论文\n\n\n\nSpatial Structure and Determinants of Top Global Biomedical Scientists’ Mobility from an Urban Network Perspective\n\n该论文从城市网络视角分析全球生物医药顶尖科学家流动的空间结构与相关因素。网页仅记录已录用状态，不添加未经确认的期刊元数据、卷期、页码、正式发表年份或期刊链接。"
+  },
+  {
+    "objectID": "publications.html#工作论文",
+    "href": "publications.html#工作论文",
+    "title": "成果",
+    "section": "工作论文",
+    "text": "工作论文\n\n工作论文\n\n知识空间联系与全球顶尖科学家的流动网络研究\n\nPre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists\n\n该工作论文研究生物医药领域顶尖科学家迁移前知识空间联系与后续城市流动及目的地选择之间的关联，方法包括事件层面候选目的地集合和条件 Logit 模型。"
+  },
+  {
+    "objectID": "publications.html#硕士学位论文",
+    "href": "publications.html#硕士学位论文",
+    "title": "成果",
+    "section": "硕士学位论文",
+    "text": "硕士学位论文\n\n硕士学位论文\n\n全球生物医药顶尖科学家城际流动网络——基于全域与自我网络双重视角\n\nIntercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks\n\n硕士学位论文从全域网络和自我网络双重视角分析全球生物医药顶尖科学家的城际流动网络，将个体职业轨迹与城市尺度网络结构联系起来。"
+  },
+  {
+    "objectID": "publications.html#公开研究产出",
+    "href": "publications.html#公开研究产出",
+    "title": "成果",
+    "section": "公开研究产出",
+    "text": "公开研究产出\n\n公开代码仓库\n\n作者—机构—城市关联与地理编码可行性审计\n\nAuthor-Institution Linkage and Geocoding Feasibility Audit\n\n公开代码仓库使用合成记录展示作者—机构—城市关联和地理编码可行性审计流程，包括数据结构校验、机构名称规范化、地理编码检查和覆盖报告。查看仓库"
   },
   {
     "objectID": "cv.html",
     "href": "cv.html",
     "title": "简历",
     "section": "",
-    "text": "EN\n\n\n我受人文地理学训练，研究兴趣包括科学家流动、区域创新、城市网络，以及基于纵向关联数据的实证研究。本页为公开简历的简要概览，完整公开版本见 PDF。\n\n\n个人简历\n\n\n下载简历\n\n\n\n\n教育背景\n\n\n华东师范大学。 人文地理学硕士，2023-2026。地理科学学院；研究方向为经济地理与区域创新。\n\n\n东北师范大学。 人文地理与城乡规划学士，2019-2023。接受定量地理、GIS 应用、城市地理、区域分析和规划相关训练。\n\n\n\n\n研究成果\n\n\n\nSpatial Structure and Determinants of Top Global Biomedical Scientists’ Mobility from an Urban Network Perspective — accepted article.\n\n\nIntercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks — 硕士论文。\n\n\nAuthor-Institution Linkage and Geocoding Feasibility Audit — 公开代码仓库。\n\n\n\n\n\n方法与技能\n\n\nPython；R；Stata；GIS；社会网络分析；自我中心网络分析；条件 logit 模型；ERGM/WERGM；实体解析；纵向多源数据构建；覆盖诊断。"
+    "text": "华东师范大学。 人文地理学硕士，2023-2026。地理科学学院；研究训练涉及经济地理、区域创新、科学家流动和城市网络。\n东北师范大学。 人文地理与城乡规划学士，2019-2023。接受定量地理、GIS 应用、城市地理、区域分析和规划相关训练。"
+  },
+  {
+    "objectID": "cv.html#教育经历",
+    "href": "cv.html#教育经历",
+    "title": "简历",
+    "section": "",
+    "text": "华东师范大学。 人文地理学硕士，2023-2026。地理科学学院；研究训练涉及经济地理、区域创新、科学家流动和城市网络。\n东北师范大学。 人文地理与城乡规划学士，2019-2023。接受定量地理、GIS 应用、城市地理、区域分析和规划相关训练。"
+  },
+  {
+    "objectID": "cv.html#研究成果",
+    "href": "cv.html#研究成果",
+    "title": "简历",
+    "section": "研究成果",
+    "text": "研究成果\n\n城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素 — 已录用论文。\n知识空间联系与全球顶尖科学家的流动网络研究 — 工作论文。\n全球生物医药顶尖科学家城际流动网络——基于全域与自我网络双重视角 — 硕士学位论文。\n作者—机构—城市关联与地理编码可行性审计 — 公开研究产出。"
+  },
+  {
+    "objectID": "cv.html#代表性研究经历",
+    "href": "cv.html#代表性研究经历",
+    "title": "简历",
+    "section": "代表性研究经历",
+    "text": "代表性研究经历\n\n\n全球顶尖科学家的流动网络、知识联系与城市创新\n围绕顶尖科学家职业流动、知识空间联系、科研合作网络和城市创新条件展开的核心研究计划。\n\n\n日尺度夜间灯光与城市韧性轨迹研究\n使用 VIIRS-DNB 日尺度夜间灯光、Fisher Information、动态时间规整和聚类方法刻画城市韧性轨迹的合作研究。\n\n\n人才流动与中美生物医药创新体系比较\n比较中美生物医药创新体系中顶尖科学家培养、职业流动、科研产出、专利活动、产业基础和知识转化特征的在研项目。\n\n\n疫情冲击下全球贸易网络的演化与产业差异\n使用有向加权贸易网络和空间分析比较全球商品贸易结构变化的早期研究。\n\n\n作者—机构—城市关联与地理编码审计\n基于合成记录展示关联、机构名称规范化、地理编码可行性和覆盖诊断的公开流程审计。"
+  },
+  {
+    "objectID": "cv.html#方法与技术能力",
+    "href": "cv.html#方法与技术能力",
+    "title": "简历",
+    "section": "方法与技术能力",
+    "text": "方法与技术能力\nPython；R；Stata；GIS；ArcGIS；NetworkX；Gephi；Ucinet；Conditional Logit；ERGM/WERGM；Social Network Analysis；Ego-network Analysis；Entity Resolution；Longitudinal Multi-source Data Construction。"
+  },
+  {
+    "objectID": "cv.html#代表性荣誉",
+    "href": "cv.html#代表性荣誉",
+    "title": "简历",
+    "section": "代表性荣誉",
+    "text": "代表性荣誉\n本次更新无法从可用公开源文件中独立核实具体荣誉条目，因此网页摘要不列出未经确认的荣誉细节。详细荣誉信息以可下载公开简历为准。"
+  },
+  {
+    "objectID": "cv.html#下载完整简历",
+    "href": "cv.html#下载完整简历",
+    "title": "简历",
+    "section": "下载完整简历",
+    "text": "下载完整简历\n\n完整公开简历可下载 PDF 版本。\n下载完整简历"
   }
 ]

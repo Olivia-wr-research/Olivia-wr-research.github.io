@@ -2,30 +2,77 @@
 title: "CV"
 ---
 
-<a class="lang-switch" href="/zh/cv.html">中文</a>
+::: {.panel .panel-light}
+## Education
 
-<section class="panel panel-light">
-<p>I am trained in human geography, with research interests in scientific mobility, regional innovation, urban networks, and empirical work using longitudinal relational data. This page is a short public overview; the PDF contains the full public CV.</p>
-<h2>Curriculum Vitae</h2>
-<p><a class="btn btn-primary" href="assets/cv/Ran_Wang_CV_Public.pdf">Download CV</a></p>
-</section>
+**East China Normal University.** M.Sc. in Human Geography, 2023-2026. School of Geographic Sciences; research training in economic geography, regional innovation, scientific mobility, and urban networks.
 
-<section class="panel panel-muted">
-<h2>Education</h2>
-<p><strong>East China Normal University.</strong> M.Sc. in Human Geography, 2023-2026. School of Geographic Sciences; economic geography and regional innovation.</p>
-<p><strong>Northeast Normal University.</strong> B.Sc. in Human Geography and Urban-Rural Planning, 2019-2023. Training in quantitative geography, GIS applications, urban geography, regional analysis, and planning.</p>
-</section>
+**Northeast Normal University.** B.Sc. in Human Geography and Urban-Rural Planning, 2019-2023. Training in quantitative geography, GIS applications, urban geography, regional analysis, and planning.
+:::
 
-<section class="panel panel-light">
-<h2>Research Outputs</h2>
-<ul>
-<li><strong>Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective</strong> — accepted article.</li>
-<li><strong>Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks</strong> — master's thesis.</li>
-<li><strong>Author-Institution Linkage and Geocoding Feasibility Audit</strong> — public code repository.</li>
-</ul>
-</section>
+::: {.panel .panel-muted}
+## Research Outputs
 
-<section class="panel panel-dark">
-<h2>Methods and Skills</h2>
-<p>Python; R; Stata; GIS; social network analysis; ego-network analysis; conditional logit models; ERGM/WERGM; entity resolution; longitudinal multi-source data construction; coverage audits.</p>
-</section>
+- **Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective** — accepted article.
+- **Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists** — working paper.
+- **Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks** — master's thesis.
+- **Author-Institution Linkage and Geocoding Feasibility Audit** — public research repository.
+:::
+
+::: {.panel .panel-light}
+## Selected Research Experience
+
+::: {.project-list}
+::: {.project-card}
+### Scientific Mobility, Knowledge Networks, and Urban Innovation
+
+Flagship research programme linking elite scientist mobility, knowledge-space connections, collaboration networks, and urban innovation conditions.
+:::
+
+::: {.project-card}
+### Daily Nighttime Lights and Urban Resilience Trajectories
+
+Collaborative research using VIIRS-DNB daily nighttime lights, Fisher Information, dynamic time warping, and clustering to describe urban resilience trajectories.
+:::
+
+::: {.project-card}
+### Talent Mobility and Biomedical Innovation Systems in China and the United States
+
+Ongoing comparative research on top scientist training, career mobility, research output, patents, industrial foundations, and knowledge translation.
+:::
+
+::: {.project-card}
+### Global Trade Network Evolution and Sectoral Differences under the COVID-19 Shock
+
+Earlier research using directed weighted trade networks and spatial analysis to compare structural changes in global commodity trade.
+:::
+
+::: {.project-card}
+### Author-Institution Linkage and Geocoding Feasibility Audit
+
+Public workflow audit for linkage, institution normalization, geocoding feasibility, and coverage diagnostics using synthetic records.
+:::
+:::
+:::
+
+::: {.panel .panel-dark}
+## Methods and Technical Skills
+
+Python; R; Stata; GIS; ArcGIS; NetworkX; Gephi; Ucinet; Conditional Logit; ERGM/WERGM; Social Network Analysis; Ego-network Analysis; Entity Resolution; Longitudinal Multi-source Data Construction.
+:::
+
+::: {.panel .panel-muted}
+## Selected Honors
+
+This web summary does not list honor details that could not be independently verified from the available public source files during this update. The downloadable public CV remains the reference for any detailed honor entries.
+:::
+
+::: {.panel .panel-light}
+## Download Full CV
+
+::: {.cv-download}
+The full public CV is available as a PDF.
+
+[Download Full CV](assets/cv/Ran_Wang_CV_Public.pdf){.btn .btn-primary}
+:::
+:::

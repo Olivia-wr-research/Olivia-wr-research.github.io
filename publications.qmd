@@ -1,0 +1,67 @@
+---
+title: "Publications"
+---
+
+::: {.panel .panel-light}
+## Accepted Article
+
+::: {.project-card}
+[Accepted Article]{.status-badge}
+
+### Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective
+
+::: {.original-title}
+城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素
+:::
+
+This accepted article examines the spatial structure and related factors of top global biomedical scientists' mobility from an urban network perspective. The page records its accepted status without adding unconfirmed journal metadata, page ranges, or formal publication-year information.
+:::
+:::
+
+::: {.panel .panel-muted}
+## Working Paper
+
+::: {.project-card}
+[Working Paper]{.status-badge}
+
+### Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists
+
+::: {.original-title}
+知识空间联系与全球顶尖科学家的流动网络研究
+:::
+
+This working paper studies how pre-move publication-location exposure is associated with later city mobility and destination choice among elite biomedical scientists, using event-level candidate destination sets and Conditional Logit models.
+:::
+:::
+
+::: {.panel .panel-light}
+## Master's Thesis
+
+::: {.project-card}
+[Master's Thesis]{.status-badge}
+
+### Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks
+
+::: {.original-title}
+全球生物医药顶尖科学家城际流动网络——基于全域与自我网络双重视角
+:::
+
+The master's thesis analyzes the intercity mobility network of top global biomedical scientists from whole-network and ego-network perspectives, linking individual career trajectories with city-level network structure.
+:::
+:::
+
+::: {.panel .panel-dark}
+## Public Research Output
+
+::: {.project-card}
+[Public Research Output]{.status-badge}
+
+### Author-Institution Linkage and Geocoding Feasibility Audit
+
+::: {.original-title}
+作者—机构—城市关联与地理编码可行性审计
+:::
+
+A public repository demonstrating workflow checks for author-institution-city linkage and geocoding feasibility using synthetic records, schema validation, normalization checks, and coverage reporting. [View repository](https://github.com/Olivia-wr-research/author-institution-city-linkage)
+:::
+:::

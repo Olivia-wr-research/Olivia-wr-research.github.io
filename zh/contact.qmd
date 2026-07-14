@@ -2,12 +2,12 @@
 title: "联系"
 ---
 
-<a class="lang-switch" href="/contact.html">EN</a>
+::: {.panel .panel-dark .contact-panel}
+## 联系
 
-<section class="panel panel-dark contact-panel">
-<h2>联系</h2>
-<p><strong>Email</strong><br>
-<a href="mailto:wangran940@163.com">wangran940@163.com</a></p>
-<p><strong>GitHub</strong><br>
-<a href="https://github.com/Olivia-wr-research">https://github.com/Olivia-wr-research</a></p>
-</section>
+**邮箱**
+[wangran940@163.com](mailto:wangran940@163.com)
+
+**GitHub**
+[https://github.com/Olivia-wr-research](https://github.com/Olivia-wr-research)
+:::

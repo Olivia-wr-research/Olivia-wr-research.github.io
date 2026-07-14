@@ -2,86 +2,148 @@
 title: "项目"
 ---
 
-[EN](/projects.html){.lang-switch}
-
-## 研究项目
+::: {.panel .panel-light}
+## 核心研究计划
 
 ::: {.project-card}
-[Working Paper]{.status-badge}
+[核心研究计划]{.status-badge}
 
-### Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists
+### 全球顶尖科学家的流动网络、知识联系与城市创新
 
-**Status.** Working Paper
+::: {.original-title}
+Scientific Mobility, Knowledge Networks, and Urban Innovation
+:::
 
-**Research question.** 科学家流动前的论文地点暴露如何与候选城市中的实际目的地选择相关？
+本研究计划关注顶尖科学家在机构与城市之间的职业流动，以及知识联系、合作网络、科研平台和城市创新条件与流动过程之间的关系。研究连接科学家的个体职业轨迹与城市尺度网络结构，基于履历、论文、机构和城市等多源纵向数据，分析科学家流动的空间格局、网络结构与目的地选择。
 
-**Data.** 基于精英生物医学科学家流动记录构建的事件层面目的地选择数据。
+::: {.project-list}
+::: {.summary-card}
+[已录用论文]{.status-badge}
 
-**Methods.** 事件层面候选集、以来源地为参照的流动前暴露测度、条件 logit 模型、候选集检查和覆盖诊断。
+#### 城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素
 
-**Output.** 工作论文。
+::: {.original-title}
+Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective
+:::
+:::
+
+::: {.summary-card}
+[硕士学位论文]{.status-badge}
+
+#### 全球生物医药顶尖科学家城际流动网络——基于全域与自我网络双重视角
+
+::: {.original-title}
+Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks
+:::
+:::
+
+::: {.summary-card}
+[工作论文]{.status-badge}
+
+#### 知识空间联系与全球顶尖科学家的流动网络研究
+
+::: {.original-title}
+Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists
+:::
+
+**研究问题。** 科学家迁移前形成的知识空间联系，如何与其后续城市流动和目的地选择相关？
+
+**数据。** 基于全球生物医药顶尖科学家的职业流动、论文关联城市和候选目的地数据。
+
+**方法。** 构建迁移前知识空间联系指标，并结合事件层面的候选目的地集合和条件Logit模型进行分析。
+
+**当前状态。** 工作论文。
+:::
+
+::: {.summary-card}
+[在研项目]{.status-badge}
+
+#### 全球生物医药顶尖科学家的流动与合作网络
+
+::: {.original-title}
+Global Mobility and Collaboration Networks of Elite Biomedical Scientists
+:::
+
+基于科学家—机构—城市纵向数据，分析城际流动网络、科研合作网络、个体职业轨迹、自我网络指标，以及城市机会与创新条件之间的关联。
+:::
+:::
+:::
+:::
+
+::: {.panel .panel-muted}
+## 代表性研究项目
+
+::: {.project-list}
+::: {.project-card}
+[合作研究项目]{.status-badge}
+
+### 日尺度夜间灯光与城市韧性轨迹研究
+
+::: {.original-title}
+Daily Nighttime Lights and Urban Resilience Trajectories
+:::
+
+该研究使用日尺度夜间灯光遥感数据，刻画重大外部冲击下城市活动的变化与恢复轨迹。研究以京津冀、长三角和珠三角城市群为对象，构建Fisher Information Light城市韧性代理指标，并使用动态时间规整和聚类方法识别不同城市的韧性变化类型。
+
+**研究问题。** 如何利用高频夜间灯光数据识别城市面对短期外部冲击时的活动变化与恢复轨迹？
+
+**数据。** 三大城市群48个城市的VIIRS-DNB日尺度夜间灯光数据。
+
+**方法。** 夜间灯光遥感处理、Fisher Information、动态时间规整和K均值聚类。
+
+**我的工作。** 根据现有公开信息，谨慎概括为参与数据整理、韧性代理指标构建、轨迹比较和聚类分析等工作，不表述为独立完成。
+
+**当前状态。** 合作研究项目。
 :::
 
 ::: {.project-card}
-[Accepted Article]{.status-badge}
+[在研项目]{.status-badge}
 
-### Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective
+### 人才流动与中美生物医药创新体系比较
 
-**Status.** Accepted Article
-
-**Research question.** 如何从城市网络视角描述全球顶尖生物医学科学家的流动？
-
-**Data.** 为该论文整理的科学家流动与城市网络数据。
-
-**Methods.** 城市网络分析，以及对空间结构和相关因素的实证分析。
-
-**Output.** 已接受论文。
+::: {.original-title}
+Talent Mobility and Biomedical Innovation Systems in China and the United States
 :::
 
-::: {.project-card}
-[Master's Thesis]{.status-badge}
+该研究从顶尖科学家培养与职业流动出发，比较中美生物医药创新体系在人才培养、科研产出、专利活动、产业基础和知识转化等方面的特征与差异，关注人才流入、人才回流和科研—产业联系在不同创新体系中的表现。
 
-### Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks
+**研究问题。** 顶尖科学家的培养与职业流动模式，如何对应中美生物医药创新体系的结构差异？
 
-**Status.** Master's Thesis
+**数据。** 中美生物医药顶尖科学家履历、论文、专利、机构、城市和产业相关数据。
 
-**Research question.** 从整体网络和自我中心网络视角看，全球顶尖生物医学科学家的城市间流动网络呈现出哪些模式？
+**方法。** 履历分析、多源数据匹配、社会网络分析和比较研究。
 
-**Data.** 为硕士论文整理的流动记录和城市层面网络数据。
+**我的工作。** 根据现有公开信息，谨慎概括为数据整理、履历匹配、网络构建和比较分析支持，不夸大独立承担程度。
 
-**Methods.** 整体网络分析、自我中心网络分析和流动模式的空间解释。
-
-**Output.** 华东师范大学硕士论文。
+**当前状态。** 在研项目。
+:::
+:::
 :::
 
+::: {.panel .panel-light}
+## 早期研究
+
+::: {.project-list}
 ::: {.project-card}
-[Ongoing Research]{.status-badge}
+[早期研究]{.status-badge}
 
-### Global Mobility and Collaboration Networks of Elite Biomedical Scientists
+### 疫情冲击下全球贸易网络的演化与产业差异
 
-**Status.** Ongoing Research
-
-**Research question.** 在纵向科学职业数据中，流动、合作、机构和城市之间如何相互关联？
-
-**Data.** 正在构建的科学家-机构-城市纵向数据。
-
-**Methods.** 有向加权流动网络、自我中心网络指标、合作网络和 WERGM 相关模型设定。
-
-**Output.** 对硕士论文和已接受论文的延伸研究。
+::: {.original-title}
+Global Trade Network Evolution and Sectoral Differences under the COVID-19 Shock
 :::
 
-::: {.project-card}
-[Public Repository]{.status-badge}
+该研究使用2019—2021年联合国商品贸易数据，构建全球有向加权贸易网络，分析疫情冲击前后全球商品贸易联系、核心经济体地位和不同类型产品贸易网络的结构变化。
 
-### Author-Institution Linkage and Geocoding Feasibility Audit
+**研究问题。** 新冠疫情冲击下，全球商品贸易网络及不同类型产品网络呈现出怎样的结构变化？
 
-**Status.** Public Repository
+**数据。** 2019—2021年联合国商品贸易数据库，覆盖219个国家和地区。
 
-**Research question.** 在将书目数据用于科学地理或流动研究前，如何检查作者-机构-城市链接和地理编码流程？
+**方法。** 有向加权网络、社会网络分析、产品类型比较和空间分析。
 
-**Data.** 完全合成的演示记录。
+**我的工作。** 根据现有公开信息，谨慎描述为数据整理、贸易网络构建、网络指标计算和空间解释。
 
-**Methods.** 数据结构校验、标识符链接、机构名称规范化、城市-国家校验、质检、重复诊断、置信度诊断和覆盖报告。
-
-**Output.** [公开 GitHub 仓库](https://github.com/Olivia-wr-research/author-institution-city-linkage)。
+**当前状态。** 早期研究。
+:::
+:::
 :::

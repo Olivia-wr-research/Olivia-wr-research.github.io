@@ -2,12 +2,12 @@
 title: "Contact"
 ---
 
-<a class="lang-switch" href="/zh/contact.html">中文</a>
+::: {.panel .panel-dark .contact-panel}
+## Contact
 
-<section class="panel panel-dark contact-panel">
-<h2>Contact</h2>
-<p><strong>Email</strong><br>
-<a href="mailto:wangran940@163.com">wangran940@163.com</a></p>
-<p><strong>GitHub</strong><br>
-<a href="https://github.com/Olivia-wr-research">https://github.com/Olivia-wr-research</a></p>
-</section>
+**Email**
+[wangran940@163.com](mailto:wangran940@163.com)
+
+**GitHub**
+[https://github.com/Olivia-wr-research](https://github.com/Olivia-wr-research)
+:::

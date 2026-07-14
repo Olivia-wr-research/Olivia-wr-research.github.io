@@ -2,86 +2,100 @@
 title: "Projects"
 ---
 
-[中文](/zh/projects.html){.lang-switch}
-
-## Research Projects
-
-::: {.project-card}
-[Working Paper]{.status-badge}
-
-### Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists
-
-**Status.** Working Paper
-
-**Research question.** How is a scientist's pre-move publication-location exposure associated with observed destination choice among candidate cities?
-
-**Data.** Event-specific destination-choice data derived from elite biomedical scientist mobility records.
-
-**Methods.** Event-specific candidate sets, origin-anchored pre-move exposure measures, conditional logit models, candidate-set checks, and coverage diagnostics.
-
-**Output.** Working paper.
-:::
+::: {.panel .panel-light}
+## Featured Research Programme
 
 ::: {.project-card}
+[Flagship Research Programme]{.status-badge}
+
+### Scientific Mobility, Knowledge Networks, and Urban Innovation
+
+This flagship research programme examines elite scientists' career mobility across institutions and cities, and the relations among knowledge connections, collaboration networks, research platforms, and urban innovation conditions. It links individual career trajectories with urban-scale network structures using longitudinal data on biographies, publications, institutions, and cities.
+
+::: {.project-list}
+::: {.summary-card}
 [Accepted Article]{.status-badge}
 
-### Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective
-
-**Status.** Accepted Article
-
-**Research question.** How can the mobility of top global biomedical scientists be described from an urban network perspective?
-
-**Data.** Scientist mobility and city-level network data assembled for the article.
-
-**Methods.** Urban network analysis and empirical analysis of spatial structure and related factors.
-
-**Output.** Accepted article.
+#### Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective
 :::
 
-::: {.project-card}
+::: {.summary-card}
 [Master's Thesis]{.status-badge}
 
-### Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks
+#### Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks
+:::
 
-**Status.** Master's Thesis
+::: {.summary-card}
+[Working Paper]{.status-badge}
 
-**Research question.** What patterns appear in the intercity mobility network of top global biomedical scientists from whole-network and ego-network perspectives?
+#### Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists
+:::
 
-**Data.** Mobility records and city-level network data assembled for the master's thesis.
+::: {.summary-card}
+[Ongoing Research]{.status-badge}
 
-**Methods.** Whole-network analysis, ego-network analysis, and spatial interpretation of mobility patterns.
+#### Global Mobility and Collaboration Networks of Elite Biomedical Scientists
+:::
+:::
+:::
+:::
 
-**Output.** Master's thesis completed at East China Normal University.
+::: {.panel .panel-muted}
+## Selected Research Projects
+
+::: {.project-list}
+::: {.project-card}
+[Collaborative Research Project]{.status-badge}
+
+### Daily Nighttime Lights and Urban Resilience Trajectories
+
+**Research Question.** How can high-frequency nighttime light data be used to identify changes and recovery trajectories in urban activity after short-term external shocks?
+
+**Data.** VIIRS-DNB daily nighttime light data for 48 cities in the Beijing-Tianjin-Hebei, Yangtze River Delta, and Pearl River Delta urban agglomerations.
+
+**Methods.** Nighttime-light remote sensing processing, Fisher Information, dynamic time warping, and K-means clustering.
+
+**Role.** The available public materials support a cautious description of participation in data processing, resilience-proxy construction, trajectory comparison, and clustering analysis within a collaborative research setting.
+
+**Status.** Collaborative Research Project.
 :::
 
 ::: {.project-card}
 [Ongoing Research]{.status-badge}
 
-### Global Mobility and Collaboration Networks of Elite Biomedical Scientists
+### Talent Mobility and Biomedical Innovation Systems in China and the United States
 
-**Status.** Ongoing Research
+**Research Question.** How do top scientist training and career mobility patterns correspond to structural differences in biomedical innovation systems in China and the United States?
 
-**Research question.** How are mobility, collaboration, institutions, and cities connected in longitudinal scientific career data?
+**Data.** Biographical, publication, patent, institutional, city-level, and industry-related data on top biomedical scientists in China and the United States.
 
-**Data.** Longitudinal scientist-institution-city data under construction.
+**Methods.** Biographical analysis, multi-source data matching, social network analysis, and comparative research.
 
-**Methods.** Directed weighted mobility networks, ego-network indicators, collaboration networks, and WERGM-based specifications.
+**Role.** Based on public information, the work is described cautiously as data organization, biography matching, network construction, and comparative analysis support.
 
-**Output.** Ongoing research extension of earlier thesis and article work.
+**Status.** Ongoing Research.
+:::
+:::
 :::
 
+::: {.panel .panel-light}
+## Earlier Research
+
+::: {.project-list}
 ::: {.project-card}
-[Public Repository]{.status-badge}
+[Earlier Research]{.status-badge}
 
-### Author-Institution Linkage and Geocoding Feasibility Audit
+### Global Trade Network Evolution and Sectoral Differences under the COVID-19 Shock
 
-**Status.** Public Repository
+**Research Question.** What structural changes appeared in the global commodity trade network and in different product-type networks under the COVID-19 shock?
 
-**Research question.** How can author-institution-city linkage and geocoding workflows be audited before bibliographic data are used for research on scientific geography or mobility?
+**Data.** 2019-2021 United Nations commodity trade data covering 219 countries and regions.
 
-**Data.** Fully synthetic demonstration records.
+**Methods.** Directed weighted networks, social network analysis, product-type comparison, and spatial analysis.
 
-**Methods.** Schema validation, identifier linkage, institution normalization, city-country validation, QA checks, duplicate diagnostics, confidence diagnostics, and coverage reporting.
+**Role.** Public information supports a cautious description of data organization, trade network construction, network indicator calculation, and spatial interpretation.
 
-**Output.** [Public GitHub repository](https://github.com/Olivia-wr-research/author-institution-city-linkage).
+**Status.** Earlier Research.
+:::
+:::
 :::

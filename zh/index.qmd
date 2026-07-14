@@ -4,48 +4,111 @@ page-layout: full
 toc: false
 ---
 
-<a class="lang-switch hero-lang" href="/">EN</a>
+::: {.hero-name role="heading" aria-level="1"}
+王冉
+:::
 
-<div class="hero-name" role="heading" aria-level="1">王冉</div>
+::: {.hero-kicker}
+城市与区域经济学 · 科学家流动 · 区域创新
+:::
 
-<div class="hero-kicker">城市与区域经济学 · 科学家流动 · 区域创新</div>
+::: {.hero-summary}
+我是一名受经济地理学训练的实证研究者，关注科学家职业流动、知识空间联系、科研合作网络与城市创新条件，并使用科学家、机构、论文和城市等多源纵向数据开展研究。
+:::
 
-<div class="hero-summary">我是一名受经济地理学训练的实证研究者，关注科学家流动、制度平台与区域创新。我使用科学家、机构、论文与城市的纵向数据，并结合离散选择模型、网络分析和空间数据方法开展研究。</div>
+::: {.hero-actions}
+[查看研究](research.html){.btn .btn-hero-primary}
+[研究成果](publications.html){.btn .btn-hero-secondary}
+[代表性项目](projects.html){.btn .btn-hero-outline}
+[下载简历](../assets/cv/Ran_Wang_CV_Public.pdf){.btn .btn-hero-outline}
+:::
 
-<div class="hero-actions">
-<a class="btn btn-hero-primary" href="research.html">查看研究</a>
-<a class="btn btn-hero-secondary" href="../assets/cv/Ran_Wang_CV_Public.pdf">下载简历</a>
-<a class="btn btn-hero-outline" href="projects.html">研究项目</a>
-<a class="btn btn-hero-outline" href="https://github.com/Olivia-wr-research">GitHub</a>
-</div>
+::: {.photo-credit}
+Photo: John Rodenn Castillo / Unsplash
+:::
 
-<div class="photo-credit">Photo: John Rodenn Castillo / Unsplash</div>
+::: {.panel .panel-light}
+## 研究定位
 
-<section class="panel panel-light">
-<h2>研究关注</h2>
-<p>我的研究围绕科学家流动、制度平台与区域创新展开，使用科学家、机构、论文和城市层面的纵向关联数据。研究重点包括清晰界定任职、流动、合作与地点之间的关系，并将个体职业轨迹与城市和区域科研系统联系起来。</p>
-</section>
+我的研究将科学家的个体职业轨迹与城市和区域创新系统联系起来，重点关注顶尖科学家在机构与城市之间的流动、迁移前知识空间联系与流动目的地选择之间的关联，以及流动网络、合作网络与城市创新条件之间的关系。
+:::
 
-<section class="panel panel-muted">
-<h2>研究主题</h2>
-<p><strong>科学家流动与目的地选择。</strong> 我关注科学家如何在机构和城市之间流动，尤其是流动前可观察到的论文地点暴露与目的地选择之间的关系。当前研究将实际目的地与事件层面的候选城市进行比较。</p>
-<p><strong>区域创新与城市网络。</strong> 这一方向考察城市和区域在科研能力、制度平台以及流动和合作网络位置上的差异。研究强调可观察关联，而不超出研究设计作因果表述。</p>
-<p><strong>关联数据与网络方法。</strong> 我构建科学家-机构-城市数据，并区分任职、论文、合作关系和流动事件。这样的数据结构支持网络分析、空间比较和可复现的数据流程检查。</p>
-</section>
+::: {.panel .panel-muted}
+## 研究方向
 
-<section class="panel panel-dark">
-<h2>代表性工作</h2>
-<p><strong>Accepted Article.</strong> <em>Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective</em>.</p>
-<p><strong>Working Paper.</strong> <em>Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists</em>.</p>
-<p><strong>Public Repository.</strong> <em>Author-Institution Linkage and Geocoding Feasibility Audit</em>. <a class="text-link" href="https://github.com/Olivia-wr-research/author-institution-city-linkage">查看仓库</a></p>
-</section>
+::: {.theme-grid}
+::: {.theme-card}
+### 科学家流动与职业轨迹
 
-<section class="panel panel-light">
-<h2>快速链接</h2>
-<p>
-<a class="btn btn-primary" href="research.html">研究</a>
-<a class="btn btn-primary" href="projects.html">项目</a>
-<a class="btn btn-primary" href="cv.html">简历</a>
-<a class="btn btn-primary" href="contact.html">联系</a>
-</p>
-</section>
+基于科学家、机构、论文与城市的纵向数据，刻画职业流动、城际流动网络和个体职业轨迹。
+:::
+
+::: {.theme-card}
+### 城市与区域创新
+
+关注科研平台、合作网络、城市机会与创新条件之间的结构差异和关联关系，不将相关关系直接表述为因果关系。
+:::
+
+::: {.theme-card}
+### 关系数据与空间方法
+
+通过作者—机构—城市关联、地理编码检查、网络指标和事件层面候选目的地集合，支持可复现的实证研究。
+:::
+:::
+:::
+
+::: {.panel .panel-dark}
+## 代表性成果
+
+**已录用论文。** 城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素
+
+**工作论文。** 知识空间联系与全球顶尖科学家的流动网络研究
+
+::: {.original-title}
+Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists
+:::
+
+**公开研究产出。** 作者—机构—城市关联与地理编码可行性审计。[查看仓库](https://github.com/Olivia-wr-research/author-institution-city-linkage)
+:::
+
+::: {.panel .panel-light}
+## 代表性项目
+
+::: {.project-list}
+::: {.project-card}
+[核心研究计划]{.status-badge}
+
+### 全球顶尖科学家的流动网络、知识联系与城市创新
+
+围绕顶尖科学家职业流动、知识空间联系、科研合作网络和城市创新条件展开的核心研究计划。
+:::
+
+::: {.project-card}
+[合作研究项目]{.status-badge}
+
+### 日尺度夜间灯光与城市韧性轨迹研究
+
+使用高频夜间灯光数据刻画重大外部冲击下城市活动变化与恢复轨迹的合作研究项目。
+:::
+
+::: {.project-card}
+[在研项目]{.status-badge}
+
+### 人才流动与中美生物医药创新体系比较
+
+比较中美生物医药创新体系中顶尖科学家培养、职业流动、科研产出、专利活动、产业基础和知识转化特征的在研项目。
+:::
+:::
+:::
+
+::: {.panel .panel-muted}
+## 快速链接
+
+::: {.quick-links}
+[研究](research.html)
+[成果](publications.html)
+[项目](projects.html)
+[简历](cv.html)
+[联系](contact.html)
+:::
+:::
