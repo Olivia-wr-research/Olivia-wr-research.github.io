@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - assets/img/hero.jpg
+    - assets/img/hero-optimized.jpg
 
 website:
   title: "Ran Wang"

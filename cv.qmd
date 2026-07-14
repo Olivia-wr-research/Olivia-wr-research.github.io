@@ -2,44 +2,48 @@
 title: "CV"
 ---
 
-## Research profile
+::: {.content-shell}
+::: {.cv-intro}
+I am trained in human geography, with research interests in scientific mobility, regional innovation, urban networks, and empirical work using longitudinal relational data. This page provides a concise overview; the public PDF contains the full CV.
+:::
 
-I am a data-intensive empirical researcher trained in economic geography and regional innovation, with interests in high-skilled mobility, urban and regional development, and innovation networks. My work emphasizes longitudinal multi-source data construction, spatial and network analysis, applied empirical design, and measurement-validity audits.
+::: {.cv-download}
+::: {.cv-download-copy}
+## Curriculum Vitae
+
+Public CV in PDF format.
+:::
+
+[Download CV](assets/cv/Ran_Wang_CV_Public.pdf){.btn .btn-primary}
+:::
 
 ## Education
 
-**East China Normal University** — M.Sc. in Human Geography, 2023-2026  
-School of Geographic Sciences; economic geography and regional innovation. Thesis: *Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks*.
+::: {.summary-grid}
+::: {.summary-card}
+### East China Normal University
 
-**Northeast Normal University** — B.Sc. in Human Geography and Urban-Rural Planning, 2019-2023  
-Training in quantitative geography, GIS applications, urban geography, regional analysis, and planning.
+M.Sc. in Human Geography, 2023-2026. School of Geographic Sciences; economic geography and regional innovation.
+:::
 
-## Research interests
+::: {.summary-card}
+### Northeast Normal University
 
-Urban and regional economics; labor and high-skilled mobility; regional innovation; science of science; spatial and network data; applied empirical research.
+B.Sc. in Human Geography and Urban-Rural Planning, 2019-2023. Training in quantitative geography, GIS applications, urban geography, regional analysis, and planning.
+:::
+:::
 
-## Publications and research outputs
+## Research Outputs
 
-- **Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective** — accepted article. Final publication metadata will be added after confirmation.
+::: {.summary-list}
+- **Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective** — accepted article.
 - **Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks** — master's thesis.
 - **Author-Institution Linkage and Geocoding Feasibility Audit** — public code repository.
+:::
 
-## Selected research experience
+## Methods and Skills
 
-- Pre-move publication-location exposure and destination choice among elite biomedical scientists.
-- Global mobility and collaboration networks of elite biomedical scientists.
-- Author-institution linkage and geocoding feasibility audit.
-- Technological and brand innovation among leading global R&D firms.
-- Urban resilience from daily nighttime lights.
-
-## Methods and technical skills
-
-Python; R; Stata; GIS; social network analysis; ego-network analysis; conditional logit; ERGM/WERGM; entity resolution; longitudinal multi-source data construction; measurement-validity and coverage audits.
-
-## Honors
-
-Outstanding Student Award, ECNU; Academic Scholarship, ECNU; Third-Class Scholarship, NENU; Innovation and Entrepreneurship Scholarship, NENU; National Undergraduate Innovation Training Program: Excellent Completion / First Place, Project Lead.
-
-## CV PDF
-
-[Download my CV](assets/cv/Ran_Wang_CV_Public.pdf){.btn .btn-primary}
+::: {.summary-list}
+Python; R; Stata; GIS; social network analysis; ego-network analysis; conditional logit models; ERGM/WERGM; entity resolution; longitudinal multi-source data construction; coverage audits.
+:::
+:::

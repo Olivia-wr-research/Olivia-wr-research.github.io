@@ -2,7 +2,18 @@
 title: "Contact"
 ---
 
+::: {.contact-page}
+::: {.contact-card}
 ## Contact
 
-- Email: [wangran940@163.com](mailto:wangran940@163.com)
-- GitHub: [https://github.com/Olivia-wr-research](https://github.com/Olivia-wr-research)
+::: {.contact-row}
+**Email**  
+[wangran940@163.com](mailto:wangran940@163.com)
+:::
+
+::: {.contact-row}
+**GitHub**  
+[https://github.com/Olivia-wr-research](https://github.com/Olivia-wr-research)
+:::
+:::
+:::
