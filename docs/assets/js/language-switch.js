@@ -3,6 +3,6 @@
   links.forEach(function (link) {
     var label = (link.textContent || '').trim();
     if (label === '中文') link.setAttribute('href', '/zh/');
-    if (label === 'EN') link.setAttribute('href', '/');
+    if (label === 'English') link.setAttribute('href', '/index.html');
   });
 }());

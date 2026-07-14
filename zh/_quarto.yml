@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: ../docs/zh
+  post-render:
+    - python3 ../assets/scripts/fix_bilingual_nav.py zh
   render:
     - index.qmd
     - research.qmd
@@ -39,8 +41,8 @@ website:
     right:
       - text: "GitHub"
         href: "https://github.com/Olivia-wr-research"
-      - text: "EN"
-        href: "/"
+      - text: "English"
+        href: "/index.html"
   page-footer:
     left: "© 2026 王冉"
     right: "Built with Quarto"

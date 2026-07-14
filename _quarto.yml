@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  post-render:
+    - python3 assets/scripts/fix_bilingual_nav.py english
   render:
     - index.qmd
     - research.qmd
