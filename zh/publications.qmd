@@ -22,7 +22,7 @@ Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility
 ## 工作论文
 
 ::: {.project-card}
-[工作论文]{.status-badge}
+[工作论文 · 修改中]{.status-badge}
 
 ### 知识空间联系与全球顶尖科学家的流动网络研究
 

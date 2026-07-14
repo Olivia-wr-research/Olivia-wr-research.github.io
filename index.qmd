@@ -9,7 +9,7 @@ Ran Wang
 :::
 
 ::: {.hero-kicker}
-Urban and Regional Economics · Scientific Mobility · Regional Innovation
+Urban & Regional Economics · Scientific Mobility · Regional Innovation
 :::
 
 ::: {.hero-summary}
@@ -62,7 +62,7 @@ Author-institution-city linkage, geocoding checks, network indicators, and event
 
 **Accepted Article.** *Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective*.
 
-**Working Paper.** *Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists*.
+**Working Paper · In Revision.** *Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists*.
 
 **Public Research Output.** *Author-Institution Linkage and Geocoding Feasibility Audit*. [View repository](https://github.com/Olivia-wr-research/author-institution-city-linkage)
 :::

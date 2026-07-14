@@ -14,7 +14,7 @@ title: "简历"
 ## 研究成果
 
 - **城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素** — 已录用论文。
-- **知识空间联系与全球顶尖科学家的流动网络研究** — 工作论文。
+- **知识空间联系与全球顶尖科学家的流动网络研究** — 工作论文，修改中。
 - **全球生物医药顶尖科学家城际流动网络——基于全域与自我网络双重视角** — 硕士学位论文。
 - **作者—机构—城市关联与地理编码可行性审计** — 公开研究产出。
 :::
@@ -32,7 +32,7 @@ title: "简历"
 ::: {.project-card}
 ### 日尺度夜间灯光与城市韧性轨迹研究
 
-使用 VIIRS-DNB 日尺度夜间灯光、Fisher Information、动态时间规整和聚类方法刻画城市韧性轨迹的合作研究。
+使用 VIIRS-DNB 日尺度夜间灯光、Fisher Information、动态时间规整和 K-means 聚类方法刻画城市韧性轨迹的合作研究。
 :::
 
 ::: {.project-card}
@@ -59,12 +59,6 @@ title: "简历"
 ## 方法与技术能力
 
 Python；R；Stata；GIS；ArcGIS；NetworkX；Gephi；Ucinet；Conditional Logit；ERGM/WERGM；Social Network Analysis；Ego-network Analysis；Entity Resolution；Longitudinal Multi-source Data Construction。
-:::
-
-::: {.panel .panel-muted}
-## 代表性荣誉
-
-本次更新无法从可用公开源文件中独立核实具体荣誉条目，因此网页摘要不列出未经确认的荣誉细节。详细荣誉信息以可下载公开简历为准。
 :::
 
 ::: {.panel .panel-light}

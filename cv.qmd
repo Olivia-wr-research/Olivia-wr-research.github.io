@@ -14,8 +14,8 @@ title: "CV"
 ## Research Outputs
 
 - **Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective** — accepted article.
-- **Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists** — working paper.
-- **Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks** — master's thesis.
+- **Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists** — working paper in revision.
+- **Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks** — master’s thesis.
 - **Author-Institution Linkage and Geocoding Feasibility Audit** — public research repository.
 :::
 
@@ -59,12 +59,6 @@ Public workflow audit for linkage, institution normalization, geocoding feasibil
 ## Methods and Technical Skills
 
 Python; R; Stata; GIS; ArcGIS; NetworkX; Gephi; Ucinet; Conditional Logit; ERGM/WERGM; Social Network Analysis; Ego-network Analysis; Entity Resolution; Longitudinal Multi-source Data Construction.
-:::
-
-::: {.panel .panel-muted}
-## Selected Honors
-
-This web summary does not list honor details that could not be independently verified from the available public source files during this update. The downloadable public CV remains the reference for any detailed honor entries.
 :::
 
 ::: {.panel .panel-light}

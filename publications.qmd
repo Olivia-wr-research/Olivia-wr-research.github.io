@@ -22,7 +22,7 @@ This accepted article examines the spatial structure and related factors of top 
 ## Working Paper
 
 ::: {.project-card}
-[Working Paper]{.status-badge}
+[Working Paper · In Revision]{.status-badge}
 
 ### Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists
 
@@ -35,10 +35,10 @@ This working paper studies how pre-move publication-location exposure is associa
 :::
 
 ::: {.panel .panel-light}
-## Master's Thesis
+## Master’s Thesis
 
 ::: {.project-card}
-[Master's Thesis]{.status-badge}
+[Master’s Thesis]{.status-badge}
 
 ### Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks
 
