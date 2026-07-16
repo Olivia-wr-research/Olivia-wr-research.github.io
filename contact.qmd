@@ -5,6 +5,8 @@ title: "Contact"
 ::: {.panel .panel-dark .contact-panel}
 ## Contact
 
+For research collaboration or academic inquiries, please contact me by email.
+
 **Email**
 [wangran940@163.com](mailto:wangran940@163.com)
 

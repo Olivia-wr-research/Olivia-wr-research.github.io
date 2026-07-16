@@ -5,6 +5,8 @@ title: "联系"
 ::: {.panel .panel-dark .contact-panel}
 ## 联系
 
+如需就研究合作或学术交流与我联系，请发送邮件。
+
 **邮箱**
 [wangran940@163.com](mailto:wangran940@163.com)
 

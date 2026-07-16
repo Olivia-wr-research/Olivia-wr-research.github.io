@@ -21,7 +21,7 @@ lang: zh-CN
 website:
   title: "王冉"
   site-url: "https://Olivia-wr-research.github.io/zh/"
-  description: "王冉的个人学术网站，展示城市与区域经济学、科学家流动、科学网络和区域创新研究。"
+  description: "王冉的个人学术网站，展示经济地理学、科学家流动、区域创新与知识生产空间组织研究。"
   search: false
   navbar:
     title: "王冉"
@@ -41,8 +41,8 @@ website:
     right:
       - text: "GitHub"
         href: "https://github.com/Olivia-wr-research"
-      - text: "English"
-        href: "/index.html"
+      - text: "EN"
+        href: "/"
   page-footer:
     left: "© 2026 王冉"
     right: "Built with Quarto"
@@ -54,5 +54,3 @@ format:
     toc: false
     smooth-scroll: true
     link-external-newwindow: true
-    include-after-body:
-      - ../assets/js/language-switch.html

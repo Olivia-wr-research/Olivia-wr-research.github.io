@@ -3,76 +3,37 @@ title: "Research"
 ---
 
 ::: {.panel .panel-light}
-## Research Overview
+## Research Agenda
 
-My research is grounded in economic geography, urban and regional economics, and science of science. The core question is how scientific careers, knowledge connections, institutions, and cities are organized across space, and how these relations are associated with urban and regional innovation.
-
-The main empirical setting is elite biomedical scientists' mobility across institutions and cities. Related projects on urban resilience, China-U.S. biomedical innovation systems, and global trade networks extend the same training in relational data, longitudinal comparison, and spatial network analysis.
+My research asks how scientific mobility, knowledge production, and regional innovation are organized across space. The empirical focus is elite biomedical scientists, but the broader agenda is economic geography: how people, institutions, publications, and cities form spatial systems of scientific work.
 :::
 
 ::: {.panel .panel-muted}
-## Core Research Directions
+## Scientific Mobility and Destination Choice
 
-::: {.research-grid}
-::: {.research-card}
-### Scientific Mobility and Career Trajectories
+How do particular cities become plausible destinations before an observed move?
 
-I examine how scientists move across institutions and cities, how individual career histories can be represented as longitudinal records, and how destination choice can be studied with event-level candidate sets.
-:::
-
-::: {.research-card}
-### Urban and Regional Innovation
-
-This line connects scientist mobility, institutional platforms, collaboration networks, and city-level opportunities to observed differences in urban and regional innovation systems.
-:::
-
-::: {.research-card}
-### Scientific Knowledge Networks and Relational Data
-
-I build and audit linked scientist-institution-publication-city data, keeping affiliations, publication locations, collaboration ties, and mobility events analytically distinct.
-:::
-
-::: {.research-card}
-### Urban Resilience and High-Frequency Spatial Data
-
-Work on daily nighttime lights extends the methodological toolkit to high-frequency spatial data, time-series trajectories, and city-cluster comparison.
-:::
-:::
+I study mobility as a choice among candidate cities, not only as an aggregate flow between places. The destination-choice working paper constructs event-specific candidate sets and measures origin-anchored pre-move publication-location exposure. The interpretation is deliberately limited: among observed mobility events, scientists are more likely to select cities that were already visible in their pre-move publication-location environments, conditional on destination opportunity measures and geographic distance.
 :::
 
 ::: {.panel .panel-light}
-## Data and Methods
+## Knowledge Networks and Regional Innovation
 
-::: {.method-list}
-- Longitudinal multi-source data construction
-- Scientist-institution-city linkage and entity resolution
-- Social network analysis and ego-network analysis
-- Conditional Logit models with event-level candidate destinations
-- ERGM/WERGM specifications for network analysis
-- GIS, ArcGIS, Python, R, Stata, NetworkX, Gephi, and Ucinet
+How do scientists' career trajectories connect individual knowledge production with city and regional innovation systems?
+
+This line of work builds on the master's thesis, the accepted article, and ongoing research on elite biomedical scientists. It links career histories, institutional appointments, publication locations, collaboration records, mobility events, and city attributes. The goal is to describe how intercity mobility networks, research platforms, and regional opportunity structures are related, while keeping the interpretation within the limits of the research design.
 :::
+
+::: {.panel .panel-muted}
+## Longitudinal Relational Data and Spatial Measurement
+
+What kinds of data infrastructure are needed to study scientific careers across people, institutions, publications, and cities?
+
+A large part of my research contribution is measurement work: entity resolution, author-institution-city linkage, candidate-destination construction, city identity checks, and reproducible data-quality audits. The public Scopus Research Data Toolkit reflects this part of the agenda in a safe form, using synthetic fixtures and offline mock transport rather than nonpublic research records.
 :::
 
 ::: {.panel .panel-dark}
-## Current Research Agenda
+## Methods in Use
 
-::: {.agenda-list}
-::: {.agenda-item}
-### Scientific Mobility, Knowledge Networks, and Urban Innovation
-
-This flagship programme studies top scientists' career mobility across institutions and cities, and the relations among knowledge-space connections, collaboration networks, research platforms, and urban innovation conditions.
-:::
-
-::: {.agenda-item}
-### Destination Choice among Elite Biomedical Scientists
-
-The working paper focuses on whether pre-move publication-location exposure is associated with subsequent destination choice among candidate cities in elite biomedical scientist mobility events.
-:::
-
-::: {.agenda-item}
-### Comparative and Methodological Extensions
-
-China-U.S. biomedical innovation comparison, daily nighttime-light resilience analysis, and earlier global trade network research broaden the empirical domains while retaining the focus on spatial organization, networks, and longitudinal evidence.
-:::
-:::
+The main methods include longitudinal multi-source data construction, social and spatial network analysis, ego-network analysis, conditional logit models for event-level destination choice, WERGM/ERGM specifications for network projects, GIS-based spatial measurement, and reproducible Python/R workflows.
 :::
