@@ -26,10 +26,10 @@ def main() -> int:
 
     if sys.argv[1] == "english":
         for path in (ROOT / "docs").glob("*.html"):
-            replace_language_link(path, "中文", "/zh/")
+            replace_language_link(path, "中文", "https://olivia-wr-research.github.io/zh/")
     else:
         for path in (ROOT / "docs" / "zh").glob("*.html"):
-            replace_language_link(path, "English", "/index.html")
+            replace_language_link(path, "EN", "https://olivia-wr-research.github.io/")
     return 0
 
 
