@@ -14,23 +14,22 @@ title: "Publications"
 城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素
 :::
 
-This accepted article examines the spatial structure and related factors of top global biomedical scientists' mobility from an urban network perspective. The page records its accepted status without adding unconfirmed journal metadata, page ranges, or formal publication-year information.
+**Authors:** Ran Wang and Jinliao He.
+**Status:** Accepted, *World Regional Studies*.
+
+This article studies the spatial structure of elite biomedical scientists' intercity mobility from an urban network perspective. It constructs career-history and intercity mobility data and uses social network analysis and a Heckman two-stage model to examine mobility-tie formation and mobility intensity across career stages.
 :::
 :::
 
 ::: {.panel .panel-muted}
-## Working Paper
+## Working Papers
 
 ::: {.project-card}
-[Working Paper · In Revision]{.status-badge}
+[Working Paper]{.status-badge}
 
 ### Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists
 
-::: {.original-title}
-知识空间联系与全球顶尖科学家的流动网络研究
-:::
-
-This working paper studies how pre-move publication-location exposure is associated with later city mobility and destination choice among elite biomedical scientists, using event-level candidate destination sets and Conditional Logit models.
+This paper reframes observed intercity moves as event-level destination choices. It constructs event-specific candidate destination sets and origin-anchored pre-move publication-location exposure, then estimates conditional logit models with pre-move destination opportunity controls and geographic distance. The result is interpreted as destination visibility, not as proof that exposure produces a move or as a direct collaboration mechanism.
 :::
 :::
 
@@ -46,22 +45,18 @@ This working paper studies how pre-move publication-location exposure is associa
 全球生物医药顶尖科学家城际流动网络——基于全域与自我网络双重视角
 :::
 
-The master's thesis analyzes the intercity mobility network of top global biomedical scientists from whole-network and ego-network perspectives, linking individual career trajectories with city-level network structure.
+The thesis analyzes intercity mobility among top global biomedical scientists through whole-network and ego-network perspectives. It integrates a 1970-2023 longitudinal database of 500 scientists with a 40-scientist ego-network subsample, connecting city-level mobility structure with scientist-level career and collaboration records.
 :::
 :::
 
 ::: {.panel .panel-dark}
-## Public Research Output
+## Research Software
 
 ::: {.project-card}
-[Public Research Output]{.status-badge}
+[Research Software · v0.2.0]{.status-badge}
 
-### Author-Institution Linkage and Geocoding Feasibility Audit
+### Scopus Research Data Toolkit
 
-::: {.original-title}
-作者—机构—城市关联与地理编码可行性审计
-:::
-
-A public repository demonstrating workflow checks for author-institution-city linkage and geocoding feasibility using synthetic records, schema validation, normalization checks, and coverage reporting. [View repository](https://github.com/Olivia-wr-research/author-institution-city-linkage)
+A modular Python toolkit for reproducible Scopus-oriented research workflows. Using fully synthetic fixtures and offline mock transport, it demonstrates author-publication and author-affiliation linkage, city-year publication controls, cognitive-proximity measures, source comparison, and data-quality audits. The toolkit is MIT licensed and is not an official Scopus or Elsevier tool. [View repository](https://github.com/Olivia-wr-research/author-institution-city-linkage)
 :::
 :::

@@ -21,7 +21,7 @@ lang: en
 website:
   title: "Ran Wang"
   site-url: "https://Olivia-wr-research.github.io"
-  description: "Ran Wang's academic website on urban and regional economics, scientific mobility, scientific networks, and regional innovation."
+  description: "Ran Wang's academic website on economic geography, scientific mobility, regional innovation, and spatial organization of knowledge production."
   search: false
   navbar:
     title: "Ran Wang"
@@ -54,5 +54,3 @@ format:
     toc: false
     smooth-scroll: true
     link-external-newwindow: false
-    include-after-body:
-      - assets/js/language-switch.html

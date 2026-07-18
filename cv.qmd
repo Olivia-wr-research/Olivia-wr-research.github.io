@@ -3,70 +3,28 @@ title: "CV"
 ---
 
 ::: {.panel .panel-light}
-## Education
+## Academic Profile
 
-**East China Normal University.** M.Sc. in Human Geography, 2023-2026. School of Geographic Sciences; research training in economic geography, regional innovation, scientific mobility, and urban networks.
-
-**Northeast Normal University.** B.Sc. in Human Geography and Urban-Rural Planning, 2019-2023. Training in quantitative geography, GIS applications, urban geography, regional analysis, and planning.
+Ran Wang is a master's candidate in Human Geography at East China Normal University, with research training in economic geography, regional innovation, scientific mobility, urban networks, and spatial data analysis. Her work uses longitudinal relational data, network analysis, destination-choice models, and reproducible Python/R workflows to study scientific mobility and the spatial organization of knowledge production.
 :::
 
 ::: {.panel .panel-muted}
-## Research Outputs
+## Research Areas and Methods
 
-- **Spatial Structure and Determinants of Top Global Biomedical Scientists' Mobility from an Urban Network Perspective** — accepted article.
-- **Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists** — working paper in revision.
-- **Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks** — master’s thesis.
-- **Author-Institution Linkage and Geocoding Feasibility Audit** — public research repository.
-:::
-
-::: {.panel .panel-light}
-## Selected Research Experience
-
-::: {.project-list}
-::: {.project-card}
-### Scientific Mobility, Knowledge Networks, and Urban Innovation
-
-Flagship research programme linking elite scientist mobility, knowledge-space connections, collaboration networks, and urban innovation conditions.
-:::
-
-::: {.project-card}
-### Daily Nighttime Lights and Urban Resilience Trajectories
-
-Collaborative research using VIIRS-DNB daily nighttime lights, Fisher Information, dynamic time warping, and clustering to describe urban resilience trajectories.
-:::
-
-::: {.project-card}
-### Talent Mobility and Biomedical Innovation Systems in China and the United States
-
-Ongoing comparative research on top scientist training, career mobility, research output, patents, industrial foundations, and knowledge translation.
-:::
-
-::: {.project-card}
-### Global Trade Network Evolution and Sectoral Differences under the COVID-19 Shock
-
-Earlier research using directed weighted trade networks and spatial analysis to compare structural changes in global commodity trade.
-:::
-
-::: {.project-card}
-### Author-Institution Linkage and Geocoding Feasibility Audit
-
-Public workflow audit for linkage, institution normalization, geocoding feasibility, and coverage diagnostics using synthetic records.
-:::
-:::
+Economic geography; scientific mobility; regional innovation; science of science; intercity mobility networks; knowledge production; longitudinal data construction; entity resolution; conditional logit; social and spatial network analysis; WERGM/ERGM; GIS; Python; R; Stata.
 :::
 
 ::: {.panel .panel-dark}
-## Methods and Technical Skills
+## Public CV
 
-Python; R; Stata; GIS; ArcGIS; NetworkX; Gephi; Ucinet; Conditional Logit; ERGM/WERGM; Social Network Analysis; Ego-network Analysis; Entity Resolution; Longitudinal Multi-source Data Construction.
+::: {.cv-download}
+[Download Public CV](assets/cv/Ran_Wang_CV_Public.pdf){.btn .btn-primary}
+:::
 :::
 
 ::: {.panel .panel-light}
-## Download Full CV
+## Links
 
-::: {.cv-download}
-The full public CV is available as a PDF.
-
-[Download Full CV](assets/cv/Ran_Wang_CV_Public.pdf){.btn .btn-primary}
-:::
+Email: [wangran940@163.com](mailto:wangran940@163.com)
+GitHub: [https://github.com/Olivia-wr-research](https://github.com/Olivia-wr-research)
 :::

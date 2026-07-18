@@ -4,77 +4,98 @@
     "href": "contact.html",
     "title": "Contact",
     "section": "",
-    "text": "Email wangran940@163.com\nGitHub https://github.com/Olivia-wr-research"
+    "text": "For research collaboration or academic inquiries, please contact me by email.\nEmail wangran940@163.com\nGitHub https://github.com/Olivia-wr-research"
   },
   {
     "objectID": "contact.html#contact",
     "href": "contact.html#contact",
     "title": "Contact",
     "section": "",
-    "text": "Email wangran940@163.com\nGitHub https://github.com/Olivia-wr-research"
+    "text": "For research collaboration or academic inquiries, please contact me by email.\nEmail wangran940@163.com\nGitHub https://github.com/Olivia-wr-research"
   },
   {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Flagship Research Programme\n\n\nThis flagship research programme examines elite scientists’ career mobility across institutions and cities, and the relations among knowledge connections, collaboration networks, research platforms, and urban innovation conditions. It links individual career trajectories with urban-scale network structures using longitudinal data on biographies, publications, institutions, and cities.\n\n\nAccepted Article\n\n\n\n\n\nMaster’s Thesis\n\n\n\n\n\nWorking Paper · In Revision\n\n\n\n\n\nOngoing Research"
+    "text": "Working Paper\n\n\nResearch Question: Are subsequent mobility destinations more likely to be cities that were already visible in scientists’ origin-anchored pre-move publication-location environments?\nData: Mobility event × candidate city data for observed intercity moves by elite biomedical scientists.\nMethods: Event-specific candidate destination sets, origin-anchored pre-move publication-location exposure, conditional logit, pre-move destination opportunity controls, geographic distance, timing robustness, and city-identity sensitivity checks.\nMain Finding: Among observed mobility events, elite biomedical scientists are more likely to select cities that were already visible in their origin-anchored pre-move publication-location environments. The model does not show that exposure produces a move, and it treats publication-location exposure as destination visibility rather than interpersonal collaboration."
   },
   {
-    "objectID": "projects.html#featured-research-programme",
-    "href": "projects.html#featured-research-programme",
+    "objectID": "projects.html#destination-choice-among-elite-biomedical-scientists",
+    "href": "projects.html#destination-choice-among-elite-biomedical-scientists",
     "title": "Projects",
     "section": "",
-    "text": "Flagship Research Programme\n\n\nThis flagship research programme examines elite scientists’ career mobility across institutions and cities, and the relations among knowledge connections, collaboration networks, research platforms, and urban innovation conditions. It links individual career trajectories with urban-scale network structures using longitudinal data on biographies, publications, institutions, and cities.\n\n\nAccepted Article\n\n\n\n\n\nMaster’s Thesis\n\n\n\n\n\nWorking Paper · In Revision\n\n\n\n\n\nOngoing Research"
+    "text": "Working Paper\n\n\nResearch Question: Are subsequent mobility destinations more likely to be cities that were already visible in scientists’ origin-anchored pre-move publication-location environments?\nData: Mobility event × candidate city data for observed intercity moves by elite biomedical scientists.\nMethods: Event-specific candidate destination sets, origin-anchored pre-move publication-location exposure, conditional logit, pre-move destination opportunity controls, geographic distance, timing robustness, and city-identity sensitivity checks.\nMain Finding: Among observed mobility events, elite biomedical scientists are more likely to select cities that were already visible in their origin-anchored pre-move publication-location environments. The model does not show that exposure produces a move, and it treats publication-location exposure as destination visibility rather than interpersonal collaboration."
   },
   {
-    "objectID": "projects.html#selected-research-projects",
-    "href": "projects.html#selected-research-projects",
+    "objectID": "projects.html#global-mobility-and-collaboration-networks-of-elite-biomedical-scientists",
+    "href": "projects.html#global-mobility-and-collaboration-networks-of-elite-biomedical-scientists",
     "title": "Projects",
-    "section": "Selected Research Projects",
-    "text": "Selected Research Projects\n\n\nCollaborative Research Project\n\nDaily Nighttime Lights and Urban Resilience Trajectories\nResearch Question: How can high-frequency nighttime light data be used to identify changes and recovery trajectories in urban activity after short-term external shocks?\nData: VIIRS-DNB daily nighttime light data for 48 cities in the Beijing-Tianjin-Hebei, Yangtze River Delta, and Pearl River Delta urban agglomerations.\nMethods: Nighttime-light remote sensing processing, Fisher Information, dynamic time warping, and K-means clustering.\nRole: The available public materials support a cautious description of participation in data processing, resilience-proxy construction, trajectory comparison, and clustering analysis within a collaborative research setting.\n\n\n\nOngoing Research\n\nTalent Mobility and Biomedical Innovation Systems in China and the United States\nResearch Question: How do top scientist training and career mobility patterns correspond to structural differences in biomedical innovation systems in China and the United States?\nData: Biographical, publication, patent, institutional, city-level, and industry-related data on top biomedical scientists in China and the United States.\nMethods: Biographical analysis, multi-source data matching, social network analysis, and comparative research.\nRole: Based on public information, the work is described cautiously as data organization, biography matching, network construction, and comparative analysis support."
+    "section": "Global Mobility and Collaboration Networks of Elite Biomedical Scientists",
+    "text": "Global Mobility and Collaboration Networks of Elite Biomedical Scientists\n\nOngoing Research Program\n\nGlobal Mobility and Collaboration Networks of Elite Biomedical Scientists\nResearch Question: How do elite biomedical scientists’ career moves, collaboration records, and city-level opportunity structures form spatial networks of scientific work?\nData: A 1970-2023 longitudinal database of 500 elite biomedical scientists, integrating career histories, institutional appointments, publication locations, collaboration records, mobility events, and city attributes.\nMethods: Scientist-institution-city linkage, directed weighted mobility networks, centrality, core-periphery structure, K-core, WERGM/ERGM specifications, ego-network measures, and Python/R workflows for temporal auditing and documentation.\nContribution: This program provides the data and measurement foundation for the accepted article, the master’s thesis, and newer destination-choice work while keeping mobility events, publication locations, and collaboration records analytically separate."
   },
   {
-    "objectID": "projects.html#earlier-research",
-    "href": "projects.html#earlier-research",
+    "objectID": "projects.html#intercity-mobility-networks-and-career-stages",
+    "href": "projects.html#intercity-mobility-networks-and-career-stages",
     "title": "Projects",
-    "section": "Earlier Research",
-    "text": "Earlier Research\n\n\nEarlier Research\n\nGlobal Trade Network Evolution and Sectoral Differences under the COVID-19 Shock\nResearch Question: What structural changes appeared in the global commodity trade network and in different product-type networks under the COVID-19 shock?\nData: 2019-2021 United Nations commodity trade data covering 219 countries and regions.\nMethods: Directed weighted networks, social network analysis, product-type comparison, and spatial analysis.\nRole: Public information supports a cautious description of data organization, trade network construction, network indicator calculation, and spatial interpretation."
+    "section": "Intercity Mobility Networks and Career Stages",
+    "text": "Intercity Mobility Networks and Career Stages\n\nAccepted Article and Thesis-Related Research\n\nSpatial Structure of Top Biomedical Scientists’ Mobility\nResearch Question: What spatial structure characterizes global biomedical scientists’ intercity mobility, and how do associated factors differ across career stages?\nData: Career-history and intercity mobility records for top biomedical scientists, with thesis work extending to whole-network and ego-network perspectives.\nMethods: Social network analysis, GIS spatial analysis, Heckman two-stage modeling for mobility-tie formation and intensity, and ego-network brokerage/diversity measures.\nContribution: The accepted article emphasizes urban network structure and mobility determinants. The master’s thesis extends the analysis by linking the whole intercity network with selected scientist-level ego networks."
+  },
+  {
+    "objectID": "projects.html#scopus-research-data-toolkit",
+    "href": "projects.html#scopus-research-data-toolkit",
+    "title": "Projects",
+    "section": "Scopus Research Data Toolkit",
+    "text": "Scopus Research Data Toolkit\n\nResearch Software · Python · v0.2.0\n\nScopus Research Data Toolkit\nResearch Question: How can Scopus-oriented bibliographic workflows be made reproducible and public-safe when nonpublic records and API responses cannot be released?\nData: Fully synthetic Scopus-style and OpenAlex-style fixtures, deterministic reference outputs, and offline mock transport.\nMethods: Author-publication linkage, author-affiliation parsing, city-year publication controls, cognitive-proximity measures, source comparison, schema validation, manifests, and automated tests.\nContribution: The toolkit documents reusable measurement boundaries for publication and affiliation data. It is MIT licensed, includes 39 test functions in the current test suite, and defers live Scopus adapter behavior in v0.2.0. View repository"
+  },
+  {
+    "objectID": "projects.html#selected-earlier-research",
+    "href": "projects.html#selected-earlier-research",
+    "title": "Projects",
+    "section": "Selected Earlier Research",
+    "text": "Selected Earlier Research\n\n\nEarlier Research\n\nUrban Resilience Measurement from Daily Nighttime Lights\nUsing VIIRS-DNB daily nighttime-light data for 48 cities in the Beijing-Tianjin-Hebei, Yangtze River Delta, and Pearl River Delta urban agglomerations, this project constructed high-frequency radiance time series and a Fisher Information Light indicator. Dynamic time warping and K-Means clustering were used to compare short-term urban activity and recovery trajectories.\n\n\n\nOngoing Comparative Research\n\nTalent Mobility and Biomedical Innovation Systems in China and the United States\nThis project compares China and the United States through top biomedical scientists’ training, career mobility, research output, patent-related information, collaboration networks, and university-industry-research linkages. Current work centers on data organization, biography matching, network construction, and comparative analysis.\n\n\n\nEarlier Research\n\nGlobal Trade Network Evolution during COVID-19\nThis undergraduate research built directed weighted global trade networks from 2019-2021 UN Comtrade data covering 219 countries and regions. It compared centrality, core structure, product-type differences, and spatial organization before and during the COVID-19 period."
   },
   {
     "objectID": "research.html",
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "My research is grounded in economic geography, urban and regional economics, and science of science. The core question is how scientific careers, knowledge connections, institutions, and cities are organized across space, and how these relations are associated with urban and regional innovation.\nThe main empirical setting is elite biomedical scientists’ mobility across institutions and cities. Related projects on urban resilience, China-U.S. biomedical innovation systems, and global trade networks extend the same training in relational data, longitudinal comparison, and spatial network analysis."
+    "text": "My research asks how scientific mobility, knowledge production, and regional innovation are organized across space. The empirical focus is elite biomedical scientists, but the broader agenda is economic geography: how people, institutions, publications, and cities form spatial systems of scientific work."
   },
   {
-    "objectID": "research.html#research-overview",
-    "href": "research.html#research-overview",
+    "objectID": "research.html#research-agenda",
+    "href": "research.html#research-agenda",
     "title": "Research",
     "section": "",
-    "text": "My research is grounded in economic geography, urban and regional economics, and science of science. The core question is how scientific careers, knowledge connections, institutions, and cities are organized across space, and how these relations are associated with urban and regional innovation.\nThe main empirical setting is elite biomedical scientists’ mobility across institutions and cities. Related projects on urban resilience, China-U.S. biomedical innovation systems, and global trade networks extend the same training in relational data, longitudinal comparison, and spatial network analysis."
+    "text": "My research asks how scientific mobility, knowledge production, and regional innovation are organized across space. The empirical focus is elite biomedical scientists, but the broader agenda is economic geography: how people, institutions, publications, and cities form spatial systems of scientific work."
   },
   {
-    "objectID": "research.html#core-research-directions",
-    "href": "research.html#core-research-directions",
+    "objectID": "research.html#scientific-mobility-and-destination-choice",
+    "href": "research.html#scientific-mobility-and-destination-choice",
     "title": "Research",
-    "section": "Core Research Directions",
-    "text": "Core Research Directions\n\n\nScientific Mobility and Career Trajectories\nI examine how scientists move across institutions and cities, how individual career histories can be represented as longitudinal records, and how destination choice can be studied with event-level candidate sets.\n\n\nUrban and Regional Innovation\nThis line connects scientist mobility, institutional platforms, collaboration networks, and city-level opportunities to observed differences in urban and regional innovation systems.\n\n\nScientific Knowledge Networks and Relational Data\nI build and audit linked scientist-institution-publication-city data, keeping affiliations, publication locations, collaboration ties, and mobility events analytically distinct.\n\n\nUrban Resilience and High-Frequency Spatial Data\nWork on daily nighttime lights extends the methodological toolkit to high-frequency spatial data, time-series trajectories, and city-cluster comparison."
+    "section": "Scientific Mobility and Destination Choice",
+    "text": "Scientific Mobility and Destination Choice\nHow do particular cities become plausible destinations before an observed move?\nI study mobility as a choice among candidate cities, not only as an aggregate flow between places. The destination-choice working paper constructs event-specific candidate sets and measures origin-anchored pre-move publication-location exposure. The interpretation is deliberately limited: among observed mobility events, scientists are more likely to select cities that were already visible in their pre-move publication-location environments, conditional on destination opportunity measures and geographic distance."
   },
   {
-    "objectID": "research.html#data-and-methods",
-    "href": "research.html#data-and-methods",
+    "objectID": "research.html#knowledge-networks-and-regional-innovation",
+    "href": "research.html#knowledge-networks-and-regional-innovation",
     "title": "Research",
-    "section": "Data and Methods",
-    "text": "Data and Methods\n\n\nLongitudinal multi-source data construction\nScientist-institution-city linkage and entity resolution\nSocial network analysis and ego-network analysis\nConditional Logit models with event-level candidate destinations\nERGM/WERGM specifications for network analysis\nGIS, ArcGIS, Python, R, Stata, NetworkX, Gephi, and Ucinet"
+    "section": "Knowledge Networks and Regional Innovation",
+    "text": "Knowledge Networks and Regional Innovation\nHow do scientists’ career trajectories connect individual knowledge production with city and regional innovation systems?\nThis line of work builds on the master’s thesis, the accepted article, and ongoing research on elite biomedical scientists. It links career histories, institutional appointments, publication locations, collaboration records, mobility events, and city attributes. The goal is to describe how intercity mobility networks, research platforms, and regional opportunity structures are related, while keeping the interpretation within the limits of the research design."
   },
   {
-    "objectID": "research.html#current-research-agenda",
-    "href": "research.html#current-research-agenda",
+    "objectID": "research.html#longitudinal-relational-data-and-spatial-measurement",
+    "href": "research.html#longitudinal-relational-data-and-spatial-measurement",
     "title": "Research",
-    "section": "Current Research Agenda",
-    "text": "Current Research Agenda\n\n\nScientific Mobility, Knowledge Networks, and Urban Innovation\nThis flagship programme studies top scientists’ career mobility across institutions and cities, and the relations among knowledge-space connections, collaboration networks, research platforms, and urban innovation conditions.\n\n\nDestination Choice among Elite Biomedical Scientists\nThe working paper focuses on whether pre-move publication-location exposure is associated with subsequent destination choice among candidate cities in elite biomedical scientist mobility events.\n\n\nComparative and Methodological Extensions\nChina-U.S. biomedical innovation comparison, daily nighttime-light resilience analysis, and earlier global trade network research broaden the empirical domains while retaining the focus on spatial organization, networks, and longitudinal evidence."
+    "section": "Longitudinal Relational Data and Spatial Measurement",
+    "text": "Longitudinal Relational Data and Spatial Measurement\nWhat kinds of data infrastructure are needed to study scientific careers across people, institutions, publications, and cities?\nA large part of my research contribution is measurement work: entity resolution, author-institution-city linkage, candidate-destination construction, city identity checks, and reproducible data-quality audits. The public Scopus Research Data Toolkit reflects this part of the agenda in a safe form, using synthetic fixtures and offline mock transport rather than nonpublic research records."
+  },
+  {
+    "objectID": "research.html#methods-in-use",
+    "href": "research.html#methods-in-use",
+    "title": "Research",
+    "section": "Methods in Use",
+    "text": "Methods in Use\nThe main methods include longitudinal multi-source data construction, social and spatial network analysis, ego-network analysis, conditional logit models for event-level destination choice, WERGM/ERGM specifications for network projects, GIS-based spatial measurement, and reproducible Python/R workflows."
   },
   {
     "objectID": "index.html",
@@ -84,115 +105,101 @@
     "text": "Ran Wang"
   },
   {
-    "objectID": "index.html#research-positioning",
-    "href": "index.html#research-positioning",
+    "objectID": "index.html#current-research-focus",
+    "href": "index.html#current-research-focus",
     "title": "Ran Wang",
-    "section": "Research Positioning",
-    "text": "Research Positioning\nMy work connects individual scientific careers with the urban and regional systems in which knowledge production takes place. The main line of research examines how elite scientists move across institutions and cities, how prior knowledge-space connections are associated with destination choice, and how mobility and collaboration networks relate to urban innovation conditions."
+    "section": "Current Research Focus",
+    "text": "Current Research Focus\nMy current work focuses on elite biomedical scientists as a window into scientific mobility and the geography of knowledge production. One line of research models observed intercity moves as event-level destination choices. A broader line builds scientist-institution-city data to study mobility networks, collaboration records, and regional innovation conditions while keeping these concepts analytically distinct."
   },
   {
-    "objectID": "index.html#research-themes",
-    "href": "index.html#research-themes",
+    "objectID": "index.html#selected-work",
+    "href": "index.html#selected-work",
     "title": "Ran Wang",
-    "section": "Research Themes",
-    "text": "Research Themes\n\n\nScientific Mobility and Career Trajectories\nLongitudinal records of scientists, institutions, publications, and cities are used to describe career moves and intercity mobility networks.\n\n\nUrban and Regional Innovation\nThe research links mobility, institutional platforms, collaboration networks, and city-level opportunities without treating observed associations as causal claims beyond the design.\n\n\nRelational Data and Spatial Methods\nAuthor-institution-city linkage, geocoding checks, network indicators, and event-level candidate sets support reproducible empirical work."
+    "section": "Selected Work",
+    "text": "Selected Work\n\n\nPre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists\nWorking paper on whether observed destinations were already visible in scientists’ origin-anchored pre-move publication-location environments.\n\n\nSpatial Structure and Determinants of Top Global Biomedical Scientists’ Mobility from an Urban Network Perspective\nAccepted article in World Regional Studies on intercity mobility networks and factors associated with mobility-tie formation and intensity.\n\n\nScopus Research Data Toolkit\nPublic Python toolkit for reproducible Scopus-oriented workflows using synthetic fixtures, offline mock transport, and documented measurement boundaries."
   },
   {
-    "objectID": "index.html#selected-publications",
-    "href": "index.html#selected-publications",
+    "objectID": "index.html#methods",
+    "href": "index.html#methods",
     "title": "Ran Wang",
-    "section": "Selected Publications",
-    "text": "Selected Publications\nAccepted Article. Spatial Structure and Determinants of Top Global Biomedical Scientists’ Mobility from an Urban Network Perspective.\nWorking Paper · In Revision. Pre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists.\nPublic Research Output. Author-Institution Linkage and Geocoding Feasibility Audit. View repository"
-  },
-  {
-    "objectID": "index.html#selected-projects",
-    "href": "index.html#selected-projects",
-    "title": "Ran Wang",
-    "section": "Selected Projects",
-    "text": "Selected Projects\n\n\nFlagship Research Programme\n\nScientific Mobility, Knowledge Networks, and Urban Innovation\nA research programme on elite scientists’ career mobility, knowledge-space connections, collaboration networks, and urban innovation conditions.\n\n\n\nCollaborative Research Project\n\nDaily Nighttime Lights and Urban Resilience Trajectories\nA collaborative project using high-frequency nighttime light data to describe changes and recovery trajectories in urban activity after external shocks.\n\n\n\nOngoing Research\n\nTalent Mobility and Biomedical Innovation Systems in China and the United States\nAn ongoing comparative project on top scientist training, career mobility, research output, patent activity, industrial foundations, and knowledge translation."
+    "section": "Methods",
+    "text": "Methods\nLongitudinal relational data construction; scientist-institution-city linkage; entity resolution; social and spatial network analysis; ego-network analysis; conditional logit for event-level destination choice; WERGM/ERGM for network projects; Python, R, Stata, GIS, NetworkX, Gephi, and Ucinet."
   },
   {
     "objectID": "index.html#quick-links",
     "href": "index.html#quick-links",
     "title": "Ran Wang",
     "section": "Quick Links",
-    "text": "Quick Links\n\nResearch Publications Projects CV Contact"
+    "text": "Quick Links\n\nResearch Publications Projects CV Contact GitHub"
   },
   {
     "objectID": "publications.html",
     "href": "publications.html",
     "title": "Publications",
     "section": "",
-    "text": "Accepted Article\n\n\n\n城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素\n\nThis accepted article examines the spatial structure and related factors of top global biomedical scientists’ mobility from an urban network perspective. The page records its accepted status without adding unconfirmed journal metadata, page ranges, or formal publication-year information."
+    "text": "Accepted Article\n\n\n\n城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素\n\nAuthors: Ran Wang and Jinliao He. Status: Accepted, World Regional Studies.\nThis article studies the spatial structure of elite biomedical scientists’ intercity mobility from an urban network perspective. It constructs career-history and intercity mobility data and uses social network analysis and a Heckman two-stage model to examine mobility-tie formation and mobility intensity across career stages."
   },
   {
     "objectID": "publications.html#accepted-article",
     "href": "publications.html#accepted-article",
     "title": "Publications",
     "section": "",
-    "text": "Accepted Article\n\n\n\n城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素\n\nThis accepted article examines the spatial structure and related factors of top global biomedical scientists’ mobility from an urban network perspective. The page records its accepted status without adding unconfirmed journal metadata, page ranges, or formal publication-year information."
+    "text": "Accepted Article\n\n\n\n城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素\n\nAuthors: Ran Wang and Jinliao He. Status: Accepted, World Regional Studies.\nThis article studies the spatial structure of elite biomedical scientists’ intercity mobility from an urban network perspective. It constructs career-history and intercity mobility data and uses social network analysis and a Heckman two-stage model to examine mobility-tie formation and mobility intensity across career stages."
   },
   {
-    "objectID": "publications.html#working-paper",
-    "href": "publications.html#working-paper",
+    "objectID": "publications.html#working-papers",
+    "href": "publications.html#working-papers",
     "title": "Publications",
-    "section": "Working Paper",
-    "text": "Working Paper\n\nWorking Paper · In Revision\n\nPre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists\n\n知识空间联系与全球顶尖科学家的流动网络研究\n\nThis working paper studies how pre-move publication-location exposure is associated with later city mobility and destination choice among elite biomedical scientists, using event-level candidate destination sets and Conditional Logit models."
+    "section": "Working Papers",
+    "text": "Working Papers\n\nWorking Paper\n\nPre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists\nThis paper reframes observed intercity moves as event-level destination choices. It constructs event-specific candidate destination sets and origin-anchored pre-move publication-location exposure, then estimates conditional logit models with pre-move destination opportunity controls and geographic distance. The result is interpreted as destination visibility, not as proof that exposure produces a move or as a direct collaboration mechanism."
   },
   {
     "objectID": "publications.html#masters-thesis",
     "href": "publications.html#masters-thesis",
     "title": "Publications",
     "section": "Master’s Thesis",
-    "text": "Master’s Thesis\n\nMaster’s Thesis\n\nIntercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks\n\n全球生物医药顶尖科学家城际流动网络——基于全域与自我网络双重视角\n\nThe master’s thesis analyzes the intercity mobility network of top global biomedical scientists from whole-network and ego-network perspectives, linking individual career trajectories with city-level network structure."
+    "text": "Master’s Thesis\n\nMaster’s Thesis\n\nIntercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks\n\n全球生物医药顶尖科学家城际流动网络——基于全域与自我网络双重视角\n\nThe thesis analyzes intercity mobility among top global biomedical scientists through whole-network and ego-network perspectives. It integrates a 1970-2023 longitudinal database of 500 scientists with a 40-scientist ego-network subsample, connecting city-level mobility structure with scientist-level career and collaboration records."
   },
   {
-    "objectID": "publications.html#public-research-output",
-    "href": "publications.html#public-research-output",
+    "objectID": "publications.html#research-software",
+    "href": "publications.html#research-software",
     "title": "Publications",
-    "section": "Public Research Output",
-    "text": "Public Research Output\n\nPublic Research Output\n\nAuthor-Institution Linkage and Geocoding Feasibility Audit\n\n作者—机构—城市关联与地理编码可行性审计\n\nA public repository demonstrating workflow checks for author-institution-city linkage and geocoding feasibility using synthetic records, schema validation, normalization checks, and coverage reporting. View repository"
+    "section": "Research Software",
+    "text": "Research Software\n\nResearch Software · v0.2.0\n\nScopus Research Data Toolkit\nA modular Python toolkit for reproducible Scopus-oriented research workflows. Using fully synthetic fixtures and offline mock transport, it demonstrates author-publication and author-affiliation linkage, city-year publication controls, cognitive-proximity measures, source comparison, and data-quality audits. The toolkit is MIT licensed and is not an official Scopus or Elsevier tool. View repository"
   },
   {
     "objectID": "cv.html",
     "href": "cv.html",
     "title": "CV",
     "section": "",
-    "text": "East China Normal University. M.Sc. in Human Geography, 2023-2026. School of Geographic Sciences; research training in economic geography, regional innovation, scientific mobility, and urban networks.\nNortheast Normal University. B.Sc. in Human Geography and Urban-Rural Planning, 2019-2023. Training in quantitative geography, GIS applications, urban geography, regional analysis, and planning."
+    "text": "Ran Wang is a master’s candidate in Human Geography at East China Normal University, with research training in economic geography, regional innovation, scientific mobility, urban networks, and spatial data analysis. Her work uses longitudinal relational data, network analysis, destination-choice models, and reproducible Python/R workflows to study scientific mobility and the spatial organization of knowledge production."
   },
   {
-    "objectID": "cv.html#education",
-    "href": "cv.html#education",
+    "objectID": "cv.html#academic-profile",
+    "href": "cv.html#academic-profile",
     "title": "CV",
     "section": "",
-    "text": "East China Normal University. M.Sc. in Human Geography, 2023-2026. School of Geographic Sciences; research training in economic geography, regional innovation, scientific mobility, and urban networks.\nNortheast Normal University. B.Sc. in Human Geography and Urban-Rural Planning, 2019-2023. Training in quantitative geography, GIS applications, urban geography, regional analysis, and planning."
+    "text": "Ran Wang is a master’s candidate in Human Geography at East China Normal University, with research training in economic geography, regional innovation, scientific mobility, urban networks, and spatial data analysis. Her work uses longitudinal relational data, network analysis, destination-choice models, and reproducible Python/R workflows to study scientific mobility and the spatial organization of knowledge production."
   },
   {
-    "objectID": "cv.html#research-outputs",
-    "href": "cv.html#research-outputs",
+    "objectID": "cv.html#research-areas-and-methods",
+    "href": "cv.html#research-areas-and-methods",
     "title": "CV",
-    "section": "Research Outputs",
-    "text": "Research Outputs\n\nSpatial Structure and Determinants of Top Global Biomedical Scientists’ Mobility from an Urban Network Perspective — accepted article.\nPre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists — working paper in revision.\nIntercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks — master’s thesis.\nAuthor-Institution Linkage and Geocoding Feasibility Audit — public research repository."
+    "section": "Research Areas and Methods",
+    "text": "Research Areas and Methods\nEconomic geography; scientific mobility; regional innovation; science of science; intercity mobility networks; knowledge production; longitudinal data construction; entity resolution; conditional logit; social and spatial network analysis; WERGM/ERGM; GIS; Python; R; Stata."
   },
   {
-    "objectID": "cv.html#selected-research-experience",
-    "href": "cv.html#selected-research-experience",
+    "objectID": "cv.html#public-cv",
+    "href": "cv.html#public-cv",
     "title": "CV",
-    "section": "Selected Research Experience",
-    "text": "Selected Research Experience\n\n\nScientific Mobility, Knowledge Networks, and Urban Innovation\nFlagship research programme linking elite scientist mobility, knowledge-space connections, collaboration networks, and urban innovation conditions.\n\n\nDaily Nighttime Lights and Urban Resilience Trajectories\nCollaborative research using VIIRS-DNB daily nighttime lights, Fisher Information, dynamic time warping, and clustering to describe urban resilience trajectories.\n\n\nTalent Mobility and Biomedical Innovation Systems in China and the United States\nOngoing comparative research on top scientist training, career mobility, research output, patents, industrial foundations, and knowledge translation.\n\n\nGlobal Trade Network Evolution and Sectoral Differences under the COVID-19 Shock\nEarlier research using directed weighted trade networks and spatial analysis to compare structural changes in global commodity trade.\n\n\nAuthor-Institution Linkage and Geocoding Feasibility Audit\nPublic workflow audit for linkage, institution normalization, geocoding feasibility, and coverage diagnostics using synthetic records."
+    "section": "Public CV",
+    "text": "Public CV\n\nDownload Public CV"
   },
   {
-    "objectID": "cv.html#methods-and-technical-skills",
-    "href": "cv.html#methods-and-technical-skills",
+    "objectID": "cv.html#links",
+    "href": "cv.html#links",
     "title": "CV",
-    "section": "Methods and Technical Skills",
-    "text": "Methods and Technical Skills\nPython; R; Stata; GIS; ArcGIS; NetworkX; Gephi; Ucinet; Conditional Logit; ERGM/WERGM; Social Network Analysis; Ego-network Analysis; Entity Resolution; Longitudinal Multi-source Data Construction."
-  },
-  {
-    "objectID": "cv.html#download-full-cv",
-    "href": "cv.html#download-full-cv",
-    "title": "CV",
-    "section": "Download Full CV",
-    "text": "Download Full CV\n\nThe full public CV is available as a PDF.\nDownload Full CV"
+    "section": "Links",
+    "text": "Links\nEmail: wangran940@163.com GitHub: https://github.com/Olivia-wr-research"
   }
 ]

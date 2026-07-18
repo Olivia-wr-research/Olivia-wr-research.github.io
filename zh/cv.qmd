@@ -3,70 +3,28 @@ title: "简历"
 ---
 
 ::: {.panel .panel-light}
-## 教育经历
+## 学术简介
 
-**华东师范大学。** 人文地理学硕士，2023-2026。地理科学学院；研究训练涉及经济地理、区域创新、科学家流动和城市网络。
-
-**东北师范大学。** 人文地理与城乡规划学士，2019-2023。接受定量地理、GIS 应用、城市地理、区域分析和规划相关训练。
+王冉为华东师范大学人文地理学硕士研究生，研究训练涉及经济地理学、区域创新、科学家流动、城市网络和空间数据分析。她的研究使用纵向关系数据、网络分析、目的地选择模型和 Python/R 可复现工作流，分析科学家流动与知识生产的空间组织。
 :::
 
 ::: {.panel .panel-muted}
-## 研究成果
+## 研究领域与方法
 
-- **城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素** — 已录用论文。
-- **知识空间联系与全球顶尖科学家的流动网络研究** — 工作论文，修改中。
-- **全球生物医药顶尖科学家城际流动网络——基于全域与自我网络双重视角** — 硕士学位论文。
-- **作者—机构—城市关联与地理编码可行性审计** — 公开研究产出。
-:::
-
-::: {.panel .panel-light}
-## 代表性研究经历
-
-::: {.project-list}
-::: {.project-card}
-### 全球顶尖科学家的流动网络、知识联系与城市创新
-
-围绕顶尖科学家职业流动、知识空间联系、科研合作网络和城市创新条件展开的核心研究计划。
-:::
-
-::: {.project-card}
-### 日尺度夜间灯光与城市韧性轨迹研究
-
-使用 VIIRS-DNB 日尺度夜间灯光、Fisher Information、动态时间规整和 K-means 聚类方法刻画城市韧性轨迹的合作研究。
-:::
-
-::: {.project-card}
-### 人才流动与中美生物医药创新体系比较
-
-比较中美生物医药创新体系中顶尖科学家培养、职业流动、科研产出、专利活动、产业基础和知识转化特征的在研项目。
-:::
-
-::: {.project-card}
-### 疫情冲击下全球贸易网络的演化与产业差异
-
-使用有向加权贸易网络和空间分析比较全球商品贸易结构变化的早期研究。
-:::
-
-::: {.project-card}
-### 作者—机构—城市关联与地理编码审计
-
-基于合成记录展示关联、机构名称规范化、地理编码可行性和覆盖诊断的公开流程审计。
-:::
-:::
+经济地理学；科学家流动；区域创新；科学学；城际流动网络；知识生产；纵向数据构建；实体解析；条件 Logit；社会网络与空间网络分析；WERGM/ERGM；GIS；Python；R；Stata。
 :::
 
 ::: {.panel .panel-dark}
-## 方法与技术能力
+## 公开简历
 
-Python；R；Stata；GIS；ArcGIS；NetworkX；Gephi；Ucinet；Conditional Logit；ERGM/WERGM；Social Network Analysis；Ego-network Analysis；Entity Resolution；Longitudinal Multi-source Data Construction。
+::: {.cv-download}
+[下载公开简历](../assets/cv/Ran_Wang_CV_Public.pdf){.btn .btn-primary}
+:::
 :::
 
 ::: {.panel .panel-light}
-## 下载完整简历
+## 链接
 
-::: {.cv-download}
-完整公开简历可下载 PDF 版本。
-
-[下载完整简历](../assets/cv/Ran_Wang_CV_Public.pdf){.btn .btn-primary}
-:::
+邮箱：[wangran940@163.com](mailto:wangran940@163.com)
+GitHub：[https://github.com/Olivia-wr-research](https://github.com/Olivia-wr-research)
 :::
