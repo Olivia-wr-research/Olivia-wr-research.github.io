@@ -42,7 +42,7 @@ website:
       - text: "GitHub"
         href: "https://github.com/Olivia-wr-research"
       - text: "EN"
-        href: "/"
+        href: "https://olivia-wr-research.github.io/"
   page-footer:
     left: "© 2026 王冉"
     right: "Built with Quarto"

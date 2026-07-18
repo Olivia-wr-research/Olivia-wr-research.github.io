@@ -42,7 +42,7 @@ website:
       - text: "GitHub"
         href: "https://github.com/Olivia-wr-research"
       - text: "中文"
-        href: "/zh/"
+        href: "https://olivia-wr-research.github.io/zh/"
   page-footer:
     left: "© 2026 Ran Wang"
     right: "Built with Quarto"
