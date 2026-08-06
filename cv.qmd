@@ -1,30 +1,28 @@
 ---
-title: "CV"
+title: "Curriculum Vitae"
 ---
 
-::: {.panel .panel-light}
-## Academic Profile
+::: {.page-band .surface}
 
-Ran Wang is a master's candidate in Human Geography at East China Normal University, with research training in economic geography, regional innovation, scientific mobility, urban networks, and spatial data analysis. Her work uses longitudinal relational data, network analysis, destination-choice models, and reproducible Python/R workflows to study scientific mobility and the spatial organization of knowledge production.
-:::
+## CV
 
-::: {.panel .panel-muted}
-## Research Areas and Methods
-
-Economic geography; scientific mobility; regional innovation; science of science; intercity mobility networks; knowledge production; longitudinal data construction; entity resolution; conditional logit; social and spatial network analysis; WERGM/ERGM; GIS; Python; R; Stata.
-:::
-
-::: {.panel .panel-dark}
-## Public CV
-
-::: {.cv-download}
 [Download Public CV](assets/cv/Ran_Wang_CV_Public.pdf){.btn .btn-primary}
-:::
+
 :::
 
-::: {.panel .panel-light}
-## Links
+::: {.page-band}
 
-Email: [wangran940@163.com](mailto:wangran940@163.com)
-GitHub: [https://github.com/Olivia-wr-research](https://github.com/Olivia-wr-research)
+## Contact
+
+::: {.contact-panel}
+**Email**
+<olivia.wr.research@gmail.com>
+
+**GitHub**
+[Olivia-wr-research](https://github.com/Olivia-wr-research)
+
+**Website**
+[olivia-wr-research.github.io](https://olivia-wr-research.github.io)
+:::
+
 :::

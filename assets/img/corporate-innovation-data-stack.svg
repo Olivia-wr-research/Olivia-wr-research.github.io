@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">Corporate innovation data stack</title>
+  <desc id="desc">A public-safe data-flow diagram connecting R&amp;D investment, firm entities, patents, trademarks, technology-brand innovation, firm-year panels, and industry, country, and time dimensions.</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8fafb"/>
+      <stop offset="1" stop-color="#eaf0f4"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2f7c7a"/>
+    </marker>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#071a2b" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="960" height="520" rx="8" fill="#f8fafb"/>
+  <path d="M0 74H960M0 166H960M0 258H960M0 350H960M0 442H960M120 0V520M240 0V520M360 0V520M480 0V520M600 0V520M720 0V520M840 0V520" stroke="#d9e3ea" stroke-width="1" opacity="0.45"/>
+  <g fill="none" stroke="#2f7c7a" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M480 92V132"/>
+    <path d="M480 198 C410 226 350 244 300 268"/>
+    <path d="M480 198 C550 226 610 244 660 268"/>
+    <path d="M312 318 C360 350 412 363 456 380"/>
+    <path d="M648 318 C600 350 548 363 504 380"/>
+    <path d="M480 426V452"/>
+  </g>
+  <g filter="url(#softShadow)">
+    <rect x="352" y="36" width="256" height="56" rx="8" fill="url(#panel)" stroke="#cddbe4"/>
+    <rect x="362" y="142" width="236" height="56" rx="8" fill="#ffffff" stroke="#cddbe4"/>
+    <rect x="184" y="268" width="232" height="56" rx="8" fill="#ffffff" stroke="#cddbe4"/>
+    <rect x="544" y="268" width="232" height="56" rx="8" fill="#ffffff" stroke="#cddbe4"/>
+    <rect x="304" y="380" width="352" height="58" rx="8" fill="url(#panel)" stroke="#cddbe4"/>
+    <rect x="352" y="454" width="256" height="48" rx="8" fill="#ffffff" stroke="#cddbe4"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="480" y="68" fill="#102a43" font-size="20" font-weight="700">R&amp;D Investment</text>
+    <text x="480" y="174" fill="#102a43" font-size="20" font-weight="700">Firm Entity</text>
+    <text x="300" y="300" fill="#102a43" font-size="20" font-weight="700">Patents</text>
+    <text x="660" y="300" fill="#102a43" font-size="20" font-weight="700">Trademarks</text>
+    <text x="480" y="414" fill="#102a43" font-size="20" font-weight="700">Technology-Brand Innovation</text>
+    <text x="480" y="484" fill="#102a43" font-size="18" font-weight="700">Firm-Year Panel</text>
+    <text x="480" y="506" fill="#647785" font-size="14">Industry / Country / Time</text>
+  </g>
+  <g fill="#b47b45" opacity="0.9">
+    <circle cx="352" cy="36" r="4"/>
+    <circle cx="608" cy="36" r="4"/>
+    <circle cx="304" cy="380" r="4"/>
+    <circle cx="656" cy="380" r="4"/>
+  </g>
+</svg>

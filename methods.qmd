@@ -1,0 +1,121 @@
+---
+title: "Methods & Data"
+---
+
+::: {.page-band}
+
+## Data Systems
+
+::: {.method-panel-grid}
+::: {.method-panel}
+### Scientist Mobility Data
+
+This data system links highly cited biomedical scientists to institutions, cities, career stages, mobility events, coauthor records, and publication-location fields. It is designed for longitudinal analysis of mobility networks, career embeddedness, destination choice, and regional innovation.
+:::
+
+::: {.method-panel}
+### Firm Innovation Data
+
+This data system organizes leading global R&D investors as firm-year observations. It integrates R&D expenditure, patent records, trademark records, industry, country, firm identity, and year to support analysis of technology-oriented and market-facing innovation.
+:::
+
+::: {.method-panel}
+### Supporting Spatial and Policy Data
+
+Supporting data include VIIRS-DNB nighttime lights, UN Comtrade, geospatial and city-attribute data, and policy or planning documents. These materials provide the empirical basis for spatial measurement, network comparison, and policy interpretation.
+:::
+:::
+
+:::
+
+::: {.page-band .surface}
+
+## Data Construction and Measurement
+
+::: {.method-chain}
+::: {.method-row}
+### Career, Institution, and City Reconstruction
+
+Career-history reconstruction requires person validation, institution normalization, city standardization, temporal auditing, and careful handling of education and employment records. These steps make individual careers comparable across institutions and cities over time.
+:::
+
+::: {.method-row}
+### Relational and Spatial Measurement
+
+Mobility events are linked to city attributes, coauthor ties, whole-network indicators, ego-network indicators, geographic proximity, cognitive proximity, and candidate destination sets. Publication locations are treated as database fields rather than evidence of verified interpersonal ties.
+:::
+
+::: {.method-row}
+### Firm Innovation Measurement
+
+Firm-level measurement links R&D input with patent and trademark activity, harmonizes firm identity across sources, and organizes observations into a firm-year panel. The aim is to measure innovation portfolios without reducing innovation to a single indicator.
+:::
+
+::: {.method-row}
+### High-Frequency Spatial Indicators
+
+Remote-sensing work uses nighttime-light preprocessing, spatial aggregation, Fisher Information, and trajectory comparison to construct urban resilience measures from high-frequency spatial data.
+:::
+:::
+
+:::
+
+::: {.page-band}
+
+## Empirical Design and Modelling
+
+::: {.method-chain}
+::: {.method-row}
+### Destination-Choice Design
+
+Observed mobility is organized as event-specific choice sets: each move contains one selected destination and a set of alternative candidate cities. Predictors are measured before the move, which helps align temporal order with the interpretation of relational exposure.
+:::
+
+::: {.method-row}
+### Network and Relational Models
+
+Network analysis is used to describe directed weighted mobility ties, core structure, centrality, whole-network formation, and scientist-level ego-networks. Weighted network modelling and proximity measures support the transition from descriptive structure to relational explanation.
+:::
+
+::: {.method-row}
+### Econometric and Comparative Designs
+
+Empirical work uses event-stratified conditional logit, robustness checks, sensitivity analysis, longitudinal comparison, and comparative research design. Earlier training also included Lasso, random forest, support vector machines, and cross-validation in applied modelling contexts.
+:::
+
+::: {.method-row}
+### Spatial and Temporal Analysis
+
+GIS, dynamic time warping, K-Means clustering, spatial aggregation, and temporal comparison are used where the research question requires spatial measurement or trajectory analysis.
+:::
+:::
+
+:::
+
+::: {.page-band .surface}
+
+## Reproducibility and Research Software
+
+::: {.method-chain}
+::: {.method-row}
+### Reproducible Workflow
+
+Research workflows emphasize scripted processing, version control, data-quality audits, sensitivity checks, synthetic fixtures, and separation between public materials and restricted data. This is especially important for longitudinal mobility data and data derived from licensed bibliographic sources.
+:::
+
+::: {.method-row}
+### Research Software Environment
+
+The working environment includes Python, R, Stata, GIS software, NetworkX, Gephi, Ucinet, Git, GitHub, and Quarto. Tools are selected for data construction, model estimation, documentation, and reproducible publication.
+:::
+
+::: {.method-row}
+### Scopus Research Data Toolkit
+
+The Scopus research data toolkit is an open-source Python package for author-institution-city linkage in Scopus-derived research-data workflows. It uses synthetic fixtures, offline mock transport, automated tests, and public documentation; it does not bundle restricted Scopus data.
+
+[GitHub](https://github.com/Olivia-wr-research/author-institution-city-linkage){.btn .btn-secondary}
+:::
+:::
+
+:::
