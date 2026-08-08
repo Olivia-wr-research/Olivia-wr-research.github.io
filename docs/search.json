@@ -4,202 +4,181 @@
     "href": "contact.html",
     "title": "Contact",
     "section": "",
-    "text": "For research collaboration or academic inquiries, please contact me by email.\nEmail wangran940@163.com\nGitHub https://github.com/Olivia-wr-research"
-  },
-  {
-    "objectID": "contact.html#contact",
-    "href": "contact.html#contact",
-    "title": "Contact",
-    "section": "",
-    "text": "For research collaboration or academic inquiries, please contact me by email.\nEmail wangran940@163.com\nGitHub https://github.com/Olivia-wr-research"
+    "text": "Contact information is available on the CV page."
   },
   {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Working Paper\n\n\nResearch Question: Are subsequent mobility destinations more likely to be cities that were already visible in scientists’ origin-anchored pre-move publication-location environments?\nData: Mobility event × candidate city data for observed intercity moves by elite biomedical scientists.\nMethods: Event-specific candidate destination sets, origin-anchored pre-move publication-location exposure, conditional logit, pre-move destination opportunity controls, geographic distance, timing robustness, and city-identity sensitivity checks.\nMain Finding: Among observed mobility events, elite biomedical scientists are more likely to select cities that were already visible in their origin-anchored pre-move publication-location environments. The model does not show that exposure produces a move, and it treats publication-location exposure as destination visibility rather than interpersonal collaboration."
-  },
-  {
-    "objectID": "projects.html#destination-choice-among-elite-biomedical-scientists",
-    "href": "projects.html#destination-choice-among-elite-biomedical-scientists",
-    "title": "Projects",
-    "section": "",
-    "text": "Working Paper\n\n\nResearch Question: Are subsequent mobility destinations more likely to be cities that were already visible in scientists’ origin-anchored pre-move publication-location environments?\nData: Mobility event × candidate city data for observed intercity moves by elite biomedical scientists.\nMethods: Event-specific candidate destination sets, origin-anchored pre-move publication-location exposure, conditional logit, pre-move destination opportunity controls, geographic distance, timing robustness, and city-identity sensitivity checks.\nMain Finding: Among observed mobility events, elite biomedical scientists are more likely to select cities that were already visible in their origin-anchored pre-move publication-location environments. The model does not show that exposure produces a move, and it treats publication-location exposure as destination visibility rather than interpersonal collaboration."
-  },
-  {
-    "objectID": "projects.html#global-mobility-and-collaboration-networks-of-elite-biomedical-scientists",
-    "href": "projects.html#global-mobility-and-collaboration-networks-of-elite-biomedical-scientists",
-    "title": "Projects",
-    "section": "Global Mobility and Collaboration Networks of Elite Biomedical Scientists",
-    "text": "Global Mobility and Collaboration Networks of Elite Biomedical Scientists\n\nOngoing Research Program\n\nGlobal Mobility and Collaboration Networks of Elite Biomedical Scientists\nResearch Question: How do elite biomedical scientists’ career moves, collaboration records, and city-level opportunity structures form spatial networks of scientific work?\nData: A 1970-2023 longitudinal database of 500 elite biomedical scientists, integrating career histories, institutional appointments, publication locations, collaboration records, mobility events, and city attributes.\nMethods: Scientist-institution-city linkage, directed weighted mobility networks, centrality, core-periphery structure, K-core, WERGM/ERGM specifications, ego-network measures, and Python/R workflows for temporal auditing and documentation.\nContribution: This program provides the data and measurement foundation for the accepted article, the master’s thesis, and newer destination-choice work while keeping mobility events, publication locations, and collaboration records analytically separate."
-  },
-  {
-    "objectID": "projects.html#intercity-mobility-networks-and-career-stages",
-    "href": "projects.html#intercity-mobility-networks-and-career-stages",
-    "title": "Projects",
-    "section": "Intercity Mobility Networks and Career Stages",
-    "text": "Intercity Mobility Networks and Career Stages\n\nAccepted Article and Thesis-Related Research\n\nSpatial Structure of Top Biomedical Scientists’ Mobility\nResearch Question: What spatial structure characterizes global biomedical scientists’ intercity mobility, and how do associated factors differ across career stages?\nData: Career-history and intercity mobility records for top biomedical scientists, with thesis work extending to whole-network and ego-network perspectives.\nMethods: Social network analysis, GIS spatial analysis, Heckman two-stage modeling for mobility-tie formation and intensity, and ego-network brokerage/diversity measures.\nContribution: The accepted article emphasizes urban network structure and mobility determinants. The master’s thesis extends the analysis by linking the whole intercity network with selected scientist-level ego networks."
-  },
-  {
-    "objectID": "projects.html#scopus-research-data-toolkit",
-    "href": "projects.html#scopus-research-data-toolkit",
-    "title": "Projects",
-    "section": "Scopus Research Data Toolkit",
-    "text": "Scopus Research Data Toolkit\n\nResearch Software · Python · v0.2.0\n\nScopus Research Data Toolkit\nResearch Question: How can Scopus-oriented bibliographic workflows be made reproducible and public-safe when nonpublic records and API responses cannot be released?\nData: Fully synthetic Scopus-style and OpenAlex-style fixtures, deterministic reference outputs, and offline mock transport.\nMethods: Author-publication linkage, author-affiliation parsing, city-year publication controls, cognitive-proximity measures, source comparison, schema validation, manifests, and automated tests.\nContribution: The toolkit documents reusable measurement boundaries for publication and affiliation data. It is MIT licensed, includes 39 test functions in the current test suite, and defers live Scopus adapter behavior in v0.2.0. View repository"
-  },
-  {
-    "objectID": "projects.html#selected-earlier-research",
-    "href": "projects.html#selected-earlier-research",
-    "title": "Projects",
-    "section": "Selected Earlier Research",
-    "text": "Selected Earlier Research\n\n\nEarlier Research\n\nUrban Resilience Measurement from Daily Nighttime Lights\nUsing VIIRS-DNB daily nighttime-light data for 48 cities in the Beijing-Tianjin-Hebei, Yangtze River Delta, and Pearl River Delta urban agglomerations, this project constructed high-frequency radiance time series and a Fisher Information Light indicator. Dynamic time warping and K-Means clustering were used to compare short-term urban activity and recovery trajectories.\n\n\n\nOngoing Comparative Research\n\nTalent Mobility and Biomedical Innovation Systems in China and the United States\nThis project compares China and the United States through top biomedical scientists’ training, career mobility, research output, patent-related information, collaboration networks, and university-industry-research linkages. Current work centers on data organization, biography matching, network construction, and comparative analysis.\n\n\n\nEarlier Research\n\nGlobal Trade Network Evolution during COVID-19\nThis undergraduate research built directed weighted global trade networks from 2019-2021 UN Comtrade data covering 219 countries and regions. It compared centrality, core structure, product-type differences, and spatial organization before and during the COVID-19 period."
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "My research asks how scientific mobility, knowledge production, and regional innovation are organized across space. The empirical focus is elite biomedical scientists, but the broader agenda is economic geography: how people, institutions, publications, and cities form spatial systems of scientific work."
-  },
-  {
-    "objectID": "research.html#research-agenda",
-    "href": "research.html#research-agenda",
-    "title": "Research",
-    "section": "",
-    "text": "My research asks how scientific mobility, knowledge production, and regional innovation are organized across space. The empirical focus is elite biomedical scientists, but the broader agenda is economic geography: how people, institutions, publications, and cities form spatial systems of scientific work."
-  },
-  {
-    "objectID": "research.html#scientific-mobility-and-destination-choice",
-    "href": "research.html#scientific-mobility-and-destination-choice",
-    "title": "Research",
-    "section": "Scientific Mobility and Destination Choice",
-    "text": "Scientific Mobility and Destination Choice\nHow do particular cities become plausible destinations before an observed move?\nI study mobility as a choice among candidate cities, not only as an aggregate flow between places. The destination-choice working paper constructs event-specific candidate sets and measures origin-anchored pre-move publication-location exposure. The interpretation is deliberately limited: among observed mobility events, scientists are more likely to select cities that were already visible in their pre-move publication-location environments, conditional on destination opportunity measures and geographic distance."
-  },
-  {
-    "objectID": "research.html#knowledge-networks-and-regional-innovation",
-    "href": "research.html#knowledge-networks-and-regional-innovation",
-    "title": "Research",
-    "section": "Knowledge Networks and Regional Innovation",
-    "text": "Knowledge Networks and Regional Innovation\nHow do scientists’ career trajectories connect individual knowledge production with city and regional innovation systems?\nThis line of work builds on the master’s thesis, the accepted article, and ongoing research on elite biomedical scientists. It links career histories, institutional appointments, publication locations, collaboration records, mobility events, and city attributes. The goal is to describe how intercity mobility networks, research platforms, and regional opportunity structures are related, while keeping the interpretation within the limits of the research design."
-  },
-  {
-    "objectID": "research.html#longitudinal-relational-data-and-spatial-measurement",
-    "href": "research.html#longitudinal-relational-data-and-spatial-measurement",
-    "title": "Research",
-    "section": "Longitudinal Relational Data and Spatial Measurement",
-    "text": "Longitudinal Relational Data and Spatial Measurement\nWhat kinds of data infrastructure are needed to study scientific careers across people, institutions, publications, and cities?\nA large part of my research contribution is measurement work: entity resolution, author-institution-city linkage, candidate-destination construction, city identity checks, and reproducible data-quality audits. The public Scopus Research Data Toolkit reflects this part of the agenda in a safe form, using synthetic fixtures and offline mock transport rather than nonpublic research records."
-  },
-  {
-    "objectID": "research.html#methods-in-use",
-    "href": "research.html#methods-in-use",
-    "title": "Research",
-    "section": "Methods in Use",
-    "text": "Methods in Use\nThe main methods include longitudinal multi-source data construction, social and spatial network analysis, ego-network analysis, conditional logit models for event-level destination choice, WERGM/ERGM specifications for network projects, GIS-based spatial measurement, and reproducible Python/R workflows."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Ran Wang",
-    "section": "",
-    "text": "Ran Wang"
-  },
-  {
-    "objectID": "index.html#current-research-focus",
-    "href": "index.html#current-research-focus",
-    "title": "Ran Wang",
-    "section": "Current Research Focus",
-    "text": "Current Research Focus\nMy current work focuses on elite biomedical scientists as a window into scientific mobility and the geography of knowledge production. One line of research models observed intercity moves as event-level destination choices. A broader line builds scientist-institution-city data to study mobility networks, collaboration records, and regional innovation conditions while keeping these concepts analytically distinct."
-  },
-  {
-    "objectID": "index.html#selected-work",
-    "href": "index.html#selected-work",
-    "title": "Ran Wang",
-    "section": "Selected Work",
-    "text": "Selected Work\n\n\nPre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists\nWorking paper on whether observed destinations were already visible in scientists’ origin-anchored pre-move publication-location environments.\n\n\nSpatial Structure and Determinants of Top Global Biomedical Scientists’ Mobility from an Urban Network Perspective\nAccepted article in World Regional Studies on intercity mobility networks and factors associated with mobility-tie formation and intensity.\n\n\nScopus Research Data Toolkit\nPublic Python toolkit for reproducible Scopus-oriented workflows using synthetic fixtures, offline mock transport, and documented measurement boundaries."
-  },
-  {
-    "objectID": "index.html#methods",
-    "href": "index.html#methods",
-    "title": "Ran Wang",
-    "section": "Methods",
-    "text": "Methods\nLongitudinal relational data construction; scientist-institution-city linkage; entity resolution; social and spatial network analysis; ego-network analysis; conditional logit for event-level destination choice; WERGM/ERGM for network projects; Python, R, Stata, GIS, NetworkX, Gephi, and Ucinet."
-  },
-  {
-    "objectID": "index.html#quick-links",
-    "href": "index.html#quick-links",
-    "title": "Ran Wang",
-    "section": "Quick Links",
-    "text": "Quick Links\n\nResearch Publications Projects CV Contact GitHub"
+    "text": "Research projects are now organized under Research."
   },
   {
     "objectID": "publications.html",
     "href": "publications.html",
     "title": "Publications",
     "section": "",
-    "text": "Accepted Article\n\n\n\n城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素\n\nAuthors: Ran Wang and Jinliao He. Status: Accepted, World Regional Studies.\nThis article studies the spatial structure of elite biomedical scientists’ intercity mobility from an urban network perspective. It constructs career-history and intercity mobility data and uses social network analysis and a Heckman two-stage model to examine mobility-tie formation and mobility intensity across career stages."
+    "text": "Submitted Manuscript\n\n\nRole: First author.\nThis manuscript connects whole-network structure with scientist-level mobility ego-networks to examine the formation of intercity mobility networks among elite biomedical scientists. It extends the accepted city-network article by placing city-level network position and individual embeddedness in the same analytical frame.\n\n\n\nSubmitted Manuscript\n\n\nRole: First author.\nThis manuscript treats observed intercity employment moves as event-specific destination choices. It compares selected cities with alternative candidate destinations and measures pre-move coauthor ties as prior relational exposure."
+  },
+  {
+    "objectID": "publications.html#submitted-manuscripts",
+    "href": "publications.html#submitted-manuscripts",
+    "title": "Publications",
+    "section": "",
+    "text": "Submitted Manuscript\n\n\nRole: First author.\nThis manuscript connects whole-network structure with scientist-level mobility ego-networks to examine the formation of intercity mobility networks among elite biomedical scientists. It extends the accepted city-network article by placing city-level network position and individual embeddedness in the same analytical frame.\n\n\n\nSubmitted Manuscript\n\n\nRole: First author.\nThis manuscript treats observed intercity employment moves as event-specific destination choices. It compares selected cities with alternative candidate destinations and measures pre-move coauthor ties as prior relational exposure."
   },
   {
     "objectID": "publications.html#accepted-article",
     "href": "publications.html#accepted-article",
     "title": "Publications",
-    "section": "",
-    "text": "Accepted Article\n\n\n\n城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素\n\nAuthors: Ran Wang and Jinliao He. Status: Accepted, World Regional Studies.\nThis article studies the spatial structure of elite biomedical scientists’ intercity mobility from an urban network perspective. It constructs career-history and intercity mobility data and uses social network analysis and a Heckman two-stage model to examine mobility-tie formation and mobility intensity across career stages."
+    "section": "Accepted Article",
+    "text": "Accepted Article\n\n\n\nAccepted\n\n\n城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素\n\nRole: First author. Accepted by World Regional Studies.\nThe article analyzes the spatial structure of elite biomedical scientist mobility from a city-network perspective and examines city-level factors associated with mobility-link formation."
   },
   {
-    "objectID": "publications.html#working-papers",
-    "href": "publications.html#working-papers",
+    "objectID": "publications.html#selected-research-outputs",
+    "href": "publications.html#selected-research-outputs",
     "title": "Publications",
-    "section": "Working Papers",
-    "text": "Working Papers\n\nWorking Paper\n\nPre-move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists\nThis paper reframes observed intercity moves as event-level destination choices. It constructs event-specific candidate destination sets and origin-anchored pre-move publication-location exposure, then estimates conditional logit models with pre-move destination opportunity controls and geographic distance. The result is interpreted as destination visibility, not as proof that exposure produces a move or as a direct collaboration mechanism."
+    "section": "Selected Research Outputs",
+    "text": "Selected Research Outputs\n\n\n\nResearch Manuscript\n\n\nAssessing Urban Resilience Using Nighttime Light Remote Sensing and Fisher Information\n\nRole: First author.\nThis study uses VIIRS-DNB daily nighttime-light data, Fisher Information, dynamic time warping, and K-Means clustering to compare resilience trajectories across 48 cities in the Beijing-Tianjin-Hebei, Yangtze River Delta, and Pearl River Delta urban agglomerations during the COVID-19 shock.\n\n\n\nResearch Manuscript\n\n\nTalent Mobility Networks and a Comparative Study of Biomedical Innovation in China and the United States\n\nRole: Second author.\nThis study compares biomedical innovation systems in China and the United States through the lens of top-scientist mobility networks, linking talent flows with innovation input, innovation output, research collaboration, and innovation transformation."
   },
   {
     "objectID": "publications.html#masters-thesis",
     "href": "publications.html#masters-thesis",
     "title": "Publications",
     "section": "Master’s Thesis",
-    "text": "Master’s Thesis\n\nMaster’s Thesis\n\nIntercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks\n\n全球生物医药顶尖科学家城际流动网络——基于全域与自我网络双重视角\n\nThe thesis analyzes intercity mobility among top global biomedical scientists through whole-network and ego-network perspectives. It integrates a 1970-2023 longitudinal database of 500 scientists with a 40-scientist ego-network subsample, connecting city-level mobility structure with scientist-level career and collaboration records."
+    "text": "Master’s Thesis\n\n\n\n全球生物医药顶尖科学家城际流动网络——基于全域与自我网络双重视角\n\nMaster’s thesis, 2026.\nThe thesis reconstructs a longitudinal view of intercity mobility among elite biomedical scientists and combines whole-network and ego-network perspectives to analyze mobility structure and formation mechanisms."
   },
   {
-    "objectID": "publications.html#research-software",
-    "href": "publications.html#research-software",
-    "title": "Publications",
-    "section": "Research Software",
-    "text": "Research Software\n\nResearch Software · v0.2.0\n\nScopus Research Data Toolkit\nA modular Python toolkit for reproducible Scopus-oriented research workflows. Using fully synthetic fixtures and offline mock transport, it demonstrates author-publication and author-affiliation linkage, city-year publication controls, cognitive-proximity measures, source comparison, and data-quality audits. The toolkit is MIT licensed and is not an official Scopus or Elsevier tool. View repository"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "\nRan Wang\n",
+    "section": "",
+    "text": "王冉\n\n\nSchool of Geographic Sciences, East China Normal University · M.Sc. in Human Geography, 2026\n\n\nScientific mobility · Collaboration networks · Destination choice · Firm innovation measurement · Regional innovation\n\nMy research examines how innovation is organized across space through the movement of highly skilled people, the formation of collaboration networks, and the innovation strategies of firms. I work with longitudinal career records, relational data, city-level indicators, and firm-year innovation data to study how individual decisions and institutional contexts shape regional innovation systems.\nResearch Publications CV GitHub"
+  },
+  {
+    "objectID": "index.html#research-interests",
+    "href": "index.html#research-interests",
+    "title": "\nRan Wang\n",
+    "section": "Research Interests",
+    "text": "Research Interests\n\n\nScientific Mobility and Career Trajectories\nIntercity and inter-organizational mobility among elite biomedical scientists, with attention to career histories, institutional affiliations, and the spatial ordering of academic careers.\n\n\nCollaboration Networks and Destination Choice\nCoauthor ties, mobility ego-networks, pre-move relationships, and event-level destination choice among candidate cities.\n\n\nRegional Innovation and City Networks\nUrban scientific capacity, mobility-network structure, proximity, and the role of cities as organizational sites of knowledge production.\n\n\nFirm Innovation Measurement\nFirm-level innovation indicators built from R&D investment, patents, trademarks, industry, country, identity matching, and year-level panel construction."
+  },
+  {
+    "objectID": "index.html#academic-profile",
+    "href": "index.html#academic-profile",
+    "title": "\nRan Wang\n",
+    "section": "Academic Profile",
+    "text": "Academic Profile\n\n\nResearch Positioning\nEconomic geography and regional innovation, with a focus on how mobility, collaboration, and firm innovation data can be used to explain uneven innovation geographies.\n\n\nCurrent Outputs\nAn accepted article in World Regional Studies, submitted manuscripts on elite biomedical scientist mobility, and ongoing work on destination choice and firm innovation measurement.\n\n\nData and Methods\nLongitudinal data construction, scientist-institution-city linkage, social network analysis, conditional logit, GIS, remote-sensing indicators, and reproducible Python/R workflows."
+  },
+  {
+    "objectID": "index.html#navigation",
+    "href": "index.html#navigation",
+    "title": "\nRan Wang\n",
+    "section": "Navigation",
+    "text": "Navigation\n\nResearch Publications Methods & Data CV"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Focus Framework Talent Mobility Firm Innovation Trajectory Foundations"
+  },
+  {
+    "objectID": "research.html#research-focus",
+    "href": "research.html#research-focus",
+    "title": "Research",
+    "section": "Research Focus",
+    "text": "Research Focus\nMy research examines the spatial organization of talent and firm innovation activity. At this stage, it is organized around two research streams with a shared concern for regional innovation.\n\n\nTalent Mobility, Collaboration Networks, and Regional Innovation\nThis stream studies the career mobility of highly skilled workers and scientists, with particular attention to how people move across cities and institutions. It asks how urban opportunity structures, prior collaboration ties, multidimensional proximity, and research platforms are associated with mobility networks, career trajectories, and destination choice. The scale of analysis moves from city-level mobility networks to individual career histories and event-level comparison among candidate destinations.\n\n\nFirm Innovation and Innovation Measurement\nThis stream studies leading global R&D investors through a firm-year data system that links R&D expenditure, patents, trademarks, industry, country, firm identity, and year. It focuses on the measurement, combination, and temporal change of technological and brand-oriented innovation, with attention to typological differences, path dependence, and firm heterogeneity."
+  },
+  {
+    "objectID": "research.html#research-framework",
+    "href": "research.html#research-framework",
+    "title": "Research",
+    "section": "Research Framework",
+    "text": "Research Framework\n\n\n\nStream I\n\n\nTalent Mobility\n\n\n\nSpatial StructureIntercity mobility networks and urban opportunity structures\n\n\nIndividual EmbeddednessCareer histories, institutions, and mobility ego-networks\n\n\nDestination ChoicePre-move coauthor ties and candidate destinations\n\n\n\n\n\nStream II\n\n\nFirm Innovation\n\n\n\nInnovation MeasurementR&D, patents, trademarks, and firm identity\n\n\nTechnology-Brand CombinationJoint measurement of technological and market-facing innovation\n\n\nDynamic EvolutionFirm-year trajectories, heterogeneity, and spatial context\n\n\n\n\nRegional innovation provides the broader interpretive context for both streams."
+  },
+  {
+    "objectID": "research.html#talent-mobility-collaboration-networks-and-regional-innovation-1",
+    "href": "research.html#talent-mobility-collaboration-networks-and-regional-innovation-1",
+    "title": "Research",
+    "section": "Talent Mobility, Collaboration Networks, and Regional Innovation",
+    "text": "Talent Mobility, Collaboration Networks, and Regional Innovation\n\n\nIntercity Mobility Networks of Elite Biomedical Scientists\nThis work reconstructs the career histories of highly cited biomedical scientists and organizes intercity employment moves as directed ties among cities. The analysis treats cities as institutional and scientific opportunity environments, then examines the spatial structure and city-level conditions associated with mobility-link formation.\n\nData Longitudinal career histories · institution-city matching · mobility events\n\n\nMethods Social network analysis · city-level indicators · GIS interpretation · Heckman\n\n\nAccepted article in World Regional Studies.\n\n\n\nWhole-Network and Ego-Network Extension\nThe next stage connects city-level network structure with scientist-level mobility ego-networks. A 1970-2023 longitudinal database of 500 elite biomedical scientists and a 40-scientist ego-network subset support analysis of how individual careers are embedded in broader urban mobility networks.\n\nData Scientist-institution-city histories · mobility ego-network subset\n\n\nMethods Whole-network analysis · ego networks · proximity measures · WERGM\n\n\nSubmitted manuscript.\n\n\n\nDestination Choice and Relational Mechanisms\nRecent work treats an observed intercity job move as a choice among candidate destinations. It compares the selected city with alternative cities and measures pre-move coauthor ties before each move, including tie presence, breadth, persistence, network share, timing, and domestic or international context.\n\nData Mobility event by candidate-destination structure · time-ordered coauthor ties\n\n\nMethods Candidate sets · event-stratified conditional logit · temporal design\n\n\nSubmitted manuscript."
+  },
+  {
+    "objectID": "research.html#firm-innovation-and-innovation-measurement-1",
+    "href": "research.html#firm-innovation-and-innovation-measurement-1",
+    "title": "Research",
+    "section": "Firm Innovation and Innovation Measurement",
+    "text": "Firm Innovation and Innovation Measurement\n\n\nFirm-Year Innovation Data System\nThis work develops a firm-year data system for leading global R&D investors. It links R&D expenditure with patents, trademarks, industry, country, firm identity, and year so that technological and market-facing innovation can be studied in the same empirical structure.\n\nData R&D investors · patents · trademarks · industry and country fields\n\n\nMethods Entity matching · IP linkage · panel construction · measurement audit\n\n\nData-system development in progress.\n\n\n\nTechnology-Brand Innovation Combinations\nThis line asks how patent portfolios and trademark portfolios combine across firms. The emphasis is on measurement: how to compare technology-oriented and brand-oriented innovation without collapsing firm innovation into a single output count.\n\nData Linked intellectual-property records · firm-year observations\n\n\nMethods Indicator construction · portfolio comparison · typological description\n\n\nResearch design and data construction in progress.\n\n\n\nDynamic Evolution and Spatial Context\nThe firm-year panel also supports questions about change over time. Current design work considers how innovation configurations vary by industry, country, firm characteristics, and regional innovation environments.\n\nData Firm-year innovation records · industry and national context\n\n\nMethods Longitudinal comparison · heterogeneity analysis · spatial contextualization\n\n\nOngoing research stream."
+  },
+  {
+    "objectID": "research.html#research-trajectory",
+    "href": "research.html#research-trajectory",
+    "title": "Research",
+    "section": "Research Trajectory",
+    "text": "Research Trajectory\n\n\n\n01\n\n\n\n\n\n\nSpatial and Quantitative Foundations\n\n\nRemote sensing, trade networks, and applied quantitative training\n\n\nEarly projects moved from spatial data processing, urban resilience, and global trade networks into quantitative research training, building a foundation for analyzing spatial data, temporal change, and relational networks.\n\n\nGIS · VIIRS-DNB · DTW · K-Means · UN Comtrade · Network Analysis\n\n\n\n\n\n02\n\n\n\n\n\n\nTalent Mobility Networks\n\n\nFrom career histories to city-level mobility networks\n\n\nBy reconstructing scientist career histories and matching institutions with cities, individual career moves are organized as directed mobility relations among cities. This supports analysis of mobility structure, city hierarchy, and network formation conditions.\n\n\nCareer Histories · SNA · GIS · Heckman\n\n\n\n\n\n03\n\n\n\n\n\n\nMulti-scale Relational Analysis\n\n\nFrom whole networks to individual career trajectories\n\n\nThe research then moves from the overall city network to individual career trajectories, mobility ego-networks, and multidimensional proximity, connecting macro mobility structure with micro relational organization.\n\n\nWERGM · Ego Networks · Proximity · Longitudinal Data\n\n\n\n\n\n04\n\n\n\n\n\n\nEvent-level Choice Design\n\n\nFrom realized moves to candidate-destination comparison\n\n\nEach observed career move is modelled as an event-level choice among candidate cities, making it possible to compare selected and unselected destinations through pre-move collaboration ties and their scale, persistence, and timing.\n\n\nCandidate Sets · Conditional Logit · Coauthor Ties · Temporal Design\n\n\n\n\n\n05\n\n\n\n\n\n\nInnovation Measurement Extension\n\n\nFrom talent as an innovation actor to firms\n\n\nThe current extension turns to leading global R&D investors and builds innovation measures from R&D expenditure, patents, trademarks, and firm-year information.\n\n\nR&D · Patents · Trademarks · Firm-Year Panel"
+  },
+  {
+    "objectID": "research.html#earlier-research-and-method-foundations",
+    "href": "research.html#earlier-research-and-method-foundations",
+    "title": "Research",
+    "section": "Earlier Research and Method Foundations",
+    "text": "Earlier Research and Method Foundations\n\n\nUrban Resilience and Remote Sensing\nNighttime-light resilience research used VIIRS-DNB daily data, Fisher Information, DTW, K-Means, and GIS processing to compare urban responses to the COVID-19 shock.\n\nVIIRS-DNB · FIL · DTW · K-Means · GIS\n\n\n\nGlobal Trade Networks\nTrade-network work used UN Comtrade data to construct directed weighted networks and examine centrality, core structure, and temporal change.\n\nUN Comtrade · Weighted Networks · Centrality · Temporal Comparison\n\n\n\nApplied Quantitative Modelling\nInterdisciplinary modelling training included feature selection, model comparison, validation, and sensitivity analysis in applied quantitative contexts.\n\nLasso · RFE · Random Forest · SVM · OLS\n\n\n\nPolicy, Planning, and Spatial Analysis Practice\nPolicy and planning practice involved policy review, case collection, data organization, report writing, GIS mapping, territorial spatial planning, port planning, rural revitalization, and industrial planning.\n\nGIS · Policy Review · Spatial Diagnosis · Report Writing"
+  },
+  {
+    "objectID": "methods.html",
+    "href": "methods.html",
+    "title": "Methods & Data",
+    "section": "",
+    "text": "This data system links highly cited biomedical scientists to institutions, cities, career stages, mobility events, coauthor records, and publication-location fields. It is designed for longitudinal analysis of mobility networks, career embeddedness, destination choice, and regional innovation.\n\n\n\nThis data system organizes leading global R&D investors as firm-year observations. It integrates R&D expenditure, patent records, trademark records, industry, country, firm identity, and year to support analysis of technology-oriented and market-facing innovation.\n\n\n\nSupporting data include VIIRS-DNB nighttime lights, UN Comtrade, geospatial and city-attribute data, and policy or planning documents. These materials provide the empirical basis for spatial measurement, network comparison, and policy interpretation."
+  },
+  {
+    "objectID": "methods.html#data-systems",
+    "href": "methods.html#data-systems",
+    "title": "Methods & Data",
+    "section": "",
+    "text": "This data system links highly cited biomedical scientists to institutions, cities, career stages, mobility events, coauthor records, and publication-location fields. It is designed for longitudinal analysis of mobility networks, career embeddedness, destination choice, and regional innovation.\n\n\n\nThis data system organizes leading global R&D investors as firm-year observations. It integrates R&D expenditure, patent records, trademark records, industry, country, firm identity, and year to support analysis of technology-oriented and market-facing innovation.\n\n\n\nSupporting data include VIIRS-DNB nighttime lights, UN Comtrade, geospatial and city-attribute data, and policy or planning documents. These materials provide the empirical basis for spatial measurement, network comparison, and policy interpretation."
+  },
+  {
+    "objectID": "methods.html#data-construction-and-measurement",
+    "href": "methods.html#data-construction-and-measurement",
+    "title": "Methods & Data",
+    "section": "Data Construction and Measurement",
+    "text": "Data Construction and Measurement\n\n\nCareer, Institution, and City Reconstruction\nCareer-history reconstruction requires person validation, institution normalization, city standardization, temporal auditing, and careful handling of education and employment records. These steps make individual careers comparable across institutions and cities over time.\n\n\nRelational and Spatial Measurement\nMobility events are linked to city attributes, coauthor ties, whole-network indicators, ego-network indicators, geographic proximity, cognitive proximity, and candidate destination sets. Publication locations are treated as database fields rather than evidence of verified interpersonal ties.\n\n\nFirm Innovation Measurement\nFirm-level measurement links R&D input with patent and trademark activity, harmonizes firm identity across sources, and organizes observations into a firm-year panel. The aim is to measure innovation portfolios without reducing innovation to a single indicator.\n\n\nHigh-Frequency Spatial Indicators\nRemote-sensing work uses nighttime-light preprocessing, spatial aggregation, Fisher Information, and trajectory comparison to construct urban resilience measures from high-frequency spatial data."
+  },
+  {
+    "objectID": "methods.html#empirical-design-and-modelling",
+    "href": "methods.html#empirical-design-and-modelling",
+    "title": "Methods & Data",
+    "section": "Empirical Design and Modelling",
+    "text": "Empirical Design and Modelling\n\n\nDestination-Choice Design\nObserved mobility is organized as event-specific choice sets: each move contains one selected destination and a set of alternative candidate cities. Predictors are measured before the move, which helps align temporal order with the interpretation of relational exposure.\n\n\nNetwork and Relational Models\nNetwork analysis is used to describe directed weighted mobility ties, core structure, centrality, whole-network formation, and scientist-level ego-networks. Weighted network modelling and proximity measures support the transition from descriptive structure to relational explanation.\n\n\nEconometric and Comparative Designs\nEmpirical work uses event-stratified conditional logit, robustness checks, sensitivity analysis, longitudinal comparison, and comparative research design. Earlier training also included Lasso, random forest, support vector machines, and cross-validation in applied modelling contexts.\n\n\nSpatial and Temporal Analysis\nGIS, dynamic time warping, K-Means clustering, spatial aggregation, and temporal comparison are used where the research question requires spatial measurement or trajectory analysis."
+  },
+  {
+    "objectID": "methods.html#reproducibility-and-research-software",
+    "href": "methods.html#reproducibility-and-research-software",
+    "title": "Methods & Data",
+    "section": "Reproducibility and Research Software",
+    "text": "Reproducibility and Research Software\n\n\nReproducible Workflow\nResearch workflows emphasize scripted processing, version control, data-quality audits, sensitivity checks, synthetic fixtures, and separation between public materials and restricted data. This is especially important for longitudinal mobility data and data derived from licensed bibliographic sources.\n\n\nResearch Software Environment\nThe working environment includes Python, R, Stata, GIS software, NetworkX, Gephi, Ucinet, Git, GitHub, and Quarto. Tools are selected for data construction, model estimation, documentation, and reproducible publication.\n\n\nScopus Research Data Toolkit\nThe Scopus research data toolkit is an open-source Python package for author-institution-city linkage in Scopus-derived research-data workflows. It uses synthetic fixtures, offline mock transport, automated tests, and public documentation; it does not bundle restricted Scopus data.\nGitHub"
   },
   {
     "objectID": "cv.html",
     "href": "cv.html",
-    "title": "CV",
+    "title": "Curriculum Vitae",
     "section": "",
-    "text": "Ran Wang is a master’s candidate in Human Geography at East China Normal University, with research training in economic geography, regional innovation, scientific mobility, urban networks, and spatial data analysis. Her work uses longitudinal relational data, network analysis, destination-choice models, and reproducible Python/R workflows to study scientific mobility and the spatial organization of knowledge production."
+    "text": "Download Public CV"
   },
   {
-    "objectID": "cv.html#academic-profile",
-    "href": "cv.html#academic-profile",
-    "title": "CV",
+    "objectID": "cv.html#cv",
+    "href": "cv.html#cv",
+    "title": "Curriculum Vitae",
     "section": "",
-    "text": "Ran Wang is a master’s candidate in Human Geography at East China Normal University, with research training in economic geography, regional innovation, scientific mobility, urban networks, and spatial data analysis. Her work uses longitudinal relational data, network analysis, destination-choice models, and reproducible Python/R workflows to study scientific mobility and the spatial organization of knowledge production."
+    "text": "Download Public CV"
   },
   {
-    "objectID": "cv.html#research-areas-and-methods",
-    "href": "cv.html#research-areas-and-methods",
-    "title": "CV",
-    "section": "Research Areas and Methods",
-    "text": "Research Areas and Methods\nEconomic geography; scientific mobility; regional innovation; science of science; intercity mobility networks; knowledge production; longitudinal data construction; entity resolution; conditional logit; social and spatial network analysis; WERGM/ERGM; GIS; Python; R; Stata."
-  },
-  {
-    "objectID": "cv.html#public-cv",
-    "href": "cv.html#public-cv",
-    "title": "CV",
-    "section": "Public CV",
-    "text": "Public CV\n\nDownload Public CV"
-  },
-  {
-    "objectID": "cv.html#links",
-    "href": "cv.html#links",
-    "title": "CV",
-    "section": "Links",
-    "text": "Links\nEmail: wangran940@163.com GitHub: https://github.com/Olivia-wr-research"
+    "objectID": "cv.html#contact",
+    "href": "cv.html#contact",
+    "title": "Curriculum Vitae",
+    "section": "Contact",
+    "text": "Contact\n\nEmail olivia.wr.research@gmail.com\nGitHub Olivia-wr-research\nWebsite olivia-wr-research.github.io"
   }
 ]

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 720 440">
+  <title id="title">Direct coauthor ties and destination choice</title>
+  <desc id="desc">Synthetic diagram showing a scientist connected to destination-specific coauthor ties before a mobility choice.</desc>
+  <rect width="720" height="440" fill="#ffffff"/>
+  <g stroke="#d8dfdc" stroke-width="1.4">
+    <path d="M130 220 H590"/>
+    <path d="M360 80 V360"/>
+  </g>
+  <g fill="none" stroke="#2f7c7a" stroke-width="5">
+    <path d="M145 220 C240 120 355 120 450 175"/>
+    <path d="M145 220 C250 265 345 295 465 275"/>
+    <path d="M145 220 C260 190 360 210 575 220"/>
+  </g>
+  <g fill="none" stroke="#b47b45" stroke-width="3" stroke-dasharray="7 7">
+    <path d="M450 175 C505 170 540 188 575 220"/>
+    <path d="M465 275 C520 275 552 252 575 220"/>
+  </g>
+  <circle cx="145" cy="220" r="36" fill="#12243a"/>
+  <circle cx="450" cy="175" r="26" fill="#2f7c7a"/>
+  <circle cx="465" cy="275" r="26" fill="#2f7c7a"/>
+  <circle cx="575" cy="220" r="34" fill="#b47b45"/>
+  <g font-family="system-ui, -apple-system, sans-serif" letter-spacing="0">
+    <text x="145" y="226" fill="#fff" font-size="15" text-anchor="middle" font-weight="700">Scientist</text>
+    <text x="450" y="181" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">Tie</text>
+    <text x="465" y="281" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">Tie</text>
+    <text x="575" y="226" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">Destination</text>
+    <text x="60" y="48" fill="#12243a" font-size="23" font-weight="750">Direct scientific relationships</text>
+    <text x="60" y="390" fill="#516171" font-size="15">Tie presence, breadth, share, persistence, and timing are measured before the move.</text>
+  </g>
+</svg>

@@ -2,14 +2,8 @@
 title: "Contact"
 ---
 
-::: {.panel .panel-dark .contact-panel}
-## Contact
+::: {.page-band .surface}
 
-For research collaboration or academic inquiries, please contact me by email.
+Contact information is available on the [CV page](cv.html).
 
-**Email**
-[wangran940@163.com](mailto:wangran940@163.com)
-
-**GitHub**
-[https://github.com/Olivia-wr-research](https://github.com/Olivia-wr-research)
 :::

@@ -2,38 +2,238 @@
 title: "Research"
 ---
 
-::: {.panel .panel-light}
-## Research Agenda
-
-My research asks how scientific mobility, knowledge production, and regional innovation are organized across space. The empirical focus is elite biomedical scientists, but the broader agenda is economic geography: how people, institutions, publications, and cities form spatial systems of scientific work.
+::: {.section-nav-wrap}
+::: {.section-nav}
+[Focus](#research-focus)
+[Framework](#research-framework)
+[Talent Mobility](#talent-mobility-collaboration-networks-and-regional-innovation)
+[Firm Innovation](#firm-innovation-and-innovation-measurement)
+[Trajectory](#research-trajectory)
+[Foundations](#earlier-research-and-method-foundations)
+:::
 :::
 
-::: {.panel .panel-muted}
-## Scientific Mobility and Destination Choice
+::: {.page-band}
 
-How do particular cities become plausible destinations before an observed move?
+## Research Focus
 
-I study mobility as a choice among candidate cities, not only as an aggregate flow between places. The destination-choice working paper constructs event-specific candidate sets and measures origin-anchored pre-move publication-location exposure. The interpretation is deliberately limited: among observed mobility events, scientists are more likely to select cities that were already visible in their pre-move publication-location environments, conditional on destination opportunity measures and geographic distance.
+My research examines the spatial organization of talent and firm innovation activity. At this stage, it is organized around two research streams with a shared concern for regional innovation.
+
+::: {.focus-lines-editorial}
+::: {.focus-line-editorial}
+### Talent Mobility, Collaboration Networks, and Regional Innovation
+
+This stream studies the career mobility of highly skilled workers and scientists, with particular attention to how people move across cities and institutions. It asks how urban opportunity structures, prior collaboration ties, multidimensional proximity, and research platforms are associated with mobility networks, career trajectories, and destination choice. The scale of analysis moves from city-level mobility networks to individual career histories and event-level comparison among candidate destinations.
 :::
 
-::: {.panel .panel-light}
-## Knowledge Networks and Regional Innovation
+::: {.focus-line-editorial}
+### Firm Innovation and Innovation Measurement
 
-How do scientists' career trajectories connect individual knowledge production with city and regional innovation systems?
-
-This line of work builds on the master's thesis, the accepted article, and ongoing research on elite biomedical scientists. It links career histories, institutional appointments, publication locations, collaboration records, mobility events, and city attributes. The goal is to describe how intercity mobility networks, research platforms, and regional opportunity structures are related, while keeping the interpretation within the limits of the research design.
+This stream studies leading global R&D investors through a firm-year data system that links R&D expenditure, patents, trademarks, industry, country, firm identity, and year. It focuses on the measurement, combination, and temporal change of technological and brand-oriented innovation, with attention to typological differences, path dependence, and firm heterogeneity.
+:::
 :::
 
-::: {.panel .panel-muted}
-## Longitudinal Relational Data and Spatial Measurement
-
-What kinds of data infrastructure are needed to study scientific careers across people, institutions, publications, and cities?
-
-A large part of my research contribution is measurement work: entity resolution, author-institution-city linkage, candidate-destination construction, city identity checks, and reproducible data-quality audits. The public Scopus Research Data Toolkit reflects this part of the agenda in a safe form, using synthetic fixtures and offline mock transport rather than nonpublic research records.
 :::
 
-::: {.panel .panel-dark}
-## Methods in Use
+::: {.page-band .surface}
 
-The main methods include longitudinal multi-source data construction, social and spatial network analysis, ego-network analysis, conditional logit models for event-level destination choice, WERGM/ERGM specifications for network projects, GIS-based spatial measurement, and reproducible Python/R workflows.
+## Research Framework
+
+<div class="research-framework research-framework-two" aria-label="Editorial research framework with two research streams">
+<div class="framework-stream">
+<p class="framework-kicker">Stream I</p>
+<h3>Talent Mobility</h3>
+<ol>
+<li><strong>Spatial Structure</strong><span>Intercity mobility networks and urban opportunity structures</span></li>
+<li><strong>Individual Embeddedness</strong><span>Career histories, institutions, and mobility ego-networks</span></li>
+<li><strong>Destination Choice</strong><span>Pre-move coauthor ties and candidate destinations</span></li>
+</ol>
+</div>
+<div class="framework-stream">
+<p class="framework-kicker">Stream II</p>
+<h3>Firm Innovation</h3>
+<ol>
+<li><strong>Innovation Measurement</strong><span>R&D, patents, trademarks, and firm identity</span></li>
+<li><strong>Technology-Brand Combination</strong><span>Joint measurement of technological and market-facing innovation</span></li>
+<li><strong>Dynamic Evolution</strong><span>Firm-year trajectories, heterogeneity, and spatial context</span></li>
+</ol>
+</div>
+<p class="framework-context">Regional innovation provides the broader interpretive context for both streams.</p>
+</div>
+
+:::
+
+::: {.page-band}
+
+## Talent Mobility, Collaboration Networks, and Regional Innovation
+
+::: {.stream-section}
+::: {.stream-card}
+### Intercity Mobility Networks of Elite Biomedical Scientists
+
+This work reconstructs the career histories of highly cited biomedical scientists and organizes intercity employment moves as directed ties among cities. The analysis treats cities as institutional and scientific opportunity environments, then examines the spatial structure and city-level conditions associated with mobility-link formation.
+
+<p class="research-meta"><strong>Data</strong> Longitudinal career histories · institution-city matching · mobility events</p>
+<p class="research-meta"><strong>Methods</strong> Social network analysis · city-level indicators · GIS interpretation · Heckman</p>
+<p class="research-status">Accepted article in <em>World Regional Studies</em>.</p>
+:::
+
+::: {.stream-card}
+### Whole-Network and Ego-Network Extension
+
+The next stage connects city-level network structure with scientist-level mobility ego-networks. A 1970-2023 longitudinal database of 500 elite biomedical scientists and a 40-scientist ego-network subset support analysis of how individual careers are embedded in broader urban mobility networks.
+
+<p class="research-meta"><strong>Data</strong> Scientist-institution-city histories · mobility ego-network subset</p>
+<p class="research-meta"><strong>Methods</strong> Whole-network analysis · ego networks · proximity measures · WERGM</p>
+<p class="research-status">Submitted manuscript.</p>
+:::
+
+::: {.stream-card}
+### Destination Choice and Relational Mechanisms
+
+Recent work treats an observed intercity job move as a choice among candidate destinations. It compares the selected city with alternative cities and measures pre-move coauthor ties before each move, including tie presence, breadth, persistence, network share, timing, and domestic or international context.
+
+<p class="research-meta"><strong>Data</strong> Mobility event by candidate-destination structure · time-ordered coauthor ties</p>
+<p class="research-meta"><strong>Methods</strong> Candidate sets · event-stratified conditional logit · temporal design</p>
+<p class="research-status">Submitted manuscript.</p>
+:::
+:::
+
+:::
+
+::: {.page-band .surface}
+
+## Firm Innovation and Innovation Measurement
+
+::: {.stream-section}
+::: {.stream-card}
+### Firm-Year Innovation Data System
+
+This work develops a firm-year data system for leading global R&D investors. It links R&D expenditure with patents, trademarks, industry, country, firm identity, and year so that technological and market-facing innovation can be studied in the same empirical structure.
+
+<p class="research-meta"><strong>Data</strong> R&D investors · patents · trademarks · industry and country fields</p>
+<p class="research-meta"><strong>Methods</strong> Entity matching · IP linkage · panel construction · measurement audit</p>
+<p class="research-status">Data-system development in progress.</p>
+:::
+
+::: {.stream-card}
+### Technology-Brand Innovation Combinations
+
+This line asks how patent portfolios and trademark portfolios combine across firms. The emphasis is on measurement: how to compare technology-oriented and brand-oriented innovation without collapsing firm innovation into a single output count.
+
+<p class="research-meta"><strong>Data</strong> Linked intellectual-property records · firm-year observations</p>
+<p class="research-meta"><strong>Methods</strong> Indicator construction · portfolio comparison · typological description</p>
+<p class="research-status">Research design and data construction in progress.</p>
+:::
+
+::: {.stream-card}
+### Dynamic Evolution and Spatial Context
+
+The firm-year panel also supports questions about change over time. Current design work considers how innovation configurations vary by industry, country, firm characteristics, and regional innovation environments.
+
+<p class="research-meta"><strong>Data</strong> Firm-year innovation records · industry and national context</p>
+<p class="research-meta"><strong>Methods</strong> Longitudinal comparison · heterogeneity analysis · spatial contextualization</p>
+<p class="research-status">Ongoing research stream.</p>
+:::
+:::
+
+:::
+
+::: {.page-band}
+
+## Research Trajectory
+
+<div class="trajectory-line editorial-timeline" data-research-timeline>
+<article>
+<div class="timeline-number">01</div>
+<div class="timeline-node" aria-hidden="true"></div>
+<div class="timeline-body">
+<p class="timeline-kicker">Spatial and Quantitative Foundations</p>
+<h3>Remote sensing, trade networks, and applied quantitative training</h3>
+<p>Early projects moved from spatial data processing, urban resilience, and global trade networks into quantitative research training, building a foundation for analyzing spatial data, temporal change, and relational networks.</p>
+<p class="timeline-meta">GIS · VIIRS-DNB · DTW · K-Means · UN Comtrade · Network Analysis</p>
+</div>
+</article>
+<article>
+<div class="timeline-number">02</div>
+<div class="timeline-node" aria-hidden="true"></div>
+<div class="timeline-body">
+<p class="timeline-kicker">Talent Mobility Networks</p>
+<h3>From career histories to city-level mobility networks</h3>
+<p>By reconstructing scientist career histories and matching institutions with cities, individual career moves are organized as directed mobility relations among cities. This supports analysis of mobility structure, city hierarchy, and network formation conditions.</p>
+<p class="timeline-meta">Career Histories · SNA · GIS · Heckman</p>
+</div>
+</article>
+<article>
+<div class="timeline-number">03</div>
+<div class="timeline-node" aria-hidden="true"></div>
+<div class="timeline-body">
+<p class="timeline-kicker">Multi-scale Relational Analysis</p>
+<h3>From whole networks to individual career trajectories</h3>
+<p>The research then moves from the overall city network to individual career trajectories, mobility ego-networks, and multidimensional proximity, connecting macro mobility structure with micro relational organization.</p>
+<p class="timeline-meta">WERGM · Ego Networks · Proximity · Longitudinal Data</p>
+</div>
+</article>
+<article>
+<div class="timeline-number">04</div>
+<div class="timeline-node" aria-hidden="true"></div>
+<div class="timeline-body">
+<p class="timeline-kicker">Event-level Choice Design</p>
+<h3>From realized moves to candidate-destination comparison</h3>
+<p>Each observed career move is modelled as an event-level choice among candidate cities, making it possible to compare selected and unselected destinations through pre-move collaboration ties and their scale, persistence, and timing.</p>
+<p class="timeline-meta">Candidate Sets · Conditional Logit · Coauthor Ties · Temporal Design</p>
+</div>
+</article>
+<article>
+<div class="timeline-number">05</div>
+<div class="timeline-node" aria-hidden="true"></div>
+<div class="timeline-body">
+<p class="timeline-kicker">Innovation Measurement Extension</p>
+<h3>From talent as an innovation actor to firms</h3>
+<p>The current extension turns to leading global R&D investors and builds innovation measures from R&D expenditure, patents, trademarks, and firm-year information.</p>
+<p class="timeline-meta">R&D · Patents · Trademarks · Firm-Year Panel</p>
+</div>
+</article>
+</div>
+
+:::
+
+::: {.page-band .surface}
+
+## Earlier Research and Method Foundations
+
+::: {.foundation-list}
+::: {.foundation-row}
+### Urban Resilience and Remote Sensing
+
+Nighttime-light resilience research used VIIRS-DNB daily data, Fisher Information, DTW, K-Means, and GIS processing to compare urban responses to the COVID-19 shock.
+
+<p class="research-meta">VIIRS-DNB · FIL · DTW · K-Means · GIS</p>
+:::
+
+::: {.foundation-row}
+### Global Trade Networks
+
+Trade-network work used UN Comtrade data to construct directed weighted networks and examine centrality, core structure, and temporal change.
+
+<p class="research-meta">UN Comtrade · Weighted Networks · Centrality · Temporal Comparison</p>
+:::
+
+::: {.foundation-row}
+### Applied Quantitative Modelling
+
+Interdisciplinary modelling training included feature selection, model comparison, validation, and sensitivity analysis in applied quantitative contexts.
+
+<p class="research-meta">Lasso · RFE · Random Forest · SVM · OLS</p>
+:::
+
+::: {.foundation-row}
+### Policy, Planning, and Spatial Analysis Practice
+
+Policy and planning practice involved policy review, case collection, data organization, report writing, GIS mapping, territorial spatial planning, port planning, rural revitalization, and industrial planning.
+
+<p class="research-meta">GIS · Policy Review · Spatial Diagnosis · Report Writing</p>
+:::
+:::
+
 :::

@@ -7,21 +7,25 @@ project:
     - index.qmd
     - research.qmd
     - publications.qmd
+    - methods.qmd
     - projects.qmd
     - cv.qmd
     - contact.qmd
   resources:
     - ../assets/img/hero.jpg
     - ../assets/img/hero-optimized.jpg
+    - ../assets/img/coauthor-ties-choice.svg
+    - ../assets/img/corporate-innovation-data-stack.svg
     - ../assets/cv/Ran_Wang_CV_Public.pdf
     - ../assets/js/language-switch.js
+    - ../assets/js/academic-v35.js
 
 lang: zh-CN
 
 website:
   title: "王冉"
-  site-url: "https://Olivia-wr-research.github.io/zh/"
-  description: "王冉的个人学术网站，展示经济地理学、科学家流动、区域创新与知识生产空间组织研究。"
+  site-url: "https://olivia-wr-research.github.io/zh/"
+  description: "王冉的个人学术网站，展示科学家流动、知识网络、区域创新与经济地理学研究。"
   search: false
   navbar:
     title: "王冉"
@@ -32,16 +36,14 @@ website:
         href: research.qmd
       - text: "成果"
         href: publications.qmd
-      - text: "项目"
-        href: projects.qmd
+      - text: "方法与数据"
+        href: methods.qmd
       - text: "简历"
         href: cv.qmd
-      - text: "联系"
-        href: contact.qmd
     right:
       - text: "GitHub"
         href: "https://github.com/Olivia-wr-research"
-      - text: "EN"
+      - text: "English"
         href: "https://olivia-wr-research.github.io/"
   page-footer:
     left: "© 2026 王冉"
@@ -51,6 +53,9 @@ format:
   html:
     theme: cosmo
     css: styles.css
+    include-after-body:
+      - ../assets/js/language-switch.html
+      - ../assets/js/academic-v35.html
     toc: false
     smooth-scroll: true
     link-external-newwindow: true
