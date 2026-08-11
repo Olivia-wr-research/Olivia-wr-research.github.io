@@ -1,0 +1,58 @@
+---
+title: "Analysis on the spatial-temporal evolution of global trade network in the context of the COVID-19"
+description: "Selected research output on the spatial-temporal evolution of global trade networks during COVID-19."
+---
+
+::: {.page-band .surface .paper-page}
+
+<p class="paper-meta">First Author · Selected Research Output</p>
+
+## Abstract
+
+<p class="abstract-text">Based on the data of the United Nations Commodity Trade Database from 2019 to 2021, this paper uses the social network analysis method to analyze the temporal and spatial pattern evolution of the global trade network under the influence of the COVID-19 epidemic. Research has found that ① There are significant regional differences in trade connections, with North America, Western Europe, and East Asia presenting a "three legged" pattern. ② The United States occupies a core position in the global trade network. The COVID-19 epidemic has reduced the scale of the global trade network and increasingly scattered network connections. ③ China, the United States and Germany are the core countries in the global commodity trade network. The COVID-19 epidemic has different impacts on different types of product trade and countries in different regions. ④ Economy, population, geographical distance, culture, and national policies have varying degrees of impact on global trade.</p>
+
+## Research Workflow
+
+<div class="paper-workflow">
+<div>
+<h3>Data</h3>
+<ul>
+<li>UN Comtrade</li>
+<li>2019–2021</li>
+<li>219 countries and regions</li>
+<li>Global commodity trade</li>
+<li>Resource-intensive, labour-intensive, capital-intensive, and technology-intensive product networks</li>
+</ul>
+</div>
+<div>
+<h3>Methods</h3>
+<ul>
+<li>Directed weighted trade networks</li>
+<li>Social network analysis</li>
+<li>Degree and weighted degree</li>
+<li>Network density</li>
+<li>Average clustering coefficient</li>
+<li>Average path length</li>
+<li>Spatial-temporal comparison</li>
+</ul>
+</div>
+<div>
+<h3>Tools</h3>
+<ul>
+<li>Excel</li>
+<li>Gephi</li>
+<li>ArcGIS</li>
+<li>Scimago Graphica</li>
+</ul>
+</div>
+</div>
+
+## My Contribution
+
+<div class="paper-contribution">
+First Author
+</div>
+
+<p class="paper-back">[Back to Publications](../publications.html)</p>
+
+:::

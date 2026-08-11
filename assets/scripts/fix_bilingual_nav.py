@@ -28,10 +28,14 @@ def copy_zh_runtime_assets() -> None:
 
 
 def counterpart_href(path: Path, lang: str) -> str:
+    rel = path.relative_to(ROOT / "docs")
+    if rel.parts and rel.parts[0] == "zh":
+        rel = Path(*rel.parts[1:])
     stem = path.stem
+    rel_href = rel.as_posix()
     if lang == "english":
-        return "https://olivia-wr-research.github.io/zh/" if stem == "index" else f"https://olivia-wr-research.github.io/zh/{path.name}"
-    return "https://olivia-wr-research.github.io/" if stem == "index" else f"https://olivia-wr-research.github.io/{path.name}"
+        return "https://olivia-wr-research.github.io/zh/" if stem == "index" and len(rel.parts) == 1 else f"https://olivia-wr-research.github.io/zh/{rel_href}"
+    return "https://olivia-wr-research.github.io/" if stem == "index" and len(rel.parts) == 1 else f"https://olivia-wr-research.github.io/{rel_href}"
 
 
 def main() -> int:
@@ -40,10 +44,12 @@ def main() -> int:
         return 2
 
     if sys.argv[1] == "english":
-        for path in (ROOT / "docs").glob("*.html"):
+        for path in (ROOT / "docs").glob("**/*.html"):
+            if "zh" in path.relative_to(ROOT / "docs").parts:
+                continue
             replace_language_link(path, "中文", counterpart_href(path, "english"))
     else:
-        for path in (ROOT / "docs" / "zh").glob("*.html"):
+        for path in (ROOT / "docs" / "zh").glob("**/*.html"):
             replace_language_link(path, "English", counterpart_href(path, "zh"))
         copy_zh_runtime_assets()
     return 0

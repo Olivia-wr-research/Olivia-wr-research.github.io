@@ -1,0 +1,52 @@
+---
+title: "The spatial structure and influencing factors of the flow of global top biomedical scientists from the perspective of urban network"
+description: "Accepted article on the urban-network structure and influencing factors of global top biomedical scientist mobility."
+---
+
+::: {.page-band .surface .paper-page}
+
+<p class="paper-meta">First Author · Accepted · World Regional Studies</p>
+
+## Abstract
+
+<p class="abstract-text">As a knowledge and capital intensive field, biomedical industry is increasingly becoming the core battlefield of global innovation competition. This study focuses on the world's top biomedical scientists, who, with their cutting-edge knowledge and professional skills, have a significant role in promoting the development of regional industries. From the perspective of urban network, this study uses complex network analysis method to deeply analyze the flow trajectory of the world's top biomedical scientists. Using Heckman two-stage regression model, this paper explores the key factors affecting the flow of scientists in different career stages. The study found that: ① the flow of top biomedical scientists in the world presents a network structure centered on the United States, and the phenomenon of cross continent flow is significant. In the learning stage, talent flow mainly shows the characteristics of unidirectional, centralized and unipolar, and top scientists tend to flow to areas with dense universities. At the working stage, the flow mode has changed to polycentric and networked, and scientists are more inclined to choose scientific research institutions and industrial bases. ② The flow of top scientists is highly selective. Their migration behavior is not only affected by scientific research output and academic influence, but also closely related to interdisciplinary background and other factors. The study also found that regions with intensive scientific research resources and good scientific research ecology have a strong attraction for top scientists, while institutional barriers and cultural differences are important factors restricting the flow of global scientific research talents.</p>
+
+## Research Workflow
+
+<div class="paper-workflow">
+<div>
+<h3>Data</h3>
+<ul>
+<li>Global top biomedical scientists</li>
+<li>Verified career histories</li>
+<li>City-level mobility records across education and employment stages</li>
+<li>City research and innovation attributes</li>
+</ul>
+</div>
+<div>
+<h3>Methods</h3>
+<ul>
+<li>Career-history analysis</li>
+<li>Complex network analysis</li>
+<li>Education-employment stage comparison</li>
+<li>Core-periphery analysis</li>
+<li>Heckman two-stage regression</li>
+</ul>
+</div>
+<div>
+<h3>Tools</h3>
+<ul>
+<li>Gephi 10.1</li>
+</ul>
+</div>
+</div>
+
+## My Contribution
+
+<div class="paper-contribution">
+First Author
+</div>
+
+<p class="paper-back">[Back to Publications](../publications.html)</p>
+
+:::

@@ -197,6 +197,12 @@ main.content {
   text-shadow: 0 2px 16px rgba(7, 26, 43, 0.34);
 }
 
+#title-block-header .description,
+.quarto-title .description {
+  color: rgba(255, 255, 255, 0.86);
+  text-shadow: 0 1px 12px rgba(7, 26, 43, 0.36);
+}
+
 .hero-v3 {
   box-sizing: border-box;
   display: block;
@@ -847,6 +853,91 @@ main.content {
   font-size: 0.72rem;
   letter-spacing: 0.02em;
   padding: 0.28rem 0.46rem;
+}
+
+.publication-link {
+  color: var(--accent-dark);
+  display: inline-flex;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 720;
+  margin-top: 0.35rem;
+  text-decoration: none;
+}
+
+.publication-link:hover,
+.publication-link:focus {
+  color: var(--teal);
+  text-decoration: underline;
+}
+
+.paper-page > *,
+.paper-page .quarto-title-block {
+  max-width: 940px;
+}
+
+.paper-page .paper-meta {
+  border-left: 3px solid rgba(180, 123, 69, 0.78);
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 650;
+  line-height: 1.45;
+  margin-bottom: 1.8rem;
+  padding-left: 0.78rem;
+}
+
+.paper-page .abstract-text {
+  font-size: 1.02rem;
+  line-height: 1.78;
+  max-width: 860px;
+}
+
+:lang(zh-CN) .paper-page .abstract-text {
+  line-height: 1.92;
+}
+
+.paper-workflow {
+  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 1.4rem auto 0;
+}
+
+.paper-workflow > div {
+  border-left: 1px solid var(--line);
+  min-width: 0;
+  padding: 1rem 1.15rem;
+}
+
+.paper-workflow > div:first-child {
+  border-left: 0;
+}
+
+.paper-workflow h3 {
+  color: var(--teal);
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.65rem;
+  text-transform: uppercase;
+}
+
+.paper-workflow ul {
+  margin-bottom: 0;
+  padding-left: 1.05rem;
+}
+
+.paper-contribution {
+  border-top: 1px solid var(--line);
+  margin-top: 1.8rem;
+  padding-top: 1.05rem;
+}
+
+.paper-back {
+  margin-top: 2rem;
 }
 
 .focus-grid,
@@ -1994,6 +2085,19 @@ main.content {
   .workflow-step,
   .flow-step {
     min-height: auto;
+  }
+
+  .paper-workflow {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-workflow > div {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .paper-workflow > div:first-child {
+    border-top: 0;
   }
 }
 

@@ -7,6 +7,7 @@ project:
     - index.qmd
     - research.qmd
     - publications.qmd
+    - papers/*.qmd
     - methods.qmd
     - projects.qmd
     - cv.qmd
@@ -26,7 +27,7 @@ website:
   title: "王冉"
   site-url: "https://olivia-wr-research.github.io/zh/"
   description: "王冉的个人学术网站，展示科学家流动、知识网络、区域创新与经济地理学研究。"
-  search: false
+  search: true
   navbar:
     title: "王冉"
     left:
