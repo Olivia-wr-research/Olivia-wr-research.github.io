@@ -18,7 +18,7 @@
     "href": "zh/papers/whole-ego-mobility.html",
     "title": "“全域-自我”视角下全球生物医药顶尖科学家城际流动网络结构与形成机制",
     "section": "",
-    "text": "第一作者 · 已投稿论文\n\n\n\n\n科技人才流动是影响全球创新格局的重要方面，但既有研究多从全域视角（城市科创条件与多维邻近性）解释人才流动机制，对个体职业轨迹与科研平台的支撑作用关注不足。本文以顶尖科学家为例，综合运用社会网络分析方法、加权指数随机图模型和自我网络分析方法，分析其城际流动网络的结构特征、形成机制及个体迁移过程。研究发现：（1）城际流动网络呈低密度、高选择性的核心—边缘格局，欧美核心与跨大西洋联系总体稳定，后期专业化医学及生物医药研发集聚城市地位上升；（2）全球生物医药顶尖科学家城际流动受关系属性与科创条件的显著影响。多维邻近性差异显著：地理距离与制度邻近性持续发挥作用，文化邻近性后期减弱，认知邻近性影响不稳定。科创条件作用具有阶段性：专业化科研平台较一般经济规模更能解释人才流动，期初跨平台嵌入型人才存量与后续流动联系显著相关，其中迁出端作用更稳定。（3）个体流动自我网络表明，顶尖科学家城际流动是网络结构、城市条件、多维邻近性、历史联系与个体职业轨迹共同作用的跨尺度空间过程。\n\n\n\n\n\n\n\n\n\n1970—2023 年全球生物医药顶尖科学家职业履历\n\n\n前 500 名科学家总体样本\n\n\n机构与城市任职记录\n\n\n科研产出\n\n\n城市属性\n\n\n组织平台类型\n\n\n\n\n\n\n\n有向赋权城际流动网络\n\n\n社会网络分析\n\n\n全域网络分析\n\n\n自我网络分析\n\n\n多期 WERGM\n\n\n多维邻近性\n\n\n跨平台职业轨迹测度\n\n\n\n\n\n\n\nR\n\n\nergm.count\n\n\n\n\n\n\n\n\n第一作者\n\n\n返回成果页"
+    "text": "第一作者 · 已投稿论文\n\n\n\n\n科技人才流动是影响全球创新格局的重要方面，但既有研究多从全域视角（城市科创条件与多维邻近性）解释人才流动机制，对个体职业轨迹与科研平台的支撑作用关注不足。本文以顶尖科学家为例，综合运用社会网络分析方法、加权指数随机图模型和自我网络分析方法，分析其城际流动网络的结构特征、形成机制及个体迁移过程。研究发现：（1）城际流动网络呈低密度、高选择性的核心—边缘格局，欧美核心与跨大西洋联系总体稳定，后期专业化医学及生物医药研发集聚城市地位上升；（2）全球生物医药顶尖科学家城际流动受关系属性与科创条件的显著影响。多维邻近性差异显著：地理距离与制度邻近性持续发挥作用，文化邻近性后期减弱，认知邻近性影响不稳定。科创条件作用具有阶段性：专业化科研平台较一般经济规模更能解释人才流动，期初跨平台嵌入型人才存量与后续流动联系显著相关，其中迁出端作用更稳定。（3）个体流动自我网络表明，顶尖科学家城际流动是网络结构、城市条件、多维邻近性、历史联系与个体职业轨迹共同作用的跨尺度空间过程。\n\n\n\n\n\n\n\n\n\n1970—2023 年全球生物医药顶尖科学家职业履历\n\n\n前 500 名科学家总体样本\n\n\n机构与城市任职记录\n\n\n科研产出\n\n\n城市属性\n\n\n组织平台类型\n\n\n\n\n\n\n\n有向赋权城际流动网络\n\n\n社会网络分析\n\n\n全域网络分析\n\n\n自我网络分析\n\n\n多期 WERGM\n\n\n多维邻近性\n\n\n跨平台职业轨迹测度\n\n\n\n\n\n返回成果页"
   },
   {
     "objectID": "zh/papers/whole-ego-mobility.html#摘要",
@@ -32,21 +32,14 @@
     "href": "zh/papers/whole-ego-mobility.html#研究路径",
     "title": "“全域-自我”视角下全球生物医药顶尖科学家城际流动网络结构与形成机制",
     "section": "",
-    "text": "1970—2023 年全球生物医药顶尖科学家职业履历\n\n\n前 500 名科学家总体样本\n\n\n机构与城市任职记录\n\n\n科研产出\n\n\n城市属性\n\n\n组织平台类型\n\n\n\n\n\n\n\n有向赋权城际流动网络\n\n\n社会网络分析\n\n\n全域网络分析\n\n\n自我网络分析\n\n\n多期 WERGM\n\n\n多维邻近性\n\n\n跨平台职业轨迹测度\n\n\n\n\n\n\n\nR\n\n\nergm.count"
-  },
-  {
-    "objectID": "zh/papers/whole-ego-mobility.html#我的贡献",
-    "href": "zh/papers/whole-ego-mobility.html#我的贡献",
-    "title": "“全域-自我”视角下全球生物医药顶尖科学家城际流动网络结构与形成机制",
-    "section": "",
-    "text": "第一作者\n\n\n返回成果页"
+    "text": "1970—2023 年全球生物医药顶尖科学家职业履历\n\n\n前 500 名科学家总体样本\n\n\n机构与城市任职记录\n\n\n科研产出\n\n\n城市属性\n\n\n组织平台类型\n\n\n\n\n\n\n\n有向赋权城际流动网络\n\n\n社会网络分析\n\n\n全域网络分析\n\n\n自我网络分析\n\n\n多期 WERGM\n\n\n多维邻近性\n\n\n跨平台职业轨迹测度\n\n\n\n\n\n返回成果页"
   },
   {
     "objectID": "zh/papers/urban-network-biomedical-mobility.html",
     "href": "zh/papers/urban-network-biomedical-mobility.html",
     "title": "城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素",
     "section": "",
-    "text": "第一作者 · 已录用 · 《世界地理研究》\n\n\n\n\n生物医药产业作为知识和资金双密集型领域，正日益成为全球创新竞争的核心战场。本研究聚焦于全球生物医药顶尖科学家，这些科学家凭借其尖端知识和专业技能，对区域产业发展具有显著的推动作用。本研究从城市网络视角出发，运用复杂网络分析方法，深入剖析了全球生物医药顶尖科学家的流动轨迹。采用 Heckman 二阶段回归模型，探究影响科学家在不同职业阶段流动的关键因素。研究发现：①全球生物医药顶尖科学家流动呈现以美国为中心的网络结构，且跨洲流动现象显著。在学习阶段，人才流动主要呈现单向、中心化和单极化的特征，顶尖科学家倾向于流向高校密集的地区。而在工作阶段，流动模式则转变为多中心化和网络化，科学家更倾向于选择科研机构和产业基地。②顶尖科学家的流动具有显著的选择性。他们的迁移行为不仅受科研产出和学术影响力的影响，还与跨学科背景等因素紧密相关。研究还发现，科研资源密集、科研生态良好的区域对顶尖科学家具有强大的吸引力，而制度壁垒和文化差异则是限制全球科研人才流动的重要因素。\n\n\n\n\n\n\n\n\n\n全球生物医药顶尖科学家样本\n\n\n职业履历\n\n\n学习与工作阶段城市流动记录\n\n\n城市科研与创新属性\n\n\n\n\n\n\n\n履历分析\n\n\n复杂网络分析\n\n\n学习阶段与工作阶段比较\n\n\n核心—边缘结构分析\n\n\nHeckman 二阶段回归\n\n\n\n\n\n\n\nGephi 10.1\n\n\n\n\n\n\n\n\n第一作者\n\n\n返回成果页"
+    "text": "第一作者 · 已录用 · 《世界地理研究》\n\n\n\n\n生物医药产业作为知识和资金双密集型领域，正日益成为全球创新竞争的核心战场。本研究聚焦于全球生物医药顶尖科学家，这些科学家凭借其尖端知识和专业技能，对区域产业发展具有显著的推动作用。本研究从城市网络视角出发，运用复杂网络分析方法，深入剖析了全球生物医药顶尖科学家的流动轨迹。采用 Heckman 二阶段回归模型，探究影响科学家在不同职业阶段流动的关键因素。研究发现：①全球生物医药顶尖科学家流动呈现以美国为中心的网络结构，且跨洲流动现象显著。在学习阶段，人才流动主要呈现单向、中心化和单极化的特征，顶尖科学家倾向于流向高校密集的地区。而在工作阶段，流动模式则转变为多中心化和网络化，科学家更倾向于选择科研机构和产业基地。②顶尖科学家的流动具有显著的选择性。他们的迁移行为不仅受科研产出和学术影响力的影响，还与跨学科背景等因素紧密相关。研究还发现，科研资源密集、科研生态良好的区域对顶尖科学家具有强大的吸引力，而制度壁垒和文化差异则是限制全球科研人才流动的重要因素。\n\n\n\n\n\n\n\n\n\n全球生物医药顶尖科学家样本\n\n\n职业履历\n\n\n学习与工作阶段城市流动记录\n\n\n城市科研与创新属性\n\n\n\n\n\n\n\n履历分析\n\n\n复杂网络分析\n\n\n学习阶段与工作阶段比较\n\n\n核心—边缘结构分析\n\n\nHeckman 二阶段回归\n\n\n\n\n\n返回成果页"
   },
   {
     "objectID": "zh/papers/urban-network-biomedical-mobility.html#摘要",
@@ -60,21 +53,14 @@
     "href": "zh/papers/urban-network-biomedical-mobility.html#研究路径",
     "title": "城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素",
     "section": "",
-    "text": "全球生物医药顶尖科学家样本\n\n\n职业履历\n\n\n学习与工作阶段城市流动记录\n\n\n城市科研与创新属性\n\n\n\n\n\n\n\n履历分析\n\n\n复杂网络分析\n\n\n学习阶段与工作阶段比较\n\n\n核心—边缘结构分析\n\n\nHeckman 二阶段回归\n\n\n\n\n\n\n\nGephi 10.1"
-  },
-  {
-    "objectID": "zh/papers/urban-network-biomedical-mobility.html#我的贡献",
-    "href": "zh/papers/urban-network-biomedical-mobility.html#我的贡献",
-    "title": "城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素",
-    "section": "",
-    "text": "第一作者\n\n\n返回成果页"
+    "text": "全球生物医药顶尖科学家样本\n\n\n职业履历\n\n\n学习与工作阶段城市流动记录\n\n\n城市科研与创新属性\n\n\n\n\n\n\n\n履历分析\n\n\n复杂网络分析\n\n\n学习阶段与工作阶段比较\n\n\n核心—边缘结构分析\n\n\nHeckman 二阶段回归\n\n\n\n\n\n返回成果页"
   },
   {
     "objectID": "zh/papers/global-trade-network.html",
     "href": "zh/papers/global-trade-network.html",
     "title": "新冠疫情背景下的全球贸易网络的时空格局演化分析",
     "section": "",
-    "text": "第一作者 · 代表性研究成果\n\n\n\n\n基于 2019-2021 年联合国商品贸易数据库数据，使用社会网络分析方法，分析新冠疫情影响下的全球贸易网络的时空格局演变。研究发现：①贸易联系区域差异明显，北美、西欧、东亚呈现出“三足鼎立”的格局。美国在全球贸易网络中占据核心地位。②新冠疫情使得全球贸易网络规模缩小，网络联系日趋分散。③中国、美国、德国是全球商品贸易网络的核心国家，新冠疫情对于不同类型产品的贸易、不同国家和地区产生不同影响。④经济规模、人口数量、地理距离、社会文化、国家政策对全球贸易产生不同程度的影响。\n\n\n\n\n\n\n\n\n\nUN Comtrade\n\n\n2019—2021 年\n\n\n219 个国家和地区\n\n\n全球商品贸易\n\n\n资源密集型、劳动密集型、资本密集型和技术密集型产品网络\n\n\n\n\n\n\n\n有向赋权贸易网络\n\n\n社会网络分析\n\n\n平均度与加权度\n\n\n网络密度\n\n\n平均聚类系数\n\n\n平均路径长度\n\n\n时空比较分析\n\n\n\n\n\n\n\nExcel\n\n\nGephi\n\n\nArcGIS\n\n\nScimago Graphica\n\n\n\n\n\n\n\n\n第一作者\n\n\n返回成果页"
+    "text": "第一作者 · 代表性研究成果\n\n\n\n\n基于 2019-2021 年联合国商品贸易数据库数据，使用社会网络分析方法，分析新冠疫情影响下的全球贸易网络的时空格局演变。研究发现：①贸易联系区域差异明显，北美、西欧、东亚呈现出“三足鼎立”的格局。美国在全球贸易网络中占据核心地位。②新冠疫情使得全球贸易网络规模缩小，网络联系日趋分散。③中国、美国、德国是全球商品贸易网络的核心国家，新冠疫情对于不同类型产品的贸易、不同国家和地区产生不同影响。④经济规模、人口数量、地理距离、社会文化、国家政策对全球贸易产生不同程度的影响。\n\n\n\n\n\n\n\n\n\nUN Comtrade\n\n\n2019—2021 年\n\n\n219 个国家和地区\n\n\n全球商品贸易\n\n\n资源密集型、劳动密集型、资本密集型和技术密集型产品网络\n\n\n\n\n\n\n\n有向赋权贸易网络\n\n\n社会网络分析\n\n\n平均度与加权度\n\n\n网络密度\n\n\n平均聚类系数\n\n\n平均路径长度\n\n\n时空比较分析\n\n\n\n\n\n返回成果页"
   },
   {
     "objectID": "zh/papers/global-trade-network.html#摘要",
@@ -88,21 +74,14 @@
     "href": "zh/papers/global-trade-network.html#研究路径",
     "title": "新冠疫情背景下的全球贸易网络的时空格局演化分析",
     "section": "",
-    "text": "UN Comtrade\n\n\n2019—2021 年\n\n\n219 个国家和地区\n\n\n全球商品贸易\n\n\n资源密集型、劳动密集型、资本密集型和技术密集型产品网络\n\n\n\n\n\n\n\n有向赋权贸易网络\n\n\n社会网络分析\n\n\n平均度与加权度\n\n\n网络密度\n\n\n平均聚类系数\n\n\n平均路径长度\n\n\n时空比较分析\n\n\n\n\n\n\n\nExcel\n\n\nGephi\n\n\nArcGIS\n\n\nScimago Graphica"
-  },
-  {
-    "objectID": "zh/papers/global-trade-network.html#我的贡献",
-    "href": "zh/papers/global-trade-network.html#我的贡献",
-    "title": "新冠疫情背景下的全球贸易网络的时空格局演化分析",
-    "section": "",
-    "text": "第一作者\n\n\n返回成果页"
+    "text": "UN Comtrade\n\n\n2019—2021 年\n\n\n219 个国家和地区\n\n\n全球商品贸易\n\n\n资源密集型、劳动密集型、资本密集型和技术密集型产品网络\n\n\n\n\n\n\n\n有向赋权贸易网络\n\n\n社会网络分析\n\n\n平均度与加权度\n\n\n网络密度\n\n\n平均聚类系数\n\n\n平均路径长度\n\n\n时空比较分析\n\n\n\n\n\n返回成果页"
   },
   {
     "objectID": "papers/whole-ego-mobility.html",
     "href": "papers/whole-ego-mobility.html",
     "title": "Structure and Formation Mechanisms of the Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Whole-Network and Ego-Network Perspective",
     "section": "",
-    "text": "First Author · Submitted Manuscript\n\n\n\n\nScientific talent mobility is an important force shaping the global innovation landscape. Existing studies, however, have largely explained talent mobility from a whole-network perspective, emphasizing urban science and innovation conditions and multidimensional proximity, while paying insufficient attention to individual career trajectories and the supporting role of research platforms. Using career histories, research outputs, and urban attribute data for top global biomedical scientists from 1970 to 2023, this study combines social network analysis, weighted exponential random graph models, and ego-network analysis to examine the structural characteristics, formation mechanisms, and individual mobility processes of their intercity mobility network. The results show that: (1) The intercity mobility network of top global biomedical scientists exhibits a low-density, highly selective core–periphery structure. Its European and North American core and transatlantic connections remain broadly stable, while cities specializing in medical research, biomedical research and development, and related industrial activities become increasingly prominent in later periods. (2) Intercity mobility ties among top global biomedical scientists are jointly shaped by endogenous network structure, urban science and innovation conditions, and multidimensional proximity. Geographical distance consistently constrains mobility, whereas institutional proximity consistently facilitates it. The effect of cultural proximity weakens in the later period, while cognitive proximity shows no stable association. The effects of urban science and innovation conditions vary across periods and between origins and destinations: specialized research platforms explain mobility more consistently than general economic scale. The initial stock of cross-platform embedded talent is significantly associated with subsequent mobility ties, with a more stable association at the origin. (3) Ego-network analysis shows that the intercity mobility of top global biomedical scientists is a cross-scale spatial process jointly shaped by network structure, urban conditions, multidimensional proximity, historical ties, and individual career trajectories.\n\n\n\n\n\n\n\n\n\n1970–2023 career histories of top global biomedical scientists\n\n\nTop-500 scientist roster\n\n\nInstitutional and city appointments\n\n\nResearch outputs\n\n\nUrban attributes\n\n\nOrganization-platform histories\n\n\n\n\n\n\n\nDirected weighted intercity mobility networks\n\n\nSocial network analysis\n\n\nWhole-network analysis\n\n\nEgo-network analysis\n\n\nMulti-period WERGM\n\n\nMultidimensional proximity\n\n\nCross-platform career-trajectory measurement\n\n\n\n\n\n\n\nR\n\n\nergm.count\n\n\n\n\n\n\n\n\nFirst Author\n\n\nBack to Publications"
+    "text": "First Author · Submitted Manuscript\n\n\n\n\nScientific talent mobility is an important force shaping the global innovation landscape. Existing studies, however, have largely explained talent mobility from a whole-network perspective, emphasizing urban science and innovation conditions and multidimensional proximity, while paying insufficient attention to individual career trajectories and the supporting role of research platforms. Using career histories, research outputs, and urban attribute data for top global biomedical scientists from 1970 to 2023, this study combines social network analysis, weighted exponential random graph models, and ego-network analysis to examine the structural characteristics, formation mechanisms, and individual mobility processes of their intercity mobility network. The results show that: (1) The intercity mobility network of top global biomedical scientists exhibits a low-density, highly selective core–periphery structure. Its European and North American core and transatlantic connections remain broadly stable, while cities specializing in medical research, biomedical research and development, and related industrial activities become increasingly prominent in later periods. (2) Intercity mobility ties among top global biomedical scientists are jointly shaped by endogenous network structure, urban science and innovation conditions, and multidimensional proximity. Geographical distance consistently constrains mobility, whereas institutional proximity consistently facilitates it. The effect of cultural proximity weakens in the later period, while cognitive proximity shows no stable association. The effects of urban science and innovation conditions vary across periods and between origins and destinations: specialized research platforms explain mobility more consistently than general economic scale. The initial stock of cross-platform embedded talent is significantly associated with subsequent mobility ties, with a more stable association at the origin. (3) Ego-network analysis shows that the intercity mobility of top global biomedical scientists is a cross-scale spatial process jointly shaped by network structure, urban conditions, multidimensional proximity, historical ties, and individual career trajectories.\n\n\n\n\n\n\n\n\n\n1970–2023 career histories of top global biomedical scientists\n\n\nTop-500 scientist roster\n\n\nInstitutional and city appointments\n\n\nResearch outputs\n\n\nUrban attributes\n\n\nOrganization-platform histories\n\n\n\n\n\n\n\nDirected weighted intercity mobility networks\n\n\nSocial network analysis\n\n\nWhole-network analysis\n\n\nEgo-network analysis\n\n\nMulti-period WERGM\n\n\nMultidimensional proximity\n\n\nCross-platform career-trajectory measurement\n\n\n\n\n\nBack to Publications"
   },
   {
     "objectID": "papers/whole-ego-mobility.html#abstract",
@@ -116,21 +95,14 @@
     "href": "papers/whole-ego-mobility.html#research-workflow",
     "title": "Structure and Formation Mechanisms of the Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Whole-Network and Ego-Network Perspective",
     "section": "",
-    "text": "1970–2023 career histories of top global biomedical scientists\n\n\nTop-500 scientist roster\n\n\nInstitutional and city appointments\n\n\nResearch outputs\n\n\nUrban attributes\n\n\nOrganization-platform histories\n\n\n\n\n\n\n\nDirected weighted intercity mobility networks\n\n\nSocial network analysis\n\n\nWhole-network analysis\n\n\nEgo-network analysis\n\n\nMulti-period WERGM\n\n\nMultidimensional proximity\n\n\nCross-platform career-trajectory measurement\n\n\n\n\n\n\n\nR\n\n\nergm.count"
-  },
-  {
-    "objectID": "papers/whole-ego-mobility.html#my-contribution",
-    "href": "papers/whole-ego-mobility.html#my-contribution",
-    "title": "Structure and Formation Mechanisms of the Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Whole-Network and Ego-Network Perspective",
-    "section": "",
-    "text": "First Author\n\n\nBack to Publications"
+    "text": "1970–2023 career histories of top global biomedical scientists\n\n\nTop-500 scientist roster\n\n\nInstitutional and city appointments\n\n\nResearch outputs\n\n\nUrban attributes\n\n\nOrganization-platform histories\n\n\n\n\n\n\n\nDirected weighted intercity mobility networks\n\n\nSocial network analysis\n\n\nWhole-network analysis\n\n\nEgo-network analysis\n\n\nMulti-period WERGM\n\n\nMultidimensional proximity\n\n\nCross-platform career-trajectory measurement\n\n\n\n\n\nBack to Publications"
   },
   {
     "objectID": "papers/urban-network-biomedical-mobility.html",
     "href": "papers/urban-network-biomedical-mobility.html",
     "title": "The spatial structure and influencing factors of the flow of global top biomedical scientists from the perspective of urban network",
     "section": "",
-    "text": "First Author · Accepted · World Regional Studies\n\n\n\n\nAs a knowledge and capital intensive field, biomedical industry is increasingly becoming the core battlefield of global innovation competition. This study focuses on the world’s top biomedical scientists, who, with their cutting-edge knowledge and professional skills, have a significant role in promoting the development of regional industries. From the perspective of urban network, this study uses complex network analysis method to deeply analyze the flow trajectory of the world’s top biomedical scientists. Using Heckman two-stage regression model, this paper explores the key factors affecting the flow of scientists in different career stages. The study found that: ① the flow of top biomedical scientists in the world presents a network structure centered on the United States, and the phenomenon of cross continent flow is significant. In the learning stage, talent flow mainly shows the characteristics of unidirectional, centralized and unipolar, and top scientists tend to flow to areas with dense universities. At the working stage, the flow mode has changed to polycentric and networked, and scientists are more inclined to choose scientific research institutions and industrial bases. ② The flow of top scientists is highly selective. Their migration behavior is not only affected by scientific research output and academic influence, but also closely related to interdisciplinary background and other factors. The study also found that regions with intensive scientific research resources and good scientific research ecology have a strong attraction for top scientists, while institutional barriers and cultural differences are important factors restricting the flow of global scientific research talents.\n\n\n\n\n\n\n\n\n\nGlobal top biomedical scientists\n\n\nVerified career histories\n\n\nCity-level mobility records across education and employment stages\n\n\nCity research and innovation attributes\n\n\n\n\n\n\n\nCareer-history analysis\n\n\nComplex network analysis\n\n\nEducation-employment stage comparison\n\n\nCore-periphery analysis\n\n\nHeckman two-stage regression\n\n\n\n\n\n\n\nGephi 10.1\n\n\n\n\n\n\n\n\nFirst Author\n\n\nBack to Publications"
+    "text": "First Author · Accepted · World Regional Studies\n\n\n\n\nAs a knowledge and capital intensive field, biomedical industry is increasingly becoming the core battlefield of global innovation competition. This study focuses on the world’s top biomedical scientists, who, with their cutting-edge knowledge and professional skills, have a significant role in promoting the development of regional industries. From the perspective of urban network, this study uses complex network analysis method to deeply analyze the flow trajectory of the world’s top biomedical scientists. Using Heckman two-stage regression model, this paper explores the key factors affecting the flow of scientists in different career stages. The study found that: ① the flow of top biomedical scientists in the world presents a network structure centered on the United States, and the phenomenon of cross continent flow is significant. In the learning stage, talent flow mainly shows the characteristics of unidirectional, centralized and unipolar, and top scientists tend to flow to areas with dense universities. At the working stage, the flow mode has changed to polycentric and networked, and scientists are more inclined to choose scientific research institutions and industrial bases. ② The flow of top scientists is highly selective. Their migration behavior is not only affected by scientific research output and academic influence, but also closely related to interdisciplinary background and other factors. The study also found that regions with intensive scientific research resources and good scientific research ecology have a strong attraction for top scientists, while institutional barriers and cultural differences are important factors restricting the flow of global scientific research talents.\n\n\n\n\n\n\n\n\n\nGlobal top biomedical scientists\n\n\nVerified career histories\n\n\nCity-level mobility records across education and employment stages\n\n\nCity research and innovation attributes\n\n\n\n\n\n\n\nCareer-history analysis\n\n\nComplex network analysis\n\n\nEducation-employment stage comparison\n\n\nCore-periphery analysis\n\n\nHeckman two-stage regression\n\n\n\n\n\nBack to Publications"
   },
   {
     "objectID": "papers/urban-network-biomedical-mobility.html#abstract",
@@ -144,21 +116,14 @@
     "href": "papers/urban-network-biomedical-mobility.html#research-workflow",
     "title": "The spatial structure and influencing factors of the flow of global top biomedical scientists from the perspective of urban network",
     "section": "",
-    "text": "Global top biomedical scientists\n\n\nVerified career histories\n\n\nCity-level mobility records across education and employment stages\n\n\nCity research and innovation attributes\n\n\n\n\n\n\n\nCareer-history analysis\n\n\nComplex network analysis\n\n\nEducation-employment stage comparison\n\n\nCore-periphery analysis\n\n\nHeckman two-stage regression\n\n\n\n\n\n\n\nGephi 10.1"
-  },
-  {
-    "objectID": "papers/urban-network-biomedical-mobility.html#my-contribution",
-    "href": "papers/urban-network-biomedical-mobility.html#my-contribution",
-    "title": "The spatial structure and influencing factors of the flow of global top biomedical scientists from the perspective of urban network",
-    "section": "",
-    "text": "First Author\n\n\nBack to Publications"
+    "text": "Global top biomedical scientists\n\n\nVerified career histories\n\n\nCity-level mobility records across education and employment stages\n\n\nCity research and innovation attributes\n\n\n\n\n\n\n\nCareer-history analysis\n\n\nComplex network analysis\n\n\nEducation-employment stage comparison\n\n\nCore-periphery analysis\n\n\nHeckman two-stage regression\n\n\n\n\n\nBack to Publications"
   },
   {
     "objectID": "papers/global-trade-network.html",
     "href": "papers/global-trade-network.html",
     "title": "Analysis on the spatial-temporal evolution of global trade network in the context of the COVID-19",
     "section": "",
-    "text": "First Author · Selected Research Output\n\n\n\n\nBased on the data of the United Nations Commodity Trade Database from 2019 to 2021, this paper uses the social network analysis method to analyze the temporal and spatial pattern evolution of the global trade network under the influence of the COVID-19 epidemic. Research has found that ① There are significant regional differences in trade connections, with North America, Western Europe, and East Asia presenting a “three legged” pattern. ② The United States occupies a core position in the global trade network. The COVID-19 epidemic has reduced the scale of the global trade network and increasingly scattered network connections. ③ China, the United States and Germany are the core countries in the global commodity trade network. The COVID-19 epidemic has different impacts on different types of product trade and countries in different regions. ④ Economy, population, geographical distance, culture, and national policies have varying degrees of impact on global trade.\n\n\n\n\n\n\n\n\n\nUN Comtrade\n\n\n2019–2021\n\n\n219 countries and regions\n\n\nGlobal commodity trade\n\n\nResource-intensive, labour-intensive, capital-intensive, and technology-intensive product networks\n\n\n\n\n\n\n\nDirected weighted trade networks\n\n\nSocial network analysis\n\n\nDegree and weighted degree\n\n\nNetwork density\n\n\nAverage clustering coefficient\n\n\nAverage path length\n\n\nSpatial-temporal comparison\n\n\n\n\n\n\n\nExcel\n\n\nGephi\n\n\nArcGIS\n\n\nScimago Graphica\n\n\n\n\n\n\n\n\nFirst Author\n\n\nBack to Publications"
+    "text": "First Author · Selected Research Output\n\n\n\n\nBased on the data of the United Nations Commodity Trade Database from 2019 to 2021, this paper uses the social network analysis method to analyze the temporal and spatial pattern evolution of the global trade network under the influence of the COVID-19 epidemic. Research has found that ① There are significant regional differences in trade connections, with North America, Western Europe, and East Asia presenting a “three legged” pattern. ② The United States occupies a core position in the global trade network. The COVID-19 epidemic has reduced the scale of the global trade network and increasingly scattered network connections. ③ China, the United States and Germany are the core countries in the global commodity trade network. The COVID-19 epidemic has different impacts on different types of product trade and countries in different regions. ④ Economy, population, geographical distance, culture, and national policies have varying degrees of impact on global trade.\n\n\n\n\n\n\n\n\n\nUN Comtrade\n\n\n2019–2021\n\n\n219 countries and regions\n\n\nGlobal commodity trade\n\n\nResource-intensive, labour-intensive, capital-intensive, and technology-intensive product networks\n\n\n\n\n\n\n\nDirected weighted trade networks\n\n\nSocial network analysis\n\n\nDegree and weighted degree\n\n\nNetwork density\n\n\nAverage clustering coefficient\n\n\nAverage path length\n\n\nSpatial-temporal comparison\n\n\n\n\n\nBack to Publications"
   },
   {
     "objectID": "papers/global-trade-network.html#abstract",
@@ -172,14 +137,7 @@
     "href": "papers/global-trade-network.html#research-workflow",
     "title": "Analysis on the spatial-temporal evolution of global trade network in the context of the COVID-19",
     "section": "",
-    "text": "UN Comtrade\n\n\n2019–2021\n\n\n219 countries and regions\n\n\nGlobal commodity trade\n\n\nResource-intensive, labour-intensive, capital-intensive, and technology-intensive product networks\n\n\n\n\n\n\n\nDirected weighted trade networks\n\n\nSocial network analysis\n\n\nDegree and weighted degree\n\n\nNetwork density\n\n\nAverage clustering coefficient\n\n\nAverage path length\n\n\nSpatial-temporal comparison\n\n\n\n\n\n\n\nExcel\n\n\nGephi\n\n\nArcGIS\n\n\nScimago Graphica"
-  },
-  {
-    "objectID": "papers/global-trade-network.html#my-contribution",
-    "href": "papers/global-trade-network.html#my-contribution",
-    "title": "Analysis on the spatial-temporal evolution of global trade network in the context of the COVID-19",
-    "section": "",
-    "text": "First Author\n\n\nBack to Publications"
+    "text": "UN Comtrade\n\n\n2019–2021\n\n\n219 countries and regions\n\n\nGlobal commodity trade\n\n\nResource-intensive, labour-intensive, capital-intensive, and technology-intensive product networks\n\n\n\n\n\n\n\nDirected weighted trade networks\n\n\nSocial network analysis\n\n\nDegree and weighted degree\n\n\nNetwork density\n\n\nAverage clustering coefficient\n\n\nAverage path length\n\n\nSpatial-temporal comparison\n\n\n\n\n\nBack to Publications"
   },
   {
     "objectID": "publications.html",
@@ -214,7 +172,7 @@
     "href": "index.html",
     "title": "\nRan Wang\n",
     "section": "",
-    "text": "王冉\n\n\nSchool of Geographic Sciences, East China Normal University · M.Sc. in Human Geography, 2026\n\n\nScientific mobility · Collaboration networks · Destination choice · Firm innovation measurement · Regional innovation\n\nMy research examines how innovation is organized across space through the movement of highly skilled people, the formation of collaboration networks, and the innovation strategies of firms. I work with longitudinal career records, relational data, city-level indicators, and firm-year innovation data to study how individual decisions and institutional contexts shape regional innovation systems.\nResearch Publications CV GitHub"
+    "text": "王冉\n\n\nSchool of Geographic Sciences, East China Normal University · M.Sc. in Human Geography, 2026\n\n\nScientific mobility · Collaboration networks · Destination choice · Firm innovation measurement · Regional innovation\n\nMy research examines how innovation is organized across space through the movement of highly skilled people, the formation of collaboration networks, and the innovation strategies of firms. I work with longitudinal career records, relational data, city-level indicators, and firm-year innovation data to study how individual decisions and institutional contexts shape regional innovation systems.\nOutside research, photography, films, badminton, ultimate frisbee, and swimming keep me attentive to movement, place, and rhythm. I tend to warm up slowly in new settings, but work with persistence, discipline, and a strong capacity to learn, adapt, and carry long projects with care.\nResearch Publications CV GitHub"
   },
   {
     "objectID": "index.html#research-interests",
@@ -228,7 +186,7 @@
     "href": "index.html#academic-profile",
     "title": "\nRan Wang\n",
     "section": "Academic Profile",
-    "text": "Academic Profile\n\n\nResearch Positioning\nEconomic geography and regional innovation, with a focus on how mobility, collaboration, and firm innovation data can be used to explain uneven innovation geographies.\n\n\nCurrent Outputs\nAn accepted article in World Regional Studies, submitted manuscripts on elite biomedical scientist mobility, and ongoing work on destination choice and firm innovation measurement.\n\n\nData and Methods\nLongitudinal data construction, scientist-institution-city linkage, social network analysis, conditional logit, GIS, remote-sensing indicators, and reproducible Python/R workflows."
+    "text": "Academic Profile\n\n\nResearch Positioning\nEconomic geography and regional innovation, with a focus on how mobility, collaboration, and firm innovation data can be used to explain uneven innovation geographies.\n\n\nCurrent Outputs\nAn accepted article in World Regional Studies, submitted manuscripts on elite biomedical scientist mobility, and ongoing work on destination choice and firm innovation measurement.\n\n\nData and Methods\nLongitudinal data construction, scientist-institution-city linkage, social network analysis, conditional logit, GIS, remote-sensing indicators, and reproducible Python/R workflows.\n\n\nWorking Style\nReflective, diligent, persistent, conscientious, and self-disciplined, with steady learning and adaptability across empirical materials, research questions, and technical workflows."
   },
   {
     "objectID": "index.html#navigation",
@@ -291,7 +249,7 @@
     "href": "papers/china-us-biomedical-innovation.html",
     "title": "Comparative Study on Biomedical Innovation between China and the United States from the Perspective of Talent Mobility Network",
     "section": "",
-    "text": "First Author · Selected Research Output\n\n\n\n\nAs a strategic emerging industry in the 21st century, biomedicine has become a key area of technological competition between China and the United States. This article is based on the theory of scientific networks, starting from the perspective of talent mobility of top scientists, and deeply comparing and analyzing the differences and causes between China and the United States in the field of biomedicine. Research has found that there is a significant gap between China and the United States in terms of innovation capabilities in the field of biomedicine. The United States, relying on a highly market-oriented system, a well-established innovation ecosystem, an active capital market, and the continuous influx of top global talents, has formed an innovation model centered on “endogenous growth”. Its sound education, research, and industrialization system has strong appeal globally and is the fundamental guarantee for promoting leading innovation in biomedicine. In contrast, although China has achieved rapid growth in the biopharmaceutical industry under policy promotion, it still lacks core technology accumulation, original innovation capabilities, international layout, and high-end talent reserves. The Chinese model relies more on government leadership and “talent return”. Although it has certain efficiency in resource integration and strategic promotion, there is still room for improvement in market mechanisms, depth of industry university research integration, and flexibility in talent cultivation. In addition, despite the rapid accumulation of basic research achievements in China, there is a bottleneck in the transformation of knowledge into products due to insufficient “paper orientation” and commercialization capabilities. This study aims to clarify the root causes of the innovation gap in the biopharmaceutical industry between China and the United States, emphasize the decisive role of talent mobility in the innovation system, and propose policy recommendations to accelerate the development of innovation in China’s biopharmaceutical industry.\n\n\n\n\n\n\n\n\n\nTop 100 biomedical scientists in the United States and top 100 in China\n\n\nCareer histories\n\n\nPublication records\n\n\nPatent information\n\n\nBiomedical innovation input and output materials\n\n\n\n\n\n\n\nCurriculum Vitae Analysis\n\n\nSocial Network Analysis\n\n\nChina–U.S. comparative research design\n\n\nInnovation-system comparison\n\n\nTalent-mobility network analysis\n\n\n\n\n\n\n\nPATENTSCOPE\n\n\nWeb of Science\n\n\n\n\n\n\n\n\nFirst Author\n\n\nBack to Publications"
+    "text": "First Author · Selected Research Output\n\n\n\n\nAs a strategic emerging industry in the 21st century, biomedicine has become a key area of technological competition between China and the United States. This article is based on the theory of scientific networks, starting from the perspective of talent mobility of top scientists, and deeply comparing and analyzing the differences and causes between China and the United States in the field of biomedicine. Research has found that there is a significant gap between China and the United States in terms of innovation capabilities in the field of biomedicine. The United States, relying on a highly market-oriented system, a well-established innovation ecosystem, an active capital market, and the continuous influx of top global talents, has formed an innovation model centered on “endogenous growth”. Its sound education, research, and industrialization system has strong appeal globally and is the fundamental guarantee for promoting leading innovation in biomedicine. In contrast, although China has achieved rapid growth in the biopharmaceutical industry under policy promotion, it still lacks core technology accumulation, original innovation capabilities, international layout, and high-end talent reserves. The Chinese model relies more on government leadership and “talent return”. Although it has certain efficiency in resource integration and strategic promotion, there is still room for improvement in market mechanisms, depth of industry university research integration, and flexibility in talent cultivation. In addition, despite the rapid accumulation of basic research achievements in China, there is a bottleneck in the transformation of knowledge into products due to insufficient “paper orientation” and commercialization capabilities. This study aims to clarify the root causes of the innovation gap in the biopharmaceutical industry between China and the United States, emphasize the decisive role of talent mobility in the innovation system, and propose policy recommendations to accelerate the development of innovation in China’s biopharmaceutical industry.\n\n\n\n\n\n\n\n\n\nTop 100 biomedical scientists in the United States and top 100 in China\n\n\nCareer histories\n\n\nPublication records\n\n\nPatent information\n\n\nBiomedical innovation input and output materials\n\n\n\n\n\n\n\nCurriculum Vitae Analysis\n\n\nSocial Network Analysis\n\n\nChina–U.S. comparative research design\n\n\nInnovation-system comparison\n\n\nTalent-mobility network analysis\n\n\n\n\n\nBack to Publications"
   },
   {
     "objectID": "papers/china-us-biomedical-innovation.html#abstract",
@@ -305,21 +263,14 @@
     "href": "papers/china-us-biomedical-innovation.html#research-workflow",
     "title": "Comparative Study on Biomedical Innovation between China and the United States from the Perspective of Talent Mobility Network",
     "section": "",
-    "text": "Top 100 biomedical scientists in the United States and top 100 in China\n\n\nCareer histories\n\n\nPublication records\n\n\nPatent information\n\n\nBiomedical innovation input and output materials\n\n\n\n\n\n\n\nCurriculum Vitae Analysis\n\n\nSocial Network Analysis\n\n\nChina–U.S. comparative research design\n\n\nInnovation-system comparison\n\n\nTalent-mobility network analysis\n\n\n\n\n\n\n\nPATENTSCOPE\n\n\nWeb of Science"
-  },
-  {
-    "objectID": "papers/china-us-biomedical-innovation.html#my-contribution",
-    "href": "papers/china-us-biomedical-innovation.html#my-contribution",
-    "title": "Comparative Study on Biomedical Innovation between China and the United States from the Perspective of Talent Mobility Network",
-    "section": "",
-    "text": "First Author\n\n\nBack to Publications"
+    "text": "Top 100 biomedical scientists in the United States and top 100 in China\n\n\nCareer histories\n\n\nPublication records\n\n\nPatent information\n\n\nBiomedical innovation input and output materials\n\n\n\n\n\n\n\nCurriculum Vitae Analysis\n\n\nSocial Network Analysis\n\n\nChina–U.S. comparative research design\n\n\nInnovation-system comparison\n\n\nTalent-mobility network analysis\n\n\n\n\n\nBack to Publications"
   },
   {
     "objectID": "papers/pre-move-coauthor-ties.html",
     "href": "papers/pre-move-coauthor-ties.html",
     "title": "Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists",
     "section": "",
-    "text": "First Author · Submitted Manuscript\n\n\n\n\nScientific mobility redistributes researchers and knowledge across places. Existing studies document mobility patterns and the roles of personal attributes, city conditions, distance, and national borders. Recent work links professional networks to early-career destinations, but less is known about repeated moves by established scientists or how collaborations differ across candidate cities. This study examines whether highly cited biomedical scientists are more likely to select cities where they already had direct coauthors and whether the number, network share, persistence, and timing of those ties matter. Using verified career histories, Scopus records, and lagged city publication counts, we analyze 336 moves by 217 scientists and 60,024 event–candidate observations drawn from a roster of 500. Event-stratified conditional logit models compare selected cities with alternatives within each move. Cities with at least one direct coauthor in the five years before a move have higher conditional odds of selection than cities without such ties (OR 52.33, 95% CI 35.19–77.81), after controlling for distance, national borders, lagged scientific scale, and biomedical specialization. Among tied cities, more local coauthors and a larger share of the scientist’s observed coauthor network are positively associated with selection. Persistent ties and ties observed in both early and recent periods have stronger associations than nonpersistent or single-period ties. No statistically detectable difference is found between domestic and foreign candidates. The study shows that prior collaboration helps distinguish destination choice beyond city conditions and geographic constraints.\n\n\n\n\n\n\n\n\n\nVerified scientist career histories\n\n\nScopus publication, author, and affiliation records\n\n\nAnnual city publication counts\n\n\n500-scientist source roster\n\n\n336 intercity employment moves\n\n\n217 scientists\n\n\n60,024 event–candidate observations\n\n\n\n\n\n\n\nEvent-specific candidate-city construction\n\n\nEvent-stratified conditional logit\n\n\nScientist-clustered robust standard errors\n\n\nDirect coauthor tie measurement\n\n\nCoauthor breadth\n\n\nNetwork share\n\n\nPersistence\n\n\nTiming\n\n\nDistance and national-context controls\n\n\nSensitivity analysis\n\n\n\n\n\n\nNo software listed for public display.\n\n\n\n\n\n\n\nMethodology; formal analysis; writing – original draft; with contributions to conceptualization, investigation, and data curation.\n\n\nBack to Publications"
+    "text": "First Author · Submitted Manuscript\n\n\n\n\nScientific mobility redistributes researchers and knowledge across places. Existing studies document mobility patterns and the roles of personal attributes, city conditions, distance, and national borders. Recent work links professional networks to early-career destinations, but less is known about repeated moves by established scientists or how collaborations differ across candidate cities. This study examines whether highly cited biomedical scientists are more likely to select cities where they already had direct coauthors and whether the number, network share, persistence, and timing of those ties matter. Using verified career histories, Scopus records, and lagged city publication counts, we analyze 336 moves by 217 scientists and 60,024 event–candidate observations drawn from a roster of 500. Event-stratified conditional logit models compare selected cities with alternatives within each move. Cities with at least one direct coauthor in the five years before a move have higher conditional odds of selection than cities without such ties (OR 52.33, 95% CI 35.19–77.81), after controlling for distance, national borders, lagged scientific scale, and biomedical specialization. Among tied cities, more local coauthors and a larger share of the scientist’s observed coauthor network are positively associated with selection. Persistent ties and ties observed in both early and recent periods have stronger associations than nonpersistent or single-period ties. No statistically detectable difference is found between domestic and foreign candidates. The study shows that prior collaboration helps distinguish destination choice beyond city conditions and geographic constraints.\n\n\n\n\n\n\n\n\n\nVerified scientist career histories\n\n\nScopus publication, author, and affiliation records\n\n\nAnnual city publication counts\n\n\n500-scientist source roster\n\n\n336 intercity employment moves\n\n\n217 scientists\n\n\n60,024 event–candidate observations\n\n\n\n\n\n\n\nEvent-specific candidate-city construction\n\n\nEvent-stratified conditional logit\n\n\nScientist-clustered robust standard errors\n\n\nDirect coauthor tie measurement\n\n\nCoauthor breadth\n\n\nNetwork share\n\n\nPersistence\n\n\nTiming\n\n\nDistance and national-context controls\n\n\nSensitivity analysis\n\n\n\n\n\nBack to Publications"
   },
   {
     "objectID": "papers/pre-move-coauthor-ties.html#abstract",
@@ -333,21 +284,14 @@
     "href": "papers/pre-move-coauthor-ties.html#research-workflow",
     "title": "Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists",
     "section": "",
-    "text": "Verified scientist career histories\n\n\nScopus publication, author, and affiliation records\n\n\nAnnual city publication counts\n\n\n500-scientist source roster\n\n\n336 intercity employment moves\n\n\n217 scientists\n\n\n60,024 event–candidate observations\n\n\n\n\n\n\n\nEvent-specific candidate-city construction\n\n\nEvent-stratified conditional logit\n\n\nScientist-clustered robust standard errors\n\n\nDirect coauthor tie measurement\n\n\nCoauthor breadth\n\n\nNetwork share\n\n\nPersistence\n\n\nTiming\n\n\nDistance and national-context controls\n\n\nSensitivity analysis\n\n\n\n\n\n\nNo software listed for public display."
-  },
-  {
-    "objectID": "papers/pre-move-coauthor-ties.html#my-contribution",
-    "href": "papers/pre-move-coauthor-ties.html#my-contribution",
-    "title": "Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists",
-    "section": "",
-    "text": "Methodology; formal analysis; writing – original draft; with contributions to conceptualization, investigation, and data curation.\n\n\nBack to Publications"
+    "text": "Verified scientist career histories\n\n\nScopus publication, author, and affiliation records\n\n\nAnnual city publication counts\n\n\n500-scientist source roster\n\n\n336 intercity employment moves\n\n\n217 scientists\n\n\n60,024 event–candidate observations\n\n\n\n\n\n\n\nEvent-specific candidate-city construction\n\n\nEvent-stratified conditional logit\n\n\nScientist-clustered robust standard errors\n\n\nDirect coauthor tie measurement\n\n\nCoauthor breadth\n\n\nNetwork share\n\n\nPersistence\n\n\nTiming\n\n\nDistance and national-context controls\n\n\nSensitivity analysis\n\n\n\n\n\nBack to Publications"
   },
   {
     "objectID": "papers/urban-resilience-nighttime-lights.html",
     "href": "papers/urban-resilience-nighttime-lights.html",
     "title": "Assessment of urban resilience based on nighttime light remote sensing and Fisher’s information method",
     "section": "",
-    "text": "First Author · Selected Research Output\n\n\n\n\nScientific evaluation of the urban resilience of the city under the impact of the epidemic can provide an important basis for the safe development of the city. Based on the adaptive cycle model, combined with night light day data and Fisher information method, this paper builds Fisher Information Light (FIL), an urban resilience agent index, and uses K-Means clustering based on dynamic time regularization method for 2020 From January 13 to April 8, the urban resilience change patterns of China’s Yangtze River Delta, the Pearl River Delta and the Beijing-Tianjin-Hebei three major urban agglomerations were analyzed and evaluated. The short-term impact and resilience changes of 48 cities, including Beijing and Shanghai, were revealed from the urban agglomeration and urban scale. The results show that:① different urban agglomerations are affected by the epidemic to varying degrees, and the impact of the Yangtze River Delta urban agglomeration is significantly greater than that of the Pearl River Delta urban agglomeration; different time periods have different impacts on the economic and social life of urban agglomerations. ② In 2019, FIL is on the rise, and the urban system is developing well as a whole. In 2020, FIL has changed dramatically and is in a downward trend. Urban development has been affected to a certain extent. ③Through cluster analysis, urban change patterns are divided into three types: stable cities as a whole show relatively stable fluctuations, the range of change is small, there are troughs in the development stage, rapid recovery, and high sustainable development capabilities. The change curve of low-trough cities is U-shaped and is in a downward trend. Volatuational cities This type of city as a whole shows a steady downward trend.\n\n\n\n\n\n\n\n\n\nNASA Black Marble VNP46A2 / VIIRS-DNB daily nighttime-light data\n\n\nMatched 2019–2020 comparison\n\n\nBeijing–Tianjin–Hebei, Yangtze River Delta, and Pearl River Delta urban agglomerations\n\n\n48 cities\n\n\n\n\n\n\n\nAdaptive-cycle framework\n\n\nFisher Information Light\n\n\nTime-series comparison\n\n\nDynamic Time Warping\n\n\nK-Means\n\n\nElbow Method\n\n\n\n\n\n\n\nPython\n\n\n\n\n\n\n\n\nFirst Author\n\n\nBack to Publications"
+    "text": "First Author · Selected Research Output\n\n\n\n\nScientific evaluation of the urban resilience of the city under the impact of the epidemic can provide an important basis for the safe development of the city. Based on the adaptive cycle model, combined with night light day data and Fisher information method, this paper builds Fisher Information Light (FIL), an urban resilience agent index, and uses K-Means clustering based on dynamic time regularization method for 2020 From January 13 to April 8, the urban resilience change patterns of China’s Yangtze River Delta, the Pearl River Delta and the Beijing-Tianjin-Hebei three major urban agglomerations were analyzed and evaluated. The short-term impact and resilience changes of 48 cities, including Beijing and Shanghai, were revealed from the urban agglomeration and urban scale. The results show that:① different urban agglomerations are affected by the epidemic to varying degrees, and the impact of the Yangtze River Delta urban agglomeration is significantly greater than that of the Pearl River Delta urban agglomeration; different time periods have different impacts on the economic and social life of urban agglomerations. ② In 2019, FIL is on the rise, and the urban system is developing well as a whole. In 2020, FIL has changed dramatically and is in a downward trend. Urban development has been affected to a certain extent. ③Through cluster analysis, urban change patterns are divided into three types: stable cities as a whole show relatively stable fluctuations, the range of change is small, there are troughs in the development stage, rapid recovery, and high sustainable development capabilities. The change curve of low-trough cities is U-shaped and is in a downward trend. Volatuational cities This type of city as a whole shows a steady downward trend.\n\n\n\n\n\n\n\n\n\nNASA Black Marble VNP46A2 / VIIRS-DNB daily nighttime-light data\n\n\nMatched 2019–2020 comparison\n\n\nBeijing–Tianjin–Hebei, Yangtze River Delta, and Pearl River Delta urban agglomerations\n\n\n48 cities\n\n\n\n\n\n\n\nAdaptive-cycle framework\n\n\nFisher Information Light\n\n\nTime-series comparison\n\n\nDynamic Time Warping\n\n\nK-Means\n\n\nElbow Method\n\n\n\n\n\nBack to Publications"
   },
   {
     "objectID": "papers/urban-resilience-nighttime-lights.html#abstract",
@@ -361,21 +305,14 @@
     "href": "papers/urban-resilience-nighttime-lights.html#research-workflow",
     "title": "Assessment of urban resilience based on nighttime light remote sensing and Fisher’s information method",
     "section": "",
-    "text": "NASA Black Marble VNP46A2 / VIIRS-DNB daily nighttime-light data\n\n\nMatched 2019–2020 comparison\n\n\nBeijing–Tianjin–Hebei, Yangtze River Delta, and Pearl River Delta urban agglomerations\n\n\n48 cities\n\n\n\n\n\n\n\nAdaptive-cycle framework\n\n\nFisher Information Light\n\n\nTime-series comparison\n\n\nDynamic Time Warping\n\n\nK-Means\n\n\nElbow Method\n\n\n\n\n\n\n\nPython"
-  },
-  {
-    "objectID": "papers/urban-resilience-nighttime-lights.html#my-contribution",
-    "href": "papers/urban-resilience-nighttime-lights.html#my-contribution",
-    "title": "Assessment of urban resilience based on nighttime light remote sensing and Fisher’s information method",
-    "section": "",
-    "text": "First Author\n\n\nBack to Publications"
+    "text": "NASA Black Marble VNP46A2 / VIIRS-DNB daily nighttime-light data\n\n\nMatched 2019–2020 comparison\n\n\nBeijing–Tianjin–Hebei, Yangtze River Delta, and Pearl River Delta urban agglomerations\n\n\n48 cities\n\n\n\n\n\n\n\nAdaptive-cycle framework\n\n\nFisher Information Light\n\n\nTime-series comparison\n\n\nDynamic Time Warping\n\n\nK-Means\n\n\nElbow Method\n\n\n\n\n\nBack to Publications"
   },
   {
     "objectID": "zh/papers/china-us-biomedical-innovation.html",
     "href": "zh/papers/china-us-biomedical-innovation.html",
     "title": "人才流动网络视角下中美生物医药创新对比研究",
     "section": "",
-    "text": "第一作者 · 代表性研究成果\n\n\n\n\n生物医药作为 21 世纪战略性新兴产业，已成为中美科技竞争的关键领域。本文基于科学网络理论，从顶尖科学家的人才流动视角出发，深入比较分析了中美在生物医药领域的差异及成因。研究发现，中美在生物医药创新能力方面存在显著差距。美国依托高度市场化的体制、完善的创新生态系统、活跃的资本市场以及全球顶尖人才的持续流入，形成了以“内生成长”为核心的创新模式。其健全的教育、科研和产业化体系在全球具有强大吸引力，是推动生物医药创新领先的根本保障。相比之下，中国虽在政策推动下实现了生物医药产业的快速增长，但在核心技术积累、原始创新能力、国际化布局和高端人才储备方面仍显不足。中国模式更依赖政府主导和“人才回流”，虽然在资源整合与战略推动方面具有一定效率，但在市场机制、产学研融合深度及人才培养灵活性上仍需提升。此外，尽管中国基础研究成果快速积累，但由于“论文导向”与商业化能力不足，存在“知识到产品”的转化瓶颈。本研究旨在厘清中美生物医药创新差距的根源，强调人才流动对创新体系的决定性作用，并提出加快推动中国生物医药产业创新发展的政策建议。\n\n\n\n\n\n\n\n\n\n美国前 100 名和中国前 100 名生物医药顶尖科学家\n\n\n职业履历\n\n\n论文信息\n\n\n专利信息\n\n\n生物医药创新投入与产出资料\n\n\n\n\n\n\n\n履历分析法\n\n\n社会网络分析\n\n\n中美比较研究设计\n\n\n创新体系比较\n\n\n人才流动网络分析\n\n\n\n\n\n\n\nPATENTSCOPE\n\n\nWeb of Science\n\n\n\n\n\n\n\n\n第一作者\n\n\n返回成果页"
+    "text": "第一作者 · 代表性研究成果\n\n\n\n\n生物医药作为 21 世纪战略性新兴产业，已成为中美科技竞争的关键领域。本文基于科学网络理论，从顶尖科学家的人才流动视角出发，深入比较分析了中美在生物医药领域的差异及成因。研究发现，中美在生物医药创新能力方面存在显著差距。美国依托高度市场化的体制、完善的创新生态系统、活跃的资本市场以及全球顶尖人才的持续流入，形成了以“内生成长”为核心的创新模式。其健全的教育、科研和产业化体系在全球具有强大吸引力，是推动生物医药创新领先的根本保障。相比之下，中国虽在政策推动下实现了生物医药产业的快速增长，但在核心技术积累、原始创新能力、国际化布局和高端人才储备方面仍显不足。中国模式更依赖政府主导和“人才回流”，虽然在资源整合与战略推动方面具有一定效率，但在市场机制、产学研融合深度及人才培养灵活性上仍需提升。此外，尽管中国基础研究成果快速积累，但由于“论文导向”与商业化能力不足，存在“知识到产品”的转化瓶颈。本研究旨在厘清中美生物医药创新差距的根源，强调人才流动对创新体系的决定性作用，并提出加快推动中国生物医药产业创新发展的政策建议。\n\n\n\n\n\n\n\n\n\n美国前 100 名和中国前 100 名生物医药顶尖科学家\n\n\n职业履历\n\n\n论文信息\n\n\n专利信息\n\n\n生物医药创新投入与产出资料\n\n\n\n\n\n\n\n履历分析法\n\n\n社会网络分析\n\n\n中美比较研究设计\n\n\n创新体系比较\n\n\n人才流动网络分析\n\n\n\n\n\n返回成果页"
   },
   {
     "objectID": "zh/papers/china-us-biomedical-innovation.html#摘要",
@@ -389,21 +326,14 @@
     "href": "zh/papers/china-us-biomedical-innovation.html#研究路径",
     "title": "人才流动网络视角下中美生物医药创新对比研究",
     "section": "",
-    "text": "美国前 100 名和中国前 100 名生物医药顶尖科学家\n\n\n职业履历\n\n\n论文信息\n\n\n专利信息\n\n\n生物医药创新投入与产出资料\n\n\n\n\n\n\n\n履历分析法\n\n\n社会网络分析\n\n\n中美比较研究设计\n\n\n创新体系比较\n\n\n人才流动网络分析\n\n\n\n\n\n\n\nPATENTSCOPE\n\n\nWeb of Science"
-  },
-  {
-    "objectID": "zh/papers/china-us-biomedical-innovation.html#我的贡献",
-    "href": "zh/papers/china-us-biomedical-innovation.html#我的贡献",
-    "title": "人才流动网络视角下中美生物医药创新对比研究",
-    "section": "",
-    "text": "第一作者\n\n\n返回成果页"
+    "text": "美国前 100 名和中国前 100 名生物医药顶尖科学家\n\n\n职业履历\n\n\n论文信息\n\n\n专利信息\n\n\n生物医药创新投入与产出资料\n\n\n\n\n\n\n\n履历分析法\n\n\n社会网络分析\n\n\n中美比较研究设计\n\n\n创新体系比较\n\n\n人才流动网络分析\n\n\n\n\n\n返回成果页"
   },
   {
     "objectID": "zh/papers/pre-move-coauthor-ties.html",
     "href": "zh/papers/pre-move-coauthor-ties.html",
     "title": "Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists",
     "section": "",
-    "text": "第一作者 · 已投稿论文\n\n\n\n\n科学家流动推动研究人员和知识在不同地点之间重新配置。既有研究已经较为系统地讨论了个体属性、城市条件、地理距离和国家边界等因素与科学家流动之间的关系，也有近期研究开始关注职业网络与早期职业目的地之间的联系，但对于已经建立职业网络的成熟科学家在多次流动过程中如何选择具体目的地，以及不同类型的合作关系如何区分候选城市，仍缺乏充分认识。本研究考察高被引生物医药科学家是否更倾向于选择在迁移前已有直接共同作者的城市，并进一步区分共同作者数量、网络份额、关系持续性与关系时间结构。研究将经过核验的职业履历与 Scopus 记录及滞后城市论文产出相连接，在 500 名科学家的来源样本中获得 217 名科学家的 336 次城际任职流动，共形成 60,024 条“流动事件—候选城市”观测。采用按流动事件分层的条件 Logit 模型，在每一次实际流动内部比较最终被选择城市与其他候选城市。在控制地理距离、国家边界、滞后城市科研规模和生物医药专业化程度后，迁移前五年内存在至少一名直接共同作者的候选城市具有更高的被选择条件优势比（OR=52.33，95% CI 35.19–77.81）。在已有关系的候选城市中，本地共同作者数量更多、该城市占科学家既有共同作者网络的份额更高，均与更高的目的地选择概率相关。持续性合作关系以及同时出现在较早和较近时间窗口中的关系，比非持续关系或仅在单一时间窗口出现的关系具有更强关联。国内与国外候选城市之间的关系效应未发现统计显著差异。总体而言，迁移前的直接科学合作能够在城市条件和地理约束之外进一步区分科学家的流动目的地。\n\n\n\n\n\n\n\n\n\n经过核验的科学家职业履历\n\n\nScopus 论文、作者与机构记录\n\n\n年度城市论文产出\n\n\n500 名科学家来源样本\n\n\n336 次城际任职流动\n\n\n217 名科学家\n\n\n60,024 条流动事件—候选城市观测\n\n\n\n\n\n\n\n事件特定候选城市集合\n\n\n流动事件分层条件 Logit\n\n\n科学家聚类稳健标准误\n\n\n直接共同作者关系\n\n\n共同作者广度\n\n\n网络份额\n\n\n关系持续性\n\n\n关系时间结构\n\n\n距离与跨国背景控制\n\n\n敏感性分析\n\n\n\n\n\n\n不列公开软件。\n\n\n\n\n\n\n\n负责方法设计、正式统计分析与初稿撰写，并参与研究构思、数据调查与数据整理。\n\n\n返回成果页"
+    "text": "第一作者 · 已投稿论文\n\n\n\n\n科学家流动推动研究人员和知识在不同地点之间重新配置。既有研究已经较为系统地讨论了个体属性、城市条件、地理距离和国家边界等因素与科学家流动之间的关系，也有近期研究开始关注职业网络与早期职业目的地之间的联系，但对于已经建立职业网络的成熟科学家在多次流动过程中如何选择具体目的地，以及不同类型的合作关系如何区分候选城市，仍缺乏充分认识。本研究考察高被引生物医药科学家是否更倾向于选择在迁移前已有直接共同作者的城市，并进一步区分共同作者数量、网络份额、关系持续性与关系时间结构。研究将经过核验的职业履历与 Scopus 记录及滞后城市论文产出相连接，在 500 名科学家的来源样本中获得 217 名科学家的 336 次城际任职流动，共形成 60,024 条“流动事件—候选城市”观测。采用按流动事件分层的条件 Logit 模型，在每一次实际流动内部比较最终被选择城市与其他候选城市。在控制地理距离、国家边界、滞后城市科研规模和生物医药专业化程度后，迁移前五年内存在至少一名直接共同作者的候选城市具有更高的被选择条件优势比（OR=52.33，95% CI 35.19–77.81）。在已有关系的候选城市中，本地共同作者数量更多、该城市占科学家既有共同作者网络的份额更高，均与更高的目的地选择概率相关。持续性合作关系以及同时出现在较早和较近时间窗口中的关系，比非持续关系或仅在单一时间窗口出现的关系具有更强关联。国内与国外候选城市之间的关系效应未发现统计显著差异。总体而言，迁移前的直接科学合作能够在城市条件和地理约束之外进一步区分科学家的流动目的地。\n\n\n\n\n\n\n\n\n\n经过核验的科学家职业履历\n\n\nScopus 论文、作者与机构记录\n\n\n年度城市论文产出\n\n\n500 名科学家来源样本\n\n\n336 次城际任职流动\n\n\n217 名科学家\n\n\n60,024 条流动事件—候选城市观测\n\n\n\n\n\n\n\n事件特定候选城市集合\n\n\n流动事件分层条件 Logit\n\n\n科学家聚类稳健标准误\n\n\n直接共同作者关系\n\n\n共同作者广度\n\n\n网络份额\n\n\n关系持续性\n\n\n关系时间结构\n\n\n距离与跨国背景控制\n\n\n敏感性分析\n\n\n\n\n\n返回成果页"
   },
   {
     "objectID": "zh/papers/pre-move-coauthor-ties.html#摘要中文译文",
@@ -417,21 +347,14 @@
     "href": "zh/papers/pre-move-coauthor-ties.html#研究路径",
     "title": "Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists",
     "section": "",
-    "text": "经过核验的科学家职业履历\n\n\nScopus 论文、作者与机构记录\n\n\n年度城市论文产出\n\n\n500 名科学家来源样本\n\n\n336 次城际任职流动\n\n\n217 名科学家\n\n\n60,024 条流动事件—候选城市观测\n\n\n\n\n\n\n\n事件特定候选城市集合\n\n\n流动事件分层条件 Logit\n\n\n科学家聚类稳健标准误\n\n\n直接共同作者关系\n\n\n共同作者广度\n\n\n网络份额\n\n\n关系持续性\n\n\n关系时间结构\n\n\n距离与跨国背景控制\n\n\n敏感性分析\n\n\n\n\n\n\n不列公开软件。"
-  },
-  {
-    "objectID": "zh/papers/pre-move-coauthor-ties.html#我的贡献",
-    "href": "zh/papers/pre-move-coauthor-ties.html#我的贡献",
-    "title": "Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists",
-    "section": "",
-    "text": "负责方法设计、正式统计分析与初稿撰写，并参与研究构思、数据调查与数据整理。\n\n\n返回成果页"
+    "text": "经过核验的科学家职业履历\n\n\nScopus 论文、作者与机构记录\n\n\n年度城市论文产出\n\n\n500 名科学家来源样本\n\n\n336 次城际任职流动\n\n\n217 名科学家\n\n\n60,024 条流动事件—候选城市观测\n\n\n\n\n\n\n\n事件特定候选城市集合\n\n\n流动事件分层条件 Logit\n\n\n科学家聚类稳健标准误\n\n\n直接共同作者关系\n\n\n共同作者广度\n\n\n网络份额\n\n\n关系持续性\n\n\n关系时间结构\n\n\n距离与跨国背景控制\n\n\n敏感性分析\n\n\n\n\n\n返回成果页"
   },
   {
     "objectID": "zh/papers/urban-resilience-nighttime-lights.html",
     "href": "zh/papers/urban-resilience-nighttime-lights.html",
     "title": "基于夜间灯光遥感和费舍尔信息方法的城市韧性评价",
     "section": "",
-    "text": "第一作者 · 代表性研究成果\n\n\n\n\n科学评估城市在疫情影响下的城市韧性，可为城市的安全发展提供重要依据。本文基于适应性循环模型，结合夜间灯光日数据和费舍尔信息法构建 Fisher Information Light (FIL)这一城市韧性代理指标，并运用基于动态时间规整法的 K-Means 聚类，对 2020 年 1 月 13 日至 4 月 8 日中国长三角、珠三角、京津冀三大城市群城市韧性变化模式进行分析与评价。分别从城市群和城市尺度揭示北京、上海等 48 个城市受 COVID-19 疫情短期影响及韧性变化状况。结果表明：①不同的城市群受到疫情的冲击程度不同，长三角城市群受到的影响明显大于珠三角城市群受到的冲击；不同时间段对于城市群经济社会生活的影响不同。② 2019 年 FIL 处于上升态势，城市系统整体向好发展，2020 年 FIL 变化较为剧烈，处于下降态势中，城市发展受到一定程度上的影响。③通过聚类分析将城市变化模式分为三种类型：稳定型城市整体呈现较为稳定的波动，变化幅度较小，开发阶段出现低谷，较快恢复，具有较高的可持续发展能力。低谷型城市变化曲线整体上呈现为 U 型并处于下降态势中。波动型城市整体上呈现出稳定波动的下降态势。\n\n\n\n\n\n\n\n\n\nNASA Black Marble VNP46A2 / VIIRS-DNB 日尺度夜间灯光数据\n\n\n2019 与 2020 年同期比较\n\n\n京津冀、长三角、珠三角三大城市群\n\n\n48 个城市\n\n\n\n\n\n\n\n适应性循环模型\n\n\nFisher Information Light\n\n\n时间序列比较\n\n\nDynamic Time Warping\n\n\nK-Means\n\n\nElbow Method\n\n\n\n\n\n\n\nPython\n\n\n\n\n\n\n\n\n第一作者\n\n\n返回成果页"
+    "text": "第一作者 · 代表性研究成果\n\n\n\n\n科学评估城市在疫情影响下的城市韧性，可为城市的安全发展提供重要依据。本文基于适应性循环模型，结合夜间灯光日数据和费舍尔信息法构建 Fisher Information Light (FIL)这一城市韧性代理指标，并运用基于动态时间规整法的 K-Means 聚类，对 2020 年 1 月 13 日至 4 月 8 日中国长三角、珠三角、京津冀三大城市群城市韧性变化模式进行分析与评价。分别从城市群和城市尺度揭示北京、上海等 48 个城市受 COVID-19 疫情短期影响及韧性变化状况。结果表明：①不同的城市群受到疫情的冲击程度不同，长三角城市群受到的影响明显大于珠三角城市群受到的冲击；不同时间段对于城市群经济社会生活的影响不同。② 2019 年 FIL 处于上升态势，城市系统整体向好发展，2020 年 FIL 变化较为剧烈，处于下降态势中，城市发展受到一定程度上的影响。③通过聚类分析将城市变化模式分为三种类型：稳定型城市整体呈现较为稳定的波动，变化幅度较小，开发阶段出现低谷，较快恢复，具有较高的可持续发展能力。低谷型城市变化曲线整体上呈现为 U 型并处于下降态势中。波动型城市整体上呈现出稳定波动的下降态势。\n\n\n\n\n\n\n\n\n\nNASA Black Marble VNP46A2 / VIIRS-DNB 日尺度夜间灯光数据\n\n\n2019 与 2020 年同期比较\n\n\n京津冀、长三角、珠三角三大城市群\n\n\n48 个城市\n\n\n\n\n\n\n\n适应性循环模型\n\n\nFisher Information Light\n\n\n时间序列比较\n\n\nDynamic Time Warping\n\n\nK-Means\n\n\nElbow Method\n\n\n\n\n\n返回成果页"
   },
   {
     "objectID": "zh/papers/urban-resilience-nighttime-lights.html#摘要",
@@ -445,14 +368,7 @@
     "href": "zh/papers/urban-resilience-nighttime-lights.html#研究路径",
     "title": "基于夜间灯光遥感和费舍尔信息方法的城市韧性评价",
     "section": "",
-    "text": "NASA Black Marble VNP46A2 / VIIRS-DNB 日尺度夜间灯光数据\n\n\n2019 与 2020 年同期比较\n\n\n京津冀、长三角、珠三角三大城市群\n\n\n48 个城市\n\n\n\n\n\n\n\n适应性循环模型\n\n\nFisher Information Light\n\n\n时间序列比较\n\n\nDynamic Time Warping\n\n\nK-Means\n\n\nElbow Method\n\n\n\n\n\n\n\nPython"
-  },
-  {
-    "objectID": "zh/papers/urban-resilience-nighttime-lights.html#我的贡献",
-    "href": "zh/papers/urban-resilience-nighttime-lights.html#我的贡献",
-    "title": "基于夜间灯光遥感和费舍尔信息方法的城市韧性评价",
-    "section": "",
-    "text": "第一作者\n\n\n返回成果页"
+    "text": "NASA Black Marble VNP46A2 / VIIRS-DNB 日尺度夜间灯光数据\n\n\n2019 与 2020 年同期比较\n\n\n京津冀、长三角、珠三角三大城市群\n\n\n48 个城市\n\n\n\n\n\n\n\n适应性循环模型\n\n\nFisher Information Light\n\n\n时间序列比较\n\n\nDynamic Time Warping\n\n\nK-Means\n\n\nElbow Method\n\n\n\n\n\n返回成果页"
   },
   {
     "objectID": "methods.html",

@@ -41,16 +41,6 @@ description: "Submitted manuscript on pre-move coauthor ties and city-level dest
 <li>Sensitivity analysis</li>
 </ul>
 </div>
-<div>
-<h3>Tools</h3>
-<p>No software listed for public display.</p>
-</div>
-</div>
-
-## My Contribution
-
-<div class="paper-contribution">
-Methodology; formal analysis; writing – original draft; with contributions to conceptualization, investigation, and data curation.
 </div>
 
 <p class="paper-back">[Back to Publications](../publications.html)</p>

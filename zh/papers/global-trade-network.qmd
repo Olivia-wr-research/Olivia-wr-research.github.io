@@ -36,21 +36,6 @@ description: "代表性研究成果，分析新冠疫情背景下全球贸易网
 <li>时空比较分析</li>
 </ul>
 </div>
-<div>
-<h3>工具</h3>
-<ul>
-<li>Excel</li>
-<li>Gephi</li>
-<li>ArcGIS</li>
-<li>Scimago Graphica</li>
-</ul>
-</div>
-</div>
-
-## 我的贡献
-
-<div class="paper-contribution">
-第一作者
 </div>
 
 <p class="paper-back">[返回成果页](../publications.html)</p>

@@ -33,18 +33,6 @@ description: "已录用论文，研究全球生物医药顶尖科学家流动的
 <li>Heckman 二阶段回归</li>
 </ul>
 </div>
-<div>
-<h3>工具</h3>
-<ul>
-<li>Gephi 10.1</li>
-</ul>
-</div>
-</div>
-
-## 我的贡献
-
-<div class="paper-contribution">
-第一作者
 </div>
 
 <p class="paper-back">[返回成果页](../publications.html)</p>

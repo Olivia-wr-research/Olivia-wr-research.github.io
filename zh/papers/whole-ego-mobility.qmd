@@ -37,19 +37,6 @@ description: "已投稿论文，从全域网络和自我网络双重视角研究
 <li>跨平台职业轨迹测度</li>
 </ul>
 </div>
-<div>
-<h3>工具</h3>
-<ul>
-<li>R</li>
-<li>ergm.count</li>
-</ul>
-</div>
-</div>
-
-## 我的贡献
-
-<div class="paper-contribution">
-第一作者
 </div>
 
 <p class="paper-back">[返回成果页](../publications.html)</p>

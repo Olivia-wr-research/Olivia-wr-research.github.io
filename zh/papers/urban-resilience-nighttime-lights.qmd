@@ -34,18 +34,6 @@ description: "代表性研究成果，基于夜间灯光遥感和费舍尔信息
 <li>Elbow Method</li>
 </ul>
 </div>
-<div>
-<h3>工具</h3>
-<ul>
-<li>Python</li>
-</ul>
-</div>
-</div>
-
-## 我的贡献
-
-<div class="paper-contribution">
-第一作者
 </div>
 
 <p class="paper-back">[返回成果页](../publications.html)</p>

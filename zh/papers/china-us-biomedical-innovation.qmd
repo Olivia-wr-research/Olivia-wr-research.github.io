@@ -34,19 +34,6 @@ description: "代表性研究成果，从人才流动网络视角比较中美生
 <li>人才流动网络分析</li>
 </ul>
 </div>
-<div>
-<h3>工具</h3>
-<ul>
-<li>PATENTSCOPE</li>
-<li>Web of Science</li>
-</ul>
-</div>
-</div>
-
-## 我的贡献
-
-<div class="paper-contribution">
-第一作者
 </div>
 
 <p class="paper-back">[返回成果页](../publications.html)</p>

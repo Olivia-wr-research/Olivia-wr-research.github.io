@@ -4,6 +4,11 @@
   root.classList.add("js-enabled");
 
   function revealSections() {
+    const autoTargets = Array.from(document.querySelectorAll(".page-band, .output-item, .focus-item, .profile-item, .paper-page > section, .paper-workflow > div"));
+    autoTargets.forEach((item, index) => {
+      item.classList.add("reveal");
+      item.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 42}ms`);
+    });
     const targets = Array.from(document.querySelectorAll(".reveal"));
     if (!targets.length) return;
     if (reduceMotion || !("IntersectionObserver" in window)) {
@@ -21,6 +26,42 @@
       { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
     );
     targets.forEach((item) => observer.observe(item));
+    window.setTimeout(() => {
+      targets.forEach((item) => item.classList.add("is-visible"));
+    }, 1800);
+  }
+
+  function setupCinematicBackground() {
+    if (reduceMotion) {
+      root.style.setProperty("--scroll-depth", "0");
+      root.style.setProperty("--hero-drift-x", "0px");
+      root.style.setProperty("--hero-drift-y", "0px");
+      return;
+    }
+    let pointerX = 0;
+    let pointerY = 0;
+    let ticking = false;
+    const update = () => {
+      const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+      const depth = Math.min(window.scrollY / maxScroll, 1);
+      root.style.setProperty("--scroll-depth", depth.toFixed(3));
+      root.style.setProperty("--hero-drift-x", `${(pointerX * 5).toFixed(2)}px`);
+      root.style.setProperty("--hero-drift-y", `${(pointerY * 4 + depth * -10).toFixed(2)}px`);
+      ticking = false;
+    };
+    const requestUpdate = () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+    window.addEventListener("pointermove", (event) => {
+      pointerX = event.clientX / Math.max(window.innerWidth, 1) - 0.5;
+      pointerY = event.clientY / Math.max(window.innerHeight, 1) - 0.5;
+      requestUpdate();
+    }, { passive: true });
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    update();
   }
 
   function countMetrics() {
@@ -167,6 +208,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
+    setupCinematicBackground();
     revealSections();
     countMetrics();
     setupLightbox();

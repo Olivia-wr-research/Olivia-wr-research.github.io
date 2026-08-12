@@ -41,16 +41,6 @@ description: "已投稿论文，研究迁移前共同作者关系与高被引生
 <li>敏感性分析</li>
 </ul>
 </div>
-<div>
-<h3>工具</h3>
-<p>不列公开软件。</p>
-</div>
-</div>
-
-## 我的贡献
-
-<div class="paper-contribution">
-负责方法设计、正式统计分析与初稿撰写，并参与研究构思、数据调查与数据整理。
 </div>
 
 <p class="paper-back">[返回成果页](../publications.html)</p>
