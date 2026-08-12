@@ -7,6 +7,7 @@ project:
     - index.qmd
     - research.qmd
     - publications.qmd
+    - papers/*.qmd
     - methods.qmd
     - projects.qmd
     - cv.qmd
@@ -26,7 +27,7 @@ website:
   title: "Ran Wang"
   site-url: "https://olivia-wr-research.github.io"
   description: "Ran Wang's academic website on scientific mobility, knowledge networks, regional innovation, and economic geography."
-  search: false
+  search: true
   navbar:
     title: "Ran Wang"
     left:

@@ -1,0 +1,48 @@
+---
+title: "Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists"
+description: "Submitted manuscript on pre-move coauthor ties and city-level destination choice among highly cited biomedical scientists."
+---
+
+::: {.page-band .surface .paper-page}
+
+<p class="paper-meta">First Author · Submitted Manuscript</p>
+
+## Abstract
+
+<p class="abstract-text">Scientific mobility redistributes researchers and knowledge across places. Existing studies document mobility patterns and the roles of personal attributes, city conditions, distance, and national borders. Recent work links professional networks to early-career destinations, but less is known about repeated moves by established scientists or how collaborations differ across candidate cities. This study examines whether highly cited biomedical scientists are more likely to select cities where they already had direct coauthors and whether the number, network share, persistence, and timing of those ties matter. Using verified career histories, Scopus records, and lagged city publication counts, we analyze 336 moves by 217 scientists and 60,024 event–candidate observations drawn from a roster of 500. Event-stratified conditional logit models compare selected cities with alternatives within each move. Cities with at least one direct coauthor in the five years before a move have higher conditional odds of selection than cities without such ties (OR 52.33, 95% CI 35.19–77.81), after controlling for distance, national borders, lagged scientific scale, and biomedical specialization. Among tied cities, more local coauthors and a larger share of the scientist’s observed coauthor network are positively associated with selection. Persistent ties and ties observed in both early and recent periods have stronger associations than nonpersistent or single-period ties. No statistically detectable difference is found between domestic and foreign candidates. The study shows that prior collaboration helps distinguish destination choice beyond city conditions and geographic constraints.</p>
+
+## Research Workflow
+
+<div class="paper-workflow">
+<div>
+<h3>Data</h3>
+<ul>
+<li>Verified scientist career histories</li>
+<li>Scopus publication, author, and affiliation records</li>
+<li>Annual city publication counts</li>
+<li>500-scientist source roster</li>
+<li>336 intercity employment moves</li>
+<li>217 scientists</li>
+<li>60,024 event–candidate observations</li>
+</ul>
+</div>
+<div>
+<h3>Methods</h3>
+<ul>
+<li>Event-specific candidate-city construction</li>
+<li>Event-stratified conditional logit</li>
+<li>Scientist-clustered robust standard errors</li>
+<li>Direct coauthor tie measurement</li>
+<li>Coauthor breadth</li>
+<li>Network share</li>
+<li>Persistence</li>
+<li>Timing</li>
+<li>Distance and national-context controls</li>
+<li>Sensitivity analysis</li>
+</ul>
+</div>
+</div>
+
+<p class="paper-back">[Back to Publications](../publications.html)</p>
+
+:::

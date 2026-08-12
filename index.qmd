@@ -12,6 +12,8 @@ pagetitle: "Ran Wang | Scientific Mobility, Firm Innovation, Regional Innovation
 
 My research examines how innovation is organized across space through the movement of highly skilled people, the formation of collaboration networks, and the innovation strategies of firms. I work with longitudinal career records, relational data, city-level indicators, and firm-year innovation data to study how individual decisions and institutional contexts shape regional innovation systems.
 
+Outside research, photography, films, badminton, ultimate frisbee, and swimming keep me attentive to movement, place, and rhythm. I tend to warm up slowly in new settings, but work with persistence, discipline, and a strong capacity to learn, adapt, and carry long projects with care.
+
 [Research](research.html){.btn .btn-primary}
 [Publications](publications.html){.btn .btn-secondary}
 [CV](cv.html){.btn .btn-secondary}
@@ -72,6 +74,12 @@ An accepted article in *World Regional Studies*, submitted manuscripts on elite 
 ### Data and Methods
 
 Longitudinal data construction, scientist-institution-city linkage, social network analysis, conditional logit, GIS, remote-sensing indicators, and reproducible Python/R workflows.
+:::
+
+::: {.profile-item}
+### Working Style
+
+Reflective, diligent, persistent, conscientious, and self-disciplined, with steady learning and adaptability across empirical materials, research questions, and technical workflows.
 :::
 :::
 

@@ -1,0 +1,41 @@
+---
+title: "Assessment of urban resilience based on nighttime light remote sensing and Fisher's information method"
+description: "Selected research output on urban resilience assessment using nighttime-light remote sensing and Fisher Information Light."
+---
+
+::: {.page-band .surface .paper-page}
+
+<p class="paper-meta">First Author · Selected Research Output</p>
+
+## Abstract
+
+<p class="abstract-text">Scientific evaluation of the urban resilience of the city under the impact of the epidemic can provide an important basis for the safe development of the city. Based on the adaptive cycle model, combined with night light day data and Fisher information method, this paper builds Fisher Information Light (FIL), an urban resilience agent index, and uses K-Means clustering based on dynamic time regularization method for 2020 From January 13 to April 8, the urban resilience change patterns of China's Yangtze River Delta, the Pearl River Delta and the Beijing-Tianjin-Hebei three major urban agglomerations were analyzed and evaluated. The short-term impact and resilience changes of 48 cities, including Beijing and Shanghai, were revealed from the urban agglomeration and urban scale. The results show that:① different urban agglomerations are affected by the epidemic to varying degrees, and the impact of the Yangtze River Delta urban agglomeration is significantly greater than that of the Pearl River Delta urban agglomeration; different time periods have different impacts on the economic and social life of urban agglomerations. ② In 2019, FIL is on the rise, and the urban system is developing well as a whole. In 2020, FIL has changed dramatically and is in a downward trend. Urban development has been affected to a certain extent. ③Through cluster analysis, urban change patterns are divided into three types: stable cities as a whole show relatively stable fluctuations, the range of change is small, there are troughs in the development stage, rapid recovery, and high sustainable development capabilities. The change curve of low-trough cities is U-shaped and is in a downward trend. Volatuational cities This type of city as a whole shows a steady downward trend.</p>
+
+## Research Workflow
+
+<div class="paper-workflow">
+<div>
+<h3>Data</h3>
+<ul>
+<li>NASA Black Marble VNP46A2 / VIIRS-DNB daily nighttime-light data</li>
+<li>Matched 2019–2020 comparison</li>
+<li>Beijing–Tianjin–Hebei, Yangtze River Delta, and Pearl River Delta urban agglomerations</li>
+<li>48 cities</li>
+</ul>
+</div>
+<div>
+<h3>Methods</h3>
+<ul>
+<li>Adaptive-cycle framework</li>
+<li>Fisher Information Light</li>
+<li>Time-series comparison</li>
+<li>Dynamic Time Warping</li>
+<li>K-Means</li>
+<li>Elbow Method</li>
+</ul>
+</div>
+</div>
+
+<p class="paper-back">[Back to Publications](../publications.html)</p>
+
+:::
