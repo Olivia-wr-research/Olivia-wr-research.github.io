@@ -1,5 +1,6 @@
 ---
-title: "Publications"
+title: "Research Outputs"
+description: "Ran Wang's research outputs organised by verified status."
 ---
 
 ::: {.page-band .surface}
@@ -8,14 +9,14 @@ title: "Publications"
 
 ::: {.output-list .editorial-list}
 ::: {.output-item}
-<p><span class="status-badge">Accepted</span></p>
-<h3>The spatial structure and influencing factors of the flow of global top biomedical scientists from the perspective of urban network</h3>
+<p><span class="status-badge status-accepted">Accepted</span></p>
+<h3>Spatial Structure and Determinants of Global Top Biomedical Scientists' Mobility from an Urban Network Perspective</h3>
 
-Role: First Author. Accepted by *World Regional Studies*.
+Role: First author. Accepted by *World Regional Studies*.
 
-This article examines the mobility trajectories of top global biomedical scientists from an urban-network perspective. It compares education and employment stages and analyzes city-level factors associated with scientist mobility.
+This article examines top biomedical scientists' mobility trajectories from an urban-network perspective, comparing education and employment stages and analysing city-level factors associated with mobility ties.
 
-[View details →](papers/urban-network-biomedical-mobility.html){.publication-link}
+[Details](papers/urban-network-biomedical-mobility.html){.publication-link}
 :::
 :::
 
@@ -27,25 +28,25 @@ This article examines the mobility trajectories of top global biomedical scienti
 
 ::: {.output-list .editorial-list}
 ::: {.output-item}
-<p><span class="status-badge">Submitted Manuscript</span></p>
+<p><span class="status-badge status-submitted">Submitted Manuscript</span></p>
 <h3>Structure and Formation Mechanisms of the Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Whole-Network and Ego-Network Perspective</h3>
 
-Role: First Author.
+Role: First author.
 
-This manuscript links whole-network mobility structures with individual ego-network trajectories. It examines how urban conditions, multidimensional proximity, platform histories, and prior ties shape intercity mobility among top biomedical scientists.
+This manuscript links whole-network mobility structures with scientist-level mobility ego networks, examining how urban conditions, multidimensional proximity, platform histories, and prior mobility ties are associated with intercity mobility.
 
-[View details →](papers/whole-ego-mobility.html){.publication-link}
+[Details](papers/whole-ego-mobility.html){.publication-link}
 :::
 
 ::: {.output-item}
-<p><span class="status-badge">Submitted Manuscript</span></p>
+<p><span class="status-badge status-submitted">Submitted Manuscript</span></p>
 <h3>Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists</h3>
 
-Role: First Author.
+Role: First author.
 
-This manuscript treats intercity employment moves as event-specific destination choices. It compares selected cities with candidate alternatives and tests whether pre-move direct coauthor ties help distinguish scientists' destinations.
+This manuscript treats intercity employment moves as event-specific destination choices and compares selected cities with candidate alternatives. The estimates are interpreted as associations with destination choice, not causal effects or verified recruitment mechanisms.
 
-[View details →](papers/pre-move-coauthor-ties.html){.publication-link}
+[Details](papers/pre-move-coauthor-ties.html){.publication-link}
 :::
 :::
 
@@ -53,40 +54,66 @@ This manuscript treats intercity employment moves as event-specific destination 
 
 ::: {.page-band .surface}
 
+## Master's Thesis
+
+::: {.output-list .editorial-list}
+::: {.output-item}
+<p><span class="status-badge status-thesis">Master's Thesis</span></p>
+<h3>Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Perspective of Whole and Ego Networks</h3>
+
+The thesis uses a 500-scientist, 1970-2023 longitudinal database to connect whole-network analysis, mobility ego networks, WERGM, GIS, and career-trajectory classification.
+:::
+:::
+
+:::
+
+::: {.page-band}
+
 ## Selected Research Outputs
 
 ::: {.output-list .editorial-list}
 ::: {.output-item}
-<p><span class="status-badge">Selected Research Output</span></p>
+<p><span class="status-badge status-output">Selected Research Output</span></p>
 <h3>Comparative Study on Biomedical Innovation between China and the United States from the Perspective of Talent Mobility Network</h3>
 
-Role: First Author.
+Role: First author. A comparative research output linking talent mobility, biomedical innovation systems, publication output, patent activity, and innovation transformation.
 
-This study compares biomedical innovation in China and the United States through the mobility networks of top scientists. It relates talent movement to innovation systems, research output, patents, and innovation transformation.
-
-[View details →](papers/china-us-biomedical-innovation.html){.publication-link}
+[Details](papers/china-us-biomedical-innovation.html){.publication-link}
 :::
 
 ::: {.output-item}
-<p><span class="status-badge">Selected Research Output</span></p>
-<h3>Assessment of urban resilience based on nighttime light remote sensing and Fisher's information method</h3>
+<p><span class="status-badge status-output">Selected Research Output</span></p>
+<h3>Assessment of Urban Resilience Based on Nighttime Light Remote Sensing and Fisher's Information Method</h3>
 
-Role: First Author.
+Role: First author. This study uses VIIRS-DNB daily nighttime-light data and Fisher Information Light to evaluate short-term urban resilience during the COVID-19 shock.
 
-This study uses nighttime-light data and Fisher Information Light to evaluate short-term urban resilience during the COVID-19 shock. It compares resilience trajectories across 48 cities in three major Chinese urban agglomerations.
-
-[View details →](papers/urban-resilience-nighttime-lights.html){.publication-link}
+[Details](papers/urban-resilience-nighttime-lights.html){.publication-link}
 :::
 
 ::: {.output-item}
-<p><span class="status-badge">Selected Research Output</span></p>
-<h3>Analysis on the spatial-temporal evolution of global trade network in the context of the COVID-19</h3>
+<p><span class="status-badge status-output">Selected Research Output</span></p>
+<h3>Analysis of the Spatial-Temporal Evolution of the Global Trade Network in the Context of COVID-19</h3>
 
-Role: First Author.
+Role: First author. This study uses UN Comtrade data to analyse changes in directed weighted global commodity trade networks from 2019 to 2021.
 
-This study analyzes changes in the global commodity trade network from 2019 to 2021. It compares network structure across countries, regions, and product types under the COVID-19 shock.
+[Details](papers/global-trade-network.html){.publication-link}
+:::
+:::
 
-[View details →](papers/global-trade-network.html){.publication-link}
+:::
+
+::: {.page-band .surface}
+
+## Research Software / Data Products
+
+::: {.output-list .editorial-list}
+::: {.output-item}
+<p><span class="status-badge status-software">Research Software / Data Product</span></p>
+<h3>Author-Institution-City Linkage Toolkit</h3>
+
+A public Python toolkit supporting author-publication linkage, affiliation parsing, institution and city normalisation, synthetic fixtures, offline mock transport, quality audits, and tests for Scopus-derived research-data workflows. The public repository does not include restricted Scopus data.
+
+[GitHub](https://github.com/Olivia-wr-research/author-institution-city-linkage){.publication-link}
 :::
 :::
 

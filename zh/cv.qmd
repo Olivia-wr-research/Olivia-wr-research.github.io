@@ -1,16 +1,28 @@
 ---
 title: "简历"
+description: "王冉的公开简历与研究合作简介。"
 ---
 
 ::: {.page-band .surface}
 
 ## 简历
 
+公开学术简历为无照片版本，适用于美国、加拿大、英国、香港、新加坡、澳大利亚及国际学术联系，除非职位明确要求其他格式。
+
 [下载公开简历](../assets/cv/Ran_Wang_CV_Public.pdf){.btn .btn-primary}
+[下载研究简介](../assets/profile/Ran_Wang_Research_Collaboration_Profile.pdf){.btn .btn-secondary}
 
 :::
 
 ::: {.page-band}
+
+## 研究与合作简介
+
+一页研究简介独立于学术简历，概括研究问题、当前研究主线、证据基础、数据与方法以及适合的合作场景，并不替代完整 CV。
+
+:::
+
+::: {.page-band .surface #contact}
 
 ## 联系方式
 
@@ -21,7 +33,7 @@ title: "简历"
 **GitHub**
 [Olivia-wr-research](https://github.com/Olivia-wr-research)
 
-**个人网站**
+**网站**
 [olivia-wr-research.github.io](https://olivia-wr-research.github.io)
 :::
 

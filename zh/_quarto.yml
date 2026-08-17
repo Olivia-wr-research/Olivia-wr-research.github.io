@@ -9,6 +9,7 @@ project:
     - publications.qmd
     - papers/*.qmd
     - methods.qmd
+    - collaboration.qmd
     - projects.qmd
     - cv.qmd
     - contact.qmd
@@ -18,6 +19,7 @@ project:
     - ../assets/img/coauthor-ties-choice.svg
     - ../assets/img/corporate-innovation-data-stack.svg
     - ../assets/cv/Ran_Wang_CV_Public.pdf
+    - ../assets/profile/Ran_Wang_Research_Collaboration_Profile.pdf
     - ../assets/js/language-switch.js
     - ../assets/js/academic-v35.js
 
@@ -26,7 +28,7 @@ lang: zh-CN
 website:
   title: "王冉"
   site-url: "https://olivia-wr-research.github.io/zh/"
-  description: "王冉的个人学术网站，展示科学家流动、知识网络、区域创新与经济地理学研究。"
+  description: "王冉的个人学术网站，展示科学家流动、知识网络、创新与高技能职业轨迹研究。"
   search: true
   navbar:
     title: "王冉"
@@ -39,6 +41,8 @@ website:
         href: publications.qmd
       - text: "方法与数据"
         href: methods.qmd
+      - text: "合作"
+        href: collaboration.qmd
       - text: "简历"
         href: cv.qmd
     right:

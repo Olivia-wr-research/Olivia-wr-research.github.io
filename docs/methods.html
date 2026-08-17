@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Data systems, measurement, empirical design, and reproducible research workflows.">
 
 <title>Methods &amp; Data – Ran Wang</title>
 <style>
@@ -110,6 +111,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Methods &amp; Data</span></a>
   </li>
   <li class="nav-item">
+    <a class="nav-link" href="./collaboration.html">
+<span class="menu-text">For Collaboration</span></a>
+  </li>
+  <li class="nav-item">
     <a class="nav-link" href="./cv.html">
 <span class="menu-text">CV</span></a>
   </li>
@@ -143,6 +148,11 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Methods &amp; Data</h1>
 </div>
 
+<div>
+  <div class="description">
+    Data systems, measurement, empirical design, and reproducible research workflows.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -160,17 +170,17 @@ ul.task-list li input[type="checkbox"] {
 <section id="data-systems" class="level2 page-band">
 <h2 class="anchored" data-anchor-id="data-systems">Data Systems</h2>
 <div class="method-panel-grid">
-<section id="scientist-mobility-data" class="level3 method-panel">
-<h3 class="anchored" data-anchor-id="scientist-mobility-data">Scientist Mobility Data</h3>
-<p>This data system links highly cited biomedical scientists to institutions, cities, career stages, mobility events, coauthor records, and publication-location fields. It is designed for longitudinal analysis of mobility networks, career embeddedness, destination choice, and regional innovation.</p>
+<section id="longitudinal-relational-data" class="level3 method-panel">
+<h3 class="anchored" data-anchor-id="longitudinal-relational-data">Longitudinal Relational Data</h3>
+<p>Career histories, institutions, cities, publications, collaboration ties, mobility events, and city attributes are linked into temporally ordered data systems for scientific-career research.</p>
 </section>
-<section id="firm-innovation-data" class="level3 method-panel">
-<h3 class="anchored" data-anchor-id="firm-innovation-data">Firm Innovation Data</h3>
-<p>This data system organizes leading global R&amp;D investors as firm-year observations. It integrates R&amp;D expenditure, patent records, trademark records, industry, country, firm identity, and year to support analysis of technology-oriented and market-facing innovation.</p>
+<section id="bibliometric-and-institutional-linkage" class="level3 method-panel">
+<h3 class="anchored" data-anchor-id="bibliometric-and-institutional-linkage">Bibliometric and Institutional Linkage</h3>
+<p>Scopus, OpenAlex, ROR, affiliation strings, institution names, and geocoded city fields are handled through source-aware linkage and conflict auditing.</p>
 </section>
-<section id="supporting-spatial-and-policy-data" class="level3 method-panel">
-<h3 class="anchored" data-anchor-id="supporting-spatial-and-policy-data">Supporting Spatial and Policy Data</h3>
-<p>Supporting data include VIIRS-DNB nighttime lights, UN Comtrade, geospatial and city-attribute data, and policy or planning documents. These materials provide the empirical basis for spatial measurement, network comparison, and policy interpretation.</p>
+<section id="spatial-and-innovation-data" class="level3 method-panel">
+<h3 class="anchored" data-anchor-id="spatial-and-innovation-data">Spatial and Innovation Data</h3>
+<p>Supporting materials include VIIRS-DNB nighttime lights, UN Comtrade, patent and trademark records, R&amp;D firm-year data, city indicators, and policy or planning documents where sharing permissions allow.</p>
 </section>
 </div>
 </section>
@@ -179,57 +189,57 @@ ul.task-list li input[type="checkbox"] {
 <div class="method-chain">
 <section id="career-institution-and-city-reconstruction" class="level3 method-row">
 <h3 class="anchored" data-anchor-id="career-institution-and-city-reconstruction">Career, Institution, and City Reconstruction</h3>
-<p>Career-history reconstruction requires person validation, institution normalization, city standardization, temporal auditing, and careful handling of education and employment records. These steps make individual careers comparable across institutions and cities over time.</p>
+<p>Person validation, institution normalisation, city standardisation, temporal auditing, and education-employment separation make career histories comparable over time.</p>
 </section>
-<section id="relational-and-spatial-measurement" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="relational-and-spatial-measurement">Relational and Spatial Measurement</h3>
-<p>Mobility events are linked to city attributes, coauthor ties, whole-network indicators, ego-network indicators, geographic proximity, cognitive proximity, and candidate destination sets. Publication locations are treated as database fields rather than evidence of verified interpersonal ties.</p>
+<section id="relational-measurement" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="relational-measurement">Relational Measurement</h3>
+<p>Coauthorship, mobility ties, publication-location fields, historical platform ties, ego-network measures, and candidate destinations are measured as distinct constructs rather than interchangeable proxies.</p>
 </section>
-<section id="firm-innovation-measurement" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="firm-innovation-measurement">Firm Innovation Measurement</h3>
-<p>Firm-level measurement links R&amp;D input with patent and trademark activity, harmonizes firm identity across sources, and organizes observations into a firm-year panel. The aim is to measure innovation portfolios without reducing innovation to a single indicator.</p>
+<section id="innovation-measurement" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="innovation-measurement">Innovation Measurement</h3>
+<p>Firm-year innovation work links R&amp;D, patents, trademarks, industry, country, identity, and year to compare technological and market-facing innovation without reducing innovation to one count.</p>
 </section>
-<section id="high-frequency-spatial-indicators" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="high-frequency-spatial-indicators">High-Frequency Spatial Indicators</h3>
-<p>Remote-sensing work uses nighttime-light preprocessing, spatial aggregation, Fisher Information, and trajectory comparison to construct urban resilience measures from high-frequency spatial data.</p>
+<section id="spatial-and-temporal-indicators" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="spatial-and-temporal-indicators">Spatial and Temporal Indicators</h3>
+<p>Remote-sensing and trade-network projects use spatial aggregation, Fisher Information, DTW, K-Means, directed weighted networks, and temporal comparison.</p>
 </section>
 </div>
 </section>
 <section id="empirical-design-and-modelling" class="level2 page-band">
 <h2 class="anchored" data-anchor-id="empirical-design-and-modelling">Empirical Design and Modelling</h2>
 <div class="method-chain">
-<section id="destination-choice-design" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="destination-choice-design">Destination-Choice Design</h3>
-<p>Observed mobility is organized as event-specific choice sets: each move contains one selected destination and a set of alternative candidate cities. Predictors are measured before the move, which helps align temporal order with the interpretation of relational exposure.</p>
+<section id="choice-modelling" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="choice-modelling">Choice Modelling</h3>
+<p>Observed moves are organised as event-specific choice sets, with selected destinations compared against alternatives and predictors measured before the move.</p>
 </section>
-<section id="network-and-relational-models" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="network-and-relational-models">Network and Relational Models</h3>
-<p>Network analysis is used to describe directed weighted mobility ties, core structure, centrality, whole-network formation, and scientist-level ego-networks. Weighted network modelling and proximity measures support the transition from descriptive structure to relational explanation.</p>
+<section id="network-analysis" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="network-analysis">Network Analysis</h3>
+<p>Directed weighted mobility networks, centrality, core structure, ego networks, WERGM, proximity measures, and tie persistence are used to connect macro structures with individual career trajectories.</p>
 </section>
-<section id="econometric-and-comparative-designs" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="econometric-and-comparative-designs">Econometric and Comparative Designs</h3>
-<p>Empirical work uses event-stratified conditional logit, robustness checks, sensitivity analysis, longitudinal comparison, and comparative research design. Earlier training also included Lasso, random forest, support vector machines, and cross-validation in applied modelling contexts.</p>
+<section id="comparative-and-econometric-designs" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="comparative-and-econometric-designs">Comparative and Econometric Designs</h3>
+<p>The current empirical toolkit includes conditional logit, clustered robust inference, Heckman two-stage models, OLS, robustness checks, sensitivity analysis, and longitudinal comparison.</p>
 </section>
-<section id="spatial-and-temporal-analysis" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="spatial-and-temporal-analysis">Spatial and Temporal Analysis</h3>
-<p>GIS, dynamic time warping, K-Means clustering, spatial aggregation, and temporal comparison are used where the research question requires spatial measurement or trajectory analysis.</p>
+<section id="method-boundaries" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="method-boundaries">Method Boundaries</h3>
+<p>The public profile does not claim deep learning, causal discovery, causal representation learning, survey experimentation, or autonomous LLM research as completed expertise.</p>
 </section>
 </div>
 </section>
 <section id="reproducibility-and-research-software" class="level2 page-band surface">
 <h2 class="anchored" data-anchor-id="reproducibility-and-research-software">Reproducibility and Research Software</h2>
 <div class="method-chain">
-<section id="reproducible-workflow" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="reproducible-workflow">Reproducible Workflow</h3>
-<p>Research workflows emphasize scripted processing, version control, data-quality audits, sensitivity checks, synthetic fixtures, and separation between public materials and restricted data. This is especially important for longitudinal mobility data and data derived from licensed bibliographic sources.</p>
+<section id="workflow" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="workflow">Workflow</h3>
+<p>Research workflows emphasise scripted processing, version control, synthetic fixtures, data-quality audits, source-conflict logs, and separation between public descriptions and restricted data.</p>
 </section>
-<section id="research-software-environment" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="research-software-environment">Research Software Environment</h3>
-<p>The working environment includes Python, R, Stata, GIS software, NetworkX, Gephi, Ucinet, Git, GitHub, and Quarto. Tools are selected for data construction, model estimation, documentation, and reproducible publication.</p>
+<section id="software-environment" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="software-environment">Software Environment</h3>
+<p>Python, R, Stata, ArcGIS/QGIS, NetworkX, Gephi, UCINET, Scimago Graphica, Git, GitHub, and Quarto are used for data construction, modelling, documentation, and publication workflows.</p>
 </section>
 <section id="scopus-research-data-toolkit" class="level3 method-row">
 <h3 class="anchored" data-anchor-id="scopus-research-data-toolkit">Scopus Research Data Toolkit</h3>
-<p>The Scopus research data toolkit is an open-source Python package for author-institution-city linkage in Scopus-derived research-data workflows. It uses synthetic fixtures, offline mock transport, automated tests, and public documentation; it does not bundle restricted Scopus data.</p>
+<p>The public toolkit supports author-institution-city linkage with synthetic fixtures, offline mock transport, tests, and documentation. It does not bundle licensed Scopus records.</p>
 <p><a href="https://github.com/Olivia-wr-research/author-institution-city-linkage" class="btn btn-secondary">GitHub</a></p>
 </section>
 </div>

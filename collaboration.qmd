@@ -1,0 +1,107 @@
+---
+title: "For Collaboration"
+description: "How Ran Wang can contribute to research projects and supervisor-facing collaborations."
+---
+
+::: {.page-band}
+
+## For Collaboration
+
+I am interested in PhD, predoc/RA, and research-collaboration opportunities for the 2027 entry and application cycle. My contribution is strongest where a project needs careful longitudinal data construction, relational measurement, spatial/network analysis, and conservative interpretation of scientific-career or high-skilled mobility evidence.
+
+:::
+
+::: {.page-band .surface}
+
+## Research Objects
+
+::: {.capability-grid .capability-grid-five}
+::: {.capability-panel}
+### Scientific careers
+Career stages, appointments, institutional movement, and temporal ordering.
+:::
+::: {.capability-panel}
+### High-skilled mobility
+Destination choice, circulation, attraction, retention, and cross-city moves.
+:::
+::: {.capability-panel}
+### Collaboration networks
+Coauthorship, ego networks, tie persistence, and relational capital.
+:::
+::: {.capability-panel}
+### Organisations
+Universities, research institutes, firms, and platform histories.
+:::
+::: {.capability-panel}
+### Cities
+Urban opportunity structures, spatial constraints, and regional innovation contexts.
+:::
+:::
+
+:::
+
+::: {.page-band}
+
+## Data Capabilities
+
+::: {.method-chain}
+::: {.method-row}
+### Longitudinal Career Reconstruction
+
+I can help build source-audited career histories that distinguish education, employment, publication affiliation, and verified mobility events.
+:::
+
+::: {.method-row}
+### Publication and Institution Linkage
+
+I work with bibliometric records, affiliation strings, institution-city matching, ROR/OpenAlex/Scopus workflows, and uncertainty documentation.
+:::
+
+::: {.method-row}
+### Relational and Spatial Datasets
+
+I can construct coauthor networks, mobility networks, candidate-destination structures, city-level attributes, and spatially joined research datasets.
+:::
+
+::: {.method-row}
+### Entity Matching and Integration
+
+Current work includes identity matching, temporal validation, conflict logs, synthetic fixtures, and reproducible pipelines for large relational datasets.
+:::
+:::
+
+:::
+
+::: {.page-band .surface}
+
+## Analytical Capabilities
+
+::: {.profile-grid .profile-grid-three}
+::: {.profile-item}
+### Choice modelling
+Event-specific candidate sets, conditional logit, clustered robust inference, and temporal measurement.
+:::
+::: {.profile-item}
+### Network analysis
+Directed weighted networks, centrality, ego networks, WERGM, proximity, and tie persistence.
+:::
+::: {.profile-item}
+### Spatial and longitudinal design
+GIS, city matching, temporal comparison, reproducible Python/R/Stata workflows, and source-conflict auditing.
+:::
+:::
+
+:::
+
+::: {.page-band}
+
+## Current Interest
+
+::: {.quick-links}
+[PhD / 2027 Entry](cv.html){.btn .btn-secondary}
+[Predoc / RA](assets/profile/Ran_Wang_Research_Collaboration_Profile.pdf){.btn .btn-primary}
+[Research Collaboration](assets/profile/Ran_Wang_Research_Collaboration_Profile.pdf){.btn .btn-secondary}
+[Contact](cv.html#contact){.btn .btn-secondary}
+:::
+
+:::

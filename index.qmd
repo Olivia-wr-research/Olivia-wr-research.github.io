@@ -1,53 +1,55 @@
 ---
-pagetitle: "Ran Wang | Scientific Mobility, Firm Innovation, Regional Innovation"
+pagetitle: "Ran Wang | Scientific Mobility, Knowledge Networks, Innovation"
+description: "Ran Wang studies scientific mobility, collaboration networks, relational capital, and innovation across organisations and cities."
 ---
 
-::: {.hero-v35}
+::: {.hero-v35 .hero-identity}
 ::: {.hero-copy}
+<p class="eyebrow">Quantitative Social Science · Science of Science</p>
 <h1>Ran Wang</h1>
 <p class="hero-name-alt">王冉</p>
-<p class="hero-affiliation">School of Geographic Sciences, East China Normal University · M.Sc. in Human Geography, 2026</p>
+<p class="hero-affiliation">M.Sc. in Human Geography, East China Normal University, 2026</p>
+<p class="hero-interests">Scientific Mobility · Knowledge Networks · Innovation</p>
 
-<p class="hero-interests">Scientific mobility · Collaboration networks · Destination choice · Firm innovation measurement · Regional innovation</p>
+I am a quantitative social science researcher studying how scientists and other highly skilled workers move across organisations and cities, how relational ties shape mobility decisions, and how mobility reorganises collaboration and knowledge production.
 
-My research examines how innovation is organized across space through the movement of highly skilled people, the formation of collaboration networks, and the innovation strategies of firms. I work with longitudinal career records, relational data, city-level indicators, and firm-year innovation data to study how individual decisions and institutional contexts shape regional innovation systems.
-
-Outside research, photography, films, badminton, ultimate frisbee, and swimming keep me attentive to movement, place, and rhythm. I tend to warm up slowly in new settings, but work with persistence, discipline, and a strong capacity to learn, adapt, and carry long projects with care.
-
+::: {.hero-actions}
 [Research](research.html){.btn .btn-primary}
 [Publications](publications.html){.btn .btn-secondary}
 [CV](cv.html){.btn .btn-secondary}
-[GitHub](https://github.com/Olivia-wr-research){.btn .btn-secondary}
+:::
+
+::: {.hero-secondary-links}
+[Research Profile](assets/profile/Ran_Wang_Research_Collaboration_Profile.pdf)
+[GitHub](https://github.com/Olivia-wr-research)
+:::
 :::
 :::
 
 ::: {.page-band .surface}
 
-## Research Interests
+## Research Themes
 
-::: {.interest-grid}
-::: {.focus-item}
-### Scientific Mobility and Career Trajectories
+::: {.theme-grid}
+::: {.theme-card}
+<span>01</span>
+<h3>Scientific Careers & Mobility</h3>
 
-Intercity and inter-organizational mobility among elite biomedical scientists, with attention to career histories, institutional affiliations, and the spatial ordering of academic careers.
+How do scientists choose destinations and move between organisations, cities, and countries?
 :::
 
-::: {.focus-item}
-### Collaboration Networks and Destination Choice
+::: {.theme-card}
+<span>02</span>
+<h3>Collaboration Networks & Relational Capital</h3>
 
-Coauthor ties, mobility ego-networks, pre-move relationships, and event-level destination choice among candidate cities.
+How do pre-existing collaboration ties affect mobility, and which relationships remain valuable across organisational boundaries?
 :::
 
-::: {.focus-item}
-### Regional Innovation and City Networks
+::: {.theme-card}
+<span>03</span>
+<h3>Innovation & Knowledge Production</h3>
 
-Urban scientific capacity, mobility-network structure, proximity, and the role of cities as organizational sites of knowledge production.
-:::
-
-::: {.focus-item}
-### Firm Innovation Measurement
-
-Firm-level innovation indicators built from R&D investment, patents, trademarks, industry, country, identity matching, and year-level panel construction.
+How does researcher mobility reshape collaboration, knowledge diffusion, and regional innovation?
 :::
 :::
 
@@ -55,31 +57,25 @@ Firm-level innovation indicators built from R&D investment, patents, trademarks,
 
 ::: {.page-band}
 
-## Academic Profile
+## Evidence Base
 
-::: {.profile-grid}
+::: {.profile-grid .profile-grid-three}
 ::: {.profile-item}
-### Research Positioning
+### Longitudinal Career Data
 
-Economic geography and regional innovation, with a focus on how mobility, collaboration, and firm innovation data can be used to explain uneven innovation geographies.
+Verified work reconstructs career, institution, city, publication, collaboration, and mobility records for elite biomedical scientists from 1970 to 2023.
 :::
 
 ::: {.profile-item}
-### Current Outputs
+### Relational and Spatial Methods
 
-An accepted article in *World Regional Studies*, submitted manuscripts on elite biomedical scientist mobility, and ongoing work on destination choice and firm innovation measurement.
+Current manuscripts use social network analysis, mobility ego networks, WERGM, event-specific candidate sets, and conditional logit models.
 :::
 
 ::: {.profile-item}
-### Data and Methods
+### Research Outputs
 
-Longitudinal data construction, scientist-institution-city linkage, social network analysis, conditional logit, GIS, remote-sensing indicators, and reproducible Python/R workflows.
-:::
-
-::: {.profile-item}
-### Working Style
-
-Reflective, diligent, persistent, conscientious, and self-disciplined, with steady learning and adaptability across empirical materials, research questions, and technical workflows.
+The public record includes an accepted first-author article, submitted manuscripts, a master's thesis, selected research outputs, and a public Scopus linkage toolkit.
 :::
 :::
 
@@ -87,13 +83,15 @@ Reflective, diligent, persistent, conscientious, and self-disciplined, with stea
 
 ::: {.page-band .surface}
 
-## Navigation
+## Supervisor-Facing Materials
 
 ::: {.quick-links}
 [Research](research.html){.btn .btn-secondary}
 [Publications](publications.html){.btn .btn-secondary}
 [Methods & Data](methods.html){.btn .btn-secondary}
-[CV](cv.html){.btn .btn-secondary}
+[For Collaboration](collaboration.html){.btn .btn-secondary}
+[Download CV](assets/cv/Ran_Wang_CV_Public.pdf){.btn .btn-primary}
+[Research Profile PDF](assets/profile/Ran_Wang_Research_Collaboration_Profile.pdf){.btn .btn-secondary}
 :::
 
 :::

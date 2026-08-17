@@ -1,16 +1,28 @@
 ---
 title: "Curriculum Vitae"
+description: "Public CV and research collaboration profile for Ran Wang."
 ---
 
 ::: {.page-band .surface}
 
 ## CV
 
+The public academic CV is a no-photo global CV. It is intended for US, Canada, UK, Hong Kong, Singapore, Australia, and international academic outreach unless a vacancy explicitly requires a different format.
+
 [Download Public CV](assets/cv/Ran_Wang_CV_Public.pdf){.btn .btn-primary}
+[Download Research Profile](assets/profile/Ran_Wang_Research_Collaboration_Profile.pdf){.btn .btn-secondary}
 
 :::
 
 ::: {.page-band}
+
+## Research & Collaboration Profile
+
+The one-page profile is separate from the academic CV. It summarises research questions, current research streams, selected evidence, data and methods, and suitable collaboration contexts without replacing the full CV.
+
+:::
+
+::: {.page-band .surface #contact}
 
 ## Contact
 

@@ -2299,3 +2299,159 @@ main.content {
     transform: none;
   }
 }
+
+/* Academic Identity V2 */
+.hero-grid {
+  align-items: center;
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 0.65fr);
+  width: 100%;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.72rem;
+  margin-top: 1.45rem;
+}
+
+.hero-actions .btn {
+  margin: 0;
+}
+
+.hero-secondary-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 0.85rem;
+}
+
+.hero-secondary-links a {
+  color: rgba(255, 255, 255, 0.88);
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration-color: rgba(255, 255, 255, 0.42);
+}
+
+.hero-secondary-links a:hover,
+.hero-secondary-links a:focus {
+  color: #ffffff;
+  text-decoration-color: rgba(180, 123, 69, 0.78);
+}
+
+.portrait-panel {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 10px;
+  box-shadow: 0 22px 60px rgba(7, 26, 43, 0.18);
+  color: rgba(255, 255, 255, 0.92);
+  justify-self: end;
+  max-width: 320px;
+  padding: 1.2rem;
+  position: relative;
+}
+
+.portrait-panel::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.36), rgba(255, 255, 255, 0.04));
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 92px;
+  margin-bottom: 1rem;
+  width: 92px;
+}
+
+.portrait-kicker,
+.portrait-note {
+  color: rgba(255, 255, 255, 0.72) !important;
+  font-family: var(--font-ui);
+  font-size: 0.78rem !important;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.42rem !important;
+  text-transform: uppercase;
+}
+
+.portrait-name {
+  color: #ffffff !important;
+  font-size: 1.42rem !important;
+  font-weight: 700;
+  margin-bottom: 0.48rem !important;
+}
+
+.theme-grid,
+.research-question-grid,
+.identity-framework {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.theme-card,
+.research-question,
+.identity-framework > div {
+  border-top: 1px solid var(--line);
+  padding: 1.05rem 0;
+}
+
+.theme-card span,
+.research-question span {
+  color: var(--gold);
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 760;
+  margin-bottom: 0.56rem;
+}
+
+.theme-card h3,
+.research-question h3 {
+  color: var(--accent-dark);
+}
+
+.profile-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.capability-grid-five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.status-accepted {
+  background: rgba(47, 124, 122, 0.09);
+  border-color: rgba(47, 124, 122, 0.24);
+}
+
+.status-submitted {
+  background: rgba(44, 110, 145, 0.09);
+  border-color: rgba(44, 110, 145, 0.22);
+}
+
+.status-thesis {
+  background: rgba(180, 123, 69, 0.1);
+  border-color: rgba(180, 123, 69, 0.24);
+}
+
+.status-output,
+.status-software {
+  background: rgba(100, 119, 133, 0.1);
+  border-color: rgba(100, 119, 133, 0.2);
+}
+
+@media (max-width: 991px) {
+  .hero-grid,
+  .theme-grid,
+  .research-question-grid,
+  .identity-framework,
+  .profile-grid-three,
+  .capability-grid-five {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait-panel {
+    justify-self: stretch;
+    max-width: none;
+  }
+}

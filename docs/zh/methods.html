@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="数据系统、测量、实证设计与可复现研究流程。">
 
 <title>方法与数据 – 王冉</title>
 <style>
@@ -110,6 +111,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">方法与数据</span></a>
   </li>
   <li class="nav-item">
+    <a class="nav-link" href="./collaboration.html">
+<span class="menu-text">合作</span></a>
+  </li>
+  <li class="nav-item">
     <a class="nav-link" href="./cv.html">
 <span class="menu-text">简历</span></a>
   </li>
@@ -143,6 +148,11 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">方法与数据</h1>
 </div>
 
+<div>
+  <div class="description">
+    数据系统、测量、实证设计与可复现研究流程。
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -160,77 +170,77 @@ ul.task-list li input[type="checkbox"] {
 <section id="数据系统" class="level2 page-band">
 <h2 class="anchored" data-anchor-id="数据系统">数据系统</h2>
 <div class="method-panel-grid">
-<section id="科学家流动数据" class="level3 method-panel">
-<h3 class="anchored" data-anchor-id="科学家流动数据">科学家流动数据</h3>
-<p>该数据系统将生物医药高被引科学家与机构、城市、职业阶段、流动事件、共同作者记录和论文地点字段连接起来，用于开展流动网络、职业嵌入、目的地选择与区域创新研究。</p>
+<section id="纵向关系数据" class="level3 method-panel">
+<h3 class="anchored" data-anchor-id="纵向关系数据">纵向关系数据</h3>
+<p>职业履历、机构、城市、论文、合作关系、流动事件和城市属性被组织为服务科学职业研究的时间序列关系数据。</p>
 </section>
-<section id="企业创新数据" class="level3 method-panel">
-<h3 class="anchored" data-anchor-id="企业创新数据">企业创新数据</h3>
-<p>该数据系统将全球高研发投入企业组织为企业年度观测，整合研发支出、专利、商标、行业、国家、企业身份和年份信息，用于分析技术导向创新与市场导向创新。</p>
+<section id="书目与机构关联" class="level3 method-panel">
+<h3 class="anchored" data-anchor-id="书目与机构关联">书目与机构关联</h3>
+<p>Scopus、OpenAlex、ROR、署名机构字段、机构名称和地理编码城市字段通过有来源记录的关联与冲突审计处理。</p>
 </section>
-<section id="支撑性空间与政策数据" class="level3 method-panel">
-<h3 class="anchored" data-anchor-id="支撑性空间与政策数据">支撑性空间与政策数据</h3>
-<p>支撑性数据包括 VIIRS-DNB 夜间灯光、UN Comtrade、地理空间与城市属性数据，以及政策和规划文本。这些材料服务于空间测量、网络比较和政策解释。</p>
+<section id="空间与创新数据" class="level3 method-panel">
+<h3 class="anchored" data-anchor-id="空间与创新数据">空间与创新数据</h3>
+<p>支撑材料包括 VIIRS-DNB 夜间灯光、UN Comtrade、专利、商标、R&amp;D 企业年度数据、城市指标以及经许可的政策和规划文本。</p>
 </section>
 </div>
 </section>
 <section id="数据构建与测量" class="level2 page-band surface">
 <h2 class="anchored" data-anchor-id="数据构建与测量">数据构建与测量</h2>
 <div class="method-chain">
-<section id="职业机构与城市重建" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="职业机构与城市重建">职业、机构与城市重建</h3>
-<p>职业履历重建需要进行人员校验、机构标准化、城市标准化、时间审计，并审慎处理教育和任职记录，使个体职业轨迹能够在机构和城市之间进行纵向比较。</p>
+<section id="职业机构与城市重构" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="职业机构与城市重构">职业、机构与城市重构</h3>
+<p>通过个体验证、机构标准化、城市标准化、时间审计以及教育和就业阶段区分，使职业履历在时间上可比较。</p>
 </section>
-<section id="关系与空间测量" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="关系与空间测量">关系与空间测量</h3>
-<p>流动事件与城市属性、共同作者关系、全域网络指标、自我网络指标、地理邻近、认知邻近和候选目的地集合相连接。论文地点仅作为数据库字段处理，不被直接解释为已经验证的人际关系。</p>
+<section id="关系测量" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="关系测量">关系测量</h3>
+<p>合作关系、流动关系、论文地点字段、历史平台关系、自我网络指标和候选目的地被作为不同构念处理，而不是相互替代。</p>
 </section>
-<section id="企业创新测量" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="企业创新测量">企业创新测量</h3>
-<p>企业层面测量将研发投入、专利和商标活动连接起来，协调不同来源中的企业身份，并组织为企业年度面板。目标是在不把创新简化为单一指标的前提下描述企业创新组合。</p>
+<section id="创新测度" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="创新测度">创新测度</h3>
+<p>企业年度创新研究连接 R&amp;D、专利、商标、行业、国家、企业身份和年份，以比较技术导向和市场导向创新。</p>
 </section>
-<section id="高频空间指标" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="高频空间指标">高频空间指标</h3>
-<p>遥感研究通过夜间灯光预处理、空间聚合、费舍尔信息和轨迹比较，从高频空间数据中构建城市韧性测度。</p>
+<section id="空间与时间指标" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="空间与时间指标">空间与时间指标</h3>
+<p>遥感和贸易网络项目使用空间聚合、费舍尔信息、DTW、K-Means、有向加权网络和时间比较。</p>
 </section>
 </div>
 </section>
 <section id="实证设计与模型" class="level2 page-band">
 <h2 class="anchored" data-anchor-id="实证设计与模型">实证设计与模型</h2>
 <div class="method-chain">
-<section id="目的地选择设计" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="目的地选择设计">目的地选择设计</h3>
-<p>观察到的流动被组织为事件层面的选择集合：每次流动包含一个实际目的地和若干候选城市。解释变量在流动发生前测量，以保证时间顺序与关系暴露解释相一致。</p>
+<section id="选择模型" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="选择模型">选择模型</h3>
+<p>已发生流动被组织为事件层面的选择集，实际目的地与替代目的地比较，解释变量在流动之前测量。</p>
 </section>
-<section id="网络与关系模型" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="网络与关系模型">网络与关系模型</h3>
-<p>网络分析用于描述有向赋权流动联系、核心结构、中心性、全域网络形成和科学家层面的自我网络。加权网络模型和邻近性测量支持从结构描述推进到关系解释。</p>
+<section id="网络分析" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="网络分析">网络分析</h3>
+<p>有向加权流动网络、中心性、核心结构、自我网络、WERGM、邻近性和关系持续性用于连接宏观结构与个体职业轨迹。</p>
 </section>
-<section id="计量与比较设计" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="计量与比较设计">计量与比较设计</h3>
-<p>实证研究使用事件分层条件 Logit、稳健性检验、敏感性分析、纵向比较和比较研究设计。早期定量训练还包括 Lasso、随机森林、支持向量机和交叉验证等应用建模方法。</p>
+<section id="比较与计量设计" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="比较与计量设计">比较与计量设计</h3>
+<p>当前工具包括条件 logit、聚类稳健推断、Heckman 两阶段模型、OLS、稳健性检验、敏感性分析和纵向比较。</p>
 </section>
-<section id="空间与时间分析" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="空间与时间分析">空间与时间分析</h3>
-<p>当研究问题涉及空间测量或轨迹分析时，使用地理信息系统、动态时间规整、K-Means 聚类、空间聚合和时间比较等方法。</p>
+<section id="方法边界" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="方法边界">方法边界</h3>
+<p>公开主页不声称已具备深度学习、因果发现、因果表征学习、问卷实验或自主 LLM 研究经验。</p>
 </section>
 </div>
 </section>
 <section id="可复现研究与研究软件" class="level2 page-band surface">
 <h2 class="anchored" data-anchor-id="可复现研究与研究软件">可复现研究与研究软件</h2>
 <div class="method-chain">
-<section id="可复现流程" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="可复现流程">可复现流程</h3>
-<p>研究流程强调脚本化处理、版本控制、数据质量审计、敏感性检查、合成测试样例，以及公开材料与受限数据的分离。这对纵向人才流动数据和授权书目来源数据尤为重要。</p>
+<section id="工作流" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="工作流">工作流</h3>
+<p>研究流程强调脚本化处理、版本控制、合成测试样本、数据质量审计、来源冲突日志，以及公开描述和受限数据之间的隔离。</p>
 </section>
-<section id="研究软件环境" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="研究软件环境">研究软件环境</h3>
-<p>常用环境包括 Python、R、Stata、地理信息系统软件、NetworkX、Gephi、Ucinet、Git、GitHub 和 Quarto。工具选择服务于数据构建、模型估计、文档生成和可复现发布。</p>
+<section id="软件环境" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="软件环境">软件环境</h3>
+<p>Python、R、Stata、ArcGIS/QGIS、NetworkX、Gephi、UCINET、Scimago Graphica、Git、GitHub 和 Quarto 用于数据构建、建模、文档和发表流程。</p>
 </section>
-<section id="书目数据处理工具" class="level3 method-row">
-<h3 class="anchored" data-anchor-id="书目数据处理工具">书目数据处理工具</h3>
-<p>Scopus 研究数据工具包是用于 Scopus 来源研究数据流程中作者—机构—城市连接的开源 Python 工具。该工具使用合成测试样例、离线模拟传输、自动化测试和公开文档，不包含受限 Scopus 数据。</p>
-<p><a href="https://github.com/Olivia-wr-research/author-institution-city-linkage" class="btn btn-secondary">代码仓库</a></p>
+<section id="scopus-研究数据工具" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="scopus-研究数据工具">Scopus 研究数据工具</h3>
+<p>公开工具包支持作者—机构—城市关联，包含合成测试样本、离线模拟传输、测试和文档；不包含受许可限制的 Scopus 原始记录。</p>
+<p><a href="https://github.com/Olivia-wr-research/author-institution-city-linkage" class="btn btn-secondary">GitHub</a></p>
 </section>
 </div>
 </section>
