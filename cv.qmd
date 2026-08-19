@@ -1,24 +1,20 @@
 ---
 title: "Curriculum Vitae"
-description: "Public CV and research collaboration profile for Ran Wang."
 ---
 
 ::: {.page-band .surface}
 
 ## CV
 
-The public academic CV is a no-photo global CV. It is intended for US, Canada, UK, Hong Kong, Singapore, Australia, and international academic outreach unless a vacancy explicitly requires a different format.
-
 [Download Public CV](assets/cv/Ran_Wang_CV_Public.pdf){.btn .btn-primary}
-[Download Research Profile](assets/profile/Ran_Wang_Research_Collaboration_Profile.pdf){.btn .btn-secondary}
 
 :::
 
 ::: {.page-band}
 
-## Research & Collaboration Profile
+## Research Opportunities
 
-The one-page profile is separate from the academic CV. It summarises research questions, current research streams, selected evidence, data and methods, and suitable collaboration contexts without replacing the full CV.
+Currently seeking research assistant opportunities and preparing applications for PhD programmes beginning in Fall 2027, particularly in high-skilled mobility, scientific collaboration networks, urban and regional innovation, and related quantitative research. The next stage of training is intended to deepen theoretical and methodological foundations while developing a sustained empirical research agenda around mobility, scientific relationships, and innovation. Enquiries about RA positions, PhD supervision, and related research collaboration are welcome.
 
 :::
 

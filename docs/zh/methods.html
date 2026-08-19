@@ -30,10 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -45,18 +41,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "没有结果",
     "search-matching-documents-text": "匹配的文档",
@@ -88,7 +72,6 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">王冉</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="搜索"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="展开或折叠导航栏" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -99,20 +82,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">首页</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./research.html">
-<span class="menu-text">研究</span></a>
-  </li>
-  <li class="nav-item">
     <a class="nav-link" href="./publications.html">
 <span class="menu-text">成果</span></a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link active" href="./methods.html" aria-current="page">
-<span class="menu-text">方法与数据</span></a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./collaboration.html">
-<span class="menu-text">合作</span></a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="./cv.html">
@@ -241,6 +212,10 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="scopus-研究数据工具">Scopus 研究数据工具</h3>
 <p>公开工具包支持作者—机构—城市关联，包含合成测试样本、离线模拟传输、测试和文档；不包含受许可限制的 Scopus 原始记录。</p>
 <p><a href="https://github.com/Olivia-wr-research/author-institution-city-linkage" class="btn btn-secondary">GitHub</a></p>
+</section>
+<section id="代码公开边界" class="level3 method-row">
+<h3 class="anchored" data-anchor-id="代码公开边界">代码公开边界</h3>
+<p>公开仓库只包含允许共享的通用流程代码、文档、测试、合成样本和模拟传输。可复现流程与受限 Scopus 记录、个人层面职业数据和受许可约束的源表分开管理。依赖受限数据的项目代码，可在数据使用条件允许时按需讨论。</p>
 </section>
 </div>
 </section>
@@ -665,7 +640,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Built with Quarto</p>
+<p>使用 Quarto 构建</p>
 </div>
   </div>
 </footer>

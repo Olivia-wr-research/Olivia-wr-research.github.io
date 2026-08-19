@@ -1,0 +1,23 @@
+---
+title: "Technology-Brand Innovation Portfolios"
+---
+
+::: {.page-band .surface .paper-page}
+
+<p class="paper-meta">Authors: Ran Wang · Status: Research design and data construction in progress</p>
+
+## Research Summary
+
+This project examines how patent-based technological assets and trademark-based brand assets co-appear within leading R&D firms. The work treats corporate innovation as a portfolio of different knowledge assets rather than a single count of outputs. At the current stage, the project focuses on indicator construction, portfolio comparison, and descriptive typology based on linked intellectual-property records.
+
+## Abstract
+
+<p class="abstract-text">The project develops a measurement framework for comparing technological and brand-oriented innovation portfolios. It links patent and trademark records to firm-year observations and uses that structure to describe how different types of innovation assets are combined. The current stage does not report mature empirical findings; it establishes the data architecture and measurement logic needed for later analysis of firm heterogeneity, industry context, and national innovation environments.</p>
+
+## Keywords
+
+Innovation portfolios · Patents · Trademarks · Corporate R&D · Knowledge assets
+
+<p class="paper-back">[Back to Publications](../publications.html)</p>
+
+:::

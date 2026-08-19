@@ -1,119 +1,114 @@
 ---
 title: "研究成果"
-description: "王冉按核验状态整理的研究成果。"
 ---
 
-::: {.page-band .surface}
+::: {.page-band .surface .publications-section}
 
-## 已录用论文
-
-::: {.output-list .editorial-list}
-::: {.output-item}
-<p><span class="status-badge status-accepted">已录用</span></p>
-<h3>城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素</h3>
-
-作者顺位：第一作者。录用于《世界地理研究》。
-
-本文从城市网络视角分析全球顶尖生物医药科学家的流动轨迹，比较教育和就业阶段，并分析与流动关系相关的城市因素。
-
-[详情](papers/urban-network-biomedical-mobility.html){.publication-link}
-:::
-:::
-
-:::
-
-::: {.page-band}
-
-## 已投稿稿件
+## 高技能人才流动与城市选择 {#high-skilled-mobility}
 
 ::: {.output-list .editorial-list}
-::: {.output-item}
-<p><span class="status-badge status-submitted">已投稿论文</span></p>
-<h3>“全域—自我”视角下全球生物医药顶尖科学家城际流动网络结构与形成机制</h3>
-
-作者顺位：第一作者。
-
-该稿件将全域流动网络与科学家层面的流动自我网络结合起来，分析城市条件、多维邻近性、平台历史与既有流动关系如何与城际流动相关。
-
-[详情](papers/whole-ego-mobility.html){.publication-link}
+::: {#urban-network-biomedical-mobility .output-item .output-item-priority}
+<h3>城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素 <span class="status-badge status-accepted">已录用</span> <span class="status-badge status-output">第一作者</span></h3>
+<p><strong>主要研究内容：</strong>全球生物医药顶尖科学家的城际流动网络、职业阶段差异，以及与流动联系相关的城市层面因素。</p>
+<p><strong>数据：</strong>500 名科学家；1970—2023 年职业履历；398 个城市；1,440 条流动联系。</p>
+<p><strong>方法：</strong>职业履历重构；有向加权流动网络；社会网络分析；GIS；Heckman 二阶段模型。</p>
+<p class="detail-link"><a class="publication-link" href="papers/urban-network-biomedical-mobility.html">详情 →</a></p>
 :::
 
-::: {.output-item}
-<p><span class="status-badge status-submitted">已投稿论文</span></p>
-<h3>Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists</h3>
+::: {#whole-ego-mobility .output-item}
+<h3>“全域—自我”视角下全球生物医药顶尖科学家城际流动网络结构与形成机制 <span class="status-badge status-submitted">投稿中</span> <span class="status-badge status-output">第一作者</span></h3>
+<p><strong>主要研究内容：</strong>从全域网络结构、自我网络位置、职业轨迹和城市条件解释全球生物医药顶尖科学家的城际流动。</p>
+<p><strong>数据：</strong>顶尖科学家长期职业履历；城市层面流动联系；自我网络子样本；合作与职业阶段信息。</p>
+<p><strong>方法：</strong>全域网络分析；自我网络分析；约束度；有效规模；Shannon 熵；加权 ERGM；GIS。</p>
+<p class="detail-link"><a class="publication-link" href="papers/whole-ego-mobility.html">详情 →</a></p>
+:::
 
-作者顺位：第一作者。
-
-该稿件将城际就业流动视为事件层面的目的地选择，并比较实际目的地与候选替代城市。估计结果解释为与目的地选择相关的关联，而不是因果效应或经过验证的招聘机制。
-
-[详情](papers/pre-move-coauthor-ties.html){.publication-link}
+::: {#pre-move-coauthor-ties .output-item}
+<h3>迁移前合作者关系与科学流动方向：高被引生物医药科学家的城市层面选择分析 <span class="status-badge status-submitted">投稿中</span> <span class="status-badge status-output">第一作者</span></h3>
+<p><strong>主要研究内容：</strong>迁移前直接共同作者关系是否能够区分实际目的地与候选替代城市。</p>
+<p><strong>数据：</strong>观察到的流动事件；科学家样本；事件层面候选城市选择集；迁移前共同作者关系。</p>
+<p><strong>方法：</strong>候选集构建；条件 Logit；迁移前关系测度；距离与城市层面控制；稳健性与时间窗口检验。</p>
+<p class="detail-link"><a class="publication-link" href="papers/pre-move-coauthor-ties.html">详情 →</a></p>
 :::
 :::
 
 :::
 
-::: {.page-band .surface}
+::: {.page-band .publications-section}
 
-## 硕士论文
+## 科研合作网络与关系动态 {#scientific-collaboration}
 
 ::: {.output-list .editorial-list}
-::: {.output-item}
-<p><span class="status-badge status-thesis">硕士论文</span></p>
-<h3>全球生物医药顶尖科学家城际流动网络：全域与自我网络的双重视角</h3>
-
-该论文使用 500 名科学家、1970—2023 年纵向数据库，结合全域网络分析、流动自我网络、WERGM、GIS 与职业轨迹分类。
+::: {#after-collaboration-goes-quiet .output-item}
+<h3>共同署名沉寂之后：关系历史、合作组合情境与科研合作关系的再现 <span class="status-badge status-submitted">投稿中</span> <span class="status-badge status-output">第一作者</span></h3>
+<p><strong>主要研究内容：</strong>沉寂后共同发表再现与既往关系历史、当前合作组合和沉寂时长之间的关联。</p>
+<p><strong>数据：</strong>纵向科学家论文记录；可再次出现的沉寂共同作者关系；年度风险观测。</p>
+<p><strong>方法：</strong>离散时间 complementary-log-log 事件史模型；聚类协方差；标准化预测；沉寂阈值稳健性检验。</p>
+<p class="detail-link"><a class="publication-link" href="papers/after-collaboration-goes-quiet.html">详情 →</a></p>
 :::
 :::
 
 :::
 
-::: {.page-band}
+::: {.page-band .surface .publications-section}
 
-## 选定研究成果
+## 企业创新与知识资产 {#corporate-innovation}
 
 ::: {.output-list .editorial-list}
-::: {.output-item}
-<p><span class="status-badge status-output">选定研究成果</span></p>
+::: {#firm-year-innovation-data .output-item}
+<h3>企业—年份创新数据体系 <span class="status-badge status-output">数据体系建设中</span></h3>
+<p><strong>主要研究内容：</strong>该研究面向全球高研发投入企业建设企业—年份数据体系，将研发支出、专利、商标、行业、国家、企业身份和年份连接起来，使技术导向创新和市场导向创新能够放入同一经验结构中分析。</p>
+<p><strong>数据：</strong>高研发投入企业 · 专利 · 商标 · 行业与国家字段。</p>
+<p><strong>方法：</strong>实体匹配 · 知识产权连接 · 面板构建 · 测量审计。</p>
+<p class="detail-link"><a class="publication-link" href="papers/firm-year-innovation-data.html">详情 →</a></p>
+:::
+
+::: {#technology-brand-portfolios .output-item}
+<h3>技术—品牌创新组合 <span class="status-badge status-output">研究设计与数据建设推进中</span></h3>
+<p><strong>主要研究内容：</strong>该项目比较企业专利组合与商标组合如何共同出现，重点在于不把企业创新简化为单一产出数量的测度设计。</p>
+<p><strong>数据：</strong>连接后的知识产权记录 · 企业—年份观测。</p>
+<p><strong>方法：</strong>指标构建 · 组合比较 · 类型描述。</p>
+<p class="detail-link"><a class="publication-link" href="papers/technology-brand-innovation-portfolios.html">详情 →</a></p>
+:::
+
+::: {#dynamic-evolution-spatial-context .output-item}
+<h3>动态演化与空间背景</h3>
+<p><strong>主要研究内容：</strong>企业—年份面板支持时间变化分析，当前设计关注创新组合如何随行业、国家、企业特征和区域创新环境而变化。</p>
+<p><strong>数据：</strong>企业年度创新记录 · 行业与国家背景。</p>
+<p><strong>方法：</strong>测度框架仍在推进中；当前不公开补充模型设定。</p>
+<p class="detail-link"><a class="publication-link" href="papers/dynamic-evolution-spatial-context.html">详情 →</a></p>
+:::
+:::
+
+:::
+
+::: {.page-band .publications-section}
+
+## 早期研究 {#early-research}
+
+::: {.output-list .editorial-list}
+::: {#china-us-biomedical-innovation .output-item}
 <h3>人才流动网络视角下中美生物医药创新对比研究</h3>
-
-作者顺位：第一作者。该研究比较中美生物医药创新体系中的人才流动、论文产出、专利活动和创新转化。
-
-[详情](papers/china-us-biomedical-innovation.html){.publication-link}
+<p><strong>主要研究内容：</strong>从顶尖科学家流动与网络位置出发，比较中美生物医药创新体系差异。</p>
+<p><strong>数据：</strong>中美顶尖生物医药科学家；职业履历；论文记录；专利与创新体系材料。</p>
+<p><strong>方法：</strong>履历分析；社会网络分析；创新体系比较；人才流动网络分析。</p>
+<p class="detail-link"><a class="publication-link" href="papers/china-us-biomedical-innovation.html">详情 →</a></p>
 :::
 
-::: {.output-item}
-<p><span class="status-badge status-output">选定研究成果</span></p>
+::: {#urban-resilience-nighttime-lights .output-item}
 <h3>基于夜间灯光遥感和费舍尔信息方法的城市韧性评价</h3>
-
-作者顺位：第一作者。该研究使用 VIIRS-DNB 日尺度夜间灯光数据和费舍尔信息方法评价疫情冲击下的短期城市韧性。
-
-[详情](papers/urban-resilience-nighttime-lights.html){.publication-link}
+<p><strong>主要研究内容：</strong>利用夜间灯光变化评估新冠疫情冲击下城市短期韧性变化。</p>
+<p><strong>数据：</strong>VIIRS-DNB 夜间灯光观测；2019—2020 年对比；中国主要城市群；城市时间序列。</p>
+<p><strong>方法：</strong>Fisher Information Light；适应性循环框架；时间序列比较；DTW；K-Means。</p>
+<p class="detail-link"><a class="publication-link" href="papers/urban-resilience-nighttime-lights.html">详情 →</a></p>
 :::
 
-::: {.output-item}
-<p><span class="status-badge status-output">选定研究成果</span></p>
-<h3>新冠疫情背景下全球贸易网络时空演化分析</h3>
-
-作者顺位：第一作者。该研究基于 UN Comtrade 数据分析 2019—2021 年全球商品贸易有向加权网络变化。
-
-[详情](papers/global-trade-network.html){.publication-link}
-:::
-:::
-
-:::
-
-::: {.page-band .surface}
-
-## 研究软件 / 数据产品
-
-::: {.output-list .editorial-list}
-::: {.output-item}
-<p><span class="status-badge status-software">研究软件 / 数据产品</span></p>
-<h3>Author-Institution-City Linkage Toolkit</h3>
-
-一个公开 Python 工具包，用于作者—论文关联、机构字段解析、机构与城市标准化、合成测试样本、离线模拟传输、质量审计和测试。公开仓库不包含受限 Scopus 数据。
-
-[GitHub](https://github.com/Olivia-wr-research/author-institution-city-linkage){.publication-link}
+::: {#global-trade-network .output-item}
+<h3>新冠疫情背景下的全球贸易网络的时空格局演化分析</h3>
+<p><strong>主要研究内容：</strong>分析疫情期间全球商品贸易网络及不同产品类型贸易结构的变化。</p>
+<p><strong>数据：</strong>UN Comtrade；2019—2021 年商品贸易记录；国家与产品类型贸易网络。</p>
+<p><strong>方法：</strong>有向加权贸易网络；社会网络分析；中心性、密度、聚类和路径长度测度。</p>
+<p class="detail-link"><a class="publication-link" href="papers/global-trade-network.html">详情 →</a></p>
 :::
 :::
 

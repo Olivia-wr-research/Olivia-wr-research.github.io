@@ -117,6 +117,12 @@ The public toolkit supports author-institution-city linkage with synthetic fixtu
 
 [GitHub](https://github.com/Olivia-wr-research/author-institution-city-linkage){.btn .btn-secondary}
 :::
+
+::: {.method-row}
+### Code Availability Boundaries
+
+Public repositories contain reusable workflow code, documentation, tests, synthetic fixtures, and mock transport where sharing is permitted. Reproducible workflows are documented separately from restricted Scopus records, personal-level career data, and licensed source tables. Project-specific code that depends on restricted data can be discussed upon request when data-use conditions allow.
+:::
 :::
 
 :::

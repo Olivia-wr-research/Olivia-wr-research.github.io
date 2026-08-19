@@ -1,0 +1,23 @@
+---
+title: "When Coauthorship Goes Quiet: Relational History, Portfolio Context, and the Recurrence of Scientific Ties"
+---
+
+::: {.page-band .surface .paper-page}
+
+<p class="paper-meta">Authors: Ran Wang (First author) · Status: Submitted manuscript</p>
+
+## Research Summary
+
+This manuscript studies whether prior collaboration history remains associated with later coauthorship recurrence after a complete period of publication dormancy. It follows recurrent dormant coauthor relations among a global highly cited researcher cohort and models annual recurrence risk with discrete-time event-history methods. The interpretation is limited to observable bibliometric recurrence: coauthorship records cannot establish whether researchers stopped communicating, restored trust, or intentionally resumed interpersonal contact.
+
+## Abstract
+
+<p class="abstract-text">This study examines the recurrence of scientific coauthorship after publication dormancy. It asks whether deeper prior coauthorship history remains associated with later joint-publication recurrence, and whether that association varies with a focal scientist's current collaboration-portfolio breadth and elapsed dormancy. The analysis constructs recurrent dormant spells between focal scientists and prior coauthors and estimates discrete-time complementary-log-log event-history models with clustered covariance and standardized adjusted predictions. The results show that deeper pre-dormancy collaboration history is associated with higher recurrence risk. Around average relationship history, broader active collaboration portfolios are also associated with higher recurrence risk, while the history-by-portfolio interaction is negative on the link scale. Standardized predictions indicate that this negative interaction should not be read as a simple decline in absolute probability differences as portfolio breadth increases; dormancy-duration analyses further show that portfolio context is time-dependent.</p>
+
+## Keywords
+
+Coauthorship recurrence · Publication dormancy · Relational history · Collaboration portfolios · Event-history analysis
+
+<p class="paper-back">[Back to Publications](../publications.html)</p>
+
+:::

@@ -13,6 +13,7 @@ project:
     - projects.qmd
     - cv.qmd
     - contact.qmd
+    - "!zh/**"
   resources:
     - assets/img/hero.jpg
     - assets/img/hero-optimized.jpg
@@ -20,6 +21,9 @@ project:
     - assets/img/corporate-innovation-data-stack.svg
     - assets/cv/Ran_Wang_CV_Public.pdf
     - assets/profile/Ran_Wang_Research_Collaboration_Profile.pdf
+    - assets/profile/ran-wang-portrait.jpg
+    - assets/research/when-coauthorship-goes-quiet-signature-en.png
+    - assets/research/pre-move-coauthor-ties-signature-en.png
     - assets/js/language-switch.js
     - assets/js/academic-v35.js
 
@@ -29,20 +33,14 @@ website:
   title: "Ran Wang"
   site-url: "https://olivia-wr-research.github.io"
   description: "Ran Wang studies scientific mobility, knowledge networks, innovation, and the organization of high-skilled careers across organisations and cities."
-  search: true
+  search: false
   navbar:
     title: "Ran Wang"
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Research"
-        href: research.qmd
       - text: "Publications"
         href: publications.qmd
-      - text: "Methods & Data"
-        href: methods.qmd
-      - text: "For Collaboration"
-        href: collaboration.qmd
       - text: "CV"
         href: cv.qmd
     right:

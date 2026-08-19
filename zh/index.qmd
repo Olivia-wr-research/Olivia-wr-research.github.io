@@ -1,22 +1,32 @@
 ---
-pagetitle: "王冉 | 科学家流动、知识网络与创新"
-description: "王冉研究科学家流动、合作网络、关系资本与城市和组织中的知识生产。"
+pagetitle: "王冉 | 高技能人才流动、科研合作网络、企业创新"
+page-layout: full
+description: "王冉研究高技能人才流动、科研合作网络、企业创新与城市和区域创新。"
 ---
 
 ::: {.hero-v35 .hero-identity}
+::: {.hero-layout}
 ::: {.hero-copy}
-<p class="eyebrow">定量社会科学 · 科学学</p>
-<h1>王冉</h1>
+<p class="hero-main-name">王冉</p>
 <p class="hero-name-alt">Ran Wang</p>
-<p class="hero-affiliation">华东师范大学人文地理学硕士，2026</p>
-<p class="hero-interests">科学家流动 · 知识网络 · 创新</p>
+<p class="hero-affiliation">华东师范大学地理科学学院 · 人文地理学硕士，2026</p>
+<p class="hero-interests">高技能人才流动 · 科研合作网络 · 企业创新 · 城市与区域创新</p>
 
-我的研究关注科学家与其他高技能人才如何在组织和城市之间流动，既有关系如何与流动目的地选择相关，以及流动如何重新组织合作关系与知识生产。
+研究关注高技能研究者在城市与机构之间的流动，以及科研合作与创新活动的空间组织。基于科学家职业履历、论文与合作记录、机构和城市数据及企业创新数据，构建纵向关系数据库，并结合离散选择、网络与空间分析研究人才流动、科研关系和区域创新。
+:::
+
+::: {.hero-portrait}
+<img src="../assets/profile/ran-wang-portrait.jpg" alt="王冉" />
+:::
+
+::: {.hero-personal}
+研究之外，喜欢摄影、电影、羽毛球、飞盘和游泳。
+:::
 
 ::: {.hero-actions}
-[研究](research.html){.btn .btn-primary}
-[成果](publications.html){.btn .btn-secondary}
+[成果](publications.html){.btn .btn-primary}
 [简历](cv.html){.btn .btn-secondary}
+[代码](https://github.com/Olivia-wr-research/author-institution-city-linkage){.btn .btn-secondary}
 :::
 
 ::: {.hero-secondary-links}
@@ -28,70 +38,35 @@ description: "王冉研究科学家流动、合作网络、关系资本与城市
 
 ::: {.page-band .surface}
 
-## 研究主题
+## 研究兴趣
 
-::: {.theme-grid}
-::: {.theme-card}
+::: {.selected-research-grid}
+::: {.selected-research-card}
 <span>01</span>
-<h3>科学职业与人才流动</h3>
+<h3>高技能人才流动与城市选择</h3>
+<p class="selected-title">关注高技能研究者跨机构与跨城市流动的空间选择过程，重点考察既有知识暴露、职业经历与城市机会结构如何关联目的地选择及长期流动轨迹。</p>
+<p class="evidence-line">流动网络 · 城市选择 · 职业履历 · 空间机会</p>
 
-科学家如何在组织、城市和国家之间选择目的地并发生职业流动？
+[查看成果 →](publications.html#high-skilled-mobility){.publication-link}
 :::
 
-::: {.theme-card}
+::: {.selected-research-card}
 <span>02</span>
-<h3>合作网络与关系资本</h3>
+<h3>科研合作网络与关系动态</h3>
+<p class="selected-title">关注科研合作关系的形成、持续、中断与再现，考察既往关系历史、当前合作组合与时间条件如何共同关联科研关系的动态演化。</p>
+<p class="evidence-line">共同作者关系 · 关系历史 · 沉寂关系 · 共同发表再现</p>
 
-既有合作关系如何与流动相关，哪些关系能够跨越组织边界继续发挥作用？
+[查看成果 →](publications.html#scientific-collaboration){.publication-link}
 :::
 
-::: {.theme-card}
+::: {.selected-research-card}
 <span>03</span>
-<h3>创新与知识生产</h3>
+<h3>企业创新与知识资产</h3>
+<p class="selected-title">关注企业技术创新与品牌创新的组合配置及其动态变化，通过研发、专利、商标和企业—年份数据刻画不同创新资产的协同结构及其行业、国家与区域差异。</p>
+<p class="evidence-line">研发企业 · 专利 · 商标 · 企业—年份测度</p>
 
-研究者流动如何重塑合作、知识扩散与区域创新？
+[查看成果 →](publications.html#corporate-innovation){.publication-link}
 :::
-:::
-
-:::
-
-::: {.page-band}
-
-## 证据基础
-
-::: {.profile-grid .profile-grid-three}
-::: {.profile-item}
-### 纵向职业数据
-
-已完成的研究重构了精英生物医药科学家 1970—2023 年的职业、机构、城市、论文、合作和流动记录。
-:::
-
-::: {.profile-item}
-### 关系与空间方法
-
-当前稿件使用社会网络分析、流动自我网络、WERGM、事件层面候选集和条件 logit 模型。
-:::
-
-::: {.profile-item}
-### 研究产出
-
-公开成果包括一篇第一作者已录用论文、已投稿稿件、硕士论文、选定研究成果和 Scopus 关联工具。
-:::
-:::
-
-:::
-
-::: {.page-band .surface}
-
-## 导师查看材料
-
-::: {.quick-links}
-[研究](research.html){.btn .btn-secondary}
-[成果](publications.html){.btn .btn-secondary}
-[方法与数据](methods.html){.btn .btn-secondary}
-[合作](collaboration.html){.btn .btn-secondary}
-[下载简历](../assets/cv/Ran_Wang_CV_Public.pdf){.btn .btn-primary}
-[研究简介 PDF](../assets/profile/Ran_Wang_Research_Collaboration_Profile.pdf){.btn .btn-secondary}
 :::
 
 :::

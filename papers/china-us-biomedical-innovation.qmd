@@ -1,40 +1,22 @@
 ---
 title: "Comparative Study on Biomedical Innovation between China and the United States from the Perspective of Talent Mobility Network"
-description: "Selected research output comparing biomedical innovation in China and the United States through talent mobility networks."
 ---
 
 ::: {.page-band .surface .paper-page}
 
-<p class="paper-meta">First Author · Selected Research Output</p>
+<p class="paper-meta">Authors: Ran Wang · Type: Early research</p>
+
+## Research Summary
+
+This early research output compares biomedical innovation in China and the United States through the mobility and network positions of top scientists. It uses career histories, publication records, patent information, and innovation-system materials to connect talent mobility with national innovation capacity. The analysis contrasts market-oriented and policy-led innovation environments and uses scientist mobility to interpret differences in research ecosystems, commercialization capacity, and high-end talent accumulation.
 
 ## Abstract
 
-<p class="abstract-text">As a strategic emerging industry in the 21st century, biomedicine has become a key area of technological competition between China and the United States. This article is based on the theory of scientific networks, starting from the perspective of talent mobility of top scientists, and deeply comparing and analyzing the differences and causes between China and the United States in the field of biomedicine. Research has found that there is a significant gap between China and the United States in terms of innovation capabilities in the field of biomedicine. The United States, relying on a highly market-oriented system, a well-established innovation ecosystem, an active capital market, and the continuous influx of top global talents, has formed an innovation model centered on "endogenous growth". Its sound education, research, and industrialization system has strong appeal globally and is the fundamental guarantee for promoting leading innovation in biomedicine. In contrast, although China has achieved rapid growth in the biopharmaceutical industry under policy promotion, it still lacks core technology accumulation, original innovation capabilities, international layout, and high-end talent reserves. The Chinese model relies more on government leadership and "talent return". Although it has certain efficiency in resource integration and strategic promotion, there is still room for improvement in market mechanisms, depth of industry university research integration, and flexibility in talent cultivation. In addition, despite the rapid accumulation of basic research achievements in China, there is a bottleneck in the transformation of knowledge into products due to insufficient "paper orientation" and commercialization capabilities. This study aims to clarify the root causes of the innovation gap in the biopharmaceutical industry between China and the United States, emphasize the decisive role of talent mobility in the innovation system, and propose policy recommendations to accelerate the development of innovation in China's biopharmaceutical industry.</p>
+<p class="abstract-text">Biomedicine has become a major field of technological competition between China and the United States. Drawing on scientific-network theory and the mobility records of top biomedical scientists, this early research output compares the innovation systems of the two countries and discusses the sources of observed differences. The analysis identifies a substantial gap in biomedical innovation capacity. The United States relies on a market-oriented institutional environment, a mature innovation ecosystem, active capital markets, and continued inflows of global scientific talent, forming an innovation model centered on endogenous growth. China has achieved rapid biopharmaceutical growth under policy support, but still faces constraints in core technology accumulation, original innovation capacity, internationalisation, and high-end talent reserves. The Chinese model depends more heavily on government coordination and talent return. While this approach can support resource coordination and strategic mobilisation, market mechanisms, industry-university-research integration, and talent training remain areas for improvement. The study uses talent mobility to interpret differences in biomedical innovation capacity and proposes policy recommendations for strengthening China's biomedical innovation system.</p>
 
-## Research Workflow
+## Keywords
 
-<div class="paper-workflow">
-<div>
-<h3>Data</h3>
-<ul>
-<li>Top 100 biomedical scientists in the United States and top 100 in China</li>
-<li>Career histories</li>
-<li>Publication records</li>
-<li>Patent information</li>
-<li>Biomedical innovation input and output materials</li>
-</ul>
-</div>
-<div>
-<h3>Methods</h3>
-<ul>
-<li>Curriculum Vitae Analysis</li>
-<li>Social Network Analysis</li>
-<li>China–U.S. comparative research design</li>
-<li>Innovation-system comparison</li>
-<li>Talent-mobility network analysis</li>
-</ul>
-</div>
-</div>
+Biomedical innovation · Talent mobility · China-U.S. comparison · Scientific networks · Innovation systems
 
 <p class="paper-back">[Back to Publications](../publications.html)</p>
 

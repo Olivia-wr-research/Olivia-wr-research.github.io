@@ -1,44 +1,77 @@
 ---
 title: "Research"
-description: "Ran Wang's research agenda on scientific mobility, collaboration networks, relational capital, and innovation."
+description: "Ran Wang's research agenda on high-skilled mobility, scientific collaboration networks, and corporate innovation."
 ---
 
 ::: {.section-nav-wrap}
 ::: {.section-nav}
-[Agenda](#research-agenda)
-[Careers](#scientific-careers-and-mobility)
-[Networks](#collaboration-networks-and-relational-capital)
-[Innovation](#innovation-knowledge-diffusion-and-regional-opportunity)
-[Trajectory](#research-trajectory)
+[Overview](#overview)
+[High-Skilled Mobility](#high-skilled-mobility-location-choice)
+[Scientific Collaboration](#scientific-collaboration-networks-relational-dynamics)
+[Corporate Innovation](#corporate-innovation-knowledge-assets)
 :::
 :::
 
 ::: {.page-band}
 
-## Research Agenda
+## Overview
 
-My research examines how scientific careers, mobility, relational ties, and place jointly shape the production and circulation of knowledge. The empirical focus is scientific and high-skilled mobility: where researchers move, which prior relationships are associated with destination choice, and how mobility may reorganise collaboration and innovation across organisations and cities. The work is quantitative and evidence-led, with careful separation between employment moves, publication affiliations, collaboration ties, and regional innovation outcomes.
+My research examines how people, relationships, and innovation activity are organised across institutions, cities, and regions. The current agenda develops through three connected directions: high-skilled mobility and location choice, scientific collaboration networks and relational dynamics, and corporate innovation and knowledge assets, with cities and regional innovation serving as the shared spatial and institutional context.
 
-::: {.research-question-grid}
-::: {.research-question}
-<span>01</span>
-<h3>How do scientists choose destinations?</h3>
-
-The first line of work studies career-stage transitions, city opportunity structures, distance, national borders, institutional platforms, and explicit candidate destinations.
 :::
 
-::: {.research-question}
-<span>02</span>
-<h3>How do relationships shape mobility?</h3>
+::: {.page-band .surface}
 
-The second line distinguishes direct coauthor ties, publication-location exposure, ego-network embeddedness, and historical mobility ties before each observed move.
+## High-Skilled Mobility & Location Choice
+
+This stream studies the movement of high-skilled scientific talent across cities and institutions, with attention to mobility networks, career stages, destination alternatives, and the city-level conditions that structure observed moves.
+
+::: {.stream-output-grid}
+::: {.output-item .research-project-card}
+<p><span class="status-badge status-accepted">Accepted · First Author</span></p>
+<h3>Spatial Structure and Determinants of Global Top Biomedical Scientists' Mobility from an Urban Network Perspective</h3>
+<p>Analyzes the intercity mobility network of global top biomedical scientists, career-stage differences, and city-level factors associated with mobility ties.</p>
+<p><strong>Data:</strong> 500 scientists; 1970-2023 career histories; 398 cities; 1,440 intercity mobility links; learning- and work-stage mobility records; city science and innovation attributes.</p>
+<p><strong>Methods:</strong> career-history reconstruction; directed weighted intercity mobility network; social network analysis; GIS spatial analysis; Heckman two-step model.</p>
+[View Output →](publications.html#high-skilled-mobility){.publication-link}
 :::
 
-::: {.research-question}
-<span>03</span>
-<h3>How does mobility reorganise knowledge production?</h3>
+::: {.output-item .research-project-card}
+<p><span class="status-badge status-submitted">Submitted · First Author</span></p>
+<h3>Structure and Formation Mechanisms of Intercity Mobility Networks of Global Top Biomedical Scientists: A Whole-Network and Ego-Network Perspective</h3>
+<p>Extends the mobility agenda by combining whole-network structure with ego-network measures and career-trajectory information.</p>
+<p><strong>Data:</strong> long-term career histories for a top-scientist roster; city-level mobility networks; ego-network subsample; collaboration and career-stage information.</p>
+<p><strong>Methods:</strong> whole-network analysis; ego-network analysis; constraint; effective size; Shannon entropy; weighted ERGM; GIS.</p>
+[View Output →](publications.html#whole-ego-mobility){.publication-link}
+:::
 
-The third line asks whether mobility is followed by tie retention, tie replacement, brokerage, and changes in regional knowledge combinations.
+::: {.output-item .research-project-card}
+<p><span class="status-badge status-submitted">Submitted · First Author</span></p>
+<h3>Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists</h3>
+<p>Examines whether direct coauthor ties before a move distinguish selected destination cities from candidate alternatives among highly cited biomedical scientists.</p>
+<p><strong>Data:</strong> observed mobility events; focal scientists; candidate-city choice sets; pre-move coauthor ties; city-level destination alternatives.</p>
+<p><strong>Methods:</strong> event-specific candidate-set construction; conditional logit; pre-move tie measurement; geographic-distance control; robustness and timing checks.</p>
+[View Output →](publications.html#pre-move-coauthor-ties){.publication-link}
+:::
+:::
+
+:::
+
+::: {.page-band}
+
+## Scientific Collaboration Networks & Relational Dynamics
+
+This stream studies scientific collaboration as a longitudinal relational process. The current manuscript follows dormant coauthor relations and observes whether joint publication recurs after a complete publication hiatus.
+
+::: {.stream-output-grid}
+::: {.output-item .research-project-card}
+<p><span class="status-badge status-submitted">Submitted · First Author</span></p>
+<h3>When Coauthorship Goes Quiet: Relational History, Portfolio Context, and the Recurrence of Scientific Ties</h3>
+<p>Studies how prior relationship history, current collaboration-portfolio breadth, and elapsed dormancy are associated with observed coauthorship recurrence after publication dormancy.</p>
+<p><strong>Data:</strong> longitudinal focal-scientist publication records; recurrent focal-scientist-prior-coauthor dormant spells; annual risk-year observations; primary publication-hiatus definition.</p>
+<p><strong>Methods:</strong> recurrent dormant-spell construction; discrete-time event-history analysis; complementary-log-log model; clustered covariance; standardized adjusted predictions; threshold and measurement robustness analyses.</p>
+<p><strong>Interpretation boundary:</strong> coauthorship recurrence is an observable bibliometric event, not evidence of intentional reconnection, restored trust, or resumed interpersonal contact.</p>
+[View Output →](publications.html#after-collaboration-goes-quiet){.publication-link}
 :::
 :::
 
@@ -46,165 +79,35 @@ The third line asks whether mobility is followed by tie retention, tie replaceme
 
 ::: {.page-band .surface}
 
-## Research Framework
+## Corporate Innovation & Knowledge Assets
 
-<div class="identity-framework" aria-label="Research framework">
-<div>
-<p class="framework-kicker">Objects</p>
-<h3>Scientists, organisations, cities</h3>
-<p>Career histories are reconstructed as temporally ordered relations among people, institutions, places, publications, and collaboration ties.</p>
-</div>
-<div>
-<p class="framework-kicker">Mechanisms</p>
-<h3>Mobility, relationships, opportunity</h3>
-<p>Destination choice is examined through prior ties, candidate-city differences, career stages, platform histories, and spatial constraints.</p>
-</div>
-<div>
-<p class="framework-kicker">Outcomes</p>
-<h3>Knowledge networks and innovation</h3>
-<p>The broader agenda studies how mobility may reconfigure collaboration, knowledge diffusion, and regional innovation structures.</p>
-</div>
-</div>
+This stream builds a measurement foundation for comparing firm-level technological and brand-oriented innovation within the same empirical structure.
 
+::: {.stream-output-grid}
+::: {.output-item .research-project-card}
+<p><span class="status-badge status-output">Data System in Progress</span></p>
+<h3>Firm-Year Innovation Data System</h3>
+<p>This project builds firm-year data for leading global R&D firms by linking R&D expenditure, patents, trademarks, industry, country, firm identity, and year, so technology-oriented and market-oriented innovation can be analyzed in a shared empirical structure.</p>
+<p><strong>Data:</strong> high-R&D firms; patents; trademarks; industry and country fields.</p>
+<p><strong>Methods:</strong> entity matching; intellectual-property linkage; panel construction; measurement audit.</p>
+[View Output →](publications.html#corporate-innovation){.publication-link}
 :::
 
-::: {.page-band}
-
-## Scientific Careers and Mobility
-
-::: {.stream-card}
-### Research question
-
-How do elite scientists move across organisations and cities over long career histories, and which city-level conditions are associated with mobility ties?
-
-### Why it matters
-
-Scientific mobility is one way knowledge, skills, and institutional access circulate across places. Treating moves as temporally verified career events avoids conflating employment, residence, and publication affiliation.
-
-### Current empirical work
-
-An accepted first-author article in *World Regional Studies* examines the spatial structure and influencing factors of global top biomedical scientists' mobility from an urban-network perspective. The master's thesis extends this work through whole-network and ego-network analysis.
-
-### Data
-
-Career-history records for top biomedical scientists, institution-city linkage, education and employment stages, mobility events, city attributes, and platform histories.
-
-### Methods
-
-Career reconstruction, directed weighted mobility networks, social network analysis, core-periphery description, WERGM, GIS interpretation, and mobility ego-network analysis.
-
-### Related output
-
-[Accepted article](papers/urban-network-biomedical-mobility.html) · [Submitted manuscript](papers/whole-ego-mobility.html)
+::: {.output-item .research-project-card}
+<p><span class="status-badge status-output">Research Design and Data Construction in Progress</span></p>
+<h3>Technology-Brand Innovation Portfolios</h3>
+<p>This direction compares how patent portfolios and trademark portfolios co-appear within firms, without reducing innovation to a single output count.</p>
+<p><strong>Data:</strong> linked intellectual-property records; firm-year observations.</p>
+<p><strong>Methods:</strong> indicator construction; portfolio comparison; type description.</p>
+[View Output →](publications.html#corporate-innovation){.publication-link}
 :::
 
+::: {.output-item .research-project-card}
+<h3>Dynamic Evolution and Spatial Context</h3>
+<p>The firm-year panel also supports analysis of temporal change. The current design focuses on how innovation portfolios vary by industry, country, firm characteristics, and regional innovation environment.</p>
+<p><strong>Data:</strong> annual firm innovation records; industry and country context.</p>
+[View Output →](publications.html#corporate-innovation){.publication-link}
 :::
-
-::: {.page-band .surface}
-
-## Collaboration Networks and Relational Capital
-
-::: {.stream-card}
-### Research question
-
-Do scientists select destinations where they already have collaboration ties, and how do tie breadth, persistence, timing, and network share differ across candidate cities?
-
-### Why it matters
-
-Prior collaboration may provide information, credibility, and access to scientific communities, but observed associations should not be read as evidence of recruitment, job offers, or causal hiring mechanisms.
-
-### Current empirical work
-
-A submitted manuscript treats observed intercity employment moves as event-specific choices. It compares selected cities with alternative candidate destinations and measures destination-specific direct coauthor ties before each move.
-
-### Data
-
-Verified career histories, Scopus publication records, author and affiliation records, coauthor ties, annual city publication counts, and event-candidate destination structures.
-
-### Methods
-
-Event-specific candidate sets, event-stratified conditional logit, clustered robust inference, time-ordered tie measurement, and sensitivity checks.
-
-### Related output
-
-[Submitted manuscript](papers/pre-move-coauthor-ties.html)
 :::
-
-:::
-
-::: {.page-band}
-
-## Innovation, Knowledge Diffusion, and Regional Opportunity
-
-::: {.stream-card}
-### Research question
-
-How do high-skilled mobility, collaboration networks, and organisational contexts relate to regional knowledge recombination and innovation opportunity?
-
-### Why it matters
-
-Regions differ in their capacity to attract, retain, and connect researchers. The current agenda treats regional innovation as an empirical question requiring compatible data on talent flows, knowledge production, firms, and places.
-
-### Current empirical work
-
-The current extension links scientific-career evidence to innovation measurement while keeping coverage, ownership, and temporal compatibility explicit. Historical projects include China-U.S. biomedical innovation comparison, firm-year innovation measurement, nighttime-light resilience, and global trade networks.
-
-### Data
-
-Linked bibliometric and career records, city innovation attributes, patents, trademarks, R&D expenditure, VIIRS-DNB nighttime lights, UN Comtrade, and policy or planning documents when permitted.
-
-### Methods
-
-Measurement audit, entity resolution, panel construction, spatial analysis, network analysis, comparative design, and reproducible Python/R documentation.
-
-### Related output
-
-[China-U.S. biomedical innovation](papers/china-us-biomedical-innovation.html) · [Urban resilience](papers/urban-resilience-nighttime-lights.html) · [Global trade network](papers/global-trade-network.html)
-:::
-
-:::
-
-::: {.page-band .surface}
-
-## Research Trajectory
-
-<div class="trajectory-line editorial-timeline" data-research-timeline>
-<article>
-<div class="timeline-number">01</div><div class="timeline-node" aria-hidden="true"></div>
-<div class="timeline-body">
-<p class="timeline-kicker">Spatial and quantitative foundations</p>
-<h3>Remote sensing, trade networks, and applied modelling</h3>
-<p>Early work used nighttime-light data, Fisher Information, DTW, K-Means, UN Comtrade, GIS, and social network analysis to build a practical base in spatial and relational data.</p>
-<p class="timeline-meta">GIS · VIIRS-DNB · Fisher Information · DTW · K-Means · UN Comtrade</p>
-</div>
-</article>
-<article>
-<div class="timeline-number">02</div><div class="timeline-node" aria-hidden="true"></div>
-<div class="timeline-body">
-<p class="timeline-kicker">Scientific mobility networks</p>
-<h3>From career histories to intercity mobility structure</h3>
-<p>Career histories are matched to institutions and cities, allowing individual moves to be analysed as directed mobility relations among cities.</p>
-<p class="timeline-meta">Career histories · Institution-city linkage · SNA · GIS</p>
-</div>
-</article>
-<article>
-<div class="timeline-number">03</div><div class="timeline-node" aria-hidden="true"></div>
-<div class="timeline-body">
-<p class="timeline-kicker">Relational capital and destination choice</p>
-<h3>From realised moves to candidate-destination comparison</h3>
-<p>Observed moves are organised as event-specific choice sets so selected cities can be compared with plausible alternatives through pre-move collaboration ties.</p>
-<p class="timeline-meta">Candidate sets · Conditional logit · Coauthor ties · Temporal ordering</p>
-</div>
-</article>
-<article>
-<div class="timeline-number">04</div><div class="timeline-node" aria-hidden="true"></div>
-<div class="timeline-body">
-<p class="timeline-kicker">Knowledge-network reconfiguration</p>
-<h3>From mobility events to collaboration and innovation systems</h3>
-<p>The next step asks whether mobility is followed by tie retention, tie replacement, brokerage, and changes in regional knowledge combinations.</p>
-<p class="timeline-meta">Ego networks · Knowledge communities · Innovation systems · Source audits</p>
-</div>
-</article>
-</div>
 
 :::
