@@ -1,23 +1,38 @@
 ---
-pagetitle: "Ran Wang | Scientific Mobility, Firm Innovation, Regional Innovation"
+pagetitle: "Ran Wang | High-Skilled Mobility, Scientific Collaboration Networks, Corporate Innovation"
+page-layout: full
+description: "Ran Wang studies high-skilled mobility, scientific collaboration networks, corporate innovation, and urban and regional innovation."
 ---
 
-::: {.hero-v35}
+::: {.hero-v35 .hero-identity}
+::: {.hero-layout}
 ::: {.hero-copy}
-<h1>Ran Wang</h1>
+<p class="hero-main-name">Ran Wang</p>
 <p class="hero-name-alt">王冉</p>
 <p class="hero-affiliation">School of Geographic Sciences, East China Normal University · M.Sc. in Human Geography, 2026</p>
+<p class="hero-interests">High-Skilled Mobility · Scientific Collaboration Networks · Corporate Innovation · Urban & Regional Innovation</p>
 
-<p class="hero-interests">Scientific mobility · Collaboration networks · Destination choice · Firm innovation measurement · Regional innovation</p>
+My research examines how high-skilled researchers move across cities and institutions, and how scientific collaboration and innovation activity are spatially organised around those movements. I build longitudinal relational datasets from career histories, publications, coauthorship records, institutional and city sources, and firm-level innovation data, and use choice models, network analysis, and spatial methods to study mobility, research ties, and regional innovation.
+:::
 
-My research examines how innovation is organized across space through the movement of highly skilled people, the formation of collaboration networks, and the innovation strategies of firms. I work with longitudinal career records, relational data, city-level indicators, and firm-year innovation data to study how individual decisions and institutional contexts shape regional innovation systems.
+::: {.hero-portrait}
+<img src="assets/profile/ran-wang-portrait.jpg" alt="Ran Wang" />
+:::
 
-Outside research, photography, films, badminton, ultimate frisbee, and swimming keep me attentive to movement, place, and rhythm. I tend to warm up slowly in new settings, but work with persistence, discipline, and a strong capacity to learn, adapt, and carry long projects with care.
+::: {.hero-personal}
+Outside research, I enjoy photography, films, badminton, ultimate frisbee, and swimming.
+:::
 
-[Research](research.html){.btn .btn-primary}
-[Publications](publications.html){.btn .btn-secondary}
+::: {.hero-actions}
+[Publications](publications.html){.btn .btn-primary}
 [CV](cv.html){.btn .btn-secondary}
-[GitHub](https://github.com/Olivia-wr-research){.btn .btn-secondary}
+[Code](https://github.com/Olivia-wr-research/author-institution-city-linkage){.btn .btn-secondary}
+:::
+
+::: {.hero-secondary-links}
+[Research Profile](assets/profile/Ran_Wang_Research_Collaboration_Profile.pdf)
+[GitHub](https://github.com/Olivia-wr-research)
+:::
 :::
 :::
 
@@ -25,75 +40,33 @@ Outside research, photography, films, badminton, ultimate frisbee, and swimming 
 
 ## Research Interests
 
-::: {.interest-grid}
-::: {.focus-item}
-### Scientific Mobility and Career Trajectories
+::: {.selected-research-grid}
+::: {.selected-research-card}
+<span>01</span>
+<h3>High-Skilled Mobility & Location Choice</h3>
+<p class="selected-title">Examines the spatial mobility of highly skilled researchers across institutions and cities, with particular attention to how prior knowledge exposure, career histories, and urban opportunity structures are associated with destination choice and longer-term mobility trajectories.</p>
+<p class="evidence-line">Mobility networks · city choice · career histories · spatial opportunity</p>
 
-Intercity and inter-organizational mobility among elite biomedical scientists, with attention to career histories, institutional affiliations, and the spatial ordering of academic careers.
+[View Publications →](publications.html#high-skilled-mobility){.publication-link}
 :::
 
-::: {.focus-item}
-### Collaboration Networks and Destination Choice
+::: {.selected-research-card}
+<span>02</span>
+<h3>Scientific Collaboration & Relational Dynamics</h3>
+<p class="selected-title">Examines the formation, persistence, interruption, and recurrence of scientific collaboration, with particular attention to relational history, current collaboration portfolios, and temporal context.</p>
+<p class="evidence-line">Coauthor ties · relational history · dormant spells · recurrence</p>
 
-Coauthor ties, mobility ego-networks, pre-move relationships, and event-level destination choice among candidate cities.
+[View Publications →](publications.html#scientific-collaboration){.publication-link}
 :::
 
-::: {.focus-item}
-### Regional Innovation and City Networks
+::: {.selected-research-card}
+<span>03</span>
+<h3>Corporate Innovation & Knowledge Assets</h3>
+<p class="selected-title">Examines how technological and brand-oriented innovation assets are combined and evolve over time using firm-year data on R&D, patents, trademarks, industries, and national contexts.</p>
+<p class="evidence-line">R&D firms · patents · trademarks · firm-year measurement</p>
 
-Urban scientific capacity, mobility-network structure, proximity, and the role of cities as organizational sites of knowledge production.
+[View Publications →](publications.html#corporate-innovation){.publication-link}
 :::
-
-::: {.focus-item}
-### Firm Innovation Measurement
-
-Firm-level innovation indicators built from R&D investment, patents, trademarks, industry, country, identity matching, and year-level panel construction.
-:::
-:::
-
-:::
-
-::: {.page-band}
-
-## Academic Profile
-
-::: {.profile-grid}
-::: {.profile-item}
-### Research Positioning
-
-Economic geography and regional innovation, with a focus on how mobility, collaboration, and firm innovation data can be used to explain uneven innovation geographies.
-:::
-
-::: {.profile-item}
-### Current Outputs
-
-An accepted article in *World Regional Studies*, submitted manuscripts on elite biomedical scientist mobility, and ongoing work on destination choice and firm innovation measurement.
-:::
-
-::: {.profile-item}
-### Data and Methods
-
-Longitudinal data construction, scientist-institution-city linkage, social network analysis, conditional logit, GIS, remote-sensing indicators, and reproducible Python/R workflows.
-:::
-
-::: {.profile-item}
-### Working Style
-
-Reflective, diligent, persistent, conscientious, and self-disciplined, with steady learning and adaptability across empirical materials, research questions, and technical workflows.
-:::
-:::
-
-:::
-
-::: {.page-band .surface}
-
-## Navigation
-
-::: {.quick-links}
-[Research](research.html){.btn .btn-secondary}
-[Publications](publications.html){.btn .btn-secondary}
-[Methods & Data](methods.html){.btn .btn-secondary}
-[CV](cv.html){.btn .btn-secondary}
 :::
 
 :::

@@ -14,284 +14,53 @@
     "text": "Research projects are now organized under Research."
   },
   {
-    "objectID": "zh/papers/whole-ego-mobility.html",
-    "href": "zh/papers/whole-ego-mobility.html",
-    "title": "“全域-自我”视角下全球生物医药顶尖科学家城际流动网络结构与形成机制",
+    "objectID": "methods.html",
+    "href": "methods.html",
+    "title": "Methods & Data",
     "section": "",
-    "text": "第一作者 · 已投稿论文\n\n\n\n\n科技人才流动是影响全球创新格局的重要方面，但既有研究多从全域视角（城市科创条件与多维邻近性）解释人才流动机制，对个体职业轨迹与科研平台的支撑作用关注不足。本文以顶尖科学家为例，综合运用社会网络分析方法、加权指数随机图模型和自我网络分析方法，分析其城际流动网络的结构特征、形成机制及个体迁移过程。研究发现：（1）城际流动网络呈低密度、高选择性的核心—边缘格局，欧美核心与跨大西洋联系总体稳定，后期专业化医学及生物医药研发集聚城市地位上升；（2）全球生物医药顶尖科学家城际流动受关系属性与科创条件的显著影响。多维邻近性差异显著：地理距离与制度邻近性持续发挥作用，文化邻近性后期减弱，认知邻近性影响不稳定。科创条件作用具有阶段性：专业化科研平台较一般经济规模更能解释人才流动，期初跨平台嵌入型人才存量与后续流动联系显著相关，其中迁出端作用更稳定。（3）个体流动自我网络表明，顶尖科学家城际流动是网络结构、城市条件、多维邻近性、历史联系与个体职业轨迹共同作用的跨尺度空间过程。\n\n\n\n\n\n\n\n\n\n1970—2023 年全球生物医药顶尖科学家职业履历\n\n\n前 500 名科学家总体样本\n\n\n机构与城市任职记录\n\n\n科研产出\n\n\n城市属性\n\n\n组织平台类型\n\n\n\n\n\n\n\n有向赋权城际流动网络\n\n\n社会网络分析\n\n\n全域网络分析\n\n\n自我网络分析\n\n\n多期 WERGM\n\n\n多维邻近性\n\n\n跨平台职业轨迹测度\n\n\n\n\n\n返回成果页"
+    "text": "Career histories, institutions, cities, publications, collaboration ties, mobility events, and city attributes are linked into temporally ordered data systems for scientific-career research.\n\n\n\nScopus, OpenAlex, ROR, affiliation strings, institution names, and geocoded city fields are handled through source-aware linkage and conflict auditing.\n\n\n\nSupporting materials include VIIRS-DNB nighttime lights, UN Comtrade, patent and trademark records, R&D firm-year data, city indicators, and policy or planning documents where sharing permissions allow."
   },
   {
-    "objectID": "zh/papers/whole-ego-mobility.html#摘要",
-    "href": "zh/papers/whole-ego-mobility.html#摘要",
-    "title": "“全域-自我”视角下全球生物医药顶尖科学家城际流动网络结构与形成机制",
+    "objectID": "methods.html#data-systems",
+    "href": "methods.html#data-systems",
+    "title": "Methods & Data",
     "section": "",
-    "text": "科技人才流动是影响全球创新格局的重要方面，但既有研究多从全域视角（城市科创条件与多维邻近性）解释人才流动机制，对个体职业轨迹与科研平台的支撑作用关注不足。本文以顶尖科学家为例，综合运用社会网络分析方法、加权指数随机图模型和自我网络分析方法，分析其城际流动网络的结构特征、形成机制及个体迁移过程。研究发现：（1）城际流动网络呈低密度、高选择性的核心—边缘格局，欧美核心与跨大西洋联系总体稳定，后期专业化医学及生物医药研发集聚城市地位上升；（2）全球生物医药顶尖科学家城际流动受关系属性与科创条件的显著影响。多维邻近性差异显著：地理距离与制度邻近性持续发挥作用，文化邻近性后期减弱，认知邻近性影响不稳定。科创条件作用具有阶段性：专业化科研平台较一般经济规模更能解释人才流动，期初跨平台嵌入型人才存量与后续流动联系显著相关，其中迁出端作用更稳定。（3）个体流动自我网络表明，顶尖科学家城际流动是网络结构、城市条件、多维邻近性、历史联系与个体职业轨迹共同作用的跨尺度空间过程。"
+    "text": "Career histories, institutions, cities, publications, collaboration ties, mobility events, and city attributes are linked into temporally ordered data systems for scientific-career research.\n\n\n\nScopus, OpenAlex, ROR, affiliation strings, institution names, and geocoded city fields are handled through source-aware linkage and conflict auditing.\n\n\n\nSupporting materials include VIIRS-DNB nighttime lights, UN Comtrade, patent and trademark records, R&D firm-year data, city indicators, and policy or planning documents where sharing permissions allow."
   },
   {
-    "objectID": "zh/papers/whole-ego-mobility.html#研究路径",
-    "href": "zh/papers/whole-ego-mobility.html#研究路径",
-    "title": "“全域-自我”视角下全球生物医药顶尖科学家城际流动网络结构与形成机制",
-    "section": "",
-    "text": "1970—2023 年全球生物医药顶尖科学家职业履历\n\n\n前 500 名科学家总体样本\n\n\n机构与城市任职记录\n\n\n科研产出\n\n\n城市属性\n\n\n组织平台类型\n\n\n\n\n\n\n\n有向赋权城际流动网络\n\n\n社会网络分析\n\n\n全域网络分析\n\n\n自我网络分析\n\n\n多期 WERGM\n\n\n多维邻近性\n\n\n跨平台职业轨迹测度\n\n\n\n\n\n返回成果页"
+    "objectID": "methods.html#data-construction-and-measurement",
+    "href": "methods.html#data-construction-and-measurement",
+    "title": "Methods & Data",
+    "section": "Data Construction and Measurement",
+    "text": "Data Construction and Measurement\n\n\nCareer, Institution, and City Reconstruction\nPerson validation, institution normalisation, city standardisation, temporal auditing, and education-employment separation make career histories comparable over time.\n\n\nRelational Measurement\nCoauthorship, mobility ties, publication-location fields, historical platform ties, ego-network measures, and candidate destinations are measured as distinct constructs rather than interchangeable proxies.\n\n\nInnovation Measurement\nFirm-year innovation work links R&D, patents, trademarks, industry, country, identity, and year to compare technological and market-facing innovation without reducing innovation to one count.\n\n\nSpatial and Temporal Indicators\nRemote-sensing and trade-network projects use spatial aggregation, Fisher Information, DTW, K-Means, directed weighted networks, and temporal comparison."
   },
   {
-    "objectID": "zh/papers/urban-network-biomedical-mobility.html",
-    "href": "zh/papers/urban-network-biomedical-mobility.html",
-    "title": "城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素",
-    "section": "",
-    "text": "第一作者 · 已录用 · 《世界地理研究》\n\n\n\n\n生物医药产业作为知识和资金双密集型领域，正日益成为全球创新竞争的核心战场。本研究聚焦于全球生物医药顶尖科学家，这些科学家凭借其尖端知识和专业技能，对区域产业发展具有显著的推动作用。本研究从城市网络视角出发，运用复杂网络分析方法，深入剖析了全球生物医药顶尖科学家的流动轨迹。采用 Heckman 二阶段回归模型，探究影响科学家在不同职业阶段流动的关键因素。研究发现：①全球生物医药顶尖科学家流动呈现以美国为中心的网络结构，且跨洲流动现象显著。在学习阶段，人才流动主要呈现单向、中心化和单极化的特征，顶尖科学家倾向于流向高校密集的地区。而在工作阶段，流动模式则转变为多中心化和网络化，科学家更倾向于选择科研机构和产业基地。②顶尖科学家的流动具有显著的选择性。他们的迁移行为不仅受科研产出和学术影响力的影响，还与跨学科背景等因素紧密相关。研究还发现，科研资源密集、科研生态良好的区域对顶尖科学家具有强大的吸引力，而制度壁垒和文化差异则是限制全球科研人才流动的重要因素。\n\n\n\n\n\n\n\n\n\n全球生物医药顶尖科学家样本\n\n\n职业履历\n\n\n学习与工作阶段城市流动记录\n\n\n城市科研与创新属性\n\n\n\n\n\n\n\n履历分析\n\n\n复杂网络分析\n\n\n学习阶段与工作阶段比较\n\n\n核心—边缘结构分析\n\n\nHeckman 二阶段回归\n\n\n\n\n\n返回成果页"
+    "objectID": "methods.html#empirical-design-and-modelling",
+    "href": "methods.html#empirical-design-and-modelling",
+    "title": "Methods & Data",
+    "section": "Empirical Design and Modelling",
+    "text": "Empirical Design and Modelling\n\n\nChoice Modelling\nObserved moves are organised as event-specific choice sets, with selected destinations compared against alternatives and predictors measured before the move.\n\n\nNetwork Analysis\nDirected weighted mobility networks, centrality, core structure, ego networks, WERGM, proximity measures, and tie persistence are used to connect macro structures with individual career trajectories.\n\n\nComparative and Econometric Designs\nThe current empirical toolkit includes conditional logit, clustered robust inference, Heckman two-stage models, OLS, robustness checks, sensitivity analysis, and longitudinal comparison.\n\n\nMethod Boundaries\nThe public profile does not claim deep learning, causal discovery, causal representation learning, survey experimentation, or autonomous LLM research as completed expertise."
   },
   {
-    "objectID": "zh/papers/urban-network-biomedical-mobility.html#摘要",
-    "href": "zh/papers/urban-network-biomedical-mobility.html#摘要",
-    "title": "城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素",
-    "section": "",
-    "text": "生物医药产业作为知识和资金双密集型领域，正日益成为全球创新竞争的核心战场。本研究聚焦于全球生物医药顶尖科学家，这些科学家凭借其尖端知识和专业技能，对区域产业发展具有显著的推动作用。本研究从城市网络视角出发，运用复杂网络分析方法，深入剖析了全球生物医药顶尖科学家的流动轨迹。采用 Heckman 二阶段回归模型，探究影响科学家在不同职业阶段流动的关键因素。研究发现：①全球生物医药顶尖科学家流动呈现以美国为中心的网络结构，且跨洲流动现象显著。在学习阶段，人才流动主要呈现单向、中心化和单极化的特征，顶尖科学家倾向于流向高校密集的地区。而在工作阶段，流动模式则转变为多中心化和网络化，科学家更倾向于选择科研机构和产业基地。②顶尖科学家的流动具有显著的选择性。他们的迁移行为不仅受科研产出和学术影响力的影响，还与跨学科背景等因素紧密相关。研究还发现，科研资源密集、科研生态良好的区域对顶尖科学家具有强大的吸引力，而制度壁垒和文化差异则是限制全球科研人才流动的重要因素。"
-  },
-  {
-    "objectID": "zh/papers/urban-network-biomedical-mobility.html#研究路径",
-    "href": "zh/papers/urban-network-biomedical-mobility.html#研究路径",
-    "title": "城市网络视角下全球生物医药顶尖科学家流动的空间结构与影响因素",
-    "section": "",
-    "text": "全球生物医药顶尖科学家样本\n\n\n职业履历\n\n\n学习与工作阶段城市流动记录\n\n\n城市科研与创新属性\n\n\n\n\n\n\n\n履历分析\n\n\n复杂网络分析\n\n\n学习阶段与工作阶段比较\n\n\n核心—边缘结构分析\n\n\nHeckman 二阶段回归\n\n\n\n\n\n返回成果页"
-  },
-  {
-    "objectID": "zh/papers/global-trade-network.html",
-    "href": "zh/papers/global-trade-network.html",
-    "title": "新冠疫情背景下的全球贸易网络的时空格局演化分析",
-    "section": "",
-    "text": "第一作者 · 代表性研究成果\n\n\n\n\n基于 2019-2021 年联合国商品贸易数据库数据，使用社会网络分析方法，分析新冠疫情影响下的全球贸易网络的时空格局演变。研究发现：①贸易联系区域差异明显，北美、西欧、东亚呈现出“三足鼎立”的格局。美国在全球贸易网络中占据核心地位。②新冠疫情使得全球贸易网络规模缩小，网络联系日趋分散。③中国、美国、德国是全球商品贸易网络的核心国家，新冠疫情对于不同类型产品的贸易、不同国家和地区产生不同影响。④经济规模、人口数量、地理距离、社会文化、国家政策对全球贸易产生不同程度的影响。\n\n\n\n\n\n\n\n\n\nUN Comtrade\n\n\n2019—2021 年\n\n\n219 个国家和地区\n\n\n全球商品贸易\n\n\n资源密集型、劳动密集型、资本密集型和技术密集型产品网络\n\n\n\n\n\n\n\n有向赋权贸易网络\n\n\n社会网络分析\n\n\n平均度与加权度\n\n\n网络密度\n\n\n平均聚类系数\n\n\n平均路径长度\n\n\n时空比较分析\n\n\n\n\n\n返回成果页"
-  },
-  {
-    "objectID": "zh/papers/global-trade-network.html#摘要",
-    "href": "zh/papers/global-trade-network.html#摘要",
-    "title": "新冠疫情背景下的全球贸易网络的时空格局演化分析",
-    "section": "",
-    "text": "基于 2019-2021 年联合国商品贸易数据库数据，使用社会网络分析方法，分析新冠疫情影响下的全球贸易网络的时空格局演变。研究发现：①贸易联系区域差异明显，北美、西欧、东亚呈现出“三足鼎立”的格局。美国在全球贸易网络中占据核心地位。②新冠疫情使得全球贸易网络规模缩小，网络联系日趋分散。③中国、美国、德国是全球商品贸易网络的核心国家，新冠疫情对于不同类型产品的贸易、不同国家和地区产生不同影响。④经济规模、人口数量、地理距离、社会文化、国家政策对全球贸易产生不同程度的影响。"
-  },
-  {
-    "objectID": "zh/papers/global-trade-network.html#研究路径",
-    "href": "zh/papers/global-trade-network.html#研究路径",
-    "title": "新冠疫情背景下的全球贸易网络的时空格局演化分析",
-    "section": "",
-    "text": "UN Comtrade\n\n\n2019—2021 年\n\n\n219 个国家和地区\n\n\n全球商品贸易\n\n\n资源密集型、劳动密集型、资本密集型和技术密集型产品网络\n\n\n\n\n\n\n\n有向赋权贸易网络\n\n\n社会网络分析\n\n\n平均度与加权度\n\n\n网络密度\n\n\n平均聚类系数\n\n\n平均路径长度\n\n\n时空比较分析\n\n\n\n\n\n返回成果页"
-  },
-  {
-    "objectID": "papers/whole-ego-mobility.html",
-    "href": "papers/whole-ego-mobility.html",
-    "title": "Structure and Formation Mechanisms of the Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Whole-Network and Ego-Network Perspective",
-    "section": "",
-    "text": "First Author · Submitted Manuscript\n\n\n\n\nScientific talent mobility is an important force shaping the global innovation landscape. Existing studies, however, have largely explained talent mobility from a whole-network perspective, emphasizing urban science and innovation conditions and multidimensional proximity, while paying insufficient attention to individual career trajectories and the supporting role of research platforms. Using career histories, research outputs, and urban attribute data for top global biomedical scientists from 1970 to 2023, this study combines social network analysis, weighted exponential random graph models, and ego-network analysis to examine the structural characteristics, formation mechanisms, and individual mobility processes of their intercity mobility network. The results show that: (1) The intercity mobility network of top global biomedical scientists exhibits a low-density, highly selective core–periphery structure. Its European and North American core and transatlantic connections remain broadly stable, while cities specializing in medical research, biomedical research and development, and related industrial activities become increasingly prominent in later periods. (2) Intercity mobility ties among top global biomedical scientists are jointly shaped by endogenous network structure, urban science and innovation conditions, and multidimensional proximity. Geographical distance consistently constrains mobility, whereas institutional proximity consistently facilitates it. The effect of cultural proximity weakens in the later period, while cognitive proximity shows no stable association. The effects of urban science and innovation conditions vary across periods and between origins and destinations: specialized research platforms explain mobility more consistently than general economic scale. The initial stock of cross-platform embedded talent is significantly associated with subsequent mobility ties, with a more stable association at the origin. (3) Ego-network analysis shows that the intercity mobility of top global biomedical scientists is a cross-scale spatial process jointly shaped by network structure, urban conditions, multidimensional proximity, historical ties, and individual career trajectories.\n\n\n\n\n\n\n\n\n\n1970–2023 career histories of top global biomedical scientists\n\n\nTop-500 scientist roster\n\n\nInstitutional and city appointments\n\n\nResearch outputs\n\n\nUrban attributes\n\n\nOrganization-platform histories\n\n\n\n\n\n\n\nDirected weighted intercity mobility networks\n\n\nSocial network analysis\n\n\nWhole-network analysis\n\n\nEgo-network analysis\n\n\nMulti-period WERGM\n\n\nMultidimensional proximity\n\n\nCross-platform career-trajectory measurement\n\n\n\n\n\nBack to Publications"
-  },
-  {
-    "objectID": "papers/whole-ego-mobility.html#abstract",
-    "href": "papers/whole-ego-mobility.html#abstract",
-    "title": "Structure and Formation Mechanisms of the Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Whole-Network and Ego-Network Perspective",
-    "section": "",
-    "text": "Scientific talent mobility is an important force shaping the global innovation landscape. Existing studies, however, have largely explained talent mobility from a whole-network perspective, emphasizing urban science and innovation conditions and multidimensional proximity, while paying insufficient attention to individual career trajectories and the supporting role of research platforms. Using career histories, research outputs, and urban attribute data for top global biomedical scientists from 1970 to 2023, this study combines social network analysis, weighted exponential random graph models, and ego-network analysis to examine the structural characteristics, formation mechanisms, and individual mobility processes of their intercity mobility network. The results show that: (1) The intercity mobility network of top global biomedical scientists exhibits a low-density, highly selective core–periphery structure. Its European and North American core and transatlantic connections remain broadly stable, while cities specializing in medical research, biomedical research and development, and related industrial activities become increasingly prominent in later periods. (2) Intercity mobility ties among top global biomedical scientists are jointly shaped by endogenous network structure, urban science and innovation conditions, and multidimensional proximity. Geographical distance consistently constrains mobility, whereas institutional proximity consistently facilitates it. The effect of cultural proximity weakens in the later period, while cognitive proximity shows no stable association. The effects of urban science and innovation conditions vary across periods and between origins and destinations: specialized research platforms explain mobility more consistently than general economic scale. The initial stock of cross-platform embedded talent is significantly associated with subsequent mobility ties, with a more stable association at the origin. (3) Ego-network analysis shows that the intercity mobility of top global biomedical scientists is a cross-scale spatial process jointly shaped by network structure, urban conditions, multidimensional proximity, historical ties, and individual career trajectories."
-  },
-  {
-    "objectID": "papers/whole-ego-mobility.html#research-workflow",
-    "href": "papers/whole-ego-mobility.html#research-workflow",
-    "title": "Structure and Formation Mechanisms of the Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Whole-Network and Ego-Network Perspective",
-    "section": "",
-    "text": "1970–2023 career histories of top global biomedical scientists\n\n\nTop-500 scientist roster\n\n\nInstitutional and city appointments\n\n\nResearch outputs\n\n\nUrban attributes\n\n\nOrganization-platform histories\n\n\n\n\n\n\n\nDirected weighted intercity mobility networks\n\n\nSocial network analysis\n\n\nWhole-network analysis\n\n\nEgo-network analysis\n\n\nMulti-period WERGM\n\n\nMultidimensional proximity\n\n\nCross-platform career-trajectory measurement\n\n\n\n\n\nBack to Publications"
-  },
-  {
-    "objectID": "papers/urban-network-biomedical-mobility.html",
-    "href": "papers/urban-network-biomedical-mobility.html",
-    "title": "The spatial structure and influencing factors of the flow of global top biomedical scientists from the perspective of urban network",
-    "section": "",
-    "text": "First Author · Accepted · World Regional Studies\n\n\n\n\nAs a knowledge and capital intensive field, biomedical industry is increasingly becoming the core battlefield of global innovation competition. This study focuses on the world’s top biomedical scientists, who, with their cutting-edge knowledge and professional skills, have a significant role in promoting the development of regional industries. From the perspective of urban network, this study uses complex network analysis method to deeply analyze the flow trajectory of the world’s top biomedical scientists. Using Heckman two-stage regression model, this paper explores the key factors affecting the flow of scientists in different career stages. The study found that: ① the flow of top biomedical scientists in the world presents a network structure centered on the United States, and the phenomenon of cross continent flow is significant. In the learning stage, talent flow mainly shows the characteristics of unidirectional, centralized and unipolar, and top scientists tend to flow to areas with dense universities. At the working stage, the flow mode has changed to polycentric and networked, and scientists are more inclined to choose scientific research institutions and industrial bases. ② The flow of top scientists is highly selective. Their migration behavior is not only affected by scientific research output and academic influence, but also closely related to interdisciplinary background and other factors. The study also found that regions with intensive scientific research resources and good scientific research ecology have a strong attraction for top scientists, while institutional barriers and cultural differences are important factors restricting the flow of global scientific research talents.\n\n\n\n\n\n\n\n\n\nGlobal top biomedical scientists\n\n\nVerified career histories\n\n\nCity-level mobility records across education and employment stages\n\n\nCity research and innovation attributes\n\n\n\n\n\n\n\nCareer-history analysis\n\n\nComplex network analysis\n\n\nEducation-employment stage comparison\n\n\nCore-periphery analysis\n\n\nHeckman two-stage regression\n\n\n\n\n\nBack to Publications"
-  },
-  {
-    "objectID": "papers/urban-network-biomedical-mobility.html#abstract",
-    "href": "papers/urban-network-biomedical-mobility.html#abstract",
-    "title": "The spatial structure and influencing factors of the flow of global top biomedical scientists from the perspective of urban network",
-    "section": "",
-    "text": "As a knowledge and capital intensive field, biomedical industry is increasingly becoming the core battlefield of global innovation competition. This study focuses on the world’s top biomedical scientists, who, with their cutting-edge knowledge and professional skills, have a significant role in promoting the development of regional industries. From the perspective of urban network, this study uses complex network analysis method to deeply analyze the flow trajectory of the world’s top biomedical scientists. Using Heckman two-stage regression model, this paper explores the key factors affecting the flow of scientists in different career stages. The study found that: ① the flow of top biomedical scientists in the world presents a network structure centered on the United States, and the phenomenon of cross continent flow is significant. In the learning stage, talent flow mainly shows the characteristics of unidirectional, centralized and unipolar, and top scientists tend to flow to areas with dense universities. At the working stage, the flow mode has changed to polycentric and networked, and scientists are more inclined to choose scientific research institutions and industrial bases. ② The flow of top scientists is highly selective. Their migration behavior is not only affected by scientific research output and academic influence, but also closely related to interdisciplinary background and other factors. The study also found that regions with intensive scientific research resources and good scientific research ecology have a strong attraction for top scientists, while institutional barriers and cultural differences are important factors restricting the flow of global scientific research talents."
-  },
-  {
-    "objectID": "papers/urban-network-biomedical-mobility.html#research-workflow",
-    "href": "papers/urban-network-biomedical-mobility.html#research-workflow",
-    "title": "The spatial structure and influencing factors of the flow of global top biomedical scientists from the perspective of urban network",
-    "section": "",
-    "text": "Global top biomedical scientists\n\n\nVerified career histories\n\n\nCity-level mobility records across education and employment stages\n\n\nCity research and innovation attributes\n\n\n\n\n\n\n\nCareer-history analysis\n\n\nComplex network analysis\n\n\nEducation-employment stage comparison\n\n\nCore-periphery analysis\n\n\nHeckman two-stage regression\n\n\n\n\n\nBack to Publications"
-  },
-  {
-    "objectID": "papers/global-trade-network.html",
-    "href": "papers/global-trade-network.html",
-    "title": "Analysis on the spatial-temporal evolution of global trade network in the context of the COVID-19",
-    "section": "",
-    "text": "First Author · Selected Research Output\n\n\n\n\nBased on the data of the United Nations Commodity Trade Database from 2019 to 2021, this paper uses the social network analysis method to analyze the temporal and spatial pattern evolution of the global trade network under the influence of the COVID-19 epidemic. Research has found that ① There are significant regional differences in trade connections, with North America, Western Europe, and East Asia presenting a “three legged” pattern. ② The United States occupies a core position in the global trade network. The COVID-19 epidemic has reduced the scale of the global trade network and increasingly scattered network connections. ③ China, the United States and Germany are the core countries in the global commodity trade network. The COVID-19 epidemic has different impacts on different types of product trade and countries in different regions. ④ Economy, population, geographical distance, culture, and national policies have varying degrees of impact on global trade.\n\n\n\n\n\n\n\n\n\nUN Comtrade\n\n\n2019–2021\n\n\n219 countries and regions\n\n\nGlobal commodity trade\n\n\nResource-intensive, labour-intensive, capital-intensive, and technology-intensive product networks\n\n\n\n\n\n\n\nDirected weighted trade networks\n\n\nSocial network analysis\n\n\nDegree and weighted degree\n\n\nNetwork density\n\n\nAverage clustering coefficient\n\n\nAverage path length\n\n\nSpatial-temporal comparison\n\n\n\n\n\nBack to Publications"
-  },
-  {
-    "objectID": "papers/global-trade-network.html#abstract",
-    "href": "papers/global-trade-network.html#abstract",
-    "title": "Analysis on the spatial-temporal evolution of global trade network in the context of the COVID-19",
-    "section": "",
-    "text": "Based on the data of the United Nations Commodity Trade Database from 2019 to 2021, this paper uses the social network analysis method to analyze the temporal and spatial pattern evolution of the global trade network under the influence of the COVID-19 epidemic. Research has found that ① There are significant regional differences in trade connections, with North America, Western Europe, and East Asia presenting a “three legged” pattern. ② The United States occupies a core position in the global trade network. The COVID-19 epidemic has reduced the scale of the global trade network and increasingly scattered network connections. ③ China, the United States and Germany are the core countries in the global commodity trade network. The COVID-19 epidemic has different impacts on different types of product trade and countries in different regions. ④ Economy, population, geographical distance, culture, and national policies have varying degrees of impact on global trade."
-  },
-  {
-    "objectID": "papers/global-trade-network.html#research-workflow",
-    "href": "papers/global-trade-network.html#research-workflow",
-    "title": "Analysis on the spatial-temporal evolution of global trade network in the context of the COVID-19",
-    "section": "",
-    "text": "UN Comtrade\n\n\n2019–2021\n\n\n219 countries and regions\n\n\nGlobal commodity trade\n\n\nResource-intensive, labour-intensive, capital-intensive, and technology-intensive product networks\n\n\n\n\n\n\n\nDirected weighted trade networks\n\n\nSocial network analysis\n\n\nDegree and weighted degree\n\n\nNetwork density\n\n\nAverage clustering coefficient\n\n\nAverage path length\n\n\nSpatial-temporal comparison\n\n\n\n\n\nBack to Publications"
-  },
-  {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
-    "section": "",
-    "text": "Accepted\n\n\nRole: First Author. Accepted by World Regional Studies.\nThis article examines the mobility trajectories of top global biomedical scientists from an urban-network perspective. It compares education and employment stages and analyzes city-level factors associated with scientist mobility.\nView details →"
-  },
-  {
-    "objectID": "publications.html#accepted-article",
-    "href": "publications.html#accepted-article",
-    "title": "Publications",
-    "section": "",
-    "text": "Accepted\n\n\nRole: First Author. Accepted by World Regional Studies.\nThis article examines the mobility trajectories of top global biomedical scientists from an urban-network perspective. It compares education and employment stages and analyzes city-level factors associated with scientist mobility.\nView details →"
-  },
-  {
-    "objectID": "publications.html#submitted-manuscripts",
-    "href": "publications.html#submitted-manuscripts",
-    "title": "Publications",
-    "section": "Submitted Manuscripts",
-    "text": "Submitted Manuscripts\n\n\n\nSubmitted Manuscript\n\n\nStructure and Formation Mechanisms of the Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Whole-Network and Ego-Network Perspective\n\nRole: First Author.\nThis manuscript links whole-network mobility structures with individual ego-network trajectories. It examines how urban conditions, multidimensional proximity, platform histories, and prior ties shape intercity mobility among top biomedical scientists.\nView details →\n\n\n\nSubmitted Manuscript\n\n\nPre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists\n\nRole: First Author.\nThis manuscript treats intercity employment moves as event-specific destination choices. It compares selected cities with candidate alternatives and tests whether pre-move direct coauthor ties help distinguish scientists’ destinations.\nView details →"
-  },
-  {
-    "objectID": "publications.html#selected-research-outputs",
-    "href": "publications.html#selected-research-outputs",
-    "title": "Publications",
-    "section": "Selected Research Outputs",
-    "text": "Selected Research Outputs\n\n\n\nSelected Research Output\n\n\nComparative Study on Biomedical Innovation between China and the United States from the Perspective of Talent Mobility Network\n\nRole: First Author.\nThis study compares biomedical innovation in China and the United States through the mobility networks of top scientists. It relates talent movement to innovation systems, research output, patents, and innovation transformation.\nView details →\n\n\n\nSelected Research Output\n\n\nAssessment of urban resilience based on nighttime light remote sensing and Fisher’s information method\n\nRole: First Author.\nThis study uses nighttime-light data and Fisher Information Light to evaluate short-term urban resilience during the COVID-19 shock. It compares resilience trajectories across 48 cities in three major Chinese urban agglomerations.\nView details →\n\n\n\nSelected Research Output\n\n\nAnalysis on the spatial-temporal evolution of global trade network in the context of the COVID-19\n\nRole: First Author.\nThis study analyzes changes in the global commodity trade network from 2019 to 2021. It compares network structure across countries, regions, and product types under the COVID-19 shock.\nView details →"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "\nRan Wang\n",
-    "section": "",
-    "text": "王冉\n\n\nSchool of Geographic Sciences, East China Normal University · M.Sc. in Human Geography, 2026\n\n\nScientific mobility · Collaboration networks · Destination choice · Firm innovation measurement · Regional innovation\n\nMy research examines how innovation is organized across space through the movement of highly skilled people, the formation of collaboration networks, and the innovation strategies of firms. I work with longitudinal career records, relational data, city-level indicators, and firm-year innovation data to study how individual decisions and institutional contexts shape regional innovation systems.\nOutside research, photography, films, badminton, ultimate frisbee, and swimming keep me attentive to movement, place, and rhythm. I tend to warm up slowly in new settings, but work with persistence, discipline, and a strong capacity to learn, adapt, and carry long projects with care.\nResearch Publications CV GitHub"
-  },
-  {
-    "objectID": "index.html#research-interests",
-    "href": "index.html#research-interests",
-    "title": "\nRan Wang\n",
-    "section": "Research Interests",
-    "text": "Research Interests\n\n\nScientific Mobility and Career Trajectories\nIntercity and inter-organizational mobility among elite biomedical scientists, with attention to career histories, institutional affiliations, and the spatial ordering of academic careers.\n\n\nCollaboration Networks and Destination Choice\nCoauthor ties, mobility ego-networks, pre-move relationships, and event-level destination choice among candidate cities.\n\n\nRegional Innovation and City Networks\nUrban scientific capacity, mobility-network structure, proximity, and the role of cities as organizational sites of knowledge production.\n\n\nFirm Innovation Measurement\nFirm-level innovation indicators built from R&D investment, patents, trademarks, industry, country, identity matching, and year-level panel construction."
-  },
-  {
-    "objectID": "index.html#academic-profile",
-    "href": "index.html#academic-profile",
-    "title": "\nRan Wang\n",
-    "section": "Academic Profile",
-    "text": "Academic Profile\n\n\nResearch Positioning\nEconomic geography and regional innovation, with a focus on how mobility, collaboration, and firm innovation data can be used to explain uneven innovation geographies.\n\n\nCurrent Outputs\nAn accepted article in World Regional Studies, submitted manuscripts on elite biomedical scientist mobility, and ongoing work on destination choice and firm innovation measurement.\n\n\nData and Methods\nLongitudinal data construction, scientist-institution-city linkage, social network analysis, conditional logit, GIS, remote-sensing indicators, and reproducible Python/R workflows.\n\n\nWorking Style\nReflective, diligent, persistent, conscientious, and self-disciplined, with steady learning and adaptability across empirical materials, research questions, and technical workflows."
-  },
-  {
-    "objectID": "index.html#navigation",
-    "href": "index.html#navigation",
-    "title": "\nRan Wang\n",
-    "section": "Navigation",
-    "text": "Navigation\n\nResearch Publications Methods & Data CV"
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "Focus Framework Talent Mobility Firm Innovation Trajectory Foundations"
-  },
-  {
-    "objectID": "research.html#research-focus",
-    "href": "research.html#research-focus",
-    "title": "Research",
-    "section": "Research Focus",
-    "text": "Research Focus\nMy research examines the spatial organization of talent and firm innovation activity. At this stage, it is organized around two research streams with a shared concern for regional innovation.\n\n\nTalent Mobility, Collaboration Networks, and Regional Innovation\nThis stream studies the career mobility of highly skilled workers and scientists, with particular attention to how people move across cities and institutions. It asks how urban opportunity structures, prior collaboration ties, multidimensional proximity, and research platforms are associated with mobility networks, career trajectories, and destination choice. The scale of analysis moves from city-level mobility networks to individual career histories and event-level comparison among candidate destinations.\n\n\nFirm Innovation and Innovation Measurement\nThis stream studies leading global R&D investors through a firm-year data system that links R&D expenditure, patents, trademarks, industry, country, firm identity, and year. It focuses on the measurement, combination, and temporal change of technological and brand-oriented innovation, with attention to typological differences, path dependence, and firm heterogeneity."
-  },
-  {
-    "objectID": "research.html#research-framework",
-    "href": "research.html#research-framework",
-    "title": "Research",
-    "section": "Research Framework",
-    "text": "Research Framework\n\n\n\nStream I\n\n\nTalent Mobility\n\n\n\nSpatial StructureIntercity mobility networks and urban opportunity structures\n\n\nIndividual EmbeddednessCareer histories, institutions, and mobility ego-networks\n\n\nDestination ChoicePre-move coauthor ties and candidate destinations\n\n\n\n\n\nStream II\n\n\nFirm Innovation\n\n\n\nInnovation MeasurementR&D, patents, trademarks, and firm identity\n\n\nTechnology-Brand CombinationJoint measurement of technological and market-facing innovation\n\n\nDynamic EvolutionFirm-year trajectories, heterogeneity, and spatial context\n\n\n\n\nRegional innovation provides the broader interpretive context for both streams."
-  },
-  {
-    "objectID": "research.html#talent-mobility-collaboration-networks-and-regional-innovation-1",
-    "href": "research.html#talent-mobility-collaboration-networks-and-regional-innovation-1",
-    "title": "Research",
-    "section": "Talent Mobility, Collaboration Networks, and Regional Innovation",
-    "text": "Talent Mobility, Collaboration Networks, and Regional Innovation\n\n\nIntercity Mobility Networks of Elite Biomedical Scientists\nThis work reconstructs the career histories of highly cited biomedical scientists and organizes intercity employment moves as directed ties among cities. The analysis treats cities as institutional and scientific opportunity environments, then examines the spatial structure and city-level conditions associated with mobility-link formation.\n\nData Longitudinal career histories · institution-city matching · mobility events\n\n\nMethods Social network analysis · city-level indicators · GIS interpretation · Heckman\n\n\nAccepted article in World Regional Studies.\n\n\n\nWhole-Network and Ego-Network Extension\nThe next stage connects city-level network structure with scientist-level mobility ego-networks. A 1970-2023 longitudinal database of 500 elite biomedical scientists and a 40-scientist ego-network subset support analysis of how individual careers are embedded in broader urban mobility networks.\n\nData Scientist-institution-city histories · mobility ego-network subset\n\n\nMethods Whole-network analysis · ego networks · proximity measures · WERGM\n\n\nSubmitted manuscript.\n\n\n\nDestination Choice and Relational Mechanisms\nRecent work treats an observed intercity job move as a choice among candidate destinations. It compares the selected city with alternative cities and measures pre-move coauthor ties before each move, including tie presence, breadth, persistence, network share, timing, and domestic or international context.\n\nData Mobility event by candidate-destination structure · time-ordered coauthor ties\n\n\nMethods Candidate sets · event-stratified conditional logit · temporal design\n\n\nSubmitted manuscript."
-  },
-  {
-    "objectID": "research.html#firm-innovation-and-innovation-measurement-1",
-    "href": "research.html#firm-innovation-and-innovation-measurement-1",
-    "title": "Research",
-    "section": "Firm Innovation and Innovation Measurement",
-    "text": "Firm Innovation and Innovation Measurement\n\n\nFirm-Year Innovation Data System\nThis work develops a firm-year data system for leading global R&D investors. It links R&D expenditure with patents, trademarks, industry, country, firm identity, and year so that technological and market-facing innovation can be studied in the same empirical structure.\n\nData R&D investors · patents · trademarks · industry and country fields\n\n\nMethods Entity matching · IP linkage · panel construction · measurement audit\n\n\nData-system development in progress.\n\n\n\nTechnology-Brand Innovation Combinations\nThis line asks how patent portfolios and trademark portfolios combine across firms. The emphasis is on measurement: how to compare technology-oriented and brand-oriented innovation without collapsing firm innovation into a single output count.\n\nData Linked intellectual-property records · firm-year observations\n\n\nMethods Indicator construction · portfolio comparison · typological description\n\n\nResearch design and data construction in progress.\n\n\n\nDynamic Evolution and Spatial Context\nThe firm-year panel also supports questions about change over time. Current design work considers how innovation configurations vary by industry, country, firm characteristics, and regional innovation environments.\n\nData Firm-year innovation records · industry and national context\n\n\nMethods Longitudinal comparison · heterogeneity analysis · spatial contextualization\n\n\nOngoing research stream."
-  },
-  {
-    "objectID": "research.html#research-trajectory",
-    "href": "research.html#research-trajectory",
-    "title": "Research",
-    "section": "Research Trajectory",
-    "text": "Research Trajectory\n\n\n\n01\n\n\n\n\n\n\nSpatial and Quantitative Foundations\n\n\nRemote sensing, trade networks, and applied quantitative training\n\n\nEarly projects moved from spatial data processing, urban resilience, and global trade networks into quantitative research training, building a foundation for analyzing spatial data, temporal change, and relational networks.\n\n\nGIS · VIIRS-DNB · DTW · K-Means · UN Comtrade · Network Analysis\n\n\n\n\n\n02\n\n\n\n\n\n\nTalent Mobility Networks\n\n\nFrom career histories to city-level mobility networks\n\n\nBy reconstructing scientist career histories and matching institutions with cities, individual career moves are organized as directed mobility relations among cities. This supports analysis of mobility structure, city hierarchy, and network formation conditions.\n\n\nCareer Histories · SNA · GIS · Heckman\n\n\n\n\n\n03\n\n\n\n\n\n\nMulti-scale Relational Analysis\n\n\nFrom whole networks to individual career trajectories\n\n\nThe research then moves from the overall city network to individual career trajectories, mobility ego-networks, and multidimensional proximity, connecting macro mobility structure with micro relational organization.\n\n\nWERGM · Ego Networks · Proximity · Longitudinal Data\n\n\n\n\n\n04\n\n\n\n\n\n\nEvent-level Choice Design\n\n\nFrom realized moves to candidate-destination comparison\n\n\nEach observed career move is modelled as an event-level choice among candidate cities, making it possible to compare selected and unselected destinations through pre-move collaboration ties and their scale, persistence, and timing.\n\n\nCandidate Sets · Conditional Logit · Coauthor Ties · Temporal Design\n\n\n\n\n\n05\n\n\n\n\n\n\nInnovation Measurement Extension\n\n\nFrom talent as an innovation actor to firms\n\n\nThe current extension turns to leading global R&D investors and builds innovation measures from R&D expenditure, patents, trademarks, and firm-year information.\n\n\nR&D · Patents · Trademarks · Firm-Year Panel"
-  },
-  {
-    "objectID": "research.html#earlier-research-and-method-foundations",
-    "href": "research.html#earlier-research-and-method-foundations",
-    "title": "Research",
-    "section": "Earlier Research and Method Foundations",
-    "text": "Earlier Research and Method Foundations\n\n\nUrban Resilience and Remote Sensing\nNighttime-light resilience research used VIIRS-DNB daily data, Fisher Information, DTW, K-Means, and GIS processing to compare urban responses to the COVID-19 shock.\n\nVIIRS-DNB · FIL · DTW · K-Means · GIS\n\n\n\nGlobal Trade Networks\nTrade-network work used UN Comtrade data to construct directed weighted networks and examine centrality, core structure, and temporal change.\n\nUN Comtrade · Weighted Networks · Centrality · Temporal Comparison\n\n\n\nApplied Quantitative Modelling\nInterdisciplinary modelling training included feature selection, model comparison, validation, and sensitivity analysis in applied quantitative contexts.\n\nLasso · RFE · Random Forest · SVM · OLS\n\n\n\nPolicy, Planning, and Spatial Analysis Practice\nPolicy and planning practice involved policy review, case collection, data organization, report writing, GIS mapping, territorial spatial planning, port planning, rural revitalization, and industrial planning.\n\nGIS · Policy Review · Spatial Diagnosis · Report Writing"
-  },
-  {
-    "objectID": "papers/china-us-biomedical-innovation.html",
-    "href": "papers/china-us-biomedical-innovation.html",
-    "title": "Comparative Study on Biomedical Innovation between China and the United States from the Perspective of Talent Mobility Network",
-    "section": "",
-    "text": "First Author · Selected Research Output\n\n\n\n\nAs a strategic emerging industry in the 21st century, biomedicine has become a key area of technological competition between China and the United States. This article is based on the theory of scientific networks, starting from the perspective of talent mobility of top scientists, and deeply comparing and analyzing the differences and causes between China and the United States in the field of biomedicine. Research has found that there is a significant gap between China and the United States in terms of innovation capabilities in the field of biomedicine. The United States, relying on a highly market-oriented system, a well-established innovation ecosystem, an active capital market, and the continuous influx of top global talents, has formed an innovation model centered on “endogenous growth”. Its sound education, research, and industrialization system has strong appeal globally and is the fundamental guarantee for promoting leading innovation in biomedicine. In contrast, although China has achieved rapid growth in the biopharmaceutical industry under policy promotion, it still lacks core technology accumulation, original innovation capabilities, international layout, and high-end talent reserves. The Chinese model relies more on government leadership and “talent return”. Although it has certain efficiency in resource integration and strategic promotion, there is still room for improvement in market mechanisms, depth of industry university research integration, and flexibility in talent cultivation. In addition, despite the rapid accumulation of basic research achievements in China, there is a bottleneck in the transformation of knowledge into products due to insufficient “paper orientation” and commercialization capabilities. This study aims to clarify the root causes of the innovation gap in the biopharmaceutical industry between China and the United States, emphasize the decisive role of talent mobility in the innovation system, and propose policy recommendations to accelerate the development of innovation in China’s biopharmaceutical industry.\n\n\n\n\n\n\n\n\n\nTop 100 biomedical scientists in the United States and top 100 in China\n\n\nCareer histories\n\n\nPublication records\n\n\nPatent information\n\n\nBiomedical innovation input and output materials\n\n\n\n\n\n\n\nCurriculum Vitae Analysis\n\n\nSocial Network Analysis\n\n\nChina–U.S. comparative research design\n\n\nInnovation-system comparison\n\n\nTalent-mobility network analysis\n\n\n\n\n\nBack to Publications"
-  },
-  {
-    "objectID": "papers/china-us-biomedical-innovation.html#abstract",
-    "href": "papers/china-us-biomedical-innovation.html#abstract",
-    "title": "Comparative Study on Biomedical Innovation between China and the United States from the Perspective of Talent Mobility Network",
-    "section": "",
-    "text": "As a strategic emerging industry in the 21st century, biomedicine has become a key area of technological competition between China and the United States. This article is based on the theory of scientific networks, starting from the perspective of talent mobility of top scientists, and deeply comparing and analyzing the differences and causes between China and the United States in the field of biomedicine. Research has found that there is a significant gap between China and the United States in terms of innovation capabilities in the field of biomedicine. The United States, relying on a highly market-oriented system, a well-established innovation ecosystem, an active capital market, and the continuous influx of top global talents, has formed an innovation model centered on “endogenous growth”. Its sound education, research, and industrialization system has strong appeal globally and is the fundamental guarantee for promoting leading innovation in biomedicine. In contrast, although China has achieved rapid growth in the biopharmaceutical industry under policy promotion, it still lacks core technology accumulation, original innovation capabilities, international layout, and high-end talent reserves. The Chinese model relies more on government leadership and “talent return”. Although it has certain efficiency in resource integration and strategic promotion, there is still room for improvement in market mechanisms, depth of industry university research integration, and flexibility in talent cultivation. In addition, despite the rapid accumulation of basic research achievements in China, there is a bottleneck in the transformation of knowledge into products due to insufficient “paper orientation” and commercialization capabilities. This study aims to clarify the root causes of the innovation gap in the biopharmaceutical industry between China and the United States, emphasize the decisive role of talent mobility in the innovation system, and propose policy recommendations to accelerate the development of innovation in China’s biopharmaceutical industry."
-  },
-  {
-    "objectID": "papers/china-us-biomedical-innovation.html#research-workflow",
-    "href": "papers/china-us-biomedical-innovation.html#research-workflow",
-    "title": "Comparative Study on Biomedical Innovation between China and the United States from the Perspective of Talent Mobility Network",
-    "section": "",
-    "text": "Top 100 biomedical scientists in the United States and top 100 in China\n\n\nCareer histories\n\n\nPublication records\n\n\nPatent information\n\n\nBiomedical innovation input and output materials\n\n\n\n\n\n\n\nCurriculum Vitae Analysis\n\n\nSocial Network Analysis\n\n\nChina–U.S. comparative research design\n\n\nInnovation-system comparison\n\n\nTalent-mobility network analysis\n\n\n\n\n\nBack to Publications"
-  },
-  {
-    "objectID": "papers/pre-move-coauthor-ties.html",
-    "href": "papers/pre-move-coauthor-ties.html",
-    "title": "Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists",
-    "section": "",
-    "text": "First Author · Submitted Manuscript\n\n\n\n\nScientific mobility redistributes researchers and knowledge across places. Existing studies document mobility patterns and the roles of personal attributes, city conditions, distance, and national borders. Recent work links professional networks to early-career destinations, but less is known about repeated moves by established scientists or how collaborations differ across candidate cities. This study examines whether highly cited biomedical scientists are more likely to select cities where they already had direct coauthors and whether the number, network share, persistence, and timing of those ties matter. Using verified career histories, Scopus records, and lagged city publication counts, we analyze 336 moves by 217 scientists and 60,024 event–candidate observations drawn from a roster of 500. Event-stratified conditional logit models compare selected cities with alternatives within each move. Cities with at least one direct coauthor in the five years before a move have higher conditional odds of selection than cities without such ties (OR 52.33, 95% CI 35.19–77.81), after controlling for distance, national borders, lagged scientific scale, and biomedical specialization. Among tied cities, more local coauthors and a larger share of the scientist’s observed coauthor network are positively associated with selection. Persistent ties and ties observed in both early and recent periods have stronger associations than nonpersistent or single-period ties. No statistically detectable difference is found between domestic and foreign candidates. The study shows that prior collaboration helps distinguish destination choice beyond city conditions and geographic constraints.\n\n\n\n\n\n\n\n\n\nVerified scientist career histories\n\n\nScopus publication, author, and affiliation records\n\n\nAnnual city publication counts\n\n\n500-scientist source roster\n\n\n336 intercity employment moves\n\n\n217 scientists\n\n\n60,024 event–candidate observations\n\n\n\n\n\n\n\nEvent-specific candidate-city construction\n\n\nEvent-stratified conditional logit\n\n\nScientist-clustered robust standard errors\n\n\nDirect coauthor tie measurement\n\n\nCoauthor breadth\n\n\nNetwork share\n\n\nPersistence\n\n\nTiming\n\n\nDistance and national-context controls\n\n\nSensitivity analysis\n\n\n\n\n\nBack to Publications"
-  },
-  {
-    "objectID": "papers/pre-move-coauthor-ties.html#abstract",
-    "href": "papers/pre-move-coauthor-ties.html#abstract",
-    "title": "Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists",
-    "section": "",
-    "text": "Scientific mobility redistributes researchers and knowledge across places. Existing studies document mobility patterns and the roles of personal attributes, city conditions, distance, and national borders. Recent work links professional networks to early-career destinations, but less is known about repeated moves by established scientists or how collaborations differ across candidate cities. This study examines whether highly cited biomedical scientists are more likely to select cities where they already had direct coauthors and whether the number, network share, persistence, and timing of those ties matter. Using verified career histories, Scopus records, and lagged city publication counts, we analyze 336 moves by 217 scientists and 60,024 event–candidate observations drawn from a roster of 500. Event-stratified conditional logit models compare selected cities with alternatives within each move. Cities with at least one direct coauthor in the five years before a move have higher conditional odds of selection than cities without such ties (OR 52.33, 95% CI 35.19–77.81), after controlling for distance, national borders, lagged scientific scale, and biomedical specialization. Among tied cities, more local coauthors and a larger share of the scientist’s observed coauthor network are positively associated with selection. Persistent ties and ties observed in both early and recent periods have stronger associations than nonpersistent or single-period ties. No statistically detectable difference is found between domestic and foreign candidates. The study shows that prior collaboration helps distinguish destination choice beyond city conditions and geographic constraints."
-  },
-  {
-    "objectID": "papers/pre-move-coauthor-ties.html#research-workflow",
-    "href": "papers/pre-move-coauthor-ties.html#research-workflow",
-    "title": "Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists",
-    "section": "",
-    "text": "Verified scientist career histories\n\n\nScopus publication, author, and affiliation records\n\n\nAnnual city publication counts\n\n\n500-scientist source roster\n\n\n336 intercity employment moves\n\n\n217 scientists\n\n\n60,024 event–candidate observations\n\n\n\n\n\n\n\nEvent-specific candidate-city construction\n\n\nEvent-stratified conditional logit\n\n\nScientist-clustered robust standard errors\n\n\nDirect coauthor tie measurement\n\n\nCoauthor breadth\n\n\nNetwork share\n\n\nPersistence\n\n\nTiming\n\n\nDistance and national-context controls\n\n\nSensitivity analysis\n\n\n\n\n\nBack to Publications"
+    "objectID": "methods.html#reproducibility-and-research-software",
+    "href": "methods.html#reproducibility-and-research-software",
+    "title": "Methods & Data",
+    "section": "Reproducibility and Research Software",
+    "text": "Reproducibility and Research Software\n\n\nWorkflow\nResearch workflows emphasise scripted processing, version control, synthetic fixtures, data-quality audits, source-conflict logs, and separation between public descriptions and restricted data.\n\n\nSoftware Environment\nPython, R, Stata, ArcGIS/QGIS, NetworkX, Gephi, UCINET, Scimago Graphica, Git, GitHub, and Quarto are used for data construction, modelling, documentation, and publication workflows.\n\n\nScopus Research Data Toolkit\nThe public toolkit supports author-institution-city linkage with synthetic fixtures, offline mock transport, tests, and documentation. It does not bundle licensed Scopus records.\nGitHub\n\n\nCode Availability Boundaries\nPublic repositories contain reusable workflow code, documentation, tests, synthetic fixtures, and mock transport where sharing is permitted. Reproducible workflows are documented separately from restricted Scopus records, personal-level career data, and licensed source tables. Project-specific code that depends on restricted data can be discussed upon request when data-use conditions allow."
   },
   {
     "objectID": "papers/urban-resilience-nighttime-lights.html",
     "href": "papers/urban-resilience-nighttime-lights.html",
     "title": "Assessment of urban resilience based on nighttime light remote sensing and Fisher’s information method",
     "section": "",
-    "text": "First Author · Selected Research Output\n\n\n\n\nScientific evaluation of the urban resilience of the city under the impact of the epidemic can provide an important basis for the safe development of the city. Based on the adaptive cycle model, combined with night light day data and Fisher information method, this paper builds Fisher Information Light (FIL), an urban resilience agent index, and uses K-Means clustering based on dynamic time regularization method for 2020 From January 13 to April 8, the urban resilience change patterns of China’s Yangtze River Delta, the Pearl River Delta and the Beijing-Tianjin-Hebei three major urban agglomerations were analyzed and evaluated. The short-term impact and resilience changes of 48 cities, including Beijing and Shanghai, were revealed from the urban agglomeration and urban scale. The results show that:① different urban agglomerations are affected by the epidemic to varying degrees, and the impact of the Yangtze River Delta urban agglomeration is significantly greater than that of the Pearl River Delta urban agglomeration; different time periods have different impacts on the economic and social life of urban agglomerations. ② In 2019, FIL is on the rise, and the urban system is developing well as a whole. In 2020, FIL has changed dramatically and is in a downward trend. Urban development has been affected to a certain extent. ③Through cluster analysis, urban change patterns are divided into three types: stable cities as a whole show relatively stable fluctuations, the range of change is small, there are troughs in the development stage, rapid recovery, and high sustainable development capabilities. The change curve of low-trough cities is U-shaped and is in a downward trend. Volatuational cities This type of city as a whole shows a steady downward trend.\n\n\n\n\n\n\n\n\n\nNASA Black Marble VNP46A2 / VIIRS-DNB daily nighttime-light data\n\n\nMatched 2019–2020 comparison\n\n\nBeijing–Tianjin–Hebei, Yangtze River Delta, and Pearl River Delta urban agglomerations\n\n\n48 cities\n\n\n\n\n\n\n\nAdaptive-cycle framework\n\n\nFisher Information Light\n\n\nTime-series comparison\n\n\nDynamic Time Warping\n\n\nK-Means\n\n\nElbow Method\n\n\n\n\n\nBack to Publications"
+    "text": "Authors: Ran Wang · Type: Early research\n\n\n\nThis early research output evaluates short-term urban resilience during the COVID-19 shock using nighttime-light remote sensing. It combines VIIRS-DNB daily nighttime-light observations with Fisher Information Light and clustering methods to compare city-level changes across major Chinese urban agglomerations. The work connects remote sensing, time-series comparison, and urban resilience assessment, showing how sudden shocks can be observed through changes in urban nighttime activity.\n\n\n\n\nScientific evaluation of the urban resilience of the city under the impact of the epidemic can provide an important basis for the safe development of the city. Based on the adaptive cycle model, combined with night light day data and Fisher information method, this paper builds Fisher Information Light (FIL), an urban resilience agent index, and uses K-Means clustering based on dynamic time regularization method for 2020 From January 13 to April 8, the urban resilience change patterns of China’s Yangtze River Delta, the Pearl River Delta and the Beijing-Tianjin-Hebei three major urban agglomerations were analyzed and evaluated. The short-term impact and resilience changes of 48 cities, including Beijing and Shanghai, were revealed from the urban agglomeration and urban scale. The results show that:① different urban agglomerations are affected by the epidemic to varying degrees, and the impact of the Yangtze River Delta urban agglomeration is significantly greater than that of the Pearl River Delta urban agglomeration; different time periods have different impacts on the economic and social life of urban agglomerations. ② In 2019, FIL is on the rise, and the urban system is developing well as a whole. In 2020, FIL has changed dramatically and is in a downward trend. Urban development has been affected to a certain extent. ③Through cluster analysis, urban change patterns are divided into three types: stable cities as a whole show relatively stable fluctuations, the range of change is small, there are troughs in the development stage, rapid recovery, and high sustainable development capabilities. The change curve of low-trough cities is U-shaped and is in a downward trend. Volatuational cities This type of city as a whole shows a steady downward trend.\n\n\n\n\nUrban resilience · Nighttime lights · VIIRS-DNB · Fisher Information · COVID-19\n\nBack to Publications"
+  },
+  {
+    "objectID": "papers/urban-resilience-nighttime-lights.html#research-summary",
+    "href": "papers/urban-resilience-nighttime-lights.html#research-summary",
+    "title": "Assessment of urban resilience based on nighttime light remote sensing and Fisher’s information method",
+    "section": "",
+    "text": "This early research output evaluates short-term urban resilience during the COVID-19 shock using nighttime-light remote sensing. It combines VIIRS-DNB daily nighttime-light observations with Fisher Information Light and clustering methods to compare city-level changes across major Chinese urban agglomerations. The work connects remote sensing, time-series comparison, and urban resilience assessment, showing how sudden shocks can be observed through changes in urban nighttime activity."
   },
   {
     "objectID": "papers/urban-resilience-nighttime-lights.html#abstract",
@@ -301,109 +70,417 @@
     "text": "Scientific evaluation of the urban resilience of the city under the impact of the epidemic can provide an important basis for the safe development of the city. Based on the adaptive cycle model, combined with night light day data and Fisher information method, this paper builds Fisher Information Light (FIL), an urban resilience agent index, and uses K-Means clustering based on dynamic time regularization method for 2020 From January 13 to April 8, the urban resilience change patterns of China’s Yangtze River Delta, the Pearl River Delta and the Beijing-Tianjin-Hebei three major urban agglomerations were analyzed and evaluated. The short-term impact and resilience changes of 48 cities, including Beijing and Shanghai, were revealed from the urban agglomeration and urban scale. The results show that:① different urban agglomerations are affected by the epidemic to varying degrees, and the impact of the Yangtze River Delta urban agglomeration is significantly greater than that of the Pearl River Delta urban agglomeration; different time periods have different impacts on the economic and social life of urban agglomerations. ② In 2019, FIL is on the rise, and the urban system is developing well as a whole. In 2020, FIL has changed dramatically and is in a downward trend. Urban development has been affected to a certain extent. ③Through cluster analysis, urban change patterns are divided into three types: stable cities as a whole show relatively stable fluctuations, the range of change is small, there are troughs in the development stage, rapid recovery, and high sustainable development capabilities. The change curve of low-trough cities is U-shaped and is in a downward trend. Volatuational cities This type of city as a whole shows a steady downward trend."
   },
   {
-    "objectID": "papers/urban-resilience-nighttime-lights.html#research-workflow",
-    "href": "papers/urban-resilience-nighttime-lights.html#research-workflow",
+    "objectID": "papers/urban-resilience-nighttime-lights.html#keywords",
+    "href": "papers/urban-resilience-nighttime-lights.html#keywords",
     "title": "Assessment of urban resilience based on nighttime light remote sensing and Fisher’s information method",
     "section": "",
-    "text": "NASA Black Marble VNP46A2 / VIIRS-DNB daily nighttime-light data\n\n\nMatched 2019–2020 comparison\n\n\nBeijing–Tianjin–Hebei, Yangtze River Delta, and Pearl River Delta urban agglomerations\n\n\n48 cities\n\n\n\n\n\n\n\nAdaptive-cycle framework\n\n\nFisher Information Light\n\n\nTime-series comparison\n\n\nDynamic Time Warping\n\n\nK-Means\n\n\nElbow Method\n\n\n\n\n\nBack to Publications"
+    "text": "Urban resilience · Nighttime lights · VIIRS-DNB · Fisher Information · COVID-19\n\nBack to Publications"
   },
   {
-    "objectID": "zh/papers/china-us-biomedical-innovation.html",
-    "href": "zh/papers/china-us-biomedical-innovation.html",
-    "title": "人才流动网络视角下中美生物医药创新对比研究",
+    "objectID": "papers/technology-brand-innovation-portfolios.html",
+    "href": "papers/technology-brand-innovation-portfolios.html",
+    "title": "Technology-Brand Innovation Portfolios",
     "section": "",
-    "text": "第一作者 · 代表性研究成果\n\n\n\n\n生物医药作为 21 世纪战略性新兴产业，已成为中美科技竞争的关键领域。本文基于科学网络理论，从顶尖科学家的人才流动视角出发，深入比较分析了中美在生物医药领域的差异及成因。研究发现，中美在生物医药创新能力方面存在显著差距。美国依托高度市场化的体制、完善的创新生态系统、活跃的资本市场以及全球顶尖人才的持续流入，形成了以“内生成长”为核心的创新模式。其健全的教育、科研和产业化体系在全球具有强大吸引力，是推动生物医药创新领先的根本保障。相比之下，中国虽在政策推动下实现了生物医药产业的快速增长，但在核心技术积累、原始创新能力、国际化布局和高端人才储备方面仍显不足。中国模式更依赖政府主导和“人才回流”，虽然在资源整合与战略推动方面具有一定效率，但在市场机制、产学研融合深度及人才培养灵活性上仍需提升。此外，尽管中国基础研究成果快速积累，但由于“论文导向”与商业化能力不足，存在“知识到产品”的转化瓶颈。本研究旨在厘清中美生物医药创新差距的根源，强调人才流动对创新体系的决定性作用，并提出加快推动中国生物医药产业创新发展的政策建议。\n\n\n\n\n\n\n\n\n\n美国前 100 名和中国前 100 名生物医药顶尖科学家\n\n\n职业履历\n\n\n论文信息\n\n\n专利信息\n\n\n生物医药创新投入与产出资料\n\n\n\n\n\n\n\n履历分析法\n\n\n社会网络分析\n\n\n中美比较研究设计\n\n\n创新体系比较\n\n\n人才流动网络分析\n\n\n\n\n\n返回成果页"
+    "text": "Authors: Ran Wang · Status: Research design and data construction in progress\n\n\n\nThis project examines how patent-based technological assets and trademark-based brand assets co-appear within leading R&D firms. The work treats corporate innovation as a portfolio of different knowledge assets rather than a single count of outputs. At the current stage, the project focuses on indicator construction, portfolio comparison, and descriptive typology based on linked intellectual-property records.\n\n\n\n\nThe project develops a measurement framework for comparing technological and brand-oriented innovation portfolios. It links patent and trademark records to firm-year observations and uses that structure to describe how different types of innovation assets are combined. The current stage does not report mature empirical findings; it establishes the data architecture and measurement logic needed for later analysis of firm heterogeneity, industry context, and national innovation environments.\n\n\n\n\nInnovation portfolios · Patents · Trademarks · Corporate R&D · Knowledge assets\n\nBack to Publications"
   },
   {
-    "objectID": "zh/papers/china-us-biomedical-innovation.html#摘要",
-    "href": "zh/papers/china-us-biomedical-innovation.html#摘要",
-    "title": "人才流动网络视角下中美生物医药创新对比研究",
+    "objectID": "papers/technology-brand-innovation-portfolios.html#research-summary",
+    "href": "papers/technology-brand-innovation-portfolios.html#research-summary",
+    "title": "Technology-Brand Innovation Portfolios",
     "section": "",
-    "text": "生物医药作为 21 世纪战略性新兴产业，已成为中美科技竞争的关键领域。本文基于科学网络理论，从顶尖科学家的人才流动视角出发，深入比较分析了中美在生物医药领域的差异及成因。研究发现，中美在生物医药创新能力方面存在显著差距。美国依托高度市场化的体制、完善的创新生态系统、活跃的资本市场以及全球顶尖人才的持续流入，形成了以“内生成长”为核心的创新模式。其健全的教育、科研和产业化体系在全球具有强大吸引力，是推动生物医药创新领先的根本保障。相比之下，中国虽在政策推动下实现了生物医药产业的快速增长，但在核心技术积累、原始创新能力、国际化布局和高端人才储备方面仍显不足。中国模式更依赖政府主导和“人才回流”，虽然在资源整合与战略推动方面具有一定效率，但在市场机制、产学研融合深度及人才培养灵活性上仍需提升。此外，尽管中国基础研究成果快速积累，但由于“论文导向”与商业化能力不足，存在“知识到产品”的转化瓶颈。本研究旨在厘清中美生物医药创新差距的根源，强调人才流动对创新体系的决定性作用，并提出加快推动中国生物医药产业创新发展的政策建议。"
+    "text": "This project examines how patent-based technological assets and trademark-based brand assets co-appear within leading R&D firms. The work treats corporate innovation as a portfolio of different knowledge assets rather than a single count of outputs. At the current stage, the project focuses on indicator construction, portfolio comparison, and descriptive typology based on linked intellectual-property records."
   },
   {
-    "objectID": "zh/papers/china-us-biomedical-innovation.html#研究路径",
-    "href": "zh/papers/china-us-biomedical-innovation.html#研究路径",
-    "title": "人才流动网络视角下中美生物医药创新对比研究",
+    "objectID": "papers/technology-brand-innovation-portfolios.html#abstract",
+    "href": "papers/technology-brand-innovation-portfolios.html#abstract",
+    "title": "Technology-Brand Innovation Portfolios",
     "section": "",
-    "text": "美国前 100 名和中国前 100 名生物医药顶尖科学家\n\n\n职业履历\n\n\n论文信息\n\n\n专利信息\n\n\n生物医药创新投入与产出资料\n\n\n\n\n\n\n\n履历分析法\n\n\n社会网络分析\n\n\n中美比较研究设计\n\n\n创新体系比较\n\n\n人才流动网络分析\n\n\n\n\n\n返回成果页"
+    "text": "The project develops a measurement framework for comparing technological and brand-oriented innovation portfolios. It links patent and trademark records to firm-year observations and uses that structure to describe how different types of innovation assets are combined. The current stage does not report mature empirical findings; it establishes the data architecture and measurement logic needed for later analysis of firm heterogeneity, industry context, and national innovation environments."
   },
   {
-    "objectID": "zh/papers/pre-move-coauthor-ties.html",
-    "href": "zh/papers/pre-move-coauthor-ties.html",
+    "objectID": "papers/technology-brand-innovation-portfolios.html#keywords",
+    "href": "papers/technology-brand-innovation-portfolios.html#keywords",
+    "title": "Technology-Brand Innovation Portfolios",
+    "section": "",
+    "text": "Innovation portfolios · Patents · Trademarks · Corporate R&D · Knowledge assets\n\nBack to Publications"
+  },
+  {
+    "objectID": "papers/pre-move-coauthor-ties.html",
+    "href": "papers/pre-move-coauthor-ties.html",
     "title": "Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists",
     "section": "",
-    "text": "第一作者 · 已投稿论文\n\n\n\n\n科学家流动推动研究人员和知识在不同地点之间重新配置。既有研究已经较为系统地讨论了个体属性、城市条件、地理距离和国家边界等因素与科学家流动之间的关系，也有近期研究开始关注职业网络与早期职业目的地之间的联系，但对于已经建立职业网络的成熟科学家在多次流动过程中如何选择具体目的地，以及不同类型的合作关系如何区分候选城市，仍缺乏充分认识。本研究考察高被引生物医药科学家是否更倾向于选择在迁移前已有直接共同作者的城市，并进一步区分共同作者数量、网络份额、关系持续性与关系时间结构。研究将经过核验的职业履历与 Scopus 记录及滞后城市论文产出相连接，在 500 名科学家的来源样本中获得 217 名科学家的 336 次城际任职流动，共形成 60,024 条“流动事件—候选城市”观测。采用按流动事件分层的条件 Logit 模型，在每一次实际流动内部比较最终被选择城市与其他候选城市。在控制地理距离、国家边界、滞后城市科研规模和生物医药专业化程度后，迁移前五年内存在至少一名直接共同作者的候选城市具有更高的被选择条件优势比（OR=52.33，95% CI 35.19–77.81）。在已有关系的候选城市中，本地共同作者数量更多、该城市占科学家既有共同作者网络的份额更高，均与更高的目的地选择概率相关。持续性合作关系以及同时出现在较早和较近时间窗口中的关系，比非持续关系或仅在单一时间窗口出现的关系具有更强关联。国内与国外候选城市之间的关系效应未发现统计显著差异。总体而言，迁移前的直接科学合作能够在城市条件和地理约束之外进一步区分科学家的流动目的地。\n\n\n\n\n\n\n\n\n\n经过核验的科学家职业履历\n\n\nScopus 论文、作者与机构记录\n\n\n年度城市论文产出\n\n\n500 名科学家来源样本\n\n\n336 次城际任职流动\n\n\n217 名科学家\n\n\n60,024 条流动事件—候选城市观测\n\n\n\n\n\n\n\n事件特定候选城市集合\n\n\n流动事件分层条件 Logit\n\n\n科学家聚类稳健标准误\n\n\n直接共同作者关系\n\n\n共同作者广度\n\n\n网络份额\n\n\n关系持续性\n\n\n关系时间结构\n\n\n距离与跨国背景控制\n\n\n敏感性分析\n\n\n\n\n\n返回成果页"
+    "text": "Authors: Ran Wang (First author) · Status: Submitted manuscript\n\n\n\nThis manuscript examines whether direct coauthor ties before a move distinguish the city that a highly cited biomedical scientist actually selects from other candidate cities. It links verified career histories, Scopus coauthorship records, city publication measures, distance, borders, and biomedical specialization within event-specific candidate sets. The design is associational: it compares alternatives within observed moves and interprets coauthor ties as observable bibliometric relations, not as evidence of recruitment, job offers, or causal hiring mechanisms.\n\n\n\n\nScientific mobility redistributes researchers and knowledge across places. Existing studies document mobility patterns and the roles of personal attributes, city conditions, distance, and national borders. Recent work links professional networks to early-career destinations, but less is known about repeated moves by established scientists or how collaborations differ across candidate cities. This study examines whether highly cited biomedical scientists are more likely to select cities where they already had direct coauthors and whether the number, network share, persistence, and timing of those ties matter. Using verified career histories, Scopus records, and lagged city publication counts, we analyze 336 moves by 217 scientists and 60,024 event-candidate observations drawn from a roster of 500. Event-stratified conditional logit models compare selected cities with alternatives within each move. Cities with at least one direct coauthor in the five years before a move have higher conditional odds of selection than cities without such ties (OR 52.33, 95% CI 35.19-77.81), after controlling for distance, national borders, lagged scientific scale, and biomedical specialization. Among tied cities, more local coauthors and a larger share of the scientist’s observed coauthor network are positively associated with selection. Persistent ties and ties observed in both early and recent periods have stronger associations than nonpersistent or single-period ties. No statistically detectable difference is found between domestic and foreign candidates. The study shows that prior collaboration helps distinguish destination choice beyond city conditions and geographic constraints.\n\n\n\n\nScientific mobility · Coauthor ties · Destination choice · Conditional logit · Biomedical scientists\n\nBack to Publications"
   },
   {
-    "objectID": "zh/papers/pre-move-coauthor-ties.html#摘要中文译文",
-    "href": "zh/papers/pre-move-coauthor-ties.html#摘要中文译文",
+    "objectID": "papers/pre-move-coauthor-ties.html#research-summary",
+    "href": "papers/pre-move-coauthor-ties.html#research-summary",
     "title": "Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists",
     "section": "",
-    "text": "科学家流动推动研究人员和知识在不同地点之间重新配置。既有研究已经较为系统地讨论了个体属性、城市条件、地理距离和国家边界等因素与科学家流动之间的关系，也有近期研究开始关注职业网络与早期职业目的地之间的联系，但对于已经建立职业网络的成熟科学家在多次流动过程中如何选择具体目的地，以及不同类型的合作关系如何区分候选城市，仍缺乏充分认识。本研究考察高被引生物医药科学家是否更倾向于选择在迁移前已有直接共同作者的城市，并进一步区分共同作者数量、网络份额、关系持续性与关系时间结构。研究将经过核验的职业履历与 Scopus 记录及滞后城市论文产出相连接，在 500 名科学家的来源样本中获得 217 名科学家的 336 次城际任职流动，共形成 60,024 条“流动事件—候选城市”观测。采用按流动事件分层的条件 Logit 模型，在每一次实际流动内部比较最终被选择城市与其他候选城市。在控制地理距离、国家边界、滞后城市科研规模和生物医药专业化程度后，迁移前五年内存在至少一名直接共同作者的候选城市具有更高的被选择条件优势比（OR=52.33，95% CI 35.19–77.81）。在已有关系的候选城市中，本地共同作者数量更多、该城市占科学家既有共同作者网络的份额更高，均与更高的目的地选择概率相关。持续性合作关系以及同时出现在较早和较近时间窗口中的关系，比非持续关系或仅在单一时间窗口出现的关系具有更强关联。国内与国外候选城市之间的关系效应未发现统计显著差异。总体而言，迁移前的直接科学合作能够在城市条件和地理约束之外进一步区分科学家的流动目的地。"
+    "text": "This manuscript examines whether direct coauthor ties before a move distinguish the city that a highly cited biomedical scientist actually selects from other candidate cities. It links verified career histories, Scopus coauthorship records, city publication measures, distance, borders, and biomedical specialization within event-specific candidate sets. The design is associational: it compares alternatives within observed moves and interprets coauthor ties as observable bibliometric relations, not as evidence of recruitment, job offers, or causal hiring mechanisms."
   },
   {
-    "objectID": "zh/papers/pre-move-coauthor-ties.html#研究路径",
-    "href": "zh/papers/pre-move-coauthor-ties.html#研究路径",
+    "objectID": "papers/pre-move-coauthor-ties.html#abstract",
+    "href": "papers/pre-move-coauthor-ties.html#abstract",
     "title": "Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists",
     "section": "",
-    "text": "经过核验的科学家职业履历\n\n\nScopus 论文、作者与机构记录\n\n\n年度城市论文产出\n\n\n500 名科学家来源样本\n\n\n336 次城际任职流动\n\n\n217 名科学家\n\n\n60,024 条流动事件—候选城市观测\n\n\n\n\n\n\n\n事件特定候选城市集合\n\n\n流动事件分层条件 Logit\n\n\n科学家聚类稳健标准误\n\n\n直接共同作者关系\n\n\n共同作者广度\n\n\n网络份额\n\n\n关系持续性\n\n\n关系时间结构\n\n\n距离与跨国背景控制\n\n\n敏感性分析\n\n\n\n\n\n返回成果页"
+    "text": "Scientific mobility redistributes researchers and knowledge across places. Existing studies document mobility patterns and the roles of personal attributes, city conditions, distance, and national borders. Recent work links professional networks to early-career destinations, but less is known about repeated moves by established scientists or how collaborations differ across candidate cities. This study examines whether highly cited biomedical scientists are more likely to select cities where they already had direct coauthors and whether the number, network share, persistence, and timing of those ties matter. Using verified career histories, Scopus records, and lagged city publication counts, we analyze 336 moves by 217 scientists and 60,024 event-candidate observations drawn from a roster of 500. Event-stratified conditional logit models compare selected cities with alternatives within each move. Cities with at least one direct coauthor in the five years before a move have higher conditional odds of selection than cities without such ties (OR 52.33, 95% CI 35.19-77.81), after controlling for distance, national borders, lagged scientific scale, and biomedical specialization. Among tied cities, more local coauthors and a larger share of the scientist’s observed coauthor network are positively associated with selection. Persistent ties and ties observed in both early and recent periods have stronger associations than nonpersistent or single-period ties. No statistically detectable difference is found between domestic and foreign candidates. The study shows that prior collaboration helps distinguish destination choice beyond city conditions and geographic constraints."
   },
   {
-    "objectID": "zh/papers/urban-resilience-nighttime-lights.html",
-    "href": "zh/papers/urban-resilience-nighttime-lights.html",
-    "title": "基于夜间灯光遥感和费舍尔信息方法的城市韧性评价",
+    "objectID": "papers/pre-move-coauthor-ties.html#keywords",
+    "href": "papers/pre-move-coauthor-ties.html#keywords",
+    "title": "Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists",
     "section": "",
-    "text": "第一作者 · 代表性研究成果\n\n\n\n\n科学评估城市在疫情影响下的城市韧性，可为城市的安全发展提供重要依据。本文基于适应性循环模型，结合夜间灯光日数据和费舍尔信息法构建 Fisher Information Light (FIL)这一城市韧性代理指标，并运用基于动态时间规整法的 K-Means 聚类，对 2020 年 1 月 13 日至 4 月 8 日中国长三角、珠三角、京津冀三大城市群城市韧性变化模式进行分析与评价。分别从城市群和城市尺度揭示北京、上海等 48 个城市受 COVID-19 疫情短期影响及韧性变化状况。结果表明：①不同的城市群受到疫情的冲击程度不同，长三角城市群受到的影响明显大于珠三角城市群受到的冲击；不同时间段对于城市群经济社会生活的影响不同。② 2019 年 FIL 处于上升态势，城市系统整体向好发展，2020 年 FIL 变化较为剧烈，处于下降态势中，城市发展受到一定程度上的影响。③通过聚类分析将城市变化模式分为三种类型：稳定型城市整体呈现较为稳定的波动，变化幅度较小，开发阶段出现低谷，较快恢复，具有较高的可持续发展能力。低谷型城市变化曲线整体上呈现为 U 型并处于下降态势中。波动型城市整体上呈现出稳定波动的下降态势。\n\n\n\n\n\n\n\n\n\nNASA Black Marble VNP46A2 / VIIRS-DNB 日尺度夜间灯光数据\n\n\n2019 与 2020 年同期比较\n\n\n京津冀、长三角、珠三角三大城市群\n\n\n48 个城市\n\n\n\n\n\n\n\n适应性循环模型\n\n\nFisher Information Light\n\n\n时间序列比较\n\n\nDynamic Time Warping\n\n\nK-Means\n\n\nElbow Method\n\n\n\n\n\n返回成果页"
+    "text": "Scientific mobility · Coauthor ties · Destination choice · Conditional logit · Biomedical scientists\n\nBack to Publications"
   },
   {
-    "objectID": "zh/papers/urban-resilience-nighttime-lights.html#摘要",
-    "href": "zh/papers/urban-resilience-nighttime-lights.html#摘要",
-    "title": "基于夜间灯光遥感和费舍尔信息方法的城市韧性评价",
+    "objectID": "papers/firm-year-innovation-data.html",
+    "href": "papers/firm-year-innovation-data.html",
+    "title": "Firm-Year Innovation Data System",
     "section": "",
-    "text": "科学评估城市在疫情影响下的城市韧性，可为城市的安全发展提供重要依据。本文基于适应性循环模型，结合夜间灯光日数据和费舍尔信息法构建 Fisher Information Light (FIL)这一城市韧性代理指标，并运用基于动态时间规整法的 K-Means 聚类，对 2020 年 1 月 13 日至 4 月 8 日中国长三角、珠三角、京津冀三大城市群城市韧性变化模式进行分析与评价。分别从城市群和城市尺度揭示北京、上海等 48 个城市受 COVID-19 疫情短期影响及韧性变化状况。结果表明：①不同的城市群受到疫情的冲击程度不同，长三角城市群受到的影响明显大于珠三角城市群受到的冲击；不同时间段对于城市群经济社会生活的影响不同。② 2019 年 FIL 处于上升态势，城市系统整体向好发展，2020 年 FIL 变化较为剧烈，处于下降态势中，城市发展受到一定程度上的影响。③通过聚类分析将城市变化模式分为三种类型：稳定型城市整体呈现较为稳定的波动，变化幅度较小，开发阶段出现低谷，较快恢复，具有较高的可持续发展能力。低谷型城市变化曲线整体上呈现为 U 型并处于下降态势中。波动型城市整体上呈现出稳定波动的下降态势。"
+    "text": "Authors: Ran Wang · Status: Data system in progress\n\n\n\nThis project builds a firm-year data system for leading global corporate R&D investors. It connects R&D expenditure, patents, trademarks, industry, country, firm identity, and year so that technology-oriented and market-oriented innovation assets can be analysed in the same empirical structure. The current emphasis is data construction and measurement audit rather than completed causal findings.\n\n\n\n\nThe project develops a structured firm-year innovation dataset for high-R&D firms by linking R&D investment, patent records, trademark records, industry classifications, country information, firm identifiers, and time. Its purpose is to support later analysis of corporate innovation portfolios without reducing innovation to a single output count. The current work focuses on entity matching, intellectual-property linkage, panel construction, and measurement consistency.\n\n\n\n\nCorporate innovation · Firm-year data · R&D · Patents · Trademarks\n\nBack to Publications"
   },
   {
-    "objectID": "zh/papers/urban-resilience-nighttime-lights.html#研究路径",
-    "href": "zh/papers/urban-resilience-nighttime-lights.html#研究路径",
-    "title": "基于夜间灯光遥感和费舍尔信息方法的城市韧性评价",
+    "objectID": "papers/firm-year-innovation-data.html#research-summary",
+    "href": "papers/firm-year-innovation-data.html#research-summary",
+    "title": "Firm-Year Innovation Data System",
     "section": "",
-    "text": "NASA Black Marble VNP46A2 / VIIRS-DNB 日尺度夜间灯光数据\n\n\n2019 与 2020 年同期比较\n\n\n京津冀、长三角、珠三角三大城市群\n\n\n48 个城市\n\n\n\n\n\n\n\n适应性循环模型\n\n\nFisher Information Light\n\n\n时间序列比较\n\n\nDynamic Time Warping\n\n\nK-Means\n\n\nElbow Method\n\n\n\n\n\n返回成果页"
+    "text": "This project builds a firm-year data system for leading global corporate R&D investors. It connects R&D expenditure, patents, trademarks, industry, country, firm identity, and year so that technology-oriented and market-oriented innovation assets can be analysed in the same empirical structure. The current emphasis is data construction and measurement audit rather than completed causal findings."
   },
   {
-    "objectID": "methods.html",
-    "href": "methods.html",
-    "title": "Methods & Data",
+    "objectID": "papers/firm-year-innovation-data.html#abstract",
+    "href": "papers/firm-year-innovation-data.html#abstract",
+    "title": "Firm-Year Innovation Data System",
     "section": "",
-    "text": "This data system links highly cited biomedical scientists to institutions, cities, career stages, mobility events, coauthor records, and publication-location fields. It is designed for longitudinal analysis of mobility networks, career embeddedness, destination choice, and regional innovation.\n\n\n\nThis data system organizes leading global R&D investors as firm-year observations. It integrates R&D expenditure, patent records, trademark records, industry, country, firm identity, and year to support analysis of technology-oriented and market-facing innovation.\n\n\n\nSupporting data include VIIRS-DNB nighttime lights, UN Comtrade, geospatial and city-attribute data, and policy or planning documents. These materials provide the empirical basis for spatial measurement, network comparison, and policy interpretation."
+    "text": "The project develops a structured firm-year innovation dataset for high-R&D firms by linking R&D investment, patent records, trademark records, industry classifications, country information, firm identifiers, and time. Its purpose is to support later analysis of corporate innovation portfolios without reducing innovation to a single output count. The current work focuses on entity matching, intellectual-property linkage, panel construction, and measurement consistency."
   },
   {
-    "objectID": "methods.html#data-systems",
-    "href": "methods.html#data-systems",
-    "title": "Methods & Data",
+    "objectID": "papers/firm-year-innovation-data.html#keywords",
+    "href": "papers/firm-year-innovation-data.html#keywords",
+    "title": "Firm-Year Innovation Data System",
     "section": "",
-    "text": "This data system links highly cited biomedical scientists to institutions, cities, career stages, mobility events, coauthor records, and publication-location fields. It is designed for longitudinal analysis of mobility networks, career embeddedness, destination choice, and regional innovation.\n\n\n\nThis data system organizes leading global R&D investors as firm-year observations. It integrates R&D expenditure, patent records, trademark records, industry, country, firm identity, and year to support analysis of technology-oriented and market-facing innovation.\n\n\n\nSupporting data include VIIRS-DNB nighttime lights, UN Comtrade, geospatial and city-attribute data, and policy or planning documents. These materials provide the empirical basis for spatial measurement, network comparison, and policy interpretation."
+    "text": "Corporate innovation · Firm-year data · R&D · Patents · Trademarks\n\nBack to Publications"
   },
   {
-    "objectID": "methods.html#data-construction-and-measurement",
-    "href": "methods.html#data-construction-and-measurement",
-    "title": "Methods & Data",
-    "section": "Data Construction and Measurement",
-    "text": "Data Construction and Measurement\n\n\nCareer, Institution, and City Reconstruction\nCareer-history reconstruction requires person validation, institution normalization, city standardization, temporal auditing, and careful handling of education and employment records. These steps make individual careers comparable across institutions and cities over time.\n\n\nRelational and Spatial Measurement\nMobility events are linked to city attributes, coauthor ties, whole-network indicators, ego-network indicators, geographic proximity, cognitive proximity, and candidate destination sets. Publication locations are treated as database fields rather than evidence of verified interpersonal ties.\n\n\nFirm Innovation Measurement\nFirm-level measurement links R&D input with patent and trademark activity, harmonizes firm identity across sources, and organizes observations into a firm-year panel. The aim is to measure innovation portfolios without reducing innovation to a single indicator.\n\n\nHigh-Frequency Spatial Indicators\nRemote-sensing work uses nighttime-light preprocessing, spatial aggregation, Fisher Information, and trajectory comparison to construct urban resilience measures from high-frequency spatial data."
+    "objectID": "papers/china-us-biomedical-innovation.html",
+    "href": "papers/china-us-biomedical-innovation.html",
+    "title": "Comparative Study on Biomedical Innovation between China and the United States from the Perspective of Talent Mobility Network",
+    "section": "",
+    "text": "Authors: Ran Wang · Type: Early research\n\n\n\nThis early research output compares biomedical innovation in China and the United States through the mobility and network positions of top scientists. It uses career histories, publication records, patent information, and innovation-system materials to connect talent mobility with national innovation capacity. The analysis contrasts market-oriented and policy-led innovation environments and uses scientist mobility to interpret differences in research ecosystems, commercialization capacity, and high-end talent accumulation.\n\n\n\n\nBiomedicine has become a major field of technological competition between China and the United States. Drawing on scientific-network theory and the mobility records of top biomedical scientists, this early research output compares the innovation systems of the two countries and discusses the sources of observed differences. The analysis identifies a substantial gap in biomedical innovation capacity. The United States relies on a market-oriented institutional environment, a mature innovation ecosystem, active capital markets, and continued inflows of global scientific talent, forming an innovation model centered on endogenous growth. China has achieved rapid biopharmaceutical growth under policy support, but still faces constraints in core technology accumulation, original innovation capacity, internationalisation, and high-end talent reserves. The Chinese model depends more heavily on government coordination and talent return. While this approach can support resource coordination and strategic mobilisation, market mechanisms, industry-university-research integration, and talent training remain areas for improvement. The study uses talent mobility to interpret differences in biomedical innovation capacity and proposes policy recommendations for strengthening China’s biomedical innovation system.\n\n\n\n\nBiomedical innovation · Talent mobility · China-U.S. comparison · Scientific networks · Innovation systems\n\nBack to Publications"
   },
   {
-    "objectID": "methods.html#empirical-design-and-modelling",
-    "href": "methods.html#empirical-design-and-modelling",
-    "title": "Methods & Data",
-    "section": "Empirical Design and Modelling",
-    "text": "Empirical Design and Modelling\n\n\nDestination-Choice Design\nObserved mobility is organized as event-specific choice sets: each move contains one selected destination and a set of alternative candidate cities. Predictors are measured before the move, which helps align temporal order with the interpretation of relational exposure.\n\n\nNetwork and Relational Models\nNetwork analysis is used to describe directed weighted mobility ties, core structure, centrality, whole-network formation, and scientist-level ego-networks. Weighted network modelling and proximity measures support the transition from descriptive structure to relational explanation.\n\n\nEconometric and Comparative Designs\nEmpirical work uses event-stratified conditional logit, robustness checks, sensitivity analysis, longitudinal comparison, and comparative research design. Earlier training also included Lasso, random forest, support vector machines, and cross-validation in applied modelling contexts.\n\n\nSpatial and Temporal Analysis\nGIS, dynamic time warping, K-Means clustering, spatial aggregation, and temporal comparison are used where the research question requires spatial measurement or trajectory analysis."
+    "objectID": "papers/china-us-biomedical-innovation.html#research-summary",
+    "href": "papers/china-us-biomedical-innovation.html#research-summary",
+    "title": "Comparative Study on Biomedical Innovation between China and the United States from the Perspective of Talent Mobility Network",
+    "section": "",
+    "text": "This early research output compares biomedical innovation in China and the United States through the mobility and network positions of top scientists. It uses career histories, publication records, patent information, and innovation-system materials to connect talent mobility with national innovation capacity. The analysis contrasts market-oriented and policy-led innovation environments and uses scientist mobility to interpret differences in research ecosystems, commercialization capacity, and high-end talent accumulation."
   },
   {
-    "objectID": "methods.html#reproducibility-and-research-software",
-    "href": "methods.html#reproducibility-and-research-software",
-    "title": "Methods & Data",
-    "section": "Reproducibility and Research Software",
-    "text": "Reproducibility and Research Software\n\n\nReproducible Workflow\nResearch workflows emphasize scripted processing, version control, data-quality audits, sensitivity checks, synthetic fixtures, and separation between public materials and restricted data. This is especially important for longitudinal mobility data and data derived from licensed bibliographic sources.\n\n\nResearch Software Environment\nThe working environment includes Python, R, Stata, GIS software, NetworkX, Gephi, Ucinet, Git, GitHub, and Quarto. Tools are selected for data construction, model estimation, documentation, and reproducible publication.\n\n\nScopus Research Data Toolkit\nThe Scopus research data toolkit is an open-source Python package for author-institution-city linkage in Scopus-derived research-data workflows. It uses synthetic fixtures, offline mock transport, automated tests, and public documentation; it does not bundle restricted Scopus data.\nGitHub"
+    "objectID": "papers/china-us-biomedical-innovation.html#abstract",
+    "href": "papers/china-us-biomedical-innovation.html#abstract",
+    "title": "Comparative Study on Biomedical Innovation between China and the United States from the Perspective of Talent Mobility Network",
+    "section": "",
+    "text": "Biomedicine has become a major field of technological competition between China and the United States. Drawing on scientific-network theory and the mobility records of top biomedical scientists, this early research output compares the innovation systems of the two countries and discusses the sources of observed differences. The analysis identifies a substantial gap in biomedical innovation capacity. The United States relies on a market-oriented institutional environment, a mature innovation ecosystem, active capital markets, and continued inflows of global scientific talent, forming an innovation model centered on endogenous growth. China has achieved rapid biopharmaceutical growth under policy support, but still faces constraints in core technology accumulation, original innovation capacity, internationalisation, and high-end talent reserves. The Chinese model depends more heavily on government coordination and talent return. While this approach can support resource coordination and strategic mobilisation, market mechanisms, industry-university-research integration, and talent training remain areas for improvement. The study uses talent mobility to interpret differences in biomedical innovation capacity and proposes policy recommendations for strengthening China’s biomedical innovation system."
+  },
+  {
+    "objectID": "papers/china-us-biomedical-innovation.html#keywords",
+    "href": "papers/china-us-biomedical-innovation.html#keywords",
+    "title": "Comparative Study on Biomedical Innovation between China and the United States from the Perspective of Talent Mobility Network",
+    "section": "",
+    "text": "Biomedical innovation · Talent mobility · China-U.S. comparison · Scientific networks · Innovation systems\n\nBack to Publications"
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Focus: intercity mobility networks of global top biomedical scientists, career-stage differences, and city-level factors associated with mobility ties.\n\n\nData: 500 scientists; 1970-2023 career histories; 398 cities; 1,440 mobility links.\n\n\nMethods: career-history reconstruction; directed weighted mobility network; SNA; GIS; Heckman two-step.\n\n\nDetails →\n\n\n\n\n\nFocus: whole-network structure, ego-network position, career trajectories, and city conditions in global biomedical scientist mobility.\n\n\nData: long-term top-scientist career histories; city-level mobility ties; ego-network subsample; collaboration and career-stage information.\n\n\nMethods: whole-network analysis; ego-network analysis; constraint; effective size; Shannon entropy; weighted ERGM; GIS.\n\n\nDetails →\n\n\n\n\n\nFocus: whether pre-move direct coauthor ties distinguish selected destination cities from candidate alternatives.\n\n\nData: observed mobility events; focal scientists; event-specific candidate-city choice sets; pre-move coauthor ties.\n\n\nMethods: candidate-set construction; conditional logit; pre-move tie measurement; distance and city-level controls; robustness and timing checks.\n\n\nDetails →"
+  },
+  {
+    "objectID": "publications.html#high-skilled-mobility",
+    "href": "publications.html#high-skilled-mobility",
+    "title": "Publications",
+    "section": "",
+    "text": "Focus: intercity mobility networks of global top biomedical scientists, career-stage differences, and city-level factors associated with mobility ties.\n\n\nData: 500 scientists; 1970-2023 career histories; 398 cities; 1,440 mobility links.\n\n\nMethods: career-history reconstruction; directed weighted mobility network; SNA; GIS; Heckman two-step.\n\n\nDetails →\n\n\n\n\n\nFocus: whole-network structure, ego-network position, career trajectories, and city conditions in global biomedical scientist mobility.\n\n\nData: long-term top-scientist career histories; city-level mobility ties; ego-network subsample; collaboration and career-stage information.\n\n\nMethods: whole-network analysis; ego-network analysis; constraint; effective size; Shannon entropy; weighted ERGM; GIS.\n\n\nDetails →\n\n\n\n\n\nFocus: whether pre-move direct coauthor ties distinguish selected destination cities from candidate alternatives.\n\n\nData: observed mobility events; focal scientists; event-specific candidate-city choice sets; pre-move coauthor ties.\n\n\nMethods: candidate-set construction; conditional logit; pre-move tie measurement; distance and city-level controls; robustness and timing checks.\n\n\nDetails →"
+  },
+  {
+    "objectID": "publications.html#scientific-collaboration",
+    "href": "publications.html#scientific-collaboration",
+    "title": "Publications",
+    "section": "Scientific Collaboration Networks & Relational Dynamics",
+    "text": "Scientific Collaboration Networks & Relational Dynamics\n\n\n\nWhen Coauthorship Goes Quiet: Relational History, Portfolio Context, and the Recurrence of Scientific Ties Submitted First Author\n\n\nFocus: associations among coauthorship recurrence after publication dormancy, prior relationship history, active collaboration portfolios, and elapsed dormancy.\n\n\nData: longitudinal focal-scientist publication records; recurrent dormant coauthor spells; annual risk-year observations.\n\n\nMethods: discrete-time complementary-log-log event-history model; clustered covariance; standardized predictions; dormancy-threshold robustness.\n\n\nDetails →"
+  },
+  {
+    "objectID": "publications.html#corporate-innovation",
+    "href": "publications.html#corporate-innovation",
+    "title": "Publications",
+    "section": "Corporate Innovation & Knowledge Assets",
+    "text": "Corporate Innovation & Knowledge Assets\n\n\n\nFirm-Year Innovation Data System Data System in Progress\n\n\nFocus: connects R&D expenditure, patents, trademarks, industry, country, firm identity, and year for leading global R&D firms.\n\n\nData: high-R&D firms; patents; trademarks; industry and country fields.\n\n\nMethods: entity matching; intellectual-property linkage; panel construction; measurement audit.\n\n\nDetails →\n\n\n\n\nTechnology-Brand Innovation Portfolios Research Design and Data Construction in Progress\n\n\nFocus: compares how patent portfolios and trademark portfolios co-appear without reducing innovation to a single output count.\n\n\nData: linked intellectual-property records; firm-year observations.\n\n\nMethods: indicator construction; portfolio comparison; type description.\n\n\nDetails →\n\n\n\n\nDynamic Evolution and Spatial Context\n\n\nFocus: examines how innovation portfolios vary over time with industry, country, firm characteristics, and regional innovation environments.\n\n\nData: annual firm innovation records; industry and country context.\n\n\nMethods: measurement framework under development; no additional model is publicly specified at this stage.\n\n\nDetails →"
+  },
+  {
+    "objectID": "publications.html#early-research",
+    "href": "publications.html#early-research",
+    "title": "Publications",
+    "section": "Early Research",
+    "text": "Early Research\n\n\n\nA Comparative Study of Biomedical Innovation in China and the United States from a Talent-Mobility Network Perspective\n\n\nFocus: compares biomedical innovation systems in China and the United States through the movement and network position of top scientists.\n\n\nData: top biomedical scientists in China and the United States; career histories; publications; patent and innovation-system materials.\n\n\nMethods: CV analysis; social network analysis; comparative innovation-system analysis; talent-mobility network analysis.\n\n\nDetails →\n\n\n\n\nUrban Resilience Assessment Based on Nighttime-Light Remote Sensing and Fisher Information\n\n\nFocus: evaluates short-term urban resilience changes during the COVID-19 shock through nighttime-light dynamics.\n\n\nData: VIIRS-DNB nighttime-light observations; 2019-2020 comparison; major Chinese urban agglomerations; city-level time series.\n\n\nMethods: Fisher Information Light; adaptive-cycle framework; time-series comparison; Dynamic Time Warping; K-Means.\n\n\nDetails →\n\n\n\n\nSpatiotemporal Evolution of the Global Trade Network during the COVID-19 Pandemic\n\n\nFocus: examines changes in the global commodity trade network and product-specific trade structures during the pandemic.\n\n\nData: UN Comtrade; 2019-2021 commodity trade records; country and product-type trade networks.\n\n\nMethods: directed weighted trade networks; social network analysis; centrality, density, clustering, and path-length measures.\n\n\nDetails →"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ran Wang",
+    "section": "",
+    "text": "Ran Wang\n\n\n王冉\n\n\nSchool of Geographic Sciences, East China Normal University · M.Sc. in Human Geography, 2026\n\n\nHigh-Skilled Mobility · Scientific Collaboration Networks · Corporate Innovation · Urban & Regional Innovation\n\nMy research examines how high-skilled researchers move across cities and institutions, and how scientific collaboration and innovation activity are spatially organised around those movements. I build longitudinal relational datasets from career histories, publications, coauthorship records, institutional and city sources, and firm-level innovation data, and use choice models, network analysis, and spatial methods to study mobility, research ties, and regional innovation.\n\n\n\n\n\nOutside research, I enjoy photography, films, badminton, ultimate frisbee, and swimming.\n\n\nPublications CV Code\n\n\nResearch Profile GitHub"
+  },
+  {
+    "objectID": "index.html#research-interests",
+    "href": "index.html#research-interests",
+    "title": "Ran Wang",
+    "section": "Research Interests",
+    "text": "Research Interests\n\n\n01\n\nHigh-Skilled Mobility & Location Choice\n\n\nExamines the spatial mobility of highly skilled researchers across institutions and cities, with particular attention to how prior knowledge exposure, career histories, and urban opportunity structures are associated with destination choice and longer-term mobility trajectories.\n\n\nMobility networks · city choice · career histories · spatial opportunity\n\nView Publications →\n\n\n02\n\nScientific Collaboration & Relational Dynamics\n\n\nExamines the formation, persistence, interruption, and recurrence of scientific collaboration, with particular attention to relational history, current collaboration portfolios, and temporal context.\n\n\nCoauthor ties · relational history · dormant spells · recurrence\n\nView Publications →\n\n\n03\n\nCorporate Innovation & Knowledge Assets\n\n\nExamines how technological and brand-oriented innovation assets are combined and evolve over time using firm-year data on R&D, patents, trademarks, industries, and national contexts.\n\n\nR&D firms · patents · trademarks · firm-year measurement\n\nView Publications →"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Overview High-Skilled Mobility Scientific Collaboration Corporate Innovation"
+  },
+  {
+    "objectID": "research.html#overview",
+    "href": "research.html#overview",
+    "title": "Research",
+    "section": "Overview",
+    "text": "Overview\nMy research examines how people, relationships, and innovation activity are organised across institutions, cities, and regions. The current agenda develops through three connected directions: high-skilled mobility and location choice, scientific collaboration networks and relational dynamics, and corporate innovation and knowledge assets, with cities and regional innovation serving as the shared spatial and institutional context."
+  },
+  {
+    "objectID": "research.html#high-skilled-mobility-location-choice",
+    "href": "research.html#high-skilled-mobility-location-choice",
+    "title": "Research",
+    "section": "High-Skilled Mobility & Location Choice",
+    "text": "High-Skilled Mobility & Location Choice\nThis stream studies the movement of high-skilled scientific talent across cities and institutions, with attention to mobility networks, career stages, destination alternatives, and the city-level conditions that structure observed moves.\n\n\n\nAccepted · First Author\n\n\nSpatial Structure and Determinants of Global Top Biomedical Scientists’ Mobility from an Urban Network Perspective\n\n\nAnalyzes the intercity mobility network of global top biomedical scientists, career-stage differences, and city-level factors associated with mobility ties.\n\n\nData: 500 scientists; 1970-2023 career histories; 398 cities; 1,440 intercity mobility links; learning- and work-stage mobility records; city science and innovation attributes.\n\n\nMethods: career-history reconstruction; directed weighted intercity mobility network; social network analysis; GIS spatial analysis; Heckman two-step model.\n\nView Output →\n\n\n\nSubmitted · First Author\n\n\nStructure and Formation Mechanisms of Intercity Mobility Networks of Global Top Biomedical Scientists: A Whole-Network and Ego-Network Perspective\n\n\nExtends the mobility agenda by combining whole-network structure with ego-network measures and career-trajectory information.\n\n\nData: long-term career histories for a top-scientist roster; city-level mobility networks; ego-network subsample; collaboration and career-stage information.\n\n\nMethods: whole-network analysis; ego-network analysis; constraint; effective size; Shannon entropy; weighted ERGM; GIS.\n\nView Output →\n\n\n\nSubmitted · First Author\n\n\nPre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists\n\n\nExamines whether direct coauthor ties before a move distinguish selected destination cities from candidate alternatives among highly cited biomedical scientists.\n\n\nData: observed mobility events; focal scientists; candidate-city choice sets; pre-move coauthor ties; city-level destination alternatives.\n\n\nMethods: event-specific candidate-set construction; conditional logit; pre-move tie measurement; geographic-distance control; robustness and timing checks.\n\nView Output →"
+  },
+  {
+    "objectID": "research.html#scientific-collaboration-networks-relational-dynamics",
+    "href": "research.html#scientific-collaboration-networks-relational-dynamics",
+    "title": "Research",
+    "section": "Scientific Collaboration Networks & Relational Dynamics",
+    "text": "Scientific Collaboration Networks & Relational Dynamics\nThis stream studies scientific collaboration as a longitudinal relational process. The current manuscript follows dormant coauthor relations and observes whether joint publication recurs after a complete publication hiatus.\n\n\n\nSubmitted · First Author\n\n\nWhen Coauthorship Goes Quiet: Relational History, Portfolio Context, and the Recurrence of Scientific Ties\n\n\nStudies how prior relationship history, current collaboration-portfolio breadth, and elapsed dormancy are associated with observed coauthorship recurrence after publication dormancy.\n\n\nData: longitudinal focal-scientist publication records; recurrent focal-scientist-prior-coauthor dormant spells; annual risk-year observations; primary publication-hiatus definition.\n\n\nMethods: recurrent dormant-spell construction; discrete-time event-history analysis; complementary-log-log model; clustered covariance; standardized adjusted predictions; threshold and measurement robustness analyses.\n\n\nInterpretation boundary: coauthorship recurrence is an observable bibliometric event, not evidence of intentional reconnection, restored trust, or resumed interpersonal contact.\n\nView Output →"
+  },
+  {
+    "objectID": "research.html#corporate-innovation-knowledge-assets",
+    "href": "research.html#corporate-innovation-knowledge-assets",
+    "title": "Research",
+    "section": "Corporate Innovation & Knowledge Assets",
+    "text": "Corporate Innovation & Knowledge Assets\nThis stream builds a measurement foundation for comparing firm-level technological and brand-oriented innovation within the same empirical structure.\n\n\n\nData System in Progress\n\n\nFirm-Year Innovation Data System\n\n\nThis project builds firm-year data for leading global R&D firms by linking R&D expenditure, patents, trademarks, industry, country, firm identity, and year, so technology-oriented and market-oriented innovation can be analyzed in a shared empirical structure.\n\n\nData: high-R&D firms; patents; trademarks; industry and country fields.\n\n\nMethods: entity matching; intellectual-property linkage; panel construction; measurement audit.\n\nView Output →\n\n\n\nResearch Design and Data Construction in Progress\n\n\nTechnology-Brand Innovation Portfolios\n\n\nThis direction compares how patent portfolios and trademark portfolios co-appear within firms, without reducing innovation to a single output count.\n\n\nData: linked intellectual-property records; firm-year observations.\n\n\nMethods: indicator construction; portfolio comparison; type description.\n\nView Output →\n\n\n\nDynamic Evolution and Spatial Context\n\n\nThe firm-year panel also supports analysis of temporal change. The current design focuses on how innovation portfolios vary by industry, country, firm characteristics, and regional innovation environment.\n\n\nData: annual firm innovation records; industry and country context.\n\nView Output →"
+  },
+  {
+    "objectID": "papers/after-collaboration-goes-quiet.html",
+    "href": "papers/after-collaboration-goes-quiet.html",
+    "title": "When Coauthorship Goes Quiet: Relational History, Portfolio Context, and the Recurrence of Scientific Ties",
+    "section": "",
+    "text": "Authors: Ran Wang (First author) · Status: Submitted manuscript\n\n\n\nThis manuscript studies whether prior collaboration history remains associated with later coauthorship recurrence after a complete period of publication dormancy. It follows recurrent dormant coauthor relations among a global highly cited researcher cohort and models annual recurrence risk with discrete-time event-history methods. The interpretation is limited to observable bibliometric recurrence: coauthorship records cannot establish whether researchers stopped communicating, restored trust, or intentionally resumed interpersonal contact.\n\n\n\n\nThis study examines the recurrence of scientific coauthorship after publication dormancy. It asks whether deeper prior coauthorship history remains associated with later joint-publication recurrence, and whether that association varies with a focal scientist’s current collaboration-portfolio breadth and elapsed dormancy. The analysis constructs recurrent dormant spells between focal scientists and prior coauthors and estimates discrete-time complementary-log-log event-history models with clustered covariance and standardized adjusted predictions. The results show that deeper pre-dormancy collaboration history is associated with higher recurrence risk. Around average relationship history, broader active collaboration portfolios are also associated with higher recurrence risk, while the history-by-portfolio interaction is negative on the link scale. Standardized predictions indicate that this negative interaction should not be read as a simple decline in absolute probability differences as portfolio breadth increases; dormancy-duration analyses further show that portfolio context is time-dependent.\n\n\n\n\nCoauthorship recurrence · Publication dormancy · Relational history · Collaboration portfolios · Event-history analysis\n\nBack to Publications"
+  },
+  {
+    "objectID": "papers/after-collaboration-goes-quiet.html#research-summary",
+    "href": "papers/after-collaboration-goes-quiet.html#research-summary",
+    "title": "When Coauthorship Goes Quiet: Relational History, Portfolio Context, and the Recurrence of Scientific Ties",
+    "section": "",
+    "text": "This manuscript studies whether prior collaboration history remains associated with later coauthorship recurrence after a complete period of publication dormancy. It follows recurrent dormant coauthor relations among a global highly cited researcher cohort and models annual recurrence risk with discrete-time event-history methods. The interpretation is limited to observable bibliometric recurrence: coauthorship records cannot establish whether researchers stopped communicating, restored trust, or intentionally resumed interpersonal contact."
+  },
+  {
+    "objectID": "papers/after-collaboration-goes-quiet.html#abstract",
+    "href": "papers/after-collaboration-goes-quiet.html#abstract",
+    "title": "When Coauthorship Goes Quiet: Relational History, Portfolio Context, and the Recurrence of Scientific Ties",
+    "section": "",
+    "text": "This study examines the recurrence of scientific coauthorship after publication dormancy. It asks whether deeper prior coauthorship history remains associated with later joint-publication recurrence, and whether that association varies with a focal scientist’s current collaboration-portfolio breadth and elapsed dormancy. The analysis constructs recurrent dormant spells between focal scientists and prior coauthors and estimates discrete-time complementary-log-log event-history models with clustered covariance and standardized adjusted predictions. The results show that deeper pre-dormancy collaboration history is associated with higher recurrence risk. Around average relationship history, broader active collaboration portfolios are also associated with higher recurrence risk, while the history-by-portfolio interaction is negative on the link scale. Standardized predictions indicate that this negative interaction should not be read as a simple decline in absolute probability differences as portfolio breadth increases; dormancy-duration analyses further show that portfolio context is time-dependent."
+  },
+  {
+    "objectID": "papers/after-collaboration-goes-quiet.html#keywords",
+    "href": "papers/after-collaboration-goes-quiet.html#keywords",
+    "title": "When Coauthorship Goes Quiet: Relational History, Portfolio Context, and the Recurrence of Scientific Ties",
+    "section": "",
+    "text": "Coauthorship recurrence · Publication dormancy · Relational history · Collaboration portfolios · Event-history analysis\n\nBack to Publications"
+  },
+  {
+    "objectID": "papers/dynamic-evolution-spatial-context.html",
+    "href": "papers/dynamic-evolution-spatial-context.html",
+    "title": "Dynamic Evolution and Spatial Context",
+    "section": "",
+    "text": "Authors: Ran Wang · Status: Research in progress\n\n\n\nThis project uses the firm-year innovation data structure to examine how corporate innovation portfolios vary over time and across spatial contexts. It focuses on industry, country, firm characteristics, and regional innovation environments as contextual dimensions for later empirical work. The current public version describes the measurement framework and research direction without reporting additional model specifications or completed findings.\n\n\n\n\nThe project studies the temporal evolution and spatial context of corporate innovation portfolios. It uses annual firm innovation records together with industry and country information to prepare analysis of how technology-oriented and brand-oriented innovation assets change over time. The current stage focuses on measurement design and data readiness; no additional model results are publicly specified.\n\n\n\n\nCorporate innovation · Dynamic evolution · Spatial context · Firm heterogeneity · Regional innovation\n\nBack to Publications"
+  },
+  {
+    "objectID": "papers/dynamic-evolution-spatial-context.html#research-summary",
+    "href": "papers/dynamic-evolution-spatial-context.html#research-summary",
+    "title": "Dynamic Evolution and Spatial Context",
+    "section": "",
+    "text": "This project uses the firm-year innovation data structure to examine how corporate innovation portfolios vary over time and across spatial contexts. It focuses on industry, country, firm characteristics, and regional innovation environments as contextual dimensions for later empirical work. The current public version describes the measurement framework and research direction without reporting additional model specifications or completed findings."
+  },
+  {
+    "objectID": "papers/dynamic-evolution-spatial-context.html#abstract",
+    "href": "papers/dynamic-evolution-spatial-context.html#abstract",
+    "title": "Dynamic Evolution and Spatial Context",
+    "section": "",
+    "text": "The project studies the temporal evolution and spatial context of corporate innovation portfolios. It uses annual firm innovation records together with industry and country information to prepare analysis of how technology-oriented and brand-oriented innovation assets change over time. The current stage focuses on measurement design and data readiness; no additional model results are publicly specified."
+  },
+  {
+    "objectID": "papers/dynamic-evolution-spatial-context.html#keywords",
+    "href": "papers/dynamic-evolution-spatial-context.html#keywords",
+    "title": "Dynamic Evolution and Spatial Context",
+    "section": "",
+    "text": "Corporate innovation · Dynamic evolution · Spatial context · Firm heterogeneity · Regional innovation\n\nBack to Publications"
+  },
+  {
+    "objectID": "papers/global-trade-network.html",
+    "href": "papers/global-trade-network.html",
+    "title": "Analysis on the spatial-temporal evolution of global trade network in the context of the COVID-19",
+    "section": "",
+    "text": "Authors: Ran Wang · Type: Early research\n\n\n\nThis early research output studies changes in the global commodity trade network during the COVID-19 pandemic. It uses UN Comtrade data from 2019 to 2021 and applies directed weighted network analysis to compare trade structure across countries and product types. The work examines changes in network scale, regional concentration, core countries, and product-specific trade patterns, providing earlier training in global network construction and social network analysis.\n\n\n\n\nBased on the data of the United Nations Commodity Trade Database from 2019 to 2021, this paper uses the social network analysis method to analyze the temporal and spatial pattern evolution of the global trade network under the influence of the COVID-19 epidemic. Research has found that ① There are significant regional differences in trade connections, with North America, Western Europe, and East Asia presenting a “three legged” pattern. ② The United States occupies a core position in the global trade network. The COVID-19 epidemic has reduced the scale of the global trade network and increasingly scattered network connections. ③ China, the United States and Germany are the core countries in the global commodity trade network. The COVID-19 epidemic has different impacts on different types of product trade and countries in different regions. ④ Economy, population, geographical distance, culture, and national policies have varying degrees of impact on global trade.\n\n\n\n\nGlobal trade network · COVID-19 · UN Comtrade · Social network analysis · Commodity trade\n\nBack to Publications"
+  },
+  {
+    "objectID": "papers/global-trade-network.html#research-summary",
+    "href": "papers/global-trade-network.html#research-summary",
+    "title": "Analysis on the spatial-temporal evolution of global trade network in the context of the COVID-19",
+    "section": "",
+    "text": "This early research output studies changes in the global commodity trade network during the COVID-19 pandemic. It uses UN Comtrade data from 2019 to 2021 and applies directed weighted network analysis to compare trade structure across countries and product types. The work examines changes in network scale, regional concentration, core countries, and product-specific trade patterns, providing earlier training in global network construction and social network analysis."
+  },
+  {
+    "objectID": "papers/global-trade-network.html#abstract",
+    "href": "papers/global-trade-network.html#abstract",
+    "title": "Analysis on the spatial-temporal evolution of global trade network in the context of the COVID-19",
+    "section": "",
+    "text": "Based on the data of the United Nations Commodity Trade Database from 2019 to 2021, this paper uses the social network analysis method to analyze the temporal and spatial pattern evolution of the global trade network under the influence of the COVID-19 epidemic. Research has found that ① There are significant regional differences in trade connections, with North America, Western Europe, and East Asia presenting a “three legged” pattern. ② The United States occupies a core position in the global trade network. The COVID-19 epidemic has reduced the scale of the global trade network and increasingly scattered network connections. ③ China, the United States and Germany are the core countries in the global commodity trade network. The COVID-19 epidemic has different impacts on different types of product trade and countries in different regions. ④ Economy, population, geographical distance, culture, and national policies have varying degrees of impact on global trade."
+  },
+  {
+    "objectID": "papers/global-trade-network.html#keywords",
+    "href": "papers/global-trade-network.html#keywords",
+    "title": "Analysis on the spatial-temporal evolution of global trade network in the context of the COVID-19",
+    "section": "",
+    "text": "Global trade network · COVID-19 · UN Comtrade · Social network analysis · Commodity trade\n\nBack to Publications"
+  },
+  {
+    "objectID": "papers/publication-location-exposure-destination-choice.html",
+    "href": "papers/publication-location-exposure-destination-choice.html",
+    "title": "Pre-Move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists",
+    "section": "",
+    "text": "Authors: Ran Wang · Status: Working paper\n\n\n\nThis working paper examines whether elite biomedical scientists are more likely to move to candidate cities already present in their pre-move publication-location environment. It organises observed intercity career moves as event-specific destination choices and compares selected cities with alternative destinations. The key measure is place-based exposure: whether a candidate city appeared in the scientist’s origin-anchored publication environment before the move, rather than a verified direct interpersonal tie.\n\n\n\n\nThe study organizes observed intercity career moves as event-specific destination choices and compares selected cities with alternative destinations. Pre-move publication-location exposure captures whether a candidate city was already present in the scientist’s origin-anchored publication environment. It is a place-based exposure measure rather than a verified direct interpersonal tie. Public sample numbers are withheld until the final public-release version is confirmed.\n\n\n\n\nPublication-location exposure · Destination choice · Scientific mobility · Candidate cities · Biomedical scientists\n\nBack to Publications"
+  },
+  {
+    "objectID": "papers/publication-location-exposure-destination-choice.html#research-summary",
+    "href": "papers/publication-location-exposure-destination-choice.html#research-summary",
+    "title": "Pre-Move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists",
+    "section": "",
+    "text": "This working paper examines whether elite biomedical scientists are more likely to move to candidate cities already present in their pre-move publication-location environment. It organises observed intercity career moves as event-specific destination choices and compares selected cities with alternative destinations. The key measure is place-based exposure: whether a candidate city appeared in the scientist’s origin-anchored publication environment before the move, rather than a verified direct interpersonal tie."
+  },
+  {
+    "objectID": "papers/publication-location-exposure-destination-choice.html#abstract",
+    "href": "papers/publication-location-exposure-destination-choice.html#abstract",
+    "title": "Pre-Move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists",
+    "section": "",
+    "text": "The study organizes observed intercity career moves as event-specific destination choices and compares selected cities with alternative destinations. Pre-move publication-location exposure captures whether a candidate city was already present in the scientist’s origin-anchored publication environment. It is a place-based exposure measure rather than a verified direct interpersonal tie. Public sample numbers are withheld until the final public-release version is confirmed."
+  },
+  {
+    "objectID": "papers/publication-location-exposure-destination-choice.html#keywords",
+    "href": "papers/publication-location-exposure-destination-choice.html#keywords",
+    "title": "Pre-Move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists",
+    "section": "",
+    "text": "Publication-location exposure · Destination choice · Scientific mobility · Candidate cities · Biomedical scientists\n\nBack to Publications"
+  },
+  {
+    "objectID": "papers/urban-network-biomedical-mobility.html",
+    "href": "papers/urban-network-biomedical-mobility.html",
+    "title": "Spatial Structure and Determinants of Global Top Biomedical Scientists’ Mobility from an Urban Network Perspective",
+    "section": "",
+    "text": "Authors: Ran Wang (First author) · Status: Accepted · Journal: World Regional Studies\n\n\n\nThis accepted article examines how the education and employment moves of global top biomedical scientists are organised across cities. Using verified career histories for 500 scientists from 1970 to 2023, it constructs directed intercity mobility networks and relates mobility ties to city-level scientific and institutional conditions. The study distinguishes learning-stage and employment-stage mobility, showing that top-scientist movement is spatially selective, centered strongly on U.S. cities, and patterned differently across career stages.\n\n\n\n\nAs a knowledge- and capital-intensive field, biomedicine has become a central arena of global innovation competition. This study focuses on the world’s top biomedical scientists and analyzes their mobility trajectories from an urban-network perspective. Using complex network analysis and Heckman two-stage regression, the paper examines factors associated with scientist mobility across career stages. The study finds that: ① the mobility of top biomedical scientists presents a network structure centered on the United States, with substantial cross-continent movement. In the learning stage, mobility is more unidirectional, concentrated, and unipolar, and top scientists tend to move to university-dense areas. In the working stage, mobility becomes more polycentric and networked, with scientists more likely to choose research institutions and industrial bases. ② Top-scientist mobility is highly selective. Migration is associated with scientific output, academic influence, interdisciplinary background, and related factors. Regions with dense research resources and strong scientific ecology attract top scientists, while institutional barriers and cultural differences constrain global scientific talent mobility.\n\n\n\n\nHigh-skilled mobility · Biomedical scientists · Urban networks · Career histories · Regional innovation\n\nBack to Publications"
+  },
+  {
+    "objectID": "papers/urban-network-biomedical-mobility.html#research-summary",
+    "href": "papers/urban-network-biomedical-mobility.html#research-summary",
+    "title": "Spatial Structure and Determinants of Global Top Biomedical Scientists’ Mobility from an Urban Network Perspective",
+    "section": "",
+    "text": "This accepted article examines how the education and employment moves of global top biomedical scientists are organised across cities. Using verified career histories for 500 scientists from 1970 to 2023, it constructs directed intercity mobility networks and relates mobility ties to city-level scientific and institutional conditions. The study distinguishes learning-stage and employment-stage mobility, showing that top-scientist movement is spatially selective, centered strongly on U.S. cities, and patterned differently across career stages."
+  },
+  {
+    "objectID": "papers/urban-network-biomedical-mobility.html#abstract",
+    "href": "papers/urban-network-biomedical-mobility.html#abstract",
+    "title": "Spatial Structure and Determinants of Global Top Biomedical Scientists’ Mobility from an Urban Network Perspective",
+    "section": "",
+    "text": "As a knowledge- and capital-intensive field, biomedicine has become a central arena of global innovation competition. This study focuses on the world’s top biomedical scientists and analyzes their mobility trajectories from an urban-network perspective. Using complex network analysis and Heckman two-stage regression, the paper examines factors associated with scientist mobility across career stages. The study finds that: ① the mobility of top biomedical scientists presents a network structure centered on the United States, with substantial cross-continent movement. In the learning stage, mobility is more unidirectional, concentrated, and unipolar, and top scientists tend to move to university-dense areas. In the working stage, mobility becomes more polycentric and networked, with scientists more likely to choose research institutions and industrial bases. ② Top-scientist mobility is highly selective. Migration is associated with scientific output, academic influence, interdisciplinary background, and related factors. Regions with dense research resources and strong scientific ecology attract top scientists, while institutional barriers and cultural differences constrain global scientific talent mobility."
+  },
+  {
+    "objectID": "papers/urban-network-biomedical-mobility.html#keywords",
+    "href": "papers/urban-network-biomedical-mobility.html#keywords",
+    "title": "Spatial Structure and Determinants of Global Top Biomedical Scientists’ Mobility from an Urban Network Perspective",
+    "section": "",
+    "text": "High-skilled mobility · Biomedical scientists · Urban networks · Career histories · Regional innovation\n\nBack to Publications"
+  },
+  {
+    "objectID": "papers/whole-ego-mobility.html",
+    "href": "papers/whole-ego-mobility.html",
+    "title": "Structure and Formation Mechanisms of Intercity Mobility Networks of Global Top Biomedical Scientists: A Whole-Network and Ego-Network Perspective",
+    "section": "",
+    "text": "Authors: Ran Wang (First author) · Status: Submitted manuscript\n\n\n\nThis manuscript extends the mobility-network study by combining whole-network and ego-network perspectives. It uses long-term career histories, research-output records, and city attributes for top global biomedical scientists to examine both the structure of intercity mobility ties and the individual positions embedded in those networks. The analysis links network structure, city science conditions, proximity relations, research platforms, and individual career trajectories, treating scientist mobility as a cross-scale spatial process rather than a simple movement count.\n\n\n\n\nScientific talent mobility is an important force shaping the global innovation landscape. Existing studies, however, have largely explained talent mobility from a whole-network perspective, emphasizing urban science and innovation conditions and multidimensional proximity, while paying insufficient attention to individual career trajectories and the supporting role of research platforms. Using career histories, research outputs, and urban attribute data for top global biomedical scientists from 1970 to 2023, this study combines social network analysis, weighted exponential random graph models, and ego-network analysis to examine the structural characteristics, formation mechanisms, and individual mobility processes of their intercity mobility network. The results show that: (1) The intercity mobility network of top global biomedical scientists exhibits a low-density, highly selective core-periphery structure. Its European and North American core and transatlantic connections remain broadly stable, while cities specializing in medical research, biomedical research and development, and related industrial activities become increasingly prominent in later periods. (2) Intercity mobility ties among top global biomedical scientists are jointly shaped by endogenous network structure, urban science and innovation conditions, and multidimensional proximity. Geographical distance consistently constrains mobility, whereas institutional proximity consistently facilitates it. The effect of cultural proximity weakens in the later period, while cognitive proximity shows no stable association. The effects of urban science and innovation conditions vary across periods and between origins and destinations: specialized research platforms explain mobility more consistently than general economic scale. The initial stock of cross-platform embedded talent is significantly associated with subsequent mobility ties, with a more stable association at the origin. (3) Ego-network analysis shows that the intercity mobility of top global biomedical scientists is a cross-scale spatial process jointly shaped by network structure, urban conditions, multidimensional proximity, historical ties, and individual career trajectories.\n\n\n\n\nScientific mobility · Whole network · Ego network · Biomedical scientists · WERGM\n\nBack to Publications"
+  },
+  {
+    "objectID": "papers/whole-ego-mobility.html#research-summary",
+    "href": "papers/whole-ego-mobility.html#research-summary",
+    "title": "Structure and Formation Mechanisms of Intercity Mobility Networks of Global Top Biomedical Scientists: A Whole-Network and Ego-Network Perspective",
+    "section": "",
+    "text": "This manuscript extends the mobility-network study by combining whole-network and ego-network perspectives. It uses long-term career histories, research-output records, and city attributes for top global biomedical scientists to examine both the structure of intercity mobility ties and the individual positions embedded in those networks. The analysis links network structure, city science conditions, proximity relations, research platforms, and individual career trajectories, treating scientist mobility as a cross-scale spatial process rather than a simple movement count."
+  },
+  {
+    "objectID": "papers/whole-ego-mobility.html#abstract",
+    "href": "papers/whole-ego-mobility.html#abstract",
+    "title": "Structure and Formation Mechanisms of Intercity Mobility Networks of Global Top Biomedical Scientists: A Whole-Network and Ego-Network Perspective",
+    "section": "",
+    "text": "Scientific talent mobility is an important force shaping the global innovation landscape. Existing studies, however, have largely explained talent mobility from a whole-network perspective, emphasizing urban science and innovation conditions and multidimensional proximity, while paying insufficient attention to individual career trajectories and the supporting role of research platforms. Using career histories, research outputs, and urban attribute data for top global biomedical scientists from 1970 to 2023, this study combines social network analysis, weighted exponential random graph models, and ego-network analysis to examine the structural characteristics, formation mechanisms, and individual mobility processes of their intercity mobility network. The results show that: (1) The intercity mobility network of top global biomedical scientists exhibits a low-density, highly selective core-periphery structure. Its European and North American core and transatlantic connections remain broadly stable, while cities specializing in medical research, biomedical research and development, and related industrial activities become increasingly prominent in later periods. (2) Intercity mobility ties among top global biomedical scientists are jointly shaped by endogenous network structure, urban science and innovation conditions, and multidimensional proximity. Geographical distance consistently constrains mobility, whereas institutional proximity consistently facilitates it. The effect of cultural proximity weakens in the later period, while cognitive proximity shows no stable association. The effects of urban science and innovation conditions vary across periods and between origins and destinations: specialized research platforms explain mobility more consistently than general economic scale. The initial stock of cross-platform embedded talent is significantly associated with subsequent mobility ties, with a more stable association at the origin. (3) Ego-network analysis shows that the intercity mobility of top global biomedical scientists is a cross-scale spatial process jointly shaped by network structure, urban conditions, multidimensional proximity, historical ties, and individual career trajectories."
+  },
+  {
+    "objectID": "papers/whole-ego-mobility.html#keywords",
+    "href": "papers/whole-ego-mobility.html#keywords",
+    "title": "Structure and Formation Mechanisms of Intercity Mobility Networks of Global Top Biomedical Scientists: A Whole-Network and Ego-Network Perspective",
+    "section": "",
+    "text": "Scientific mobility · Whole network · Ego network · Biomedical scientists · WERGM\n\nBack to Publications"
+  },
+  {
+    "objectID": "collaboration.html",
+    "href": "collaboration.html",
+    "title": "For Collaboration",
+    "section": "",
+    "text": "I am interested in PhD, predoc/RA, and research-collaboration opportunities for the 2027 entry and application cycle. My contribution is strongest where a project needs careful longitudinal data construction, relational measurement, spatial/network analysis, and conservative interpretation of scientific-career or high-skilled mobility evidence."
+  },
+  {
+    "objectID": "collaboration.html#for-collaboration",
+    "href": "collaboration.html#for-collaboration",
+    "title": "For Collaboration",
+    "section": "",
+    "text": "I am interested in PhD, predoc/RA, and research-collaboration opportunities for the 2027 entry and application cycle. My contribution is strongest where a project needs careful longitudinal data construction, relational measurement, spatial/network analysis, and conservative interpretation of scientific-career or high-skilled mobility evidence."
+  },
+  {
+    "objectID": "collaboration.html#research-objects",
+    "href": "collaboration.html#research-objects",
+    "title": "For Collaboration",
+    "section": "Research Objects",
+    "text": "Research Objects\n\n\nScientific careers\nCareer stages, appointments, institutional movement, and temporal ordering.\n\n\nHigh-skilled mobility\nDestination choice, circulation, attraction, retention, and cross-city moves.\n\n\nCollaboration networks\nCoauthorship, ego networks, tie persistence, and relational capital.\n\n\nOrganisations\nUniversities, research institutes, firms, and platform histories.\n\n\nCities\nUrban opportunity structures, spatial constraints, and regional innovation contexts."
+  },
+  {
+    "objectID": "collaboration.html#data-capabilities",
+    "href": "collaboration.html#data-capabilities",
+    "title": "For Collaboration",
+    "section": "Data Capabilities",
+    "text": "Data Capabilities\n\n\nLongitudinal Career Reconstruction\nI can help build source-audited career histories that distinguish education, employment, publication affiliation, and verified mobility events.\n\n\nPublication and Institution Linkage\nI work with bibliometric records, affiliation strings, institution-city matching, ROR/OpenAlex/Scopus workflows, and uncertainty documentation.\n\n\nRelational and Spatial Datasets\nI can construct coauthor networks, mobility networks, candidate-destination structures, city-level attributes, and spatially joined research datasets.\n\n\nEntity Matching and Integration\nCurrent work includes identity matching, temporal validation, conflict logs, synthetic fixtures, and reproducible pipelines for large relational datasets."
+  },
+  {
+    "objectID": "collaboration.html#analytical-capabilities",
+    "href": "collaboration.html#analytical-capabilities",
+    "title": "For Collaboration",
+    "section": "Analytical Capabilities",
+    "text": "Analytical Capabilities\n\n\nChoice modelling\nEvent-specific candidate sets, conditional logit, clustered robust inference, and temporal measurement.\n\n\nNetwork analysis\nDirected weighted networks, centrality, ego networks, WERGM, proximity, and tie persistence.\n\n\nSpatial and longitudinal design\nGIS, city matching, temporal comparison, reproducible Python/R/Stata workflows, and source-conflict auditing."
+  },
+  {
+    "objectID": "collaboration.html#current-interest",
+    "href": "collaboration.html#current-interest",
+    "title": "For Collaboration",
+    "section": "Current Interest",
+    "text": "Current Interest\n\nPhD / 2027 Entry Predoc / RA Research Collaboration Contact"
   },
   {
     "objectID": "cv.html",
@@ -418,6 +495,13 @@
     "title": "Curriculum Vitae",
     "section": "",
     "text": "Download Public CV"
+  },
+  {
+    "objectID": "cv.html#research-opportunities",
+    "href": "cv.html#research-opportunities",
+    "title": "Curriculum Vitae",
+    "section": "Research Opportunities",
+    "text": "Research Opportunities\nCurrently seeking research assistant opportunities and preparing applications for PhD programmes beginning in Fall 2027, particularly in high-skilled mobility, scientific collaboration networks, urban and regional innovation, and related quantitative research. The next stage of training is intended to deepen theoretical and methodological foundations while developing a sustained empirical research agenda around mobility, scientific relationships, and innovation. Enquiries about RA positions, PhD supervision, and related research collaboration are welcome."
   },
   {
     "objectID": "cv.html#contact",

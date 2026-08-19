@@ -1,0 +1,23 @@
+---
+title: "Dynamic Evolution and Spatial Context"
+---
+
+::: {.page-band .surface .paper-page}
+
+<p class="paper-meta">Authors: Ran Wang · Status: Research in progress</p>
+
+## Research Summary
+
+This project uses the firm-year innovation data structure to examine how corporate innovation portfolios vary over time and across spatial contexts. It focuses on industry, country, firm characteristics, and regional innovation environments as contextual dimensions for later empirical work. The current public version describes the measurement framework and research direction without reporting additional model specifications or completed findings.
+
+## Abstract
+
+<p class="abstract-text">The project studies the temporal evolution and spatial context of corporate innovation portfolios. It uses annual firm innovation records together with industry and country information to prepare analysis of how technology-oriented and brand-oriented innovation assets change over time. The current stage focuses on measurement design and data readiness; no additional model results are publicly specified.</p>
+
+## Keywords
+
+Corporate innovation · Dynamic evolution · Spatial context · Firm heterogeneity · Regional innovation
+
+<p class="paper-back">[Back to Publications](../publications.html)</p>
+
+:::

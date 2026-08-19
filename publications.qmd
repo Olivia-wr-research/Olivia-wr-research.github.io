@@ -2,91 +2,113 @@
 title: "Publications"
 ---
 
-::: {.page-band .surface}
+::: {.page-band .surface .publications-section}
 
-## Accepted Article
-
-::: {.output-list .editorial-list}
-::: {.output-item}
-<p><span class="status-badge">Accepted</span></p>
-<h3>The spatial structure and influencing factors of the flow of global top biomedical scientists from the perspective of urban network</h3>
-
-Role: First Author. Accepted by *World Regional Studies*.
-
-This article examines the mobility trajectories of top global biomedical scientists from an urban-network perspective. It compares education and employment stages and analyzes city-level factors associated with scientist mobility.
-
-[View details →](papers/urban-network-biomedical-mobility.html){.publication-link}
-:::
-:::
-
-:::
-
-::: {.page-band}
-
-## Submitted Manuscripts
+## High-Skilled Mobility & Location Choice {#high-skilled-mobility}
 
 ::: {.output-list .editorial-list}
-::: {.output-item}
-<p><span class="status-badge">Submitted Manuscript</span></p>
-<h3>Structure and Formation Mechanisms of the Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Whole-Network and Ego-Network Perspective</h3>
-
-Role: First Author.
-
-This manuscript links whole-network mobility structures with individual ego-network trajectories. It examines how urban conditions, multidimensional proximity, platform histories, and prior ties shape intercity mobility among top biomedical scientists.
-
-[View details →](papers/whole-ego-mobility.html){.publication-link}
+::: {#urban-network-biomedical-mobility .output-item .output-item-priority}
+<h3>Spatial Structure and Determinants of Global Top Biomedical Scientists' Mobility from an Urban Network Perspective <span class="status-badge status-accepted">Accepted</span> <span class="status-badge status-output">First Author</span></h3>
+<p><strong>Focus:</strong> intercity mobility networks of global top biomedical scientists, career-stage differences, and city-level factors associated with mobility ties.</p>
+<p><strong>Data:</strong> 500 scientists; 1970-2023 career histories; 398 cities; 1,440 mobility links.</p>
+<p><strong>Methods:</strong> career-history reconstruction; directed weighted mobility network; SNA; GIS; Heckman two-step.</p>
+<p class="detail-link"><a class="publication-link" href="papers/urban-network-biomedical-mobility.html">Details →</a></p>
 :::
 
-::: {.output-item}
-<p><span class="status-badge">Submitted Manuscript</span></p>
-<h3>Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists</h3>
+::: {#whole-ego-mobility .output-item}
+<h3>Structure and Formation Mechanisms of Intercity Mobility Networks of Global Top Biomedical Scientists: A Whole-Network and Ego-Network Perspective <span class="status-badge status-submitted">Submitted</span> <span class="status-badge status-output">First Author</span></h3>
+<p><strong>Focus:</strong> whole-network structure, ego-network position, career trajectories, and city conditions in global biomedical scientist mobility.</p>
+<p><strong>Data:</strong> long-term top-scientist career histories; city-level mobility ties; ego-network subsample; collaboration and career-stage information.</p>
+<p><strong>Methods:</strong> whole-network analysis; ego-network analysis; constraint; effective size; Shannon entropy; weighted ERGM; GIS.</p>
+<p class="detail-link"><a class="publication-link" href="papers/whole-ego-mobility.html">Details →</a></p>
+:::
 
-Role: First Author.
-
-This manuscript treats intercity employment moves as event-specific destination choices. It compares selected cities with candidate alternatives and tests whether pre-move direct coauthor ties help distinguish scientists' destinations.
-
-[View details →](papers/pre-move-coauthor-ties.html){.publication-link}
+::: {#pre-move-coauthor-ties .output-item}
+<h3>Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists <span class="status-badge status-submitted">Submitted</span> <span class="status-badge status-output">First Author</span></h3>
+<p><strong>Focus:</strong> whether pre-move direct coauthor ties distinguish selected destination cities from candidate alternatives.</p>
+<p><strong>Data:</strong> observed mobility events; focal scientists; event-specific candidate-city choice sets; pre-move coauthor ties.</p>
+<p><strong>Methods:</strong> candidate-set construction; conditional logit; pre-move tie measurement; distance and city-level controls; robustness and timing checks.</p>
+<p class="detail-link"><a class="publication-link" href="papers/pre-move-coauthor-ties.html">Details →</a></p>
 :::
 :::
 
 :::
 
-::: {.page-band .surface}
+::: {.page-band .publications-section}
 
-## Selected Research Outputs
+## Scientific Collaboration Networks & Relational Dynamics {#scientific-collaboration}
 
 ::: {.output-list .editorial-list}
-::: {.output-item}
-<p><span class="status-badge">Selected Research Output</span></p>
-<h3>Comparative Study on Biomedical Innovation between China and the United States from the Perspective of Talent Mobility Network</h3>
-
-Role: First Author.
-
-This study compares biomedical innovation in China and the United States through the mobility networks of top scientists. It relates talent movement to innovation systems, research output, patents, and innovation transformation.
-
-[View details →](papers/china-us-biomedical-innovation.html){.publication-link}
+::: {#after-collaboration-goes-quiet .output-item}
+<h3>When Coauthorship Goes Quiet: Relational History, Portfolio Context, and the Recurrence of Scientific Ties <span class="status-badge status-submitted">Submitted</span> <span class="status-badge status-output">First Author</span></h3>
+<p><strong>Focus:</strong> associations among coauthorship recurrence after publication dormancy, prior relationship history, active collaboration portfolios, and elapsed dormancy.</p>
+<p><strong>Data:</strong> longitudinal focal-scientist publication records; recurrent dormant coauthor spells; annual risk-year observations.</p>
+<p><strong>Methods:</strong> discrete-time complementary-log-log event-history model; clustered covariance; standardized predictions; dormancy-threshold robustness.</p>
+<p class="detail-link"><a class="publication-link" href="papers/after-collaboration-goes-quiet.html">Details →</a></p>
+:::
 :::
 
-::: {.output-item}
-<p><span class="status-badge">Selected Research Output</span></p>
-<h3>Assessment of urban resilience based on nighttime light remote sensing and Fisher's information method</h3>
-
-Role: First Author.
-
-This study uses nighttime-light data and Fisher Information Light to evaluate short-term urban resilience during the COVID-19 shock. It compares resilience trajectories across 48 cities in three major Chinese urban agglomerations.
-
-[View details →](papers/urban-resilience-nighttime-lights.html){.publication-link}
 :::
 
-::: {.output-item}
-<p><span class="status-badge">Selected Research Output</span></p>
-<h3>Analysis on the spatial-temporal evolution of global trade network in the context of the COVID-19</h3>
+::: {.page-band .surface .publications-section}
 
-Role: First Author.
+## Corporate Innovation & Knowledge Assets {#corporate-innovation}
 
-This study analyzes changes in the global commodity trade network from 2019 to 2021. It compares network structure across countries, regions, and product types under the COVID-19 shock.
+::: {.output-list .editorial-list}
+::: {#firm-year-innovation-data .output-item}
+<h3>Firm-Year Innovation Data System <span class="status-badge status-output">Data System in Progress</span></h3>
+<p><strong>Focus:</strong> connects R&D expenditure, patents, trademarks, industry, country, firm identity, and year for leading global R&D firms.</p>
+<p><strong>Data:</strong> high-R&D firms; patents; trademarks; industry and country fields.</p>
+<p><strong>Methods:</strong> entity matching; intellectual-property linkage; panel construction; measurement audit.</p>
+<p class="detail-link"><a class="publication-link" href="papers/firm-year-innovation-data.html">Details →</a></p>
+:::
 
-[View details →](papers/global-trade-network.html){.publication-link}
+::: {#technology-brand-portfolios .output-item}
+<h3>Technology-Brand Innovation Portfolios <span class="status-badge status-output">Research Design and Data Construction in Progress</span></h3>
+<p><strong>Focus:</strong> compares how patent portfolios and trademark portfolios co-appear without reducing innovation to a single output count.</p>
+<p><strong>Data:</strong> linked intellectual-property records; firm-year observations.</p>
+<p><strong>Methods:</strong> indicator construction; portfolio comparison; type description.</p>
+<p class="detail-link"><a class="publication-link" href="papers/technology-brand-innovation-portfolios.html">Details →</a></p>
+:::
+
+::: {#dynamic-evolution-spatial-context .output-item}
+<h3>Dynamic Evolution and Spatial Context</h3>
+<p><strong>Focus:</strong> examines how innovation portfolios vary over time with industry, country, firm characteristics, and regional innovation environments.</p>
+<p><strong>Data:</strong> annual firm innovation records; industry and country context.</p>
+<p><strong>Methods:</strong> measurement framework under development; no additional model is publicly specified at this stage.</p>
+<p class="detail-link"><a class="publication-link" href="papers/dynamic-evolution-spatial-context.html">Details →</a></p>
+:::
+:::
+
+:::
+
+::: {.page-band .publications-section}
+
+## Early Research {#early-research}
+
+::: {.output-list .editorial-list}
+::: {#china-us-biomedical-innovation .output-item}
+<h3>A Comparative Study of Biomedical Innovation in China and the United States from a Talent-Mobility Network Perspective</h3>
+<p><strong>Focus:</strong> compares biomedical innovation systems in China and the United States through the movement and network position of top scientists.</p>
+<p><strong>Data:</strong> top biomedical scientists in China and the United States; career histories; publications; patent and innovation-system materials.</p>
+<p><strong>Methods:</strong> CV analysis; social network analysis; comparative innovation-system analysis; talent-mobility network analysis.</p>
+<p class="detail-link"><a class="publication-link" href="papers/china-us-biomedical-innovation.html">Details →</a></p>
+:::
+
+::: {#urban-resilience-nighttime-lights .output-item}
+<h3>Urban Resilience Assessment Based on Nighttime-Light Remote Sensing and Fisher Information</h3>
+<p><strong>Focus:</strong> evaluates short-term urban resilience changes during the COVID-19 shock through nighttime-light dynamics.</p>
+<p><strong>Data:</strong> VIIRS-DNB nighttime-light observations; 2019-2020 comparison; major Chinese urban agglomerations; city-level time series.</p>
+<p><strong>Methods:</strong> Fisher Information Light; adaptive-cycle framework; time-series comparison; Dynamic Time Warping; K-Means.</p>
+<p class="detail-link"><a class="publication-link" href="papers/urban-resilience-nighttime-lights.html">Details →</a></p>
+:::
+
+::: {#global-trade-network .output-item}
+<h3>Spatiotemporal Evolution of the Global Trade Network during the COVID-19 Pandemic</h3>
+<p><strong>Focus:</strong> examines changes in the global commodity trade network and product-specific trade structures during the pandemic.</p>
+<p><strong>Data:</strong> UN Comtrade; 2019-2021 commodity trade records; country and product-type trade networks.</p>
+<p><strong>Methods:</strong> directed weighted trade networks; social network analysis; centrality, density, clustering, and path-length measures.</p>
+<p class="detail-link"><a class="publication-link" href="papers/global-trade-network.html">Details →</a></p>
 :::
 :::
 

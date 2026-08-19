@@ -12,6 +12,14 @@ title: "Curriculum Vitae"
 
 ::: {.page-band}
 
+## Research Opportunities
+
+Currently seeking research assistant opportunities and preparing applications for PhD programmes beginning in Fall 2027, particularly in high-skilled mobility, scientific collaboration networks, urban and regional innovation, and related quantitative research. The next stage of training is intended to deepen theoretical and methodological foundations while developing a sustained empirical research agenda around mobility, scientific relationships, and innovation. Enquiries about RA positions, PhD supervision, and related research collaboration are welcome.
+
+:::
+
+::: {.page-band .surface #contact}
+
 ## Contact
 
 ::: {.contact-panel}

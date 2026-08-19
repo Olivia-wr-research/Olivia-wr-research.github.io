@@ -9,15 +9,19 @@ project:
     - publications.qmd
     - papers/*.qmd
     - methods.qmd
+    - collaboration.qmd
     - projects.qmd
     - cv.qmd
     - contact.qmd
+    - "!zh/**"
   resources:
     - assets/img/hero.jpg
     - assets/img/hero-optimized.jpg
     - assets/img/coauthor-ties-choice.svg
     - assets/img/corporate-innovation-data-stack.svg
     - assets/cv/Ran_Wang_CV_Public.pdf
+    - assets/profile/Ran_Wang_Research_Collaboration_Profile.pdf
+    - assets/profile/ran-wang-portrait.jpg
     - assets/js/language-switch.js
     - assets/js/academic-v35.js
 
@@ -26,19 +30,15 @@ lang: en
 website:
   title: "Ran Wang"
   site-url: "https://olivia-wr-research.github.io"
-  description: "Ran Wang's academic website on scientific mobility, knowledge networks, regional innovation, and economic geography."
-  search: true
+  description: "Ran Wang studies scientific mobility, knowledge networks, innovation, and the organization of high-skilled careers across organisations and cities."
+  search: false
   navbar:
     title: "Ran Wang"
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Research"
-        href: research.qmd
       - text: "Publications"
         href: publications.qmd
-      - text: "Methods & Data"
-        href: methods.qmd
       - text: "CV"
         href: cv.qmd
     right:

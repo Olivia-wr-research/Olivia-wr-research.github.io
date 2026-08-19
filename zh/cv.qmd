@@ -12,6 +12,14 @@ title: "简历"
 
 ::: {.page-band}
 
+## 研究机会
+
+目前正在寻求与高技能人才流动、科研合作网络、城市与区域创新及相关定量研究方向相契合的科研助理机会，并计划申请 2027 年秋季入学的博士项目。希望在现有研究基础上进一步深化理论与方法训练，并围绕人才流动、科研关系与创新问题形成持续、可积累的研究议程。欢迎就科研助理、博士培养及相关研究合作机会联系。
+
+:::
+
+::: {.page-band .surface #contact}
+
 ## 联系方式
 
 ::: {.contact-panel}
@@ -21,7 +29,7 @@ title: "简历"
 **GitHub**
 [Olivia-wr-research](https://github.com/Olivia-wr-research)
 
-**个人网站**
+**网站**
 [olivia-wr-research.github.io](https://olivia-wr-research.github.io)
 :::
 

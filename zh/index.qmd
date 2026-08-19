@@ -1,23 +1,38 @@
 ---
-pagetitle: "王冉 | 科学家流动、企业创新与区域创新"
+pagetitle: "王冉 | 高技能人才流动、科研合作网络、企业创新"
+page-layout: full
+description: "王冉研究高技能人才流动、科研合作网络、企业创新与城市和区域创新。"
 ---
 
-::: {.hero-v35}
+::: {.hero-v35 .hero-identity}
+::: {.hero-layout}
 ::: {.hero-copy}
-<h1>王冉</h1>
+<p class="hero-main-name">王冉</p>
 <p class="hero-name-alt">Ran Wang</p>
 <p class="hero-affiliation">华东师范大学地理科学学院 · 人文地理学硕士，2026</p>
+<p class="hero-interests">高技能人才流动 · 科研合作网络 · 企业创新 · 城市与区域创新</p>
 
-<p class="hero-interests">科学家流动 · 合作网络 · 目的地选择 · 企业创新测度 · 区域创新</p>
+研究关注高技能研究者在城市与机构之间的流动，以及科研合作与创新活动的空间组织。基于科学家职业履历、论文与合作记录、机构和城市数据及企业创新数据，构建纵向关系数据库，并结合离散选择、网络与空间分析研究人才流动、科研关系和区域创新。
+:::
 
-我的研究关注创新活动如何在空间中被组织起来，尤其关注高技能人才流动、科研合作网络与企业创新策略之间的关系。研究基于纵向职业履历、关系数据、城市层面指标和企业年度创新数据，分析个体选择、机构环境与城市机会结构如何共同塑造区域创新格局。
+::: {.hero-portrait}
+<img src="../assets/profile/ran-wang-portrait.jpg" alt="王冉" />
+:::
 
-研究之外，我喜欢摄影、看电影、羽毛球、飞盘和游泳。这些兴趣让我持续保持对地点、节奏和行动状态的观察；性格上我慢热但勤奋、有毅力，认真负责、自制力良好，也愿意在新的材料、方法和环境中持续学习与适应。
+::: {.hero-personal}
+研究之外，喜欢摄影、电影、羽毛球、飞盘和游泳。
+:::
 
-[研究](research.html){.btn .btn-primary}
-[成果](publications.html){.btn .btn-secondary}
+::: {.hero-actions}
+[成果](publications.html){.btn .btn-primary}
 [简历](cv.html){.btn .btn-secondary}
-[代码](https://github.com/Olivia-wr-research){.btn .btn-secondary}
+[代码](https://github.com/Olivia-wr-research/author-institution-city-linkage){.btn .btn-secondary}
+:::
+
+::: {.hero-secondary-links}
+[研究简介](../assets/profile/Ran_Wang_Research_Collaboration_Profile.pdf)
+[GitHub](https://github.com/Olivia-wr-research)
+:::
 :::
 :::
 
@@ -25,75 +40,33 @@ pagetitle: "王冉 | 科学家流动、企业创新与区域创新"
 
 ## 研究兴趣
 
-::: {.interest-grid}
-::: {.focus-item}
-### 科学家流动与职业轨迹
+::: {.selected-research-grid}
+::: {.selected-research-card}
+<span>01</span>
+<h3>高技能人才流动与城市选择</h3>
+<p class="selected-title">关注高技能研究者跨机构与跨城市流动的空间选择过程，重点考察既有知识暴露、职业经历与城市机会结构如何关联目的地选择及长期流动轨迹。</p>
+<p class="evidence-line">流动网络 · 城市选择 · 职业履历 · 空间机会</p>
 
-关注生物医药顶尖科学家的城际与跨机构流动，结合职业履历、机构任职和城市位置理解学术职业的空间组织。
+[查看成果 →](publications.html#high-skilled-mobility){.publication-link}
 :::
 
-::: {.focus-item}
-### 合作网络与目的地选择
+::: {.selected-research-card}
+<span>02</span>
+<h3>科研合作网络与关系动态</h3>
+<p class="selected-title">关注科研合作关系的形成、持续、中断与再现，考察既往关系历史、当前合作组合与时间条件如何共同关联科研关系的动态演化。</p>
+<p class="evidence-line">共同作者关系 · 关系历史 · 沉寂关系 · 共同发表再现</p>
 
-关注共同作者关系、流动自我网络、迁移前关系基础，以及科学家在候选城市之间作出目的地选择的关系机制。
+[查看成果 →](publications.html#scientific-collaboration){.publication-link}
 :::
 
-::: {.focus-item}
-### 区域创新与城市网络
+::: {.selected-research-card}
+<span>03</span>
+<h3>企业创新与知识资产</h3>
+<p class="selected-title">关注企业技术创新与品牌创新的组合配置及其动态变化，通过研发、专利、商标和企业—年份数据刻画不同创新资产的协同结构及其行业、国家与区域差异。</p>
+<p class="evidence-line">研发企业 · 专利 · 商标 · 企业—年份测度</p>
 
-关注城市科研能力、人才流动网络结构、邻近性，以及城市作为知识生产组织场所的作用。
+[查看成果 →](publications.html#corporate-innovation){.publication-link}
 :::
-
-::: {.focus-item}
-### 企业创新测度
-
-基于研发投入、专利、商标、行业、国家、企业身份和年份信息，构建企业层面的创新测度。
-:::
-:::
-
-:::
-
-::: {.page-band}
-
-## 学术概览
-
-::: {.profile-grid}
-::: {.profile-item}
-### 研究定位
-
-研究领域主要位于经济地理与区域创新，关注流动、合作关系和企业创新数据如何解释创新空间差异。
-:::
-
-::: {.profile-item}
-### 当前成果
-
-已在《世界地理研究》录用论文一篇；围绕生物医药顶尖科学家流动网络、目的地选择和企业创新测度形成投稿及在研成果。
-:::
-
-::: {.profile-item}
-### 数据与方法
-
-纵向数据建设、科学家—机构—城市连接、社会网络分析、条件 Logit、地理信息系统、遥感指标和 Python/R 可复现流程。
-:::
-
-::: {.profile-item}
-### 个人特质
-
-慢热、勤奋、有毅力，认真负责并保持良好自制力；在跨主题研究、数据工作和技术流程中具有较强学习能力与适应能力。
-:::
-:::
-
-:::
-
-::: {.page-band .surface}
-
-## 页面入口
-
-::: {.quick-links}
-[研究](research.html){.btn .btn-secondary}
-[成果](publications.html){.btn .btn-secondary}
-[方法与数据](methods.html){.btn .btn-secondary}
-[简历](cv.html){.btn .btn-secondary}
 :::
 
 :::

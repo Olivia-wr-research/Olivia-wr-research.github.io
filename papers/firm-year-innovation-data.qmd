@@ -1,0 +1,23 @@
+---
+title: "Firm-Year Innovation Data System"
+---
+
+::: {.page-band .surface .paper-page}
+
+<p class="paper-meta">Authors: Ran Wang · Status: Data system in progress</p>
+
+## Research Summary
+
+This project builds a firm-year data system for leading global corporate R&D investors. It connects R&D expenditure, patents, trademarks, industry, country, firm identity, and year so that technology-oriented and market-oriented innovation assets can be analysed in the same empirical structure. The current emphasis is data construction and measurement audit rather than completed causal findings.
+
+## Abstract
+
+<p class="abstract-text">The project develops a structured firm-year innovation dataset for high-R&D firms by linking R&D investment, patent records, trademark records, industry classifications, country information, firm identifiers, and time. Its purpose is to support later analysis of corporate innovation portfolios without reducing innovation to a single output count. The current work focuses on entity matching, intellectual-property linkage, panel construction, and measurement consistency.</p>
+
+## Keywords
+
+Corporate innovation · Firm-year data · R&D · Patents · Trademarks
+
+<p class="paper-back">[Back to Publications](../publications.html)</p>
+
+:::

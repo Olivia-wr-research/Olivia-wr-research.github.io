@@ -1,139 +1,57 @@
 ---
 title: "Research"
+description: "Ran Wang's research agenda on high-skilled mobility, scientific collaboration networks, and corporate innovation."
 ---
 
 ::: {.section-nav-wrap}
 ::: {.section-nav}
-[Focus](#research-focus)
-[Framework](#research-framework)
-[Talent Mobility](#talent-mobility-collaboration-networks-and-regional-innovation)
-[Firm Innovation](#firm-innovation-and-innovation-measurement)
-[Trajectory](#research-trajectory)
-[Foundations](#earlier-research-and-method-foundations)
+[Overview](#overview)
+[High-Skilled Mobility](#high-skilled-mobility-location-choice)
+[Scientific Collaboration](#scientific-collaboration-networks-relational-dynamics)
+[Corporate Innovation](#corporate-innovation-knowledge-assets)
 :::
 :::
 
 ::: {.page-band}
 
-## Research Focus
+## Overview
 
-My research examines the spatial organization of talent and firm innovation activity. At this stage, it is organized around two research streams with a shared concern for regional innovation.
-
-::: {.focus-lines-editorial}
-::: {.focus-line-editorial}
-### Talent Mobility, Collaboration Networks, and Regional Innovation
-
-This stream studies the career mobility of highly skilled workers and scientists, with particular attention to how people move across cities and institutions. It asks how urban opportunity structures, prior collaboration ties, multidimensional proximity, and research platforms are associated with mobility networks, career trajectories, and destination choice. The scale of analysis moves from city-level mobility networks to individual career histories and event-level comparison among candidate destinations.
-:::
-
-::: {.focus-line-editorial}
-### Firm Innovation and Innovation Measurement
-
-This stream studies leading global R&D investors through a firm-year data system that links R&D expenditure, patents, trademarks, industry, country, firm identity, and year. It focuses on the measurement, combination, and temporal change of technological and brand-oriented innovation, with attention to typological differences, path dependence, and firm heterogeneity.
-:::
-:::
+My research examines how people, relationships, and innovation activity are organised across institutions, cities, and regions. The current agenda develops through three connected directions: high-skilled mobility and location choice, scientific collaboration networks and relational dynamics, and corporate innovation and knowledge assets, with cities and regional innovation serving as the shared spatial and institutional context.
 
 :::
 
 ::: {.page-band .surface}
 
-## Research Framework
+## High-Skilled Mobility & Location Choice
 
-<div class="research-framework research-framework-two" aria-label="Editorial research framework with two research streams">
-<div class="framework-stream">
-<p class="framework-kicker">Stream I</p>
-<h3>Talent Mobility</h3>
-<ol>
-<li><strong>Spatial Structure</strong><span>Intercity mobility networks and urban opportunity structures</span></li>
-<li><strong>Individual Embeddedness</strong><span>Career histories, institutions, and mobility ego-networks</span></li>
-<li><strong>Destination Choice</strong><span>Pre-move coauthor ties and candidate destinations</span></li>
-</ol>
-</div>
-<div class="framework-stream">
-<p class="framework-kicker">Stream II</p>
-<h3>Firm Innovation</h3>
-<ol>
-<li><strong>Innovation Measurement</strong><span>R&D, patents, trademarks, and firm identity</span></li>
-<li><strong>Technology-Brand Combination</strong><span>Joint measurement of technological and market-facing innovation</span></li>
-<li><strong>Dynamic Evolution</strong><span>Firm-year trajectories, heterogeneity, and spatial context</span></li>
-</ol>
-</div>
-<p class="framework-context">Regional innovation provides the broader interpretive context for both streams.</p>
-</div>
+This stream studies the movement of high-skilled scientific talent across cities and institutions, with attention to mobility networks, career stages, destination alternatives, and the city-level conditions that structure observed moves.
 
+::: {.stream-output-grid}
+::: {.output-item .research-project-card}
+<p><span class="status-badge status-accepted">Accepted · First Author</span></p>
+<h3>Spatial Structure and Determinants of Global Top Biomedical Scientists' Mobility from an Urban Network Perspective</h3>
+<p>Analyzes the intercity mobility network of global top biomedical scientists, career-stage differences, and city-level factors associated with mobility ties.</p>
+<p><strong>Data:</strong> 500 scientists; 1970-2023 career histories; 398 cities; 1,440 intercity mobility links; learning- and work-stage mobility records; city science and innovation attributes.</p>
+<p><strong>Methods:</strong> career-history reconstruction; directed weighted intercity mobility network; social network analysis; GIS spatial analysis; Heckman two-step model.</p>
+[View Output →](publications.html#high-skilled-mobility){.publication-link}
 :::
 
-::: {.page-band}
-
-## Talent Mobility, Collaboration Networks, and Regional Innovation
-
-::: {.stream-section}
-::: {.stream-card}
-### Intercity Mobility Networks of Elite Biomedical Scientists
-
-This work reconstructs the career histories of highly cited biomedical scientists and organizes intercity employment moves as directed ties among cities. The analysis treats cities as institutional and scientific opportunity environments, then examines the spatial structure and city-level conditions associated with mobility-link formation.
-
-<p class="research-meta"><strong>Data</strong> Longitudinal career histories · institution-city matching · mobility events</p>
-<p class="research-meta"><strong>Methods</strong> Social network analysis · city-level indicators · GIS interpretation · Heckman</p>
-<p class="research-status">Accepted article in <em>World Regional Studies</em>.</p>
+::: {.output-item .research-project-card}
+<p><span class="status-badge status-submitted">Submitted · First Author</span></p>
+<h3>Structure and Formation Mechanisms of Intercity Mobility Networks of Global Top Biomedical Scientists: A Whole-Network and Ego-Network Perspective</h3>
+<p>Extends the mobility agenda by combining whole-network structure with ego-network measures and career-trajectory information.</p>
+<p><strong>Data:</strong> long-term career histories for a top-scientist roster; city-level mobility networks; ego-network subsample; collaboration and career-stage information.</p>
+<p><strong>Methods:</strong> whole-network analysis; ego-network analysis; constraint; effective size; Shannon entropy; weighted ERGM; GIS.</p>
+[View Output →](publications.html#whole-ego-mobility){.publication-link}
 :::
 
-::: {.stream-card}
-### Whole-Network and Ego-Network Extension
-
-The next stage connects city-level network structure with scientist-level mobility ego-networks. A 1970-2023 longitudinal database of 500 elite biomedical scientists and a 40-scientist ego-network subset support analysis of how individual careers are embedded in broader urban mobility networks.
-
-<p class="research-meta"><strong>Data</strong> Scientist-institution-city histories · mobility ego-network subset</p>
-<p class="research-meta"><strong>Methods</strong> Whole-network analysis · ego networks · proximity measures · WERGM</p>
-<p class="research-status">Submitted manuscript.</p>
-:::
-
-::: {.stream-card}
-### Destination Choice and Relational Mechanisms
-
-Recent work treats an observed intercity job move as a choice among candidate destinations. It compares the selected city with alternative cities and measures pre-move coauthor ties before each move, including tie presence, breadth, persistence, network share, timing, and domestic or international context.
-
-<p class="research-meta"><strong>Data</strong> Mobility event by candidate-destination structure · time-ordered coauthor ties</p>
-<p class="research-meta"><strong>Methods</strong> Candidate sets · event-stratified conditional logit · temporal design</p>
-<p class="research-status">Submitted manuscript.</p>
-:::
-:::
-
-:::
-
-::: {.page-band .surface}
-
-## Firm Innovation and Innovation Measurement
-
-::: {.stream-section}
-::: {.stream-card}
-### Firm-Year Innovation Data System
-
-This work develops a firm-year data system for leading global R&D investors. It links R&D expenditure with patents, trademarks, industry, country, firm identity, and year so that technological and market-facing innovation can be studied in the same empirical structure.
-
-<p class="research-meta"><strong>Data</strong> R&D investors · patents · trademarks · industry and country fields</p>
-<p class="research-meta"><strong>Methods</strong> Entity matching · IP linkage · panel construction · measurement audit</p>
-<p class="research-status">Data-system development in progress.</p>
-:::
-
-::: {.stream-card}
-### Technology-Brand Innovation Combinations
-
-This line asks how patent portfolios and trademark portfolios combine across firms. The emphasis is on measurement: how to compare technology-oriented and brand-oriented innovation without collapsing firm innovation into a single output count.
-
-<p class="research-meta"><strong>Data</strong> Linked intellectual-property records · firm-year observations</p>
-<p class="research-meta"><strong>Methods</strong> Indicator construction · portfolio comparison · typological description</p>
-<p class="research-status">Research design and data construction in progress.</p>
-:::
-
-::: {.stream-card}
-### Dynamic Evolution and Spatial Context
-
-The firm-year panel also supports questions about change over time. Current design work considers how innovation configurations vary by industry, country, firm characteristics, and regional innovation environments.
-
-<p class="research-meta"><strong>Data</strong> Firm-year innovation records · industry and national context</p>
-<p class="research-meta"><strong>Methods</strong> Longitudinal comparison · heterogeneity analysis · spatial contextualization</p>
-<p class="research-status">Ongoing research stream.</p>
+::: {.output-item .research-project-card}
+<p><span class="status-badge status-submitted">Submitted · First Author</span></p>
+<h3>Pre-move coauthor ties and the direction of scientific mobility: A city-level choice analysis of highly cited biomedical scientists</h3>
+<p>Examines whether direct coauthor ties before a move distinguish selected destination cities from candidate alternatives among highly cited biomedical scientists.</p>
+<p><strong>Data:</strong> observed mobility events; focal scientists; candidate-city choice sets; pre-move coauthor ties; city-level destination alternatives.</p>
+<p><strong>Methods:</strong> event-specific candidate-set construction; conditional logit; pre-move tie measurement; geographic-distance control; robustness and timing checks.</p>
+[View Output →](publications.html#pre-move-coauthor-ties){.publication-link}
 :::
 :::
 
@@ -141,98 +59,54 @@ The firm-year panel also supports questions about change over time. Current desi
 
 ::: {.page-band}
 
-## Research Trajectory
+## Scientific Collaboration Networks & Relational Dynamics
 
-<div class="trajectory-line editorial-timeline" data-research-timeline>
-<article>
-<div class="timeline-number">01</div>
-<div class="timeline-node" aria-hidden="true"></div>
-<div class="timeline-body">
-<p class="timeline-kicker">Spatial and Quantitative Foundations</p>
-<h3>Remote sensing, trade networks, and applied quantitative training</h3>
-<p>Early projects moved from spatial data processing, urban resilience, and global trade networks into quantitative research training, building a foundation for analyzing spatial data, temporal change, and relational networks.</p>
-<p class="timeline-meta">GIS · VIIRS-DNB · DTW · K-Means · UN Comtrade · Network Analysis</p>
-</div>
-</article>
-<article>
-<div class="timeline-number">02</div>
-<div class="timeline-node" aria-hidden="true"></div>
-<div class="timeline-body">
-<p class="timeline-kicker">Talent Mobility Networks</p>
-<h3>From career histories to city-level mobility networks</h3>
-<p>By reconstructing scientist career histories and matching institutions with cities, individual career moves are organized as directed mobility relations among cities. This supports analysis of mobility structure, city hierarchy, and network formation conditions.</p>
-<p class="timeline-meta">Career Histories · SNA · GIS · Heckman</p>
-</div>
-</article>
-<article>
-<div class="timeline-number">03</div>
-<div class="timeline-node" aria-hidden="true"></div>
-<div class="timeline-body">
-<p class="timeline-kicker">Multi-scale Relational Analysis</p>
-<h3>From whole networks to individual career trajectories</h3>
-<p>The research then moves from the overall city network to individual career trajectories, mobility ego-networks, and multidimensional proximity, connecting macro mobility structure with micro relational organization.</p>
-<p class="timeline-meta">WERGM · Ego Networks · Proximity · Longitudinal Data</p>
-</div>
-</article>
-<article>
-<div class="timeline-number">04</div>
-<div class="timeline-node" aria-hidden="true"></div>
-<div class="timeline-body">
-<p class="timeline-kicker">Event-level Choice Design</p>
-<h3>From realized moves to candidate-destination comparison</h3>
-<p>Each observed career move is modelled as an event-level choice among candidate cities, making it possible to compare selected and unselected destinations through pre-move collaboration ties and their scale, persistence, and timing.</p>
-<p class="timeline-meta">Candidate Sets · Conditional Logit · Coauthor Ties · Temporal Design</p>
-</div>
-</article>
-<article>
-<div class="timeline-number">05</div>
-<div class="timeline-node" aria-hidden="true"></div>
-<div class="timeline-body">
-<p class="timeline-kicker">Innovation Measurement Extension</p>
-<h3>From talent as an innovation actor to firms</h3>
-<p>The current extension turns to leading global R&D investors and builds innovation measures from R&D expenditure, patents, trademarks, and firm-year information.</p>
-<p class="timeline-meta">R&D · Patents · Trademarks · Firm-Year Panel</p>
-</div>
-</article>
-</div>
+This stream studies scientific collaboration as a longitudinal relational process. The current manuscript follows dormant coauthor relations and observes whether joint publication recurs after a complete publication hiatus.
+
+::: {.stream-output-grid}
+::: {.output-item .research-project-card}
+<p><span class="status-badge status-submitted">Submitted · First Author</span></p>
+<h3>When Coauthorship Goes Quiet: Relational History, Portfolio Context, and the Recurrence of Scientific Ties</h3>
+<p>Studies how prior relationship history, current collaboration-portfolio breadth, and elapsed dormancy are associated with observed coauthorship recurrence after publication dormancy.</p>
+<p><strong>Data:</strong> longitudinal focal-scientist publication records; recurrent focal-scientist-prior-coauthor dormant spells; annual risk-year observations; primary publication-hiatus definition.</p>
+<p><strong>Methods:</strong> recurrent dormant-spell construction; discrete-time event-history analysis; complementary-log-log model; clustered covariance; standardized adjusted predictions; threshold and measurement robustness analyses.</p>
+<p><strong>Interpretation boundary:</strong> coauthorship recurrence is an observable bibliometric event, not evidence of intentional reconnection, restored trust, or resumed interpersonal contact.</p>
+[View Output →](publications.html#after-collaboration-goes-quiet){.publication-link}
+:::
+:::
 
 :::
 
 ::: {.page-band .surface}
 
-## Earlier Research and Method Foundations
+## Corporate Innovation & Knowledge Assets
 
-::: {.foundation-list}
-::: {.foundation-row}
-### Urban Resilience and Remote Sensing
+This stream builds a measurement foundation for comparing firm-level technological and brand-oriented innovation within the same empirical structure.
 
-Nighttime-light resilience research used VIIRS-DNB daily data, Fisher Information, DTW, K-Means, and GIS processing to compare urban responses to the COVID-19 shock.
-
-<p class="research-meta">VIIRS-DNB · FIL · DTW · K-Means · GIS</p>
+::: {.stream-output-grid}
+::: {.output-item .research-project-card}
+<p><span class="status-badge status-output">Data System in Progress</span></p>
+<h3>Firm-Year Innovation Data System</h3>
+<p>This project builds firm-year data for leading global R&D firms by linking R&D expenditure, patents, trademarks, industry, country, firm identity, and year, so technology-oriented and market-oriented innovation can be analyzed in a shared empirical structure.</p>
+<p><strong>Data:</strong> high-R&D firms; patents; trademarks; industry and country fields.</p>
+<p><strong>Methods:</strong> entity matching; intellectual-property linkage; panel construction; measurement audit.</p>
+[View Output →](publications.html#corporate-innovation){.publication-link}
 :::
 
-::: {.foundation-row}
-### Global Trade Networks
-
-Trade-network work used UN Comtrade data to construct directed weighted networks and examine centrality, core structure, and temporal change.
-
-<p class="research-meta">UN Comtrade · Weighted Networks · Centrality · Temporal Comparison</p>
+::: {.output-item .research-project-card}
+<p><span class="status-badge status-output">Research Design and Data Construction in Progress</span></p>
+<h3>Technology-Brand Innovation Portfolios</h3>
+<p>This direction compares how patent portfolios and trademark portfolios co-appear within firms, without reducing innovation to a single output count.</p>
+<p><strong>Data:</strong> linked intellectual-property records; firm-year observations.</p>
+<p><strong>Methods:</strong> indicator construction; portfolio comparison; type description.</p>
+[View Output →](publications.html#corporate-innovation){.publication-link}
 :::
 
-::: {.foundation-row}
-### Applied Quantitative Modelling
-
-Interdisciplinary modelling training included feature selection, model comparison, validation, and sensitivity analysis in applied quantitative contexts.
-
-<p class="research-meta">Lasso · RFE · Random Forest · SVM · OLS</p>
-:::
-
-::: {.foundation-row}
-### Policy, Planning, and Spatial Analysis Practice
-
-Policy and planning practice involved policy review, case collection, data organization, report writing, GIS mapping, territorial spatial planning, port planning, rural revitalization, and industrial planning.
-
-<p class="research-meta">GIS · Policy Review · Spatial Diagnosis · Report Writing</p>
+::: {.output-item .research-project-card}
+<h3>Dynamic Evolution and Spatial Context</h3>
+<p>The firm-year panel also supports analysis of temporal change. The current design focuses on how innovation portfolios vary by industry, country, firm characteristics, and regional innovation environment.</p>
+<p><strong>Data:</strong> annual firm innovation records; industry and country context.</p>
+[View Output →](publications.html#corporate-innovation){.publication-link}
 :::
 :::
 

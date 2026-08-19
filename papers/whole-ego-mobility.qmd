@@ -1,43 +1,22 @@
 ---
-title: "Structure and Formation Mechanisms of the Intercity Mobility Network of Top Global Biomedical Scientists: A Dual Whole-Network and Ego-Network Perspective"
-description: "Submitted manuscript on whole-network and ego-network mechanisms in top biomedical scientist mobility."
+title: "Structure and Formation Mechanisms of Intercity Mobility Networks of Global Top Biomedical Scientists: A Whole-Network and Ego-Network Perspective"
 ---
 
 ::: {.page-band .surface .paper-page}
 
-<p class="paper-meta">First Author · Submitted Manuscript</p>
+<p class="paper-meta">Authors: Ran Wang (First author) · Status: Submitted manuscript</p>
+
+## Research Summary
+
+This manuscript extends the mobility-network study by combining whole-network and ego-network perspectives. It uses long-term career histories, research-output records, and city attributes for top global biomedical scientists to examine both the structure of intercity mobility ties and the individual positions embedded in those networks. The analysis links network structure, city science conditions, proximity relations, research platforms, and individual career trajectories, treating scientist mobility as a cross-scale spatial process rather than a simple movement count.
 
 ## Abstract
 
-<p class="abstract-text">Scientific talent mobility is an important force shaping the global innovation landscape. Existing studies, however, have largely explained talent mobility from a whole-network perspective, emphasizing urban science and innovation conditions and multidimensional proximity, while paying insufficient attention to individual career trajectories and the supporting role of research platforms. Using career histories, research outputs, and urban attribute data for top global biomedical scientists from 1970 to 2023, this study combines social network analysis, weighted exponential random graph models, and ego-network analysis to examine the structural characteristics, formation mechanisms, and individual mobility processes of their intercity mobility network. The results show that: (1) The intercity mobility network of top global biomedical scientists exhibits a low-density, highly selective core–periphery structure. Its European and North American core and transatlantic connections remain broadly stable, while cities specializing in medical research, biomedical research and development, and related industrial activities become increasingly prominent in later periods. (2) Intercity mobility ties among top global biomedical scientists are jointly shaped by endogenous network structure, urban science and innovation conditions, and multidimensional proximity. Geographical distance consistently constrains mobility, whereas institutional proximity consistently facilitates it. The effect of cultural proximity weakens in the later period, while cognitive proximity shows no stable association. The effects of urban science and innovation conditions vary across periods and between origins and destinations: specialized research platforms explain mobility more consistently than general economic scale. The initial stock of cross-platform embedded talent is significantly associated with subsequent mobility ties, with a more stable association at the origin. (3) Ego-network analysis shows that the intercity mobility of top global biomedical scientists is a cross-scale spatial process jointly shaped by network structure, urban conditions, multidimensional proximity, historical ties, and individual career trajectories.</p>
+<p class="abstract-text">Scientific talent mobility is an important force shaping the global innovation landscape. Existing studies, however, have largely explained talent mobility from a whole-network perspective, emphasizing urban science and innovation conditions and multidimensional proximity, while paying insufficient attention to individual career trajectories and the supporting role of research platforms. Using career histories, research outputs, and urban attribute data for top global biomedical scientists from 1970 to 2023, this study combines social network analysis, weighted exponential random graph models, and ego-network analysis to examine the structural characteristics, formation mechanisms, and individual mobility processes of their intercity mobility network. The results show that: (1) The intercity mobility network of top global biomedical scientists exhibits a low-density, highly selective core-periphery structure. Its European and North American core and transatlantic connections remain broadly stable, while cities specializing in medical research, biomedical research and development, and related industrial activities become increasingly prominent in later periods. (2) Intercity mobility ties among top global biomedical scientists are jointly shaped by endogenous network structure, urban science and innovation conditions, and multidimensional proximity. Geographical distance consistently constrains mobility, whereas institutional proximity consistently facilitates it. The effect of cultural proximity weakens in the later period, while cognitive proximity shows no stable association. The effects of urban science and innovation conditions vary across periods and between origins and destinations: specialized research platforms explain mobility more consistently than general economic scale. The initial stock of cross-platform embedded talent is significantly associated with subsequent mobility ties, with a more stable association at the origin. (3) Ego-network analysis shows that the intercity mobility of top global biomedical scientists is a cross-scale spatial process jointly shaped by network structure, urban conditions, multidimensional proximity, historical ties, and individual career trajectories.</p>
 
-## Research Workflow
+## Keywords
 
-<div class="paper-workflow">
-<div>
-<h3>Data</h3>
-<ul>
-<li>1970–2023 career histories of top global biomedical scientists</li>
-<li>Top-500 scientist roster</li>
-<li>Institutional and city appointments</li>
-<li>Research outputs</li>
-<li>Urban attributes</li>
-<li>Organization-platform histories</li>
-</ul>
-</div>
-<div>
-<h3>Methods</h3>
-<ul>
-<li>Directed weighted intercity mobility networks</li>
-<li>Social network analysis</li>
-<li>Whole-network analysis</li>
-<li>Ego-network analysis</li>
-<li>Multi-period WERGM</li>
-<li>Multidimensional proximity</li>
-<li>Cross-platform career-trajectory measurement</li>
-</ul>
-</div>
-</div>
+Scientific mobility · Whole network · Ego network · Biomedical scientists · WERGM
 
 <p class="paper-back">[Back to Publications](../publications.html)</p>
 

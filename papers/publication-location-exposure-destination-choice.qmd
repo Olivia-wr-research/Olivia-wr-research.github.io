@@ -1,0 +1,23 @@
+---
+title: "Pre-Move Publication-Location Exposure and Destination Choice among Elite Biomedical Scientists"
+---
+
+::: {.page-band .surface .paper-page}
+
+<p class="paper-meta">Authors: Ran Wang · Status: Working paper</p>
+
+## Research Summary
+
+This working paper examines whether elite biomedical scientists are more likely to move to candidate cities already present in their pre-move publication-location environment. It organises observed intercity career moves as event-specific destination choices and compares selected cities with alternative destinations. The key measure is place-based exposure: whether a candidate city appeared in the scientist's origin-anchored publication environment before the move, rather than a verified direct interpersonal tie.
+
+## Abstract
+
+<p class="abstract-text">The study organizes observed intercity career moves as event-specific destination choices and compares selected cities with alternative destinations. Pre-move publication-location exposure captures whether a candidate city was already present in the scientist's origin-anchored publication environment. It is a place-based exposure measure rather than a verified direct interpersonal tie. Public sample numbers are withheld until the final public-release version is confirmed.</p>
+
+## Keywords
+
+Publication-location exposure · Destination choice · Scientific mobility · Candidate cities · Biomedical scientists
+
+<p class="paper-back">[Back to Publications](../publications.html)</p>
+
+:::

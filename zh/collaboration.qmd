@@ -1,0 +1,107 @@
+---
+title: "合作"
+description: "王冉可为研究项目和导师合作提供的贡献。"
+---
+
+::: {.page-band}
+
+## 合作
+
+我关注 2027 入学 / 申请周期中的博士、predoc / RA 和研究合作机会。最适合的合作场景是需要严谨纵向数据构建、关系测量、空间 / 网络分析，以及对科学职业或高技能流动证据进行克制解释的项目。
+
+:::
+
+::: {.page-band .surface}
+
+## 研究对象
+
+::: {.capability-grid .capability-grid-five}
+::: {.capability-panel}
+### 科学职业
+职业阶段、任职经历、机构流动和时间排序。
+:::
+::: {.capability-panel}
+### 高技能人才流动
+目的地选择、流通、吸引、保留和跨城市流动。
+:::
+::: {.capability-panel}
+### 合作网络
+合著、自我网络、关系持续性和关系资本。
+:::
+::: {.capability-panel}
+### 组织
+大学、研究机构、企业和平台历史。
+:::
+::: {.capability-panel}
+### 城市
+城市机会结构、空间约束和区域创新背景。
+:::
+:::
+
+:::
+
+::: {.page-band}
+
+## 数据能力
+
+::: {.method-chain}
+::: {.method-row}
+### 纵向职业重构
+
+构建有来源审计的职业履历，区分教育、就业、论文署名机构和经验证的流动事件。
+:::
+
+::: {.method-row}
+### 论文与机构关联
+
+处理书目记录、机构字段、机构—城市匹配、ROR/OpenAlex/Scopus 流程和不确定性记录。
+:::
+
+::: {.method-row}
+### 关系与空间数据
+
+构建合著网络、流动网络、候选目的地结构、城市属性和空间关联研究数据。
+:::
+
+::: {.method-row}
+### 实体匹配与整合
+
+当前工作包括身份匹配、时间验证、冲突日志、合成样本和大型关系数据的可复现流程。
+:::
+:::
+
+:::
+
+::: {.page-band .surface}
+
+## 分析能力
+
+::: {.profile-grid .profile-grid-three}
+::: {.profile-item}
+### 选择模型
+事件层面候选集、条件 logit、聚类稳健推断和时间测量。
+:::
+::: {.profile-item}
+### 网络分析
+有向加权网络、中心性、自我网络、WERGM、邻近性和关系持续性。
+:::
+::: {.profile-item}
+### 空间与纵向设计
+GIS、城市匹配、时间比较、可复现 Python/R/Stata 工作流和来源冲突审计。
+:::
+:::
+
+:::
+
+::: {.page-band}
+
+## 当前兴趣
+
+::: {.quick-links}
+[博士 / 2027 入学](cv.html){.btn .btn-secondary}
+[Predoc / RA](../assets/profile/Ran_Wang_Research_Collaboration_Profile.pdf){.btn .btn-primary}
+[研究合作](../assets/profile/Ran_Wang_Research_Collaboration_Profile.pdf){.btn .btn-secondary}
+[联系](cv.html#contact){.btn .btn-secondary}
+:::
+
+:::
