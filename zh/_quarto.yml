@@ -21,11 +21,6 @@ project:
     - ../assets/cv/Ran_Wang_CV_Public.pdf
     - ../assets/profile/Ran_Wang_Research_Collaboration_Profile.pdf
     - ../assets/profile/ran-wang-portrait.jpg
-    - ../assets/research/urban-network-biomedical-mobility-signature-neutral.jpg
-    - ../assets/research/whole-ego-mobility-signature-zh.jpg
-    - ../assets/research/china-us-biomedical-innovation-signature-zh.jpg
-    - ../assets/research/global-trade-network-signature-zh.jpg
-    - ../assets/research/urban-resilience-nighttime-lights-signature-zh-1.png
     - ../assets/js/language-switch.js
     - ../assets/js/academic-v35.js
 
