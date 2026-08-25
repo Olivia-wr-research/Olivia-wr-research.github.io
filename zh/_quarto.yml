@@ -3,6 +3,7 @@ project:
   output-dir: ../docs/zh
   post-render:
     - python3 ../assets/scripts/fix_bilingual_nav.py zh
+    - python3 ../assets/scripts/copy_analytics_events.py zh
   render:
     - index.qmd
     - research.qmd
@@ -23,6 +24,7 @@ project:
     - ../assets/profile/ran-wang-portrait.jpg
     - ../assets/js/language-switch.js
     - ../assets/js/academic-v35.js
+    - ../assets/js/analytics-events.js
 
 lang: zh-CN
 
@@ -56,6 +58,7 @@ format:
     include-after-body:
       - ../assets/js/language-switch.html
       - ../assets/js/academic-v35.html
+      - ../assets/js/analytics-events.html
     toc: false
     smooth-scroll: true
     link-external-newwindow: true
