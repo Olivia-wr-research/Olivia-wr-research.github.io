@@ -1,0 +1,4 @@
+interface:
+  display_name: "Citation & Evidence Audit"
+  short_description: "Audit academic claims against their cited evidence. Use for 引文核查, citation audit, claim-evidence verification,"
+  default_prompt: "Audit the active draft claim-by-claim against accessible sources and the evidence matrix. Prioritize citation mismatch and causal overclaiming."

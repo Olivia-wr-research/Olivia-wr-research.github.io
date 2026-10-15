@@ -1,0 +1,4 @@
+interface:
+  display_name: "Methods Mapping"
+  short_description: "Compare data, samples, operationalization, research designs, and identification strategies across academic stu"
+  default_prompt: "Map the empirical and identification architecture of the active literature and identify defensible method or measurement problems."

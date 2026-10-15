@@ -1,0 +1,4 @@
+interface:
+  display_name: "Literature Search"
+  short_description: "Design and execute reproducible academic literature searches. Use for 文献检索, systematic search, search strategy"
+  default_prompt: "Build or update the active project search strategy and search log. Maximize recall without pretending inaccessible databases were searched."

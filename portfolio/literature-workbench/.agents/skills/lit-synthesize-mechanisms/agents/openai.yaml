@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mechanism Synthesis"
+  short_description: "Synthesize causal mechanisms across academic studies. Use for 影响机制, mechanism synthesis, mediators, causal pat"
+  default_prompt: "Reconstruct and compare the causal mechanisms in the active literature, preserving evidence status and rival mechanisms."

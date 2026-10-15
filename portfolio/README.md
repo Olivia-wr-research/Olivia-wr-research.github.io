@@ -38,6 +38,20 @@ An offline CLI and Python library for extracting source-linked candidate career 
 
 From a clone of this repository: `cd portfolio/career-evidence`, then follow the project README. Generated real-person outputs must remain private.
 
+## Literature & Theory Workbench · Agent workflow design
+
+[Toolkit and quick start](literature-workbench/README.md) · [中文说明](literature-workbench/README.zh-CN.md) · [Synthetic fixture](literature-workbench/examples/synthetic/evidence.csv) · [Compatibility](literature-workbench/docs/COMPATIBILITY.md)
+
+A repository-scoped toolkit that separates literature discovery, evidence extraction, theory/method comparison, framework building and claim audits.
+
+- 11 skills, 8 advisory role configurations, 13 artifact templates and local Python helpers.
+- 21 offline regression tests; all 11 skills also passed the skill-creator structural validator.
+- Creates isolated project scaffolds, summarizes records and checks evidence CSV structure, including negative cases.
+- Includes no private research topic, manuscript, live search history or model-generated review.
+- Not a standalone app or autonomous review service. Client/model behavior and scientific quality are not benchmarked. Role instructions are not security sandboxes.
+
+Open the complete `portfolio/literature-workbench` subfolder in a compatible client. The scripts work without a model; activating agent skills may send content to the client's providers/tools. MIT licensed.
+
 ## Author–Institution–City Linkage · Research data engineering
 
 [Standalone repository](https://github.com/Olivia-wr-research/author-institution-city-linkage)

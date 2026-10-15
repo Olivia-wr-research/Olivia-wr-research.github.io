@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paper Evidence Extraction"
+  short_description: "Extract structured, source-traceable evidence from academic papers. Use for 逐篇读文献, evidence matrix, paper codi"
+  default_prompt: "Extract traceable evidence from the assigned papers into the active project evidence matrix, with locators and E0-E4 levels."

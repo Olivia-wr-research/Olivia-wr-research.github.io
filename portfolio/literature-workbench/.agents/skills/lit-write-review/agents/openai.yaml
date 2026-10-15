@@ -1,0 +1,4 @@
+interface:
+  display_name: "Literature Review Writing"
+  short_description: "Write or revise an academic literature review/theory section from an existing evidence base. Use for 撰写文献综述, l"
+  default_prompt: "Write an argument-driven academic literature review from the active audited evidence base, preserving disagreement and claim-citation traceability."

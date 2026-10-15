@@ -1,0 +1,4 @@
+interface:
+  display_name: "Literature Review Orchestrator"
+  short_description: "Orchestrate an evidence-locked academic literature review or theoretical-framework workflow. Use for 文献综述, lit"
+  default_prompt: "Run an evidence-locked literature review workflow for the active project. Start from the current gate; do not jump to prose before the evidence base is ready."

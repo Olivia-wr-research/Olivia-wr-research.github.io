@@ -1,0 +1,4 @@
+interface:
+  display_name: "Theory Mapping"
+  short_description: "Map theories and constructs across a literature. Use for 理论梳理, theory mapping, theoretical lens comparison, co"
+  default_prompt: "Map the theories, constructs, levels, causal logic, boundary conditions, and rival explanations in the active evidence base."

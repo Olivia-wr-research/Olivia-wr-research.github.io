@@ -1,0 +1,4 @@
+interface:
+  display_name: "Literature Screening"
+  short_description: "Screen an academic literature corpus against explicit inclusion/exclusion criteria. Use for 文献筛选, title/abstra"
+  default_prompt: "Screen the active literature corpus using the project protocol and record defensible inclusion/exclusion reasons."

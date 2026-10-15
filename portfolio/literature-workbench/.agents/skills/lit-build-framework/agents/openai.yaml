@@ -1,0 +1,4 @@
+interface:
+  display_name: "Theoretical Framework Builder"
+  short_description: "Build a theoretical or conceptual framework from an evidence-locked literature base. Use for 理论框架, conceptual "
+  default_prompt: "Build a parsimonious theoretical framework from the active evidence base, with explicit mechanisms, boundary conditions, rivals, and evidence status."

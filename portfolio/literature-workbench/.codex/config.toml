@@ -1,0 +1,4 @@
+# Project agent roles live in agents/*.toml.
+# Inherit model, concurrency and permissions from the parent/user configuration.
+# This toolkit does not enable providers or override approval policies.
+[agents]

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Gap Diagnosis"
+  short_description: "Diagnose defensible research gaps from an audited literature base. Use for 研究缺口, research gap, novelty, contri"
+  default_prompt: "Diagnose evidence-backed research gaps in the active literature and separate strong theoretical gaps from novelty rhetoric."
