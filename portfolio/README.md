@@ -24,6 +24,20 @@ frontiersignal verify runs/replay
 
 The example HTML is downloadable source, not a hosted application. FrontierSignal is an early-stage research utility, not an LLM agent, systematic review, expert ranking or production service. OpenAlex identifiers are not independently verified identities, and publication affiliations are not current employment.
 
+## Career Evidence Pipeline · Document extraction and candidate trajectories
+
+[Source and quick start](career-evidence/README.md) · [中文说明](career-evidence/README.zh-CN.md) · [Example events](career-evidence/examples/expected/extracted/events.json) · [Example trajectory](career-evidence/examples/expected/trajectory/trajectory.json)
+
+An offline CLI and Python library for extracting source-linked candidate career events from local documents, then deriving candidate spells and moves after explicit organization-ID review.
+
+- Preserves exact source text, locators, date uncertainty and review input hashes.
+- Entirely synthetic example: 5 events, 5 spells, 2 candidate moves; no real-person records.
+- 31 offline tests; a built wheel was installed and exercised outside the source directory.
+- No LLM, scraping service, automatic gold labels or hosted upload interface. English rule patterns are limited and no real-person accuracy benchmark is claimed.
+- An intentionally scoped public subset of an existing project, not its complete private pipeline. MIT licensed.
+
+From a clone of this repository: `cd portfolio/career-evidence`, then follow the project README. Generated real-person outputs must remain private.
+
 ## Author–Institution–City Linkage · Research data engineering
 
 [Standalone repository](https://github.com/Olivia-wr-research/author-institution-city-linkage)

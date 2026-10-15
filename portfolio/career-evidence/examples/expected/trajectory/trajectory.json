@@ -1,0 +1,258 @@
+{
+  "candidate_moves": [
+    {
+      "created_run_id": "derive-d8a26c1ba7a993111f71",
+      "derivation_rule_version": "public-conservative-1",
+      "from_spell_id": "spell-1f8625046f80712f",
+      "mobility_move_id": "move-76ec3702a31249d2",
+      "move_date": {
+        "precision": "year",
+        "value": "2014"
+      },
+      "move_kind": "organization",
+      "scientist_id": "synthetic-person",
+      "source_event_ids": {
+        "from": [
+          "evt-d284dfa30b97f4f9"
+        ],
+        "to": [
+          "evt-50e35d80750f342d"
+        ]
+      },
+      "status": "candidate",
+      "to_spell_id": "spell-491adca0ddf64be3"
+    },
+    {
+      "created_run_id": "derive-d8a26c1ba7a993111f71",
+      "derivation_rule_version": "public-conservative-1",
+      "from_spell_id": "spell-491adca0ddf64be3",
+      "mobility_move_id": "move-39c72b996df244f7",
+      "move_date": {
+        "precision": "year",
+        "value": "2018"
+      },
+      "move_kind": "return",
+      "scientist_id": "synthetic-person",
+      "source_event_ids": {
+        "from": [
+          "evt-50e35d80750f342d"
+        ],
+        "to": [
+          "evt-e2da464c5ed1a19a"
+        ]
+      },
+      "status": "candidate",
+      "to_spell_id": "spell-afa28770d9f2cbfb"
+    }
+  ],
+  "gold_records": 0,
+  "normalized_input_sha256": "563982d069a0de2c19f28ac87d8986ea027f25310280c198d2b890a4d27410ad",
+  "record_class": "machine_candidate",
+  "review_input_sha256": "f2755274bfea90d822da0c60a4e71c373e173386616de0073485308fc579a7cd",
+  "rules": {
+    "excluded_from_primary_moves": [
+      "visiting",
+      "leave",
+      "consulting",
+      "honorary",
+      "board",
+      "advisory",
+      "short_visit"
+    ],
+    "version": "public-conservative-1"
+  },
+  "run_id": "derive-d8a26c1ba7a993111f71",
+  "source_sha256": "a65f5bd698be0a6489309c414b600791b523303d4d5edef00ebe18bf6b780814",
+  "spells": [
+    {
+      "career_spell_id": "spell-1f8625046f80712f",
+      "city": null,
+      "country": null,
+      "created_run_id": "derive-d8a26c1ba7a993111f71",
+      "derivation_rule_version": "public-conservative-1",
+      "end": {
+        "precision": "year",
+        "value": "2014"
+      },
+      "is_concurrent": false,
+      "is_primary": true,
+      "organization_id": "synthetic-north",
+      "organization_name": "EXAMPLE NORTH INSTITUTE",
+      "scientist_id": "synthetic-person",
+      "sector": null,
+      "source_event_ids": [
+        "evt-d284dfa30b97f4f9"
+      ],
+      "source_evidence": [
+        {
+          "event_id": "evt-d284dfa30b97f4f9",
+          "exact": "Research Fellow 2010 - 2014",
+          "locator": {
+            "kind": "text_line",
+            "line": 7
+          }
+        }
+      ],
+      "source_order": 1,
+      "spell_kind": "career",
+      "start": {
+        "precision": "year",
+        "value": "2010"
+      },
+      "status": "candidate",
+      "temporal_order_uncertain": false
+    },
+    {
+      "career_spell_id": "spell-491adca0ddf64be3",
+      "city": null,
+      "country": null,
+      "created_run_id": "derive-d8a26c1ba7a993111f71",
+      "derivation_rule_version": "public-conservative-1",
+      "end": {
+        "precision": "year",
+        "value": "2018"
+      },
+      "is_concurrent": false,
+      "is_primary": true,
+      "organization_id": "synthetic-south",
+      "organization_name": "EXAMPLE SOUTH INSTITUTE",
+      "scientist_id": "synthetic-person",
+      "sector": null,
+      "source_event_ids": [
+        "evt-50e35d80750f342d"
+      ],
+      "source_evidence": [
+        {
+          "event_id": "evt-50e35d80750f342d",
+          "exact": "Senior Research Fellow 2014 - 2018",
+          "locator": {
+            "kind": "text_line",
+            "line": 9
+          }
+        }
+      ],
+      "source_order": 2,
+      "spell_kind": "career",
+      "start": {
+        "precision": "year",
+        "value": "2014"
+      },
+      "status": "candidate",
+      "temporal_order_uncertain": false
+    },
+    {
+      "career_spell_id": "spell-afa28770d9f2cbfb",
+      "city": null,
+      "country": null,
+      "created_run_id": "derive-d8a26c1ba7a993111f71",
+      "derivation_rule_version": "public-conservative-1",
+      "end": {
+        "precision": "unknown",
+        "value": null
+      },
+      "is_concurrent": false,
+      "is_primary": true,
+      "organization_id": "synthetic-north",
+      "organization_name": "EXAMPLE NORTH INSTITUTE",
+      "scientist_id": "synthetic-person",
+      "sector": null,
+      "source_event_ids": [
+        "evt-e2da464c5ed1a19a"
+      ],
+      "source_evidence": [
+        {
+          "event_id": "evt-e2da464c5ed1a19a",
+          "exact": "Research Lead 2018 - Present",
+          "locator": {
+            "kind": "text_line",
+            "line": 11
+          }
+        }
+      ],
+      "source_order": 3,
+      "spell_kind": "career",
+      "start": {
+        "precision": "year",
+        "value": "2018"
+      },
+      "status": "candidate",
+      "temporal_order_uncertain": false
+    },
+    {
+      "career_spell_id": "spell-96bf53ac74310b36",
+      "city": null,
+      "country": null,
+      "created_run_id": "derive-d8a26c1ba7a993111f71",
+      "derivation_rule_version": "public-conservative-1",
+      "end": {
+        "precision": "month",
+        "value": "2020.06"
+      },
+      "is_concurrent": true,
+      "is_primary": false,
+      "organization_id": "synthetic-east",
+      "organization_name": "EXAMPLE EAST INSTITUTE",
+      "scientist_id": "synthetic-person",
+      "sector": null,
+      "source_event_ids": [
+        "evt-4b38de3b28600a05"
+      ],
+      "source_evidence": [
+        {
+          "event_id": "evt-4b38de3b28600a05",
+          "exact": "Visiting Fellow 2019.06 - 2020.06",
+          "locator": {
+            "kind": "text_line",
+            "line": 13
+          }
+        }
+      ],
+      "source_order": 4,
+      "spell_kind": "career",
+      "start": {
+        "precision": "month",
+        "value": "2019.06"
+      },
+      "status": "candidate",
+      "temporal_order_uncertain": false
+    },
+    {
+      "career_spell_id": "spell-655dc96f0b4ccc52",
+      "city": null,
+      "country": null,
+      "created_run_id": "derive-d8a26c1ba7a993111f71",
+      "derivation_rule_version": "public-conservative-1",
+      "end": {
+        "precision": "year",
+        "value": "2010"
+      },
+      "is_concurrent": false,
+      "is_primary": true,
+      "organization_id": "synthetic-north",
+      "organization_name": "EXAMPLE NORTH INSTITUTE",
+      "scientist_id": "synthetic-person",
+      "sector": null,
+      "source_event_ids": [
+        "evt-a74c4d95a43a042c"
+      ],
+      "source_evidence": [
+        {
+          "event_id": "evt-a74c4d95a43a042c",
+          "exact": "Doctor of Science 2006 - 2010",
+          "locator": {
+            "kind": "text_line",
+            "line": 4
+          }
+        }
+      ],
+      "source_order": 0,
+      "spell_kind": "training",
+      "start": {
+        "precision": "year",
+        "value": "2006"
+      },
+      "status": "candidate",
+      "temporal_order_uncertain": false
+    }
+  ]
+}

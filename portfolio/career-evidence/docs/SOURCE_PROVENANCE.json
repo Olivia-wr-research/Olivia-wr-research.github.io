@@ -1,0 +1,13 @@
+{
+  "origin": "Code-only subset of an existing local scientist-mobility project; public edition prepared with AI assistance",
+  "copied_original_modules": [
+    {"module": "acquisition.py", "original_sha256": "b96277837ddced343a6382fc250a954d038ded30db79aa12140b0f91b2d4c80f"},
+    {"module": "extraction.py", "original_sha256": "e931c0e16da71d640ddb9ee8bc5c932b4e4233bb6de41f970ce1585fc4a70544"},
+    {"module": "trajectory.py", "original_sha256": "e5f1dcfa058d8f9cb3e561a469c9fbe01e42a1251439bfc7f6f93f732c680b78"}
+  ],
+  "modifications": "Public-edition corrections and new packaging/CLI/tests are described in METHOD.md; original hashes are lineage records, not current public-file hashes.",
+  "excluded": ["real-person materials", "private research protocols", "research datasets", "historical outputs", "web snapshots", "vendor assets", "placeholder dispatcher", "unfinished review interface"],
+  "example_rights": "Newly authored synthetic text, invented institutions and person; no real CV or research dataset used",
+  "optional_dependency": "pypdf is not vendored; install separately only for trusted PDF inputs",
+  "authorship_boundary": "A local source folder is not independent proof of exclusive authorship. No third-party vendor code was selected; AI assistance is disclosed."
+}

@@ -1,0 +1,6 @@
+career_event_id,organization_raw,role_raw,start,end,status,evidence_exact,evidence_locator
+evt-a74c4d95a43a042c,EXAMPLE NORTH INSTITUTE,Doctor of Science,"{""precision"": ""year"", ""value"": ""2006""}","{""precision"": ""year"", ""value"": ""2010""}",candidate,Doctor of Science 2006 - 2010,"{""kind"": ""text_line"", ""line"": 4}"
+evt-d284dfa30b97f4f9,EXAMPLE NORTH INSTITUTE,Research Fellow,"{""precision"": ""year"", ""value"": ""2010""}","{""precision"": ""year"", ""value"": ""2014""}",candidate,Research Fellow 2010 - 2014,"{""kind"": ""text_line"", ""line"": 7}"
+evt-50e35d80750f342d,EXAMPLE SOUTH INSTITUTE,Senior Research Fellow,"{""precision"": ""year"", ""value"": ""2014""}","{""precision"": ""year"", ""value"": ""2018""}",candidate,Senior Research Fellow 2014 - 2018,"{""kind"": ""text_line"", ""line"": 9}"
+evt-e2da464c5ed1a19a,EXAMPLE NORTH INSTITUTE,Research Lead,"{""precision"": ""year"", ""value"": ""2018""}","{""precision"": ""unknown"", ""value"": null}",candidate,Research Lead 2018 - Present,"{""kind"": ""text_line"", ""line"": 11}"
+evt-4b38de3b28600a05,EXAMPLE EAST INSTITUTE,Visiting Fellow,"{""precision"": ""month"", ""value"": ""2019.06""}","{""precision"": ""month"", ""value"": ""2020.06""}",candidate,Visiting Fellow 2019.06 - 2020.06,"{""kind"": ""text_line"", ""line"": 13}"

@@ -1,0 +1,101 @@
+{
+  "mime_type": "text/plain",
+  "ocr_required": false,
+  "parser_version": "normalizer-1.0",
+  "quality_status": "pass",
+  "sha256": "a65f5bd698be0a6489309c414b600791b523303d4d5edef00ebe18bf6b780814",
+  "spans": [
+    {
+      "locator": {
+        "kind": "text_line",
+        "line": 1
+      },
+      "text": "SYNTHETIC FIXTURE — NOT A REAL PERSON OR EMPLOYER"
+    },
+    {
+      "locator": {
+        "kind": "text_line",
+        "line": 2
+      },
+      "text": "EDUCATION"
+    },
+    {
+      "locator": {
+        "kind": "text_line",
+        "line": 3
+      },
+      "text": "EXAMPLE NORTH INSTITUTE"
+    },
+    {
+      "locator": {
+        "kind": "text_line",
+        "line": 4
+      },
+      "text": "Doctor of Science 2006 - 2010"
+    },
+    {
+      "locator": {
+        "kind": "text_line",
+        "line": 5
+      },
+      "text": "PROFESSIONAL EXPERIENCE"
+    },
+    {
+      "locator": {
+        "kind": "text_line",
+        "line": 6
+      },
+      "text": "EXAMPLE NORTH INSTITUTE"
+    },
+    {
+      "locator": {
+        "kind": "text_line",
+        "line": 7
+      },
+      "text": "Research Fellow 2010 - 2014"
+    },
+    {
+      "locator": {
+        "kind": "text_line",
+        "line": 8
+      },
+      "text": "EXAMPLE SOUTH INSTITUTE"
+    },
+    {
+      "locator": {
+        "kind": "text_line",
+        "line": 9
+      },
+      "text": "Senior Research Fellow 2014 - 2018"
+    },
+    {
+      "locator": {
+        "kind": "text_line",
+        "line": 10
+      },
+      "text": "EXAMPLE NORTH INSTITUTE"
+    },
+    {
+      "locator": {
+        "kind": "text_line",
+        "line": 11
+      },
+      "text": "Research Lead 2018 - Present"
+    },
+    {
+      "locator": {
+        "kind": "text_line",
+        "line": 12
+      },
+      "text": "EXAMPLE EAST INSTITUTE"
+    },
+    {
+      "locator": {
+        "kind": "text_line",
+        "line": 13
+      },
+      "text": "Visiting Fellow 2019.06 - 2020.06"
+    }
+  ],
+  "text": "SYNTHETIC FIXTURE — NOT A REAL PERSON OR EMPLOYER\nEDUCATION\nEXAMPLE NORTH INSTITUTE\nDoctor of Science 2006 - 2010\nPROFESSIONAL EXPERIENCE\nEXAMPLE NORTH INSTITUTE\nResearch Fellow 2010 - 2014\nEXAMPLE SOUTH INSTITUTE\nSenior Research Fellow 2014 - 2018\nEXAMPLE NORTH INSTITUTE\nResearch Lead 2018 - Present\nEXAMPLE EAST INSTITUTE\nVisiting Fellow 2019.06 - 2020.06"
+}

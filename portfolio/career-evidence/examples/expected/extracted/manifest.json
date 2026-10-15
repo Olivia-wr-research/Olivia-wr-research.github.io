@@ -1,0 +1,9 @@
+{
+  "files": {
+    "events.csv": "afc74f2c2d514982af01853c38dbfc5071ad34389292aa09bbf8c83949275292",
+    "events.json": "83489351a1ef11f352ed4350075a3fcee5190aa8245bb2f798f9b40d2c11a1b5",
+    "normalized.json": "563982d069a0de2c19f28ac87d8986ea027f25310280c198d2b890a4d27410ad"
+  },
+  "schema_version": "1",
+  "version": "0.1.0"
+}
