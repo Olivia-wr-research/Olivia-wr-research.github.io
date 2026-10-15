@@ -1,0 +1,13 @@
+{
+  "raw_records": 100,
+  "included_works": 100,
+  "duplicates_removed": 0,
+  "excluded_records": 0,
+  "doi_works": 97,
+  "works_with_authors": 98,
+  "works_with_affiliations": 80,
+  "unresolved_author_rows": 44,
+  "truncated_author_works": 0,
+  "unknown_retraction_works": 0,
+  "network_omitted_large_team_works": 0
+}

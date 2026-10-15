@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "snapshot_sha256": "fea4e375dc2457631081b4a31268684f6b5a59052c818c0d1821275797a48216",
+  "artifacts": {
+    "author_evidence.csv": "4f36a5556b9d9d58135e639dd15d96cdd65fc2e927bdad0a010b23186b67526d",
+    "data.json": "50dde4a434dfef6aab1d9966fedaba4426a324c3b4e4c278047129bfe7b3d8b8",
+    "quality.json": "d1f55ee51374e0213323853fabf885c0b8099e9fbf2051ac502cde7dc5a5531e",
+    "report.html": "39d5f6bf63af3155cece80f128c1167cd517965c592155b4b8ccf6b424682856",
+    "snapshot.json": "13998eed6b692510a13085c010847d3cb50f87c4e7a96ae50c116aa990ab321b",
+    "works.csv": "a5c0bc066d640589381669601149e1af9ccd7cc562df165c0bebbddddad37cf6"
+  }
+}

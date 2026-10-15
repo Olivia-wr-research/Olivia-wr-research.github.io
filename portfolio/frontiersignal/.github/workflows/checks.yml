@@ -1,0 +1,25 @@
+name: offline-checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.11', '3.12', '3.13']
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install .
+      - run: python -m unittest discover -s tests -v
+      - run: frontiersignal replay examples/battery-recycling/snapshot.json --out runs/replay
+      - run: frontiersignal verify runs/replay
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/report_logic.mjs

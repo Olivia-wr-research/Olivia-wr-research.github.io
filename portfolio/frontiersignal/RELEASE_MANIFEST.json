@@ -1,0 +1,106 @@
+[
+  {
+    "file": ".github/workflows/checks.yml",
+    "sha256": "ce05adcc5f98b7234e166f817d63e3c685db3b220b0528fc50287f503c5b4a18"
+  },
+  {
+    "file": ".gitignore",
+    "sha256": "785587b43d1696a2b5f8326bae3400a828c27ee65dba3ca5550a7ded0e5c5358"
+  },
+  {
+    "file": "CONTRIBUTING.md",
+    "sha256": "a883bafe404a392a1ad8e44f0b32ca5a614bce18074bc6afca34d3cddd54d3bb"
+  },
+  {
+    "file": "LICENSE",
+    "sha256": "f5eee63fb76b6585d82d7c3e7e7c5136331316c3256e72cb6bdf587f234d20de"
+  },
+  {
+    "file": "README.md",
+    "sha256": "1d2bacdd2b9c04616788a7c93a5ada2823402bd167222a44ee7cdbec8e1625d1"
+  },
+  {
+    "file": "README.zh-CN.md",
+    "sha256": "220d9f1a2aa98a720f1e49d815d9c1e0802f1d69011b33629cb450a15c53610d"
+  },
+  {
+    "file": "SECURITY.md",
+    "sha256": "959b248c2b46304e91171bbf54cde6bc82856deb9d4ed81d26bac1c40c72fe03"
+  },
+  {
+    "file": "docs/EXAMPLE_RECEIPT.md",
+    "sha256": "a980e494a95b97c2233821efb74221981d3ef7aa1fcc1b2028a73d397d0333e6"
+  },
+  {
+    "file": "docs/METHOD.md",
+    "sha256": "dc8de8ed4ed4187308ecb153b4edb7086575ebe7b990934ccd2087f730ad7463"
+  },
+  {
+    "file": "examples/battery-recycling/author_evidence.csv",
+    "sha256": "4f36a5556b9d9d58135e639dd15d96cdd65fc2e927bdad0a010b23186b67526d"
+  },
+  {
+    "file": "examples/battery-recycling/data.json",
+    "sha256": "50dde4a434dfef6aab1d9966fedaba4426a324c3b4e4c278047129bfe7b3d8b8"
+  },
+  {
+    "file": "examples/battery-recycling/manifest.json",
+    "sha256": "a8a9b49263844aeead34a23f5fbbecf8939d0694a8a274c66086aef877e3ebcd"
+  },
+  {
+    "file": "examples/battery-recycling/quality.json",
+    "sha256": "d1f55ee51374e0213323853fabf885c0b8099e9fbf2051ac502cde7dc5a5531e"
+  },
+  {
+    "file": "examples/battery-recycling/report.html",
+    "sha256": "39d5f6bf63af3155cece80f128c1167cd517965c592155b4b8ccf6b424682856"
+  },
+  {
+    "file": "examples/battery-recycling/snapshot.json",
+    "sha256": "13998eed6b692510a13085c010847d3cb50f87c4e7a96ae50c116aa990ab321b"
+  },
+  {
+    "file": "examples/battery-recycling/works.csv",
+    "sha256": "a5c0bc066d640589381669601149e1af9ccd7cc562df165c0bebbddddad37cf6"
+  },
+  {
+    "file": "pyproject.toml",
+    "sha256": "09ba348c5b56a665e1e3b2695559b3c862675232023a539689a08b699633b715"
+  },
+  {
+    "file": "src/frontiersignal/__init__.py",
+    "sha256": "fc0f9512efe1616220c5422f13908607cf4f20855853501ba19a075869af3020"
+  },
+  {
+    "file": "src/frontiersignal/build.py",
+    "sha256": "6569d61849d60c62d22b706b39aa2befedb6790b37dde9fd4f9653eb4fb19d24"
+  },
+  {
+    "file": "src/frontiersignal/cli.py",
+    "sha256": "783947429688cfc94544af075bcfaa24e90e04c01284bbfb7feb7e8d4ef50d9a"
+  },
+  {
+    "file": "src/frontiersignal/model.py",
+    "sha256": "c9c5879417e649c26d6440d7c359ab50a5722646cfb897344a3508bac088bf7f"
+  },
+  {
+    "file": "src/frontiersignal/privacy.py",
+    "sha256": "142f0017f784b1d405ba6f6ef38e828cc14226f2f9a7b19467aa5018e0177435"
+  },
+  {
+    "file": "src/frontiersignal/report.html",
+    "sha256": "76c914d30057ae62c55e8edf3cd6caec3271455332b0df59829c8a147b1b46fd"
+  },
+  {
+    "file": "src/frontiersignal/retrieve.py",
+    "sha256": "d69737b1286d3609b8d4aab6bcecdd70d580d1d3223796741e0841908a587add"
+  },
+  {
+    "file": "tests/report_logic.mjs",
+    "sha256": "d3fe3e94b8774522332fc920bc40e5d2ad9304d375e718ac39e9a50d2a6f3588"
+  },
+  {
+    "file": "tests/test_core.py",
+    "sha256": "247464622b343164ecaa39221a0722df8de851dd553abc23f744b2ed6dd8ccbd"
+  }
+]
