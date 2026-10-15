@@ -14,23 +14,56 @@ export const sourcePortals=[
  {name:'TU Delft 官方招聘',region:'荷兰',url:'https://careers.tudelft.nl/go/All-jobs/9021002/',note:'原始雇主入口；专业、语言及知识安全要求以具体原帖为准。'},
  {name:'维也纳大学博士岗位',region:'奥地利',url:'https://jobs.univie.ac.at/go/predoctoral/8877801/',note:'官方博士岗位分类；不要把已截止的年度项目当作仍在开放。'}
 ];
-export const topicChoices=['可持续发展','公共政策','组织治理','数字治理','人工智能','政治学','传播','社会学','环境','创新','领导力','城市','心理学','哲学','认知'];
-export const methodChoices=['访谈','案例研究','质性研究','民族志','问卷','实验','数据分析','统计','Python','R','Stata','机器学习','数学优化'];
+export const topicChoices=['可持续发展','公共政策','组织治理','数字治理','人工智能','政治学','传播','社会学','环境','创新','领导力','城市','心理学','哲学','认知','科学计量','科学学','人才流动','区域发展','经济学','教育','公共卫生','生物医学','计算机科学','能源','材料科学','物理学','化学'];
+export const methodChoices=['访谈','案例研究','质性研究','民族志','问卷','实验','数据分析','统计','Python','R','Stata','机器学习','数学优化','纵向数据','记录链接','离散选择','事件史分析','网络分析','空间分析','GIS','计量经济学','自然语言处理','SQL','系统综述'];
 const aliases={
  '心理学':['psychology','psychological'],'哲学':['philosophy','philosophical'],'认知':['cognition','cognitive'],
  '政治学':['political science','political violence','democracy','政治'], '传播':['communication','media','传播'], '公共政策':['public policy','public administration','政策'],
- '组织治理':['organisational','organizational','组织'], '数字治理':['digital governance','platform regulation','数字治理'], '可持续发展':['sustainability','sustainable','可持续'],
+ '组织治理':['organisational governance','organizational governance','organisation theory','organization theory','组织理论','组织管理'], '数字治理':['digital governance','platform regulation','数字治理'], '可持续发展':['sustainability','sustainable','可持续'],
  '人工智能':['artificial intelligence','machine learning','人工智能'], '创新':['innovation','创新'], '环境':['environmental','ecology','环境'], '社会学':['sociology','社会学'],
  '访谈':['interview','访谈'], '案例研究':['case study','case studies','案例研究'], '质性研究':['qualitative','质性'], '民族志':['ethnograph','民族志'],
  '问卷':['survey','questionnaire','问卷'], '实验':['experiment','实验'], '数据分析':['data analysis','数据分析'], '统计':['statistic','regression','统计'],
- '机器学习':['machine learning','机器学习'],'数学优化':['optimization','optimisation','数学优化']
+ '机器学习':['machine learning','机器学习'],'数学优化':['optimization','optimisation','数学优化'],
+ '科学计量':['scientometrics','scientometric','bibliometrics','bibliometric','文献计量'], '科学学':['science of science','科学学'],
+ '人才流动':['scientific mobility','researcher mobility','scientist mobility','talent mobility','academic mobility','科研人员流动','科学家流动','学术流动'],
+ '区域发展':['regional development','regional innovation','economic geography','区域发展','区域创新','经济地理'],
+ '经济学':['economics','economic research'], '教育':['education','educational'], '公共卫生':['public health','epidemiology','流行病学'],
+ '生物医学':['biomedical','biomedicine','molecular biology','分子生物学'], '计算机科学':['computer science'],
+ '能源':['energy systems','renewable energy','能源系统','可再生能源'], '材料科学':['materials science','material science'],
+ '物理学':['physics'], '化学':['chemistry'], '城市':['urban','city planning','城市规划'], '领导力':['leadership'],
+ '纵向数据':['longitudinal data','longitudinal dataset','panel data','面板数据','纵向数据库'],
+ '记录链接':['record linkage','entity resolution','record linking','实体消歧','实体匹配','记录匹配'],
+ '离散选择':['discrete choice','conditional logit','multinomial logit','条件逻辑回归','条件logit'],
+ '事件史分析':['event history','event-history','survival analysis','duration analysis','生存分析','事件史'],
+ '网络分析':['network analysis','social network','collaboration network','coauthorship network','co-authorship network','社会网络','合作网络'],
+ '空间分析':['spatial analysis','spatial statistics','spatial econometrics','空间统计','空间计量'],
+ 'GIS':['geographic information system','geographical information system','地理信息系统'],
+ '计量经济学':['econometrics','econometric'], '自然语言处理':['natural language processing','nlp'],
+ '系统综述':['systematic review','meta-analysis','元分析','荟萃分析']
 };
-function present(text,token){const s=token.toLowerCase();if(/^[a-z]+$/.test(s)&&s.length<=5)return new RegExp('(^|[^a-z0-9])'+s+'([^a-z0-9]|$)','i').test(text);return text.includes(s);}
+function present(text,token){
+ const s=token.toLowerCase();
+ if(/^[a-z][a-z -]*$/.test(s)){
+  const escaped=s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  // Explicit word boundaries prevent R, GIS and NLP from matching names or unrelated words.
+  // Common grammatical suffixes allow e.g. interviews/statistics without arbitrary substrings.
+  const suffix=['interview','experiment','statistic','ethnograph'].includes(s)?'(?:s|al|ical|y|ic)?':'';
+  return new RegExp('(^|[^a-z0-9])'+escaped+suffix+'([^a-z0-9]|$)','i').test(text);
+ }
+ return text.includes(s);
+}
 export function suggestFromText(raw){
  if(typeof raw!=='string'||raw.length>100000)throw Error('简历文本需在 100,000 字符以内');
  const text=raw.toLowerCase().replace(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/gi,' ').replace(/https?:\/\/\S+/g,' ');
- const find=list=>list.filter(term=>[term,...(aliases[term]||[])].some(a=>present(text,a)));
- return {topics:find(topicChoices),methods:find(methodChoices)};
+ // Evidence deliberately contains only controlled vocabulary: never names, paper titles,
+ // contact details or text surrounding a match. It is a keyword trigger, not a skill claim.
+ const evidence=[];
+ const find=(list,category)=>list.filter(term=>{
+  const matched=[term,...(aliases[term]||[])].find(a=>present(text,a));
+  if(!matched)return false;
+  evidence.push({category,label:term,matched,snippet:matched.slice(0,80)});return true;
+ });
+ return {topics:find(topicChoices,'topic'),methods:find(methodChoices,'method'),evidence};
 }
 // Bounded ZIP central-directory reader. Only document.xml is decompressed; never execute macros or external relationships.
 export async function docxText(buffer){
@@ -60,6 +93,7 @@ export async function docxText(buffer){
 }
 export async function cvFileText(file){
  if(!file||file.size>5*1024*1024)throw Error('文件最大 5 MB');
+ if(file.name.toLowerCase().endsWith('.pdf')){const {pdfText}=await import('./pdf-text.mjs');return pdfText(await file.arrayBuffer());}
  const ext=file.name.split('.').pop().toLowerCase();if(ext==='docx')return docxText(await file.arrayBuffer());
  if(!['txt','md'].includes(ext))throw Error('此版支持 DOCX、TXT 或粘贴文本。PDF 请在本机复制文字后粘贴；扫描件尚不支持 OCR。');
  const text=await file.text();if(text.length>100000)throw Error('文本过长，请只保留教育、项目与技能部分');return text;

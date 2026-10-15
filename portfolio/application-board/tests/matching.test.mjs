@@ -13,4 +13,4 @@ test('short tokens do not match inside unrelated words',()=>assert.equal(match({
 test('methods-only profile works',()=>assert.equal(match(j,{methods:'访谈'},day).score,100));
 test('arbitrary profile state rejected',()=>assert.throws(()=>profile({degree:'guaranteed-admission'})));
 test('bounded token normalization handles Chinese separators',()=>assert.deepEqual(terms('AI，ai；Python'),['ai','python']));
-test('each real source snapshot has an official origin and no person contact fields',()=>{for(const x of positions){assert.ok(['careers.tudelft.nl','jobs.univie.ac.at','werkenbij.uva.nl','careers.universiteitleiden.nl','jobportal.ku.dk'].includes(new URL(x.url).hostname));assert.equal(x.email,undefined);}});
+test('each real source snapshot has an official origin and no person contact fields',()=>{for(const x of positions){assert.ok(['careers.tudelft.nl','jobs.univie.ac.at','werkenbij.uva.nl','careers.universiteitleiden.nl','jobportal.ku.dk','jobs.ethz.ch','www.jobs.ethz.ch','www.jobbnorge.no'].includes(new URL(x.url).hostname));assert.equal(x.email,undefined);}});

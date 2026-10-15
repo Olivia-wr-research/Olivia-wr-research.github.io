@@ -1,18 +1,18 @@
-# 下一站 NextPosition · 0.4 探索版
+# 下一站 NextPosition · 0.5 公开试用版
 
-[直接使用](https://olivia-wr-research.github.io/apps/application-board/) · [来源、隐私与能力边界](docs/RELEASE_04.md)
+[直接使用](https://olivia-wr-research.github.io/apps/application-board/) · [来源、隐私与能力边界](docs/RELEASE_05.md)
 
 不用先定义研究兴趣。你可以直接浏览、从课程与方法勾选线索、用简历提取待确认标签，或先了解研究单位。
 
-- 16 条官方招聘公告快照、3 个国家，核对日期 2026-10-15。一条公告含两个名额仍计作一条，不是实时全量库。
-- DOCX / TXT / Markdown 本机读取，或粘贴文本；不发送原文给服务器或模型。此版不解析 PDF 或扫描件，可先在本机复制文字再粘贴。
+- 19 条官方招聘公告快照、5 个国家，核对日期 2026-10-15。一条公告含两个名额仍计作一条，不是实时全量库。
+- 文字版 PDF / DOCX / TXT / Markdown 本机读取，或粘贴文本；不发送原文给服务器或模型。PDF 最多 20 页、文件最大 5 MB；扫描件需先本机 OCR。
 - 提取只用固定词表，经历不等于兴趣或能力。须由你确认标签，不推断学历、英语或申请资格。
 - 6 个研究单位证据入口，区分研究所、研究组和项目。毕业人数、去向、经费持续性与导师质量尚未核验，不编造体检分。
 - 最多 3 条岗位并排对比，收藏连接原有材料与进度面板。还有 5 个官方来源入口，用于扩大自主检索。
 
 匹配仍是透明关键词重合排序，不是语义模型或录取概率。页面分开提示待补充与需关注项，完整专业、语言、流动规则和合同以原帖为准。
 
-`python3 server.py` 启动本机版；`node --test tests/*.test.mjs` 和 `python3 -m unittest discover -s tests -v` 运行检查。当前 60 项 JavaScript 与 9 项 Python 测试通过。DOCX 解压依赖现代浏览器原生能力，不支持时会要求 TXT 或粘贴；尚未完成真实手机与跨浏览器全矩阵验证。
+`python3 server.py` 启动本机版；`node --test tests/*.test.mjs` 和 `python3 -m unittest discover -s tests -v` 运行检查。当前 79 项 JavaScript 与 9 项 Python 测试通过。DOCX 解压依赖现代浏览器原生能力，不支持时会要求 TXT 或粘贴；尚未完成真实手机与跨浏览器全矩阵验证。
 
 只有已确认的概括标签和申请清单保存在当前浏览器，未加密、无跨设备同步。简历原文提取后或关闭表单时清空，不进入本地存储或 GitHub。请在申请清单导出并私密保存备份。同源脚本和共享浏览器仍在信任边界内。
 
