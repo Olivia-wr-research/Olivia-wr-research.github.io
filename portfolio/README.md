@@ -2,6 +2,18 @@
 
 Small, inspectable tools for research workflows. Projects are selected for runnable code, traceable inputs, explicit limitations and reproducibility—not for the number of repositories or an “AI agent” label.
 
+## Application Board · A browser-local application workspace
+
+[Open the app](https://olivia-wr-research.github.io/apps/application-board/) · [Source and local launcher](application-board/README.md) · [中文说明](application-board/README.zh-CN.md)
+
+A public-facing implementation of the opportunity → materials → progress workflow. Add and edit roles, search/filter opportunities, track date-only deadlines, maintain material checklists, manually update stages and export/import private backups.
+
+- An empty workspace for each browser profile/origin; only fictional opt-in examples.
+- 27 JavaScript logic tests and 8 Python launcher tests. Local browser create/checklist/stage/reload flows were exercised with invented records.
+- No applicant profile, CV upload, inbox integration, automatic submission or vacancy recommendation.
+- Static hosting serves the interface, not an applicant database. Records stay in the visitor's browser and are unencrypted; this is not an authenticated multi-tenant SaaS.
+- This is a new public implementation inspired by a private dashboard, not a distribution of that private system or its data. MIT licensed; AI-assisted implementation.
+
 ## FrontierSignal · Research discovery and screening
 
 [Source and quick start](frontiersignal/README.md) · [中文说明](frontiersignal/README.zh-CN.md) · [Methods](frontiersignal/docs/METHOD.md) · [Example receipt](frontiersignal/docs/EXAMPLE_RECEIPT.md)
