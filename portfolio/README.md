@@ -2,7 +2,7 @@
 
 Small, inspectable tools for research workflows. Projects are selected for runnable code, traceable inputs, explicit limitations and reproducibility—not for the number of repositories or an “AI agent” label.
 
-## Doctoral Compass · Discovery, matching and application planning
+## NextPosition · Discovery, matching and application planning
 
 [Open the app](https://olivia-wr-research.github.io/apps/application-board/) · [Source and local launcher](application-board/README.md) · [Matching method](application-board/docs/MATCHING.md)
 

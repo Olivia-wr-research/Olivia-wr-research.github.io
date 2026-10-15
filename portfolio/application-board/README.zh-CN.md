@@ -1,4 +1,4 @@
-# 博士罗盘 · 发现岗位＋理解匹配
+# 下一站 · 发现岗位＋理解匹配
 
 [直接使用](https://olivia-wr-research.github.io/apps/application-board/) · [匹配规则与数据说明](docs/MATCHING.md)
 

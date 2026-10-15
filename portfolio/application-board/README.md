@@ -1,4 +1,4 @@
-# Doctoral Compass · 博士罗盘
+# NextPosition · 下一站
 
 **Discover doctoral opportunities, understand the overlap, and check the gaps before applying.**
 
