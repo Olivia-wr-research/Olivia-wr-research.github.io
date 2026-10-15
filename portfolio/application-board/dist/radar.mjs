@@ -1,6 +1,6 @@
-import {setupJourney} from './journey.mjs?v=04r1';
-import {positions,checkedAt} from './positions.mjs?v=04r1';
-import {PROFILE_KEY,profile,terms,match} from './matching.mjs?v=04r1';
+import {setupJourney} from './journey.mjs?v=04r2';
+import {positions,checkedAt} from './positions.mjs?v=04r2';
+import {PROFILE_KEY,profile,terms,match} from './matching.mjs?v=04r2';
 import {KEY,parseBackup,backup,validateRecord,safeUrl,validDate,daysLeft} from './core.mjs';
 const $=s=>document.querySelector(s),el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 let jobs=positions,p=profile({}),saved=[],savedOnly=false,blocked=false;

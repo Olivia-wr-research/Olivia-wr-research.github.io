@@ -1,4 +1,4 @@
-import {researchUnits,sourcePortals,topicChoices,methodChoices,suggestFromText,cvFileText} from './explore.mjs?v=04r1';
+import {researchUnits,sourcePortals,topicChoices,methodChoices,suggestFromText,cvFileText} from './explore.mjs?v=04r2';
 const $=s=>document.querySelector(s),node=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 const button=(text,fn,cls)=>{const n=node('button',text,cls);n.type='button';n.onclick=fn;return n;};
 const link=(text,url)=>{const n=node('a',text,'external-link');n.href=url;n.target='_blank';n.rel='noopener noreferrer';return n;};
