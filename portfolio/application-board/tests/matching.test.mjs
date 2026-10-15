@@ -1,0 +1,16 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+import {match,profile,terms} from '../dist/matching.mjs';import {positions} from '../dist/positions.mjs';
+const j=positions[0],day='2026-10-15';
+test('no profile means no invented score',()=>assert.equal(match(j,{},day).score,null));
+test('interest-only uses available component',()=>assert.equal(match(j,{topics:'组织治理'},day).score,100));
+test('explicit weights are 70 topics and 30 methods',()=>assert.equal(match(j,{topics:'组织治理',methods:'not-a-required-method'},day).score,70));
+test('duplicate terms do not inflate score',()=>assert.equal(match(j,{topics:'组织治理,组织治理'},day).score,100));
+test('country preference never inflates research score',()=>assert.equal(match(j,{topics:'组织治理',countries:['奥地利']},day).score,match(j,{topics:'组织治理',countries:['荷兰']},day).score));
+test('degree gap does not hide high interest overlap',()=>{const m=match(j,{topics:'组织治理',degree:'bachelor'},day);assert.equal(m.score,100);assert.equal(m.checks.find(c=>c.label==='学历要求').state,'gap');});
+test('unknown requirements remain unknown',()=>assert.equal(match({...j,degree:'unknown'},{degree:'master'},day).checks.find(c=>c.label==='学历要求').state,'unknown'));
+test('expired snapshot is flagged',()=>assert.equal(match(j,{},'2027-01-01').expired,true));
+test('short tokens do not match inside unrelated words',()=>assert.equal(match({...j,topics:['chair']},{topics:'AI'},day).score,0));
+test('methods-only profile works',()=>assert.equal(match(j,{methods:'访谈'},day).score,100));
+test('arbitrary profile state rejected',()=>assert.throws(()=>profile({degree:'guaranteed-admission'})));
+test('bounded token normalization handles Chinese separators',()=>assert.deepEqual(terms('AI，ai；Python'),['ai','python']));
+test('each real source snapshot has an official origin and no person contact fields',()=>{for(const x of positions){assert.ok(['careers.tudelft.nl','jobs.univie.ac.at'].includes(new URL(x.url).hostname));assert.equal(x.email,undefined);}});

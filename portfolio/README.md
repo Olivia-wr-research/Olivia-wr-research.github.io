@@ -2,17 +2,18 @@
 
 Small, inspectable tools for research workflows. Projects are selected for runnable code, traceable inputs, explicit limitations and reproducibility—not for the number of repositories or an “AI agent” label.
 
-## Application Board · A browser-local application workspace
+## Doctoral Compass · Discovery, matching and application planning
 
-[Open the app](https://olivia-wr-research.github.io/apps/application-board/) · [Source and local launcher](application-board/README.md) · [中文说明](application-board/README.zh-CN.md)
+[Open the app](https://olivia-wr-research.github.io/apps/application-board/) · [Source and local launcher](application-board/README.md) · [Matching method](application-board/docs/MATCHING.md)
 
-A public-facing implementation of the opportunity → materials → progress workflow. Add and edit roles, search/filter opportunities, track date-only deadlines, maintain material checklists, manually update stages and export/import private backups.
+A Chinese-language doctoral opportunity discovery interface with filters, browser-local interest profiles, transparent keyword scores, separately displayed eligibility-review gaps, bookmarks and the preserved application tracker.
 
-- An empty workspace for each browser profile/origin; only fictional opt-in examples.
-- 27 JavaScript logic tests and 8 Python launcher tests. Local browser create/checklist/stage/reload flows were exercised with invented records.
-- No applicant profile, CV upload, inbox integration, automatic submission or vacancy recommendation.
-- Static hosting serves the interface, not an applicant database. Records stay in the visitor's browser and are unencrypted; this is not an authenticated multi-tenant SaaS.
-- This is a new public implementation inspired by a private dashboard, not a distribution of that private system or its data. MIT licensed; AI-assisted implementation.
+- Six independently curated official-employer snapshots, checked 2026-10-15, across two countries. Not a live or exhaustive European vacancy index.
+- Research interests 70% / methods 30% token overlap; no profile means no score. This is not semantic AI or an admission probability.
+- Degree, language and preferences stay separate; a high score cannot compensate for a missing requirement.
+- 40 JavaScript tests and 8 Python tests. Local browser profile/explanation/bookmark flows tested with a fictional profile.
+- No reference-radar data, branding, private applicant records, CV uploads, model calls or automatic applications. Unencrypted browser-local state, not an authenticated SaaS.
+- The old material/progress board remains available at `tracker.html`, with existing storage preserved.
 
 ## FrontierSignal · Research discovery and screening
 

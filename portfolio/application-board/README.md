@@ -1,53 +1,46 @@
-# Application Board
+# Doctoral Compass · 博士罗盘
 
-**An application workspace you own: opportunities, material checklists and progress, without handing over your CV or inbox.**
+**Discover doctoral opportunities, understand the overlap, and check the gaps before applying.**
 
-A new public-facing implementation inspired by a private PhD/RA application dashboard. It does **not** import, wrap or run that private system. No personal application data or original applicant profile is included.
+[Open the app](https://olivia-wr-research.github.io/apps/application-board/) · [中文说明](README.zh-CN.md) · [Matching and sources](docs/MATCHING.md)
 
-## Browser-local hosted edition
+## v0.2: discovery first
 
-The same four static files can be hosted without a data server. The portfolio's GitHub Pages copy is at [Application Board](https://olivia-wr-research.github.io/apps/application-board/). Each visitor gets their own browser-local workspace, not a shared application database. Loading the hosted page contacts the hosting provider for static assets; application records are not uploaded by the app. Browser extensions, other same-origin code and people sharing your browser profile remain part of your trust boundary. The local launcher below is available if you prefer not to use hosted assets.
+The Chinese homepage replaces the earlier planning-only layout with searchable vacancy cards, country/field/deadline filters, local research-interest profiles, explainable keyword scores, separate eligibility-review notes and bookmarks. The original material/progress workspace remains at `tracker.html`. Its existing browser storage key is preserved.
 
-## Run
+The default dataset is **six manually curated original-employer snapshots across two countries**, checked on 2026-10-15. It is not a live feed or a comprehensive European job index. Every record links to the employer page. Titles and short summaries are this project's own Chinese paraphrases. No reference-radar dataset, page code, brand, paywalled content or salary estimates were copied.
 
-Python 3.11+; no installation or Python dependencies:
+## Matching is not an admission probability
+
+Enter only broad public/non-confidential interests and methods, optionally degree level, English readiness and preferred countries. No CV or identity is required. A bounded bilingual vocabulary measures interest overlap (70%) and method overlap (30%); missing components are not invented. No profile means no score.
+
+Degree, language, deadline and country-preference checks stay separate. A high keyword score can coexist with a degree gap, unknown language evidence or special restrictions. The app does not determine eligibility, evaluate applicant quality or submit anything. Read the [exact method and limitations](docs/MATCHING.md).
+
+## Local run
+
+Python 3.11+, no installation or runtime Python dependencies:
 
 ```sh
 python3 server.py
 ```
 
-Open **http://127.0.0.1:8907/**. The workspace starts empty. “Try fictional examples” works only in an empty workspace and contains no real vacancies, applicants or funding claims.
+Open http://127.0.0.1:8907/. Hosted and local versions use separate browser storage. Search/filter, profile save, vacancy details, matching explanations and bookmarks work locally. Bookmarks join the old application checklist without overwriting existing IDs. Your own vacancy snapshots can be exported/imported using the exported JSON schema; imported facts are labelled unverified.
 
-## What works
+## Privacy
 
-- Add and edit PhD, doctoral researcher, RA, Predoc or other opportunities.
-- Search and filter by stage/country; view date-only deadlines and a 14-day queue.
-- Maintain a material-name checklist with missing/draft/ready states.
-- Manually update application stages and inspect local activity history.
-- Persist in browser local storage; export/import JSON backups and export spreadsheet-safe CSV.
-- Import validation rejects malformed records, duplicate IDs and conflicts with existing records instead of overwriting them.
+Profiles and application records stay **unencrypted in this browser profile/origin**. Shared profiles and other same-origin code are in the trust boundary. Clearing browser data can erase records. Export private application backups from the tracker; profile export/sync is not implemented. There are no accounts, cloud applicant database, CV uploads, analytics, model calls, automatic emails or applications. Hosting receives normal static-asset requests.
 
-## “Many people can use it” — the precise boundary
-
-Different people can download the same code and run independent workspaces on their own machines/browser profiles. This first release is **not a hosted multi-tenant service**: no accounts, server database, sync, sharing, authentication or authorization boundary exists. People sharing the same browser profile and origin share its workspace.
-
-Storage is tied to the exact scheme/hostname/port. Use the same URL each time. Changing `127.0.0.1` to `localhost` or changing ports creates a different browser storage area; export a backup before moving. Browser data clearing can erase records.
-
-Data is **not encrypted**. Backups and CSVs can contain private notes. Store them privately. The server serves four allowlisted static files and has no data API; the app has no telemetry, external scripts, model calls, email integration, scraping or automatic submission. Opening a source link navigates to that external website.
-
-## What this release intentionally does not do
-
-No CV/document uploads, recommender/contact database, private-paper processing, account credentials, official deadline verification, eligibility judgments, opportunity recommendations or automatic applications. A checkbox records only that **you** checked a source. A “submitted” stage is a manual note, not proof of an external submission. Activity history is editable local backup data, not a signed audit trail.
-
-Capacity is bounded to 500 opportunities, 30 checklist items and 500 activity entries per record, and a 1.5 MB serialized workspace. Save/import failures do not replace the prior stored data. Do not treat this early release as your only copy of important application records. No claim of broad browser compatibility, security certification or real-user validation is made.
+The personal dashboard that inspired this work remains private and untouched. No private application data, contact list, paper or applicant profile was bundled. This is a new general-purpose public implementation, not the full private system and not an authenticated multi-tenant SaaS.
 
 ## Checks
 
-Node.js 20+ is needed only for tests:
+Node 20+ is needed only for tests:
 
 ```sh
-node --test tests/core.test.mjs
+node --test tests/*.test.mjs
 python3 -m unittest discover -s tests -v
 ```
 
-See [中文说明](README.zh-CN.md) and [privacy/security boundaries](SECURITY.md). MIT licensed. This public implementation and documentation were prepared with AI assistance. The original private application system remains untouched.
+40 JavaScript tests plus 8 Python launcher tests. Real-browser checks used a fictional profile to verify scoring, degree gaps and bookmark persistence in the local workspace. See [QA boundaries](docs/QA.md) and [security](SECURITY.md).
+
+MIT licensed code, AI-assisted implementation. Employer content and the reference product retain their own rights. No user adoption, calibrated fit accuracy, production security or comprehensive vacancy coverage is claimed.

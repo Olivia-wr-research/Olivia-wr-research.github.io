@@ -1,0 +1,17 @@
+import {daysLeft} from './core.mjs';
+export const PROFILE_KEY='doctoral-compass-profile-v1';
+export function terms(value){return [...new Set(String(value||'').split(/[,，;；\n]/).map(s=>s.trim().toLowerCase()).filter(Boolean))].slice(0,30);}
+export function profile(input){const out={topics:String(input.topics||'').slice(0,1500),methods:String(input.methods||'').slice(0,1500),countries:Array.isArray(input.countries)?input.countries.filter(v=>typeof v==='string').slice(0,30):[],degree:input.degree||'unknown',english:input.english||'unknown'};if(!['unknown','bachelor','master','doctorate'].includes(out.degree)||!['unknown','yes','no'].includes(out.english))throw Error('Invalid profile');return out;}
+function hits(tokens,vocabulary){const all=vocabulary.map(v=>v.toLowerCase());return tokens.filter(token=>all.some(tag=>tag===token||(token.length>=3&&tag.includes(token))));}
+export function match(job,input,today){
+ const p=profile(input),t=terms(p.topics),m=terms(p.methods),th=hits(t,job.topics),mh=hits(m,job.methods);
+ const components=[];if(t.length)components.push({label:'研究兴趣',points:Math.round(70*th.length/t.length),max:70,hits:th});if(m.length)components.push({label:'方法与技能',points:Math.round(30*mh.length/m.length),max:30,hits:mh});
+ const total=components.reduce((n,c)=>n+c.max,0),score=total?Math.round(100*components.reduce((n,c)=>n+c.points,0)/total):null;
+ const checks=[];
+ const left=daysLeft(job.deadline,today);checks.push({label:'截止日期',state:left===null?'unknown':left<0?'gap':'review',text:left===null?'未编码，需核实':left<0?'快照日期已过，不按在招推荐':'原帖日期 '+job.deadline+'；当地截止时点需复核'});
+ checks.push({label:'学历要求',state:job.degree==='unknown'||p.degree==='unknown'?'unknown':job.degree==='master'&&p.degree==='bachelor'?'gap':'review',text:job.degree==='unknown'?'岗位要求未完整编码':p.degree==='unknown'?'尚未填写你的学历':p.degree==='bachelor'?'须确认硕士取得时间或例外条件':'学历层级接近；专业、学位认可和毕业时间仍需核对'});
+ checks.push({label:'英语要求',state:job.language==='unknown'||p.english==='unknown'?'unknown':p.english==='no'?'gap':'review',text:job.language==='unknown'?'岗位语言信息未编码':p.english==='unknown'?'尚未填写英语准备情况':p.english==='no'?'英语准备存在缺口':'自述可用英语；证书与具体等级未核验'});
+ const preferred=p.countries.some(c=>c.toLowerCase()===job.country.toLowerCase());
+ checks.push({label:'地区偏好',state:!p.countries.length?'unknown':preferred?'preference':'gap',text:!p.countries.length?'未设地区偏好':preferred?'符合你选择的地区':'不在你的地区偏好中（不是资格不符）'});
+ return {score,components,checks,expired:left!==null&&left<0,overlap:[...th,...mh],label:score===null?'未设置匹配':score>=65?'较高关键词重合':score>=30?'部分关键词重合':'关键词重合较少'};
+}
