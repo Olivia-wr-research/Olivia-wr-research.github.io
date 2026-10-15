@@ -1,4 +1,8 @@
-# NextPosition v0.2 — matching and data boundaries
+# NextPosition — matching and data boundaries
+
+## Current behavior (0.6)
+
+The discovery UI supports Chinese and English. Sorting uses the number of shared topic/method tags; percentage scores are no longer displayed or used to order cards. The legacy weighted value remains in the internal matching API for compatibility. The catalog now contains 75 advertisements across five countries; see RELEASE_06.md for current coverage. The earlier implementation notes below describe the original baseline, not current counts.
 
 The homepage is now a Chinese-language discovery and matching interface, not the old progress board. The original public planning UI remains at `tracker.html`, and its browser storage key is preserved. No personal profile or private application database was migrated.
 

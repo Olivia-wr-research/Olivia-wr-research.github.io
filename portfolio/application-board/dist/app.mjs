@@ -1,9 +1,10 @@
 import {STAGES,MATERIAL_STATES,KEY,parseBackup,backup,mergeRecords,daysLeft,filtered,csv,updateStage,demoRecords,validateRecord} from './core.mjs';
 const $=s=>document.querySelector(s),el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
+let storageVersion=null;
 let records=[],dueOnly=false,selected=null,storageProblem=false;
 function tell(message){$('#status').textContent=message;$('#status').style.display='block';setTimeout(()=>$('#status').style.display='none',6500);}
-try{const raw=localStorage.getItem(KEY);if(raw)records=parseBackup(raw);}catch{storageProblem=true;tell('Stored data could not be read. Writing is disabled to protect it. Export/recover the existing storage before continuing.');}
-function save(next){try{if(storageProblem)throw Error('Storage recovery is required before editing');const text=backup(next);localStorage.setItem(KEY,text);records=next;render();return true;}catch(e){tell('Not saved: '+e.message);return false;}}
+try{const raw=localStorage.getItem(KEY);storageVersion=raw;if(raw)records=parseBackup(raw);}catch{storageProblem=true;tell('Stored data could not be read. Writing is disabled to protect it. Export/recover the existing storage before continuing.');}
+function save(next){try{if(storageProblem)throw Error('Storage recovery is required before editing');if(localStorage.getItem(KEY)!==storageVersion)throw Error('Another tab changed your applications. Reload this page before editing; your pending changes were not saved.');const text=backup(next);localStorage.setItem(KEY,text);storageVersion=text;records=next;render();return true;}catch(e){tell('Not saved: '+e.message);return false;}}
 for(const stage of STAGES){for(const selector of ['#stage','#form [name=stage]']){const o=el('option',stage);o.value=stage;$(selector).append(o);}}
 function isActive(r){return !['closed','offer'].includes(r.stage);}
 function near(r){const d=daysLeft(r.deadline);return isActive(r)&&d!==null&&d>=0&&d<=14;}

@@ -2,11 +2,11 @@
 
 Research opportunities, local CV-assisted exploration, research-unit evidence and application planning.
 
-[Open the app](https://olivia-wr-research.github.io/apps/application-board/) · [中文说明](README.zh-CN.md) · [0.5 sources and limits](docs/RELEASE_05.md) · [Matching method](docs/MATCHING.md)
+[Open the app](https://olivia-wr-research.github.io/apps/application-board/) · [中文说明](README.zh-CN.md) · [0.6 release and limits](docs/RELEASE_06.md) · [Matching method](docs/MATCHING.md)
 
 ## Explore without knowing your interests first
 
-- Browse all 19 employer-advertisement snapshots across 5 countries, dated 2026-10-15. These are manually checked snapshots, not a live or comprehensive European index. An advertisement with two places is counted once.
+- Browse 75 employer advertisements across 5 countries, compiled 2026-10-16. These are source-based records, not a live or comprehensive European index. An advertisement with two places is counted once.
 - Start from guided topic/method checkboxes, or locally read a text-layer PDF/DOCX/TXT/Markdown CV and review candidate tags. No raw CV transmission or storage; no model calls. PDF parsing is local using bundled PDF.js; scans/OCR remain unsupported. Files are capped at 5 MB, PDFs at 20 pages.
 - Inspect 6 research-unit evidence entries (institutes, project and group explicitly distinguished) and related snapshot links. Graduate outcomes, funding continuity and publication metrics are unknown, not fabricated rankings.
 - Compare up to 3 jobs, inspect requirements and restrictions, save to the preserved browser-local application tracker at `tracker.html`.
@@ -14,7 +14,7 @@ Research opportunities, local CV-assisted exploration, research-unit evidence an
 
 ## Matching is not admission prediction
 
-Broad topic/method token overlap (70% / 30%, normalized over filled components) orders results. Cards show intersections and separate unknowns/attention items, not an admission score. No input means no invented fit. CV mentions do not prove experience or interest; users confirm candidate labels. Degree, language, mobility, funding and professional requirements still require employer verification. No identity, degree or language proficiency is inferred from the CV.
+Results are ordered by the number of shared topic/method tags, not an admission score. Cards show intersections and separate unknowns/attention items, not an admission score. No input means no invented fit. CV mentions do not prove experience or interest; users confirm candidate labels. Degree, language, mobility, funding and professional requirements still require employer verification. No identity, degree or language proficiency is inferred from the CV.
 
 ## Run and test
 
@@ -27,7 +27,7 @@ node --test tests/*.test.mjs
 python3 -m unittest discover -s tests -v
 ```
 
-79 JavaScript and 9 Python tests cover matching, file bounds, stored/deflated synthetic DOCX, rejection cases, source associations, storage and the loopback launcher. Browser checks use synthetic files only. PDF evidence is shown as controlled trigger phrases, with no automatic selection of interests. Engineering tests are not a real-user study, eligibility assessment, security certification or CV accuracy benchmark.
+JavaScript and Python regression tests cover matching, file bounds, stored/deflated synthetic DOCX, rejection cases, source associations, storage and the loopback launcher. Browser checks use synthetic files only. PDF evidence is shown as controlled trigger phrases, with no automatic selection of interests. Engineering tests are not a real-user study, eligibility assessment, security certification or CV accuracy benchmark.
 
 ## Privacy and release boundary
 

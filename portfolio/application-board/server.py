@@ -6,7 +6,7 @@ from urllib.parse import urlsplit
 
 ROOT=Path(__file__).resolve().parent/'dist'
 FILES={'/':('index.html','text/html; charset=utf-8'),'/app.mjs':('app.mjs','text/javascript; charset=utf-8'),'/core.mjs':('core.mjs','text/javascript; charset=utf-8'),'/style.css':('style.css','text/css; charset=utf-8')}
-for name in ['radar.mjs','matching.mjs','positions.mjs','explore.mjs','journey.mjs','pdf-text.mjs','pdf.min.mjs','pdf.worker.min.mjs','data-quality.mjs']:
+for name in ['radar.mjs','matching.mjs','positions.mjs','explore.mjs','journey.mjs','pdf-text.mjs','pdf.min.mjs','pdf.worker.min.mjs','data-quality.mjs','i18n.mjs','tracker-language.mjs']:
     FILES['/'+name]=(name,'text/javascript; charset=utf-8')
 FILES['/radar.css']=('radar.css','text/css; charset=utf-8')
 FILES['/tracker.html']=('tracker.html','text/html; charset=utf-8')

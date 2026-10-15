@@ -13,4 +13,6 @@ test('short tokens do not match inside unrelated words',()=>assert.equal(match({
 test('methods-only profile works',()=>assert.equal(match(j,{methods:'访谈'},day).score,100));
 test('arbitrary profile state rejected',()=>assert.throws(()=>profile({degree:'guaranteed-admission'})));
 test('bounded token normalization handles Chinese separators',()=>assert.deepEqual(terms('AI，ai；Python'),['ai','python']));
+test('English country preference matches Chinese country data',()=>assert.equal(match({...j,country:'荷兰'},{countries:['Netherlands']},day).checks.find(c=>c.label==='地区偏好').state,'preference'));
+test('Chinese profile recognizes an English research method',()=>assert.ok(match({...j,methods:['network analysis']},{methods:'网络分析'},day).overlap.includes('网络分析')));
 test('each real source snapshot has an official origin and no person contact fields',()=>{for(const x of positions){assert.ok(['careers.tudelft.nl','jobs.univie.ac.at','werkenbij.uva.nl','careers.universiteitleiden.nl','jobportal.ku.dk','jobs.ethz.ch','www.jobs.ethz.ch','www.jobbnorge.no'].includes(new URL(x.url).hostname));assert.equal(x.email,undefined);}});
