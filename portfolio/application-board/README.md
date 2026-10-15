@@ -8,7 +8,7 @@
 
 The Chinese homepage replaces the earlier planning-only layout with searchable vacancy cards, country/field/deadline filters, local research-interest profiles, explainable keyword scores, separate eligibility-review notes and bookmarks. The original material/progress workspace remains at `tracker.html`. Its existing browser storage key is preserved.
 
-The default dataset is **six manually curated original-employer snapshots across two countries**, checked on 2026-10-15. It is not a live feed or a comprehensive European job index. Every record links to the employer page. Titles and short summaries are this project's own Chinese paraphrases. No reference-radar dataset, page code, brand, paywalled content or salary estimates were copied.
+The default dataset is **nine manually curated original-employer snapshots across two countries**, checked on 2026-10-15. It is not a live feed or a comprehensive European job index. Every record links to the employer page. Titles and short summaries are this project's own Chinese paraphrases. No reference-radar dataset, page code, brand, paywalled content or salary estimates were copied.
 
 ## Matching is not an admission probability
 
@@ -41,6 +41,8 @@ node --test tests/*.test.mjs
 python3 -m unittest discover -s tests -v
 ```
 
-40 JavaScript tests plus 8 Python launcher tests. Real-browser checks used a fictional profile to verify scoring, degree gaps and bookmark persistence in the local workspace. See [QA boundaries](docs/QA.md) and [security](SECURITY.md).
+44 JavaScript tests plus 8 Python launcher tests. Real-browser checks used a fictional profile to verify scoring, degree gaps and bookmark persistence in the local workspace. See [QA boundaries](docs/QA.md) and [security](SECURITY.md).
 
 MIT licensed code, AI-assisted implementation. Employer content and the reference product retain their own rights. No user adoption, calibrated fit accuracy, production security or comprehensive vacancy coverage is claimed.
+
+See [release 0.3](docs/RELEASE_03.md) for the discovery-first pilot, new sources and verification limits.

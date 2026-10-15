@@ -1,6 +1,6 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';
 import {match,profile,terms} from '../dist/matching.mjs';import {positions} from '../dist/positions.mjs';
-const j=positions[0],day='2026-10-15';
+const j=positions.find(p=>p.id==='delft-3815'),day='2026-10-15';
 test('no profile means no invented score',()=>assert.equal(match(j,{},day).score,null));
 test('interest-only uses available component',()=>assert.equal(match(j,{topics:'组织治理'},day).score,100));
 test('explicit weights are 70 topics and 30 methods',()=>assert.equal(match(j,{topics:'组织治理',methods:'not-a-required-method'},day).score,70));
@@ -13,4 +13,4 @@ test('short tokens do not match inside unrelated words',()=>assert.equal(match({
 test('methods-only profile works',()=>assert.equal(match(j,{methods:'访谈'},day).score,100));
 test('arbitrary profile state rejected',()=>assert.throws(()=>profile({degree:'guaranteed-admission'})));
 test('bounded token normalization handles Chinese separators',()=>assert.deepEqual(terms('AI，ai；Python'),['ai','python']));
-test('each real source snapshot has an official origin and no person contact fields',()=>{for(const x of positions){assert.ok(['careers.tudelft.nl','jobs.univie.ac.at'].includes(new URL(x.url).hostname));assert.equal(x.email,undefined);}});
+test('each real source snapshot has an official origin and no person contact fields',()=>{for(const x of positions){assert.ok(['careers.tudelft.nl','jobs.univie.ac.at','werkenbij.uva.nl','careers.universiteitleiden.nl'].includes(new URL(x.url).hostname));assert.equal(x.email,undefined);}});
