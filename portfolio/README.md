@@ -2,18 +2,17 @@
 
 Small, inspectable tools for research workflows. Projects are selected for runnable code, traceable inputs, explicit limitations and reproducibility—not for the number of repositories or an “AI agent” label.
 
-## NextPosition · Discovery, matching and application planning
+## NextPosition · Guided opportunity exploration
 
-[Open the app](https://olivia-wr-research.github.io/apps/application-board/) · [Source and local launcher](application-board/README.md) · [Matching method](application-board/docs/MATCHING.md)
+[Open the app](https://olivia-wr-research.github.io/apps/application-board/) · [Source](application-board/README.md) · [0.4 source ledger and limits](application-board/docs/RELEASE_04.md)
 
-A Chinese-language doctoral opportunity discovery interface with filters, browser-local interest profiles, transparent keyword scores, separately displayed eligibility-review gaps, bookmarks and the preserved application tracker.
+A Chinese-language research-opportunity explorer with all-field vacancy browsing, guided topic/method choices, browser-local DOCX/TXT/Markdown CV reading, explicit review of suggested tags, research-unit evidence cards, up-to-three-job comparisons and a preserved application tracker.
 
-- Six independently curated official-employer snapshots, checked 2026-10-15, across two countries. Not a live or exhaustive European vacancy index.
-- Research interests 70% / methods 30% token overlap; no profile means no score. This is not semantic AI or an admission probability.
-- Degree, language and preferences stay separate; a high score cannot compensate for a missing requirement.
-- 40 JavaScript tests and 8 Python tests. Local browser profile/explanation/bookmark flows tested with a fictional profile.
-- No reference-radar data, branding, private applicant records, CV uploads, model calls or automatic applications. Unencrypted browser-local state, not an authenticated SaaS.
-- The old material/progress board remains available at `tracker.html`, with existing storage preserved.
+- Sixteen official-employer advertisement snapshots across three countries, dated 2026-10-15; no live or exhaustive index. Five official external search portals are separate from snapshot counts.
+- Six research-unit pointers distinguish institutes, a group and a project; linked vacancies are explicit. No alumni outcomes, publication metrics, supervisory-quality or funding-continuity estimates are fabricated.
+- Fixed-vocabulary CV suggestions are not semantic analysis or an admission prediction. Raw CV text is not transmitted or persisted; reviewed labels alone join local state. PDF/OCR are not implemented; paste locally copied text instead.
+- 60 JavaScript and 9 Python tests; browser flows exercised with synthetic text, no real-user adoption or accuracy benchmark.
+- Unencrypted browser-local profiles, no accounts, analytics, CV cloud service, model APIs, automatic applications or reference-site dataset copying.
 
 ## FrontierSignal · Research discovery and screening
 

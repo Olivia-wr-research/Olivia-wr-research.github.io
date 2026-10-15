@@ -27,4 +27,7 @@ class ServerTests(unittest.TestCase):
     def test_no_data_write_api(self):self.assertEqual(self.request(method='POST')[0],405)
     def test_csp_blocks_network_clients(self):self.assertIn("connect-src 'none'",self.request()[1]['Content-Security-Policy'])
     def test_javascript_mime(self):self.assertIn('text/javascript',self.request('/core.mjs')[1]['Content-Type'])
+    def test_new_modules_with_version_queries(self):
+        for name in ['explore.mjs','journey.mjs','positions.mjs','radar.mjs']:
+            self.assertEqual(self.request('/'+name+'?v=04')[0],200)
 if __name__=='__main__':unittest.main()
