@@ -1,5 +1,11 @@
 # NextPosition · 下一站
 
+## 0.7 decision details
+
+Cards now show both language titles, date-only deadline countdowns, and source hosts. Country and field options include catalog counts; source and conservative funding filters are available. Details include location, funding, salary, degree, language, source and per-record verification date, with a direct save action. Countdown days use UTC calendar dates, not exact local cutoff times. Funding is classified only from explicit curated text; a generic mention of employment terms is not employment confirmation. Filters do not establish eligibility.
+
+This release does not add new advertisements or claim verified supervisor analytics. Bachelor eligibility, English-only eligibility, publication quartiles and graduate destinations still need independent source-backed enrichment. Existing research-unit introductions are not lab assessment reports.
+
 Research opportunities, local CV-assisted exploration, research-unit evidence and application planning.
 
 [Open the app](https://olivia-wr-research.github.io/apps/application-board/) · [中文说明](README.zh-CN.md) · [0.6 release and limits](docs/RELEASE_06.md) · [Matching method](docs/MATCHING.md)
