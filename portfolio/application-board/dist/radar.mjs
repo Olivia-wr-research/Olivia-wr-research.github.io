@@ -1,10 +1,10 @@
 import {initRoutes,navigate} from './routes.mjs';
 import {fundingKind,sourceName,deadlineInfo,collapseProgrammeRows,programmeRounds} from './opportunity.mjs';
 import {geographyCatalog as geographyOpportunities} from './geography-catalog.mjs';
-import {setupGeographyUI,typeLabel,applicationNotes} from './geography-ui.mjs';
+import {setupGeographyUI,typeLabel,applicationNotes} from './geography-ui.mjs?v=cv-paused-20261018';
 import {initLanguage,field,language,t} from './i18n.mjs';
 import {classifySnapshot,summarizeCoverage} from './data-quality.mjs?v=07';
-import {setupJourney} from './journey.mjs?v=07';
+import {setupJourney} from './journey.mjs?v=cv-paused-20261018';
 import {positions,checkedAt} from './positions.mjs?v=07';
 import {PROFILE_KEY,profile,terms,match,canonicalTerm} from './matching.mjs?v=07';
 import {KEY,parseBackup,backup,validateRecord,safeUrl,validDate,daysLeft} from './core.mjs';
