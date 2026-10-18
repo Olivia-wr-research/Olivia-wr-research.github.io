@@ -67,4 +67,4 @@ export function setupGeographyUI({getJobs,onChange,onOpen,onSave,onScope,onCount
  }
  return {getState:()=>({track,mode}),restoreState:s=>{track=s?.track||'study';mode=s?.mode||'cards';},resetTrack:(next='study')=>{track=next;type.value=region.value=discipline.value=time.value=level.value='all';},accepts:j=>scope==='legacy'||matchesGeo(j,{track,level:level.value,region:region.value,discipline:discipline.value,time:time.value,kind:type.value}),update};
 }
-import './community-entry.mjs';
+import './community-entry.mjs?v=feishu-20261018';
