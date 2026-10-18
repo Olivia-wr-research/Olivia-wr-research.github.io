@@ -1,3 +1,4 @@
+import {CV_MATCH_ENABLED} from "./features.mjs";
 import {field,language,t} from './i18n.mjs';
 import {researchUnits,sourcePortals,topicChoices,methodChoices,suggestFromText,cvFileText} from './explore.mjs?v=06';
 const $=s=>document.querySelector(s),node=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
@@ -20,7 +21,7 @@ export function setupJourney({getJobs,getOfficialJobs,applyProfile,showJob,match
  const foot=node('div',undefined,'form-actions');foot.append(button('先看全部岗位',()=>{dialog.close();leave();$('#reset').click();$('#discover').click();}),button('预览相关机会（不保存档案）',()=>{const selected=kind=>[...dialog.querySelectorAll('input[data-kind="'+kind+'"]:checked')].map(x=>x.value);const t=[...selected('topics'),...custom.value.split(/[,，]/).map(s=>s.trim()).filter(Boolean)];if(!t.length&&!selected('methods').length){status.textContent='可先不设置匹配，点击“先看全部岗位”。';return;}if(applyProfile({topics:t.join(', '),methods:selected('methods').join(', ')},{persist:false})){dialog.close();leave();$('#discover').click();}},'primary-action'));dialog.append(foot);document.body.append(dialog);
  file.onchange=async()=>{const f=file.files[0];if(!f)return;const serial=++readSerial;status.textContent='正在本机读取…';try{const text=await cvFileText(f);if(serial!==readSerial||!dialog.open)return;raw.value=text;extract();}catch(e){if(serial===readSerial&&dialog.open)status.textContent=e.message;}finally{if(serial===readSerial)file.value='';}};
  dialog.addEventListener('close',()=>{readSerial++;raw.value='';file.value='';custom.value='';evidence.replaceChildren();for(const label of dialog.querySelectorAll('.suggested'))label.classList.remove('suggested');for(const c of dialog.querySelectorAll('input[data-kind]')){c.checked=false;c.closest('label').hidden=false;}status.textContent='原文已从当前表单清空。仅经你确认的概括标签会写入本地匹配档案。';});
- function guide(withCV=false){dialog.showModal();if(withCV)file.focus();}
+ function guide(withCV=false){if(!CV_MATCH_ENABLED)return;dialog.showModal();if(withCV)file.focus();}
  $('#guide-start').onclick=()=>guide();$('#cv-start').onclick=()=>guide(true);$('#profile-guide').onclick=()=>{$('#profile-dialog').close();guide();};
  function groups(){
   view('groups','研究组与研究单位','认识研究团队，找到让你好奇的问题。');
