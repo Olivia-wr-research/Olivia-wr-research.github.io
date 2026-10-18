@@ -1,4 +1,5 @@
 // Collection dates are not source publication dates or verification dates.
+import {language} from './i18n.mjs';
 export function collectionDate(record){
  const value=record.collectedAt;
  if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(value))return '';
@@ -8,6 +9,6 @@ export function collectionDate(record){
 export function newestCollected(a,b){return collectionDate(b).localeCompare(collectionDate(a));}
 export function setupCollectionSort(select){
  const option=document.createElement('option');option.value='newest';select.append(option);
- const update=()=>{const en=document.documentElement.lang==='en';option.textContent=en?'Recently added first':'最新收录优先';select.title=en?'Recently added uses catalogue collection dates, not official publication dates. Unknown dates come last.':'最新收录按本站收录日期排序，不代表官网刚发布；日期未知的项目排在后面。';};
+ const update=()=>{const en=language==='en';option.textContent=en?'Recently added first':'最新收录优先';select.title=en?'Recently added uses catalogue collection dates, not official publication dates. Unknown dates come last.':'最新收录按本站收录日期排序，不代表官网刚发布；日期未知的项目排在后面。';};
  update();window.addEventListener('languagechange',update);
 }

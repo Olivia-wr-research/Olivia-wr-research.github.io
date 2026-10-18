@@ -1,4 +1,4 @@
-import {newestCollected,setupCollectionSort} from './opportunity-sort.mjs';
+import {newestCollected,setupCollectionSort} from './opportunity-sort.mjs?v=2';
 import {initRoutes,navigate} from './routes.mjs';
 import {fundingKind,sourceName,deadlineInfo,collapseProgrammeRows,programmeRounds} from './opportunity.mjs';
 import {geographyCatalog as geographyOpportunities} from './geography-catalog.mjs';
