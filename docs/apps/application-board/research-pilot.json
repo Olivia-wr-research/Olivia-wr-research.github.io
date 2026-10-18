@@ -1,0 +1,615 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-18",
+  "verification": "agent-source-review; not independent human validation",
+  "departments": [
+    {
+      "id": "department-cambridge-geography",
+      "name": "剑桥大学 · 地理系",
+      "url": "https://www.geog.cam.ac.uk/",
+      "summary": "样板聚焦该系 Vital Geographies 主题研究群，连接既有博士目录；不代表该系全部团队。",
+      "directions": "本次核对范围：生命、保护、环境政治经济与发展议题。",
+      "opportunityIds": [
+        "geo-programme-cambridge-geography",
+        "geo-intake-cambridge-2027"
+      ],
+      "coverage": "仅覆盖上述样板与既有两条博士目录记录；其他研究群尚未深度收录。",
+      "evidence": [
+        {
+          "field": "团队边界与主题",
+          "value": "剑桥地理系主题研究群；多位召集人，不等于个人实验室。",
+          "url": "https://www.geog.cam.ac.uk/research/vital/",
+          "excerpt": "Research in this group explores the production, politics and governance of different forms of life.",
+          "observedAt": "2026-10-18",
+          "applicableTime": "页面核对时；非实时注册确认",
+          "status": "official_page_observed"
+        }
+      ]
+    },
+    {
+      "id": "department-ubc-geography",
+      "name": "不列颠哥伦比亚大学 · 地理系",
+      "url": "https://geog.ubc.ca/",
+      "summary": "样板聚焦 Jessica Dempsey 参与的跨机构历史项目，连接既有博士申请入口。",
+      "directions": "本次核对范围：政治生态、生物多样性与保护融资。",
+      "opportunityIds": [
+        "geo-programme-ubc",
+        "geo-intake-ubc-dec2026"
+      ],
+      "coverage": "并非全系研究方向或现有招生导师名录。项目人物页的历史学生身份未作为当前在读发布。",
+      "evidence": [
+        {
+          "field": "当前公开职位",
+          "value": "Jessica Dempsey 为 UBC 地理系 Professor。",
+          "url": "https://geog.ubc.ca/profile/jessica-dempsey/",
+          "excerpt": "Professor",
+          "observedAt": "2026-10-18",
+          "applicableTime": "页面核对时；非实时注册确认",
+          "status": "official_page_observed"
+        },
+        {
+          "field": "项目期限与边界",
+          "value": "跨机构研究项目，网页列出2018–2023期限。",
+          "url": "https://blogs.ubc.ca/biodiversitycapital/about-this-project/",
+          "excerpt": "Between 2018-2023, our project will develop case studies",
+          "observedAt": "2026-10-18",
+          "applicableTime": "页面核对时；非实时注册确认",
+          "status": "official_project_site_observed"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "group-cambridge-vital-geographies",
+      "name": "Vital Geographies · 生命、环境与社会地理研究群",
+      "institution": "University of Cambridge",
+      "url": "https://www.geog.cam.ac.uk/research/vital/",
+      "summary": "围绕生命的生产、治理与政治，连接食物、健康、动物和环境保护议题。",
+      "boundary": "跨研究者主题研究群，不是 Bhaskar Vira 个人实验室。官方列出多位召集人；成员和发表不能归为单一导师产出。",
+      "lead": "Philip Howell (Convenor) / David Nally (Convenor) / Olga Petri (Co-convenor)",
+      "current": "食物与农业 · 健康与人口 · 动物地理 · 政治生态与保护",
+      "past": "本次只核对选集：2022年平台劳动与非正规就业，2025年环境贫困与保护。不据选集推断整体主题增减。",
+      "checkedAt": "2026-10-18",
+      "departmentIds": [
+        "department-cambridge-geography"
+      ],
+      "researcherIds": [
+        "person-cambridge-bhaskar-vira"
+      ],
+      "members": [
+        {
+          "name": "Bhaskar Vira",
+          "researcherId": "person-cambridge-bhaskar-vira",
+          "role": "Professor of Political Economy; group member",
+          "topic": "环境与发展政治经济",
+          "sources": [
+            "https://www.geog.cam.ac.uk/research/vital/",
+            "https://www.geog.cam.ac.uk/people/vira/"
+          ]
+        },
+        {
+          "name": "Prerna Singh Bindra",
+          "role": "官网列为 PhD student；并非独立确认实时注册",
+          "supervisorId": "person-cambridge-bhaskar-vira",
+          "topic": "印度虎保护区保护性搬迁的政策与影响",
+          "temporalNote": "官网在核对时列示；明确指导关系，不是从共著推断。",
+          "sources": [
+            "https://www.geog.cam.ac.uk/people/bindra/",
+            "https://www.geog.cam.ac.uk/research/vital/"
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "name": "The Political Economy of Just Energy Transitions in the Global South",
+          "summary": "以印度为起点研究公正能源转型与地方生计。",
+          "role": "官网列出参与者，未确认谁担任 PI",
+          "funder": null,
+          "period": null,
+          "amount": null,
+          "url": "https://www.geog.cam.ac.uk/research/projects/justenergytransition/"
+        }
+      ],
+      "works": [
+        {
+          "title": "Unveiling pervasive assumptions: moving beyond the poverty-biodiversity loss association in conservation",
+          "year": 2025,
+          "doi": "10.1016/j.cosust.2025.101537",
+          "researcherIds": [
+            "person-cambridge-bhaskar-vira"
+          ],
+          "type": "journal_article",
+          "sourceIds": [
+            "cam-papers"
+          ],
+          "scope": "selected_member_work",
+          "id": "group-cambridge-vital-geographies-work-1",
+          "url": "https://doi.org/10.1016/j.cosust.2025.101537",
+          "authors": [],
+          "sourceUrl": "https://www.geog.cam.ac.uk/research/vital/publications/",
+          "evidence": [
+            {
+              "field": "bibliography",
+              "value": "Unveiling pervasive assumptions: moving beyond the poverty-biodiversity loss association in conservation",
+              "url": "https://www.geog.cam.ac.uk/research/vital/publications/",
+              "excerpt": "Recent publications",
+              "observedAt": "2026-10-18",
+              "applicableTime": "2025",
+              "status": "official_bibliography_observed"
+            }
+          ],
+          "summary": "官方成果页列出；DOI 跳转本次未完成出版商复核，不作为完整年度统计。"
+        },
+        {
+          "title": "Where Nature and Poverty Meet: Developing a Multidimensional Environment-Poverty Measure",
+          "year": 2025,
+          "doi": "10.1080/00220388.2024.2434248",
+          "researcherIds": [
+            "person-cambridge-bhaskar-vira"
+          ],
+          "type": "journal_article",
+          "sourceIds": [
+            "cam-papers"
+          ],
+          "scope": "selected_member_work",
+          "id": "group-cambridge-vital-geographies-work-2",
+          "url": "https://doi.org/10.1080/00220388.2024.2434248",
+          "authors": [],
+          "sourceUrl": "https://www.geog.cam.ac.uk/research/vital/publications/",
+          "evidence": [
+            {
+              "field": "bibliography",
+              "value": "Where Nature and Poverty Meet: Developing a Multidimensional Environment-Poverty Measure",
+              "url": "https://www.geog.cam.ac.uk/research/vital/publications/",
+              "excerpt": "Recent publications",
+              "observedAt": "2026-10-18",
+              "applicableTime": "2025",
+              "status": "official_bibliography_observed"
+            }
+          ],
+          "summary": "官方成果页列出；DOI 跳转本次未完成出版商复核，不作为完整年度统计。"
+        },
+        {
+          "title": "Offline contexts of online jobs: Platform drivers, decent work, and informality in Lagos, Nigeria",
+          "year": 2022,
+          "doi": "10.1111/dpr.12595",
+          "researcherIds": [
+            "person-cambridge-bhaskar-vira"
+          ],
+          "type": "journal_article",
+          "sourceIds": [
+            "cam-papers"
+          ],
+          "scope": "selected_member_work",
+          "id": "group-cambridge-vital-geographies-work-3",
+          "url": "https://doi.org/10.1111/dpr.12595",
+          "authors": [
+            "Cieslik, K.",
+            "Banya, R.",
+            "Vira, B."
+          ],
+          "sourceUrl": "https://www.geog.cam.ac.uk/research/vital/publications/",
+          "evidence": [
+            {
+              "field": "bibliography",
+              "value": "Offline contexts of online jobs: Platform drivers, decent work, and informality in Lagos, Nigeria",
+              "url": "https://www.geog.cam.ac.uk/research/vital/publications/",
+              "excerpt": "Recent publications",
+              "observedAt": "2026-10-18",
+              "applicableTime": "2022",
+              "status": "official_bibliography_observed"
+            }
+          ],
+          "summary": "官方成果页列出；DOI 跳转本次未完成出版商复核，不作为完整年度统计。"
+        }
+      ],
+      "recruitment": "Vira 官网说明暂时无法回复博士指导咨询；不能解释为整个研究群或院系停止招生。",
+      "coverage": "仅录入一位研究者及一位有明确官方指导关系的博士生，不是全组成员名录。 官方网站选集与代理逐页核对，不是独立人工验证。",
+      "report": {
+        "publishable": false,
+        "cohortScope": "未形成完整参考队列；不发布毕业生身份或隐藏人数",
+        "gaps": "未建立研究群边界一致且具有毕业日期、历史去向及入学期论文的参考队列。官方导师名单不能替代整个研究群队列。"
+      },
+      "evidence": [
+        {
+          "field": "团队边界与主题",
+          "value": "剑桥地理系主题研究群；多位召集人，不等于个人实验室。",
+          "url": "https://www.geog.cam.ac.uk/research/vital/",
+          "excerpt": "Research in this group explores the production, politics and governance of different forms of life.",
+          "observedAt": "2026-10-18",
+          "applicableTime": "页面核对时",
+          "status": "official_page_observed"
+        },
+        {
+          "field": "研究者与招生说明",
+          "value": "Bhaskar Vira 为研究群成员；其页面说明暂不能回复博士指导咨询。",
+          "url": "https://www.geog.cam.ac.uk/people/vira/",
+          "excerpt": "I am not in a position to respond to enquiries about doctoral supervision at the moment",
+          "observedAt": "2026-10-18",
+          "applicableTime": "页面核对时",
+          "status": "official_page_observed"
+        },
+        {
+          "field": "明确指导关系",
+          "value": "官网列示博士生 Prerna Singh Bindra 由 Bhaskar Vira 指导，研究保护性搬迁。",
+          "url": "https://www.geog.cam.ac.uk/people/bindra/",
+          "excerpt": "Supervised by: Prof Bhaskar Vira.",
+          "observedAt": "2026-10-18",
+          "applicableTime": "页面核对时",
+          "status": "official_page_observed"
+        },
+        {
+          "field": "项目与参与",
+          "value": "官网列出能源转型研究项目及参与者；未确认PI、经费与期限。",
+          "url": "https://www.geog.cam.ac.uk/research/projects/justenergytransition/",
+          "excerpt": "beginning with India",
+          "observedAt": "2026-10-18",
+          "applicableTime": "页面核对时",
+          "status": "official_page_observed"
+        }
+      ]
+    },
+    {
+      "id": "group-ubc-tracing-biodiversity-capital",
+      "name": "Tracing Biodiversity Capital · 生物多样性资本追踪研究项目",
+      "institution": "University of British Columbia",
+      "url": "https://blogs.ubc.ca/biodiversitycapital/",
+      "summary": "追踪营利性保护融资的演变、回报机制及风险与利益分配。",
+      "boundary": "UBC 托管的跨机构项目，而非 UBC 地理系全体或 Dempsey 的所有学生；项目说明期为2018–2023。",
+      "lead": "未确认单一负责人；不把参与者标成主持人",
+      "current": "历史项目主题：生物多样性金融 · 政治生态 · 环境政治经济",
+      "past": "2018–2023年项目研究保护融资；2021与2023作品提供选读依据，不据此推断当前资助。",
+      "checkedAt": "2026-10-18",
+      "departmentIds": [
+        "department-ubc-geography"
+      ],
+      "researcherIds": [
+        "person-ubc-jessica-dempsey"
+      ],
+      "members": [
+        {
+          "name": "Jessica Dempsey",
+          "researcherId": "person-ubc-jessica-dempsey",
+          "role": "UBC Geography Professor; project participant",
+          "topic": "生物多样性金融 · 政治生态 · 环境政治经济",
+          "sources": [
+            "https://geog.ubc.ca/profile/jessica-dempsey/",
+            "https://blogs.ubc.ca/biodiversitycapital/people/"
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "name": "Tracing Biodiversity Capital",
+          "summary": "追踪营利性保护融资的演变、回报机制及风险与利益分配。",
+          "role": "团队历史项目总额，非个人收入",
+          "funder": "Social Sciences and Humanities Research Council (Canada)",
+          "period": "2018–2023 (project site)",
+          "amount": "$270,000（原文符号；币种未明确）",
+          "note": "2019年团队向CBD提交文件所述历史项目总额；货币代码未在该摘录明确，不推断CAD，不代表当前余额或学生资助。",
+          "url": "https://www.cbd.int/financial/rm/submissions/ntf-2019-086/BC-university-en.pdf"
+        }
+      ],
+      "works": [
+        {
+          "title": "Risky Business: Protecting Nature, Protecting Wealth?",
+          "year": 2023,
+          "doi": "10.1111/conl.12969",
+          "researcherIds": [
+            "person-ubc-jessica-dempsey"
+          ],
+          "type": "journal_article",
+          "sourceIds": [
+            "ubc-papers"
+          ],
+          "scope": "project_listed_selected_work",
+          "id": "group-ubc-tracing-biodiversity-capital-work-1",
+          "url": "https://doi.org/10.1111/conl.12969",
+          "authors": [
+            "Irvine-Broque, A.",
+            "Dempsey, J."
+          ],
+          "sourceUrl": "https://blogs.ubc.ca/biodiversitycapital/papers-and-books/",
+          "evidence": [
+            {
+              "field": "bibliography",
+              "value": "Risky Business: Protecting Nature, Protecting Wealth?",
+              "url": "https://blogs.ubc.ca/biodiversitycapital/papers-and-books/",
+              "excerpt": "Published papers and books",
+              "observedAt": "2026-10-18",
+              "applicableTime": "2023",
+              "status": "official_project_bibliography_observed"
+            }
+          ],
+          "summary": "官方成果页列出；DOI 跳转本次未完成出版商复核，不作为完整年度统计。"
+        },
+        {
+          "title": "Biodiversity targets will not be met without debt and tax justice",
+          "year": 2021,
+          "doi": "10.1038/s41559-021-01619-5",
+          "researcherIds": [
+            "person-ubc-jessica-dempsey"
+          ],
+          "type": "journal_article",
+          "sourceIds": [
+            "ubc-papers"
+          ],
+          "scope": "project_listed_selected_work",
+          "id": "group-ubc-tracing-biodiversity-capital-work-2",
+          "url": "https://doi.org/10.1038/s41559-021-01619-5",
+          "authors": [],
+          "sourceUrl": "https://blogs.ubc.ca/biodiversitycapital/papers-and-books/",
+          "evidence": [
+            {
+              "field": "bibliography",
+              "value": "Biodiversity targets will not be met without debt and tax justice",
+              "url": "https://blogs.ubc.ca/biodiversitycapital/papers-and-books/",
+              "excerpt": "Published papers and books",
+              "observedAt": "2026-10-18",
+              "applicableTime": "2021",
+              "status": "official_project_bibliography_observed"
+            }
+          ],
+          "summary": "官方成果页列出；DOI 跳转本次未完成出版商复核，不作为完整年度统计。"
+        }
+      ],
+      "recruitment": "已查项目及人物页未提供可确认的当期名额；常设学位入口不是本项目招聘。",
+      "coverage": "项目人物页含历史硕士和博士身份，未作为2026年在读成员发布。 官方网站选集与代理逐页核对，不是独立人工验证。",
+      "report": {
+        "publishable": false,
+        "cohortScope": "未形成完整参考队列；不发布毕业生身份或隐藏人数",
+        "gaps": "人物页混合跨校历史身份，不足以界定毕业生队列；无可核验3/5年去向与完整在读期产出。"
+      },
+      "evidence": [
+        {
+          "field": "项目期限与边界",
+          "value": "跨机构研究项目，网页列出2018–2023期限。",
+          "url": "https://blogs.ubc.ca/biodiversitycapital/about-this-project/",
+          "excerpt": "Between 2018-2023, our project will develop case studies",
+          "observedAt": "2026-10-18",
+          "applicableTime": "2018–2023 项目；当前任职另核实",
+          "status": "official_project_site_observed"
+        },
+        {
+          "field": "历史成员",
+          "value": "项目人物页存在历史角色，不据此确认2026年在读身份。",
+          "url": "https://blogs.ubc.ca/biodiversitycapital/people/",
+          "excerpt": "People",
+          "observedAt": "2026-10-18",
+          "applicableTime": "2018–2023 项目；当前任职另核实",
+          "status": "historical_roles_current_status_unverified"
+        },
+        {
+          "field": "当前公开职位",
+          "value": "Jessica Dempsey 为 UBC 地理系 Professor。",
+          "url": "https://geog.ubc.ca/profile/jessica-dempsey/",
+          "excerpt": "Professor",
+          "observedAt": "2026-10-18",
+          "applicableTime": "2018–2023 项目；当前任职另核实",
+          "status": "official_page_observed"
+        },
+        {
+          "field": "历史项目经费",
+          "value": "2019年团队提交文件列出五年项目总额 $270,000；币种代码不明。",
+          "url": "https://www.cbd.int/financial/rm/submissions/ntf-2019-086/BC-university-en.pdf",
+          "excerpt": "a five-year, $270,000 Social Science and Humanities Resource Council (Canada) project",
+          "observedAt": "2026-10-18",
+          "applicableTime": "2018–2023 项目；当前任职另核实",
+          "status": "research_team_submission_2019"
+        }
+      ]
+    }
+  ],
+  "researchers": [
+    {
+      "id": "person-cambridge-bhaskar-vira",
+      "past": "2022年选读涉及拉各斯平台司机与非正规就业。",
+      "recent": "2025年选读涉及贫困与生物多样性保护、环境贫困测度。",
+      "relevance": "若关心环境治理、贫困或劳动，可以先读这些作品；共同议题不意味着具备申请资格。",
+      "collaborations": "所选成果存在共同署名；完整合作网络未核查，不将合作者视为学生。",
+      "works": [
+        {
+          "title": "Unveiling pervasive assumptions: moving beyond the poverty-biodiversity loss association in conservation",
+          "year": 2025,
+          "doi": "10.1016/j.cosust.2025.101537",
+          "researcherIds": [
+            "person-cambridge-bhaskar-vira"
+          ],
+          "type": "journal_article",
+          "sourceIds": [
+            "cam-papers"
+          ],
+          "scope": "selected_member_work",
+          "id": "group-cambridge-vital-geographies-work-1",
+          "url": "https://doi.org/10.1016/j.cosust.2025.101537",
+          "authors": [],
+          "sourceUrl": "https://www.geog.cam.ac.uk/research/vital/publications/",
+          "evidence": [
+            {
+              "field": "bibliography",
+              "value": "Unveiling pervasive assumptions: moving beyond the poverty-biodiversity loss association in conservation",
+              "url": "https://www.geog.cam.ac.uk/research/vital/publications/",
+              "excerpt": "Recent publications",
+              "observedAt": "2026-10-18",
+              "applicableTime": "2025",
+              "status": "official_bibliography_observed"
+            }
+          ],
+          "summary": "官方成果页列出；DOI 跳转本次未完成出版商复核，不作为完整年度统计。"
+        },
+        {
+          "title": "Where Nature and Poverty Meet: Developing a Multidimensional Environment-Poverty Measure",
+          "year": 2025,
+          "doi": "10.1080/00220388.2024.2434248",
+          "researcherIds": [
+            "person-cambridge-bhaskar-vira"
+          ],
+          "type": "journal_article",
+          "sourceIds": [
+            "cam-papers"
+          ],
+          "scope": "selected_member_work",
+          "id": "group-cambridge-vital-geographies-work-2",
+          "url": "https://doi.org/10.1080/00220388.2024.2434248",
+          "authors": [],
+          "sourceUrl": "https://www.geog.cam.ac.uk/research/vital/publications/",
+          "evidence": [
+            {
+              "field": "bibliography",
+              "value": "Where Nature and Poverty Meet: Developing a Multidimensional Environment-Poverty Measure",
+              "url": "https://www.geog.cam.ac.uk/research/vital/publications/",
+              "excerpt": "Recent publications",
+              "observedAt": "2026-10-18",
+              "applicableTime": "2025",
+              "status": "official_bibliography_observed"
+            }
+          ],
+          "summary": "官方成果页列出；DOI 跳转本次未完成出版商复核，不作为完整年度统计。"
+        },
+        {
+          "title": "Offline contexts of online jobs: Platform drivers, decent work, and informality in Lagos, Nigeria",
+          "year": 2022,
+          "doi": "10.1111/dpr.12595",
+          "researcherIds": [
+            "person-cambridge-bhaskar-vira"
+          ],
+          "type": "journal_article",
+          "sourceIds": [
+            "cam-papers"
+          ],
+          "scope": "selected_member_work",
+          "id": "group-cambridge-vital-geographies-work-3",
+          "url": "https://doi.org/10.1111/dpr.12595",
+          "authors": [
+            "Cieslik, K.",
+            "Banya, R.",
+            "Vira, B."
+          ],
+          "sourceUrl": "https://www.geog.cam.ac.uk/research/vital/publications/",
+          "evidence": [
+            {
+              "field": "bibliography",
+              "value": "Offline contexts of online jobs: Platform drivers, decent work, and informality in Lagos, Nigeria",
+              "url": "https://www.geog.cam.ac.uk/research/vital/publications/",
+              "excerpt": "Recent publications",
+              "observedAt": "2026-10-18",
+              "applicableTime": "2022",
+              "status": "official_bibliography_observed"
+            }
+          ],
+          "summary": "官方成果页列出；DOI 跳转本次未完成出版商复核，不作为完整年度统计。"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "研究者与招生说明",
+          "value": "Bhaskar Vira 为研究群成员；其页面说明暂不能回复博士指导咨询。",
+          "url": "https://www.geog.cam.ac.uk/people/vira/",
+          "excerpt": "I am not in a position to respond to enquiries about doctoral supervision at the moment",
+          "observedAt": "2026-10-18",
+          "applicableTime": "页面核对时",
+          "status": "official_page_observed"
+        }
+      ]
+    },
+    {
+      "id": "person-ubc-jessica-dempsey",
+      "past": "2021年选读涉及生物多样性目标、债务与税收正义。",
+      "recent": "2023年选读涉及自然保护融资与财富保护风险；不是2026年完整主题。",
+      "relevance": "若关心保护融资、政治生态与分配问题，可阅读项目和论文；这不是岗位匹配或录取概率。",
+      "collaborations": "所选成果存在共同署名；完整合作网络未核查，不将合作者视为学生。",
+      "works": [
+        {
+          "title": "Risky Business: Protecting Nature, Protecting Wealth?",
+          "year": 2023,
+          "doi": "10.1111/conl.12969",
+          "researcherIds": [
+            "person-ubc-jessica-dempsey"
+          ],
+          "type": "journal_article",
+          "sourceIds": [
+            "ubc-papers"
+          ],
+          "scope": "project_listed_selected_work",
+          "id": "group-ubc-tracing-biodiversity-capital-work-1",
+          "url": "https://doi.org/10.1111/conl.12969",
+          "authors": [
+            "Irvine-Broque, A.",
+            "Dempsey, J."
+          ],
+          "sourceUrl": "https://blogs.ubc.ca/biodiversitycapital/papers-and-books/",
+          "evidence": [
+            {
+              "field": "bibliography",
+              "value": "Risky Business: Protecting Nature, Protecting Wealth?",
+              "url": "https://blogs.ubc.ca/biodiversitycapital/papers-and-books/",
+              "excerpt": "Published papers and books",
+              "observedAt": "2026-10-18",
+              "applicableTime": "2023",
+              "status": "official_project_bibliography_observed"
+            }
+          ],
+          "summary": "官方成果页列出；DOI 跳转本次未完成出版商复核，不作为完整年度统计。"
+        },
+        {
+          "title": "Biodiversity targets will not be met without debt and tax justice",
+          "year": 2021,
+          "doi": "10.1038/s41559-021-01619-5",
+          "researcherIds": [
+            "person-ubc-jessica-dempsey"
+          ],
+          "type": "journal_article",
+          "sourceIds": [
+            "ubc-papers"
+          ],
+          "scope": "project_listed_selected_work",
+          "id": "group-ubc-tracing-biodiversity-capital-work-2",
+          "url": "https://doi.org/10.1038/s41559-021-01619-5",
+          "authors": [],
+          "sourceUrl": "https://blogs.ubc.ca/biodiversitycapital/papers-and-books/",
+          "evidence": [
+            {
+              "field": "bibliography",
+              "value": "Biodiversity targets will not be met without debt and tax justice",
+              "url": "https://blogs.ubc.ca/biodiversitycapital/papers-and-books/",
+              "excerpt": "Published papers and books",
+              "observedAt": "2026-10-18",
+              "applicableTime": "2021",
+              "status": "official_project_bibliography_observed"
+            }
+          ],
+          "summary": "官方成果页列出；DOI 跳转本次未完成出版商复核，不作为完整年度统计。"
+        }
+      ],
+      "evidence": [
+        {
+          "field": "当前公开职位",
+          "value": "Jessica Dempsey 为 UBC 地理系 Professor。",
+          "url": "https://geog.ubc.ca/profile/jessica-dempsey/",
+          "excerpt": "Professor",
+          "observedAt": "2026-10-18",
+          "applicableTime": "2018–2023 项目；当前任职另核实",
+          "status": "official_page_observed"
+        }
+      ]
+    }
+  ],
+  "failures": [
+    {
+      "url": "https://doi.org/10.1016/j.cosust.2025.101537",
+      "status": "browser_tool_internal_error",
+      "fallback": "official_cambridge_bibliography"
+    },
+    {
+      "url": "https://doi.org/10.1080/00220388.2024.2434248",
+      "status": "browser_tool_internal_error",
+      "fallback": "official_cambridge_bibliography"
+    },
+    {
+      "url": "https://doi.org/10.1111/conl.12969",
+      "status": "browser_tool_internal_error",
+      "fallback": "official_project_bibliography"
+    }
+  ]
+}

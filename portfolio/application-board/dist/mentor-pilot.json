@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-10-17",
+  "scope": "5位官方身份可确认的地理相关研究者；功能试点，不是完整导师名录或招生名单。",
+  "verificationMethod": "官方网页人工式逐页阅读，由软件代理记录；未经过独立人工复核。",
+  "works": [],
+  "mentors": [
+    {
+      "id": "person-ucl-mark-maslin",
+      "name": "Mark Maslin",
+      "institutionId": "institution-ucl",
+      "institution": "伦敦大学学院",
+      "institutionEn": "University College London",
+      "departmentId": "department-ucl-geography",
+      "department": "Department of Geography",
+      "role": "Professor of Earth System Science",
+      "officialUrl": "https://www.ucl.ac.uk/social-historical-sciences/mark-maslin",
+      "identityStatus": "official_confirmed",
+      "verifiedAt": "2026-10-17",
+      "topics": [
+        "古气候",
+        "全球变化",
+        "碳循环",
+        "气候与健康"
+      ],
+      "topicBasis": "official_statement",
+      "topicWindow": null,
+      "summary": "官方主页介绍其气候变化、碳循环和环境影响研究；这不是最近五年的论文主题统计。",
+      "externalIdentities": [],
+      "opportunityIds": [],
+      "supervision": [],
+      "careerCases": [],
+      "sync": {
+        "status": "not_synced",
+        "complete": false,
+        "lastSuccessAt": null,
+        "reason": "外部作者映射未完成；UCL Profiles动态页面本次未返回正文，索引中的ORCID未作为已确认映射。",
+        "state": "not_synced"
+      },
+      "application": {
+        "recruiting": "unknown",
+        "funding": "unknown",
+        "eligibility": "unknown"
+      },
+      "evidence": [
+        {
+          "id": "evidence-maslin-official",
+          "kind": "official_statement",
+          "fields": [
+            "name",
+            "institution",
+            "department",
+            "role",
+            "topics"
+          ],
+          "url": "https://www.ucl.ac.uk/social-historical-sciences/mark-maslin",
+          "locator": "More about Professor Maslin; Role; Contact",
+          "quote": "Professor of Earth System Science",
+          "context": "研究介绍涵盖过去和未来的气候变化及其碳循环等影响。页面也保留历史职务信息，不将所有职务描述当作当前任职。",
+          "observedAt": "2026-10-17",
+          "status": "supported",
+          "field": "name, institution, department, role, topics",
+          "excerpt": "Professor of Earth System Science"
+        }
+      ],
+      "position": "Professor of Earth System Science",
+      "externalIds": {},
+      "works": [],
+      "training": [],
+      "careers": [],
+      "opportunityLinks": []
+    },
+    {
+      "id": "person-cambridge-bhaskar-vira",
+      "name": "Bhaskar Vira",
+      "institutionId": "institution-cambridge",
+      "institution": "剑桥大学",
+      "institutionEn": "University of Cambridge",
+      "departmentId": "department-cambridge-geography",
+      "department": "Department of Geography",
+      "role": "Professor of Political Economy",
+      "officialUrl": "https://www.geog.cam.ac.uk/people/vira/",
+      "identityStatus": "official_confirmed",
+      "verifiedAt": "2026-10-17",
+      "topics": [
+        "环境与发展",
+        "政治经济学",
+        "资源治理",
+        "社会公平"
+      ],
+      "topicBasis": "official_statement",
+      "topicWindow": null,
+      "summary": "院系主页说明其环境与发展的政治经济学研究，并列为Vital Geographies成员。主页明确提示暂不能回复博士指导咨询。",
+      "externalIdentities": [],
+      "opportunityIds": [],
+      "supervision": [],
+      "careerCases": [],
+      "sync": {
+        "status": "not_synced",
+        "complete": false,
+        "lastSuccessAt": null,
+        "reason": "尚无已审核的外部作者映射。",
+        "state": "not_synced"
+      },
+      "application": {
+        "recruiting": "unknown",
+        "funding": "unknown",
+        "eligibility": "unknown",
+        "note": "官方主页表示因行政职责，暂不能回复博士指导咨询；这不等于全院系停止招生。",
+        "evidenceId": "evidence-vira-official"
+      },
+      "evidence": [
+        {
+          "id": "evidence-vira-official",
+          "kind": "official_statement",
+          "fields": [
+            "name",
+            "institution",
+            "department",
+            "role",
+            "topics",
+            "application.note"
+          ],
+          "url": "https://www.geog.cam.ac.uk/people/vira/",
+          "locator": "Profile title; Research; note immediately above Biography",
+          "quote": "Professor of Political Economy; not in a position to respond to enquiries about doctoral supervision at the moment",
+          "context": "研究简介和院系身份可直接读取。其他官方旧页面仍称Reader，采用院系主页的Professor，不据旧页面推断任职变化。",
+          "observedAt": "2026-10-17",
+          "status": "supported",
+          "field": "name, institution, department, role, topics, application.note",
+          "excerpt": "Professor of Political Economy; not in a position to respond to enquiries about doctoral supervision at the moment"
+        }
+      ],
+      "position": "Professor of Political Economy",
+      "externalIds": {},
+      "works": [],
+      "training": [],
+      "careers": [],
+      "opportunityLinks": []
+    },
+    {
+      "id": "person-ubc-jessica-dempsey",
+      "name": "Jessica Dempsey",
+      "institutionId": "institution-ubc",
+      "institution": "不列颠哥伦比亚大学",
+      "institutionEn": "University of British Columbia",
+      "departmentId": "department-ubc-geography",
+      "department": "Department of Geography",
+      "role": "Professor",
+      "officialUrl": "https://geog.ubc.ca/profile/jessica-dempsey/",
+      "identityStatus": "official_confirmed",
+      "verifiedAt": "2026-10-17",
+      "topics": [
+        "政治生态学",
+        "生物多样性保护",
+        "环境政治",
+        "绿色金融"
+      ],
+      "topicBasis": "official_statement",
+      "topicWindow": null,
+      "summary": "院系介绍聚焦生物多样性流失的政治经济因素及保护中的经济和金融方法；不是对培养质量的评价。",
+      "externalIdentities": [],
+      "opportunityIds": [],
+      "supervision": [],
+      "careerCases": [],
+      "sync": {
+        "status": "not_synced",
+        "complete": false,
+        "lastSuccessAt": null,
+        "reason": "尚无已审核的外部作者映射。",
+        "state": "not_synced"
+      },
+      "application": {
+        "recruiting": "unknown",
+        "funding": "unknown",
+        "eligibility": "unknown"
+      },
+      "evidence": [
+        {
+          "id": "evidence-dempsey-official",
+          "kind": "official_statement",
+          "fields": [
+            "name",
+            "institution",
+            "department",
+            "role",
+            "topics"
+          ],
+          "url": "https://geog.ubc.ca/profile/jessica-dempsey/",
+          "locator": "Profile heading; About",
+          "quote": "Professor; My research and teaching focus on environmental politics.",
+          "context": "官方About说明生物多样性流失、政治生态和经济金融保护方法。没有把主页论文列表当完整五年统计。",
+          "observedAt": "2026-10-17",
+          "status": "supported",
+          "field": "name, institution, department, role, topics",
+          "excerpt": "Professor; My research and teaching focus on environmental politics."
+        }
+      ],
+      "position": "Professor",
+      "externalIds": {},
+      "works": [],
+      "training": [],
+      "careers": [],
+      "opportunityLinks": []
+    },
+    {
+      "id": "person-uw-sarah-elwood",
+      "name": "Sarah Elwood",
+      "institutionId": "institution-uw",
+      "institution": "华盛顿大学",
+      "institutionEn": "University of Washington",
+      "departmentId": "department-uw-geography",
+      "department": "Department of Geography",
+      "role": "Professor and Chair",
+      "officialUrl": "https://geography.washington.edu/people/sarah-elwood",
+      "identityStatus": "official_confirmed",
+      "verifiedAt": "2026-10-17",
+      "topics": [
+        "批判GIS",
+        "数字地理",
+        "贫困研究",
+        "城市地理"
+      ],
+      "topicBasis": "official_statement",
+      "topicWindow": null,
+      "summary": "院系介绍涉及关系性贫困研究、批判GIS与数字地理、视觉政治和混合方法。未据此推断未来招生主题。",
+      "externalIdentities": [],
+      "opportunityIds": [],
+      "supervision": [],
+      "careerCases": [],
+      "sync": {
+        "status": "not_synced",
+        "complete": false,
+        "lastSuccessAt": null,
+        "reason": "尚无已审核的外部作者映射。",
+        "state": "not_synced"
+      },
+      "application": {
+        "recruiting": "unknown",
+        "funding": "unknown",
+        "eligibility": "unknown"
+      },
+      "evidence": [
+        {
+          "id": "evidence-elwood-official",
+          "kind": "official_statement",
+          "fields": [
+            "name",
+            "institution",
+            "department",
+            "role",
+            "topics"
+          ],
+          "url": "https://geography.washington.edu/people/sarah-elwood",
+          "locator": "Profile title; Biography",
+          "quote": "Professor and Chair; relational poverty studies, critical GIScience and digital geographies",
+          "context": "官方主页明确其院系职务与研究范围。Research Advised条目尚未逐项核实培养类型和年份，不直接转成学生去向。",
+          "observedAt": "2026-10-17",
+          "status": "supported",
+          "field": "name, institution, department, role, topics",
+          "excerpt": "Professor and Chair; relational poverty studies, critical GIScience and digital geographies"
+        }
+      ],
+      "position": "Professor and Chair",
+      "externalIds": {},
+      "works": [],
+      "training": [],
+      "careers": [],
+      "opportunityLinks": []
+    },
+    {
+      "id": "person-cuhk-mei-po-kwan",
+      "name": "Mei-Po Kwan",
+      "nameZh": "关美宝",
+      "institutionId": "institution-cuhk",
+      "institution": "香港中文大学",
+      "institutionEn": "The Chinese University of Hong Kong",
+      "departmentId": "department-cuhk-grm",
+      "department": "Department of Geography and Resource Management",
+      "role": "Choh-Ming Li Professor of Geography and Resource Management",
+      "officialUrl": "https://www.grm.cuhk.edu.hk/en/profile/mpkwan/",
+      "identityStatus": "official_confirmed",
+      "verifiedAt": "2026-10-17",
+      "topics": [
+        "地理信息科学",
+        "健康地理",
+        "环境暴露",
+        "城市空间"
+      ],
+      "topicBasis": "official_statement",
+      "topicWindow": null,
+      "summary": "院系页面列出GIS、社会空间环境和城市研究，并提出地理空间方法研究环境与健康的方向；未确认当期名额或经费。",
+      "externalIdentities": [
+        {
+          "provider": "orcid",
+          "id": "0000-0001-8602-9258",
+          "status": "official_link_confirmed",
+          "evidenceId": "evidence-kwan-orcid",
+          "openAlexMappingStatus": "not_reviewed"
+        }
+      ],
+      "opportunityIds": [],
+      "supervision": [],
+      "careerCases": [],
+      "sync": {
+        "status": "not_synced",
+        "complete": false,
+        "lastSuccessAt": null,
+        "reason": "ORCID由官方门户确认；尚未将OpenAlex作者编号与此身份匹配并完成分页。",
+        "state": "not_synced"
+      },
+      "application": {
+        "recruiting": "unknown",
+        "funding": "unknown",
+        "eligibility": "unknown"
+      },
+      "evidence": [
+        {
+          "id": "evidence-kwan-official",
+          "kind": "official_statement",
+          "fields": [
+            "name",
+            "institution",
+            "department",
+            "role",
+            "topics"
+          ],
+          "url": "https://www.grm.cuhk.edu.hk/en/profile/mpkwan/",
+          "locator": "Profile title; Research interests; Suggested research topics",
+          "quote": "Choh-Ming Li Professor of Geography and Resource Management; Geographic Information Science",
+          "context": "研究主题是院系自述，不是五年论文归纳或招生承诺。",
+          "observedAt": "2026-10-17",
+          "status": "supported",
+          "field": "name, institution, department, role, topics",
+          "excerpt": "Choh-Ming Li Professor of Geography and Resource Management; Geographic Information Science"
+        },
+        {
+          "id": "evidence-kwan-orcid",
+          "kind": "official_statement",
+          "fields": [
+            "externalIdentities"
+          ],
+          "url": "https://research.cuhk.edu.hk/en/persons/mei-po-kwan/",
+          "locator": "Identity header ORCID link",
+          "quote": "https://orcid.org/0000-0001-8602-9258",
+          "context": "大学研究门户直接链接该ORCID；尚不证明任何OpenAlex作者映射。",
+          "observedAt": "2026-10-17",
+          "status": "supported",
+          "field": "externalIdentities",
+          "excerpt": "https://orcid.org/0000-0001-8602-9258"
+        }
+      ],
+      "position": "Choh-Ming Li Professor of Geography and Resource Management",
+      "externalIds": {
+        "orcid": "0000-0001-8602-9258"
+      },
+      "works": [],
+      "training": [],
+      "careers": [],
+      "opportunityLinks": []
+    }
+  ]
+}

@@ -1,0 +1,1872 @@
+{
+  "version": 2,
+  "sources": [
+    {
+      "id": "geo-programme-hku-geods-masters",
+      "url": "https://www.geods.hku.hk/potential-applicants/",
+      "domain": "www.geods.hku.hk",
+      "institutions": [
+        "The University of Hong Kong"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.geods.hku.hk"
+      ]
+    },
+    {
+      "id": "geo-programme-cuhk-gis-masters",
+      "url": "https://mscgis.grm.cuhk.edu.hk/en/admission.html",
+      "domain": "mscgis.grm.cuhk.edu.hk",
+      "institutions": [
+        "The Chinese University of Hong Kong"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "mscgis.grm.cuhk.edu.hk"
+      ]
+    },
+    {
+      "id": "geo-programme-mcgill-ma",
+      "url": "https://www.mcgill.ca/geography/graduate",
+      "domain": "www.mcgill.ca",
+      "institutions": [
+        "McGill University"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.mcgill.ca"
+      ]
+    },
+    {
+      "id": "geo-programme-mcgill-phd",
+      "url": "https://www.mcgill.ca/gradapplicants/program/geography-phd",
+      "domain": "www.mcgill.ca",
+      "institutions": [
+        "McGill University"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.mcgill.ca"
+      ]
+    },
+    {
+      "id": "geo-intake-waterloo-ma-2027",
+      "url": "https://uwaterloo.ca/future-graduate-students/programs/by-faculty/environment/geography-master-arts-ma",
+      "domain": "uwaterloo.ca",
+      "institutions": [
+        "University of Waterloo"
+      ],
+      "recordType": "masters-intake",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "uwaterloo.ca"
+      ]
+    },
+    {
+      "id": "geo-intake-waterloo-phd-2027",
+      "url": "https://uwaterloo.ca/future-graduate-students/programs/by-faculty/environment/geography-doctor-philosophy-phd",
+      "domain": "uwaterloo.ca",
+      "institutions": [
+        "University of Waterloo"
+      ],
+      "recordType": "phd-intake",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "uwaterloo.ca"
+      ]
+    },
+    {
+      "id": "geo-intake-sfu-ma-2027",
+      "url": "https://www.sfu.ca/geography/prospective-students/prospective-graduate/how-to-apply.html",
+      "domain": "www.sfu.ca",
+      "institutions": [
+        "Simon Fraser University"
+      ],
+      "recordType": "masters-intake",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.sfu.ca"
+      ]
+    },
+    {
+      "id": "geo-intake-sfu-phd-2027",
+      "url": "https://www.sfu.ca/geography/prospective-students/prospective-graduate/how-to-apply.html",
+      "domain": "www.sfu.ca",
+      "institutions": [
+        "Simon Fraser University"
+      ],
+      "recordType": "phd-intake",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.sfu.ca"
+      ]
+    },
+    {
+      "id": "geo-programme-anu-environment-masters",
+      "url": "https://programsandcourses.anu.edu.au/2027/program/MENVI",
+      "domain": "programsandcourses.anu.edu.au",
+      "institutions": [
+        "Australian National University"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "programsandcourses.anu.edu.au"
+      ]
+    },
+    {
+      "id": "geo-programme-uq-gis-masters",
+      "url": "https://study.uq.edu.au/study-options/programs/master-geographic-information-science-5610",
+      "domain": "study.uq.edu.au",
+      "institutions": [
+        "University of Queensland"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "study.uq.edu.au"
+      ]
+    },
+    {
+      "id": "geo-programme-unsw-environment-masters",
+      "url": "https://www.unsw.edu.au/study/postgraduate/master-of-environmental-management?studentType=international",
+      "domain": "www.unsw.edu.au",
+      "institutions": [
+        "University of New South Wales"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.unsw.edu.au"
+      ]
+    },
+    {
+      "id": "geo-programme-sydney-urban-planning-masters",
+      "url": "https://www.sydney.edu.au/handbooks/architecture/postgraduate/urban-regional-planning/course-resolutions.html",
+      "domain": "www.sydney.edu.au",
+      "institutions": [
+        "University of Sydney"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.sydney.edu.au"
+      ]
+    },
+    {
+      "id": "geo-programme-anu-fenner-phd",
+      "url": "https://programsandcourses.anu.edu.au/program/9065XPHD",
+      "domain": "programsandcourses.anu.edu.au",
+      "institutions": [
+        "Australian National University"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "programsandcourses.anu.edu.au"
+      ]
+    },
+    {
+      "id": "geo-programme-monash-geography-phd",
+      "url": "https://www.monash.edu/study/courses/find-a-course/science-0057",
+      "domain": "www.monash.edu",
+      "institutions": [
+        "Monash University"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.monash.edu"
+      ]
+    },
+    {
+      "id": "geo-intake-ubc-dec2026",
+      "url": "https://geog.ubc.ca/graduate/admissions/",
+      "domain": "geog.ubc.ca",
+      "institutions": [
+        "University of British Columbia"
+      ],
+      "recordType": "phd-intake",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "geog.ubc.ca"
+      ]
+    },
+    {
+      "id": "geo-project-ncsu-geoai-2027",
+      "url": "https://cnr.ncsu.edu/geospatial/academics/phd-in-geospatial-analytics/graduate-assistantships/",
+      "domain": "cnr.ncsu.edu",
+      "institutions": [
+        "North Carolina State University"
+      ],
+      "recordType": "phd-project",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "cnr.ncsu.edu"
+      ]
+    },
+    {
+      "id": "geo-project-rmit-spatial-health",
+      "url": "https://www.rmit.edu.au/scholarships/research/phd-scholarship-in-spatial-health-research-and-urban-design",
+      "domain": "www.rmit.edu.au",
+      "institutions": [
+        "RMIT University"
+      ],
+      "recordType": "phd-project",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.rmit.edu.au"
+      ]
+    },
+    {
+      "id": "geo-project-rmit-phenology",
+      "url": "https://www.rmit.edu.au/scholarships/research/phd-scholarship-in-from-herbaria-to-citizen-science-a-continental-scale-assessment-of-plant-phenological-shifts-across-australia",
+      "domain": "www.rmit.edu.au",
+      "institutions": [
+        "RMIT University"
+      ],
+      "recordType": "phd-project",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.rmit.edu.au"
+      ]
+    },
+    {
+      "id": "geo-work-ntu-r00025934",
+      "url": "https://ntu.wd3.myworkdayjobs.com/en-US/Careers/job/NTU-Main-Campus-Singapore/Research-Fellow--Tropical-Ecosystem-Monitoring-and-Simulations-_R00025934",
+      "domain": "ntu.wd3.myworkdayjobs.com",
+      "institutions": [
+        "Nanyang Technological University"
+      ],
+      "recordType": "research-fellow",
+      "verificationStatus": "official_index_only",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "ntu.wd3.myworkdayjobs.com"
+      ]
+    },
+    {
+      "id": "geo-work-ntu-r00025219",
+      "url": "https://ntu.wd3.myworkdayjobs.com/Careers/job/NTU-Main-Campus-Singapore/Research-Fellow--Climate-Risk-Assessment-and-Climate-Change-_R00025219",
+      "domain": "ntu.wd3.myworkdayjobs.com",
+      "institutions": [
+        "Nanyang Technological University"
+      ],
+      "recordType": "research-fellow",
+      "verificationStatus": "official_index_only",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "ntu.wd3.myworkdayjobs.com"
+      ]
+    },
+    {
+      "id": "geo-intake-cambridge-2027",
+      "url": "https://www.postgraduate.study.cam.ac.uk/courses/directory/eaggpdgeo/apply",
+      "domain": "www.postgraduate.study.cam.ac.uk",
+      "institutions": [
+        "University of Cambridge"
+      ],
+      "recordType": "phd-intake",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.postgraduate.study.cam.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-intake-qmul-ahrc-2027",
+      "url": "https://www.qmul.ac.uk/geog/study/postgraduate-phd/phd-opportunities/",
+      "domain": "www.qmul.ac.uk",
+      "institutions": [
+        "Queen Mary University of London"
+      ],
+      "recordType": "phd-intake",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.qmul.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-lund-930481",
+      "url": "https://lu.varbi.com/en/what:job/jobID:930481/type:job/where:4/apply:1",
+      "domain": "lu.varbi.com",
+      "institutions": [
+        "Lund University"
+      ],
+      "recordType": "faculty",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "lu.varbi.com"
+      ]
+    },
+    {
+      "id": "geo-tub-207061",
+      "url": "https://www.jobs.tu-berlin.de/en/job-postings/207061",
+      "domain": "www.jobs.tu-berlin.de",
+      "institutions": [
+        "Technische Universität Berlin"
+      ],
+      "recordType": "research",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.jobs.tu-berlin.de"
+      ]
+    },
+    {
+      "id": "geo-nus-34273",
+      "url": "https://careers.nus.edu.sg/job/Postdoctoral-Fellow-(Department-of-Geography)/34273-en_GB/",
+      "domain": "careers.nus.edu.sg",
+      "institutions": [
+        "National University of Singapore"
+      ],
+      "recordType": "postdoc",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "careers.nus.edu.sg"
+      ]
+    },
+    {
+      "id": "geo-usc-213942",
+      "url": "https://uscjobs.sc.edu/postings/213942",
+      "domain": "uscjobs.sc.edu",
+      "institutions": [
+        "University of South Carolina"
+      ],
+      "recordType": "faculty",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "uscjobs.sc.edu"
+      ]
+    },
+    {
+      "id": "geo-eth-glaciology",
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1Xb566nCAHVEKPxWxy",
+      "domain": "jobs.ethz.ch",
+      "institutions": [
+        "ETH Zürich"
+      ],
+      "recordType": "phd",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "jobs.ethz.ch"
+      ]
+    },
+    {
+      "id": "geo-eth-adaptation",
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_L9EB3dSHxoSQSAypSG",
+      "domain": "jobs.ethz.ch",
+      "institutions": [
+        "ETH Zürich"
+      ],
+      "recordType": "phd",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "jobs.ethz.ch"
+      ]
+    },
+    {
+      "id": "geo-eth-atmosphere",
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+      "domain": "jobs.ethz.ch",
+      "institutions": [
+        "ETH Zürich"
+      ],
+      "recordType": "phd",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "jobs.ethz.ch"
+      ]
+    },
+    {
+      "id": "geo-wsl-1903",
+      "url": "https://apply.refline.ch/273855/1903/pub/5/index.html",
+      "domain": "apply.refline.ch",
+      "institutions": [
+        "WSL Institute for Snow and Avalanche Research SLF"
+      ],
+      "recordType": "postdoc",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "apply.refline.ch"
+      ]
+    },
+    {
+      "id": "geo-programme-cambridge-geography",
+      "url": "https://www.postgraduate.study.cam.ac.uk/courses/directory/eaggpdgeo",
+      "domain": "www.postgraduate.study.cam.ac.uk",
+      "institutions": [
+        "University of Cambridge"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.postgraduate.study.cam.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-programme-oxford-geography",
+      "url": "https://www.ox.ac.uk/admissions/graduate/courses/dphil-geography-and-environment",
+      "domain": "www.ox.ac.uk",
+      "institutions": [
+        "University of Oxford"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.ox.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-programme-ucl-geography",
+      "url": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/research-degree-geography",
+      "domain": "www.ucl.ac.uk",
+      "institutions": [
+        "University College London"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.ucl.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-programme-lse-geography",
+      "url": "https://www.lse.ac.uk/study-at-lse/graduate/mphilphd-human-geography-and-urban-studies",
+      "domain": "www.lse.ac.uk",
+      "institutions": [
+        "London School of Economics and Political Science"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.lse.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-programme-manchester-geography",
+      "url": "https://www.manchester.ac.uk/study/postgraduate-research/programmes/list/05220/phd-human-geography/all-content/",
+      "domain": "www.manchester.ac.uk",
+      "institutions": [
+        "University of Manchester"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.manchester.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-programme-bristol-geography",
+      "url": "https://www.bristol.ac.uk/study/postgraduate/research/geographical-sciences/",
+      "domain": "www.bristol.ac.uk",
+      "institutions": [
+        "University of Bristol"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.bristol.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-programme-uzh-geography",
+      "url": "https://www.geo.uzh.ch/en/graduate-school.html",
+      "domain": "www.geo.uzh.ch",
+      "institutions": [
+        "University of Zurich"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.geo.uzh.ch"
+      ]
+    },
+    {
+      "id": "geo-programme-utrecht-geography",
+      "url": "https://www.uu.nl/en/education/graduate-school-of-geosciences/phds/future-phd-candidates",
+      "domain": "www.uu.nl",
+      "institutions": [
+        "Utrecht University"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.uu.nl"
+      ]
+    },
+    {
+      "id": "geo-programme-twente-geography",
+      "url": "https://www.utwente.nl/en/itc/research/phd-at-itc/phd-admission/",
+      "domain": "www.utwente.nl",
+      "institutions": [
+        "University of Twente"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.utwente.nl"
+      ]
+    },
+    {
+      "id": "geo-programme-lund-geography",
+      "url": "https://www.keg.lu.se/en/node/108",
+      "domain": "www.keg.lu.se",
+      "institutions": [
+        "Lund University"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.keg.lu.se"
+      ]
+    },
+    {
+      "id": "geo-programme-helsinki-geography",
+      "url": "https://www.helsinki.fi/en/admissions-and-education/apply-doctoral-programmes/doctoral-programmes/doctoral-programme-science",
+      "domain": "www.helsinki.fi",
+      "institutions": [
+        "University of Helsinki"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.helsinki.fi"
+      ]
+    },
+    {
+      "id": "geo-programme-ghent-geography",
+      "url": "https://studiekiezer.ugent.be/2026/doctor-of-science-geography/programma",
+      "domain": "studiekiezer.ugent.be",
+      "institutions": [
+        "Ghent University"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "studiekiezer.ugent.be"
+      ]
+    },
+    {
+      "id": "geo-programme-glasgow-geography",
+      "url": "https://www.gla.ac.uk/postgraduate/research/humangeography/",
+      "domain": "www.gla.ac.uk",
+      "institutions": [
+        "University of Glasgow"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.gla.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-programme-sheffield-geography",
+      "url": "https://sheffield.ac.uk/geography-planning/phd",
+      "domain": "sheffield.ac.uk",
+      "institutions": [
+        "University of Sheffield"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "sheffield.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-programme-leeds-geography",
+      "url": "https://environment.leeds.ac.uk/geography-research-degrees",
+      "domain": "environment.leeds.ac.uk",
+      "institutions": [
+        "University of Leeds"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "environment.leeds.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-programme-ubc",
+      "url": "https://geog.ubc.ca/graduate/phd-program/",
+      "domain": "geog.ubc.ca",
+      "institutions": [
+        "University of British Columbia"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "geog.ubc.ca"
+      ]
+    },
+    {
+      "id": "geo-programme-ucla",
+      "url": "https://grad.ucla.edu/programs/social-sciences/geography-department/geography/",
+      "domain": "grad.ucla.edu",
+      "institutions": [
+        "University of California, Los Angeles"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "grad.ucla.edu"
+      ]
+    },
+    {
+      "id": "geo-programme-uw",
+      "url": "https://geography.washington.edu/graduate-programs",
+      "domain": "geography.washington.edu",
+      "institutions": [
+        "University of Washington"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "geography.washington.edu"
+      ]
+    },
+    {
+      "id": "geo-programme-wisconsin",
+      "url": "https://geography.wisc.edu/research-graduate-programs/phd/",
+      "domain": "geography.wisc.edu",
+      "institutions": [
+        "University of Wisconsin–Madison"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "geography.wisc.edu"
+      ]
+    },
+    {
+      "id": "geo-programme-pennstate",
+      "url": "https://www.geog.psu.edu/graduate/graduate-degree-programs/doctor-philosophy-phd",
+      "domain": "www.geog.psu.edu",
+      "institutions": [
+        "Pennsylvania State University"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.geog.psu.edu"
+      ]
+    },
+    {
+      "id": "geo-programme-ncsu",
+      "url": "https://cnr.ncsu.edu/geospatial/academics/phd/",
+      "domain": "cnr.ncsu.edu",
+      "institutions": [
+        "North Carolina State University"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "cnr.ncsu.edu"
+      ]
+    },
+    {
+      "id": "geo-programme-hku",
+      "url": "https://geog.hku.hk/mphil-phd",
+      "domain": "geog.hku.hk",
+      "institutions": [
+        "The University of Hong Kong"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "geog.hku.hk"
+      ]
+    },
+    {
+      "id": "geo-programme-cuhk",
+      "url": "https://www.grm.cuhk.edu.hk/en/pg/research-postgraduate/phd/",
+      "domain": "www.grm.cuhk.edu.hk",
+      "institutions": [
+        "The Chinese University of Hong Kong"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.grm.cuhk.edu.hk"
+      ]
+    },
+    {
+      "id": "geo-programme-nus",
+      "url": "https://fass.nus.edu.sg/geog/graduate-programmes/",
+      "domain": "fass.nus.edu.sg",
+      "institutions": [
+        "National University of Singapore"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "fass.nus.edu.sg"
+      ]
+    },
+    {
+      "id": "geo-programme-auckland",
+      "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/geography/doctoral.html",
+      "domain": "www.auckland.ac.nz",
+      "institutions": [
+        "University of Auckland"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.auckland.ac.nz"
+      ]
+    },
+    {
+      "id": "geo-programme-otago",
+      "url": "https://www.otago.ac.nz/geography/studying-geography/postgraduate",
+      "domain": "www.otago.ac.nz",
+      "institutions": [
+        "University of Otago"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.otago.ac.nz"
+      ]
+    },
+    {
+      "id": "geo-programme-melbourne",
+      "url": "https://sgeas.unimelb.edu.au/study/postgraduate-research",
+      "domain": "sgeas.unimelb.edu.au",
+      "institutions": [
+        "University of Melbourne"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "sgeas.unimelb.edu.au"
+      ]
+    },
+    {
+      "id": "geo-programme-us-arizona-masters",
+      "url": "https://geography.arizona.edu/maphd-program",
+      "domain": "geography.arizona.edu",
+      "institutions": [
+        "University of Arizona"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "geography.arizona.edu"
+      ]
+    },
+    {
+      "id": "geo-programme-us-arizona-phd",
+      "url": "https://geography.arizona.edu/maphd-program",
+      "domain": "geography.arizona.edu",
+      "institutions": [
+        "University of Arizona"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "geography.arizona.edu"
+      ]
+    },
+    {
+      "id": "geo-programme-us-ohio-state-masters",
+      "url": "https://geography.osu.edu/prospective-grad",
+      "domain": "geography.osu.edu",
+      "institutions": [
+        "The Ohio State University"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "geography.osu.edu"
+      ]
+    },
+    {
+      "id": "geo-programme-us-ohio-state-phd",
+      "url": "https://geography.osu.edu/prospective-grad",
+      "domain": "geography.osu.edu",
+      "institutions": [
+        "The Ohio State University"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "geography.osu.edu"
+      ]
+    },
+    {
+      "id": "geo-programme-us-buffalo-masters",
+      "url": "https://www.buffalo.edu/cas/geography/graduate/ma.html",
+      "domain": "www.buffalo.edu",
+      "institutions": [
+        "University at Buffalo"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.buffalo.edu"
+      ]
+    },
+    {
+      "id": "geo-programme-us-buffalo-phd",
+      "url": "https://www.buffalo.edu/cas/geography/graduate/admissions.html",
+      "domain": "www.buffalo.edu",
+      "institutions": [
+        "University at Buffalo"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.buffalo.edu"
+      ]
+    },
+    {
+      "id": "geo-programme-us-oregon-masters",
+      "url": "https://socialsciences.uoregon.edu/geography/graduate-programs",
+      "domain": "socialsciences.uoregon.edu",
+      "institutions": [
+        "University of Oregon"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "socialsciences.uoregon.edu"
+      ]
+    },
+    {
+      "id": "geo-programme-us-oregon-phd",
+      "url": "https://socialsciences.uoregon.edu/geography/graduate-programs",
+      "domain": "socialsciences.uoregon.edu",
+      "institutions": [
+        "University of Oregon"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "socialsciences.uoregon.edu"
+      ]
+    },
+    {
+      "id": "geo-programme-us-clark-masters",
+      "url": "https://www.clarku.edu/departments/geography/graduate-programs/masters-program/",
+      "domain": "www.clarku.edu",
+      "institutions": [
+        "Clark University"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.clarku.edu"
+      ]
+    },
+    {
+      "id": "geo-programme-us-clark-phd",
+      "url": "https://www.clarku.edu/departments/geography/graduate-programs/doctoral-programs/",
+      "domain": "www.clarku.edu",
+      "institutions": [
+        "Clark University"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.clarku.edu"
+      ]
+    },
+    {
+      "id": "geo-programme-us-minnesota-masters",
+      "url": "https://cla.umn.edu/geography/graduate/degrees/ma-geography",
+      "domain": "cla.umn.edu",
+      "institutions": [
+        "University of Minnesota Twin Cities"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "cla.umn.edu"
+      ]
+    },
+    {
+      "id": "geo-programme-us-minnesota-phd",
+      "url": "https://cla.umn.edu/geography/graduate/degrees/phd-geography",
+      "domain": "cla.umn.edu",
+      "institutions": [
+        "University of Minnesota Twin Cities"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "cla.umn.edu"
+      ]
+    },
+    {
+      "id": "geo-programme-us-berkeley-phd",
+      "url": "https://geography.berkeley.edu/academics/graduate-studies/program-overview",
+      "domain": "geography.berkeley.edu",
+      "institutions": [
+        "University of California, Berkeley"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "geography.berkeley.edu"
+      ]
+    },
+    {
+      "id": "geo-programme-durham-geography-masters",
+      "url": "https://dur.ac.uk/departments/academic/geography/postgraduate-study/research-masters/",
+      "domain": "dur.ac.uk",
+      "institutions": [
+        "Durham University"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "dur.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-programme-exeter-gis-masters",
+      "url": "https://www.exeter.ac.uk/masters-degrees/msc-geographical-information-science/",
+      "domain": "www.exeter.ac.uk",
+      "institutions": [
+        "University of Exeter"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.exeter.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-programme-southampton-gis-masters",
+      "url": "https://www.southampton.ac.uk/courses/geographical-information-systems-remote-sensing-masters-msc",
+      "domain": "www.southampton.ac.uk",
+      "institutions": [
+        "University of Southampton"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.southampton.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-programme-reading-environment-masters",
+      "url": "https://www.reading.ac.uk/ready-to-study/study/Subject-area/geography-and-environmental-science-pg/msc-environmental-management",
+      "domain": "www.reading.ac.uk",
+      "institutions": [
+        "University of Reading"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.reading.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-programme-durham-geography-phd",
+      "url": "https://dur.ac.uk/departments/academic/geography/postgraduate-study/doctoral-study/",
+      "domain": "dur.ac.uk",
+      "institutions": [
+        "Durham University"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "dur.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-programme-exeter-geography-phd",
+      "url": "https://www.exeter.ac.uk/study/pg-research/degrees/geography/",
+      "domain": "www.exeter.ac.uk",
+      "institutions": [
+        "University of Exeter"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.exeter.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-programme-birmingham-geography-phd",
+      "url": "https://www.birmingham.ac.uk/study/postgraduate/subjects/geography-earth-and-environmental-sciences-courses/geography-and-environmental-sciences-phd-non-lab",
+      "domain": "www.birmingham.ac.uk",
+      "institutions": [
+        "University of Birmingham"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.birmingham.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-programme-liverpool-geography-phd",
+      "url": "https://www.liverpool.ac.uk/courses/geography-phd",
+      "domain": "www.liverpool.ac.uk",
+      "institutions": [
+        "University of Liverpool"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-16",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.liverpool.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-oct17-toronto-ma",
+      "url": "https://www.sgs.utoronto.ca/programs/geography/",
+      "domain": "www.sgs.utoronto.ca",
+      "institutions": [
+        "University of Toronto"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.sgs.utoronto.ca"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-oct17-toronto-msc",
+      "url": "https://www.sgs.utoronto.ca/programs/geography/",
+      "domain": "www.sgs.utoronto.ca",
+      "institutions": [
+        "University of Toronto"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.sgs.utoronto.ca"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-oct17-toronto-phd",
+      "url": "https://www.sgs.utoronto.ca/programs/geography/",
+      "domain": "www.sgs.utoronto.ca",
+      "institutions": [
+        "University of Toronto"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.sgs.utoronto.ca"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-oct17-queens-ma",
+      "url": "https://www.queensu.ca/geographyandplanning/graduate/programs",
+      "domain": "www.queensu.ca",
+      "institutions": [
+        "Queen's University"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.queensu.ca"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-oct17-queens-msc",
+      "url": "https://www.queensu.ca/geographyandplanning/graduate/programs",
+      "domain": "www.queensu.ca",
+      "institutions": [
+        "Queen's University"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.queensu.ca"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-oct17-queens-phd",
+      "url": "https://www.queensu.ca/geographyandplanning/graduate/programs",
+      "domain": "www.queensu.ca",
+      "institutions": [
+        "Queen's University"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.queensu.ca"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-oct17-mcmaster-ma",
+      "url": "https://gs.mcmaster.ca/program/geography/",
+      "domain": "gs.mcmaster.ca",
+      "institutions": [
+        "McMaster University"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "gs.mcmaster.ca"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-oct17-mcmaster-msc",
+      "url": "https://gs.mcmaster.ca/program/geography/",
+      "domain": "gs.mcmaster.ca",
+      "institutions": [
+        "McMaster University"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "gs.mcmaster.ca"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-oct17-mcmaster-phd",
+      "url": "https://gs.mcmaster.ca/program/geography/",
+      "domain": "gs.mcmaster.ca",
+      "institutions": [
+        "McMaster University"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "gs.mcmaster.ca"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-oct17-ucsb-ma",
+      "url": "https://www.geog.ucsb.edu/academics/graduate",
+      "domain": "www.geog.ucsb.edu",
+      "institutions": [
+        "University of California, Santa Barbara"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.geog.ucsb.edu"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-oct17-ucsb-phd",
+      "url": "https://www.geog.ucsb.edu/academics/graduate",
+      "domain": "www.geog.ucsb.edu",
+      "institutions": [
+        "University of California, Santa Barbara"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.geog.ucsb.edu"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-oct17-colorado-ma",
+      "url": "https://www.colorado.edu/academics/grad-geography",
+      "domain": "www.colorado.edu",
+      "institutions": [
+        "University of Colorado Boulder"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.colorado.edu"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-oct17-colorado-phd",
+      "url": "https://www.colorado.edu/academics/grad-geography",
+      "domain": "www.colorado.edu",
+      "institutions": [
+        "University of Colorado Boulder"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.colorado.edu"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-oct17-wur-traits",
+      "url": "https://www.wur.nl/en/vacancy/phd-position-trait-based-drivers-global-plant-distributions",
+      "domain": "www.wur.nl",
+      "institutions": [
+        "Wageningen University & Research"
+      ],
+      "recordType": "PhD",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.wur.nl"
+      ],
+      "verificationScope": "Official vacancy text, deadline and stated conditions; not an offer"
+    },
+    {
+      "id": "geo-oct17-wur-policy",
+      "url": "https://www.wur.nl/en/vacancy/phd-impact-evaluation-climate-policies-agricultural-and-forest-landscapes",
+      "domain": "www.wur.nl",
+      "institutions": [
+        "Wageningen University & Research"
+      ],
+      "recordType": "PhD",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.wur.nl"
+      ],
+      "verificationScope": "Official vacancy text, deadline and stated conditions; not an offer"
+    },
+    {
+      "id": "geo-oct17-wur-mountain",
+      "url": "https://www.wur.nl/en/vacancy/phd-link-between-mountains-downstream-agriculture-and-ecosystems-globally",
+      "domain": "www.wur.nl",
+      "institutions": [
+        "Wageningen University & Research"
+      ],
+      "recordType": "PhD",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.wur.nl"
+      ],
+      "verificationScope": "Official vacancy text, deadline and stated conditions; not an offer"
+    },
+    {
+      "id": "geo-oct17-wur-fire-weather",
+      "url": "https://www.wur.nl/en/vacancy/phd-researcher-atmospheric-sciences-emerging-extreme-fire-weather-risks",
+      "domain": "www.wur.nl",
+      "institutions": [
+        "Wageningen University & Research"
+      ],
+      "recordType": "PhD",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.wur.nl"
+      ],
+      "verificationScope": "Official vacancy text, deadline and stated conditions; not an offer"
+    },
+    {
+      "id": "geo-oct17-wur-moss",
+      "url": "https://www.wur.nl/en/vacancy/phd-moss-traits-and-fire-ignition-high-latitude-peatland-tundra-ecosystems",
+      "domain": "www.wur.nl",
+      "institutions": [
+        "Wageningen University & Research"
+      ],
+      "recordType": "PhD",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.wur.nl"
+      ],
+      "verificationScope": "Official vacancy text, deadline and stated conditions; not an offer"
+    },
+    {
+      "id": "geo-oct17-wur-coastal-peat",
+      "url": "https://www.wur.nl/en/vacancy/phd-position-modelling-formation-and-flooding-coastal-peat-landscapes",
+      "domain": "www.wur.nl",
+      "institutions": [
+        "Wageningen University & Research"
+      ],
+      "recordType": "PhD",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.wur.nl"
+      ],
+      "verificationScope": "Official vacancy text, deadline and stated conditions; not an offer"
+    },
+    {
+      "id": "geo-oct17-wur-grassland",
+      "url": "https://www.wur.nl/en/vacancy/phd-exploring-grassland-multifunctionality-through-modelling",
+      "domain": "www.wur.nl",
+      "institutions": [
+        "Wageningen University & Research"
+      ],
+      "recordType": "PhD",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.wur.nl"
+      ],
+      "verificationScope": "Official vacancy text, deadline and stated conditions; not an offer"
+    },
+    {
+      "id": "geo-oct17-wur-radar-postdoc",
+      "url": "https://www.wur.nl/en/vacancy/postdoc-operational-radar-based-forest-disturbance-and-regrowth-monitoring",
+      "domain": "www.wur.nl",
+      "institutions": [
+        "Wageningen University & Research"
+      ],
+      "recordType": "postdoc",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.wur.nl"
+      ],
+      "verificationScope": "Official vacancy text, deadline and stated conditions; not an offer"
+    },
+    {
+      "id": "geo-oct17-wur-governance-postdoc",
+      "url": "https://www.wur.nl/en/vacancy/postdoc-governance-and-sustainability-transitions-farming-systems-0",
+      "domain": "www.wur.nl",
+      "institutions": [
+        "Wageningen University & Research"
+      ],
+      "recordType": "postdoc",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.wur.nl"
+      ],
+      "verificationScope": "Official vacancy text, deadline and stated conditions; not an offer"
+    },
+    {
+      "id": "geo-ranking-sussex",
+      "url": "https://www.sussex.ac.uk/study/phd/degrees/geography-phd",
+      "domain": "www.sussex.ac.uk",
+      "institutions": [
+        "University of Sussex"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.sussex.ac.uk"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-ranking-kcl",
+      "url": "https://www.kcl.ac.uk/study/postgraduate-research/areas/geography-mphil-phd",
+      "domain": "www.kcl.ac.uk",
+      "institutions": [
+        "King's College London"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.kcl.ac.uk"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-ranking-bonn",
+      "url": "https://www.uni-bonn.de/en/studying/degree-programs/degree-programs-a-z/geography-msc",
+      "domain": "www.uni-bonn.de",
+      "institutions": [
+        "University of Bonn"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.uni-bonn.de"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-ranking-lund-gis-rs",
+      "url": "https://www.lunduniversity.lu.se/study/gis-and-remote-sensing-master-programme-NAGIS",
+      "domain": "www.lunduniversity.lu.se",
+      "institutions": [
+        "Lund University"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.lunduniversity.lu.se"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-ranking-lund-gisc",
+      "url": "https://www.lunduniversity.lu.se/study/geographical-information-science-masters-programme-NAGIV",
+      "domain": "www.lunduniversity.lu.se",
+      "institutions": [
+        "Lund University"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.lunduniversity.lu.se"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-ranking-lund-physical",
+      "url": "https://www.lunduniversity.lu.se/study/physical-geography-and-ecosystem-science-general-master-programme-NANEV-INES",
+      "domain": "www.lunduniversity.lu.se",
+      "institutions": [
+        "Lund University"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.lunduniversity.lu.se"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-ranking-uva-urban",
+      "url": "https://www.uva.nl/shared-content/programmas/en/masters/human-geography-urban-geography/urban-geography.html",
+      "domain": "www.uva.nl",
+      "institutions": [
+        "University of Amsterdam"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.uva.nl"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-ranking-uu-urban-and-economic-geography",
+      "url": "https://www.uu.nl/en/masters/urban-and-economic-geography",
+      "domain": "www.uu.nl",
+      "institutions": [
+        "Utrecht University"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.uu.nl"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-ranking-uu-global-urban-transformations",
+      "url": "https://www.uu.nl/en/masters/global-urban-transformations",
+      "domain": "www.uu.nl",
+      "institutions": [
+        "Utrecht University"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.uu.nl"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-ranking-uu-spatial-planning",
+      "url": "https://www.uu.nl/en/masters/spatial-planning",
+      "domain": "www.uu.nl",
+      "institutions": [
+        "Utrecht University"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.uu.nl"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-ranking-uu-international-development-studies",
+      "url": "https://www.uu.nl/en/masters/international-development-studies",
+      "domain": "www.uu.nl",
+      "institutions": [
+        "Utrecht University"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.uu.nl"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-ranking-uu-geographical-information-management-and-applications-gima",
+      "url": "https://www.uu.nl/en/masters/geographical-information-management-and-applications-gima",
+      "domain": "www.uu.nl",
+      "institutions": [
+        "Utrecht University"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.uu.nl"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-ranking-uw-ma",
+      "url": "https://geography.washington.edu/graduate-programs",
+      "domain": "geography.washington.edu",
+      "institutions": [
+        "University of Washington"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "geography.washington.edu"
+      ],
+      "verificationScope": "Programme existence and listed requirements; not current intake availability"
+    },
+    {
+      "id": "geo-ranking-lse-planning",
+      "url": "https://www.lse.ac.uk/study-at-lse/graduate/msc-regional-and-urban-planning-studies",
+      "domain": "www.lse.ac.uk",
+      "institutions": [
+        "London School of Economics and Political Science"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.lse.ac.uk"
+      ],
+      "verificationScope": "Official vacancy text, deadline and stated conditions; not an offer"
+    },
+    {
+      "id": "geo-ranking-lse-human",
+      "url": "https://www.lse.ac.uk/study-at-lse/graduate/msc-human-geography-and-urban-studies-research",
+      "domain": "www.lse.ac.uk",
+      "institutions": [
+        "London School of Economics and Political Science"
+      ],
+      "recordType": "masters-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-17",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.lse.ac.uk"
+      ],
+      "verificationScope": "Official vacancy text, deadline and stated conditions; not an offer"
+    },
+    {
+      "id": "geo-oct18-denver-phd-2027",
+      "url": "https://www.du.edu/academics/admission-steps/geography-phd-2027-2028",
+      "domain": "www.du.edu",
+      "institutions": [
+        "University of Denver"
+      ],
+      "recordType": "phd-intake",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-18",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.du.edu"
+      ]
+    },
+    {
+      "id": "geo-oct18-cudenver-phd-2027",
+      "url": "https://architectureandplanning.ucdenver.edu/admissions/phd",
+      "domain": "architectureandplanning.ucdenver.edu",
+      "institutions": [
+        "University of Colorado Denver"
+      ],
+      "recordType": "phd-intake",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-18",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "architectureandplanning.ucdenver.edu"
+      ]
+    },
+    {
+      "id": "geo-oct18-hkbu-geography-2027",
+      "url": "https://gs.hkbu.edu.hk/programmes/doctor-of-philosophy-master-of-philosophy-department-of-geography",
+      "domain": "gs.hkbu.edu.hk",
+      "institutions": [
+        "Hong Kong Baptist University"
+      ],
+      "recordType": "phd-intake",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-18",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "gs.hkbu.edu.hk"
+      ]
+    },
+    {
+      "id": "geo-oct18-bristol-society-space-2027",
+      "url": "https://www.bristol.ac.uk/study/postgraduate/taught/msc-society-and-space/",
+      "domain": "www.bristol.ac.uk",
+      "institutions": [
+        "University of Bristol"
+      ],
+      "recordType": "masters-intake",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-18",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.bristol.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-oct18-ubc-scarp-research-2027",
+      "url": "https://scarp.ubc.ca/research-masters",
+      "domain": "scarp.ubc.ca",
+      "institutions": [
+        "University of British Columbia"
+      ],
+      "recordType": "masters-intake",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-18",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "scarp.ubc.ca"
+      ]
+    },
+    {
+      "id": "geo-oct18-manchester-physical-2027",
+      "url": "https://www.manchester.ac.uk/study/postgraduate-research/programmes/list/05222/phd-physical-geography/",
+      "domain": "www.manchester.ac.uk",
+      "institutions": [
+        "University of Manchester"
+      ],
+      "recordType": "phd-intake",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-18",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.manchester.ac.uk"
+      ]
+    },
+    {
+      "id": "geo-oct18-rmit-geospatial-phd",
+      "url": "https://www.rmit.edu.au/study-with-us/levels-of-study/research-programs/phd/phd-geospatial-sciences-dr223",
+      "domain": "www.rmit.edu.au",
+      "institutions": [
+        "RMIT University"
+      ],
+      "recordType": "phd-programme",
+      "verificationStatus": "official_verified",
+      "checkedAt": "2026-10-18",
+      "automationAllowed": false,
+      "allowedHosts": [
+        "www.rmit.edu.au"
+      ]
+    }
+  ]
+}

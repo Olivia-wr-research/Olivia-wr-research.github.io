@@ -1,0 +1,196 @@
+/* Earth photography and a restrained neutral reading surface. */
+:root{color-scheme:light;--line:#d3ddeb;--muted:#536b8a;--decision-text:#132b4b;background:#eef2f8;color:#152f52}
+body{background:radial-gradient(ellipse at 85% 0,#dae3ef66,transparent 42%),#eef2f8;color:#152f52}
+.top{background:#f6f8fb;border-color:#d5dfec}.top nav button,.top nav a{color:#275a9c}.top nav .current{background:#dfe6f0;color:#17345a}.top b{background:#d2ddeb;color:#1b3f6e}.top .profile-button,.top .language-switch{background:#f6f8fb;border-color:#cdd9e8;color:#1c4172}
+main{max-width:1600px}.hero{padding-top:32px;padding-bottom:19px}.hero .kicker{color:#5d779a;letter-spacing:2.2px}.hero .kicker:before{background:#788fae}.hero h1{font-size:clamp(29px,3.3vw,43px);color:#142d4e;line-height:1.3;letter-spacing:-1.3px;max-width:800px}.hero-copy>p{color:#516988;line-height:1.9}.entry-paths button,.entry-paths button:first-child{background:#f8fafc;border:1px solid #d4deeb;border-radius:10px}.entry-paths b,.entry-paths button:first-child b{color:#1d4273}.entry-paths span,.entry-paths button:first-child span{color:#5e799d}.entry-paths button:hover{border-color:#98aac1;background:#e7edf5}
+.geo-atlas{border:1px solid #cfdae9;border-radius:18px;background:#081e43;overflow:hidden;margin:0 0 24px}.geo-heading{display:none}.geo-tracks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 18px}.geo-tracks button{padding:18px 21px;background:#f8fafc;color:#255492;border:1px solid #cdd9e9;border-radius:12px;text-align:left;line-height:1.6}.geo-tracks button b,.geo-tracks button strong{display:block;font-size:18px;color:#163359}.geo-tracks button span,.geo-tracks button small{display:block;margin-top:4px;font-size:11px}.geo-tracks button[aria-pressed=true]{background:#132c4d;color:#d3ddeb;border-color:#132c4d;box-shadow:0 5px 16px #142d4e10}.geo-tracks button[aria-pressed=true] b,.geo-tracks button[aria-pressed=true] strong{color:#f5f5e9}
+.filters label,.filter-heading h2{color:#265798}.filters select,.filters input,input,textarea,select{background:#fafbfd;border-color:#cedae9;color:#16345a;accent-color:#24528f}.filters{padding-top:8px}.search{background:#fffef9;border:1px solid #cfdbea;box-shadow:none}.search span{color:#5d789b}.match-search{color:#1f477b;border-color:#cdd9e8;background:#fafbfd}.results-head h2{color:#18365e}.results-head p,.results-head>label{color:#5b7698}.results-head h2 span{background:#dce4ef;color:#255492}
+.geo-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 12px}.geo-toolbar select,.geo-toolbar button{border:1px solid #cedae9;background:#f9fafc;color:#20497f;border-radius:8px;padding:9px 12px;cursor:pointer;font-size:12px}.geo-toolbar button[aria-pressed=true]{background:#193962;color:#fff;border-color:#193962}.geo-status{color:#5a7497;font-size:11px;line-height:1.8;margin-bottom:20px}.compare-toolbar{color:#607b9f}.compare-toolbar button{background:#dde5f0;color:#265696}
+.job{background:#fffef9;border:1px solid #d4deec;border-radius:13px;box-shadow:none;margin-bottom:13px}.job:hover{border-color:#a1b2c7;box-shadow:0 8px 20px #19396308}.job h3{color:#132c4d;font-size:19px;line-height:1.55;letter-spacing:-.4px}.institution-logo,.institution-logo.vienna{background:#e1e8f2;color:#4f6683;border-radius:10px}.job .meta{color:#5f7a9e}.job .summary{color:#516988;font-size:12px;-webkit-line-clamp:3}.job .original-title{color:#6781a4;font-size:11px}.tag,.tag.field{background:#e5ecf4;color:#4f6683;border-radius:4px}.salary{color:#23508b}.deadline{color:#5c7699}.deadline-countdown{background:#f0eedf;color:#746744;font-weight:500}.employer-source{color:#6b85a6}.unscored,.overlap-title,.compare-choice{color:#637ea1}.side-actions button,.side-actions .detail,.detail-link,.detail-save,.load-more{background:#193962;color:#fff;border-color:#193962}.side-actions button:not(.detail){background:#e5ecf4;color:#275b9e}.side-actions .saved{background:#d3ddeb!important;color:#1e4476!important}.geo-card-essentials{border-top:1px solid #dce4ef;margin-top:13px;padding-top:8px}.geo-card-essentials p{font-size:12px;line-height:1.8;color:#265798;margin:5px 0}.geo-card-essentials b,.geo-card-essentials strong{color:#1c406f;margin-right:5px}.empty{border-color:#b9c9df;color:#546c8c;background:#f7f9fb}
+.geo-table-wrap{overflow:auto;border:1px solid #cdd9e8;border-radius:12px;margin-bottom:24px;max-height:680px;background:#fffef9}.geo-table-wrap table{border-collapse:collapse;min-width:1600px;width:100%;font-size:12px}.geo-table-wrap th,.geo-table-wrap td{padding:14px;text-align:left;vertical-align:top;border-bottom:1px solid #d9e2ee;min-width:90px;max-width:280px}.geo-table-wrap th{position:sticky;top:0;background:#dfe7f1;color:#214b82;z-index:1;white-space:nowrap}.geo-table-wrap tr:hover{background:#f0f3f8}.geo-table-wrap button{border:0;border-radius:6px;background:#dde5f0;color:#224f89;padding:7px;margin:3px}.geo-table-wrap a,.geo-source-card a{color:#204b82}.geo-source-card{padding:18px 0;border-bottom:1px solid #d4deec}.geo-source-card p{font-size:13px}.geo-source-card small{color:#5f7b9f}#geo-sources-dialog input{width:100%;padding:12px;border:1px solid #c3d1e4;border-radius:8px}
+dialog{background:#fffef9;color:#193a66;border-color:#c8d5e7}dialog h2,dialog h3,dialog .kicker{color:#1d4272}.dialog-header button{color:#4e6582;background:#e5ecf4}.role-facts{background:#e7edf5}.role-facts dt{color:#5a7496}.role-facts dd{color:#183760}.detail-block p,.section-intro,.form-note,.help,.check-row{color:#546d8d!important}.form-actions{background:#fffef9!important}.form-actions button,.orange,.primary-action{background:#1b3e6b!important;color:white!important}.cv-panel{background:#e7edf5;border-color:#cdd9e9}.cv-panel h3,.cv-panel label,#guide-dialog>label,#guide-dialog legend{color:#245390}.choice{background:#f5f7fb;border-color:#cfdae9;color:#4e6481}.choice:has(input:checked){background:#d3ddeb;color:#1b3f6e;border-color:#8a9eb9}.unit-card{background:#fffef9;border-color:#cfdae9}.unit-card h3,#extra-view>h2{color:#1b3f6d}.external-link{color:#23518e}#toast{background:#163358}#geo-community form label{display:grid;gap:7px;margin:16px 0;font-size:12px;color:#285da2}#geo-community textarea{min-height:100px;resize:vertical;width:100%}#geo-community form button{border:0;border-radius:8px;background:#1c3f6e;color:white;padding:11px 16px}#geo-community form label:has(input[type=checkbox]){display:flex;align-items:flex-start}#geo-community form label input[type=checkbox]{margin-top:5px}
+footer{border-color:#d0dbea;color:#627da1}footer strong{color:#577090}footer p,footer a{color:#647fa2}.geo-toolbar button:focus-visible,.geo-toolbar select:focus-visible,.geo-tracks button:focus-visible,.geo-table-wrap button:focus-visible{outline:3px solid #8ca0ba;outline-offset:3px}.geo-table-wrap[hidden],#list[hidden]{display:none!important}
+@media(max-width:760px){.hero{padding-top:22px}.hero h1{font-size:28px}.geo-tracks{gap:8px}.geo-tracks button{padding:13px 14px}.geo-tracks button b,.geo-tracks button strong{font-size:16px}.geo-tracks button span,.geo-tracks button small{font-size:10px}.geo-atlas{border-radius:13px}.geo-toolbar{gap:6px}.geo-toolbar button,.geo-toolbar select{font-size:11px;padding:8px}.job h3{font-size:17px}.geo-card-essentials p{font-size:11px}.geo-status{font-size:10px}}
+/* Photo-led refinement: decorative imagery is separate from the optional map. */
+:root{background:#f5f6f7;color:#24313b}
+body{background:#f5f6f7;color:#24313b}
+.top{background:#fafbfc;border-color:#e1e5e9}
+.brand{font-weight:650;letter-spacing:.5px;gap:12px}
+.brand small{font-size:8px;letter-spacing:2.3px;margin-top:4px}
+.symbol{width:46px;height:46px;border-radius:14px;background:linear-gradient(145deg,#953e50,#632638);box-shadow:inset 0 0 0 1px #ffffff24,0 3px 9px #63263818;flex-shrink:0}
+.symbol svg{width:38px;height:38px}
+.hero{position:relative;isolation:isolate;overflow:hidden;border-radius:20px;margin:24px 0 16px;padding:64px 40px;min-height:315px;background:#03090e url('./earth-nasa.jpg') no-repeat right 44%;background-size:cover}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#02090ff2 0%,#02090fb0 38%,#02090f08 78%)}
+.hero-copy{max-width:530px}
+.hero h1{color:#f5f9fc;font-size:clamp(30px,3.5vw,49px);font-weight:550;letter-spacing:-1px;line-height:1.35}
+.hero .kicker{color:#adc7d8;font-size:10px;letter-spacing:3px}
+.hero-copy>p{color:#d2dfe8;font-size:14px;line-height:1.9;max-width:350px}
+.hero .kicker:before{background:#a8c9df}
+.explore-extras{margin:0 0 20px;color:#526270}
+.explore-extras summary,.map-drawer summary{cursor:pointer;padding:13px 2px;font-size:13px;line-height:1.6}
+.explore-extras .entry-paths{margin:10px 0}
+.layout{margin-top:12px;gap:24px}
+.results>.search-row{margin:0 0 14px}
+.search{border-radius:12px;background:white;border-color:#cbd5dc}
+.search input{font-size:15px;min-height:48px;color:#233744}
+.search input::placeholder{color:#697c89}
+.geo-tracks{gap:8px;margin-bottom:16px}
+.geo-tracks button{padding:12px 18px;border-radius:10px;font-size:14px;min-height:48px;background:#fff;color:#354957;border-color:#d5dde3}
+.geo-tracks button[aria-pressed=true]{background:#203d50;color:#fff;border-color:#203d50;box-shadow:none}
+.geo-toolbar select,.geo-toolbar button{font-size:13px;min-height:44px;background:#fff;color:#344e60;border-color:#d5dde3}
+.map-drawer{margin:0 0 20px;border-bottom:1px solid #d9e0e5}
+.map-drawer summary{color:#3f6075}
+.geo-atlas{margin-top:10px}
+.geo-status{font-size:12px;color:#586b78;margin:10px 0}
+.job{background:#fff;border-color:#dce2e7;border-radius:14px;padding:24px}
+.job:before{display:none}
+.job h3{color:#253d4d;font-weight:600;font-size:20px}
+.job .meta,.job .original-title{font-size:12px;color:#647784}
+.job .summary,.geo-card-essentials p{font-size:14px;line-height:1.85;color:#4b606e}
+.tag,.tag.field{font-size:12px;background:#eef2f4;color:#506774;padding:4px 8px}
+.deadline,.salary,.employer-source,.deadline-countdown{font-size:12px}
+.side-actions button,.side-actions .detail{min-height:44px;font-size:13px}
+.detail-save,.detail-link{display:inline-block;margin:8px 10px 8px 0;padding:12px 18px}
+.filter-heading{display:flex!important}.filters label,.filters select{font-size:13px}
+summary:focus-visible{outline:2px solid #466e89;outline-offset:4px;border-radius:4px}
+@media(max-width:760px){main{padding:0 18px}.top{padding:14px 18px}.hero{margin-top:16px;min-height:270px;padding:36px 24px;background-position:60% 45%}.hero:before{background:linear-gradient(90deg,#02090fe8,#02090f75 65%,#02090f20)}.hero h1{font-size:32px;max-width:310px}.hero-copy>p{font-size:13px;max-width:250px}.symbol{width:40px;height:40px}.symbol svg{width:34px;height:34px}.filters{margin-bottom:12px}.filter-heading{width:100%;align-items:center;justify-content:space-between}.geo-toolbar{gap:8px}.geo-toolbar select{max-width:100%}.geo-tracks button{font-size:13px;padding:10px}.job{padding:20px}.job h3{font-size:19px}.job .summary,.geo-card-essentials p{font-size:14px}.entry-paths button{min-width:180px}.entry-paths b{font-size:13px}.entry-paths span{font-size:12px}.map-drawer summary,.explore-extras summary{min-height:44px}}
+.layout{display:block}
+.results>.filters{display:flex;flex-wrap:wrap;gap:12px;padding:0;margin:0 0 14px}
+.results>.filters>.filter-heading{display:none!important}
+.results>.filters>label{flex:1;min-width:130px;margin:0}
+.results>.filters>label.checkbox{display:none}
+.hero:before{background:linear-gradient(90deg,#02090fc9 0%,#02090f50 38%,#02090f00 78%)}
+@media(max-width:760px){.hero:before{background:linear-gradient(90deg,#02090fb8,#02090f20 65%,transparent)}.hero-copy>p{max-width:300px}.results>.filters{gap:10px}}
+.cv-entry{border:1px solid #264b62;background:#264b62;color:white;border-radius:10px;padding:10px 16px;white-space:nowrap;min-height:44px;font-size:14px}
+#guide-dialog .choice[hidden]{display:none!important}
+#guide-dialog .cv-evidence{display:none}
+#guide-dialog .choice{font-size:14px;padding:10px 12px;min-height:44px}
+.search-row .match-search{display:none}
+@media(max-width:760px){.search-row{flex-wrap:wrap}.search-row .search{flex:1 1 100%}.cv-entry{width:100%;text-align:center}}
+.job .match-reasons.active-match{display:block!important;background:#f0f4f6;padding:10px 12px;border-radius:8px;font-size:12px;line-height:1.7;color:#405968;margin-top:12px}
+.job .match-reasons.active-match strong{display:block;margin-bottom:3px;color:#273e4d}
+.advanced-filters,.utility-drawer{border-bottom:1px solid #dce3e8;margin:0 0 14px}
+.advanced-filters summary,.utility-drawer summary{cursor:pointer;padding:10px 0;font-size:13px;color:#4f6575;min-height:44px}
+.advanced-filters>.geo-toolbar{padding:10px 0;align-items:end}
+.advanced-filters .filters{display:flex;gap:10px;padding:0;flex-wrap:wrap}
+.advanced-filters .filters .filter-heading,.advanced-filters .filters .checkbox{display:none!important}
+.active-filters{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 12px}
+.active-filters:empty{display:none}
+.active-filters button{background:#e6eef3;border:1px solid #cbd9e2;color:#304e62;border-radius:20px;padding:8px 12px;font-size:12px;min-height:40px}
+.view-switch{display:flex;gap:4px}.view-switch button{font-size:12px;background:white;border:1px solid #d4dfe5;border-radius:7px;padding:8px 10px;min-height:40px}.view-switch button[aria-pressed=true]{background:#264b62;color:white}
+.results-head{flex-wrap:wrap;gap:10px}.geo-status{font-size:12px;margin:10px 0 16px}
+.hero{min-height:210px;padding:35px 32px}.hero h1{font-size:34px}
+@media(max-width:760px){.hero{min-height:175px;padding:26px 22px}.hero h1{font-size:28px}.results-head>div:first-child{width:100%}.advanced-filters .filters{width:100%}.advanced-filters .filters>label{flex:1}}
+.current-direction{border:1px solid #d3dfe6;background:#eef3f6;border-radius:10px;padding:14px;margin:12px 0;font-size:13px}
+.current-direction p{margin:5px 0 10px;line-height:1.7;color:#536c7d}
+.current-direction button{min-height:40px;border:1px solid #c7d6e0;background:white;color:#31536b;border-radius:6px;margin-right:8px;padding:7px 12px}
+.current-direction[hidden]{display:none!important}
+.hero[hidden],.explore-extras[hidden]{display:none!important}
+.top{width:168px;padding:24px 15px;gap:24px}
+.top .brand{font-size:19px;gap:9px}.top .symbol{width:36px;height:36px}.top .symbol svg{width:30px;height:30px}.top .brand small{font-size:7px;letter-spacing:1.5px}
+.top nav{gap:6px}.top nav button,.top nav a{font-size:13px;padding:10px 12px}
+.top #sources-tab,.top .profile-button{display:none}
+.top .language-switch{padding:6px 10px;font-size:11px;align-self:flex-start}
+main{margin-left:168px;padding:28px 32px;max-width:1600px}
+.job{grid-template-columns:minmax(0,1fr) 235px;align-items:start;gap:25px}
+.job>.institution-logo{display:none}
+.job h3{margin-top:0;font-size:21px}
+.job .original-title{margin:4px 0 10px;font-size:13px}
+.job .meta{font-size:13px;margin-bottom:12px}
+.geo-card-essentials p{font-size:13px;display:grid;grid-template-columns:112px minmax(0,1fr);gap:8px}
+.geo-card-essentials strong{font-weight:600}
+.card-finance{background:#f1f5f7;border:1px solid #e1e8ed;border-radius:10px;padding:15px;margin-bottom:14px;text-align:left}
+.card-finance h4{font-size:14px;margin:0 0 10px;color:#2d4656}
+.card-finance p{font-size:12px;line-height:1.8;color:#536775;margin:6px 0 14px}
+.card-finance p:last-child{margin-bottom:0}
+.card-finance strong{font-size:12px;color:#3d5869}
+.job-side>.unscored,.job-side>.overlap-title{display:none}
+.job .deadline-countdown{display:none}
+@media(max-width:900px){.job{grid-template-columns:1fr}.job-side{display:block}.card-finance{margin-top:8px}.side-actions{flex-direction:row}.side-actions button{flex:1}}
+@media(max-width:760px){.top{width:100%;padding:12px 18px;gap:12px}.top .language-switch{margin-left:auto;align-self:center}.top nav{width:100%}main{margin:0;padding:20px 18px}.geo-card-essentials p{grid-template-columns:95px minmax(0,1fr)}.job h3{font-size:19px}}
+/* Frozen visual direction: full-viewport Earth, horizontal masthead, glass cards. */
+body{background:#081521;color:#243746}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:#06101a url('./earth-nasa.jpg') center center/cover no-repeat;pointer-events:none}
+body:after{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(110deg,#0b213b5c,#08264435 55%,#07132270);pointer-events:none}
+.top{position:sticky;top:0;bottom:auto;left:auto;width:100%;max-width:none;min-height:76px;padding:14px max(24px,calc((100vw - 1240px)/2));display:flex;flex-direction:row;align-items:center;gap:24px;border:0;border-bottom:1px solid #d0dfea80;background:#edf3f8eb;backdrop-filter:blur(18px);z-index:20}
+.top .brand{flex-wrap:nowrap;white-space:nowrap;font-size:20px;flex-shrink:0}
+.radar-name{font-size:15px;font-weight:500;color:#557184;white-space:nowrap;border-left:1px solid #c4d2dc;padding-left:18px}
+.top nav{display:flex;flex-direction:row;align-items:center;gap:5px;flex:1;width:auto}
+.top nav button,.top nav a{font-size:13px;white-space:nowrap;border:0;border-radius:7px;margin:0;padding:9px 12px;color:#405f73}
+.top nav .current{background:#d8e9f5;color:#19629a}
+.top .language-switch{margin:0;padding:7px 10px;align-self:center;background:transparent;flex-shrink:0}
+.theme-switch{width:32px;height:32px;border:1px solid #b9ccd9;border-radius:50%;background:#e6eef5;color:#274e69;font-size:19px;flex-shrink:0}
+main{margin:0 auto;max-width:1288px;padding:30px 24px}
+.layout{margin:0}.results{background:transparent}
+.results>.search-row{padding:0;margin:0 0 12px;display:flex;align-items:center;gap:12px}
+.search{background:#f0f4f8eb;backdrop-filter:blur(12px);border:1px solid #c6d9e7;border-radius:10px;flex:1;box-shadow:0 8px 28px #00162512}
+.cv-entry{width:auto!important;flex:none;min-height:36px;padding:6px 12px;font-size:12px;background:#eaf2f8e8;color:#285e85;border:1px solid #b4cfe2}
+.quick-filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.quick-filters>select,.quick-filters>label{flex:1;min-width:150px;font-size:12px;color:#e5f0f8}
+.quick-filters select{width:100%;min-height:44px;background:#f0f4f8eb;border:1px solid #c5d7e5;border-radius:9px;padding:10px 12px;font-size:13px;color:#304e63}
+.quick-filters>label{font-size:0}.quick-filters>select{color:#304e63}
+.geo-tracks{display:flex;gap:6px;margin:12px 0}.geo-tracks button{width:auto;min-height:38px;padding:7px 18px;background:#e4edf5db;color:#355e7c;border:1px solid #bcd2e4;font-size:13px}.geo-tracks button[aria-pressed=true]{background:#2879ae;color:white;border-color:#70bff0}
+.geo-toolbar select,.geo-toolbar button{background:#edf3f8e8;border-color:#c3d5e4}
+.advanced-filters summary,.utility-drawer summary{color:#e3eef7}.advanced-filters,.utility-drawer{border-color:#c1d7e74a}
+.geo-status{color:#d3e5f2;font-size:12px}.results-head h2{color:#f0f7fc;font-size:23px}.results-head p,.results-head>label{color:#d0e1ed}.results-head h2 span{background:#d6eafa;color:#285d82}.compare-toolbar span{color:#d0e0ed}
+.job{background:#edf2f6eb;backdrop-filter:blur(14px);border:1px solid #c4d4e1;border-radius:14px;box-shadow:0 8px 25px #000b1918;grid-template-columns:minmax(0,1fr) 230px;gap:24px;padding:23px 26px;margin-bottom:16px;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,background .2s ease}
+.job:hover,.job:focus-within{transform:translateY(-3px);border-color:#339cec;box-shadow:0 0 0 1px #339cec,0 16px 38px #00142835;background:#f3f7faef}
+.job h3{font-size:19px;line-height:1.45;color:#203b4d}.job .original-title{font-size:12px;color:#627c8f}.job .meta{font-size:12px}.job .summary{font-size:13px;line-height:1.7;-webkit-line-clamp:2}
+.job .geo-card-essentials{border:0;padding:0;margin:8px 0}.geo-card-essentials p{font-size:12px;line-height:1.65;margin:4px 0}
+.card-finance{border:0;border-left:1px solid #b8cbd9;border-radius:0;background:transparent;padding:0 0 0 20px}.card-finance h4{font-size:13px}.card-finance p{font-size:12px;margin-bottom:10px}
+.tag,.tag.field{background:#d8e8f3;color:#326484;font-size:11px}
+footer,footer p,footer strong,footer a{color:#d3e5f2;border-color:#c2d7e643}
+body.night-mode .top{background:#112536ed;border-color:#38546b}
+body.night-mode .top nav button,body.night-mode .top nav a,body.night-mode .radar-name{color:#d3e4f1}
+body.night-mode .job{background:#172e40ed;border-color:#496477}
+body.night-mode .job h3,body.night-mode .geo-card-essentials strong,body.night-mode .card-finance h4,body.night-mode .card-finance strong{color:#e0edf6}
+body.night-mode .job p,body.night-mode .job .meta,body.night-mode .job .original-title{color:#b5cbdc}
+body.night-mode .job:hover{border-color:#49aff4;background:#1b374cec}
+@media(max-width:1050px){.top{gap:12px;padding:12px 20px;flex-wrap:wrap}.top nav{order:3;flex-basis:100%;justify-content:flex-start}.top .language-switch{margin-left:auto}.radar-name{font-size:13px}.job{grid-template-columns:minmax(0,1fr) 205px;gap:18px}}
+@media(max-width:650px){main{padding:20px 16px}.top{padding:10px 16px;gap:10px}.top .brand{font-size:18px}.radar-name{padding-left:10px;font-size:12px}.top nav{overflow:auto;flex-wrap:nowrap}.top nav button,.top nav a{font-size:12px;padding:7px 9px}.results>.search-row{flex-wrap:nowrap}.search-row .search{flex:1 1 auto;min-width:0}.search input{font-size:13px}.cv-entry{font-size:11px;padding:7px 9px}.quick-filters{gap:8px}.quick-filters>select,.quick-filters>label{min-width:120px}.job{grid-template-columns:1fr;padding:20px;gap:12px}.card-finance{border-left:0;border-top:1px solid #b8cbd9;padding:12px 0 0}.job h3{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.job{transition:none}.job:hover,.job:focus-within{transform:none}}
+body{background:linear-gradient(110deg,#081c3545,#08264418 55%,#07132255),url('./earth-nasa.jpg') center center/cover fixed no-repeat #081521}
+body:before,body:after{display:none}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid #399feb!important;outline-offset:3px}
+.geo-status{background:#102b405c;padding:8px 12px;border-radius:7px;backdrop-filter:blur(8px)}
+.results-head p,.compare-toolbar span{text-shadow:0 1px 4px #07121d}
+/* Compact source-first cards; do not stretch content to fill a financial sidebar. */
+.job{background:rgba(231,240,247,.76);backdrop-filter:blur(5px);padding:18px 22px;gap:18px;min-height:0;height:auto;grid-template-columns:minmax(0,1fr) 210px}
+.job:hover,.job:focus-within{background:rgba(238,246,251,.82)}
+.job-side{display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;gap:10px;height:auto;min-height:0;padding:0}
+.card-finance{margin:0;padding:0 0 0 16px}.card-finance p{margin:0;font-size:12px;line-height:1.65}
+.side-actions{display:flex;flex-direction:row;flex-wrap:wrap;gap:7px;margin:0}
+.side-actions .official-card-link{display:block;flex:1 1 100%;background:#245b83;color:white;border:1px solid #3b7eac;border-radius:7px;text-align:center;padding:9px;font-size:13px;min-height:38px}
+.side-actions button,.side-actions .detail{flex:1;min-height:34px;padding:6px 9px;font-size:12px}
+.job .geo-card-essentials p{grid-template-columns:90px minmax(0,1fr);margin:3px 0}
+.job .compare-choice{margin:0;font-size:11px}.job .summary{margin:7px 0}.job h3{font-size:18px}.job .tags{gap:5px}
+@media(max-width:650px){.job{grid-template-columns:1fr;padding:17px;gap:12px}.card-finance{padding:10px 0 0}.side-actions .official-card-link{flex:1}.side-actions button{flex:0 1 auto}}
+.job .geo-card-essentials p,.job .summary,.card-finance p{font-size:14px;line-height:1.7;color:#213e51}
+.job .meta,.job .original-title{font-size:13px;color:#365468}
+.job .freshness-note{display:block;font-size:11px;color:#365468;margin:6px 0 0}
+.job button:focus-visible,.job a:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #2b96d9;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.job,.job:hover{transition:none;transform:none}}
+/* Task-first review: stable contrast, compact controls, readable disclosure. */
+.product-purpose{color:#fff;font-size:15px;margin:0 0 12px;line-height:1.6}.task-shortcuts{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.task-shortcuts button{background:#eaf4fc;color:#163c58;border:1px solid #8abbdc;padding:9px 14px;border-radius:8px}.job{background:#edf3f8f5}.job:hover,.job:focus-within{background:#f4f9fc}.card-more summary{cursor:pointer;color:#245b83;font-weight:600;margin:8px 0}.card-deadline{font-size:13px;color:#25495f}.quick-filters{grid-template-columns:1fr 1fr}.job-side{align-self:start}.night-mode .job{background:#163044fa}.night-mode .card-deadline,.night-mode .card-more summary{color:#c3e4ff}dialog{max-height:90dvh;overflow:auto}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #1c9fff;outline-offset:3px}@media(max-width:650px){.task-shortcuts button{flex:1;padding:8px;font-size:12px}.quick-filters{display:flex;flex-wrap:wrap}.quick-filters>*{flex:1}.job .original-title{overflow-wrap:anywhere}.compare-grid{display:flex;overflow:auto}.compare-grid>article{min-width:260px}}
+/* Keep the semantic review visible; previous theme hid CV evidence. */
+#guide-dialog .cv-evidence:not(:empty){display:block!important;color:#1e4058}
+#guide-dialog .cv-evidence h4{color:#1e4058}
+#guide-dialog .cv-evidence p{display:block;color:#31566e}
+/* Task shortcuts replace the redundant study/work switch visually. */
+.geo-tracks{display:none!important}
+#results-note{display:none}
+.geo-status{font-size:11px;line-height:1.5;margin:8px 0}
+@media(max-width:650px){.results-head{margin:12px 0 6px;gap:8px;flex-wrap:wrap}.results-head h2{font-size:20px}.results-head>label{font-size:12px}.compare-toolbar{margin:4px 0}.product-purpose{font-size:13px;margin-bottom:8px}.task-shortcuts{margin-bottom:10px}.geo-toolbar{margin:8px 0}.advanced-filters{margin:6px 0}.job{margin-top:8px}.geo-status{background:#16374fe8}}
+/* Linked panels retain the original Earth visual and underlying list state. */
+dialog.np-panel{width:min(1020px,94vw);max-width:94vw;height:88dvh;max-height:88dvh;padding:0;border:1px solid #85b9dd80;border-radius:20px;background:linear-gradient(125deg,#15364caa,#091e3299),url('./earth-nasa.jpg') center/cover;color:#eaf5ff;box-shadow:0 24px 90px #0008}
+dialog.np-panel::backdrop{background:#05152370;backdrop-filter:blur(3px)}
+.np-panel-bar{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 24px;background:#0d263aee;border-bottom:1px solid #94c7e72e;color:#e7f3fb;backdrop-filter:blur(14px)}
+.np-panel-bar button{border:1px solid #91c4e566;border-radius:9px;padding:9px 13px;color:#e7f3fb;background:#ffffff12;cursor:pointer}
+.np-panel-content{padding:22px 28px}.np-panel-content>h1{font-size:25px;color:#f1f8ff;margin:0 0 12px}.np-panel-content>p{color:#d0e3f0;font-size:13px;line-height:1.8}
+.np-panel-content article,.np-panel-content>section,.np-panel-content>details{background:#edf4f9eb;color:#193b51;border:1px solid #9fc6dd77;border-radius:13px;padding:20px;margin:14px 0;backdrop-filter:blur(8px)}
+.np-panel-content h2{font-size:20px;color:#153a53;margin:0 0 12px}.np-panel-content h3{font-size:14px;margin:20px 0 8px;color:#234d69}.np-panel-content p,.np-panel-content small{font-size:13px;line-height:1.8}.np-panel-content a{color:#185f91}.np-panel-content article:hover{border-color:#39a5ec}
+.np-panel-content label{display:block;font-size:13px;margin:12px 0}.np-panel-content input:not([type=checkbox]),.np-panel-content textarea,.np-panel-content select{width:100%;padding:11px;border:1px solid #9fbcd0;border-radius:8px;background:#f7fbfe;color:#183c54;box-sizing:border-box;font:inherit}.np-panel-content textarea{min-height:82px;resize:vertical}.np-panel-content button{padding:9px 13px;border:1px solid #95b9d1;border-radius:8px;background:#dcecf7;color:#194f75;font:inherit;font-size:13px;cursor:pointer;margin:5px}.np-panel-content button:disabled{opacity:.5;cursor:wait}.np-panel-content .row{display:flex;gap:16px;flex-wrap:wrap}.np-panel-content .row>*{flex:1;min-width:220px}.np-panel-content summary{cursor:pointer;padding:10px 0}.np-panel-content pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}.np-panel-content blockquote{margin:12px 0;padding-left:15px;border-left:2px solid #6eafd5;font-size:13px}.np-panel-content [role=status]{white-space:pre-wrap;overflow-wrap:anywhere}.np-panel-content>label{color:#e3f1fa}.np-related{padding:16px;background:#dceaf4;border-radius:10px;margin-top:16px}.np-related button{padding:9px 12px;margin-right:8px;border-radius:7px;border:1px solid #8ab5d0;background:#f1f8fd;color:#1c5274}
+@media(max-width:650px){dialog.np-panel{width:96vw;max-width:96vw;height:94dvh;max-height:94dvh;border-radius:14px}.np-panel-content{padding:16px}.np-panel-bar{padding:12px 16px}.np-panel-content article,.np-panel-content>section{padding:16px}.np-panel-content .row>*{min-width:100%}}
+/* Brand refinement only; keep Earth photography, ocean palette and layout. */
+.top .brand .symbol{width:43px;height:43px;border-radius:50%;background:linear-gradient(145deg,#194b68,#0b293f);box-shadow:inset 0 0 0 1px #98d6ef55,0 2px 9px #092b4820}
+.top .brand .symbol svg{width:42px;height:42px}.top .brand{letter-spacing:2px;font-weight:600;color:#173f59!important}.top .brand small{font-size:9px;letter-spacing:3.4px;margin-top:3px;color:#557d96!important}

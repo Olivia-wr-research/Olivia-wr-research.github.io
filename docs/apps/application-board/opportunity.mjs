@@ -1,10 +1,15 @@
 // Conservative facets: never infer eligibility from missing requirements.
 export function fundingKind(job){
+ if(job.status==='resource'||job.status==='programme')return 'unspecified';
  const text=String(job.funding||'');
  if(/雇佣制|受薪|雇佣合同/.test(text))return 'employment';
- if(/奖学金/.test(text)&&!/雇佣|工资/.test(text))return 'scholarship';
+ if(/津贴|stipend/i.test(text)&&!/不提供|无津贴|no stipend/i.test(text))return 'stipend';
+ if(/奖学金/.test(text)&&!/雇佣|工资|不是奖学金|非奖学金|未说明|不提供/.test(text))return 'scholarship';
  return 'unspecified';
 }
+// Explicitly reviewed relationships only; never merge by university name.
+export const programmeRounds={'geo-programme-cambridge-geography':'geo-intake-cambridge-2027'};
+export function collapseProgrammeRows(rows){const ids=new Set(rows.map(r=>r.j.id));return rows.filter(r=>!ids.has(programmeRounds[r.j.id]));}
 export function sourceName(job){
  try{return new URL(job.url).hostname.replace(/^www\./,'');}catch{return '';}
 }

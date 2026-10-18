@@ -1,0 +1,2548 @@
+{
+  "schemaVersion": 1,
+  "purpose": "historical_source_discovery",
+  "notice": "Historical source seeds, not current opportunities. Institution names are original labels, not resolved entities. Each source requires official-source and access-policy verification before automated collection.",
+  "sources": [
+    {
+      "domain": "aalto.fi",
+      "url": "https://aalto.fi/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Aalto University"
+      ],
+      "countries": [
+        "Finland"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "academicjobsonline.org",
+      "url": "https://academicjobsonline.org/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Cornell University",
+        "Duke University",
+        "Harvey Mudd College",
+        "University of British Columbia"
+      ],
+      "countries": [
+        "Canada",
+        "USA"
+      ],
+      "historicalRecords": 6,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "academicpositions.com",
+      "url": "https://academicpositions.com/",
+      "category": "discovery_aggregator",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Ghent University",
+        "Jönköping University",
+        "KU Leuven",
+        "Karlstad University",
+        "Lund University",
+        "Potsdam Institute for Climate Impact Research (PIK)",
+        "Potsdam Institute for Climate Impact Research, PIK",
+        "Radboud University",
+        "Sorbonne Université and its Alliance partners",
+        "UCLouvain",
+        "University of  Luxembourg",
+        "University of Agder",
+        "University of Eastern Finland",
+        "University of Oulu",
+        "University of Sao Paulo (USP)",
+        "University of Twente"
+      ],
+      "countries": [
+        "Belgium",
+        "Brazil",
+        "Finland",
+        "France",
+        "Germany",
+        "Luxembourg",
+        "Netherland",
+        "Netherlands",
+        "Norway",
+        "Sweden"
+      ],
+      "historicalRecords": 24,
+      "types": [
+        "study",
+        "work"
+      ]
+    },
+    {
+      "domain": "academicpositions.harvard.edu",
+      "url": "https://academicpositions.harvard.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Harvard University",
+        "Harvard University, Center for Geographic Analysis (CGA)"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 4,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "academictransfer.com",
+      "url": "https://academictransfer.com/",
+      "category": "discovery_aggregator",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Delft University of Technology",
+        "Erasmus University Rotterdam",
+        "Leiden University",
+        "Radboud University",
+        "Radboud University",
+        "Technische Universiteit Delft",
+        "University of Amsterdam",
+        "University of Groningen",
+        "Utrecht University",
+        "Utrecht University",
+        "Vrije University Amsterdam",
+        "Wageningen University",
+        "Wageningen University & Research"
+      ],
+      "countries": [
+        "Netherland",
+        "Netherlands",
+        "The Netherlands"
+      ],
+      "historicalRecords": 33,
+      "types": [
+        "study",
+        "work"
+      ]
+    },
+    {
+      "domain": "adb.zuv.uni-heidelberg.de",
+      "url": "https://adb.zuv.uni-heidelberg.de/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Heidelberg University"
+      ],
+      "countries": [
+        "Germany"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "akadeus.com",
+      "url": "https://akadeus.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Grenoble École de Management"
+      ],
+      "countries": [
+        "France"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "applications.gssi.it",
+      "url": "https://applications.gssi.it/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Gran Sasso Science Institute"
+      ],
+      "countries": [
+        "Italy"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "applieddoctorates.nz",
+      "url": "https://applieddoctorates.nz/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Auckland, Victoria University of Wellington, University of Otago, and Massey University."
+      ],
+      "countries": [
+        "New Zealand"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "apply.interfolio.com",
+      "url": "https://apply.interfolio.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Boston College",
+        "Dartmouth College",
+        "Emory University: Oxford College",
+        "Johns Hopkins University",
+        "Massachusetts Institute of Technology",
+        "Massachusetts Institute of Technology (MIT)",
+        "Massachusetts Institute of Technology, MIT Sustainable Urbanization Lab",
+        "New York University",
+        "Occidental College",
+        "Princeton University",
+        "Texas A&M University",
+        "Tufts University",
+        "University of Chicago",
+        "University of Montana",
+        "University of Notre Dame",
+        "Yale University"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 20,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "apps.hr.cornell.edu",
+      "url": "https://apps.hr.cornell.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Cornell University"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "aprecruit.berkeley.edu",
+      "url": "https://aprecruit.berkeley.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of California Berkeley",
+        "University of California, Berkeley"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 4,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "arizona.csod.com",
+      "url": "https://arizona.csod.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Arizona"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "aru.ac.uk",
+      "url": "https://aru.ac.uk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Anglia Ruskin University"
+      ],
+      "countries": [
+        "UK"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "atkinson.cornell.edu",
+      "url": "https://atkinson.cornell.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Cornell University (Cornell Atkinson Center for Sustainability)"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "auemployment.com",
+      "url": "https://auemployment.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Auburn University"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "berufungsportal.uni-frankfurt.de",
+      "url": "https://berufungsportal.uni-frankfurt.de/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Goethe University Frankfurt"
+      ],
+      "countries": [
+        "Germany"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "binghamton.interviewexchange.com",
+      "url": "https://binghamton.interviewexchange.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Binghamton University"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "birmingham.ac.uk",
+      "url": "https://birmingham.ac.uk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Birmingham"
+      ],
+      "countries": [
+        "UK"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "bu.edu",
+      "url": "https://bu.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Boston University"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "cag-acg.ca",
+      "url": "https://cag-acg.ca/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Memorial University of Newfoundland",
+        "aurier University"
+      ],
+      "countries": [
+        "Canada"
+      ],
+      "historicalRecords": 3,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "careers-usu.icims.com",
+      "url": "https://careers-usu.icims.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Utah State University"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "careers.pageuppeople.com",
+      "url": "https://careers.pageuppeople.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "California State University, Long Beach"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "careers.tudelft.nl",
+      "url": "https://careers.tudelft.nl/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Delft University of Technology",
+        "Delft University of Technology (TU Delft)"
+      ],
+      "countries": [
+        "Netherlands",
+        "The Netherlands"
+      ],
+      "historicalRecords": 2,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "careers.udel.edu",
+      "url": "https://careers.udel.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "The University of Delaware (UD)"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "careers.umass.edu",
+      "url": "https://careers.umass.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "UMass Amherst"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 2,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "careers.und.edu",
+      "url": "https://careers.und.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of North Dakota"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "careers.uoregon.edu",
+      "url": "https://careers.uoregon.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Oregon"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "careers.wlu.ca",
+      "url": "https://careers.wlu.ca/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Wilfrid Laurier University"
+      ],
+      "countries": [
+        "Canada"
+      ],
+      "historicalRecords": 2,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "chess.wd1.myworkdayjobs.com",
+      "url": "https://chess.wd1.myworkdayjobs.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Central New Mexico Community College"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "cnr.ncsu.edu",
+      "url": "https://cnr.ncsu.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "North Carolina State University"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "coventry.ac.uk",
+      "url": "https://coventry.ac.uk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Coventry University"
+      ],
+      "countries": [
+        "UK"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "cuhk.taleo.net",
+      "url": "https://cuhk.taleo.net/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Chinese University of Hong Kong",
+        "The Chinese University of Hong Kong"
+      ],
+      "countries": [
+        "China",
+        "Hong Kong"
+      ],
+      "historicalRecords": 3,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "cuny.jobs",
+      "url": "https://cuny.jobs/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "City University of New York"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "deakin.edu.au",
+      "url": "https://deakin.edu.au/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Deakin University"
+      ],
+      "countries": [
+        "Australia"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "diesl.eu",
+      "url": "https://diesl.eu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Aalto University"
+      ],
+      "countries": [
+        "Finland"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "docs.google.com",
+      "url": "https://docs.google.com/",
+      "category": "shared_or_social_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [],
+      "countries": [],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "durham.taleo.net",
+      "url": "https://durham.taleo.net/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Durham University"
+      ],
+      "countries": [
+        "UK"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "edzz.fa.em3.oraclecloud.com",
+      "url": "https://edzz.fa.em3.oraclecloud.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Birmingham"
+      ],
+      "countries": [
+        "United Kingdom"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "emploi.cnrs.fr",
+      "url": "https://emploi.cnrs.fr/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "French National Centre for Scientific Research"
+      ],
+      "countries": [
+        "France"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "entpe.fr",
+      "url": "https://entpe.fr/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Ecole Spéciale des Travaux Publics"
+      ],
+      "countries": [
+        "France"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "euraxess.ec.europa.eu",
+      "url": "https://euraxess.ec.europa.eu/",
+      "category": "discovery_aggregator",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Charles University",
+        "Maastricht University",
+        "University of Amsterdam"
+      ],
+      "countries": [
+        "Czech Republic",
+        "Netherlands"
+      ],
+      "historicalRecords": 3,
+      "types": [
+        "study",
+        "work"
+      ]
+    },
+    {
+      "domain": "evergreen.peopleadmin.com",
+      "url": "https://evergreen.peopleadmin.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [],
+      "countries": [],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "explore.msujobs.msstate.edu",
+      "url": "https://explore.msujobs.msstate.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Mississippi State University"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "findaphd.com",
+      "url": "https://findaphd.com/",
+      "category": "discovery_aggregator",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Aberdeen University",
+        "Ariel University",
+        "Aston University",
+        "Loughborough University",
+        "Nanyang Technological University",
+        "Northumbria University",
+        "Scottish agricultural college",
+        "Sheffield Hallam University",
+        "The University of Manchester",
+        "University of  Loughborough",
+        "University of Bristol (lead institution)",
+        "University of Durham",
+        "University of Edinburgh",
+        "University of Exeter",
+        "University of Greenwich",
+        "University of Liverpool",
+        "University of Manchester",
+        "University of the Highlands and Islands"
+      ],
+      "countries": [
+        "Israel",
+        "Singapore",
+        "UK",
+        "United Kingdom",
+        "United Kingdom & Brazil (project focuses on both)"
+      ],
+      "historicalRecords": 21,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "ges.kyoto-u.ac.jp",
+      "url": "https://ges.kyoto-u.ac.jp/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Kyoto University"
+      ],
+      "countries": [
+        "Japan"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "gla.ac.uk",
+      "url": "https://gla.ac.uk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "The University of Glasgow"
+      ],
+      "countries": [
+        "UK"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "higheredjobs.com",
+      "url": "https://higheredjobs.com/",
+      "category": "discovery_aggregator",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Binghamton University",
+        "California Polytechnic State University",
+        "Davidson College",
+        "Emory University",
+        "Georgia State University",
+        "Harvard University",
+        "Northeastern University",
+        "Princeton University",
+        "Stanford University",
+        "Texas Woman's University",
+        "Texas Woman’s University",
+        "The Pennsylvania State University",
+        "Tufts University",
+        "University of Cincinnati",
+        "University of Colorado Boulder",
+        "University of Michigan",
+        "University of Nevada, Reno",
+        "University of Oklahoma",
+        "University of Tampa",
+        "University of Wyoming",
+        "Vanderbilt University"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 26,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "humanities.manchester.ac.uk",
+      "url": "https://humanities.manchester.ac.uk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Manchester"
+      ],
+      "countries": [
+        "United Kingdom"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "iit.comillas.edu",
+      "url": "https://iit.comillas.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Comillas Pontifical University"
+      ],
+      "countries": [
+        "Spain"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "indiana.peopleadmin.com",
+      "url": "https://indiana.peopleadmin.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Indiana University Bloomington"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "iris-cofund.eu",
+      "url": "https://iris-cofund.eu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Vrije Universiteit Brussel & the Université libre de Bruxelles"
+      ],
+      "countries": [
+        "Belgium"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "jobbnorge.no",
+      "url": "https://jobbnorge.no/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Centre for International Climate Research in Oslo",
+        "The University of Stavanger",
+        "Universitetet i Oslo",
+        "University of Oslo",
+        "University of Stavanger"
+      ],
+      "countries": [
+        "Norway"
+      ],
+      "historicalRecords": 7,
+      "types": [
+        "study",
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.aag.org",
+      "url": "https://jobs.aag.org/",
+      "category": "discovery_aggregator",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Binghamton University (SUNY)",
+        "Brown University",
+        "California Polytechnic State University, San Luis Obispo (Cal Poly)",
+        "Concordia University",
+        "Gustavus Adolphus College",
+        "Kennesaw State University",
+        "McGill University",
+        "Pomona College",
+        "Rice University",
+        "Texas A&M University",
+        "Texas State University",
+        "The College of Wooster",
+        "The University of Hong Kong",
+        "University of California, Los Angeles",
+        "University of Illinois Urbana-Champaign (UIUC)",
+        "University of Minnesota",
+        "University of Nevada, Reno",
+        "University of St. Thomas",
+        "University of Toronto Mississauga (UTM)",
+        "University of Utah",
+        "University of Victoria",
+        "Virginia Tech"
+      ],
+      "countries": [
+        "Canada",
+        "Hong Kong",
+        "USA",
+        "canada"
+      ],
+      "historicalRecords": 23,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.ac.uk",
+      "url": "https://jobs.ac.uk/",
+      "category": "discovery_aggregator",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Loughborough University",
+        "Monash University",
+        "Nanyang Technological University",
+        "Newcastle University",
+        "Norwegian University of Science and Technology",
+        "Swansea University",
+        "The Midlands Graduate School (a collaboration between Aston University, University of Birmingham, De Montfort University, University of Leicester, Loughborough University, University of Nottingham, Nottingham Trent University and University of Warwick)",
+        "The University of Dublin",
+        "University of Birmingham",
+        "University of Exeter",
+        "University of Lausanne",
+        "University of Liverpool",
+        "University of Plymouth",
+        "University of St Andrews",
+        "University of Strathclyde",
+        "University of Surrey",
+        "University of Sussex",
+        "University of Warwick",
+        "University of the West Indies"
+      ],
+      "countries": [
+        "Australia",
+        "Ireland",
+        "Norway",
+        "Singapore",
+        "Switzerland",
+        "Trinidad and Tobago",
+        "UK"
+      ],
+      "historicalRecords": 27,
+      "types": [
+        "study",
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.apply.vt.edu",
+      "url": "https://jobs.apply.vt.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Virginia Tech"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.charlotte.edu",
+      "url": "https://jobs.charlotte.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "The University of North Carolina System",
+        "University of North Charlotte"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 2,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.chronicle.com",
+      "url": "https://jobs.chronicle.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Oregon"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.ferris.edu",
+      "url": "https://jobs.ferris.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Ferris State University"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.hku.hk",
+      "url": "https://jobs.hku.hk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "The University of Hong Kong"
+      ],
+      "countries": [
+        "Hong Kong SAR, China"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.hr.txstate.edu",
+      "url": "https://jobs.hr.txstate.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Texas State University"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.leeds.ac.uk",
+      "url": "https://jobs.leeds.ac.uk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Leeds"
+      ],
+      "countries": [
+        "UK"
+      ],
+      "historicalRecords": 3,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.lse.ac.uk",
+      "url": "https://jobs.lse.ac.uk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "London School of Economics and Political Science (LSE)",
+        "The London School of Economics and Political Science (LSE)"
+      ],
+      "countries": [
+        "UK"
+      ],
+      "historicalRecords": 2,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.manchester.ac.uk",
+      "url": "https://jobs.manchester.ac.uk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "The University of Manchester"
+      ],
+      "countries": [
+        "UK"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.ncl.ac.uk",
+      "url": "https://jobs.ncl.ac.uk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Newcastle University"
+      ],
+      "countries": [
+        "UK"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.rutgers.edu",
+      "url": "https://jobs.rutgers.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Rutgers"
+      ],
+      "countries": [
+        "US"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.sjsu.edu",
+      "url": "https://jobs.sjsu.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "San José State University"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.sussex.ac.uk",
+      "url": "https://jobs.sussex.ac.uk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Sussex"
+      ],
+      "countries": [
+        "UK"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.uiowa.edu",
+      "url": "https://jobs.uiowa.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Iowa"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.univie.ac.at",
+      "url": "https://jobs.univie.ac.at/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Vienna"
+      ],
+      "countries": [
+        "Austria"
+      ],
+      "historicalRecords": 3,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.utoronto.ca",
+      "url": "https://jobs.utoronto.ca/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Toronto"
+      ],
+      "countries": [
+        "Canada"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "jobs.uzh.ch",
+      "url": "https://jobs.uzh.ch/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Zurich"
+      ],
+      "countries": [
+        "Switzerland"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "kcl.ac.uk",
+      "url": "https://kcl.ac.uk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "King’s College London"
+      ],
+      "countries": [
+        "UK"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "kellogg.ox.ac.uk",
+      "url": "https://kellogg.ox.ac.uk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Oxford"
+      ],
+      "countries": [
+        "United Kingdom"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "latts.fr",
+      "url": "https://latts.fr/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Université Gustave Eiffel"
+      ],
+      "countries": [
+        "France"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "linkedin.com",
+      "url": "https://linkedin.com/",
+      "category": "shared_or_social_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "MIT Sustainable Urbanization Lab"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "liu.se",
+      "url": "https://liu.se/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Linköping University"
+      ],
+      "countries": [
+        "Sweden"
+      ],
+      "historicalRecords": 2,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "lsu.wd1.myworkdayjobs.com",
+      "url": "https://lsu.wd1.myworkdayjobs.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Louisiana State University (LSU)"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "lu.varbi.com",
+      "url": "https://lu.varbi.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Lund University"
+      ],
+      "countries": [
+        "Sweden"
+      ],
+      "historicalRecords": 3,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "lvmt.fr",
+      "url": "https://lvmt.fr/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Urban Mobility and Transport Laboratory (Joint Unit of the École Nationale des Ponts et Chaussées and Gustave Eiffel University)"
+      ],
+      "countries": [
+        "France"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "main.hercjobs.org",
+      "url": "https://main.hercjobs.org/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Saginaw Valley State University"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "mcgill.wd3.myworkdayjobs.com",
+      "url": "https://mcgill.wd3.myworkdayjobs.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "McGill University"
+      ],
+      "countries": [
+        "Canada"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "mittalsouthasiainstitute.harvard.edu",
+      "url": "https://mittalsouthasiainstitute.harvard.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Harvard University"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 2,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "mta.ca",
+      "url": "https://mta.ca/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Allison Hill University"
+      ],
+      "countries": [
+        "Canada"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "my.corehr.com",
+      "url": "https://my.corehr.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "King’s College London",
+        "Maynooth University",
+        "The University of Oxford",
+        "University of Oxford"
+      ],
+      "countries": [
+        "Ireland",
+        "UK"
+      ],
+      "historicalRecords": 6,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "nature.com",
+      "url": "https://nature.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Luxembourg"
+      ],
+      "countries": [
+        "Luxembourg"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "nshe.wd1.myworkdayjobs.com",
+      "url": "https://nshe.wd1.myworkdayjobs.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of California, Berkeley"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "ohws.prospective.ch",
+      "url": "https://ohws.prospective.ch/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Bern"
+      ],
+      "countries": [
+        "Switzerland"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "oneonta.interviewexchange.com",
+      "url": "https://oneonta.interviewexchange.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "State University of New York"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "otago.taleo.net",
+      "url": "https://otago.taleo.net/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Otago"
+      ],
+      "countries": [
+        "New Zealand"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "phd.leeds.ac.uk",
+      "url": "https://phd.leeds.ac.uk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Leeds",
+        "the Universities of Leeds"
+      ],
+      "countries": [
+        "UK"
+      ],
+      "historicalRecords": 7,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "phdscanner.com",
+      "url": "https://phdscanner.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Oslo"
+      ],
+      "countries": [
+        "Norway"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "polimi.it",
+      "url": "https://polimi.it/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Politecnico di Milano"
+      ],
+      "countries": [
+        "Italy"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "puwebp.princeton.edu",
+      "url": "https://puwebp.princeton.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Princeton University"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 3,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "qmul-jobs.tal.net",
+      "url": "https://qmul-jobs.tal.net/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Queen Mary University of London (QMUL)"
+      ],
+      "countries": [
+        "UK"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "recruit.apo.ucla.edu",
+      "url": "https://recruit.apo.ucla.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of California, Los Angeles"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "recruit.ucdavis.edu",
+      "url": "https://recruit.ucdavis.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of California, Davis"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "regionalstudies.org",
+      "url": "https://regionalstudies.org/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "ANETI Lab（隶属HUN-REN经济与区域研究中心与Corvinus University",
+        "Hong Kong University of Science and Technology, Hong Kong",
+        "James Cook University",
+        "Lund University",
+        "Masaryk University",
+        "New York University",
+        "North Carolina State University",
+        "Northumbria University, UK",
+        "Swiss Federal Institute for Forest, Snow and Landscape Research (WSL)",
+        "Temple University",
+        "The Gran Sasso Science Institute",
+        "The University of Greifswald",
+        "The University of Hong Kong",
+        "University of Bergen",
+        "University of Birmingham",
+        "University of California Berkeley",
+        "University of Cambridge",
+        "University of Copenhagen",
+        "University of Liverpool",
+        "University of Nottingham Ningbo China (UNNC), China",
+        "University of Oxford",
+        "University of Tasmania",
+        "University of Zurich",
+        "University of the Free State",
+        "Vanderbilt University",
+        "Waseda University"
+      ],
+      "countries": [
+        "Australia",
+        "China",
+        "Denmark",
+        "Germany",
+        "HK",
+        "Hong Kong, China",
+        "Hungary",
+        "Italy",
+        "Japan",
+        "Norway",
+        "South Africa",
+        "Sweden",
+        "Switzerland",
+        "The Czech Republic",
+        "UK",
+        "USA"
+      ],
+      "historicalRecords": 31,
+      "types": [
+        "study",
+        "work"
+      ]
+    },
+    {
+      "domain": "rh-carriere-dmz-eng.synchro.umontreal.ca",
+      "url": "https://rh-carriere-dmz-eng.synchro.umontreal.ca/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Université de Montréal"
+      ],
+      "countries": [
+        "Canada"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "scholarshipdb.net",
+      "url": "https://scholarshipdb.net/",
+      "category": "discovery_aggregator",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "California State University, Fresno",
+        "Kennesaw State University",
+        "Liverpool John Moores University",
+        "Lund University",
+        "Maynooth University",
+        "Newcastle University",
+        "Oxford Brookes University",
+        "Royal Holloway University of London",
+        "Swiss Federal Institute for Forest, Snow and Landscape Research WSL",
+        "UNIVERSITY OF WESTERN AUSTRALIA",
+        "University College Cork",
+        "University College London",
+        "University of Bergen",
+        "University of Bristol",
+        "University of California, Berkeley",
+        "University of Exeter",
+        "University of Limerick",
+        "University of Oslo",
+        "University of Oxford",
+        "University of Porto",
+        "University of St Andrews",
+        "University of Vienna",
+        "Uppsala University",
+        "Utrecht University",
+        "Vrije Universiteit Amsterdam"
+      ],
+      "countries": [
+        "AUSTRALIA",
+        "Austria",
+        "ENGLAND",
+        "Ireland",
+        "Netherlands",
+        "Norway",
+        "Portugal",
+        "Sweden",
+        "Switzerland",
+        "UK",
+        "USA"
+      ],
+      "historicalRecords": 30,
+      "types": [
+        "study",
+        "work"
+      ]
+    },
+    {
+      "domain": "schooljobs.com",
+      "url": "https://schooljobs.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of North Alabama"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "sechindravallury.com",
+      "url": "https://sechindravallury.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Georgia"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "seonaparklab.github.io",
+      "url": "https://seonaparklab.github.io/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Hong Kong University of Science and Technology(Guangzhou)"
+      ],
+      "countries": [
+        "China"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "sfu.ca",
+      "url": "https://sfu.ca/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Simon Fraser University"
+      ],
+      "countries": [
+        "Canada"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "sgsss.ac.uk",
+      "url": "https://sgsss.ac.uk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of St Andrews"
+      ],
+      "countries": [
+        "UK"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "sites.google.com",
+      "url": "https://sites.google.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "UC Berkeley"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "slu.se",
+      "url": "https://slu.se/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Swedish University of Agricultural Sciences"
+      ],
+      "countries": [
+        "Sweden"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "spartantalent.uncg.edu",
+      "url": "https://spartantalent.uncg.edu/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "UNC Greensboro"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 2,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "sps.ed.ac.uk",
+      "url": "https://sps.ed.ac.uk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "The UK Energy Research Centre (UKERC)"
+      ],
+      "countries": [
+        "UK"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "st-andrews.ac.uk",
+      "url": "https://st-andrews.ac.uk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of St Andrews"
+      ],
+      "countries": [
+        "UK"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "stellenangebote.b-tu.de",
+      "url": "https://stellenangebote.b-tu.de/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Brandenburg University of Technology Cottbus-Senftenberg"
+      ],
+      "countries": [
+        "Germany"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "surrey.ac.uk",
+      "url": "https://surrey.ac.uk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Surrey"
+      ],
+      "countries": [
+        "UK"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "swifft.be",
+      "url": "https://swifft.be/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Université libre de Bruxelles & Vrije Universiteit Brussel",
+        "Université libre de Bruxelles (ULB) and the Vrije Universiteit Brussel (VUB)"
+      ],
+      "countries": [
+        "Belgium"
+      ],
+      "historicalRecords": 2,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "sydney.edu.au",
+      "url": "https://sydney.edu.au/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "The University of Sydney"
+      ],
+      "countries": [
+        "Australia"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "thebritishacademy.ac.uk",
+      "url": "https://thebritishacademy.ac.uk/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "The British Academy"
+      ],
+      "countries": [
+        "UK"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "timeshighereducation.com",
+      "url": "https://timeshighereducation.com/",
+      "category": "discovery_aggregator",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Asian Institute of Technology (AIT)",
+        "Durham University",
+        "Masaryk University"
+      ],
+      "countries": [
+        "Czech Republic",
+        "Thailand",
+        "UK"
+      ],
+      "historicalRecords": 3,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "uasys.wd5.myworkdayjobs.com",
+      "url": "https://uasys.wd5.myworkdayjobs.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Arkansas"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "uibk.ac.at",
+      "url": "https://uibk.ac.at/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Innsbruck"
+      ],
+      "countries": [
+        "Austria"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "uidaho.peopleadmin.com",
+      "url": "https://uidaho.peopleadmin.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Idaho"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "unc.peopleadmin.com",
+      "url": "https://unc.peopleadmin.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "The University of North Carolina at Chapel Hill"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "uni-bonn.de",
+      "url": "https://uni-bonn.de/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Bonn"
+      ],
+      "countries": [
+        "Germany"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "uni-frankfurt.de",
+      "url": "https://uni-frankfurt.de/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Goethe University Frankfurt"
+      ],
+      "countries": [
+        "German"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "uni-goettingen.de",
+      "url": "https://uni-goettingen.de/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Göttingen"
+      ],
+      "countries": [
+        "Germany"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "uni-greifswald.de",
+      "url": "https://uni-greifswald.de/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "The University of Greifswald"
+      ],
+      "countries": [
+        "Germany"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "uni-osnabrueck.de",
+      "url": "https://uni-osnabrueck.de/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Osnabrück University"
+      ],
+      "countries": [
+        "Germany"
+      ],
+      "historicalRecords": 2,
+      "types": [
+        "study",
+        "work"
+      ]
+    },
+    {
+      "domain": "unifr.ch",
+      "url": "https://unifr.ch/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Fribourg"
+      ],
+      "countries": [
+        "Switzerland"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "unsw.edu.au",
+      "url": "https://unsw.edu.au/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of New South Wales"
+      ],
+      "countries": [
+        "Australia"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "utep.interviewexchange.com",
+      "url": "https://utep.interviewexchange.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Texas at El Paso"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "uu.nl",
+      "url": "https://uu.nl/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Utrecht University"
+      ],
+      "countries": [
+        "Netherlands"
+      ],
+      "historicalRecords": 4,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "uu.se",
+      "url": "https://uu.se/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Uppsala University"
+      ],
+      "countries": [
+        "Sweden"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "study"
+      ]
+    },
+    {
+      "domain": "werkenbij.uva.nl",
+      "url": "https://werkenbij.uva.nl/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "University of Amsterdam"
+      ],
+      "countries": [
+        "Netherlands"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "wirtschaftsuniversitaet-wien-portal.rexx-systems.com",
+      "url": "https://wirtschaftsuniversitaet-wien-portal.rexx-systems.com/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Vienna University of Economics and Business"
+      ],
+      "countries": [
+        "Austria"
+      ],
+      "historicalRecords": 2,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "wmujobs.org",
+      "url": "https://wmujobs.org/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Western Michigan University"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 2,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "wur.nl",
+      "url": "https://wur.nl/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "Wageningen University"
+      ],
+      "countries": [
+        "Netherlands"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    },
+    {
+      "domain": "wvu.taleo.net",
+      "url": "https://wvu.taleo.net/",
+      "category": "candidate_institution_or_recruitment_host",
+      "verificationStatus": "not_checked",
+      "automationAllowed": false,
+      "institutions": [
+        "West Virginia University"
+      ],
+      "countries": [
+        "USA"
+      ],
+      "historicalRecords": 1,
+      "types": [
+        "work"
+      ]
+    }
+  ]
+}

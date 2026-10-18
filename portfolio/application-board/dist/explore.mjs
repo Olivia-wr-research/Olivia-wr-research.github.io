@@ -58,10 +58,16 @@ export function suggestFromText(raw){
  // Evidence deliberately contains only controlled vocabulary: never names, paper titles,
  // contact details or text surrounding a match. It is a keyword trigger, not a skill claim.
  const evidence=[];
+ const clauses=text.split(/[。；;，,\n.!?！？]/).filter(Boolean);
  const find=(list,category)=>list.filter(term=>{
-  const matched=[term,...(aliases[term]||[])].find(a=>present(text,a));
-  if(!matched)return false;
-  evidence.push({category,label:term,matched,snippet:matched.slice(0,80)});return true;
+  const tokens=[term,...(aliases[term]||[])];
+  const hits=clauses.filter(c=>tokens.some(a=>present(c,a)));
+  if(!hits.length)return false;
+  const matched=tokens.find(a=>hits.some(c=>present(c,a)));
+  const states=hits.map(c=>/不掌握|没有|不会|未使用|无.{0,12}经验|不具备|never|no experience|not proficient|do not|don't|cannot|can't/i.test(c)?'absent':/希望|想学|计划学|正在学|学习中|want to|hope to|learning|plan to/i.test(c)?'interest':/团队|参与|team|participat/i.test(c)?'uncertain':/使用|完成|熟练|掌握|独立|used|conducted|proficient|implemented/i.test(c)?'experience':'candidate');
+  const state=new Set(states).size>1?'uncertain':states[0];
+  evidence.push({category,label:term,matched,snippet:matched.slice(0,80),state});
+  return category==='topic'?state!=='absent':['experience','candidate'].includes(state);
  });
  return {topics:find(topicChoices,'topic'),methods:find(methodChoices,'method'),evidence};
 }

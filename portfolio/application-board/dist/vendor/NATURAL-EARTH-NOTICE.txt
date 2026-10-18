@@ -1,0 +1,9 @@
+Natural Earth 1:110m admin-0 country boundaries, public domain.
+Source: https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_110m_admin_0_countries.geojson
+Downloaded: 2026-10-16
+Terms: https://www.naturalearthdata.com/about/terms-of-use/
+Natural Earth datasets are public domain. Boundaries are illustrative and do not represent an official position on territorial status.
+LABEL_X / LABEL_Y are country cartographic label points, not employer locations.
+Leaflet 1.9.4: https://github.com/Leaflet/Leaflet ; BSD-2-Clause, see LEAFLET-LICENSE.txt.
+Leaflet distributed files downloaded from https://unpkg.com/leaflet@1.9.4/dist/ .
+All map assets are served locally; no third-party map tiles, geocoding, or user geolocation are requested.
