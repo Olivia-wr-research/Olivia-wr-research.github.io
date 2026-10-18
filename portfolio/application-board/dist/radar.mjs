@@ -1,3 +1,4 @@
+import {newestCollected,setupCollectionSort} from './opportunity-sort.mjs';
 import {initRoutes,navigate} from './routes.mjs';
 import {fundingKind,sourceName,deadlineInfo,collapseProgrammeRows,programmeRounds} from './opportunity.mjs';
 import {geographyCatalog as geographyOpportunities} from './geography-catalog.mjs';
@@ -10,6 +11,7 @@ import {PROFILE_KEY,profile,terms,match,canonicalTerm} from './matching.mjs?v=07
 import {KEY,parseBackup,backup,validateRecord,safeUrl,validDate,daysLeft} from './core.mjs';
 const $=s=>document.querySelector(s),el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 let jobs=geographyOpportunities,p=profile({}),saved=[],savedOnly=false,blocked=false;
+setupCollectionSort(document.querySelector('#sort'));
 let geographyUI;
 let journey;let visibleLimit=20;
 const JOBS_KEY='nextposition-geography-imported-v1';
@@ -27,6 +29,7 @@ function render(){options();$('#snapshot-count').textContent=jobs.length;$('#cou
  const q=canonicalTerm($('#search').value),today=new Date().toISOString().slice(0,10);let rows=jobs.map(j=>({j,m:match(j,p,today)})).filter(({j,m})=>!savedOnly||isSaved(j)).filter(({j})=>!$('#focus-social').checked||j.field==='社会科学与治理').filter(({j,m})=>!$('#hide-expired').checked||!m.expired).filter(({j})=>$('#country').value==='all'||j.country===$('#country').value).filter(({j})=>$('#source').value==='all'||sourceName(j)===$('#source').value).filter(({j})=>$('#funding').value==='all'||fundingKind(j)===$('#funding').value).filter(({j})=>$('#field').value==='all'||j.field===$('#field').value).filter(({j})=>[j.title,j.titleEn,j.institution,j.institutionEn,j.short,j.country,t(j.country),j.city,j.cityEn,j.field,j.fieldEn,j.summary,j.summaryEn,...j.topics,...j.methods].join(' ').toLowerCase().includes(q)).filter(({j})=>{const v=$('#deadline').value,d=daysLeft(j.deadline);return v==='all'||d!==null&&(v==='long'?d>=30:d>=0&&d<=Number(v));});
  if(geographyUI)rows=rows.filter(({j})=>geographyUI.accepts(j));
  if(!savedOnly)rows=collapseProgrammeRows(rows);
+ if($('#sort').value==='newest')rows.sort((a,b)=>newestCollected(a.j,b.j));
  if($('#sort').value==='default')rows.sort((a,b)=>Number(b.j.status==='open'&&!b.m.expired)-Number(a.j.status==='open'&&!a.m.expired));if($('#sort').value==='match')rows.sort((a,b)=>(b.m.components.find(c=>c.label==='研究兴趣')?.hits.length||0)-(a.m.components.find(c=>c.label==='研究兴趣')?.hits.length||0)||b.m.overlap.length-a.m.overlap.length);if($('#sort').value==='deadline')rows.sort((a,b)=>(a.j.deadline||'9999').localeCompare(b.j.deadline||'9999'));
  geographyUI?.update(rows.map(({j})=>j),language);
  let direction=$('#current-direction');if(!direction){direction=el('section',undefined,'current-direction');direction.id='current-direction';$('.results-head').before(direction);}direction.replaceChildren();direction.hidden=!set;if(set){direction.append(el('strong',language==='en'?'Your exploration tags':'当前探索方向'),el('p',[p.topics,p.methods].filter(Boolean).join(' · ')));const editDirection=el('button',language==='en'?'Edit tags':'修改方向');editDirection.onclick=openProfile;direction.append(editDirection);const browse=el('button',language==='en'?'Browse without ranking':'不按匹配排序');browse.onclick=()=>{$('#sort').value='default';render();};direction.append(browse);}
