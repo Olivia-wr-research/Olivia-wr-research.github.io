@@ -1,0 +1,901 @@
+Warning: truncated output (original token count: 12933)
+Total output lines: 959
+
+[
+  {
+    "candidate_id": "tcand-00c8ec494a5073e191ea33a5",
+    "candidate_fingerprint": "156c5529e8aa6adbd86a5259cd6da87fd044a5fef66e0ebec480173f052658fb",
+    "status": "verified",
+    "decision_scope": "page_content",
+    "content_verification": {
+      "status": "verified",
+      "evidence": [
+        {
+          "field": "application_route",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_CeeOoz3e4bWjwIztTz",
+          "claim": "application_route: The official page states that applicants must apply exclusively through the online application portal; email and postal applications are not considered.",
+          "locator": "Application instructions",
+          "evidence_note": "The German instructions specify the online portal as the exclusive application route."
+        },
+        {
+          "field": "eligibility",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_CeeOoz3e4bWjwIztTz",
+          "claim": "eligibility: Master’s degree in social sciences, environmental sciences, or a similar field; very good German and English; statistical skills or willingness to acquire them.",
+          "locator": "Profil",
+          "evidence_note": "The listed profile names the degree fields and language and statistics expectations."
+        }
+      ]
+    },
+    "reviewer": "opportunity_verifier",
+    "reviewed_at": "2026-10-23T11:17:07Z",
+    "evidence": [
+      {
+        "field": "application_route",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_CeeOoz3e4bWjwIztTz",
+        "claim": "application_route: The official page states that applicants must apply exclusively through the online application portal; email and postal applications are not considered.",
+        "locator": "Application instructions",
+        "evidence_note": "The German instructions specify the online portal as the exclusive application route."
+      },
+      {
+        "field": "eligibility",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_CeeOoz3e4bWjwIztTz",
+        "claim": "eligibility: Master’s degree in social sciences, environmental sciences, or a similar field; very good German and English; statistical skills or willingness to acquire them.",
+        "locator": "Profil",
+        "evidence_note": "The listed profile names the degree fields and language and statistics expectations."
+      }
+    ],
+    "application_route": {
+      "status": "verified_as_stated",
+      "value": "The official page states that applicants must apply exclusively through the online application portal; email and postal applications are not considered.",
+      "portal_live_acceptance": "unknown",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_CeeOoz3e4bWjwIztTz",
+      "locator": "Application instructions"
+    },
+    "deadline": {
+      "status": "missing",
+      "value": null,
+      "deadline_raw": null,
+      "date_precision": "not_stated",
+      "timezone": null,
+      "rolling": null,
+      "reason": "No application deadline is stated. The page gives a January 2027 or mutually agreed start date, which is not a deadline."
+    },
+    "funding": {
+      "status": "unknown",
+      "value": null,
+      "reason": "No explicit salary or funding terms were found."
+    },
+    "eligibility": {
+      "status": "supported",
+      "value": "Master’s degree in social sciences, environmental sciences, or a similar field; very good German and English; statistical skills or willingness to acquire them.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_CeeOoz3e4bWjwIztTz",
+      "locator": "Profil"
+    },
+    "current_open_status": "unknown",
+    "current_status_evidence": null,
+    "detail_page_sha256": "f68e655646f4d83d969c5872363b02053cd785054db11e36c4adaf162117d4b6",
+    "retrieved_at_utc_window": {
+      "start": "2026-10-23T11:12:20Z",
+      "end": "2026-10-23T11:12:24Z"
+    }
+  },
+  {
+    "candidate_id": "tcand-04167eaf1a8530810dffeafe",
+    "candidate_fingerprint": "b14229241952963cf244fbf923ef47b6bcd9ab29919f74c2bfd6929775c3e8f9",
+    "status": "verified",
+    "decision_scope": "page_content",
+    "content_verification": {
+      "status": "verified",
+      "evidence": [
+        {
+          "field": "application_route",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_VICQKrWgFLEoyEPTP7",
+          "claim": "application_route: The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+          "locator": "Application instructions",
+          "evidence_note": "The official instructions name the online portal as the exclusive route."
+        },
+        {
+          "field": "eligibility",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_VICQKrWgFLEoyEPTP7",
+          "claim": "eligibility: MSc in physics, quantum engineering, electrical engineering, or a closely related discipline; excellent spoken and written English.",
+          "locator": "Profile",
+          "evidence_note": "The profile lists the degree disciplines and English requirement."
+        }
+      ]
+    },
+    "reviewer": "opportunity_verifier",
+    "reviewed_at": "2026-10-23T11:17:07Z",
+    "evidence": [
+      {
+        "field": "application_route",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_VICQKrWgFLEoyEPTP7",
+        "claim": "application_route: The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+        "locator": "Application instructions",
+        "evidence_note": "The official instructions name the online portal as the exclusive route."
+      },
+      {
+        "field": "eligibility",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_VICQKrWgFLEoyEPTP7",
+        "claim": "eligibility: MSc in physics, quantum engineering, electrical engineering, or a closely related discipline; excellent spoken and written English.",
+        "locator": "Profile",
+        "evidence_note": "The profile lists the degree disciplines and English requirement."
+      }
+    ],
+    "application_route": {
+      "status": "verified_as_stated",
+      "value": "The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+      "portal_live_acceptance": "unknown",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_VICQKrWgFLEoyEPTP7",
+      "locator": "Application instructions"
+    },
+    "deadline": {
+      "status": "missing",
+      "value": null,
+      "deadline_raw": null,
+      "date_precision": "not_stated",
+      "timezone": null,
+      "rolling": true,
+      "page_statement": "Review of applications will begin immediately and continue until the position is filled.",
+      "reason": "No fixed application deadline is stated; the page describes review until the position is filled."
+    },
+    "funding": {
+      "status": "unknown",
+      "value": null,
+      "reason": "No explicit salary, stipend, or funding terms were found."
+    },
+    "eligibility": {
+      "status": "supported",
+      "value": "MSc in physics, quantum engineering, electrical engineering, or a closely related discipline; excellent spoken and written English.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_VICQKrWgFLEoyEPTP7",
+      "locator": "Profile"
+    },
+    "current_open_status": "unknown",
+    "current_status_evidence": null,
+    "detail_page_sha256": "cc0fa190ec3aafc1ae7683727bbaa5efb2a117f0b153b276307def2b3b295f97",
+    "retrieved_at_utc_window": {
+      "start": "2026-10-23T11:12:24Z",
+      "end": "2026-10-23T11:12:26Z"
+    }
+  },
+  {
+    "candidate_id": "tcand-0561efe8199619f29532cd18",
+    "candidate_fingerprint": "1a3f2e4af36d959e0dc293952b80d72e579896a1bf3e652a188b3248b0dd8572",
+    "status": "verified",
+    "decision_scope": "page_content",
+    "content_verification": {
+      "status": "verified",
+      "evidence": [
+        {
+          "field": "application_route",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+          "claim": "application_route: The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+          "locator": "Application instructions",
+          "evidence_note": "The official instructions name the online portal as the exclusive route."
+        },
+        {
+          "field": "deadline",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+          "claim": "deadline: 2027-01-31",
+          "locator": "Application timeline",
+          "evidence_note": "The stated submission deadline is January 31, 2027; no time of day or timezone is given."
+        },
+        {
+          "field": "funding",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+          "claim": "funding: Two paid full-time doctoral fellowships; programme funding for 3.5 years; monthly salary based on a standard rate; amount not stated.",
+          "locator": "Opening paragraph and funding paragraph",
+          "evidence_note": "The page states the number, duration, paid status, and standard-rate salary basis."
+        },
+        {
+          "field": "eligibility",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+          "claim": "eligibility: University-level Master’s degree in architecture, engineering, or a related field; English proficiency is assumed, and English certificates are not formally required.",
+          "locator": "Profile",
+          "evidence_note": "The profile states the degree requirement and English certificate policy."
+        }
+      ]
+    },
+    "reviewer": "opportunity_verifier",
+    "reviewed_at": "2026-10-23T11:17:07Z",
+    "evidence": [
+      {
+        "field": "application_route",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+        "claim": "application_route: The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+        "locator": "Application instructions",
+        "evidence_note": "The official instructions name the online portal as the exclusive route."
+      },
+      {
+        "field": "deadline",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+        "claim": "deadline: 2027-01-31",
+        "locator": "Application timeline",
+        "evidence_note": "The stated submission deadline is January 31, 2027; no time of day or timezone is given."
+      },
+      {
+        "field": "funding",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+        "claim": "funding: Two paid full-time doctoral fellowships; programme funding for 3.5 years; monthly salary based on a standard rate; amount not stated.",
+        "locator": "Opening paragraph and funding paragraph",
+        "evidence_note": "The page states the number, duration, paid status, and standard-rate salary basis."
+      },
+      {
+        "field": "eligibility",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+        "claim": "eligibility: University-level Master’s degree in architecture, engineering, or a related field; English proficiency is assumed, and English certificates are not formally required.",
+        "locator": "Profile",
+        "evidence_note": "The profile states the degree requirement and English certificate policy."
+      }
+    ],
+    "application_route": {
+      "status": "verified_as_stated",
+      "value": "The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+      "portal_live_acceptance": "unknown",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+      "locator": "Application instructions"
+    },
+    "deadline": {
+      "status": "supported",
+      "value": "2027-01-31",
+      "deadline_raw": "The submission deadline for the application package is January 31, 2027.",
+      "date_precision": "day",
+      "timezone": null,
+      "rolling": null,
+      "reason": "The page gives a calendar date but no time of day or timezone.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+      "locator": "Application timeline"
+    },
+    "funding": {
+      "status": "supported",
+      "value": "Two paid full-time doctoral fellowships; programme funding for 3.5 years; monthly salary based on a standard rate; amount not stated.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+      "locator": "Opening paragraph and funding paragraph"
+    },
+    "eligibility": {
+      "status": "supported",
+      "value": "University-level Master’s degree in architecture, engineering, or a related field; English proficiency is assumed, and English certificates are not formally required.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+      "locator": "Profile"
+    },
+    "current_open_status": "unknown",
+    "current_status_evidence": null,
+    "detail_page_sha256": "2a36e6d5fe74fd995ed4307c8ca283834337e0a6f9a3c51473ea94440380bcbd",
+    "retrieved_at_utc_window": {
+      "start": "2026-10-23T11:12:26Z",
+      "end": "2026-10-23T11:12:30Z"
+    }
+  },
+  {
+    "candidate_id": "tcand-0f11accebefc2eebe73788eb",
+    "candidate_fingerprint": "195b546e990ab7f9b3f24d03e3ea27b68e0f9cdadc53ee8a8de29b8e29615dc4",
+    "status": "verified",
+    "decision_scope": "page_content",
+    "content_verification": {
+      "status": "verified",
+      "evidence": [
+        {
+          "field": "application_route",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_N5adwDR63ei5mvEd2z",
+          "claim": "application_route: The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+          "locator": "Application instructions",
+          "evidence_note": "The official instructions name the online portal as the exclusive route."
+        },
+        {
+          "field": "funding",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_N5adwDR63ei5mvEd2z",
+          "claim": "funding: Gross salary will follow ETH Zurich regulations; amount not stated. The initial offer is 18 months with a prospect of extension to a 4–5 year doctorate subject to satisfactory progress.",
+          "locator": "We offer",
+          "evidence_note": "The page states the salary framework, initial term, and conditional extension prospect."
+        },
+        {
+          "field": "eligibility",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_N5adwDR63ei5mvEd2z",
+          "claim": "eligibility: Master’s degree in statistics, operations, economics, or a closely related field; excellent academic record, quantitative skills, and communication skills.",
+          "locator": "Profile",
+          "evidence_note": "The profile lists the degree fields and academic and skill expectations."
+        }
+      ]
+    },
+    "reviewer": "opportunity_verifier",
+    "reviewed_at": "2026-10-23T11:17:07Z",
+    "evidence": [
+      {
+        "field": "application_route",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_N5adwDR63ei5mvEd2z",
+        "claim": "application_route: The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+        "locator": "Application instructions",
+        "evidence_note": "The official instructions name the online portal as the exclusive route."
+      },
+      {
+        "field": "funding",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_N5adwDR63ei5mvEd2z",
+        "claim": "funding: Gross salary will follow ETH Zurich regulations; amount not stated. The initial offer is 18 months with a prospect of extension to a 4–5 year doctorate subject to satisfactory progress.",
+        "locator": "We offer",
+        "evidence_note": "The page states the salary framework, initial term, and conditional extension prospect."
+      },
+      {
+        "field": "eligibility",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_N5adwDR63ei5mvEd2z",
+        "claim": "eligibility: Master’s degree in statistics, operations, economics, or a closely related field; excellent academic record, quantitative skills, and communication skills.",
+        "locator": "Profile",
+        "evidence_note": "The profile lists the degree fields and academic and skill expectations."
+      }
+    ],
+    "application_route": {
+      "status": "verified_as_stated",
+      "value": "The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+      "portal_live_acceptance": "unknown",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_N5adwDR63ei5mvEd2z",
+      "locator": "Application instructions"
+    },
+    "deadline": {
+      "status": "missing",
+      "value": null,
+      "deadline_raw": null,
+      "date_precision": "not_stated",
+      "timezone": null,
+      "rolling": null,
+      "reason": "No application deadline is stated; the starting date is negotiable."
+    },
+    "funding": {
+      "status": "supported",
+      "value": "Gross salary will follow ETH Zurich regulations; amount not stated. The initial offer is 18 months with a prospect of extension to a 4–5 year doctorate subject to satisfactory progress.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_N5adwDR63ei5mvEd2z",
+      "locator": "We offer"
+    },
+    "eligibility": {
+      "status": "supported",
+      "value": "Master’s degree in statistics, operations, economics, or a closely related field; excellent academic record, quantitative skills, and communication skills.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_N5adwDR63ei5mvEd2z",
+      "locator": "Profile"
+    },
+    "current_open_status": "unknown",
+    "current_status_evidence": null,
+    "detail_page_sha256": "42d4a04145c3237b8ffcf6fc3cf7e2ccfaceb618708f11d2727b66a2adbdb592",
+    "retrieved_at_utc_window": {
+      "start": "2026-10-23T11:12:30Z",
+      "end": "2026-10-23T11:12:32Z"
+    }
+  },
+  {
+    "candidate_id": "tcand-180658fc2dd19f7a8aa98180",
+    "candidate_fingerprint": "dcf959c53f2a5712b62823f87a68dd490bddd5fe5876ad299bd5f6cc217ef8c9",
+    "status": "verified",
+    "decision_scope": "page_content",
+    "content_verification": {
+      "status": "verified",
+      "evidence": [
+        {
+          "field": "application_route",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+          "claim": "application_route: The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+          "locator": "Application instructions",
+          "evidence_note": "The official instructions name the online portal as the exclusive route."
+        },
+        {
+          "field": "funding",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+          "claim": "funding: Employment follows ETH standard regulations and funding is secured for four years; salary amount is not stated.",
+          "locator": "Profile",
+          "evidence_note": "The page explicitly states ETH employment regulations and four-year funding."
+        },
+        {
+          "field": "eligibility",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+          "claim": "eligibility: MSc in atmospheric science, earth science, environmental science, chemistry, physics, or a related discipline before the PhD start date; atmospheric chemistry experience, strong programming skills, and good English are stated.",
+          "locator": "Profile",
+          "evidence_note": "The profile lists degree fields, timing, experience, programming, and English expectations."
+        }
+      ]
+    },
+    "reviewer": "opportunity_verifier",
+    "reviewed_at": "2026-10-23T11:17:07Z",
+    "evidence": [
+      {
+        "field": "application_route",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+        "claim": "application_route: The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+        "locator": "Application instructions",
+        "evidence_note": "The official instructions name the online portal as the exclusive route."
+      },
+      {
+        "field": "funding",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+        "claim": "funding: Employment follows ETH standard regulations and funding is secured for four years; salary amount is not stated.",
+        "locator": "Profile",
+        "evidence_note": "The page explicitly states ETH employment regulations and four-year funding."
+      },
+      {
+        "field": "eligibility",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+        "claim": "eligibility: MSc in atmospheric science, earth science, environmental science, chemistry, physics, or a related discipline before the PhD start date; atmospheric chemistry experience, strong programming skills, and good English are stated.",
+        "locator": "Profile",
+        "evidence_note": "The profile lists degree fields, timing, experience, programming, and English expectations."
+      }
+    ],
+    "application_route": {
+      "status": "verified_as_stated",
+      "value": "The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+      "portal_live_acceptance": "unknown",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+      "locator": "Application instructions"
+    },
+    "deadline": {
+      "status": "missing",
+      "value": null,
+      "deadline_raw": null,
+      "date_precision": "not_stated",
+      "timezone": null,
+      "rolling": true,
+      "page_statement": "Evaluation of applicants will start 15 November 2026 and continue until the position is filled.",
+      "reason": "No fixed application deadline is stated; the date is an evaluation start date and the page says review continues until filled."
+    },
+    "funding": {
+      "status": "supported",
+      "value": "Employment follows ETH standard regulations and funding is secured for four years; salary amount is not stated.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+      "locator": "Profile"
+    },
+    "eligibility": {
+      "status": "supported",
+      "value": "MSc in atmospheric science, earth science, environmental science, chemistry, physics, or a related discipline before the PhD start date; atmospheric chemistry experience, strong programming skills, and good English are stated.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+      "locator": "Profile"
+    },
+    "current_open_status": "unknown",
+    "current_status_evidence": null,
+    "detail_page_sha256": "0ebb8e73b2d87f4dc1250ada71972894d36b5603f99c725788d1466d31ae5f8a",
+    "retrieved_at_utc_window": {
+      "start": "2026-10-23T11:12:32Z",
+      "end": "2026-10-23T11:12:34Z"
+    }
+  },
+  {
+    "candidate_id": "tcand-32b11644f0db2b8d770e4802",
+    "candidate_fingerprint": "17f357136ef44cea257f243bb5dd165dd2096bf5a35fefb4e9a6e8a599affbc6",
+    "status": "verified",
+    "decision_scope": "page_content",
+    "content_verification": {
+      "status": "verified",
+      "evidence": [
+        {
+          "field": "application_route",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+          "claim": "application_route: The official page s…933 tokens truncated… applications are not considered.",
+      "portal_live_acceptance": "unknown",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+      "locator": "Application instructions"
+    },
+    "deadline": {
+      "status": "supported",
+      "value": "2026-11-22",
+      "deadline_raw": "Applications will be accepted until 22 November 2026.",
+      "date_precision": "day",
+      "timezone": null,
+      "rolling": null,
+      "reason": "The page gives a calendar date but no time of day or timezone.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+      "locator": "Application timeline"
+    },
+    "funding": {
+      "status": "supported",
+      "value": "Fully funded for four years according to ETH Zurich doctoral salary conditions; salary amount is not stated.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+      "locator": "Opening paragraph and We offer"
+    },
+    "eligibility": {
+      "status": "supported",
+      "value": "MSc in architecture, history of art, social history, or closely related humanities fields, completed by the start; English plus the language relevant to the selected country case study: French, German plus French and/or Italian, or Swedish.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+      "locator": "Profile"
+    },
+    "current_open_status": "unknown",
+    "current_status_evidence": null,
+    "detail_page_sha256": "c2f2f9e05ece532cf048764837b3f2ec9da33e615394b82d28d45edf75c5b73e",
+    "retrieved_at_utc_window": {
+      "start": "2026-10-23T11:12:34Z",
+      "end": "2026-10-23T11:12:35Z"
+    }
+  },
+  {
+    "candidate_id": "tcand-32fec508af7b751e61eca677",
+    "candidate_fingerprint": "7c52074a7dd4bafd4ed9589ed887da7609a8fb1d8bf870eff633d52c91c98b4e",
+    "status": "verified",
+    "decision_scope": "page_content",
+    "content_verification": {
+      "status": "verified",
+      "evidence": [
+        {
+          "field": "application_route",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+          "claim": "application_route: The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+          "locator": "Application instructions",
+          "evidence_note": "The official instructions name the online portal as the exclusive route."
+        },
+        {
+          "field": "deadline",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+          "claim": "deadline: 2026-11-10",
+          "locator": "Application instructions",
+          "evidence_note": "The page requests online applications by November 10, 2026; no time or timezone is specified."
+        },
+        {
+          "field": "funding",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+          "claim": "funding: Positions funded according to ETH Zurich doctoral salary conditions; salary amount is not stated.",
+          "locator": "We offer",
+          "evidence_note": "The page states the doctoral salary framework but gives no amount."
+        },
+        {
+          "field": "eligibility",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+          "claim": "eligibility: Master’s degree in ecology, biology, environmental sciences, or a related discipline; quantitative ecology interest, English, and fieldwork requirements are stated.",
+          "locator": "Profile",
+          "evidence_note": "The profile lists eligible degree fields and research, language, and fieldwork expectations."
+        }
+      ]
+    },
+    "reviewer": "opportunity_verifier",
+    "reviewed_at": "2026-10-23T11:17:07Z",
+    "evidence": [
+      {
+        "field": "application_route",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+        "claim": "application_route: The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+        "locator": "Application instructions",
+        "evidence_note": "The official instructions name the online portal as the exclusive route."
+      },
+      {
+        "field": "deadline",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+        "claim": "deadline: 2026-11-10",
+        "locator": "Application instructions",
+        "evidence_note": "The page requests online applications by November 10, 2026; no time or timezone is specified."
+      },
+      {
+        "field": "funding",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+        "claim": "funding: Positions funded according to ETH Zurich doctoral salary conditions; salary amount is not stated.",
+        "locator": "We offer",
+        "evidence_note": "The page states the doctoral salary framework but gives no amount."
+      },
+      {
+        "field": "eligibility",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+        "claim": "eligibility: Master’s degree in ecology, biology, environmental sciences, or a related discipline; quantitative ecology interest, English, and fieldwork requirements are stated.",
+        "locator": "Profile",
+        "evidence_note": "The profile lists eligible degree fields and research, language, and fieldwork expectations."
+      }
+    ],
+    "application_route": {
+      "status": "verified_as_stated",
+      "value": "The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+      "portal_live_acceptance": "unknown",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+      "locator": "Application instructions"
+    },
+    "deadline": {
+      "status": "supported",
+      "value": "2026-11-10",
+      "deadline_raw": "We look forward to receiving your online application by 10 November 2026.",
+      "date_precision": "day",
+      "timezone": null,
+      "rolling": null,
+      "reason": "The page gives a calendar date but no time of day or timezone.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+      "locator": "Application instructions"
+    },
+    "funding": {
+      "status": "supported",
+      "value": "Positions funded according to ETH Zurich doctoral salary conditions; salary amount is not stated.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+      "locator": "We offer"
+    },
+    "eligibility": {
+      "status": "supported",
+      "value": "Master’s degree in ecology, biology, environmental sciences, or a related discipline; quantitative ecology interest, English, and fieldwork requirements are stated.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+      "locator": "Profile"
+    },
+    "current_open_status": "unknown",
+    "current_status_evidence": null,
+    "detail_page_sha256": "2fcbbea6cdc207a7d9cfb4308e589ed0fcbe421b86c24cfcb767780dd9409f19",
+    "retrieved_at_utc_window": {
+      "start": "2026-10-23T11:12:35Z",
+      "end": "2026-10-23T11:12:43Z"
+    }
+  },
+  {
+    "candidate_id": "tcand-464bba839e96807a0a94662b",
+    "candidate_fingerprint": "0ac641b316244b7c12ffc6b1f47aa49288b9a28c4dc28fb9c55940956d21a867",
+    "status": "verified",
+    "decision_scope": "page_content",
+    "content_verification": {
+      "status": "verified",
+      "evidence": [
+        {
+          "field": "application_route",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+          "claim": "application_route: The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+          "locator": "Application instructions",
+          "evidence_note": "The official instructions name the online portal as the exclusive route."
+        },
+        {
+          "field": "deadline",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+          "claim": "deadline: 2026-11-09, with the page also stating that applications will be accepted until the position is filled; interaction between the date and rolling clause is unclear.",
+          "locator": "Application instructions and screening paragraph",
+          "evidence_note": "The page gives November 9, 2026 and also says applications are accepted until filled; their relationship is unclear."
+        },
+        {
+          "field": "funding",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+          "claim": "funding: The PRISM-T project is SNSF-funded; individual salary or stipend terms are not stated.",
+          "locator": "Project background",
+          "evidence_note": "SNSF funding is attributed to the project; the page does not give candidate-specific compensation terms."
+        },
+        {
+          "field": "eligibility",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+          "claim": "eligibility: Master’s degree in civil engineering, geomatics, computer science, or a related field; technical skills and English proficiency are stated.",
+          "locator": "Profile",
+          "evidence_note": "The profile states the degree fields and technical and language requirements."
+        }
+      ]
+    },
+    "reviewer": "opportunity_verifier",
+    "reviewed_at": "2026-10-23T11:17:07Z",
+    "evidence": [
+      {
+        "field": "application_route",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+        "claim": "application_route: The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+        "locator": "Application instructions",
+        "evidence_note": "The official instructions name the online portal as the exclusive route."
+      },
+      {
+        "field": "deadline",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+        "claim": "deadline: 2026-11-09, with the page also stating that applications will be accepted until the position is filled; interaction between the date and rolling clause is unclear.",
+        "locator": "Application instructions and screening paragraph",
+        "evidence_note": "The page gives November 9, 2026 and also says applications are accepted until filled; their relationship is unclear."
+      },
+      {
+        "field": "funding",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+        "claim": "funding: The PRISM-T project is SNSF-funded; individual salary or stipend terms are not stated.",
+        "locator": "Project background",
+        "evidence_note": "SNSF funding is attributed to the project; the page does not give candidate-specific compensation terms."
+      },
+      {
+        "field": "eligibility",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+        "claim": "eligibility: Master’s degree in civil engineering, geomatics, computer science, or a related field; technical skills and English proficiency are stated.",
+        "locator": "Profile",
+        "evidence_note": "The profile states the degree fields and technical and language requirements."
+      }
+    ],
+    "application_route": {
+      "status": "verified_as_stated",
+      "value": "The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+      "portal_live_acceptance": "unknown",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+      "locator": "Application instructions"
+    },
+    "deadline": {
+      "status": "supported",
+      "value": "2026-11-09, with the page also stating that applications will be accepted until the position is filled; interaction between the date and rolling clause is unclear.",
+      "deadline_raw": "We look forward to receiving your online application by 9 November 2026. Screening starts on 9 November 2026. Applications will be accepted until the position is filled.",
+      "date_precision": "day",
+      "timezone": null,
+      "rolling": true,
+      "reason": "The page states both a date and an until-filled condition without clarifying their interaction; no time or timezone is given.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+      "locator": "Application instructions and screening paragraph"
+    },
+    "funding": {
+      "status": "supported",
+      "value": "The PRISM-T project is SNSF-funded; individual salary or stipend terms are not stated.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+      "locator": "Project background"
+    },
+    "eligibility": {
+      "status": "supported",
+      "value": "Master’s degree in civil engineering, geomatics, computer science, or a related field; technical skills and English proficiency are stated.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+      "locator": "Profile"
+    },
+    "current_open_status": "unknown",
+    "current_status_evidence": null,
+    "detail_page_sha256": "7ba9f2073c4b6c832f749812f7a8dab980a45d56cfb069dcc74ef47b309d2276",
+    "retrieved_at_utc_window": {
+      "start": "2026-10-23T11:12:43Z",
+      "end": "2026-10-23T11:12:45Z"
+    }
+  },
+  {
+    "candidate_id": "tcand-4a2dfdf59fd1cdf1a1bf65ec",
+    "candidate_fingerprint": "aa63c198932bcd670360343c6d5833bf04e584660cf2b2b0d73ca1985aa1aa28",
+    "status": "verified",
+    "decision_scope": "page_content",
+    "content_verification": {
+      "status": "verified",
+      "evidence": [
+        {
+          "field": "application_route",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_uXPVmZM0iJ2XgWYNvF",
+          "claim": "application_route: The official page states that applications must be submitted exclusively through ETH’s online application portal; email and LinkedIn applications are not considered.",
+          "locator": "Application instructions",
+          "evidence_note": "The official instructions name the portal and exclude email and LinkedIn applications."
+        },
+        {
+          "field": "funding",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_uXPVmZM0iJ2XgWYNvF",
+          "claim": "funding: The doctoral researcher position is described as fully funded by an SNSF Starting Grant; salary amount and duration are not stated.",
+          "locator": "Opening paragraph",
+          "evidence_note": "The page describes the doctoral researcher as fully funded by an SNSF Starting Grant."
+        },
+        {
+          "field": "eligibility",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_uXPVmZM0iJ2XgWYNvF",
+          "claim": "eligibility: Master’s degree in physical chemistry or a related field by the start; interest in spin dynamics and magnetic resonance; advanced magnetic resonance research experience is required; a good understanding of its physics is expected.",
+          "locator": "Profile",
+          "evidence_note": "The profile gives degree, interest, research experience, and physics expectations."
+        }
+      ]
+    },
+    "reviewer": "opportunity_verifier",
+    "reviewed_at": "2026-10-23T11:17:07Z",
+    "evidence": [
+      {
+        "field": "application_route",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_uXPVmZM0iJ2XgWYNvF",
+        "claim": "application_route: The official page states that applications must be submitted exclusively through ETH’s online application portal; email and LinkedIn applications are not considered.",
+        "locator": "Application instructions",
+        "evidence_note": "The official instructions name the portal and exclude email and LinkedIn applications."
+      },
+      {
+        "field": "funding",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_uXPVmZM0iJ2XgWYNvF",
+        "claim": "funding: The doctoral researcher position is described as fully funded by an SNSF Starting Grant; salary amount and duration are not stated.",
+        "locator": "Opening paragraph",
+        "evidence_note": "The page describes the doctoral researcher as fully funded by an SNSF Starting Grant."
+      },
+      {
+        "field": "eligibility",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_uXPVmZM0iJ2XgWYNvF",
+        "claim": "eligibility: Master’s degree in physical chemistry or a related field by the start; interest in spin dynamics and magnetic resonance; advanced magnetic resonance research experience is required; a good understanding of its physics is expected.",
+        "locator": "Profile",
+        "evidence_note": "The profile gives degree, interest, research experience, and physics expectations."
+      }
+    ],
+    "application_route": {
+      "status": "verified_as_stated",
+      "value": "The official page states that applications must be submitted exclusively through ETH’s online application portal; email and LinkedIn applications are not considered.",
+      "portal_live_acceptance": "unknown",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_uXPVmZM0iJ2XgWYNvF",
+      "locator": "Application instructions"
+    },
+    "deadline": {
+      "status": "missing",
+      "value": null,
+      "deadline_raw": "There is no deadline.",
+      "date_precision": "not_applicable",
+      "timezone": null,
+      "rolling": true,
+      "page_statement": "The position will remain open until suitable candidates are found; applications are considered as long as the advertisement is online.",
+      "reason": "The page states that there is no fixed deadline and describes an until-suitable-candidates condition."
+    },
+    "funding": {
+      "status": "supported",
+      "value": "The doctoral researcher position is described as fully funded by an SNSF Starting Grant; salary amount and duration are not stated.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_uXPVmZM0iJ2XgWYNvF",
+      "locator": "Opening paragraph"
+    },
+    "eligibility": {
+      "status": "supported",
+      "value": "Master’s degree in physical chemistry or a related field by the start; interest in spin dynamics and magnetic resonance; advanced magnetic resonance research experience is required; a good understanding of its physics is expected.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_uXPVmZM0iJ2XgWYNvF",
+      "locator": "Profile"
+    },
+    "current_open_status": "unknown",
+    "current_status_evidence": null,
+    "detail_page_sha256": "d5d9df03dfea70657d94a00d7549772af42fae91d563adb4317b86bb5af0af1a",
+    "retrieved_at_utc_window": {
+      "start": "2026-10-23T11:12:45Z",
+      "end": "2026-10-23T11:12:48Z"
+    }
+  },
+  {
+    "candidate_id": "tcand-53a314061a724a658fec9762",
+    "candidate_fingerprint": "871eb1fb896fa25cf254cadb36d692faf8d8716b805e65835b73cc07372e2386",
+    "status": "verified",
+    "decision_scope": "page_content",
+    "content_verification": {
+      "status": "verified",
+      "evidence": [
+        {
+          "field": "application_route",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_eQatl0pgVb6ow4UwxK",
+          "claim": "application_route: The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+          "locator": "Application instructions",
+          "evidence_note": "The official instructions name the online portal as the exclusive route."
+        },
+        {
+          "field": "funding",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_eQatl0pgVb6ow4UwxK",
+          "claim": "funding: Competitive salary according to Swiss doctoral salary standards and funding to attend international conferences are stated; salary amount and duration are not stated.",
+          "locator": "We offer",
+          "evidence_note": "The page states a salary framework and conference funding without an amount or duration."
+        },
+        {
+          "field": "eligibility",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_eQatl0pgVb6ow4UwxK",
+          "claim": "eligibility: Master’s degree in bioengineering, chemical engineering, biochemistry, molecular biology, biophysics, or a related field; fluent English and eligibility for D-BSSE doctoral-program enrollment are stated.",
+          "locator": "Profile",
+          "evidence_note": "The profile names the degree fields, English fluency, and doctoral-program enrollment eligibility."
+        }
+      ]
+    },
+    "reviewer": "opportunity_verifier",
+    "reviewed_at": "2026-10-23T11:17:07Z",
+    "evidence": [
+      {
+        "field": "application_route",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_eQatl0pgVb6ow4UwxK",
+        "claim": "application_route: The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+        "locator": "Application instructions",
+        "evidence_note": "The official instructions name the online portal as the exclusive route."
+      },
+      {
+        "field": "funding",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_eQatl0pgVb6ow4UwxK",
+        "claim": "funding: Competitive salary according to Swiss doctoral salary standards and funding to attend international conferences are stated; salary amount and duration are not stated.",
+        "locator": "We offer",
+        "evidence_note": "The page states a salary framework and conference funding without an amount or duration."
+      },
+      {
+        "field": "eligibility",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_eQatl0pgVb6ow4UwxK",
+        "claim": "eligibility: Master’s degree in bioengineering, chemical engineering, biochemistry, molecular biology, biophysics, or a related field; fluent English and eligibility for D-BSSE doctoral-program enrollment are stated.",
+        "locator": "Profile",
+        "evidence_note": "The profile names the degree fields, English fluency, and doctoral-program enrollment eligibility."
+      }
+    ],
+    "application_route": {
+      "status": "verified_as_stated",
+      "value": "The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+      "portal_live_acceptance": "unknown",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_eQatl0pgVb6ow4UwxK",
+      "locator": "Application instructions"
+    },
+    "deadline": {
+      "status": "missing",
+      "value": null,
+      "deadline_raw": null,
+      "date_precision": "not_stated",
+      "timezone": null,
+      "rolling": null,
+      "reason": "No application deadline or rolling condition is stated."
+    },
+    "funding": {
+      "status": "supported",
+      "value": "Competitive salary according to Swiss doctoral salary standards and funding to attend international conferences are stated; salary amount and duration are not stated.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_eQatl0pgVb6ow4UwxK",
+      "locator": "We offer"
+    },
+    "eligibility": {
+      "status": "supported",
+      "value": "Master’s degree in bioengineering, chemical engineering, biochemistry, molecular biology, biophysics, or a related field; fluent English and eligibility for D-BSSE doctoral-program enrollment are stated.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_eQatl0pgVb6ow4UwxK",
+      "locator": "Profile"
+    },
+    "current_open_status": "unknown",
+    "current_status_evidence": null,
+    "detail_page_sha256": "79a5c83b3ad149b73937c6767e5c633700d3a501af979ecb5f2dd44776e626ad",
+    "retrieved_at_utc_window": {
+      "start": "2026-10-23T11:12:48Z",
+      "end": "2026-10-23T11:12:50Z"
+    }
+  }
+]
