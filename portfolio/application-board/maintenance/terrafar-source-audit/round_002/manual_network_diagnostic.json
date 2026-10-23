@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "run_id": "round002-manual-domain-diagnostic-20261022T111608Z",
+  "started_at": "2026-10-22T11:16:08Z",
+  "finished_at": "2026-10-22T11:16:13Z",
+  "execution_mode": "local Python urllib comparison plus source runner robots gate",
+  "proxy": {
+    "configured": false,
+    "schemes": []
+  },
+  "distinct_hosts": 5,
+  "target_page_requests": 0,
+  "source_page_bodies_retrieved": 0,
+  "tls": "default verification; no TLS override",
+  "redirects": "ordinary urllib did not follow redirects; guarded runner had no redirect response to inspect",
+  "results": [
+    {
+      "source_id": "connectivity_control",
+      "host": "example.com",
+      "url": "https://example.com/",
+      "dns": [
+        {
+          "address": "198.18.5.161",
+          "is_global": false
+        }
+      ],
+      "runner_guard": "private_or_non_global_address",
+      "ordinary_https_robots": {
+        "error_type": "URLError",
+        "status": null,
+        "redirect_followed": false
+      },
+      "runner_robots_reason": "runner_safety_guard_block",
+      "runner_error_detail": "private_or_non_global_address",
+      "attempt_id": "e6016fe0-65da-4559-9c67-1b1634b4fd49"
+    },
+    {
+      "source_id": "eth-doctoral-listing",
+      "host": "jobs.ethz.ch",
+      "url": "https://jobs.ethz.ch/",
+      "dns": [
+        {
+          "address": "198.18.4.89",
+          "is_global": false
+        }
+      ],
+      "runner_guard": "private_or_non_global_address",
+      "ordinary_https_robots": {
+        "error_type": "URLError",
+        "status": null,
+        "redirect_followed": false
+      },
+      "runner_robots_reason": "runner_safety_guard_block",
+      "runner_error_detail": "private_or_non_global_address",
+      "attempt_id": "02e6938d-bf6b-4fdb-a8d9-2d84e64d0826",
+      "runner_attempt": {
+        "attempt_id": "02e6938d-bf6b-4fdb-a8d9-2d84e64d0826",
+        "attempt_number": 1,
+        "endpoint": "robots.txt",
+        "started_at": "2026-10-22T11:16:09Z",
+        "completed_at": "2026-10-22T11:16:09Z",
+        "http_status": null,
+        "error": "ValueError",
+        "error_detail": "private_or_non_global_address"
+      }
+    },
+    {
+      "source_id": "jobbnorge-uio",
+      "host": "www.jobbnorge.no",
+      "url": "https://www.jobbnorge.no/apps/Joblist/JobListBuilder.ashx?id=1e1f1447-9567-4e79-8d0e-b08f5566151f&jobtypegroupid=2",
+      "dns": [
+        {
+          "address": "198.18.5.35",
+          "is_global": false
+        }
+      ],
+      "runner_guard": "private_or_non_global_address",
+      "ordinary_https_robots": {
+        "error_type": "URLError",
+        "status": null,
+        "redirect_followed": false
+      },
+      "runner_robots_reason": "runner_safety_guard_block",
+      "runner_error_detail": "private_or_non_global_address",
+      "attempt_id": "09dcd125-8a2b-4cac-9c2d-da52fdc66bd6",
+      "runner_attempt": {
+        "attempt_id": "09dcd125-8a2b-4cac-9c2d-da52fdc66bd6",
+        "attempt_number": 1,
+        "endpoint": "robots.txt",
+        "started_at": "2026-10-22T11:16:10Z",
+        "completed_at": "2026-10-22T11:16:10Z",
+        "http_status": null,
+        "error": "ValueError",
+        "error_detail": "private_or_non_global_address"
+      }
+    },
+    {
+      "source_id": "doc-3ed886c0343da851",
+      "host": "jobs.helsinki.fi",
+      "url": "https://jobs.helsinki.fi/go/Teaching-and-research-positions/8703802/?sortColumn=sort_department&sortDirection=asc",
+      "dns": [
+        {
+          "address": "198.18.4.79",
+          "is_global": false
+        }
+      ],
+      "runner_guard": "private_or_non_global_address",
+      "ordinary_https_robots": {
+        "error_type": "URLError",
+        "status": null,
+        "redirect_followed": false
+      },
+      "runner_robots_reason": "runner_safety_guard_block",
+      "runner_error_detail": "private_or_non_global_address",
+      "attempt_id": "7e53862f-f2d3-4484-8a08-3cc567323ed7",
+      "runner_attempt": {
+        "attempt_id": "7e53862f-f2d3-4484-8a08-3cc567323ed7",
+        "attempt_number": 1,
+        "endpoint": "robots.txt",
+        "started_at": "2026-10-22T11:16:11Z",
+        "completed_at": "2026-10-22T11:16:11Z",
+        "http_status": null,
+        "error": "ValueError",
+        "error_detail": "private_or_non_global_address"
+      }
+    },
+    {
+      "source_id": "doc-350282ccffe5f525",
+      "host": "www.mpg.de",
+      "url": "https://www.mpg.de/doctoral_students",
+      "dns": [
+        {
+          "address": "198.18.4.76",
+          "is_global": false
+        }
+      ],
+      "runner_guard": "private_or_non_global_address",
+      "ordinary_https_robots": {
+        "error_type": "URLError",
+        "status": null,
+        "redirect_followed": false
+      },
+      "runner_robots_reason": "runner_safety_guard_block",
+      "runner_error_detail": "private_or_non_global_address",
+      "attempt_id": "080b7802-446a-42b2-b6d8-1803a6d03d5e",
+      "runner_attempt": {
+        "attempt_id": "080b7802-446a-42b2-b6d8-1803a6d03d5e",
+        "attempt_number": 1,
+        "endpoint": "robots.txt",
+        "started_at": "2026-10-22T11:16:12Z",
+        "completed_at": "2026-10-22T11:16:12Z",
+        "http_status": null,
+        "error": "ValueError",
+        "error_detail": "private_or_non_global_address"
+      }
+    }
+  ],
+  "interpretation": "The system resolver returned non-global addresses for unrelated public names; urllib HTTPS robots requests raised URLError. This establishes a local DNS/egress restriction, not a claim about target sites DNS, robots policy, or HTTP behavior."
+}

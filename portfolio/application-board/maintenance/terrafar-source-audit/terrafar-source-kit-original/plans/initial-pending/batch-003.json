@@ -1,0 +1,115 @@
+{
+  "run_id": "initial-endpoint-review",
+  "tasks": [
+    {
+      "task_id": "initial-endpoint-review--src-24fd7039-5047-5497-a998-4efe8c1e588e",
+      "source_id": "src-24fd7039-5047-5497-a998-4efe8c1e588e",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.unilag.edu.ng/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-2998e505-9488-533b-ac21-dd7afc86b3a0",
+      "source_id": "src-2998e505-9488-533b-ac21-dd7afc86b3a0",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.jst.go.jp/EN/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-2f0d880d-9c67-50eb-bace-6144a369e640",
+      "source_id": "src-2f0d880d-9c67-50eb-bace-6144a369e640",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.academics.at/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-3a32314f-cb03-5ec0-80af-b7cbb0eb2b03",
+      "source_id": "src-3a32314f-cb03-5ec0-80af-b7cbb0eb2b03",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.1111.com.tw/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-3b7544b5-8ba8-568b-8497-9b033572d5bb",
+      "source_id": "src-3b7544b5-8ba8-568b-8497-9b033572d5bb",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.jobs.ac.uk/search/geography",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-3f5b4bc2-cff9-5f01-ba52-09c3a85857bd",
+      "source_id": "src-3f5b4bc2-cff9-5f01-ba52-09c3a85857bd",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://anid.cl/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-41113967-0962-58c2-8405-70666a339c16",
+      "source_id": "src-41113967-0962-58c2-8405-70666a339c16",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.academictransfer.com/en/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-41b5a40b-5bb3-550c-97b4-ffd694131120",
+      "source_id": "src-41b5a40b-5bb3-550c-97b4-ffd694131120",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.ntu.edu.sg/careers",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-41c0d75f-13f8-5424-9af0-4b45ddda219b",
+      "source_id": "src-41c0d75f-13f8-5424-9af0-4b45ddda219b",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.education.gov.au/research-block-grants",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-441264cb-c008-53a4-976c-3d8afbd3a3f3",
+      "source_id": "src-441264cb-c008-53a4-976c-3d8afbd3a3f3",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://universityaffairs.ca/search-jobs/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    }
+  ]
+}

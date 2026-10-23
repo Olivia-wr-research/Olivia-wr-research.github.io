@@ -1,0 +1,20 @@
+test_accounting (test_registry.RegistryTests.test_accounting) ... ok
+test_credentials_url_rejected (test_registry.RegistryTests.test_credentials_url_rejected) ... ok
+test_delete_is_rejected (test_registry.RegistryTests.test_delete_is_rejected) ... ok
+test_duplicate_id_is_rejected (test_registry.RegistryTests.test_duplicate_id_is_rejected) ... ok
+test_functional_query_preserved (test_registry.RegistryTests.test_functional_query_preserved) ... ok
+test_idempotent_import_and_metadata (test_registry.RegistryTests.test_idempotent_import_and_metadata) ... ok
+test_never_claims_verified (test_registry.RegistryTests.test_never_claims_verified) ... ok
+test_overwrite_plan_rejected (test_registry.RegistryTests.test_overwrite_plan_rejected) ... ok
+test_plan_has_every_source_once (test_registry.RegistryTests.test_plan_has_every_source_once) ... ok
+test_repeated_occurrence_provenance_preserved (test_registry.RegistryTests.test_repeated_occurrence_provenance_preserved) ... ok
+test_same_count_substitution_is_rejected (test_registry.RegistryTests.test_same_count_substitution_is_rejected) ... ok
+test_same_domain_different_paths_not_merged (test_registry.RegistryTests.test_same_domain_different_paths_not_merged) ... ok
+test_subset_import_does_not_remove_existing (test_registry.RegistryTests.test_subset_import_does_not_remove_existing) ... ok
+test_unique_ids (test_registry.RegistryTests.test_unique_ids) ... ok
+test_unparsed_url_stops_import (test_registry.RegistryTests.test_unparsed_url_stops_import) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.082s
+
+OK

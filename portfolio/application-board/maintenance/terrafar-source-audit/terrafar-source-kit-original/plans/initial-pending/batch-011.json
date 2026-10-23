@@ -1,0 +1,115 @@
+{
+  "run_id": "initial-endpoint-review",
+  "tasks": [
+    {
+      "task_id": "initial-endpoint-review--src-c3ae01e4-fb0d-5318-b2d0-54ba534f467c",
+      "source_id": "src-c3ae01e4-fb0d-5318-b2d0-54ba534f467c",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://bandi.mur.gov.it/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-c3c487a7-eee0-5780-ad7d-2a42468117cd",
+      "source_id": "src-c3c487a7-eee0-5780-ad7d-2a42468117cd",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.aau.edu.et/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-c3ff0d88-338c-5964-a291-afaab67e3572",
+      "source_id": "src-c3ff0d88-338c-5964-a291-afaab67e3572",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.isprs.org/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-c8008e99-fc19-5e75-8ec3-d093892f74e0",
+      "source_id": "src-c8008e99-fc19-5e75-8ec3-d093892f74e0",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.findamasters.com/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-c83c6124-11ec-5494-a1b5-491518ab75dc",
+      "source_id": "src-c83c6124-11ec-5494-a1b5-491518ab75dc",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://academicpositions.com/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-c9033388-bec5-50e6-aec1-c1d24bc68ff4",
+      "source_id": "src-c9033388-bec5-50e6-aec1-c1d24bc68ff4",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://euraxess.ec.europa.eu/jobs/search",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-c965eadc-6571-5b15-8db5-3739dda8db5b",
+      "source_id": "src-c965eadc-6571-5b15-8db5-3739dda8db5b",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.tau.ac.il/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-cabb093f-b72d-5040-a791-713fab191973",
+      "source_id": "src-cabb093f-b72d-5040-a791-713fab191973",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.um5.ac.ma/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-cffcfb36-4780-5fb3-8652-4dbf50d1fa8b",
+      "source_id": "src-cffcfb36-4780-5fb3-8652-4dbf50d1fa8b",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.uba.ar/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-d27fccfd-a693-5b3a-b1c4-5b14e97f07cd",
+      "source_id": "src-d27fccfd-a693-5b3a-b1c4-5b14e97f07cd",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.scholarshipportal.com/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    }
+  ]
+}

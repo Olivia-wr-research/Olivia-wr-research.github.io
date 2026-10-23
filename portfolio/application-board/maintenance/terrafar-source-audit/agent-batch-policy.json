@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "max_concurrent_agents": 3,
+  "max_sources_per_batch": 10,
+  "max_recursion_depth": 1,
+  "roles": [
+    "terrafar_endpoint_resolver",
+    "terrafar_opportunity_verifier",
+    "terrafar_audit_reviewer"
+  ],
+  "daily_runner_mode": "program_http_plus_configured_adapters",
+  "interactive_agent_outputs_are_supplemental": true,
+  "agent_output_must_not_write": [
+    "registry/source_registry.json",
+    "formal opportunity data",
+    "public website files",
+    "shared run logs"
+  ],
+  "reconciliation": "one terminal source result per planned source_id; reject duplicate and unassigned agent results; missing results become not_attempted"
+}

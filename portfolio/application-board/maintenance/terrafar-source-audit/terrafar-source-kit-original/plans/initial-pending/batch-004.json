@@ -1,0 +1,115 @@
+{
+  "run_id": "initial-endpoint-review",
+  "tasks": [
+    {
+      "task_id": "initial-endpoint-review--src-4441f8c6-909b-55c3-a69b-4719eb8a9c31",
+      "source_id": "src-4441f8c6-909b-55c3-a69b-4719eb8a9c31",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.oead.at/en/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-480e3d56-c854-5d3c-9727-301e85e8cf52",
+      "source_id": "src-480e3d56-c854-5d3c-9727-301e85e8cf52",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.iitb.ac.in/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-4866f6f3-30ba-5aef-9159-7c4b5ef40364",
+      "source_id": "src-4866f6f3-30ba-5aef-9159-7c4b5ef40364",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.gisjobs.com/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-489c2d59-5288-5c03-a903-260d622d33e7",
+      "source_id": "src-489c2d59-5288-5c03-a903-260d622d33e7",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.chinapostdoctor.org.cn/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-4f35f396-6386-5cf4-91d6-709b1cc24e5c",
+      "source_id": "src-4f35f396-6386-5cf4-91d6-709b1cc24e5c",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.chronicle.com/jobs",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-51fab4ad-13a8-5230-86d3-8655806bf941",
+      "source_id": "src-51fab4ad-13a8-5230-86d3-8655806bf941",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://aesop-planning.eu/resources/news-archive/jobs",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-53b3e35e-465e-55a9-8227-fcf21b84239c",
+      "source_id": "src-53b3e35e-465e-55a9-8227-fcf21b84239c",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.uchile.cl/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-5469a0d6-755b-5db8-8bf7-3d8aae89d1c1",
+      "source_id": "src-5469a0d6-755b-5db8-8bf7-3d8aae89d1c1",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.galaxie.enseignementsup-recherche.gouv.fr/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-552171e3-469d-5430-ad5c-f90630446bdf",
+      "source_id": "src-552171e3-469d-5430-ad5c-f90630446bdf",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.jsps.go.jp/english/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-568be24c-b757-5eea-aa37-b9a474fe1102",
+      "source_id": "src-568be24c-b757-5eea-aa37-b9a474fe1102",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://ut.ee/en",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    }
+  ]
+}

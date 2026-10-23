@@ -1,0 +1,16 @@
+{
+  "scope": "uploaded_file_only_not_repository_union",
+  "input_file": "source-directory-original.txt",
+  "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+  "counts": {
+    "all_link_occurrences": 161,
+    "included_occurrences": 147,
+    "excluded_asset_occurrences": 14,
+    "unique_source_endpoints": 133,
+    "repeated_occurrences_beyond_first": 14,
+    "unparsed_url_tokens": 0
+  },
+  "registry_total_after_import": 133,
+  "verification": "No network requests performed. All new sources are unverified.",
+  "counting_unit": "distinct conservatively normalized URL endpoints, not domains or opportunities"
+}

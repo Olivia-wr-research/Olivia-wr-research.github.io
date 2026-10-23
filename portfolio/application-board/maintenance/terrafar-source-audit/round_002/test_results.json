@@ -1,0 +1,93 @@
+{
+  "run_date": "2026-10-22",
+  "python_version": "3.14.5",
+  "tests": [
+    {
+      "command": "python3 -m unittest discover -s tests",
+      "working_directory": "portfolio/application-board",
+      "passed": 70,
+      "failed": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "node --test tests/*.test.mjs",
+      "working_directory": "portfolio/application-board",
+      "passed": 118,
+      "failed": 0,
+      "result": "PASS",
+      "scope_note": "Current local working tree, including reviewed catalog ID fixture; related public/catalog changes remain uncommitted and are excluded from the TERRAFAR commit."
+    },
+    {
+      "command": "python3 tests/test_registry.py",
+      "working_directory": "/Users/olivia/Downloads/terrafar-source-kit",
+      "passed": 15,
+      "failed": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "python3 scripts/terrafar_source_registry.py validate",
+      "working_directory": "portfolio/application-board",
+      "passed": 1,
+      "failed": 0,
+      "result": "PASS",
+      "source_records": 411,
+      "unique_endpoints": 398,
+      "premerge_ids_preserved": 264,
+      "seed_ids_accounted_for": 133
+    },
+    {
+      "command": "Ruby Psych YAML parse of .github/workflows/terrafar-round-002-smoke.yml",
+      "passed": 1,
+      "failed": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "python3 -m py_compile scripts/terrafar_source_audit.py scripts/terrafar_round_002_preflight.py",
+      "passed": 1,
+      "failed": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "passed": 1,
+      "failed": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "Protected UI file-set and SHA-256 comparison",
+      "passed": 124,
+      "failed": 0,
+      "result": "PASS",
+      "missing": 0,
+      "extra": 0,
+      "changed": 0
+    },
+    {
+      "command": "diff -r portfolio/application-board/dist docs/apps/application-board",
+      "passed": 1,
+      "failed": 0,
+      "result": "PASS"
+    }
+  ],
+  "live_network_result": {
+    "latest_preflight_run_id": "round002-preflight-20261022T120620Z",
+    "source_bodies_retrieved": 0,
+    "source_page_http_responses": 0,
+    "full_list_checks": 0,
+    "candidate_extractions": 0,
+    "skill_verified_items": 0,
+    "ordinary_https_attempts_latest_run": 0,
+    "runner_http_requests_latest_run": 0,
+    "address_guard_blocks_from_four_source_domains": 4,
+    "environment_preflight_passed": false,
+    "sample_first_run": "NOT_RUN",
+    "live_state_restore": "NOT_RUN",
+    "full_live_page_audit": "NOT_RUN"
+  },
+  "workflow": {
+    "yaml_parsed": "PASS",
+    "actions_run_id": null,
+    "artifact_id": null,
+    "reason": "feature branch was not pushed because GitHub Pages publishing source could not be confirmed"
+  }
+}

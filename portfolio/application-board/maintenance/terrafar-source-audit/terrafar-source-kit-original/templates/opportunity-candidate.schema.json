@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Terrafar opportunity candidate (not existing frontend data)",
+  "type": "object",
+  "required": [
+    "candidate_id",
+    "source_ids",
+    "title_original",
+    "opportunity_type",
+    "official_url",
+    "application_url",
+    "deadline_raw",
+    "deadline_at",
+    "deadline_timezone",
+    "funding_status",
+    "verification_state",
+    "current_status",
+    "field_evidence",
+    "missing_fields"
+  ],
+  "properties": {
+    "candidate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "title_original": {
+      "type": "string",
+      "minLength": 1
+    },
+    "opportunity_type": {
+      "enum": [
+        "master",
+        "phd",
+        "postdoc",
+        "faculty",
+        "research_assistant",
+        "funding_call",
+        "unknown"
+      ]
+    },
+    "official_url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "application_url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "deadline_raw": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "deadline_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "deadline_timezone": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "funding_status": {
+      "enum": [
+        "fully_funded",
+        "partially_funded",
+        "self_funded",
+        "unknown"
+      ]
+    },
+    "verification_state": {
+      "enum": [
+        "discovered",
+        "official_content_checked",
+        "application_route_checked",
+        "human_reviewed",
+        "pending_review",
+        "rejected"
+      ]
+    },
+    "current_status": {
+      "enum": [
+        "open",
+        "closed",
+        "cancelled",
+        "unknown",
+        "conflict"
+      ]
+    },
+    "field_evidence": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "url",
+            "retrieved_at",
+            "content_sha256",
+            "locator",
+            "excerpt"
+          ],
+          "properties": {
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "retrieved_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "content_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "locator": {
+              "type": "string",
+              "minLength": 1
+            },
+            "excerpt": {
+              "type": "string",
+              "maxLength": 800
+            }
+          },
+          "additionalProperties": true
+        }
+      }
+    },
+    "missing_fields": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "verification_state": {
+            "enum": [
+              "official_content_checked",
+              "application_route_checked",
+              "human_reviewed"
+            ]
+          }
+        },
+        "required": [
+          "verification_state"
+        ]
+      },
+      "then": {
+        "properties": {
+          "official_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "field_evidence": {
+            "minProperties": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "deadline_at": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "deadline_at"
+        ]
+      },
+      "then": {
+        "properties": {
+          "deadline_raw": {
+            "type": "string",
+            "minLength": 1
+          },
+          "deadline_timezone": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": true
+}

@@ -1,0 +1,4 @@
+# 合并到项目配置前先核对当前Codex版本；不要覆盖既有config.toml。
+# 不设置模型：继承用户当前可用模型，不擅自引入付费API。
+[agents]
+max_concurrent_threads_per_session = 3

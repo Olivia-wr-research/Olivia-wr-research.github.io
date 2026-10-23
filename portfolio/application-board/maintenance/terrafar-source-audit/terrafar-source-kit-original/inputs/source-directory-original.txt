@@ -1,0 +1,455 @@
+# 全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录
+
+整理基准：2026年10月19日｜覆盖全球六大洲｜兼顾招生项目、带薪科研岗位和学术招聘
+
+全球地理学相关机会不能只依靠几个国际学术招聘网站。要实现尽可能完整的覆盖，需要建立一个全球平台＋国家招聘系统＋学科专业平台＋大学及科研机构官网的多层信息源体系。
+
+尤其需要区分两种发布机制：
+
+- 招生型：硕士、普通博士主要通过大学招生门户、研究生院和奖学金系统发布。
+- 招聘型：带薪博士、博士后、科研助理和教职通常通过学校人事系统、科研机构招聘页面及学术职位平台发布。
+
+这两种机制有交叉，但不能混为一谈。一个只抓取学术招聘网站的系统，会系统性遗漏大量硕士和博士招生信息。
+
+## 一、全球最值得优先接入的核心平台
+
+以下先列出跨国家、跨机构、适合批量检索的基础信息源。
+
+| 平台与官方入口                                                                                | 主要覆盖        | 机会类型            | 采集优先级 |
+| -------------------------------------------------------------------------------------- | ----------- | --------------- | ----- |
+| [EURAXESS](https://euraxess.ec.europa.eu/jobs/search?utm_source=chatgpt.com)           | 欧洲为主、兼及其他地区 | 博士、博后、科研、教职     | P0    |
+| [jobs.ac.uk](https://www.jobs.ac.uk/search/geography?utm_source=chatgpt.com)           | 英国及国际       | 博士、博后、科研、教职     | P0    |
+| [AcademicTransfer](https://www.academictransfer.com/en/?utm_source=chatgpt.com)        | 荷兰          | 带薪博士、博后、教职、科研助理 | P0    |
+| [美国地理学家协会 AAG](https://www.aag.org/studentopportunities/?utm_source=chatgpt.com)       | 美国为主、国际补充   | 研究生助研、博士后、实习    | P0    |
+| [FindAPhD](https://www.findaphd.com/?utm_source=chatgpt.com)                           | 英国及国际       | 博士项目、奖学金        | P0    |
+| [FindAMasters](https://www.findamasters.com/?utm_source=chatgpt.com)                   | 英国及国际       | 授课型及研究型硕士       | P0    |
+| [HigherEdJobs](https://www.higheredjobs.com/?utm_source=chatgpt.com)                   | 美国为主        | 教职、博士后、科研助理     | P0    |
+| [Academic Positions](https://academicpositions.com/?utm_source=chatgpt.com)            | 欧洲及国际       | 博士、博后、科研、教职     | P0    |
+| [JREC-IN](https://jrecin.jst.go.jp/seek/?ln=1\&utm_source=chatgpt.com)                 | 日本          | 博后、教职、研究员、科研岗位  | P0    |
+| [University Affairs](https://universityaffairs.ca/search-jobs/?utm_source=chatgpt.com) | 加拿大         | 教职、科研职位         | P0    |
+| [THE UniJobs](https://www.timeshighereducation.com/unijobs?utm_source=chatgpt.com)     | 全球          | 教职、科研、部分博士岗位    | P1    |
+| [ScholarshipPortal](https://www.scholarshipportal.com/?utm_source=chatgpt.com)         | 全球          | 硕博奖学金           | P1    |
+| [PhDportal](https://www.phdportal.com/?utm_source=chatgpt.com)                         | 全球          | 博士项目            | P1    |
+| [Mastersportal](https://www.mastersportal.com/?utm_source=chatgpt.com)                 | 全球          | 硕士项目            | P1    |
+
+P0＝优先建设和高频监测；P1＝第二批扩充。优先级依据地理学相关性、信息价值与独立覆盖能力，不代表已测量的网站职位数量或数据抓取成功率。
+
+这些平台中的部分关键能力已通过官方网站核实：EURAXESS 提供科研职位、经费和接收机构机会检索；英国 jobs.ac.uk 设有地理学专门分类；AAG 的学生机会页面包含助研、实习及博士后；荷兰 AcademicTransfer 集中展示全国学术招聘。
+
+[image](https://www.google.com/s2/favicons?domain=https://euraxess.ec.europa.eu\&sz=32)
+
+EURAXESS
+
++3
+
+
+
+重要边界： 全球聚合网站并不等于全球完整覆盖。美国的导师项目制助研、德国研究所职位、东亚本地语言招聘，以及不少非洲和拉美大学职位，仍然需要地区专门来源。
+
+## 二、按国家和地区建立招聘来源清单
+
+全球覆盖应至少包括以下地区。这里的链接分成两种：一是已经核对到具体招聘功能的来源，二是适合继续挖掘的国家级、机构级官方门户。后者不一定提供统一职位搜索。
+
+### 1. 欧洲
+
+欧洲是最需要精细化处理的地区，因为不同国家的博士招聘制度差异很大。
+
+| 国家或地区   | 重点网站                                                                                                         | 主要用途             |
+| ------- | ------------------------------------------------------------------------------------------------------------ | ---------------- |
+| 欧盟及关联国家 | [EURAXESS](https://euraxess.ec.europa.eu/jobs/search?utm_source=chatgpt.com)                                 | 跨国博士、博士后、教职和科研职位 |
+| 英国      | [jobs.ac.uk](https://www.jobs.ac.uk/?utm_source=chatgpt.com)                                                 | 全阶段学术招聘          |
+| 英国      | [FindAPhD](https://www.findaphd.com/?utm_source=chatgpt.com)                                                 | 博士项目、奖学金         |
+| 英国      | [FindAMasters](https://www.findamasters.com/?utm_source=chatgpt.com)                                         | 硕士项目             |
+| 荷兰      | [AcademicTransfer](https://www.academictransfer.com/en/jobs/?utm_source=chatgpt.com)                         | 全国高校及研究机构岗位      |
+| 德国      | [academics](https://www.academics.de/?utm_source=chatgpt.com)                                                | 学术教职、科研人员、博士岗位   |
+| 德国      | [DAAD](https://www.daad.de/en/?utm_source=chatgpt.com)                                                       | 硕博留学及奖学金         |
+| 德国      | [马克斯·普朗克学会](https://www.mpg.de/career?utm_source=chatgpt.com)                                                | 博士、博士后、科研岗位      |
+| 德国      | [亥姆霍兹联合会](https://www.helmholtz.de/en/career/?utm_source=chatgpt.com)                                        | 地球科学、环境、空间科研     |
+| 法国      | [CNRS 招聘门户](https://emploi.cnrs.fr/?utm_source=chatgpt.com)                                                  | 博士合同、科研支持、科研岗位   |
+| 法国      | [GALAXIE / ODYSSÉE](https://www.galaxie.enseignementsup-recherche.gouv.fr/?utm_source=chatgpt.com)           | 公立大学教研岗位         |
+| 法国      | [Campus France](https://www.campusfrance.org/en?utm_source=chatgpt.com)                                      | 硕博项目及奖学金信息       |
+| 瑞士      | [jobs.ch](https://www.jobs.ch/?utm_source=chatgpt.com)                                                       | 高校及科研机构职位补充      |
+| 瑞士      | [苏黎世联邦理工学院](https://www.ethz.ch/en/the-eth-zurich/working-teaching-and-research.html?utm_source=chatgpt.com) | 博士、博士后、教职        |
+| 瑞士      | [洛桑联邦理工学院](https://www.epfl.ch/about/working/?utm_source=chatgpt.com)                                        | 科研及教学招聘          |
+| 瑞典      | [Varbi](https://www.varbi.com/?utm_source=chatgpt.com)                                                       | 多所高校使用的招聘系统      |
+| 瑞典      | [University Positions](https://www.universitypositions.eu/?utm_source=chatgpt.com)                           | 北欧及欧洲学术职位        |
+| 挪威      | [Jobbnorge](https://www.jobbnorge.no/search?utm_source=chatgpt.com)                                          | 大学博士、博后、研究职位     |
+| 丹麦      | [Jobindex](https://www.jobindex.dk/?utm_source=chatgpt.com)                                                  | 当地学术及研究职位补充      |
+| 芬兰      | [Research.fi](https://www.research.fi/en/?utm_source=chatgpt.com)                                            | 科研体系、研究机构与项目发现   |
+| 芬兰      | [赫尔辛基大学招聘](https://www.helsinki.fi/en/open-positions?utm_source=chatgpt.com)                                 | 博士、博士后、教职        |
+| 奥地利     | [academics.at](https://www.academics.at/?utm_source=chatgpt.com)                                             | 德语区学术招聘          |
+| 奥地利     | [OeAD](https://www.oead.at/en/?utm_source=chatgpt.com)                                                       | 国际学生和研究人员项目      |
+| 比利时     | [鲁汶大学招聘](https://www.kuleuven.be/personeel/jobsite/en/?utm_source=chatgpt.com)                               | 博士、博后、科研、教职      |
+| 意大利     | [MUR Bandi](https://bandi.mur.gov.it/?utm_source=chatgpt.com)                                                | 国家级高校及科研招聘公告     |
+| 西班牙     | [CSIC](https://www.csic.es/en?utm_source=chatgpt.com)                                                        | 国家科研委员会招聘信息      |
+| 葡萄牙     | [FCT](https://www.fct.pt/en/?utm_source=chatgpt.com)                                                         | 科研资助、博士奖学金       |
+| 波兰      | [EURAXESS](https://euraxess.ec.europa.eu/jobs/search?utm_source=chatgpt.com)                                 | 博士和研究岗位          |
+| 捷克      | [捷克科学院](https://www.avcr.cz/en/?utm_source=chatgpt.com)                                                      | 科研机构与招聘          |
+| 爱沙尼亚    | [塔尔图大学](https://ut.ee/en?utm_source=chatgpt.com)                                                             | 研究生招生及科研职位       |
+
+其中四个尤其值得注意：
+
+- 荷兰 AcademicTransfer：博士本身经常是雇佣岗位，不能只找博士招生页面。
+
+- 法国 CNRS：当前官方招聘门户明确将博士合同和科研支持职位列为不同的招聘类别。
+
+  [image](https://www.google.com/s2/favicons?domain=https://emploi.cnrs.fr\&sz=32)
+
+  Accueil
+
+- 法国 GALAXIE / ODYSSÉE：适用于相应的公立高等教育教研岗位，包含年度招聘和不定期职位。
+
+  [image](https://www.google.com/s2/favicons?domain=https://www.galaxie.enseignementsup-recherche.gouv.fr\&sz=32)
+
+  galaxie.enseignementsup-recherche.gouv.fr
+
+- 北欧 Varbi：这是招聘系统供应商，不是完整的全国职位聚合网站。应按学校招聘实例接入，例如[斯德哥尔摩大学招聘系统](https://su.varbi.com/en/?utm_source=chatgpt.com)。
+
+  [image](https://www.google.com/s2/favicons?domain=https://su.varbi.com\&sz=32)
+
+  su.varbi.com
+
+
+
+### 2. 北美洲
+
+| 国家  | 重点网站                                                                                                   | 主要用途            |
+| --- | ------------------------------------------------------------------------------------------------------ | --------------- |
+| 美国  | [AAG Jobs & Careers](https://www.aag.org/jobs-careers/?utm_source=chatgpt.com)                         | 地理学专门招聘         |
+| 美国  | [AAG Student Opportunities](https://www.aag.org/studentopportunities/?utm_source=chatgpt.com)          | 硕博助研、博士后        |
+| 美国  | [HigherEdJobs](https://www.higheredjobs.com/?utm_source=chatgpt.com)                                   | 大学教职和研究职位       |
+| 美国  | [Chronicle Jobs](https://www.chronicle.com/jobs?utm_source=chatgpt.com)                                | 高等教育学术职位        |
+| 美国  | [AcademicJobsOnline](https://academicjobsonline.org/?utm_source=chatgpt.com)                           | 学术招聘、研究岗位       |
+| 美国  | [AGU Career Center](https://www.agu.org/advancement?utm_source=chatgpt.com)                            | 自然地理、气候、地球科学    |
+| 美国  | [USAJOBS](https://www.usajobs.gov/?utm_source=chatgpt.com)                                             | 联邦地理、遥感、环境及地质岗位 |
+| 美国  | [NSF](https://www.nsf.gov/funding?utm_source=chatgpt.com)                                              | 研究资助及项目机会       |
+| 加拿大 | [University Affairs](https://universityaffairs.ca/search-jobs/?utm_source=chatgpt.com)                 | 大学教职和科研招聘       |
+| 加拿大 | [AcademicWork](https://www.academicwork.ca/?utm_source=chatgpt.com)                                    | 就业平台补充          |
+| 加拿大 | [NSERC](https://www.nserc-crsng.gc.ca/?utm_source=chatgpt.com)                                         | 科研奖学金及博士后资助     |
+| 加拿大 | [加拿大政府招聘](https://www.canada.ca/en/services/jobs/opportunities/government.html?utm_source=chatgpt.com) | 公共科研机构职位        |
+| 墨西哥 | [SECIHTI](https://secihti.mx/?utm_source=chatgpt.com)                                                  | 国家科研及研究生资助信息    |
+| 墨西哥 | [墨西哥国立自治大学](https://www.unam.mx/?utm_source=chatgpt.com)                                               | 硕博招生、科研招聘       |
+
+北美还存在一个特殊的信息缺口：研究型硕士和博士的资助机会不一定形成独立招聘公告。例如，导师实验室招收具有助研资助的博士生，可能只出现在院系主页、实验室页面或导师个人网站。
+
+因此，北美必须同时维护一张大学地理学系和相关实验室的监测名单。
+
+### 3. 亚洲
+
+| 国家或地区 | 重点网站                                                                     | 主要用途          |
+| ----- | ------------------------------------------------------------------------ | ------------- |
+| 中国大陆  | [中国研究生招生信息网（研招网）](https://www.chsi.com.cn/?utm_source=chatgpt.com)       | 硕博招生信息入口      |
+| 中国大陆  | [国家留学基金委](https://www.csc.edu.cn/?utm_source=chatgpt.com)                | 海外博士及联合培养资助   |
+| 中国大陆  | [高校人才网](https://www.gaoxiaojob.com/?utm_source=chatgpt.com)              | 高校教师、博士后、科研助理 |
+| 中国大陆  | [中国科学院招聘系统](https://www.careers.ac.cn/?utm_source=chatgpt.com)           | 科研机构和科研助理     |
+| 中国大陆  | [中国博士后网站](https://www.chinapostdoctor.org.cn/?utm_source=chatgpt.com)    | 博士后政策及招聘信息入口  |
+| 中国香港  | [香港大学招聘](https://jobs.hku.hk/?utm_source=chatgpt.com)                    | 教职、博士后、研究助理   |
+| 中国香港  | [香港中文大学招聘](https://www2.jobs.cuhk.edu.hk/?utm_source=chatgpt.com)        | 科研助理、教职       |
+| 中国香港  | [香港科技大学招聘](https://hkustcareers.ust.hk/?utm_source=chatgpt.com)          | 科研、教职         |
+| 中国香港  | [香港城市大学](https://www.cityu.edu.hk/?utm_source=chatgpt.com)               | 科研及教师招聘       |
+| 中国澳门  | [澳门大学](https://www.um.edu.mo/?utm_source=chatgpt.com)                    | 硕博招生及研究岗位     |
+| 中国台湾  | [1111人力银行](https://www.1111.com.tw/?utm_source=chatgpt.com)              | 高校、研究助理及职位补充  |
+| 日本    | [JREC-IN](https://jrecin.jst.go.jp/seek/?ln=1\&utm_source=chatgpt.com)   | 全国科研人才招聘      |
+| 日本    | [JSPS](https://www.jsps.go.jp/english/?utm_source=chatgpt.com)           | 博士后与科研资助      |
+| 日本    | [JST](https://www.jst.go.jp/EN/?utm_source=chatgpt.com)                  | 科研项目及人才支持     |
+| 韩国    | [Hibrain](https://www.hibrain.net/?utm_source=chatgpt.com)               | 高校教职、科研招聘     |
+| 韩国    | [Study in Korea](https://www.studyinkorea.go.kr/?utm_source=chatgpt.com) | 国际硕博招生        |
+| 新加坡   | [新加坡国立大学招聘](https://www.nus.edu.sg/careers/?utm_source=chatgpt.com)      | 教职、科研、博士后、助理  |
+| 新加坡   | [南洋理工大学招聘](https://www.ntu.edu.sg/careers?utm_source=chatgpt.com)        | 科研与教学职位       |
+| 新加坡   | [A\*STAR](https://www.a-star.edu.sg/?utm_source=chatgpt.com)             | 科研岗位、奖学金      |
+| 印度    | [UGC](https://www.ugc.gov.in/?utm_source=chatgpt.com)                    | 高等教育机构和招聘政策   |
+| 印度    | [印度理工学院孟买分校](https://www.iitb.ac.in/?utm_source=chatgpt.com)             | 博士与研究招聘       |
+| 巴基斯坦  | [HEC](https://www.hec.gov.pk/?utm_source=chatgpt.com)                    | 高等教育及奖学金      |
+| 马来西亚  | [马来亚大学](https://www.um.edu.my/?utm_source=chatgpt.com)                   | 研究生项目及大学职位    |
+| 泰国    | [朱拉隆功大学](https://www.chula.ac.th/en/?utm_source=chatgpt.com)             | 硕博和科研机会       |
+| 印度尼西亚 | [加查马达大学](https://ugm.ac.id/en/?utm_source=chatgpt.com)                   | 地理学研究生及研究岗位   |
+
+中国香港的高校官网是必须保留的独立来源。比如香港大学招聘门户已经能按研究人员、博士后、教职等类别筛选，且可以检索到地理学系岗位。
+
+[image](https://www.google.com/s2/favicons?domain=https://jobs.hku.hk\&sz=32)
+
+Career Opportunities
+
+
+
+日本 JREC-IN 具有明确的职位类别和学科筛选功能，是日本全国招聘的重要入口。
+
+[image](https://www.google.com/s2/favicons?domain=https://jrecin.jst.go.jp\&sz=32)
+
+JREC-IN
+
+
+
+### 4. 大洋洲
+
+| 国家   | 重点网站                                                                                                                         | 主要用途          |
+| ---- | ---------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| 澳大利亚 | [SEEK](https://www.seek.com.au/?utm_source=chatgpt.com)                                                                      | 研究助理、博士后、教职   |
+| 澳大利亚 | [University Positions](https://www.universitypositions.eu/?utm_source=chatgpt.com)                                           | 国际发布的澳洲学术职位补充 |
+| 澳大利亚 | [澳大利亚教育部科研资助](https://www.education.gov.au/research-block-grants?utm_source=chatgpt.com)                                     | 博士资助体系信息      |
+| 澳大利亚 | [澳大利亚国立大学招聘](https://www.anu.edu.au/jobs?utm_source=chatgpt.com)                                                             | 科研与教职         |
+| 澳大利亚 | [墨尔本大学招聘](https://jobs.unimelb.edu.au/?utm_source=chatgpt.com)                                                               | 研究助理、博士后、教职   |
+| 澳大利亚 | [悉尼大学招聘](https://www.sydney.edu.au/about-us/careers-at-sydney.html?utm_source=chatgpt.com)                                   | 学术岗位          |
+| 新西兰  | [SEEK NZ](https://www.seek.co.nz/?utm_source=chatgpt.com)                                                                    | 学术及研究工作       |
+| 新西兰  | [奥克兰大学招聘](https://www.auckland.ac.nz/en/about-us/about-the-university/working-at-the-university.html?utm_source=chatgpt.com) | 教职、科研及博士后     |
+| 新西兰  | [奥塔哥大学](https://www.otago.ac.nz/?utm_source=chatgpt.com)                                                                     | 硕博、科研及教职      |
+
+澳洲 SEEK 是重要补充来源，实际可检索到大量大学科研与研究助理类岗位，但也包含非高校、非地理学职位，因此需要更严格的关键词分类。
+
+[image](https://www.google.com/s2/favicons?domain=https://au.seek.com\&sz=32)
+
+SEEK
+
+
+
+### 5. 拉丁美洲及加勒比地区
+
+| 国家或地区 | 信息源                                                                          | 主要用途             |
+| ----- | ---------------------------------------------------------------------------- | ---------------- |
+| 巴西    | [CAPES](https://www.gov.br/capes/?utm_source=chatgpt.com)                    | 硕博项目、研究生奖学金      |
+| 巴西    | [Plataforma Sucupira](https://sucupira.capes.gov.br/?utm_source=chatgpt.com) | 全国研究生项目发现        |
+| 巴西    | [CNPq](https://www.gov.br/cnpq/?utm_source=chatgpt.com)                      | 科研资助、博士后         |
+| 巴西    | [圣保罗大学](https://www.usp.br/?utm_source=chatgpt.com)                          | 研究生项目与招聘公告       |
+| 巴西    | [FAPESP](https://fapesp.br/en?utm_source=chatgpt.com)                        | 圣保罗州科研奖学金、博士后    |
+| 阿根廷   | [CONICET](https://www.conicet.gov.ar/?utm_source=chatgpt.com)                | 国家科研职位、博士与博士后奖学金 |
+| 阿根廷   | [布宜诺斯艾利斯大学](https://www.uba.ar/?utm_source=chatgpt.com)                      | 学位与教研机会          |
+| 智利    | [ANID](https://anid.cl/?utm_source=chatgpt.com)                              | 博士奖学金、博士后资助      |
+| 智利    | [智利大学](https://www.uchile.cl/?utm_source=chatgpt.com)                        | 研究生及教研招聘         |
+| 哥伦比亚  | [Minciencias](https://minciencias.gov.co/?utm_source=chatgpt.com)            | 科研项目与资助          |
+| 哥伦比亚  | [哥伦比亚国立大学](https://unal.edu.co/?utm_source=chatgpt.com)                      | 硕博与教职            |
+| 秘鲁    | [CONCYTEC](https://www.gob.pe/concytec?utm_source=chatgpt.com)               | 科研资助与机构信息        |
+| 乌拉圭   | [ANII](https://www.anii.org.uy/?utm_source=chatgpt.com)                      | 研究资助及人才计划        |
+| 哥斯达黎加 | [哥斯达黎加大学](https://www.ucr.ac.cr/?utm_source=chatgpt.com)                     | 地理与环境相关研究生及教研机会  |
+| 加勒比地区 | [西印度群岛大学](https://www.uwi.edu/?utm_source=chatgpt.com)                       | 研究生招生、研究岗位       |
+
+拉丁美洲的特殊问题是招生通知往往通过具体研究生项目发布，而不是全国统一的招聘页面。例如，巴西 CAPES 说明硕博奖学金由相应大学和研究生项目实施遴选，因此仅监测 CAPES 主页不能代替监测各项目的招生公告。
+
+[image](https://www.google.com/s2/favicons?domain=https://www.gov.br\&sz=32)
+
+Serviços e Informações do Brasil
+
++1
+
+
+
+### 6. 非洲
+
+| 国家或区域 | 信息源                                                             | 主要用途           |
+| ----- | --------------------------------------------------------------- | -------------- |
+| 南非    | [开普敦大学](https://www.uct.ac.za/?utm_source=chatgpt.com)          | 地理与环境相关硕博、教研岗位 |
+| 南非    | [金山大学](https://www.wits.ac.za/?utm_source=chatgpt.com)          | 城市、社会与环境研究     |
+| 南非    | [斯泰伦博斯大学](https://www.sun.ac.za/english?utm_source=chatgpt.com) | 环境和空间研究        |
+| 南非    | [NRF](https://www.nrf.ac.za/?utm_source=chatgpt.com)            | 科研资助、研究人员发展    |
+| 埃及    | [ASRT](https://www.asrt.sci.eg/?utm_source=chatgpt.com)         | 科研机构及资助资讯      |
+| 埃及    | [开罗大学](https://www.cu.edu.eg/?utm_source=chatgpt.com)           | 研究生招生和大学招聘     |
+| 肯尼亚   | [内罗毕大学](https://www.uonbi.ac.ke/?utm_source=chatgpt.com)        | 地理、规划与环境相关机会   |
+| 肯尼亚   | [NRF Kenya](https://www.nrf.go.ke/?utm_source=chatgpt.com)      | 研究资助与项目        |
+| 尼日利亚  | [拉各斯大学](https://www.unilag.edu.ng/?utm_source=chatgpt.com)      | 研究生及教研招聘       |
+| 加纳    | [加纳大学](https://www.ug.edu.gh/?utm_source=chatgpt.com)           | 地理学及资源发展       |
+| 埃塞俄比亚 | [亚的斯亚贝巴大学](https://www.aau.edu.et/?utm_source=chatgpt.com)      | 地理、规划、环境       |
+| 摩洛哥   | [穆罕默德五世大学](https://www.um5.ac.ma/?utm_source=chatgpt.com)       | 地理及环境研究        |
+| 泛非洲   | [非洲科学院](https://www.aasciences.africa/?utm_source=chatgpt.com)  | 科研资助和科研网络      |
+| 泛非洲   | [非洲联盟](https://www.african-union.org/?utm_source=chatgpt.com)   | 区域科研、教育及相关项目   |
+
+非洲目前不宜依赖单一聚合平台。建立数据库时，建议采用国家—重点大学—院系—岗位公告四级发现方式，重点补充学校招聘页面、奖学金通知及本地语言公告。
+
+### 7. 中东及西亚
+
+| 国家或地区 | 信息源                                                             | 主要用途            |
+| ----- | --------------------------------------------------------------- | --------------- |
+| 沙特阿拉伯 | [KAUST](https://www.kaust.edu.sa/?utm_source=chatgpt.com)       | 环境、遥感、地球系统科研及学位 |
+| 沙特阿拉伯 | [KFUPM](https://www.kfupm.edu.sa/?utm_source=chatgpt.com)       | 地理空间与环境相关研究     |
+| 阿联酋   | [阿联酋大学](https://www.uaeu.ac.ae/en/?utm_source=chatgpt.com)      | 硕博与教职           |
+| 阿联酋   | [哈利法大学](https://www.ku.ac.ae/?utm_source=chatgpt.com)           | 气候、遥感、环境科研      |
+| 卡塔尔   | [卡塔尔大学](https://www.qu.edu.qa/?utm_source=chatgpt.com)          | 地理、城市与环境相关项目    |
+| 以色列   | [希伯来大学](https://www.huji.ac.il/?utm_source=chatgpt.com)         | 地理学、城市研究、博士后    |
+| 以色列   | [特拉维夫大学](https://www.tau.ac.il/?utm_source=chatgpt.com)         | 地理与环境相关研究       |
+| 土耳其   | [YÖK](https://www.yok.gov.tr/?utm_source=chatgpt.com)           | 高等教育和大学招聘制度信息   |
+| 土耳其   | [TÜBİTAK](https://www.tubitak.gov.tr/en?utm_source=chatgpt.com) | 科研项目、研究资助       |
+| 约旦    | [约旦大学](https://www.ju.edu.jo/?utm_source=chatgpt.com)           | 地理及环境相关学位与研究    |
+
+这一地区需要特别区分：机构提供的全奖博士项目、公开招聘的带薪博士岗位，以及需要导师接收的科研奖学金，它们不属于同一种机会。
+
+## 三、地理学及交叉学科专业招聘网站
+
+这一层非常重要。有些项目不会首先出现在综合招聘平台，而是由学会、研究网络和专业机构发布。
+
+| 专业方向      | 网站                                                                                                                | 主要信息             |
+| --------- | ----------------------------------------------------------------------------------------------------------------- | ---------------- |
+| 综合地理学     | [AAG](https://www.aag.org/jobs-careers/?utm_source=chatgpt.com)                                                   | 地理学相关就业          |
+| 人文与社会地理   | [Regional Studies Association](https://www.regionalstudies.org/communities/opportunities/?utm_source=chatgpt.com) | 博士、博后、教职、区域经济研究  |
+| 城市与区域规划   | [AESOP](https://aesop-planning.eu/resources/news-archive/jobs?utm_source=chatgpt.com)                             | 城市规划、区域研究职位      |
+| 城市研究      | [Urban Studies Foundation](https://www.urbanstudiesfoundation.org/funding/?utm_source=chatgpt.com)                | 研究资助、访问研究及部分博后项目 |
+| 地理信息系统    | [GISjobs](https://www.gisjobs.com/?utm_source=chatgpt.com)                                                        | 地理信息、空间分析、遥感相关工作 |
+| 自然地理与地球科学 | [Earthworks Jobs](https://www.earthworks-jobs.com/?utm_source=chatgpt.com)                                        | 博士后、科研岗位、教职      |
+| 地球系统科学    | [AGU](https://www.agu.org/advancement?utm_source=chatgpt.com)                                                     | 地球环境、气候、科研就业     |
+| 遥感与摄影测量   | [ISPRS](https://www.isprs.org/?utm_source=chatgpt.com)                                                            | 学会、科研网络和相关机会     |
+| 地理信息科学    | [GIScience](https://www.giscience.org/?utm_source=chatgpt.com)                                                    | 学科交流与研究团队发现      |
+| 发展研究      | [Eldis](https://www.eldis.org/?utm_source=chatgpt.com)                                                            | 发展研究及项目发现        |
+| 人口学与人口地理  | [PAA](https://populationassociation.org/?utm_source=chatgpt.com)                                                  | 人口研究学术与职业资源      |
+| 环境经济学     | [AERE](https://www.aere.org/?utm_source=chatgpt.com)                                                              | 环境经济研究网络与职位资源    |
+
+其中有三个值得设为独立监测源：
+
+[Regional Studies Association (@regstud) on X](https://images.openai.com/static-rsc-4/TLUkGyttrokZLxQwD-nNsSIzSPjJ7FukHGEFRBDhUzvVkbbuHU-hxk5O8x0Yk_oI9HWsrLIphao7RoVx83wk4q-zVtLPhbCZkBPd2hbfPQYZ3YcxROJSeSYJjZFBNRL43UXllyuCZHZlTRGPK5Pi3c81UdRVOt_hgRZRwrmeDUo?purpose=inline)
+
+[Regional Studies Association Opportunities](https://www.regionalstudies.org/communities/opportunities/?utm_source=chatgpt.com)
+
+地理学、区域发展、创新研究、城市经济、规划等方向，覆盖多个大洲。官网有独立的博士、博士后和教职招聘公告。
+
+[image](https://www.google.com/s2/favicons?domain=https://www.regionalstudies.org\&sz=32)
+
+RSA Main
+
+
+
+[Kongres Association of European Schools of Planning (AESOP) 2023](https://images.openai.com/static-rsc-4/7d5GRYiP4HACOCU4ugrEZOyFQi-_0Tzf0M9muUrCNWlHXysbw1QLnvCQ-xR_LofX73op0Vt7OFWNByyHGz6ERK0-PVyq0pm7_dFvozbi-vamQAmhHy840QFgpURtZc0Ojd7b1HgFwG9pBPmdgL87tH06ILkEb863-6GNEHAWJBA?purpose=inline)
+
+[AESOP Jobs](https://aesop-planning.eu/resources/news-archive/jobs?utm_source=chatgpt.com)
+
+特别适合城市规划、空间政策、区域与城市研究，官网招聘栏目包含博士、博士后和教职信息。
+
+[image](https://www.google.com/s2/favicons?domain=https://aesop-planning.eu\&sz=32)
+
+JOBS
+
+
+
+[Earthworks | Organization | Common Dreams](https://images.openai.com/static-rsc-4/Jo9eimqrGhlyCNSUXpfwI_c87890210KeDndMz2dl3g-FK-BYWT3_qkYBjWTjJWvkqHSDuqn1QjjjyiymX2qccI0CF_Pj_Oav0bOD1E-NceQGalO4W5nTmZ0fB1UiAeqFis0LEx6IBG9FImWvoDWFNB7UWjXLOZpQZ7GYMylybs?purpose=inline)
+
+[Earthworks Jobs](https://www.earthworks-jobs.com/?utm_source=chatgpt.com)
+
+对自然地理、地理信息科学、遥感、气候及水文学尤其有价值，包含多个国家的研究岗位。
+
+[image](https://www.google.com/s2/favicons?domain=https://www.earthworks-jobs.com\&sz=32)
+
+Geoscience, Environmental & Engineering Jobs
+
+
+
+## 四、五类机会应当分别检索
+
+如果打算把这些网站做成一个全球学术机会数据库，建议先建立五个主分类，而不是把所有内容统称为“岗位”。
+
+硕士博士博士后教职科研助理
+
+## 博士 · PhD
+
+英文检索关键词
+
+PhD Position · Doctoral Researcher · PhD Studentship · Doctoral Candidate · Funded PhD · Graduate Assistantship
+
+&#x20; 复制关键词
+
+重点平台
+
+EURAXESS、FindAPhD、AcademicTransfer、学会网站、大学招生系统
+
+重点核验
+
+区分雇佣制博士、带奖学金招生、普通自费博士
+
+## 五、地理学不能只使用 Geography 一个关键词
+
+建议将学科关键词分成八组并行检索，否则会漏掉相当多跨学科项目。
+
+| 学科方向     | 核心检索词                                                                   |
+| -------- | ----------------------------------------------------------------------- |
+| 人文地理     | Human Geography、Economic Geography、Social Geography、Political Geography |
+| 城市与区域研究  | Urban Studies、Regional Studies、Urban Planning、Spatial Planning          |
+| 空间与地理信息  | GIS、Geoinformatics、Geospatial Science、Spatial Data Science              |
+| 遥感与地球观测  | Remote Sensing、Earth Observation、Geodesy、Geomatics                      |
+| 自然地理     | Physical Geography、Hydrology、Geomorphology、Biogeography                 |
+| 环境与气候    | Climate Science、Environmental Science、Sustainability、Climate Adaptation |
+| 人口、交通与流动 | Population Geography、Demography、Transport Geography、Human Mobility      |
+| 地理交叉研究   | Spatial Economics、Regional Innovation、Urban Analytics、Complex Systems   |
+
+同时增加语言层面的检索词：
+
+| 语言   | 重要关键词举例                                                     |
+| ---- | ----------------------------------------------------------- |
+| 中文   | 地理学、自然地理、人文地理、科研助理、博士后、教师招聘                                 |
+| 德语   | Geographie、Doktorand、Wissenschaftlicher Mitarbeiter、Postdoc |
+| 法语   | Géographie、Doctorat、Postdoctorat、Chargé de recherche        |
+| 西班牙语 | Geografía、Doctorado、Investigador、Profesor                   |
+| 葡萄牙语 | Geografia、Mestrado、Doutorado、Pós-doutorado                  |
+| 日语   | 地理学、博士課程、研究員、助教、特任研究員                                       |
+| 韩语   | 지리학、박사、박사후연구원、연구원                                           |
+
+这不是简单的翻译问题。例如，德国的 `Wissenschaftlicher Mitarbeiter` 可以覆盖博士研究人员或其他学术雇员；法国的 `Chargé de recherche` 则通常属于不同的科研职业体系。不能仅根据词语相似性自动认定岗位学历级别。
+
+## 六、为了全球覆盖，还必须补充大学与科研机构官网
+
+前面的列表主要解决“去哪儿发现机会”。但如果最终目的是尽可能全面地汇总全球地理学机会，还需要维护机构级来源。
+
+我建议按以下结构扩展：
+
+四级信息源体系：聚合平台用于发现，机构官方公告用于最终确认。
+
+优先纳入的机构类型包括：
+
+- 大学地理学系及相邻院系：地理学、地球科学、城市规划、环境科学、区域经济、空间数据科学。
+- 国家科研机构：德国马克斯·普朗克学会、法国 CNRS、日本理化学研究所、韩国基础科学研究院、澳大利亚联邦科学与工业研究组织等。
+- 专题研究中心：气候研究中心、人口研究中心、城市研究所、遥感实验室、交通研究中心、区域创新研究中心。
+- 研究资助机构：英国研究与创新署、德国研究基金会、瑞士国家科学基金会、欧洲研究理事会等。它们主要用于发现资助项目或奖学金，不应一律当作职位招聘平台。
+
+## 七、如果建立全球地理学招聘数据库，如何组织数据？
+
+这一步直接影响后续能不能有效搜索、去重和更新。
+
+建议至少建立以下字段：
+
+| 数据字段                          | 说明                |
+| ----------------------------- | ----------------- |
+| `opportunity_id`              | 内部唯一编号            |
+| `source_name` / `source_url`  | 来源网站及页面           |
+| `official_url`                | 学校或机构的原始招聘公告      |
+| `application_url`             | 正式申请入口            |
+| `country` / `institution`     | 国家、学校或研究机构        |
+| `opportunity_type`            | 硕士、博士、博士后、教职、科研助理 |
+| `discipline`                  | 规范化学科类别           |
+| `title_original` / `title_en` | 原始职位名称、英文标准化名称    |
+| `funding_status`              | 全额资助、部分资助、自费、未知   |
+| `employment_type`             | 雇佣岗位、奖学金、招生项目     |
+| `salary` / `tuition`          | 薪酬、津贴或学费          |
+| `eligibility`                 | 学历、语言、国籍等申请资格     |
+| `posted_date` / `deadline`    | 发布日期和申请截止日期       |
+| `last_verified_at`            | 最后一次核验时间          |
+| `status`                      | 招聘中、已截止、取消、待核实    |
+| `verification_level`          | 聚合信息、官方公告、申请入口已核实 |
+
+尤其需要建立岗位去重机制。同一个职位可能同时出现在 EURAXESS、Academic Positions、jobs.ac.uk 和学校官网。不能简单根据职位标题去重，因为同一实验室可能同时招聘多名研究人员。
+
+更可靠的组合是：发布机构、职位编号、项目名称、申请链接和截止日期。
+
+### 一个需要特别避免的问题
+
+信息源覆盖率不等于职位覆盖率。
+
+即使接入100个网站，也无法据此声称覆盖了全球90%的地理学招聘。要验证覆盖能力，应选取不同国家、机构和岗位类型作为测试样本，比较真实公开职位中有多少被系统发现。
+
+因此，当前这份目录是全球多地区的首版信息源清单，不是经过逐国穷尽审计的全球完整名录。除已经明确核实的招聘功能外，部分国家级门户和学校首页还需要继续定位其具体招生、招聘栏目。
+
+## 八、推荐的建设优先顺序
+
+第一批：核心来源
+
+优先上线
+
+EURAXESS、jobs.ac.uk、AcademicTransfer、FindAPhD、FindAMasters、AAG、RSA、HigherEdJobs、JREC-IN、University Affairs、Academic Positions。
+
+第二批：国家级信息源
+
+德国、法国、中国、瑞典、挪威、加拿大、澳大利亚、巴西、阿根廷、韩国及新加坡的官方招聘和科研系统。
+
+第三批：机构级全覆盖
+
+以全球设有地理学及相关学科的大学、科学院和研究机构为基础，逐一补充人事招聘、研究生招生、奖学金及实验室页面。
+
+第四批：补漏与质量验证
+
+增加非洲、拉丁美洲、中东和东南亚本地语言来源；抽样检测遗漏率、职位时效性、重复率和官方申请链接有效性。
+
+我的结论是：真正有价值的全球地理学机会库，不是简单收集几百个网站，而是把分散的招生和招聘机制统一起来，并能追溯到每一条原始公告。
+
+这一版已经列出全球主要区域的核心平台、国家入口、大学和科研机构网站。后续要做到更完整，应继续扩展为“国家—机构—院系—信息页面”的结构化来源库，尤其补齐非英语国家的信息。
