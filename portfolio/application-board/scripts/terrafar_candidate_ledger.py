@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Any
 
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 EVIDENCE_POLICY_VERSION = 2
 SKILL_PATH = Path(__file__).resolve().parents[3] / ".agents/skills/terrafar-source-audit/SKILL.md"
 OPEN_STATUSES = {"pending", "verification_failed", "insufficient_evidence"}
@@ -44,6 +44,48 @@ def empty_ledger() -> dict[str, Any]:
             "revision": 0, "tasks": {}, "events": []}
 
 
+def migrate_ledger_payload(ledger: dict[str, Any]) -> dict[str, Any]:
+    """Migrate a verified v1 ledger additively, retaining every task and review event."""
+    version = ledger.get("schema_version")
+    if version == SCHEMA_VERSION:
+        return ledger
+    if version != 1:
+        raise ValueError(f"candidate_ledger_schema_unsupported:{version}")
+    migrated = json.loads(json.dumps(ledger))
+    for candidate_id, task in migrated.get("tasks", {}).items():
+        task.setdefault("open_status_history", [])
+        task.setdefault("current_open_status", "unknown")
+        task.setdefault("current_status_evidence", None)
+        task.setdefault("current_open_status_checked_at", None)
+        # v1 stored this claim inside content review findings. Carry it forward only
+        # when the old review already has explicit portal-scoped supporting evidence.
+        history = task.get("review_history", [])
+        for review in history:
+            finding = review.get("finding", {})
+            status = finding.get("current_open_status", "unknown")
+            evidence = finding.get("current_status_evidence")
+            try:
+                _validate_current_open_status(candidate_id, status, evidence, task, review.get("evidence", []))
+            except (TypeError, ValueError):
+                continue
+            if status in {"open", "closed"}:
+                task["open_status_history"].append({
+                    "status": status, "evidence": evidence, "reviewed_at": review.get("reviewed_at"),
+                    "reviewer": review.get("reviewer"), "run_id": review.get("run_id"),
+                    "migration_source": "v1_review_finding",
+                })
+                task["current_open_status"] = status
+                task["current_status_evidence"] = evidence
+                task["current_open_status_checked_at"] = review.get("reviewed_at")
+    migrated["schema_version"] = SCHEMA_VERSION
+    migrated["migration_history"] = list(migrated.get("migration_history", [])) + [{
+        "from": 1, "to": SCHEMA_VERSION, "preserved_task_count": len(migrated.get("tasks", {})),
+        "preserved_event_count": len(migrated.get("events", [])),
+    }]
+    migrated["revision"] = int(migrated.get("revision", 0)) + 1
+    return migrated
+
+
 def load_ledger(path: Path, require_existing: bool = False) -> dict[str, Any]:
     if not path.exists():
         if require_existing:
@@ -53,10 +95,11 @@ def load_ledger(path: Path, require_existing: bool = False) -> dict[str, Any]:
         ledger = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as error:
         raise ValueError(f"candidate_ledger_unreadable:{path}") from error
-    if (not isinstance(ledger, dict) or ledger.get("schema_version") != SCHEMA_VERSION
+    if (not isinstance(ledger, dict) or ledger.get("schema_version") not in {1, SCHEMA_VERSION}
             or not isinstance(ledger.get("revision"), int) or not isinstance(ledger.get("tasks"), dict)
             or not isinstance(ledger.get("events"), list)):
         raise ValueError(f"candidate_ledger_schema_invalid:{path}")
+    ledger = migrate_ledger_payload(ledger)
     for candidate_id, task in ledger["tasks"].items():
         if not isinstance(task, dict):
             raise ValueError(f"candidate_ledger_task_identity_or_status_invalid:{candidate_id}")
@@ -140,6 +183,10 @@ def merge_observations(ledger: dict[str, Any], observations: list[dict[str, Any]
                 "observed_runs": [run_id],
                 "content_versions": [{"fingerprint": fingerprint, "candidate": candidate, "first_seen_at": now}],
                 "status": "pending",
+                "current_open_status": "unknown",
+                "current_status_evidence": None,
+                "current_open_status_checked_at": None,
+                "open_status_history": [],
                 "review_history": [],
                 "formal_site_write": False,
             }
@@ -157,6 +204,15 @@ def merge_observations(ledger: dict[str, Any], observations: list[dict[str, Any]
                 task["last_seen_at"] = now
                 task["status"] = "pending"
                 task["reopened_reason"] = "candidate_content_changed"
+                task.setdefault("open_status_history", []).append({
+                    "status": task.get("current_open_status", "unknown"),
+                    "evidence": task.get("current_status_evidence"),
+                    "checked_at": task.get("current_open_status_checked_at"),
+                    "reason": "candidate_content_changed; prior current-status evidence is stale",
+                })
+                task["current_open_status"] = "unknown"
+                task["current_status_evidence"] = None
+                task["current_open_status_checked_at"] = None
                 task.pop("last_review_status", None)
                 changed = True
             elif task.get("last_seen_at") != now:
@@ -258,6 +314,8 @@ def _validate_current_open_status(candidate_id: str, current_status: Any, status
                 and item.get("url") == status_evidence.get("url")
                 and item.get("locator") == status_evidence.get("locator")
                 and item.get("claim") == expected_claim
+                and isinstance(item.get("page_content_sha256"), str)
+                and re.fullmatch(r"[0-9a-f]{64}", item.get("page_content_sha256", ""))
                 for item in evidence
             )):
         raise ValueError(f"current_status_requires_explicit_portal_acceptance_evidence:{candidate_id}")
@@ -307,6 +365,12 @@ def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id:
         _validate_review_timestamp_and_identity(candidate_id, result.get("reviewer"), result.get("reviewed_at"))
         if status in TERMINAL_STATUSES:
             allowed_urls = {task.get("candidate_url"), task.get("source_url")}
+            duplicate_target = None
+            if status == "duplicate":
+                duplicate_id = result.get("duplicate_of")
+                duplicate_target = ledger.get("tasks", {}).get(duplicate_id)
+                if duplicate_target:
+                    allowed_urls.add(duplicate_target.get("candidate_url"))
             if (not evidence or any(
                 not isinstance(item, dict)
                 or not all(isinstance(item.get(key), str) and item.get(key).strip() for key in ("url", "claim", "locator"))
@@ -319,7 +383,10 @@ def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id:
                 content = result.get("content_verification")
                 if (result.get("decision_scope") != "page_content" or not isinstance(content, dict)
                         or content.get("status") != "verified" or not content.get("evidence")
-                        or any(item not in evidence for item in content["evidence"])):
+                        or any(not any(isinstance(row, dict) and isinstance(item, dict)
+                                       and all(row.get(key) == item.get(key) for key in ("field", "url", "claim", "locator"))
+                                       for row in evidence)
+                               for item in content["evidence"])):
                     raise ValueError(f"verified_candidate_requires_scoped_content_evidence:{candidate_id}")
                 content_evidence = content["evidence"]
                 supported_fields = _supported_content_fields(result)
@@ -337,13 +404,45 @@ def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id:
                         raise ValueError(f"verified_candidate_missing_field_evidence:{candidate_id}:{field_name}")
             elif result.get("decision_scope") != status:
                 raise ValueError(f"terminal_candidate_review_scope_mismatch:{candidate_id}")
+            if status == "excluded":
+                exclusion = result.get("exclusion")
+                if (not isinstance(exclusion, dict)
+                        or not all(isinstance(exclusion.get(key), str) and exclusion[key].strip()
+                                   for key in ("category", "reason", "field"))
+                        or not any(isinstance(item, dict) and item.get("field") == exclusion.get("field")
+                                   and item.get("url") in {task.get("candidate_url"), task.get("source_url")}
+                                   for item in evidence)):
+                    raise ValueError(f"excluded_candidate_requires_reason_and_field_evidence:{candidate_id}")
             if status == "duplicate":
                 duplicate_of = result.get("duplicate_of")
                 if (not isinstance(duplicate_of, str) or duplicate_of == candidate_id
                         or duplicate_of not in ledger.get("tasks", {})):
                     raise ValueError(f"duplicate_candidate_review_missing_or_invalid_target:{candidate_id}")
+                match = result.get("duplicate_match")
+                target_task = duplicate_target
+                fields = match.get("matching_fields") if isinstance(match, dict) else None
+                if (not isinstance(match, dict)
+                        or match.get("source_fingerprint") != task.get("content_fingerprint")
+                        or match.get("target_fingerprint") != target_task.get("content_fingerprint")
+                        or not isinstance(fields, list) or not fields
+                        or not isinstance(match.get("identity_claim"), str) or not match["identity_claim"].strip()):
+                    raise ValueError(f"duplicate_candidate_requires_two_version_identity_evidence:{candidate_id}")
+                allowed_match_fields = {"title", "titleEn", "titleZh", "employer", "institution", "location", "reference", "application_url"}
+                for field_name in fields:
+                    if field_name not in allowed_match_fields:
+                        raise ValueError(f"duplicate_candidate_match_field_not_allowed:{candidate_id}:{field_name}")
+                    left = task.get("candidate", {}).get(field_name)
+                    right = target_task.get("candidate", {}).get(field_name)
+                    if not isinstance(left, str) or not left.strip() or left != right:
+                        raise ValueError(f"duplicate_candidate_matching_field_not_identical:{candidate_id}:{field_name}")
+                evidence_urls = {item.get("url") for item in evidence if isinstance(item, dict)}
+                if not {task.get("candidate_url"), target_task.get("candidate_url")} <= evidence_urls:
+                    raise ValueError(f"duplicate_candidate_requires_evidence_for_both_records:{candidate_id}")
         current_status = result.get("current_open_status", "unknown")
-        _validate_current_open_status(candidate_id, current_status, result.get("current_status_evidence"), task, evidence)
+        if current_status not in CURRENT_OPEN_STATUSES:
+            raise ValueError(f"current_status_value_not_allowed:{candidate_id}")
+        if current_status in {"open", "closed"}:
+            _validate_current_open_status(candidate_id, current_status, result.get("current_status_evidence"), task, evidence)
         decision = {
             "status": status,
             "run_id": run_id,
@@ -361,6 +460,12 @@ def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id:
         task.setdefault("review_history", []).append(decision)
         task["status"] = status if status in TERMINAL_STATUSES else status
         task["last_review_status"] = status
+        if current_status in {"open", "closed"}:
+            apply_open_status_reviews(ledger, [{
+                "candidate_id": candidate_id, "candidate_fingerprint": task.get("content_fingerprint"),
+                "current_open_status": current_status, "current_status_evidence": result.get("current_status_evidence"),
+                "evidence": evidence, "reviewer": result.get("reviewer"), "reviewed_at": result.get("reviewed_at"),
+            }], run_id)
         event = {"event_id": digest({"candidate_id": candidate_id, "review_fingerprint": decision["review_fingerprint"]})[:32],
                  "candidate_id": candidate_id, "event_type": "review_result", **decision}
         if event["event_id"] not in {item.get("event_id") for item in ledger.setdefault("events", [])}:
@@ -418,18 +523,117 @@ def revalidate_terminal_reviews(ledger: dict[str, Any], run_id: str) -> dict[str
 
 
 def open_tasks(ledger: dict[str, Any]) -> list[dict[str, Any]]:
-    return sorted((task for task in ledger.get("tasks", {}).values() if task.get("status") in OPEN_STATUSES),
+    return sorted(({**task, "review_task_kind": "content_review"} for task in ledger.get("tasks", {}).values()
+                   if task.get("status") in OPEN_STATUSES),
                   key=lambda task: (task.get("first_seen_at") or "", task["candidate_id"]))
+
+
+def apply_open_status_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id: str) -> dict[str, Any]:
+    """Record current application acceptance independently of page-content review."""
+    changed = False
+    seen: set[str] = set()
+    for result in results:
+        candidate_id = result.get("candidate_id")
+        if not isinstance(candidate_id, str) or candidate_id in seen:
+            raise ValueError(f"duplicate_or_missing_open_status_candidate:{candidate_id}")
+        seen.add(candidate_id)
+        task = ledger.get("tasks", {}).get(candidate_id)
+        if task is None:
+            raise ValueError(f"unassigned_open_status_review:{candidate_id}")
+        if result.get("candidate_fingerprint") != task.get("content_fingerprint"):
+            raise ValueError(f"candidate_open_status_fingerprint_mismatch:{candidate_id}")
+        _validate_review_timestamp_and_identity(candidate_id, result.get("reviewer"), result.get("reviewed_at"))
+        status, evidence = result.get("current_open_status", "unknown"), result.get("evidence")
+        if status not in CURRENT_OPEN_STATUSES or not isinstance(evidence, list) or not evidence:
+            raise ValueError(f"open_status_review_requires_status_and_evidence:{candidate_id}")
+        if status in {"open", "closed"}:
+            _validate_current_open_status(candidate_id, status, result.get("current_status_evidence"), task, evidence)
+        elif not any(isinstance(item, dict) and item.get("url") == task.get("candidate_url")
+                     and isinstance(item.get("claim"), str) and item["claim"].strip()
+                     and isinstance(item.get("locator"), str) and item["locator"].strip() for item in evidence):
+            raise ValueError(f"unknown_open_status_requires_route_observation:{candidate_id}")
+        record = {
+            "candidate_id": candidate_id, "candidate_fingerprint": task["content_fingerprint"], "status": status,
+            "evidence": evidence, "current_status_evidence": result.get("current_status_evidence"),
+            "reviewer": result.get("reviewer"), "reviewed_at": result.get("reviewed_at"),
+            "run_id": run_id, "reason": result.get("reason"),
+        }
+        record["review_fingerprint"] = digest({key: value for key, value in record.items() if key != "run_id"})
+        history = task.setdefault("open_status_history", [])
+        if any(item.get("review_fingerprint") == record["review_fingerprint"] for item in history):
+            continue
+        history.append(record)
+        task["current_open_status"] = status
+        task["current_status_evidence"] = result.get("current_status_evidence") if status in {"open", "closed"} else None
+        task["current_open_status_checked_at"] = result.get("reviewed_at")
+        event = {"event_id": record["review_fingerprint"][:32], "candidate_id": candidate_id,
+                 "event_type": "current_open_status_review", **record}
+        if event["event_id"] not in {item.get("event_id") for item in ledger.setdefault("events", [])}:
+            ledger["events"].append(event)
+        changed = True
+    if changed:
+        ledger["revision"] = int(ledger.get("revision", 0)) + 1
+    return ledger
+
+
+def open_status_tasks(ledger: dict[str, Any], today: str | None = None, recheck_days: int = 7) -> list[dict[str, Any]]:
+    current_day = datetime.fromisoformat(today).date() if today else datetime.now(timezone.utc).date()
+    output = []
+    for task in ledger.get("tasks", {}).values():
+        if task.get("status") != "verified":
+            continue
+        checked = task.get("current_open_status_checked_at")
+        deadline_value = None
+        for review in reversed(task.get("review_history", [])):
+            finding = review.get("finding", {})
+            deadline = finding.get("deadline") if isinstance(finding, dict) else None
+            if isinstance(deadline, dict) and isinstance(deadline.get("value"), str):
+                deadline_value = deadline["value"][:10]
+                break
+        interval = recheck_days
+        if deadline_value:
+            try:
+                days_until_deadline = (datetime.fromisoformat(deadline_value).date() - current_day).days
+                if 0 <= days_until_deadline <= 7:
+                    interval = 1
+                elif 0 <= days_until_deadline <= 30:
+                    interval = min(recheck_days, 3)
+            except ValueError:
+                pass
+        if task.get("current_open_status") == "closed":
+            interval = max(interval, 30)
+        due = not checked or task.get("current_open_status") in {None, "", "unknown"}
+        if checked:
+            try:
+                last = datetime.fromisoformat(str(checked).replace("Z", "+00:00")).date()
+                due = due or (current_day - last).days >= interval
+            except ValueError:
+                due = True
+        if due:
+            output.append({**task, "review_task_kind": "current_open_status_review", "queue_reason": "unknown_or_due_for_recheck"})
+    return sorted(output, key=lambda task: (task.get("current_open_status_checked_at") or "", task["candidate_id"]))
+
+
+def review_queue(ledger: dict[str, Any], today: str | None = None) -> list[dict[str, Any]]:
+    content, status = open_tasks(ledger), open_status_tasks(ledger, today=today)
+    mixed = []
+    while content or status:
+        if content:
+            mixed.append(content.pop(0))
+        if status:
+            mixed.append(status.pop(0))
+    return mixed
 
 
 def export_agent_batch(ledger: dict[str, Any], limit: int = 10, agent: str | None = None) -> dict[str, Any]:
     if limit < 1 or limit > 10:
         raise ValueError("agent_batch_limit_must_be_between_1_and_10")
-    tasks = open_tasks(ledger)[:limit]
+    tasks = review_queue(ledger)[:limit]
     if not SKILL_PATH.is_file():
         raise FileNotFoundError(f"required_source_audit_skill_missing:{SKILL_PATH}")
-    return {"schema_version": 1, "ledger_revision": ledger.get("revision", 0), "assigned_agent": agent,
+    return {"schema_version": 2, "ledger_revision": ledger.get("revision", 0), "assigned_agent": agent,
             "candidate_count": len(tasks), "candidate_ids": [task["candidate_id"] for task in tasks],
+            "task_kinds": [task["review_task_kind"] for task in tasks],
             "tasks": tasks,
             "skill": {"name": "terrafar-source-audit", "path": str(SKILL_PATH.relative_to(SKILL_PATH.parents[3])),
                       "sha256": hashlib.sha256(SKILL_PATH.read_bytes()).hexdigest()},
@@ -472,9 +676,14 @@ def main() -> None:
         with ledger_lock(ledger_path):
             ledger = load_ledger(ledger_path, require_existing=True)
             revalidate_terminal_reviews(ledger, f"agent-merge-policy-{args.run_id}")
-            apply_reviews(ledger, rows, args.run_id)
+            content_rows = [row for row in rows if row.get("review_task_kind", "content_review") == "content_review"]
+            status_rows = [row for row in rows if row.get("review_task_kind") == "current_open_status_review"]
+            if len(content_rows) + len(status_rows) != len(rows):
+                raise ValueError("candidate_review_task_kind_invalid")
+            apply_reviews(ledger, content_rows, args.run_id)
+            apply_open_status_reviews(ledger, status_rows, args.run_id)
             save_ledger(ledger_path, ledger)
-        print(json.dumps({"merged": len(rows), "open_tasks": len(open_tasks(ledger)), "ledger_revision": ledger["revision"]}))
+        print(json.dumps({"merged": len(rows), "open_tasks": len(review_queue(ledger)), "ledger_revision": ledger["revision"]}))
 
 
 if __name__ == "__main__":

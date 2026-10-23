@@ -20,5 +20,9 @@ export function deadlineInfo(deadline,today=new Date().toISOString().slice(0,10)
  const days=Math.round((target-now)/86400000);
  return {kind:days<0?'past':days===0?'today':'future',days};
 }
+export function opportunityStatusLabel(job,lang='zh',today=new Date().toISOString().slice(0,10)){
+ if(deadlineInfo(job?.deadline,today).kind==='past')return lang==='en'?'Past deadline · current acceptance unknown; recheck official source':'截止日期已过 · 当前受理状态未知，需复核官网';
+ return (lang==='en'?job?.statusLabelEn:job?.statusLabel)||job?.statusLabel||job?.status|| (lang==='en'?'Status unverified':'状态待核验');
+}
 export function confirmedBachelor(job){return job.bachelorEligible===true&&typeof job.bachelorEvidence==='string'&&job.bachelorEvidence.trim().length>0;}
 export function confirmedEnglishOnly(job){return job.englishOnly===true&&typeof job.englishOnlyEvidence==='string'&&job.englishOnlyEvidence.trim().length>0;}

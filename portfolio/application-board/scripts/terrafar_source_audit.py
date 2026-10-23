@@ -83,6 +83,16 @@ def upsert_result(p,row):
  if not replaced: rows.append(row)
  tmp=p.with_suffix(p.suffix+'.tmp')
  tmp.write_text(''.join(json.dumps(x,ensure_ascii=False,separators=(',',':'))+'\n' for x in rows),encoding='utf-8'); tmp.replace(p)
+def update_maintenance_retry_queue(state,planned_source_ids,results_by_id):
+ """Keep every incomplete planned source queued until a complete check succeeds."""
+ retryable={'failed','blocked','not_attempted','partial'}
+ planned=set(planned_source_ids)
+ prior=state.get('maintenance_retry_ids',[])
+ next_ids=[sid for sid in prior if sid not in planned]
+ next_ids.extend(sid for sid in planned_source_ids if results_by_id.get(sid,{}).get('outcome') in retryable)
+ state['maintenance_retry_ids']=list(dict.fromkeys(next_ids))
+ return state['maintenance_retry_ids']
+
 def merge_attempt_history(old,new):
  if not old:return new
  previous={x.get('endpoint_id'):x for x in old.get('endpoints',[])}
@@ -388,7 +398,8 @@ def build_candidate_observations(sources,state,results):
     eligible={'checked_changed','checked_unchanged','checked_empty','partial'}
     for result in results:
         for endpoint_result in result.get('endpoints',[]):
-            if endpoint_result.get('outcome') in eligible and endpoint_result.get('adapter'):
+            if (endpoint_result.get('outcome') in eligible and endpoint_result.get('adapter')
+                    and (endpoint_result.get('outcome') != 'partial' or endpoint_result.get('content_complete') is True)):
                 observed_endpoints[(result.get('source_id'),endpoint_result.get('endpoint_id'))]=endpoint_result
     observations=[]
     for source in sources:
@@ -399,7 +410,7 @@ def build_candidate_observations(sources,state,results):
             endpoint_id=endpoint.get('endpoint_id',f'{source["source_id"]}:primary')
             if (source['source_id'],endpoint_id) not in observed_endpoints: continue
             url=endpoint['url']; snapshot=state.get('snapshots',{}).get(key_for(url,adapter)); endpoint_result=observed_endpoints[(source['source_id'],endpoint_id)]
-            if endpoint_result.get('outcome')=='partial' and endpoint_result.get('candidate_rows'):
+            if endpoint_result.get('outcome')=='partial' and endpoint_result.get('content_complete') is True and endpoint_result.get('candidate_rows'):
                 rows=endpoint_result['candidate_rows']; observed_at=endpoint_result.get('completed_at'); content_hash=endpoint_result.get('content_sha256')
             elif snapshot and snapshot.get('semantic_hash'):
                 rows=snapshot.get('semantic_rows',[]); observed_at=snapshot.get('last_success_at'); content_hash=snapshot.get('content_hash')
@@ -499,14 +510,9 @@ def run(args):
   state['last_registry_sha256']=manifest['registry_sha256']
   state['last_plan_sha256']=plan_hash
   if not source_ids_file:
-   consumed_retry_ids=set(retry_ids[:batch_size]) if pending else set()
-   next_retry_ids=[sid for sid in retry_ids if sid not in consumed_retry_ids]
-   for source in chosen:
-    sid=source['source_id']
-    outcome=completed.get(sid,{}).get('outcome')
-    if sid not in retry_ids and outcome in ('failed','blocked','partial'):
-     next_retry_ids.append(sid)
-   state['maintenance_retry_ids']=list(dict.fromkeys(next_retry_ids))
+   # Retry work remains durable until the source has a complete result. A failed
+   # retry, budget-exhausted source, or partial result must not silently leave it.
+   update_maintenance_retry_queue(state,plan_ids,completed)
   writej(state_dir/'state.json',state)
  # Repair missing rows to not_attempted; do not silently claim them checked.
  missing=[s for s in plan_ids if s not in completed]
@@ -524,12 +530,14 @@ def run(args):
   candidate_ledger.revalidate_terminal_reviews(ledger,f"source-audit-policy-{run_id}")
   candidate_ledger.merge_observations(ledger,observations,run_id)
   candidate_ledger.save_ledger(ledger_path,ledger)
- queue=candidate_ledger.open_tasks(ledger)
+ queue=candidate_ledger.review_queue(ledger)
+ content_review_queue=candidate_ledger.open_tasks(ledger)
+ open_status_queue=candidate_ledger.open_status_tasks(ledger)
  candidate_ledger.queue_jsonl(run_dir/'candidate_review_queue.jsonl',queue)
  candidate_ledger.save_ledger(run_dir/'candidate_ledger.json',ledger)
  successful=sum(counts[k] for k in ('checked_changed','checked_unchanged','checked_empty'))
  ledger_status_counts={status:sum(task.get('status')==status for task in ledger.get('tasks',{}).values()) for status in ('pending','verification_failed','insufficient_evidence','verified','excluded','duplicate')}
- report={'run_id':run_id,'created_at':manifest['created_at'],'completed_at':manifest['completed_at'],'network_mode':manifest['network_mode'],'execution_mode':manifest['execution_mode'],'registry_sha256':manifest['registry_sha256'],'adapter_catalog_sha256':manifest['adapter_catalog_sha256'],'plan_sha256':plan_hash,'total_sources':len(reg['sources']),'active_sources':len(active_sources),'planned_sources':len(plan_ids),'executed_sources':len(manifest['executed_source_ids']),'planned_endpoints':len(endpoint_results),'endpoint_status_counts':{k:endpoint_counts.get(k,0) for k in sorted(VALID)},'scope_mode':manifest['scope_mode'],'batch_offset':manifest['batch_offset'],'http_request_budget':http_request_budget_stats(),'status_counts':{k:counts.get(k,0) for k in sorted(VALID)},'result_conservation':sum(counts.values())==len(plan_ids),'complete_success_count':successful,'coverage':successful/len(plan_ids) if plan_ids else None,'candidate_review_tasks':len(queue),'candidate_ledger_revision':ledger.get('revision',0),'candidate_ledger_status_counts':ledger_status_counts,'skill_verified_count':ledger_status_counts['verified'],'candidate_data_written_to_formal_site':False,'results_path':'source_checks.jsonl','candidate_review_queue_path':'candidate_review_queue.jsonl','candidate_ledger_path':'candidate_ledger.json','notes':['HTTP availability is not opportunity verification.','needs_endpoint means page access may succeed but the full target list is not yet represented by a validated adapter.','partial on first parsed baseline means no prior comparison; it does not mean a newly published opportunity.','Adapter completeness applies only to its explicitly configured institution, opportunity type, filter and page scope; page snapshots do not prove site-wide opportunity coverage.','Candidate ledger preserves pending, failed and insufficient-evidence tasks across runs; terminal decisions require evidence.','Candidate rows remain separate from formal site data; this program does not invoke Codex models or publish data.','Failures, access blocks and not_attempted are never counted as no update.']}
+ report={'run_id':run_id,'created_at':manifest['created_at'],'completed_at':manifest['completed_at'],'network_mode':manifest['network_mode'],'execution_mode':manifest['execution_mode'],'registry_sha256':manifest['registry_sha256'],'adapter_catalog_sha256':manifest['adapter_catalog_sha256'],'plan_sha256':plan_hash,'total_sources':len(reg['sources']),'active_sources':len(active_sources),'planned_sources':len(plan_ids),'executed_sources':len(manifest['executed_source_ids']),'planned_endpoints':len(endpoint_results),'endpoint_status_counts':{k:endpoint_counts.get(k,0) for k in sorted(VALID)},'scope_mode':manifest['scope_mode'],'batch_offset':manifest['batch_offset'],'http_request_budget':http_request_budget_stats(),'status_counts':{k:counts.get(k,0) for k in sorted(VALID)},'result_conservation':sum(counts.values())==len(plan_ids),'complete_success_count':successful,'coverage':successful/len(plan_ids) if plan_ids else None,'candidate_review_tasks':len(queue),'candidate_content_review_tasks':len(content_review_queue),'candidate_open_status_review_tasks':len(open_status_queue),'candidate_ledger_revision':ledger.get('revision',0),'candidate_ledger_status_counts':ledger_status_counts,'skill_verified_count':ledger_status_counts['verified'],'candidate_data_written_to_formal_site':False,'results_path':'source_checks.jsonl','candidate_review_queue_path':'candidate_review_queue.jsonl','candidate_ledger_path':'candidate_ledger.json','notes':['HTTP availability is not opportunity verification.','needs_endpoint means page access may succeed but the full target list is not yet represented by a validated adapter.','partial on first parsed baseline means no prior comparison; it does not mean a newly published opportunity.','Adapter completeness applies only to its explicitly configured institution, opportunity type, filter and page scope; page snapshots do not prove site-wide opportunity coverage.','Candidate content review and current application-open status are independent tasks.','Candidate ledger preserves pending, failed and insufficient-evidence tasks across runs; terminal decisions require evidence.','Candidate rows remain separate from formal site data; this program does not invoke Codex models or publish data.','Failures, access blocks and not_attempted are never counted as no update.']}
  writej(run_dir/'daily_report.json',report)
  md=['# TERRAFAR 来源检查日报', '',f'- Run: `{run_id}`',f'- 模式：`{manifest["network_mode"]}` / `{manifest["execution_mode"]}`',f'- 来源总数 / 启用 / 计划：{len(reg["sources"])} / {len(active_sources)} / {len(plan_ids)}',f'- 计划范围：`{manifest["scope_mode"]}`',f'- 对账守恒：{sum(counts.values())} = {len(plan_ids)}',f'- 完整成功覆盖率：{successful}/{len(plan_ids)}' if plan_ids else '- 完整成功覆盖率：未知（计划数为 0）','', '## 状态数量','']
  md += [f'- `{k}`：{counts.get(k,0)}' for k in sorted(VALID)]

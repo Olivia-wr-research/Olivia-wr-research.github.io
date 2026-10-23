@@ -1,0 +1,79 @@
+{
+  "format": "terrafar-formal-data-review-patch-v1",
+  "candidate_id": "tcand-cfc80986c8e96017c3258140",
+  "candidate_fingerprint": "b64ae7139fb403d34d33b7c43f1210afcc996cb26f8649e09d9d473405bdcec3",
+  "source_id": "portal-48cd340b8b216122",
+  "endpoint_id": "portal-48cd340b8b216122:primary",
+  "source_url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+  "candidate_url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+  "formal_record_id": "vienna-6233",
+  "content_review_status": "verified",
+  "candidate_origin": "agent_observed_candidate_snapshot",
+  "candidate_ledger_status_after_merge": "verified",
+  "candidate_ledger_revision_after_merge": 10,
+  "candidate_review_history_count": 1,
+  "candidate_review_event_id": "b7186e9b4fdc385421647791999b73f9",
+  "current_open_status": "unknown",
+  "field_evidence": {
+    "deadline": {
+      "value": "2026-10-31",
+      "evidence_url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+      "locator": "Application deadline field",
+      "evidence": [
+        {
+          "field": "deadline",
+          "url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+          "claim": "deadline: 2026-10-31; the official detail page states no time or timezone",
+          "locator": "Application deadline field",
+          "evidence_note": "Official University of Vienna job detail; accessed 2026-10-23 12:21:20-12:21:32 UTC",
+          "page_content_sha256": "4dc7c088d7b929655c83402c6b65627f1184037f67c3aec7c2b247586483a25c"
+        }
+      ]
+    },
+    "funding": {
+      "value": "Employed position; EUR 3,776.10 gross per month is the full-time reference amount, paid 14 times per year; actual prorated salary for the 30-hour position is not stated.",
+      "evidence_url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+      "locator": "Salary / employment terms section",
+      "evidence": [
+        {
+          "field": "funding",
+          "url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+          "claim": "funding: Employed position; EUR 3,776.10 gross per month is the full-time reference amount, paid 14 times per year; actual prorated salary for the 30-hour position is not stated.",
+          "locator": "Salary / employment terms section",
+          "evidence_note": "Official detail page; source hash binds the captured body; figure is not treated as 30-hour take-home pay",
+          "page_content_sha256": "4dc7c088d7b929655c83402c6b65627f1184037f67c3aec7c2b247586483a25c"
+        }
+      ]
+    },
+    "eligibility": {
+      "value": "Master's degree or equivalent in physics or a related aerosol/atmospheric field, including aerosol chemistry or meteorology; C1 English and programming skills.",
+      "evidence_url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+      "locator": "Requirements / profile section",
+      "evidence": [
+        {
+          "field": "eligibility",
+          "url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+          "claim": "eligibility: Master's degree or equivalent in physics or a related aerosol/atmospheric field, including aerosol chemistry or meteorology; C1 English and programming skills.",
+          "locator": "Requirements / profile section",
+          "evidence_note": "Official detail page; accessed 2026-10-23 12:21:20-12:21:32 UTC",
+          "page_content_sha256": "4dc7c088d7b929655c83402c6b65627f1184037f67c3aec7c2b247586483a25c"
+        }
+      ]
+    }
+  },
+  "changes": {
+    "deadline": {
+      "before": "2026-10-24",
+      "after": "2026-10-31"
+    }
+  },
+  "rollback": {
+    "deadline": "2026-10-24"
+  },
+  "formal_data_written": false,
+  "published": false,
+  "source_observed_at": "2026-10-23T12:21:32Z",
+  "source_actions_run_id": null,
+  "source_capture_id": "agent-page-capture-2026-10-23",
+  "source_program_run_id": null
+}

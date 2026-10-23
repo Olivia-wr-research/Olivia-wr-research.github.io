@@ -116,7 +116,16 @@ const reviewedCorrections={
   },
   "geo-eth-atmosphere": {
     "materials": "动机信、CV、≤1页硕士论文摘要、学历证明（在读者附成绩单）及2–3位推荐人信息。",
-    "materialsEn": "Motivation letter, CV, master’s thesis summary ≤1 page, academic certificates/transcripts and 2–3 referees."
+    "materialsEn": "Motivation letter, CV, master’s thesis summary ≤1 page, academic certificates/transcripts and 2–3 referees.",
+    "status": "listed",
+    "checkedAt": "2026-10-23",
+    "statusLabel": "无固定截止 · 门户当前受理状态待核实",
+    "statusLabelEn": "No fixed deadline · current portal acceptance unverified",
+    "applicationUrl": "https://emea2.softfactors.com/job-opening/rgum-UtuGzrXTpseTskgjY9#!/?lang=en",
+    "applicationProcess": "ETH 官方详情页指向 Softfactors 申请入口；本次入口只返回无法读取表单的小型 JavaScript 页面，当前是否受理未知。",
+    "applicationProcessEn": "The ETH detail page links to the Softfactors application portal. It returned only a small JavaScript shell without a readable form, so current acceptance is unknown.",
+    "caution": "官方详情页未列固定截止；2026-11-15开始评审并持续至招满。申请入口无法读取表单，当前受理状态未知。",
+    "cautionEn": "The official detail page states no fixed deadline; review starts 15 November 2026 and continues until filled. The application portal did not expose a readable form, so current acceptance is unknown."
   },
   "geo-wsl-1903": {
     "materials": "求职信、CV、最高学位证明及成绩单、英文写作样本；通过官方在线入口提交。",
@@ -489,10 +498,15 @@ const reviewMetadata={
     ]
   },
   "geo-eth-atmosphere": {
-    "status": "source-reviewed",
-    "attemptedAt": "2026-10-17",
+    "status": "partial-source-review",
+    "attemptedAt": "2026-10-23",
+    "lastSuccessfulFieldReviewAt": "2026-10-23",
+    "fieldsCompared": ["funding", "eligibility", "deadline", "application_route", "current_open_status"],
+    "allFieldsVerified": false,
+    "currentOpenStatus": "unknown",
     "sources": [
-      "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9"
+      "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+      "https://emea2.softfactors.com/job-opening/rgum-UtuGzrXTpseTskgjY9#!/?lang=en"
     ]
   },
   "geo-wsl-1903": {

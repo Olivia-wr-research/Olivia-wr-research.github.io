@@ -1,0 +1,125 @@
+{
+  "review_task_kind": "content_review",
+  "candidate_id": "tcand-97c57c520daa0ba0fdd1e11b",
+  "candidate_fingerprint": "955853b9d591b8b428e42ac5060dcfedde5067ef59c1ce168782428093fef0e0",
+  "source_id": "eth-doctoral-listing",
+  "endpoint_id": "eth-doctoral-listing:primary",
+  "candidate_key": "https://jobs.ethz.ch/job/view/12136",
+  "candidate_url": "https://jobs.ethz.ch/job/view/12136",
+  "formal_record_id": "eth-ai-12136",
+  "source_actions_run_id": "39946276972",
+  "source_program_run_id": "terrafar-maintenance-39946276972-1",
+  "status": "verified",
+  "decision_scope": "page_content",
+  "reviewer": "opportunity_verifier",
+  "reviewed_at": "2026-10-23T12:22:34Z",
+  "current_open_status": "unknown",
+  "reason": "Official job detail and linked Recruitee application form were opened. The form display does not prove that applications are currently being accepted.",
+  "content_verification": {
+    "status": "verified",
+    "evidence": [
+      {
+        "field": "deadline",
+        "url": "https://jobs.ethz.ch/job/view/12136",
+        "claim": "deadline: 2026-10-27 16:00 CET; official listing states October 27, 2026 at 16:00 CET",
+        "locator": "Deadline for applications; official job-detail page line 40",
+        "page_content_sha256": "b4fd5fe3dad28008c74381449794afeb1e6fc2754f6e720b83fa81dbcff95fb1"
+      },
+      {
+        "field": "funding",
+        "url": "https://jobs.ethz.ch/job/view/12136",
+        "claim": "funding: ETH standard salary at 100% is CHF 73,100 in year 1, CHF 78,300 in year 2, and CHF 83,500 in year 3; normally three years, with up to one additional year only subject to committee approval.",
+        "locator": "Salary / We offer sections; official job-detail page and linked 2027 fellowship guidelines",
+        "page_content_sha256": "b4fd5fe3dad28008c74381449794afeb1e6fc2754f6e720b83fa81dbcff95fb1"
+      },
+      {
+        "field": "eligibility",
+        "url": "https://jobs.ethz.ch/job/view/12136",
+        "claim": "eligibility: Completed or expected master's in computer science, machine learning, statistics, physics, engineering, applied mathematics or related fields at least three months before fellowship start and by June 2027; ETH doctoral admission requirements and research-level English are required.",
+        "locator": "Profile section; official job-detail page lines 20-22",
+        "page_content_sha256": "b4fd5fe3dad28008c74381449794afeb1e6fc2754f6e720b83fa81dbcff95fb1"
+      },
+      {
+        "field": "application_route",
+        "url": "https://jobs.ethz.ch/job/view/12136",
+        "claim": "application_route: https://switzerland.recruitee.com/o/eth-ai-center-doctoral-fellowship-2027",
+        "locator": "Apply online now link on official ETH job detail",
+        "page_content_sha256": "b4fd5fe3dad28008c74381449794afeb1e6fc2754f6e720b83fa81dbcff95fb1"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "field": "deadline",
+      "url": "https://jobs.ethz.ch/job/view/12136",
+      "claim": "deadline: 2026-10-27 16:00 CET; official listing states October 27, 2026 at 16:00 CET",
+      "locator": "Deadline for applications; official job-detail page line 40",
+      "evidence_note": "Official ETH job detail; accessed 2026-10-23 12:21:32-12:21:35 UTC",
+      "page_content_sha256": "b4fd5fe3dad28008c74381449794afeb1e6fc2754f6e720b83fa81dbcff95fb1"
+    },
+    {
+      "field": "funding",
+      "url": "https://jobs.ethz.ch/job/view/12136",
+      "claim": "funding: ETH standard salary at 100% is CHF 73,100 in year 1, CHF 78,300 in year 2, and CHF 83,500 in year 3; normally three years, with up to one additional year only subject to committee approval.",
+      "locator": "Salary / We offer sections; official job-detail page and linked 2027 fellowship guidelines",
+      "evidence_note": "Official ETH job detail; directly observed by opportunity_verifier; SHA-256 binds the downloaded response",
+      "page_content_sha256": "b4fd5fe3dad28008c74381449794afeb1e6fc2754f6e720b83fa81dbcff95fb1"
+    },
+    {
+      "field": "eligibility",
+      "url": "https://jobs.ethz.ch/job/view/12136",
+      "claim": "eligibility: Completed or expected master's in computer science, machine learning, statistics, physics, engineering, applied mathematics or related fields at least three months before fellowship start and by June 2027; ETH doctoral admission requirements and research-level English are required.",
+      "locator": "Profile section; official job-detail page lines 20-22",
+      "evidence_note": "Official ETH job detail; accessed 2026-10-23 12:21:32-12:21:35 UTC",
+      "page_content_sha256": "b4fd5fe3dad28008c74381449794afeb1e6fc2754f6e720b83fa81dbcff95fb1"
+    },
+    {
+      "field": "application_route",
+      "url": "https://jobs.ethz.ch/job/view/12136",
+      "claim": "application_route: https://switzerland.recruitee.com/o/eth-ai-center-doctoral-fellowship-2027",
+      "locator": "Apply online now link on official ETH job detail",
+      "evidence_note": "Linked application form opened at 2026-10-23 12:22:31-12:22:34 UTC; form fields were visible; no submission",
+      "page_content_sha256": "b4fd5fe3dad28008c74381449794afeb1e6fc2754f6e720b83fa81dbcff95fb1",
+      "linked_portal_url": "https://switzerland.recruitee.com/o/eth-ai-center-doctoral-fellowship-2027",
+      "linked_portal_page_content_sha256": "8aaf1356bb6bf016ca00fd572f0d962b319a8b0ee18e76e71fd55e67514eb77b",
+      "linked_portal_observed_at": "2026-10-23T12:22:31Z",
+      "portal_acceptance_status": "unknown"
+    }
+  ],
+  "application_route": {
+    "status": "verified_as_stated",
+    "value": "https://switzerland.recruitee.com/o/eth-ai-center-doctoral-fellowship-2027",
+    "evidence_url": "https://jobs.ethz.ch/job/view/12136",
+    "locator": "Apply online now link on official ETH job detail",
+    "portal_observation": {
+      "url": "https://switzerland.recruitee.com/o/eth-ai-center-doctoral-fellowship-2027",
+      "observed_at": "2026-10-23T12:22:31Z",
+      "page_content_sha256": "8aaf1356bb6bf016ca00fd572f0d962b319a8b0ee18e76e71fd55e67514eb77b",
+      "visible": "Job details / Apply and application form fields",
+      "submission_performed": false,
+      "current_acceptance": "unknown"
+    }
+  },
+  "deadline": {
+    "status": "verified_as_stated",
+    "value": "2026-10-27 16:00 CET",
+    "evidence_url": "https://jobs.ethz.ch/job/view/12136",
+    "locator": "Deadline for applications; official job-detail page line 40"
+  },
+  "funding": {
+    "status": "verified_as_stated",
+    "value": "ETH standard salary at 100% is CHF 73,100 in year 1, CHF 78,300 in year 2, and CHF 83,500 in year 3; normally three years, with up to one additional year only subject to committee approval.",
+    "evidence_url": "https://jobs.ethz.ch/job/view/12136",
+    "locator": "Salary / We offer sections; official job-detail page and linked 2027 fellowship guidelines"
+  },
+  "eligibility": {
+    "status": "verified_as_stated",
+    "value": "Completed or expected master's in computer science, machine learning, statistics, physics, engineering, applied mathematics or related fields at least three months before fellowship start and by June 2027; ETH doctoral admission requirements and research-level English are required.",
+    "evidence_url": "https://jobs.ethz.ch/job/view/12136",
+    "locator": "Profile section; official job-detail page lines 20-22"
+  },
+  "formal_patch": {
+    "funding": "全职 ETH 博士雇佣（100%）；第一至第三年年薪分别为 CHF 73,100、CHF 78,300、CHF 83,500。通常三年；最多延长一年须经委员会批准，不保证续期。",
+    "salary": "CHF 73,100（第一年）、CHF 78,300（第二年）、CHF 83,500（第三年）；按 ETH 100% 标准薪酬。"
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "review_task_kind": "content_review",
+  "candidate_id": "tcand-cfc80986c8e96017c3258140",
+  "candidate_fingerprint": "b64ae7139fb403d34d33b7c43f1210afcc996cb26f8649e09d9d473405bdcec3",
+  "source_id": "portal-48cd340b8b216122",
+  "endpoint_id": "portal-48cd340b8b216122:primary",
+  "candidate_key": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+  "candidate_url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+  "formal_record_id": "vienna-6233",
+  "source_capture_id": "agent-page-capture-2026-10-23",
+  "status": "verified",
+  "decision_scope": "page_content",
+  "reviewer": "opportunity_verifier",
+  "reviewed_at": "2026-10-23T12:21:32Z",
+  "current_open_status": "unknown",
+  "reason": "Official posting was directly opened and its deadline conflicts with the formal record. The Apply now route redirected to the general portal home page, so the job-specific form and current acceptance remain unknown.",
+  "candidate_observation": {
+    "source_id": "portal-48cd340b8b216122",
+    "endpoint_id": "portal-48cd340b8b216122:primary",
+    "candidate_key": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+    "candidate_url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+    "source_url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+    "retrieved_at": "2026-10-23T12:21:32Z",
+    "content_sha256": "4dc7c088d7b929655c83402c6b65627f1184037f67c3aec7c2b247586483a25c",
+    "parser": "agent_page_capture",
+    "adapter_scope": {
+      "institution": "University of Vienna",
+      "opportunity_type": "predoctoral research assistant",
+      "filter": "specific VINAR job ID 1447669433",
+      "pagination": "direct detail page only; no list completeness claim"
+    },
+    "candidate": {
+      "url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+      "titleEn": "University assistant predoctoral - Vienna Network for Atmospheric Research (VINAR)",
+      "jobId": "1447669433",
+      "deadline": "2026-10-31",
+      "hoursPerWeek": "30",
+      "fullTimeReferenceSalary": "EUR 3,776.10 gross monthly, paid 14 times yearly; 30 hours/week position; actual prorated amount not stated"
+    }
+  },
+  "content_verification": {
+    "status": "verified",
+    "evidence": [
+      {
+        "field": "deadline",
+        "url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+        "claim": "deadline: 2026-10-31; the official detail page states no time or timezone",
+        "locator": "Application deadline field",
+        "page_content_sha256": "4dc7c088d7b929655c83402c6b65627f1184037f67c3aec7c2b247586483a25c"
+      },
+      {
+        "field": "funding",
+        "url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+        "claim": "funding: Employed position; EUR 3,776.10 gross per month is the full-time reference amount, paid 14 times per year; actual prorated salary for the 30-hour position is not stated.",
+        "locator": "Salary / employment terms section",
+        "page_content_sha256": "4dc7c088d7b929655c83402c6b65627f1184037f67c3aec7c2b247586483a25c"
+      },
+      {
+        "field": "eligibility",
+        "url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+        "claim": "eligibility: Master's degree or equivalent in physics or a related aerosol/atmospheric field, including aerosol chemistry or meteorology; C1 English and programming skills.",
+        "locator": "Requirements / profile section",
+        "page_content_sha256": "4dc7c088d7b929655c83402c6b65627f1184037f67c3aec7c2b247586483a25c"
+      },
+      {
+        "field": "application_route",
+        "url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+        "claim": "application_route: Apply now links to https://jobs.univie.ac.at/talentcommunity/apply/1447669433/?locale=en_US; the observed link redirects to the general job portal home page, not a job-specific form",
+        "locator": "Apply now link and redirect destination",
+        "page_content_sha256": "4dc7c088d7b929655c83402c6b65627f1184037f67c3aec7c2b247586483a25c"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "field": "deadline",
+      "url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+      "claim": "deadline: 2026-10-31; the official detail page states no time or timezone",
+      "locator": "Application deadline field",
+      "evidence_note": "Official University of Vienna job detail; accessed 2026-10-23 12:21:20-12:21:32 UTC",
+      "page_content_sha256": "4dc7c088d7b929655c83402c6b65627f1184037f67c3aec7c2b247586483a25c"
+    },
+    {
+      "field": "funding",
+      "url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+      "claim": "funding: Employed position; EUR 3,776.10 gross per month is the full-time reference amount, paid 14 times per year; actual prorated salary for the 30-hour position is not stated.",
+      "locator": "Salary / employment terms section",
+      "evidence_note": "Official detail page; source hash binds the captured body; figure is not treated as 30-hour take-home pay",
+      "page_content_sha256": "4dc7c088d7b929655c83402c6b65627f1184037f67c3aec7c2b247586483a25c"
+    },
+    {
+      "field": "eligibility",
+      "url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+      "claim": "eligibility: Master's degree or equivalent in physics or a related aerosol/atmospheric field, including aerosol chemistry or meteorology; C1 English and programming skills.",
+      "locator": "Requirements / profile section",
+      "evidence_note": "Official detail page; accessed 2026-10-23 12:21:20-12:21:32 UTC",
+      "page_content_sha256": "4dc7c088d7b929655c83402c6b65627f1184037f67c3aec7c2b247586483a25c"
+    },
+    {
+      "field": "application_route",
+      "url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+      "claim": "application_route: Apply now links to https://jobs.univie.ac.at/talentcommunity/apply/1447669433/?locale=en_US; the observed link redirects to the general job portal home page, not a job-specific form",
+      "locator": "Apply now link and redirect destination",
+      "evidence_note": "Portal endpoint opened; job-specific form was not available; current application acceptance is unknown",
+      "page_content_sha256": "4dc7c088d7b929655c83402c6b65627f1184037f67c3aec7c2b247586483a25c",
+      "linked_application_url": "https://jobs.univie.ac.at/talentcommunity/apply/1447669433/?locale=en_US",
+      "redirect_result": "general job portal home page"
+    }
+  ],
+  "deadline": {
+    "status": "verified_as_stated",
+    "value": "2026-10-31",
+    "evidence_url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+    "locator": "Application deadline field"
+  },
+  "funding": {
+    "status": "verified_as_stated",
+    "value": "Employed position; EUR 3,776.10 gross per month is the full-time reference amount, paid 14 times per year; actual prorated salary for the 30-hour position is not stated.",
+    "evidence_url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+    "locator": "Salary / employment terms section"
+  },
+  "eligibility": {
+    "status": "verified_as_stated",
+    "value": "Master's degree or equivalent in physics or a related aerosol/atmospheric field, including aerosol chemistry or meteorology; C1 English and programming skills.",
+    "evidence_url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+    "locator": "Requirements / profile section"
+  },
+  "application_route": {
+    "status": "unknown",
+    "value": null,
+    "evidence_url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+    "locator": "Apply now redirects to general job portal; specific form unverified"
+  },
+  "formal_patch": {
+    "deadline": "2026-10-31"
+  }
+}
