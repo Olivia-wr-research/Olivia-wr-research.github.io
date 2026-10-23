@@ -70,6 +70,7 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
     if not legacy and provenance.get("state_compatibility_version") != 1:
         raise ValueError("restored_state_compatibility_version_unsupported")
 
+    policy_demoted_task_count = 0
     if not legacy:
         ledger_path = artifact_dir / "state/candidate_ledger.json"
         if not ledger_path.is_file():
@@ -84,8 +85,12 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
             raise ValueError("restored_candidate_task_count_mismatch")
         if provenance.get("origin_program_run_id") != state.get("last_run_id"):
             raise ValueError("restored_program_run_id_mismatch")
+        verified_before_policy_audit = sum(task.get("status") == "verified" for task in ledger.get("tasks", {}).values())
+        candidate_ledger.revalidate_terminal_reviews(ledger, f"restore-policy-{current_actions_run_id}")
+        verified_after_policy_audit = sum(task.get("status") == "verified" for task in ledger.get("tasks", {}).values())
+        policy_demoted_task_count = verified_before_policy_audit - verified_after_policy_audit
         shutil.copy2(state_path, destination / "state.json")
-        shutil.copy2(ledger_path, destination / "candidate_ledger.json")
+        candidate_ledger.save_ledger(destination / "candidate_ledger.json", ledger)
         ledger_migrated = False
     else:
         if not allow_legacy:
@@ -144,6 +149,7 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
                     raise ValueError(f"bootstrap_review_result_status_invalid:{candidate_id}")
                 reviews.append({
                     "candidate_id": candidate_id,
+                    "candidate_fingerprint": task.get("content_fingerprint"),
                     "status": review_status,
                     "decision_scope": "page_content" if review_status == "verified" else review_status,
                     "content_verification": content,
@@ -156,7 +162,7 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
                     "funding": fact.get("funding", {"status": "unknown", "value": None}),
                     "eligibility": fact.get("eligibility", {"status": "unknown", "value": None}),
                     "listing_text_status": fact.get("listing_text_status", "unknown"),
-                    "status_evidence": fact.get("status_evidence"),
+                    "current_status_evidence": fact.get("current_status_evidence"),
                     "limitations": fact.get("limitations", []),
                     "detail_page_content_hash": fact.get("detail_page_content_hash"),
                     "unverified_agent_claims": fact.get("unverified_agent_claims", []),
@@ -179,6 +185,7 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
         "candidate_task_count": len(ledger.get("tasks", {})),
         "candidate_open_task_count": len(candidate_ledger.open_tasks(ledger)),
         "candidate_ledger_migrated_from_legacy_queue": ledger_migrated,
+        "candidate_ledger_policy_demoted_task_count": policy_demoted_task_count,
         "candidate_ledger_task_ids_unique": len(ledger.get("tasks", {})) == len(set(ledger.get("tasks", {}))),
     }
     (destination / "restore_verification.json").write_text(json.dumps(restored_meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

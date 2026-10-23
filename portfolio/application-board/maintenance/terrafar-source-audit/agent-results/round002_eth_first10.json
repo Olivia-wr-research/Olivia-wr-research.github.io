@@ -6,7 +6,8 @@
       "status": "verified_as_stated",
       "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
       "locator": "56",
-      "evidence_note": "Applications are accepted through the online application portal."
+      "evidence_note": "Applications are accepted through the online application portal.",
+      "value": "Online application portal"
     },
     "deadline": {
       "value": "2026-11-22",
@@ -55,7 +56,7 @@
       "evidence": [
         {
           "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
-          "claim": "application_route text was reviewed; value remains unspecified",
+          "claim": "application_route is stated as Online application portal",
           "locator": "56",
           "evidence_note": "Applications are accepted through the online application portal.",
           "field": "application_route"
@@ -98,7 +99,8 @@
       "status": "verified_as_stated",
       "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_o0hFrG5T51aXJSr1x4",
       "locator": "63",
-      "evidence_note": "Online application portal is the stated submission route."
+      "evidence_note": "Online application portal is the stated submission route.",
+      "value": "Online application portal"
     },
     "deadline": {
       "value": "2026-12-15",
@@ -147,7 +149,7 @@
       "evidence": [
         {
           "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_o0hFrG5T51aXJSr1x4",
-          "claim": "application_route text was reviewed; value remains unspecified",
+          "claim": "application_route is stated as Online application portal",
           "locator": "63",
           "evidence_note": "Online application portal is the stated submission route.",
           "field": "application_route"
@@ -190,7 +192,8 @@
       "status": "verified_as_stated",
       "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
       "locator": "68",
-      "evidence_note": "Applications go through the online portal."
+      "evidence_note": "Applications go through the online portal.",
+      "value": "Online application portal"
     },
     "deadline": {
       "value": "2026-11-10",
@@ -239,7 +242,7 @@
       "evidence": [
         {
           "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
-          "claim": "application_route text was reviewed; value remains unspecified",
+          "claim": "application_route is stated as Online application portal",
           "locator": "68",
           "evidence_note": "Applications go through the online portal.",
           "field": "application_route"
@@ -282,7 +285,8 @@
       "status": "verified_as_stated",
       "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1VGWmPweQ1WxoDNZU6",
       "locator": "61",
-      "evidence_note": "Exclusive online portal submission is stated."
+      "evidence_note": "Exclusive online portal submission is stated.",
+      "value": "Online application portal"
     },
     "deadline": {
       "value": "Preferred deadline 2026-11-22; later applications may also be considered.",
@@ -330,7 +334,7 @@
       "evidence": [
         {
           "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1VGWmPweQ1WxoDNZU6",
-          "claim": "application_route text was reviewed; value remains unspecified",
+          "claim": "application_route is stated as Online application portal",
           "locator": "61",
           "evidence_note": "Exclusive online portal submission is stated.",
           "field": "application_route"
@@ -373,7 +377,8 @@
       "status": "verified_as_stated",
       "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_j6FN1WlWccXpZipQja",
       "locator": "60-68",
-      "evidence_note": "Online application portal is the stated route."
+      "evidence_note": "Online application portal is the stated route.",
+      "value": "Online application portal"
     },
     "deadline": {
       "value": "Rolling until the positions are filled; no fixed date stated.",
@@ -422,7 +427,7 @@
       "evidence": [
         {
           "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_j6FN1WlWccXpZipQja",
-          "claim": "application_route text was reviewed; value remains unspecified",
+          "claim": "application_route is stated as Online application portal",
           "locator": "60-68",
           "evidence_note": "Online application portal is the stated route.",
           "field": "application_route"
@@ -458,7 +463,8 @@
       "status": "verified_as_stated",
       "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_sqsOtdedQzvLzst350",
       "locator": "52-61",
-      "evidence_note": "Online application portal is the stated route."
+      "evidence_note": "Online application portal is the stated route.",
+      "value": "Online application portal"
     },
     "deadline": {
       "value": null,
@@ -507,7 +513,7 @@
       "evidence": [
         {
           "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_sqsOtdedQzvLzst350",
-          "claim": "application_route text was reviewed; value remains unspecified",
+          "claim": "application_route is stated as Online application portal",
           "locator": "52-61",
           "evidence_note": "Online application portal is the stated route.",
           "field": "application_route"
@@ -542,7 +548,8 @@
       "status": "verified_as_stated",
       "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
       "locator": "60-68",
-      "evidence_note": "Applications use the online portal."
+      "evidence_note": "Applications use the online portal.",
+      "value": "Online application portal"
     },
     "deadline": {
       "value": "2027-01-31",
@@ -590,7 +597,7 @@
       "evidence": [
         {
           "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
-          "claim": "application_route text was reviewed; value remains unspecified",
+          "claim": "application_route is stated as Online application portal",
           "locator": "60-68",
           "evidence_note": "Applications use the online portal.",
           "field": "application_route"
@@ -633,7 +640,8 @@
       "status": "verified_as_stated",
       "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1Xb566nCAHVEKPxWxy",
       "locator": "64-76",
-      "evidence_note": "Online application portal is the stated route."
+      "evidence_note": "Online application portal is the stated route.",
+      "value": "Online application portal"
     },
     "deadline": {
       "value": "Review starts 2026-11-15; closes when a suitable candidate is found.",
@@ -681,7 +689,7 @@
       "evidence": [
         {
           "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1Xb566nCAHVEKPxWxy",
-          "claim": "application_route text was reviewed; value remains unspecified",
+          "claim": "application_route is stated as Online application portal",
           "locator": "64-76",
           "evidence_note": "Online application portal is the stated route.",
           "field": "application_route"
@@ -717,7 +725,8 @@
       "status": "verified_as_stated",
       "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_Nnf6ZULCr5G0ihsC1R",
       "locator": "47-56",
-      "evidence_note": "Applications are submitted through the portal."
+      "evidence_note": "Applications are submitted through the portal.",
+      "value": "Online application portal"
     },
     "deadline": {
       "value": "Apply by 2026-11-09; accepted until the position is filled.",
@@ -766,7 +775,7 @@
       "evidence": [
         {
           "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_Nnf6ZULCr5G0ihsC1R",
-          "claim": "application_route text was reviewed; value remains unspecified",
+          "claim": "application_route is stated as Online application portal",
           "locator": "47-56",
           "evidence_note": "Applications are submitted through the portal.",
           "field": "application_route"
@@ -809,7 +818,8 @@
       "status": "verified_as_stated",
       "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
       "locator": "47-56",
-      "evidence_note": "Applications are submitted through the online portal."
+      "evidence_note": "Applications are submitted through the online portal.",
+      "value": "Online application portal"
     },
     "deadline": {
       "value": "Apply by 2026-11-09; accepted until the position is filled.",
@@ -858,7 +868,7 @@
       "evidence": [
         {
           "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
-          "claim": "application_route text was reviewed; value remains unspecified",
+          "claim": "application_route is stated as Online application portal",
           "locator": "47-56",
           "evidence_note": "Applications are submitted through the online portal.",
           "field": "application_route"

@@ -7,11 +7,14 @@ import contextlib
 import fcntl
 import hashlib
 import json
+import re
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 
 SCHEMA_VERSION = 1
+EVIDENCE_POLICY_VERSION = 2
 SKILL_PATH = Path(__file__).resolve().parents[3] / ".agents/skills/terrafar-source-audit/SKILL.md"
 OPEN_STATUSES = {"pending", "verification_failed", "insufficient_evidence"}
 TERMINAL_STATUSES = {"verified", "excluded", "duplicate"}
@@ -37,7 +40,8 @@ def stable_candidate_id(source_id: str, endpoint_id: str, candidate_key: str) ->
 
 
 def empty_ledger() -> dict[str, Any]:
-    return {"schema_version": SCHEMA_VERSION, "revision": 0, "tasks": {}, "events": []}
+    return {"schema_version": SCHEMA_VERSION, "evidence_policy_version": EVIDENCE_POLICY_VERSION,
+            "revision": 0, "tasks": {}, "events": []}
 
 
 def load_ledger(path: Path, require_existing: bool = False) -> dict[str, Any]:
@@ -222,18 +226,19 @@ def migrate_legacy_queue(ledger: dict[str, Any], rows: list[dict[str, Any]], sou
 def _supported_content_fields(result: dict[str, Any]) -> dict[str, dict[str, Any]]:
     fields: dict[str, dict[str, Any]] = {}
     route = result.get("application_route")
-    if isinstance(route, dict) and route.get("status") in {"supported", "verified_as_stated"}:
+    if (isinstance(route, dict) and route.get("status") in {"supported", "verified_as_stated"}
+            and isinstance(route.get("value"), str) and route["value"].strip()):
         fields["application_route"] = route
     for name in ("deadline", "funding", "eligibility"):
         finding = result.get(name)
         if (isinstance(finding, dict) and finding.get("status") in {"supported", "verified_as_stated"}
-                and finding.get("value") not in (None, "")):
+                and isinstance(finding.get("value"), str) and finding["value"].strip()):
             fields[name] = finding
     return fields
 
 
 def _validate_current_open_status(candidate_id: str, current_status: Any, status_evidence: Any,
-                                  task: dict[str, Any]) -> None:
+                                  task: dict[str, Any], evidence: list[Any]) -> None:
     if current_status in (None, "", "unknown"):
         return
     if current_status not in CURRENT_OPEN_STATUSES:
@@ -246,8 +251,33 @@ def _validate_current_open_status(candidate_id: str, current_status: Any, status
             or status_evidence.get("url") != task.get("candidate_url")
             or not isinstance(status_evidence.get("locator"), str)
             or not status_evidence.get("locator").strip()
-            or status_evidence.get("locator", "").strip().lower() in {"page", "unknown", "n/a"}):
+            or status_evidence.get("locator", "").strip().lower() in {"page", "unknown", "n/a"}
+            or not any(
+                isinstance(item, dict)
+                and item.get("field") == "current_open_status"
+                and item.get("url") == status_evidence.get("url")
+                and item.get("locator") == status_evidence.get("locator")
+                and item.get("claim") == expected_claim
+                for item in evidence
+            )):
         raise ValueError(f"current_status_requires_explicit_portal_acceptance_evidence:{candidate_id}")
+
+
+def _normalized_assertion(value: str) -> str:
+    return re.sub(r"\s+", " ", value).strip().casefold()
+
+
+def _validate_review_timestamp_and_identity(candidate_id: str, reviewer: Any, reviewed_at: Any) -> None:
+    if not isinstance(reviewer, str) or not reviewer.strip() or reviewer.strip().casefold() in {"unknown", "n/a"}:
+        raise ValueError(f"terminal_candidate_review_requires_reviewer_and_time:{candidate_id}")
+    if not isinstance(reviewed_at, str) or not reviewed_at.strip():
+        raise ValueError(f"terminal_candidate_review_requires_reviewer_and_time:{candidate_id}")
+    try:
+        parsed = datetime.fromisoformat(reviewed_at.strip().replace("Z", "+00:00"))
+    except ValueError as error:
+        raise ValueError(f"terminal_candidate_review_timestamp_invalid:{candidate_id}") from error
+    if parsed.tzinfo is None:
+        raise ValueError(f"terminal_candidate_review_timestamp_must_include_timezone:{candidate_id}")
 
 
 def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id: str) -> dict[str, Any]:
@@ -255,6 +285,8 @@ def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id:
     seen: set[str] = set()
     changed = False
     for result in results:
+        if not isinstance(result, dict):
+            raise ValueError("candidate_review_result_must_be_object")
         candidate_id = result.get("candidate_id")
         if candidate_id in seen:
             raise ValueError(f"duplicate_candidate_review:{candidate_id}")
@@ -262,12 +294,15 @@ def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id:
         task = ledger.get("tasks", {}).get(candidate_id)
         if task is None:
             raise ValueError(f"unassigned_candidate_review:{candidate_id}")
+        if result.get("candidate_fingerprint") != task.get("content_fingerprint"):
+            raise ValueError(f"candidate_review_content_fingerprint_mismatch:{candidate_id}")
         status = result.get("status")
         if status not in REVIEW_STATUSES:
             raise ValueError(f"invalid_candidate_review_status:{status}")
         evidence = result.get("evidence")
         if not isinstance(evidence, list):
             raise ValueError(f"candidate_review_evidence_missing:{candidate_id}")
+        _validate_review_timestamp_and_identity(candidate_id, result.get("reviewer"), result.get("reviewed_at"))
         if status in TERMINAL_STATUSES:
             allowed_urls = {task.get("candidate_url"), task.get("source_url")}
             if (not evidence or any(
@@ -278,8 +313,6 @@ def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id:
                 for item in evidence
             )):
                 raise ValueError(f"terminal_candidate_review_requires_evidence:{candidate_id}")
-            if result.get("reviewer") in {None, "", "unknown"} or not result.get("reviewed_at"):
-                raise ValueError(f"terminal_candidate_review_requires_reviewer_and_time:{candidate_id}")
             if status == "verified":
                 content = result.get("content_verification")
                 if (result.get("decision_scope") != "page_content" or not isinstance(content, dict)
@@ -296,15 +329,19 @@ def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id:
                         item.get("url") == finding.get("evidence_url")
                         and item.get("locator") == finding.get("locator")
                         and item.get("claim", "").lower().replace("_", " ").startswith(field_name.replace("_", " "))
+                        and _normalized_assertion(finding["value"]) in _normalized_assertion(item.get("claim", ""))
                         for item in field_evidence
                     ):
                         raise ValueError(f"verified_candidate_missing_field_evidence:{candidate_id}:{field_name}")
             elif result.get("decision_scope") != status:
                 raise ValueError(f"terminal_candidate_review_scope_mismatch:{candidate_id}")
-            if status == "duplicate" and not result.get("duplicate_of"):
-                raise ValueError(f"duplicate_candidate_review_missing_target:{candidate_id}")
+            if status == "duplicate":
+                duplicate_of = result.get("duplicate_of")
+                if (not isinstance(duplicate_of, str) or duplicate_of == candidate_id
+                        or duplicate_of not in ledger.get("tasks", {})):
+                    raise ValueError(f"duplicate_candidate_review_missing_or_invalid_target:{candidate_id}")
         current_status = result.get("current_open_status", "unknown")
-        _validate_current_open_status(candidate_id, current_status, result.get("current_status_evidence"), task)
+        _validate_current_open_status(candidate_id, current_status, result.get("current_status_evidence"), task, evidence)
         decision = {
             "status": status,
             "run_id": run_id,
@@ -329,6 +366,52 @@ def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id:
         changed = True
     if changed:
         ledger["revision"] = int(ledger.get("revision", 0)) + 1
+    ledger["evidence_policy_version"] = EVIDENCE_POLICY_VERSION
+    return ledger
+
+
+def revalidate_terminal_reviews(ledger: dict[str, Any], run_id: str) -> dict[str, Any]:
+    """Re-check historical terminal reviews when restoring under a newer evidence policy."""
+    if int(ledger.get("evidence_policy_version", 0) or 0) >= EVIDENCE_POLICY_VERSION:
+        return ledger
+    demotions = []
+    for candidate_id, task in ledger.get("tasks", {}).items():
+        status = task.get("status")
+        if status not in TERMINAL_STATUSES:
+            continue
+        history = task.get("review_history", [])
+        latest = history[-1] if history and history[-1].get("status") == status else None
+        finding = latest.get("finding", {}) if latest else {}
+        reconstructed = {
+            **finding,
+            "candidate_id": candidate_id,
+            "candidate_fingerprint": task.get("content_fingerprint"),
+            "status": status,
+            "decision_scope": finding.get("decision_scope", status),
+            "duplicate_of": latest.get("duplicate_of") if latest else None,
+            "content_verification": finding.get("content_verification"),
+            "reviewer": latest.get("reviewer") if latest else None,
+            "reviewed_at": latest.get("reviewed_at") if latest else None,
+            "evidence": latest.get("evidence", []) if latest else [],
+            "current_open_status": finding.get("current_open_status", "unknown"),
+            "current_status_evidence": finding.get("current_status_evidence"),
+        }
+        try:
+            apply_reviews(ledger, [reconstructed], run_id)
+        except (TypeError, ValueError) as error:
+            demotions.append({
+                "candidate_id": candidate_id,
+                "candidate_fingerprint": task.get("content_fingerprint"),
+                "status": "insufficient_evidence",
+                "reviewer": "terrafar-restore-policy-audit",
+                "reviewed_at": datetime.now().astimezone().isoformat(),
+                "evidence": latest.get("evidence", []) if latest else [],
+                "reason": f"Prior {status} review failed evidence policy v{EVIDENCE_POLICY_VERSION}: {error}",
+                "prior_review_event_id": latest.get("event_id") if latest else None,
+            })
+    if demotions:
+        apply_reviews(ledger, demotions, run_id)
+    ledger["evidence_policy_version"] = EVIDENCE_POLICY_VERSION
     return ledger
 
 
@@ -349,7 +432,7 @@ def export_agent_batch(ledger: dict[str, Any], limit: int = 10, agent: str | Non
             "skill": {"name": "terrafar-source-audit", "path": str(SKILL_PATH.relative_to(SKILL_PATH.parents[3])),
                       "sha256": hashlib.sha256(SKILL_PATH.read_bytes()).hexdigest()},
             "instruction": "Use the pinned Skill above; distinguish page content, application route, and current open status; preserve unknowns; do not write formal site data. A future deadline or a page listing is not evidence of current portal acceptance.",
-            "result_schema": {"candidate_id": "stable ledger id", "status": "verified|excluded|duplicate|verification_failed|insufficient_evidence", "decision_scope": "page_content for verified; excluded or duplicate for those conclusions", "content_verification": {"status": "verified", "evidence": "same cited items that support inspected page content; each structured evidence item must include field=application_route|deadline|funding|eligibility"}, "reviewer": "actual agent name; required, never inferred", "reviewed_at": "UTC ISO-8601", "evidence": [{"url": "official candidate or source page", "claim": "one specific supported claim", "locator": "visible heading, field, or page lines", "evidence_note": "paraphrase; do not label as a direct quote"}], "application_route": "verified_as_stated or unknown, with its own evidence", "current_open_status": "unknown unless the official application portal explicitly confirms acceptance or closure; a deadline or listing label is insufficient", "current_status_evidence": {"scope": "application_portal", "status": "open|closed", "claim": {"open": "official application portal explicitly confirms applications are currently being accepted", "closed": "official application portal explicitly confirms applications are no longer being accepted"}, "url": "candidate page", "locator": "portal status element"}, "duplicate_of": "required only for duplicate", "reason": "optional", "finding": "structured field findings; unknowns remain null/unknown"}}
+            "result_schema": {"candidate_id": "stable ledger id", "candidate_fingerprint": "copy the assigned task content_fingerprint; stale results are rejected after content changes", "status": "verified|excluded|duplicate|verification_failed|insufficient_evidence", "decision_scope": "page_content for verified; excluded or duplicate for those conclusions", "content_verification": {"status": "verified", "evidence": "same cited items that support inspected page content; each structured evidence item must include field=application_route|deadline|funding|eligibility"}, "reviewer": "actual agent name; required, never inferred", "reviewed_at": "UTC ISO-8601", "evidence": [{"url": "official candidate or source page", "claim": "one specific supported claim", "locator": "visible heading, field, or page lines", "evidence_note": "paraphrase; do not label as a direct quote"}], "application_route": "verified_as_stated or unknown, with its own evidence and nonempty value", "current_open_status": "unknown unless the official application portal explicitly confirms acceptance or closure; a future deadline or listing label is insufficient", "current_status_evidence": {"scope": "application_portal", "status": "open|closed", "claim": {"open": "official application portal explicitly confirms applications are currently being accepted", "closed": "official application portal explicitly confirms applications are no longer being accepted"}, "url": "candidate page", "locator": "portal status element"}, "duplicate_of": "required existing stable candidate id only for duplicate", "reason": "optional", "finding": "structured field findings; unknowns remain null/unknown"}}
 
 
 def queue_jsonl(path: Path, tasks: list[dict[str, Any]]) -> None:
@@ -386,6 +469,7 @@ def main() -> None:
             raise ValueError("candidate_review_results_must_be_a_json_array")
         with ledger_lock(ledger_path):
             ledger = load_ledger(ledger_path, require_existing=True)
+            revalidate_terminal_reviews(ledger, f"agent-merge-policy-{args.run_id}")
             apply_reviews(ledger, rows, args.run_id)
             save_ledger(ledger_path, ledger)
         print(json.dumps({"merged": len(rows), "open_tasks": len(open_tasks(ledger)), "ledger_revision": ledger["revision"]}))

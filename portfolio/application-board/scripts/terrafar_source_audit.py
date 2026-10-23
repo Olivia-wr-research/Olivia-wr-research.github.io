@@ -521,6 +521,7 @@ def run(args):
  observations=build_candidate_observations(sources,state,results)
  with candidate_ledger.ledger_lock(ledger_path):
   ledger=candidate_ledger.load_ledger(ledger_path,require_existing=getattr(args,'require_candidate_ledger',False))
+  candidate_ledger.revalidate_terminal_reviews(ledger,f"source-audit-policy-{run_id}")
   candidate_ledger.merge_observations(ledger,observations,run_id)
   candidate_ledger.save_ledger(ledger_path,ledger)
  queue=candidate_ledger.open_tasks(ledger)

@@ -448,30 +448,76 @@ print(json.dumps({'outcome':result['outcome'],'baseline_available':result['basel
         candidate_ledger.migrate_legacy_queue(ledger,rows,{'test-source':source},'migration-run')
         self.assertEqual(len(ledger['tasks']),60)
 
+    def test_restore_policy_reaudit_demotes_unsupported_old_terminal_review_without_erasing_history(self):
+        observation={'source_id':'s','endpoint_id':'s:list','candidate_key':'job-old','candidate_url':'https://jobs.example/job-old','source_url':'https://jobs.example/list','candidate':{'id':'job-old'},'retrieved_at':'2026-01-01T00:00:00Z'}
+        ledger=candidate_ledger.empty_ledger()
+        candidate_ledger.merge_observations(ledger,[observation],'run-1')
+        candidate_id=next(iter(ledger['tasks']))
+        bad_evidence=[{'url':'https://jobs.example/job-old','claim':'detail page identifies job-old','locator':'Title field'}]
+        ledger['tasks'][candidate_id]['status']='verified'
+        ledger['tasks'][candidate_id]['review_history']=[{'event_id':'old-event','status':'verified','run_id':'old-run','reviewer':'legacy-reviewer','reviewed_at':'2026-01-02T00:00:00Z','evidence':bad_evidence,'finding':{'decision_scope':'page_content','content_verification':{'status':'verified','evidence':bad_evidence},'current_open_status':'unknown'}}]
+        ledger.pop('evidence_policy_version')
+        candidate_ledger.revalidate_terminal_reviews(ledger,'restore-run-2')
+        self.assertEqual(ledger['tasks'][candidate_id]['status'],'insufficient_evidence')
+        self.assertEqual(len(ledger['tasks'][candidate_id]['review_history']),2)
+        self.assertEqual(ledger['tasks'][candidate_id]['review_history'][0]['status'],'verified')
+        self.assertEqual(ledger['tasks'][candidate_id]['review_history'][1]['status'],'insufficient_evidence')
+        self.assertEqual(ledger['evidence_policy_version'],candidate_ledger.EVIDENCE_POLICY_VERSION)
+
+    def test_restore_policy_reaudits_exclusions_and_duplicate_targets(self):
+        observations=[{'source_id':'s','endpoint_id':'s:list','candidate_key':key,'candidate_url':f'https://jobs.example/{key}','source_url':'https://jobs.example/list','candidate':{'id':key},'retrieved_at':'2026-01-01T00:00:00Z'} for key in ('excluded','duplicate')]
+        ledger=candidate_ledger.empty_ledger()
+        candidate_ledger.merge_observations(ledger,observations,'run-1')
+        ids={task['candidate_key']:candidate_id for candidate_id,task in ledger['tasks'].items()}
+        ledger['tasks'][ids['excluded']]['status']='excluded'
+        ledger['tasks'][ids['excluded']]['review_history']=[{'status':'excluded','reviewer':'legacy-reviewer','reviewed_at':'2026-01-02T00:00:00Z','evidence':[],'finding':{'decision_scope':'excluded'}}]
+        ledger['tasks'][ids['duplicate']]['status']='duplicate'
+        ledger['tasks'][ids['duplicate']]['review_history']=[{'status':'duplicate','reviewer':'legacy-reviewer','reviewed_at':'2026-01-02T00:00:00Z','duplicate_of':'missing-target','evidence':[{'url':'https://jobs.example/duplicate','claim':'Duplicate notice','locator':'Duplicate field'}],'finding':{'decision_scope':'duplicate'}}]
+        ledger.pop('evidence_policy_version')
+        candidate_ledger.revalidate_terminal_reviews(ledger,'restore-run-2')
+        self.assertEqual(ledger['tasks'][ids['excluded']]['status'],'insufficient_evidence')
+        self.assertEqual(ledger['tasks'][ids['duplicate']]['status'],'insufficient_evidence')
+        self.assertEqual(len(ledger['tasks'][ids['excluded']]['review_history']),2)
+        self.assertEqual(len(ledger['tasks'][ids['duplicate']]['review_history']),2)
+
     def test_candidate_review_requires_evidence_and_terminal_conclusions_keep_history(self):
         observation={'source_id':'s','endpoint_id':'s:list','candidate_key':'job-1','candidate_url':'https://jobs.example/job-1','source_url':'https://jobs.example/list','candidate':{'id':'job-1'},'retrieved_at':'2026-01-01T00:00:00Z'}
         ledger=candidate_ledger.empty_ledger()
         candidate_ledger.merge_observations(ledger,[observation],'run-1')
         candidate_id=next(iter(ledger['tasks']))
+        candidate_fingerprint=ledger['tasks'][candidate_id]['content_fingerprint']
         with self.assertRaisesRegex(ValueError,'requires_evidence'):
-            candidate_ledger.apply_reviews(ledger,[{'candidate_id':candidate_id,'status':'verified','evidence':[]}],'review-1')
-        insufficient={'candidate_id':candidate_id,'status':'insufficient_evidence','reviewer':'audit_reviewer','reviewed_at':'2026-01-02T00:00:00Z','evidence':[]}
+            candidate_ledger.apply_reviews(ledger,[{'candidate_id':candidate_id,'candidate_fingerprint':candidate_fingerprint,'status':'verified','reviewer':'audit_reviewer','reviewed_at':'2026-01-02T00:00:00Z','evidence':[]}],'review-1')
+        insufficient={'candidate_id':candidate_id,'candidate_fingerprint':candidate_fingerprint,'status':'insufficient_evidence','reviewer':'audit_reviewer','reviewed_at':'2026-01-02T00:00:00Z','evidence':[]}
         candidate_ledger.apply_reviews(ledger,[insufficient],'review-1')
+        missing_failure_identity={**insufficient}
+        missing_failure_identity.pop('reviewer')
+        with self.assertRaisesRegex(ValueError,'requires_reviewer_and_time'):
+            candidate_ledger.apply_reviews(ledger,[missing_failure_identity],'review-missing-failure-identity')
         self.assertEqual(candidate_ledger.open_tasks(ledger)[0]['status'],'insufficient_evidence')
         evidence=[
-            {'field':'application_route','url':'https://jobs.example/job-1','claim':'application route states online portal','locator':'Application route'},
+            {'field':'application_route','url':'https://jobs.example/job-1','claim':'application_route is stated as Online application portal','locator':'Application route'},
             {'field':'deadline','url':'https://jobs.example/job-1','claim':'deadline is stated as 2026-02-01','locator':'Deadline field'},
             {'field':'funding','url':'https://jobs.example/job-1','claim':'funding is stated as salaried doctoral position','locator':'Funding field'},
             {'field':'eligibility','url':'https://jobs.example/job-1','claim':'eligibility is stated as relevant masters degree','locator':'Requirements field'},
         ]
-        verified={'candidate_id':candidate_id,'status':'verified','decision_scope':'page_content','content_verification':{'status':'verified','evidence':evidence},'reviewer':'opportunity_verifier','reviewed_at':'2026-01-03T00:00:00Z','evidence':evidence,'current_open_status':'unknown',
-                  'application_route':{'status':'verified_as_stated','evidence_url':'https://jobs.example/job-1','locator':'Application route'},
+        verified={'candidate_id':candidate_id,'candidate_fingerprint':candidate_fingerprint,'status':'verified','decision_scope':'page_content','content_verification':{'status':'verified','evidence':evidence},'reviewer':'opportunity_verifier','reviewed_at':'2026-01-03T00:00:00Z','evidence':evidence,'current_open_status':'unknown',
+                  'application_route':{'status':'verified_as_stated','value':'Online application portal','evidence_url':'https://jobs.example/job-1','locator':'Application route'},
                   'deadline':{'status':'supported','value':'2026-02-01','evidence_url':'https://jobs.example/job-1','locator':'Deadline field'},
                   'funding':{'status':'supported','value':'salaried doctoral position','evidence_url':'https://jobs.example/job-1','locator':'Funding field'},
                   'eligibility':{'status':'supported','value':'relevant masters degree','evidence_url':'https://jobs.example/job-1','locator':'Requirements field'}}
         sparse={**verified,'content_verification':{'status':'verified','evidence':[{'url':'https://jobs.example/job-1','claim':'detail page identifies job-1','locator':'Title field'}]},'evidence':[{'url':'https://jobs.example/job-1','claim':'detail page identifies job-1','locator':'Title field'}]}
         with self.assertRaisesRegex(ValueError,'missing_field_evidence'):
             candidate_ledger.apply_reviews(ledger,[sparse],'review-sparse')
+        wrong_value={**verified,'deadline':{**verified['deadline'],'value':'2099-12-31'}}
+        with self.assertRaisesRegex(ValueError,'missing_field_evidence:.*deadline'):
+            candidate_ledger.apply_reviews(ledger,[wrong_value],'review-wrong-value')
+        wrong_reviewer={**verified,'reviewer':42}
+        with self.assertRaisesRegex(ValueError,'requires_reviewer_and_time'):
+            candidate_ledger.apply_reviews(ledger,[wrong_reviewer],'review-wrong-reviewer')
+        wrong_time={**verified,'reviewed_at':'not-a-timestamp'}
+        with self.assertRaisesRegex(ValueError,'timestamp_invalid'):
+            candidate_ledger.apply_reviews(ledger,[wrong_time],'review-wrong-time')
         candidate_ledger.apply_reviews(ledger,[verified],'review-2')
         candidate_ledger.apply_reviews(ledger,[verified],'review-2-replayed-in-another-run')
         self.assertEqual(ledger['tasks'][candidate_id]['status'],'verified')
@@ -482,6 +528,21 @@ print(json.dumps({'outcome':result['outcome'],'baseline_available':result['basel
         self.assertEqual(ledger['tasks'][candidate_id]['status'],'pending')
         self.assertEqual(len(ledger['tasks'][candidate_id]['content_versions']),2)
         self.assertEqual(len(ledger['tasks'][candidate_id]['review_history']),2)
+        with self.assertRaisesRegex(ValueError,'content_fingerprint_mismatch'):
+            candidate_ledger.apply_reviews(ledger,[verified],'stale-review-after-change')
+        self.assertEqual(ledger['tasks'][candidate_id]['status'],'pending')
+
+    def test_duplicate_conclusion_requires_existing_stable_target(self):
+        observations=[{'source_id':'s','endpoint_id':'s:list','candidate_key':key,'candidate_url':f'https://jobs.example/{key}','source_url':'https://jobs.example/list','candidate':{'id':key},'retrieved_at':'2026-01-01T00:00:00Z'} for key in ('job-1','job-2')]
+        ledger=candidate_ledger.empty_ledger()
+        candidate_ledger.merge_observations(ledger,observations,'run-1')
+        first,second=ledger['tasks'].values()
+        result={'candidate_id':first['candidate_id'],'candidate_fingerprint':first['content_fingerprint'],'status':'duplicate','decision_scope':'duplicate','duplicate_of':'missing-stable-id','reviewer':'audit_reviewer','reviewed_at':'2026-01-02T00:00:00Z','evidence':[{'url':first['candidate_url'],'claim':'Same role identifier as another record','locator':'Role identifier'}]}
+        with self.assertRaisesRegex(ValueError,'duplicate_candidate_review_missing_or_invalid_target'):
+            candidate_ledger.apply_reviews(ledger,[result],'review-duplicate-invalid')
+        result['duplicate_of']=second['candidate_id']
+        candidate_ledger.apply_reviews(ledger,[result],'review-duplicate-valid')
+        self.assertEqual(ledger['tasks'][first['candidate_id']]['status'],'duplicate')
 
     def test_candidate_ledger_survives_restart_interruption_and_disjoint_review_merges(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -495,8 +556,9 @@ print(json.dumps({'outcome':result['outcome'],'baseline_available':result['basel
             self.assertLessEqual(batch['candidate_count'],10)
             before_interrupted_write=candidate_ledger.load_ledger(ledger_path,require_existing=True)
             candidate_id=batch['candidate_ids'][0]
+            candidate_fingerprint=before_interrupted_write['tasks'][candidate_id]['content_fingerprint']
             evidence=[{'field':'deadline','url':'https://jobs.example/1','claim':'deadline is stated as 2026-02-01','locator':'Deadline field'}]
-            result={'candidate_id':candidate_id,'status':'verified','decision_scope':'page_content','content_verification':{'status':'verified','evidence':evidence},'reviewer':'agent','reviewed_at':'2026-01-02T00:00:00Z','evidence':evidence,'deadline':{'status':'supported','value':'2026-02-01','evidence_url':'https://jobs.example/1','locator':'Deadline field'}}
+            result={'candidate_id':candidate_id,'candidate_fingerprint':candidate_fingerprint,'status':'verified','decision_scope':'page_content','content_verification':{'status':'verified','evidence':evidence},'reviewer':'agent','reviewed_at':'2026-01-02T00:00:00Z','evidence':evidence,'deadline':{'status':'supported','value':'2026-02-01','evidence_url':'https://jobs.example/1','locator':'Deadline field'}}
             candidate_ledger.apply_reviews(before_interrupted_write,[result],'review-1')
             restored_after_interrupt=candidate_ledger.load_ledger(ledger_path,require_existing=True)
             self.assertEqual(len(candidate_ledger.open_tasks(restored_after_interrupt)),2)
@@ -521,8 +583,9 @@ print(json.dumps({'outcome':result['outcome'],'baseline_available':result['basel
             def merge_one(candidate_id):
                 try:
                     candidate_url=ledger['tasks'][candidate_id]['candidate_url']
+                    candidate_fingerprint=ledger['tasks'][candidate_id]['content_fingerprint']
                     evidence=[{'field':'deadline','url':candidate_url,'claim':'deadline is stated as 2026-02-01','locator':'Deadline field'}]
-                    result={'candidate_id':candidate_id,'status':'verified','decision_scope':'page_content','content_verification':{'status':'verified','evidence':evidence},'reviewer':'opportunity_verifier','reviewed_at':'2026-01-02T00:00:00Z','evidence':evidence,'deadline':{'status':'supported','value':'2026-02-01','evidence_url':candidate_url,'locator':'Deadline field'}}
+                    result={'candidate_id':candidate_id,'candidate_fingerprint':candidate_fingerprint,'status':'verified','decision_scope':'page_content','content_verification':{'status':'verified','evidence':evidence},'reviewer':'opportunity_verifier','reviewed_at':'2026-01-02T00:00:00Z','evidence':evidence,'deadline':{'status':'supported','value':'2026-02-01','evidence_url':candidate_url,'locator':'Deadline field'}}
                     barrier.wait()
                     with candidate_ledger.ledger_lock(ledger_path):
                         current=candidate_ledger.load_ledger(ledger_path,require_existing=True)
@@ -599,8 +662,9 @@ print(json.dumps({'outcome':result['outcome'],'baseline_available':result['basel
         ledger=candidate_ledger.empty_ledger()
         candidate_ledger.merge_observations(ledger,[observation],'run-1')
         candidate_id=next(iter(ledger['tasks']))
+        candidate_fingerprint=ledger['tasks'][candidate_id]['content_fingerprint']
         evidence=[{'url':'https://jobs.example/job-1','claim':'detail page identifies job-1','locator':'Title field'}]
-        result={'candidate_id':candidate_id,'status':'insufficient_evidence','reviewer':'opportunity_verifier','reviewed_at':'2026-01-02T00:00:00Z','evidence':evidence,'current_open_status':'open_per_page'}
+        result={'candidate_id':candidate_id,'candidate_fingerprint':candidate_fingerprint,'status':'insufficient_evidence','reviewer':'opportunity_verifier','reviewed_at':'2026-01-02T00:00:00Z','evidence':evidence,'current_open_status':'open_per_page'}
         with self.assertRaisesRegex(ValueError,'current_status_value_not_allowed'):
             candidate_ledger.apply_reviews(ledger,[result],'review-1')
         result['current_open_status']='open'
@@ -608,6 +672,10 @@ print(json.dumps({'outcome':result['outcome'],'baseline_available':result['basel
         with self.assertRaisesRegex(ValueError,'explicit_portal_acceptance_evidence'):
             candidate_ledger.apply_reviews(ledger,[result],'review-deadline')
         result['current_status_evidence']['claim']=candidate_ledger.CURRENT_STATUS_CLAIMS['open']
+        with self.assertRaisesRegex(ValueError,'explicit_portal_acceptance_evidence'):
+            candidate_ledger.apply_reviews(ledger,[result],'review-unlinked-status')
+        result['current_status_evidence']['locator']='Application portal status'
+        result['evidence'].append({'field':'current_open_status','url':'https://jobs.example/job-1','claim':candidate_ledger.CURRENT_STATUS_CLAIMS['open'],'locator':'Application portal status'})
         candidate_ledger.apply_reviews(ledger,[result],'review-live-portal')
 
     def test_sample_adapter_catalog_is_additive_and_completeness_fails_closed(self):
