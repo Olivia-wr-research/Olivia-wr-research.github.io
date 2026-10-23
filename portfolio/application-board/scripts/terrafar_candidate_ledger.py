@@ -8,7 +8,7 @@ import fcntl
 import hashlib
 import json
 import re
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -278,6 +278,8 @@ def _validate_review_timestamp_and_identity(candidate_id: str, reviewer: Any, re
         raise ValueError(f"terminal_candidate_review_timestamp_invalid:{candidate_id}") from error
     if parsed.tzinfo is None:
         raise ValueError(f"terminal_candidate_review_timestamp_must_include_timezone:{candidate_id}")
+    if parsed.utcoffset().total_seconds() != 0:
+        raise ValueError(f"terminal_candidate_review_timestamp_must_be_utc:{candidate_id}")
 
 
 def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id: str) -> dict[str, Any]:
@@ -404,7 +406,7 @@ def revalidate_terminal_reviews(ledger: dict[str, Any], run_id: str) -> dict[str
                 "candidate_fingerprint": task.get("content_fingerprint"),
                 "status": "insufficient_evidence",
                 "reviewer": "terrafar-restore-policy-audit",
-                "reviewed_at": datetime.now().astimezone().isoformat(),
+                "reviewed_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
                 "evidence": latest.get("evidence", []) if latest else [],
                 "reason": f"Prior {status} review failed evidence policy v{EVIDENCE_POLICY_VERSION}: {error}",
                 "prior_review_event_id": latest.get("event_id") if latest else None,

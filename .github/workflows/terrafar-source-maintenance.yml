@@ -200,6 +200,10 @@ jobs:
         with:
           name: terrafar-source-maintenance-failure-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
+            /tmp/terrafar-source-maintenance-${{ github.run_id }}/state.json
+            /tmp/terrafar-source-maintenance-${{ github.run_id }}/candidate_ledger.json
+            /tmp/terrafar-source-maintenance-${{ github.run_id }}/restore_verification.json
+            /tmp/terrafar-source-maintenance-${{ github.run_id }}/agent_batch.json
             portfolio/application-board/maintenance/terrafar-source-audit/runs/terrafar-maintenance-${{ github.run_id }}-${{ github.run_attempt }}/manifest.json
             portfolio/application-board/maintenance/terrafar-source-audit/runs/terrafar-maintenance-${{ github.run_id }}-${{ github.run_attempt }}/source_checks.jsonl
             portfolio/application-board/maintenance/terrafar-source-audit/runs/terrafar-maintenance-${{ github.run_id }}-${{ github.run_attempt }}/daily_report.json

@@ -144,9 +144,16 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
                 reviewer = fact.get("verifier")
                 if not isinstance(reviewer, str) or not reviewer.strip() or reviewer.strip().lower() == "unknown":
                     raise ValueError(f"bootstrap_review_result_reviewer_missing:{candidate_id}")
-                review_status = fact.get("ledger_review_status", "verified" if content.get("status") == "verified" else "insufficient_evidence")
-                if review_status not in {"verified", "insufficient_evidence", "verification_failed", "excluded", "duplicate"}:
+                claimed_review_status = fact.get("ledger_review_status", "verified" if content.get("status") == "verified" else "insufficient_evidence")
+                if claimed_review_status not in {"verified", "insufficient_evidence", "verification_failed", "excluded", "duplicate"}:
                     raise ValueError(f"bootstrap_review_result_status_invalid:{candidate_id}")
+                bound_to_migrated_content = fact.get("candidate_fingerprint") == task.get("content_fingerprint")
+                review_status = claimed_review_status
+                reason = fact.get("reason")
+                if claimed_review_status in {"verified", "excluded", "duplicate"} and not bound_to_migrated_content:
+                    review_status = "insufficient_evidence"
+                    reason = ("Legacy review retained as history but not marked processed: it has no candidate_fingerprint "
+                              "bound to the migrated candidate content version.")
                 reviews.append({
                     "candidate_id": candidate_id,
                     "candidate_fingerprint": task.get("content_fingerprint"),
@@ -156,6 +163,8 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
                     "reviewer": reviewer,
                     "reviewed_at": fact.get("verified_at"),
                     "evidence": evidence,
+                    "reason": reason,
+                    "legacy_claimed_status": claimed_review_status,
                     "current_open_status": fact.get("current_open_status", "unknown"),
                     "application_route": fact.get("application_route", {"status": "unknown"}),
                     "deadline": fact.get("deadline", {"status": "unknown", "value": None}),

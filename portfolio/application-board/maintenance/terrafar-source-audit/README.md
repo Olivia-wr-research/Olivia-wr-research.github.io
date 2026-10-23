@@ -31,7 +31,7 @@ The candidate ledger uses stable IDs derived from source ID, endpoint ID, and ca
 
 An agent handoff is exported from the durable ledger in batches of at most ten with the pinned `terrafar-source-audit` Skill hash and a structured result schema. `merge-results` validates stable task identity, assignment, duplicates, terminal evidence, and duplicate targets before saving decisions. An authorized structured result can be passed to manual Actions through `review_results_path`; the workflow validates and merges it before the next source run. GitHub Actions does not start Codex agents, so daily automatic agent execution remains unconfigured.
 
-Each run writes a manifest with the exact source plan, registry and adapter-catalog hashes, one result per planned source ID, endpoint outcomes, logs, candidate queue, and daily report. Cross-run restore requires a successful unexpired artifact, distinct Actions run IDs, matching hashes and supported schema versions. Missing, expired, corrupt, or incompatible state stops the run; it does not create an empty baseline.
+Each run writes a manifest with the exact source plan, registry and adapter-catalog hashes, one result per planned source ID, endpoint outcomes, logs, candidate queue, and daily report. Cross-run restore requires a successful unexpired artifact, distinct Actions run IDs, matching hashes and supported schema versions. Failure artifacts also retain the restored state and candidate ledger for recovery review; the next automatic attempt uses the latest successful artifact and unchanged rotation cursor, so the bounded source batch is retried instead of skipped. Missing, expired, corrupt, or incompatible state stops the run; it does not create an empty baseline.
 
 ## Daily GitHub Actions schedule
 

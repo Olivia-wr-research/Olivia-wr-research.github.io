@@ -518,6 +518,9 @@ print(json.dumps({'outcome':result['outcome'],'baseline_available':result['basel
         wrong_time={**verified,'reviewed_at':'not-a-timestamp'}
         with self.assertRaisesRegex(ValueError,'timestamp_invalid'):
             candidate_ledger.apply_reviews(ledger,[wrong_time],'review-wrong-time')
+        non_utc_time={**verified,'reviewed_at':'2026-01-03T08:00:00+08:00'}
+        with self.assertRaisesRegex(ValueError,'must_be_utc'):
+            candidate_ledger.apply_reviews(ledger,[non_utc_time],'review-non-utc-time')
         candidate_ledger.apply_reviews(ledger,[verified],'review-2')
         candidate_ledger.apply_reviews(ledger,[verified],'review-2-replayed-in-another-run')
         self.assertEqual(ledger['tasks'][candidate_id]['status'],'verified')
@@ -620,13 +623,14 @@ print(json.dumps({'outcome':result['outcome'],'baseline_available':result['basel
             candidate_id=candidate_ledger.stable_candidate_id('eth-doctoral-listing','eth-doctoral-listing:primary',row['candidate_key'])
             evidence=[{'url':row['candidate_url'],'claim':'detail page identifies Example PhD','locator':'Title field'}]
             review_file=base/'agent-review.json'
-            review_file.write_text(json.dumps([{'candidate_id':candidate_id,'source_id':'eth-doctoral-listing','endpoint_id':'eth-doctoral-listing:primary','candidate_key':row['candidate_key'],'candidate_url':row['candidate_url'],'ledger_review_status':'insufficient_evidence','content_verification':{'status':'insufficient_evidence','evidence':evidence},'application_route':{'status':'unknown'},'current_open_status':'unknown','verifier':'opportunity_verifier','verified_at':'2026-10-23T00:30:00Z'}]),encoding='utf-8')
+            review_file.write_text(json.dumps([{'candidate_id':candidate_id,'source_id':'eth-doctoral-listing','endpoint_id':'eth-doctoral-listing:primary','candidate_key':row['candidate_key'],'candidate_url':row['candidate_url'],'ledger_review_status':'verified','content_verification':{'status':'verified','evidence':evidence},'application_route':{'status':'unknown'},'current_open_status':'unknown','verifier':'opportunity_verifier','verified_at':'2026-10-23T00:30:00Z'}]),encoding='utf-8')
             first=restore_run_state.restore(legacy,destination1,'1001','1002',registry.REGISTRY,allow_legacy=True,review_results_path=review_file)
             self.assertTrue(first['candidate_ledger_migrated_from_legacy_queue'])
             self.assertEqual(first['candidate_task_count'],1)
             restored_ledger=candidate_ledger.load_ledger(destination1/'candidate_ledger.json',require_existing=True)
             self.assertEqual(restored_ledger['tasks'][candidate_id]['status'],'insufficient_evidence')
             self.assertEqual(restored_ledger['tasks'][candidate_id]['review_history'][0]['finding']['current_open_status'],'unknown')
+            self.assertIn('no candidate_fingerprint',restored_ledger['tasks'][candidate_id]['review_history'][0]['reason'])
             wrong_identity=json.loads(review_file.read_text())
             wrong_identity[0]['source_id']='another-source'
             wrong_file=base/'wrong-agent-review.json'
