@@ -1,5 +1,5 @@
-Warning: truncated output (original token count: 3200)
-Total output lines: 222
+Warning: truncated output (original token count: 3223)
+Total output lines: 225
 
 name: TERRAFAR read-only source maintenance
 
@@ -62,7 +62,7 @@ jobs:
         id: source-run
         env:
           GH_TOKEN: ${{ github.token }}
-          BOOTSTRAP_RUN_ID: ${{ inputs.restore_run_id || (github.event_name == 'push' && '39906914090' || '') }}
+          BOOTSTRAP_RUN_ID: ${{ inputs.restore_run_id }}
         shell: bash
         run: |
           set -euo pipefail
@@ -71,6 +71,9 @@ jobs:
           bootstrap=false
           if [[ -z "$restore_run_id" && -n "$BOOTSTRAP_RUN_ID" ]]; then
             restore_run_id="$BOOTSTRAP_RUN_ID"
+            bootstrap=true
+          elif [[ -z "$restore_run_id" && "$GITHUB_EVENT_NAME" == push ]]; then
+            restore_run_id=39906914090
             bootstrap=true
           fi
           if [[ -z "$restore_run_id" ]]; then
@@ -103,8 +106,7 @@ jobs:
         run: |
           set -euo pipefail
           args=(--artifact-dir "$RUNNER_TEMP/terrafar-restore-artifact" --destination "$STATE_DIR" \
-                --origin-actions-run-id "$ORIGIN_ACTIONS_RUN_ID" --current-actions-run-id "$CURRENT_ACTIONS_RUN_ID" \
-                --registry m…700 tokens truncated…  run: |
+                --origin-actions-run-id "$ORIGIN_ACTIONS…723 tokens truncated…  run: |
           set -euo pipefail
           export_dir="$RUNNER_TEMP/terrafar-source-maintenance-export"
           run_dir="maintenance/terrafar-source-audit/runs/$TERRAFAR_RUN_ID"
