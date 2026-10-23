@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 12933)
-Total output lines: 959
-
 [
   {
     "candidate_id": "tcand-00c8ec494a5073e191ea33a5",
@@ -461,7 +458,68 @@ Total output lines: 959
         {
           "field": "application_route",
           "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
-          "claim": "application_route: The official page s…933 tokens truncated… applications are not considered.",
+          "claim": "application_route: The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+          "locator": "Application instructions",
+          "evidence_note": "The official instructions name the online portal as the exclusive route."
+        },
+        {
+          "field": "deadline",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+          "claim": "deadline: 2026-11-22",
+          "locator": "Application timeline",
+          "evidence_note": "The page says applications are accepted until November 22, 2026; no time or timezone is specified."
+        },
+        {
+          "field": "funding",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+          "claim": "funding: Fully funded for four years according to ETH Zurich doctoral salary conditions; salary amount is not stated.",
+          "locator": "Opening paragraph and We offer",
+          "evidence_note": "The official page states four years of full funding under ETH doctoral salary conditions."
+        },
+        {
+          "field": "eligibility",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+          "claim": "eligibility: MSc in architecture, history of art, social history, or closely related humanities fields, completed by the start; English plus the language relevant to the selected country case study: French, German plus French and/or Italian, or Swedish.",
+          "locator": "Profile",
+          "evidence_note": "The profile states degree timing and country-specific language requirements."
+        }
+      ]
+    },
+    "reviewer": "opportunity_verifier",
+    "reviewed_at": "2026-10-23T11:17:07Z",
+    "evidence": [
+      {
+        "field": "application_route",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+        "claim": "application_route: The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
+        "locator": "Application instructions",
+        "evidence_note": "The official instructions name the online portal as the exclusive route."
+      },
+      {
+        "field": "deadline",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+        "claim": "deadline: 2026-11-22",
+        "locator": "Application timeline",
+        "evidence_note": "The page says applications are accepted until November 22, 2026; no time or timezone is specified."
+      },
+      {
+        "field": "funding",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+        "claim": "funding: Fully funded for four years according to ETH Zurich doctoral salary conditions; salary amount is not stated.",
+        "locator": "Opening paragraph and We offer",
+        "evidence_note": "The official page states four years of full funding under ETH doctoral salary conditions."
+      },
+      {
+        "field": "eligibility",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+        "claim": "eligibility: MSc in architecture, history of art, social history, or closely related humanities fields, completed by the start; English plus the language relevant to the selected country case study: French, German plus French and/or Italian, or Swedish.",
+        "locator": "Profile",
+        "evidence_note": "The profile states degree timing and country-specific language requirements."
+      }
+    ],
+    "application_route": {
+      "status": "verified_as_stated",
+      "value": "The official page states that applications must be submitted through ETH’s online application portal; email and postal applications are not considered.",
       "portal_live_acceptance": "unknown",
       "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
       "locator": "Application instructions"
