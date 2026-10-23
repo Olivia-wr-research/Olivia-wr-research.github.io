@@ -4,8 +4,11 @@ from __future__ import annotations
 import argparse, concurrent.futures, datetime as dt, hashlib, html, http.client, ipaddress, json, os, re, socket, ssl, threading, time, uuid
 from collections import Counter, defaultdict
 from pathlib import Path
-from urllib.parse import urljoin, urlsplit
+from urllib.parse import parse_qs, urljoin, urlsplit
 from urllib.request import getproxies
+
+import terrafar_candidate_ledger as candidate_ledger
+import terrafar_source_adapters as source_adapters
 
 ROOT=Path(__file__).resolve().parents[3]
 APP=ROOT/'portfolio/application-board'; MAINT=APP/'maintenance/terrafar-source-audit'
@@ -248,10 +251,20 @@ def semantic_result(adapter,url,body):
   rows=import_eth.parse_listing(text)
   structural=('job-ad__item__link' in text) or bool(re.search(r'no (open )?positions|no vacancies|no jobs found',text,re.I))
   if not structural: raise ValueError('listing_structure_not_confirmed')
-  has_next=bool(re.search(r'(?:rel=["\']next["\']|class=["\'][^"\']*pagination|[?&]page=\d+|aria-label=["\']next)',text,re.I))
+  cards=re.findall(r'<a\b[^>]*class=["\'][^"\']*job-ad__item__link[^"\']*["\'][\s\S]*?</a>',text,re.I)
+  visible=html.unescape(re.sub(r'<[^>]+>',' ',text))
+  total_match=re.search(r'\b(\d+)\s+(?:open\s+)?(?:positions?|jobs?|vacancies|vacancy|results?)\b',visible,re.I)
+  total=int(total_match.group(1)) if total_match else None
+  query=parse_qs(urlsplit(url).query)
+  current_page=int(query.get('page',['1'])[0]) if query.get('page',['1'])[0].isdigit() else 1
+  linked_pages=[int(value) for value in re.findall(r'<a\b[^>]*href=["\'][^"\']*[?&]page=(\d+)[^"\']*["\']',text,re.I)]
+  next_link=bool(re.search(r'<a\b[^>]*(?:rel=["\'][^"\']*next|aria-label=["\'][^"\']*next|class=["\'][^"\']*(?:next|pagination__next))',text,re.I)) or any(page>current_page for page in linked_pages)
+  parsed_count=len({item['url'] for item in rows})
+  all_cards=len(cards)
+  complete=total is not None and total==all_cards and not next_link
   normalized=[{'url':r['url'],'titleEn':r['titleEn'],'listingDetails':r.get('listingDetails','')} for r in rows]
-  return normalized,{'doctoral_records':len(rows),'_complete':not has_next,'pagination_detected':has_next}
- return None,None
+  return normalized,{'doctoral_records':parsed_count,'all_listing_cards_on_page':all_cards,'explicit_total':total,'_complete':complete,'pagination_detected':next_link or (total is not None and total>all_cards),'completeness_reason':'displayed total equals all parsed listing cards with no next link' if complete else 'explicit total or terminal-pagination proof missing'}
+ return source_adapters.semantic_result(adapter,url,body)
 
 def fetch_endpoint(url, timeout, rate, retries, conditional, cached):
  attempts=[]; last=None
@@ -286,8 +299,9 @@ def check_one(source, run_id, state, timeout, rate, retries):
  all_results=[]; candidates=0
  for endpoint in endpoints:
   url=endpoint['url']; adapter=endpoint.get('adapter') or source.get('adapter'); key=key_for(url,adapter)
-  cached=state.get('snapshots',{}).get(key)
-  transport_key=key_for(url,None); cached_transport=state.get('snapshots',{}).get(transport_key)
+  with state_guard:
+   cached=state.get('snapshots',{}).get(key)
+   transport_key=key_for(url,None); cached_transport=state.get('snapshots',{}).get(transport_key)
   conditional_state=cached if adapter else cached_transport
   f=fetch_endpoint(url,timeout,rate,retries,True,conditional_state)
   status=f['http_status']; body=f['body']; outcome='failed'; reason=f['reason'] or 'unknown'; complete=False; target=False; candidate_rows=None; scope=None
@@ -308,7 +322,8 @@ def check_one(source, run_id, state, timeout, rate, retries):
    block=sniff_block(body,status)
    if f.get('response_hash'):
     transport_changed=(cached_transport is not None and cached_transport.get('content_hash')!=f['response_hash'])
-    state.setdefault('snapshots',{})[transport_key]={'content_hash':f['response_hash'],'etag':f['etag'],'last_modified':f['last_modified'],'last_observed_at':now(),'url':url,'scope':'transport_only_not_semantic_success'}
+    with state_guard:
+     state.setdefault('snapshots',{})[transport_key]={'content_hash':f['response_hash'],'etag':f['etag'],'last_modified':f['last_modified'],'last_observed_at':now(),'url':url,'scope':'transport_only_not_semantic_success'}
    if block: outcome='blocked' if block in ('http_access_restricted','login_or_challenge_page','challenge_page') else 'failed'; reason=block
    elif adapter:
     try:
@@ -320,14 +335,15 @@ def check_one(source, run_id, state, timeout, rate, retries):
        outcome='checked_empty' if not candidate_rows else 'checked_unchanged'; reason='complete_adapter_scope_matches_successful_baseline'
       else: outcome='checked_changed'; reason='complete_adapter_scope_differs_from_successful_baseline'
      else: outcome='partial'; reason='complete_adapter_baseline_established_no_prior_comparison'; first_observed=True
-     state.setdefault('snapshots',{})[key]={'semantic_hash':sig,'semantic_rows':candidate_rows,'scope':scope,'content_hash':f['response_hash'],'etag':f['etag'],'last_modified':f['last_modified'],'last_success_at':now(),'adapter':adapter,'url':url}
+     with state_guard:
+      state.setdefault('snapshots',{})[key]={'semantic_hash':sig,'semantic_rows':candidate_rows,'scope':scope,'content_hash':f['response_hash'],'etag':f['etag'],'last_modified':f['last_modified'],'last_success_at':now(),'adapter':adapter,'url':url}
     except IncompleteScope as e:
      outcome='partial'; reason=str(e)
     except Exception as e:
      outcome='failed'; reason='adapter_parse_error:'+type(e).__name__+':'+str(e)[:240]
    else:
     outcome='needs_endpoint'; reason='page_retrieved_but_no_complete_opportunity_list_adapter';
-  result={'endpoint_id':endpoint.get('endpoint_id',f'{source["source_id"]}:primary'),'url':url,'adapter':adapter,'outcome':outcome,'attempted':any(a.get('request_sent',True) for a in f['attempts']) or outcome=='blocked','attempts':f['attempts'],'completed_at':now(),'http_status':status,'response_url':f.get('response_url'),'content_sha256':f.get('response_hash'),'transport_changed':transport_changed,'robots':f['robots'],'scope':scope or {'page_fetch_only':adapter is None},'target_validated':target,'content_complete':complete,'baseline_available':bool(cached and cached.get('semantic_hash')),'first_observed':first_observed,'candidate_count':len(candidate_rows) if candidate_rows is not None else 0,'reason':reason}
+  result={'endpoint_id':endpoint.get('endpoint_id',f'{source["source_id"]}:primary'),'url':url,'adapter':adapter,'outcome':outcome,'attempted':any(a.get('request_sent',True) for a in f['attempts']) or outcome=='blocked','attempts':f['attempts'],'completed_at':now(),'http_status':status,'response_url':f.get('response_url'),'content_sha256':f.get('response_hash'),'transport_changed':transport_changed,'robots':f['robots'],'scope':source_adapters.enrich_scope(endpoint,scope) or {'page_fetch_only':adapter is None},'target_validated':target,'content_complete':complete,'baseline_available':bool(cached and cached.get('semantic_hash')),'first_observed':first_observed,'candidate_count':len(candidate_rows) if candidate_rows is not None else 0,'candidate_rows':candidate_rows or [],'reason':reason}
   if outcome not in VALID: raise ValueError('invalid outcome')
   all_results.append(result)
  # Required endpoints all have a terminal result; a source-level summary is full only if all required endpoints are full.
@@ -366,43 +382,39 @@ def reconcile_task_results(planned_ids, returned_rows):
         raise ValueError(json.dumps({'duplicate_source_ids':sorted(set(duplicates)),'unassigned_source_ids':extras}))
     return [seen[sid] if sid in seen else {'source_id':sid,'outcome':'not_attempted','attempted':False,'reason':'missing_worker_result_reconciled'} for sid in planned_ids]
 
-def build_candidate_review_queue(run_id,sources,state,results):
-    """Create an isolated, pending queue from parser output; never writes production opportunities."""
-    eligible_endpoints=set()
+def build_candidate_observations(sources,state,results):
+    """Read parsed candidates from successful semantic snapshots, including unchanged lists."""
+    observed_endpoints={}
+    eligible={'checked_changed','checked_unchanged','checked_empty','partial'}
     for result in results:
         for endpoint_result in result.get('endpoints',[]):
-            if endpoint_result.get('outcome') in ('checked_changed','partial') and endpoint_result.get('candidate_count',0)>0:
-                eligible_endpoints.add((result.get('source_id'),endpoint_result.get('endpoint_id')))
-    queue=[]
+            if endpoint_result.get('outcome') in eligible and endpoint_result.get('adapter'):
+                observed_endpoints[(result.get('source_id'),endpoint_result.get('endpoint_id'))]=endpoint_result
+    observations=[]
     for source in sources:
         endpoints=source.get('monitor_endpoints') or [{'url':source['canonical_url'],'adapter':source.get('adapter')}]
         for endpoint in endpoints:
             adapter=endpoint.get('adapter') or source.get('adapter')
             if not adapter: continue
             endpoint_id=endpoint.get('endpoint_id',f'{source["source_id"]}:primary')
-            if (source['source_id'],endpoint_id) not in eligible_endpoints: continue
-            url=endpoint['url']; snapshot=state.get('snapshots',{}).get(key_for(url,adapter))
-            if not snapshot or not snapshot.get('semantic_hash'): continue
-            for row in snapshot.get('semantic_rows',[]):
-                row_key=row.get('id') or row.get('url') or sha(json.dumps(row,ensure_ascii=False,sort_keys=True).encode())
-                queue.append({
-                    'task_id':f'{run_id}:{source["source_id"]}:{sha(str(row_key).encode())[:16]}',
-                    'run_id':run_id,
-                    'source_id':source['source_id'],
-                    'candidate_key':str(row_key),
-                    'source_url':url,
+            if (source['source_id'],endpoint_id) not in observed_endpoints: continue
+            url=endpoint['url']; snapshot=state.get('snapshots',{}).get(key_for(url,adapter)); endpoint_result=observed_endpoints[(source['source_id'],endpoint_id)]
+            if endpoint_result.get('outcome')=='partial' and endpoint_result.get('candidate_rows'):
+                rows=endpoint_result['candidate_rows']; observed_at=endpoint_result.get('completed_at'); content_hash=endpoint_result.get('content_sha256')
+            elif snapshot and snapshot.get('semantic_hash'):
+                rows=snapshot.get('semantic_rows',[]); observed_at=snapshot.get('last_success_at'); content_hash=snapshot.get('content_hash')
+            else: continue
+            for row in rows:
+                row_key=row.get('id') or row.get('source_url') or row.get('url') or sha(json.dumps(row,ensure_ascii=False,sort_keys=True).encode())
+                observations.append({
+                    'source_id':source['source_id'], 'endpoint_id':endpoint_id,
+                    'candidate_key':str(row_key), 'source_url':url,
                     'candidate_url':row.get('source_url') or row.get('url') or url,
-                    'retrieved_at':snapshot.get('last_success_at'),
-                    'content_sha256':snapshot.get('content_hash'),
-                    'parser':adapter,
-                    'candidate':row,
-                    'candidate_decision':'pending',
-                    'business_status':'unknown',
-                    'skill':'terrafar-source-audit',
-                    'skill_verification':'pending_human_or_codex_review',
-                    'formal_site_write':False,
+                    'retrieved_at':observed_at,
+                    'content_sha256':content_hash, 'parser':adapter,
+                    'adapter_scope':endpoint.get('adapter_scope',source.get('adapter_scope',{})), 'candidate':row,
                 })
-    return queue
+    return observations
 
 def run(args):
  configure_request_budget(getattr(args,'http_request_budget',2000))
@@ -419,10 +431,14 @@ def run(args):
   missing=[sid for sid in requested_ids if sid not in active_by_id]
   if missing: raise ValueError('source_ids_not_enabled_or_missing:'+','.join(missing))
   sources=[active_by_id[sid] for sid in requested_ids]
+ adapter_catalog=source_adapters.load_catalog()
+ sources=source_adapters.apply_catalog(sources,adapter_catalog)
  run_id=args.run_id or dt.datetime.now(dt.timezone.utc).strftime('terrafar-%Y%m%dT%H%M%SZ')+'-'+uuid.uuid4().hex[:8]
  run_dir=RUNS/run_id; run_dir.mkdir(parents=True,exist_ok=True)
  state_dir=Path(args.state_dir).resolve(); state_dir.mkdir(parents=True,exist_ok=True); state=load_state(state_dir,require_existing=getattr(args,'require_state',False))
- plan_ids=[s['source_id'] for s in sources]; plan_hash=sha(json.dumps(plan_ids,sort_keys=True).encode()); ids_file_hash=sha(Path(source_ids_file).read_bytes()) if source_ids_file else None; manifest={'run_id':run_id,'created_at':now(),'registry_sha256':sha(REGISTRY.read_bytes()),'registry_path':'maintenance/terrafar-source-audit/registry/source_registry.json','plan_sha256':plan_hash,'planned_source_ids':plan_ids,'planned_count':len(plan_ids),'active_registry_source_count':len(active_sources),'scope_mode':'explicit_source_subset' if source_ids_file else 'full_active_registry','source_ids_file':Path(source_ids_file).name if source_ids_file else None,'source_ids_file_sha256':ids_file_hash,'http_request_budget':getattr(args,'http_request_budget',2000),'max_sources':args.budget,'network_mode':'live' if args.live else 'simulated','execution_mode':'program_http_plus_configured_adapters','concurrency':args.concurrency,'retry_count':args.retries,'per_host_delay_seconds':args.per_host_delay,'status':'running'}
+ ledger_path=Path(getattr(args,'candidate_ledger',None) or state_dir/'candidate_ledger.json').resolve()
+ ledger=candidate_ledger.load_ledger(ledger_path,require_existing=getattr(args,'require_candidate_ledger',False))
+ plan_ids=[s['source_id'] for s in sources]; plan_hash=sha(json.dumps(plan_ids,sort_keys=True).encode()); ids_file_hash=sha(Path(source_ids_file).read_bytes()) if source_ids_file else None; prior_manifest=readj(run_dir/'manifest.json') if (run_dir/'manifest.json').exists() else {}; batch_offset=int(prior_manifest.get('batch_offset',state.get('maintenance_cursor',0))) if not source_ids_file else 0; manifest={'run_id':run_id,'created_at':prior_manifest.get('created_at',now()),'registry_sha256':sha(REGISTRY.read_bytes()),'registry_path':'maintenance/terrafar-source-audit/registry/source_registry.json','adapter_catalog_sha256':sha(source_adapters.CATALOG_PATH.read_bytes()),'plan_sha256':plan_hash,'planned_source_ids':plan_ids,'planned_count':len(plan_ids),'active_registry_source_count':len(active_sources),'scope_mode':'explicit_source_subset' if source_ids_file else 'full_active_registry','source_ids_file':Path(source_ids_file).name if source_ids_file else None,'source_ids_file_sha256':ids_file_hash,'batch_offset':batch_offset,'http_request_budget':getattr(args,'http_request_budget',2000),'max_sources':args.budget,'network_mode':'live' if args.live else 'simulated','execution_mode':'program_http_plus_configured_adapters','concurrency':args.concurrency,'retry_count':args.retries,'per_host_delay_seconds':args.per_host_delay,'status':'running'}
  writej(run_dir/'manifest.json',manifest)
  output=run_dir/'source_checks.jsonl'; completed={}
  if output.exists():
@@ -442,8 +458,29 @@ def run(args):
    r={'run_id':run_id,'task_id':f'{run_id}:{s["source_id"]}','source_id':s['source_id'],'outcome':'not_attempted','attempted':False,'started_at':None,'completed_at':now(),'scope':'simulation does not contact network','target_validated':False,'content_complete':False,'baseline_available':False,'http_status':None,'first_observed':False,'evidence':[],'reason':'simulated_mode_network_not_used','candidate_count':0,'endpoints':[]}
    upsert_result(output,r); completed[s['source_id']]=r
  else:
-  chosen=pending[:max(args.budget,0)]
-  for s in pending[len(chosen):]:
+  batch_size=min(max(args.budget,0),len(pending))
+  retry_ids=[]
+  if not source_ids_file and pending:
+   by_id={s['source_id']:s for s in pending}
+   retry_ids=[sid for sid in state.get('maintenance_retry_ids',[]) if sid in by_id]
+   chosen=[by_id[sid] for sid in retry_ids[:batch_size]]
+   chosen_ids={s['source_id'] for s in chosen}
+   rotation_count=batch_size-len(chosen)
+   start=batch_offset%len(pending)
+   rotated=[]
+   if rotation_count:
+    for offset in range(len(pending)):
+     candidate=pending[(start+offset)%len(pending)]
+     if candidate['source_id'] in chosen_ids: continue
+     rotated.append(candidate); chosen_ids.add(candidate['source_id'])
+     if len(rotated)==rotation_count: break
+   chosen.extend(rotated)
+   state['maintenance_cursor']=(start+rotation_count)%len(pending)
+  else:
+   chosen=pending[:batch_size]
+  chosen_ids={s['source_id'] for s in chosen}
+  for s in pending:
+   if s['source_id'] in chosen_ids: continue
    if s['source_id'] in completed:
     # Keep the last attempted failure as the current run result when its retry was outside this resume budget.
     continue
@@ -461,6 +498,15 @@ def run(args):
   state['last_run_completed_at']=now()
   state['last_registry_sha256']=manifest['registry_sha256']
   state['last_plan_sha256']=plan_hash
+  if not source_ids_file:
+   consumed_retry_ids=set(retry_ids[:batch_size]) if pending else set()
+   next_retry_ids=[sid for sid in retry_ids if sid not in consumed_retry_ids]
+   for source in chosen:
+    sid=source['source_id']
+    outcome=completed.get(sid,{}).get('outcome')
+    if sid not in retry_ids and outcome in ('failed','blocked','partial'):
+     next_retry_ids.append(sid)
+   state['maintenance_retry_ids']=list(dict.fromkeys(next_retry_ids))
   writej(state_dir/'state.json',state)
  # Repair missing rows to not_attempted; do not silently claim them checked.
  missing=[s for s in plan_ids if s not in completed]
@@ -468,13 +514,21 @@ def run(args):
   r={'run_id':run_id,'task_id':f'{run_id}:{sid}','source_id':sid,'outcome':'not_attempted','attempted':False,'started_at':None,'completed_at':now(),'scope':'manifest reconciliation','target_validated':False,'content_complete':False,'baseline_available':False,'http_status':None,'first_observed':False,'evidence':[],'reason':'missing_worker_result_reconciled','candidate_count':0,'endpoints':[]}
   upsert_result(output,r); completed[sid]=r
  results=[completed[x] for x in plan_ids]; counts=Counter(r['outcome'] for r in results)
+ endpoint_results=[endpoint for result in results for endpoint in result.get('endpoints',[])]
+ endpoint_counts=Counter(item.get('outcome','unknown') for item in endpoint_results)
  if sum(counts.values())!=len(plan_ids): raise RuntimeError('result conservation failed')
- manifest['status']='complete'; manifest['completed_at']=now(); manifest['result_count']=len(results); manifest['status_counts']=dict(counts); writej(run_dir/'manifest.json',manifest)
- queue=build_candidate_review_queue(run_id,sources,state,results)
- with (run_dir/'candidate_review_queue.jsonl').open('w',encoding='utf-8') as f:
-  for row in queue: f.write(json.dumps(row,ensure_ascii=False,separators=(',',':'))+'\n')
+ manifest['status']='complete'; manifest['completed_at']=now(); manifest['result_count']=len(results); manifest['status_counts']=dict(counts); manifest['executed_source_ids']=[sid for sid in plan_ids if completed[sid].get('attempted')]; manifest['executed_source_count']=len(manifest['executed_source_ids']); manifest['write_permission_required']=False; writej(run_dir/'manifest.json',manifest)
+ observations=build_candidate_observations(sources,state,results)
+ with candidate_ledger.ledger_lock(ledger_path):
+  ledger=candidate_ledger.load_ledger(ledger_path,require_existing=getattr(args,'require_candidate_ledger',False))
+  candidate_ledger.merge_observations(ledger,observations,run_id)
+  candidate_ledger.save_ledger(ledger_path,ledger)
+ queue=candidate_ledger.open_tasks(ledger)
+ candidate_ledger.queue_jsonl(run_dir/'candidate_review_queue.jsonl',queue)
+ candidate_ledger.save_ledger(run_dir/'candidate_ledger.json',ledger)
  successful=sum(counts[k] for k in ('checked_changed','checked_unchanged','checked_empty'))
- report={'run_id':run_id,'created_at':manifest['created_at'],'completed_at':manifest['completed_at'],'network_mode':manifest['network_mode'],'execution_mode':manifest['execution_mode'],'registry_sha256':manifest['registry_sha256'],'plan_sha256':plan_hash,'total_sources':len(reg['sources']),'active_sources':len(active_sources),'planned_sources':len(plan_ids),'scope_mode':manifest['scope_mode'],'http_request_budget':http_request_budget_stats(),'status_counts':{k:counts.get(k,0) for k in sorted(VALID)},'result_conservation':sum(counts.values())==len(plan_ids),'complete_success_count':successful,'coverage':successful/len(plan_ids) if plan_ids else None,'candidate_review_tasks':len(queue),'skill_verified_count':0,'candidate_data_written_to_formal_site':False,'results_path':'source_checks.jsonl','candidate_review_queue_path':'candidate_review_queue.jsonl','notes':['HTTP availability is not opportunity verification.','needs_endpoint means page access may succeed but the full target list is not yet represented by a validated adapter.','partial on first parsed baseline means no prior comparison; it does not mean a newly published opportunity.','Candidate rows remain pending; this program does not invoke Codex models or publish data.','Failures, access blocks and not_attempted are never counted as no update.']}
+ ledger_status_counts={status:sum(task.get('status')==status for task in ledger.get('tasks',{}).values()) for status in ('pending','verification_failed','insufficient_evidence','verified','excluded','duplicate')}
+ report={'run_id':run_id,'created_at':manifest['created_at'],'completed_at':manifest['completed_at'],'network_mode':manifest['network_mode'],'execution_mode':manifest['execution_mode'],'registry_sha256':manifest['registry_sha256'],'adapter_catalog_sha256':manifest['adapter_catalog_sha256'],'plan_sha256':plan_hash,'total_sources':len(reg['sources']),'active_sources':len(active_sources),'planned_sources':len(plan_ids),'executed_sources':len(manifest['executed_source_ids']),'planned_endpoints':len(endpoint_results),'endpoint_status_counts':{k:endpoint_counts.get(k,0) for k in sorted(VALID)},'scope_mode':manifest['scope_mode'],'batch_offset':manifest['batch_offset'],'http_request_budget':http_request_budget_stats(),'status_counts':{k:counts.get(k,0) for k in sorted(VALID)},'result_conservation':sum(counts.values())==len(plan_ids),'complete_success_count':successful,'coverage':successful/len(plan_ids) if plan_ids else None,'candidate_review_tasks':len(queue),'candidate_ledger_revision':ledger.get('revision',0),'candidate_ledger_status_counts':ledger_status_counts,'skill_verified_count':ledger_status_counts['verified'],'candidate_data_written_to_formal_site':False,'results_path':'source_checks.jsonl','candidate_review_queue_path':'candidate_review_queue.jsonl','candidate_ledger_path':'candidate_ledger.json','notes':['HTTP availability is not opportunity verification.','needs_endpoint means page access may succeed but the full target list is not yet represented by a validated adapter.','partial on first parsed baseline means no prior comparison; it does not mean a newly published opportunity.','Adapter completeness applies only to its explicitly configured institution, opportunity type, filter and page scope; page snapshots do not prove site-wide opportunity coverage.','Candidate ledger preserves pending, failed and insufficient-evidence tasks across runs; terminal decisions require evidence.','Candidate rows remain separate from formal site data; this program does not invoke Codex models or publish data.','Failures, access blocks and not_attempted are never counted as no update.']}
  writej(run_dir/'daily_report.json',report)
  md=['# TERRAFAR 来源检查日报', '',f'- Run: `{run_id}`',f'- 模式：`{manifest["network_mode"]}` / `{manifest["execution_mode"]}`',f'- 来源总数 / 启用 / 计划：{len(reg["sources"])} / {len(active_sources)} / {len(plan_ids)}',f'- 计划范围：`{manifest["scope_mode"]}`',f'- 对账守恒：{sum(counts.values())} = {len(plan_ids)}',f'- 完整成功覆盖率：{successful}/{len(plan_ids)}' if plan_ids else '- 完整成功覆盖率：未知（计划数为 0）','', '## 状态数量','']
  md += [f'- `{k}`：{counts.get(k,0)}' for k in sorted(VALID)]
@@ -484,7 +538,7 @@ def run(args):
 
 def main():
  ap=argparse.ArgumentParser(); sub=ap.add_subparsers(dest='cmd',required=True)
- r=sub.add_parser('run'); r.add_argument('--live',action='store_true'); r.add_argument('--state-dir',default=str(DEFAULT_STATE)); r.add_argument('--require-state',action='store_true'); r.add_argument('--source-ids-file'); r.add_argument('--http-request-budget',type=int,default=2000); r.add_argument('--run-id'); r.add_argument('--budget',type=int,default=100000); r.add_argument('--concurrency',type=int,default=4); r.add_argument('--timeout',type=int,default=12); r.add_argument('--retries',type=int,default=1); r.add_argument('--per-host-delay',type=float,default=.4)
+ r=sub.add_parser('run'); r.add_argument('--live',action='store_true'); r.add_argument('--state-dir',default=str(DEFAULT_STATE)); r.add_argument('--require-state',action='store_true'); r.add_argument('--candidate-ledger'); r.add_argument('--require-candidate-ledger',action='store_true'); r.add_argument('--source-ids-file'); r.add_argument('--http-request-budget',type=int,default=2000); r.add_argument('--run-id'); r.add_argument('--budget',type=int,default=100000); r.add_argument('--concurrency',type=int,default=4); r.add_argument('--timeout',type=int,default=12); r.add_argument('--retries',type=int,default=1); r.add_argument('--per-host-delay',type=float,default=.4)
  a=ap.parse_args()
  if a.cmd=='run': run(a)
 if __name__=='__main__': main()

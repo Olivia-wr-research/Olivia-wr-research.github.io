@@ -1,0 +1,897 @@
+[
+  {
+    "candidate_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+    "verified_content": true,
+    "application_route": {
+      "status": "verified_as_stated",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+      "locator": "56",
+      "evidence_note": "Applications are accepted through the online application portal."
+    },
+    "deadline": {
+      "value": "2026-11-22",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+      "locator": "57",
+      "evidence_note": "Accepted until 22 November 2026."
+    },
+    "funding": {
+      "value": "Fully funded for four years under ETH doctoral salary conditions; amount unspecified.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+      "locator": "37-41",
+      "evidence_note": "Fully funded for four years; salary amount not listed."
+    },
+    "eligibility": {
+      "value": "MSc in Architecture, History of Art, Social History, or related humanities field; case-study language skills also relevant.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+      "locator": "25-29",
+      "evidence_note": "MSc in Architecture, History of Art, Social History, or related humanities fields."
+    },
+    "current_open_status": "unknown",
+    "status_evidence": {
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+      "locator": "56-57",
+      "evidence_note": "Future application deadline is displayed.",
+      "interpretation": "listing_or_deadline_text_only_not_current_portal_acceptance"
+    },
+    "limitations": [
+      "Portal target and live portal acceptance were not checked.",
+      "Deadline time and timezone are unspecified.",
+      "Candidate-list hash is not a detail-page hash."
+    ],
+    "verifier": "opportunity_verifier",
+    "verified_at": "2026-10-23T07:36:29Z",
+    "detail_page_content_hash": null,
+    "source_id": "eth-doctoral-listing",
+    "endpoint_id": "eth-doctoral-listing:primary",
+    "candidate_key": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+    "candidate_id": "tcand-32b11644f0db2b8d770e4802",
+    "listing_text_status": "open_per_page",
+    "content_verification": {
+      "status": "verified",
+      "scope": "detail_page_content_fields",
+      "evidence": [
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+          "claim": "application_route text was reviewed; value remains unspecified",
+          "locator": "56",
+          "evidence_note": "Applications are accepted through the online application portal.",
+          "field": "application_route"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+          "claim": "deadline is stated as: 2026-11-22",
+          "locator": "57",
+          "evidence_note": "Accepted until 22 November 2026.",
+          "field": "deadline"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+          "claim": "funding is stated as: Fully funded for four years under ETH doctoral salary conditions; amount unspecified.",
+          "locator": "37-41",
+          "evidence_note": "Fully funded for four years; salary amount not listed.",
+          "field": "funding"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+          "claim": "eligibility is stated as: MSc in Architecture, History of Art, Social History, or related humanities field; case-study language skills also relevant.",
+          "locator": "25-29",
+          "evidence_note": "MSc in Architecture, History of Art, Social History, or related humanities fields.",
+          "field": "eligibility"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_lJ1ZUiOD8ACy21wzSN",
+          "claim": "This locator contains listing or application wording; live portal acceptance was not verified.",
+          "locator": "56-57",
+          "evidence_note": "Future application deadline is displayed."
+        }
+      ],
+      "method": "Saved structured detail-page review by opportunity_verifier; no detail-page hash was available."
+    }
+  },
+  {
+    "candidate_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_o0hFrG5T51aXJSr1x4",
+    "verified_content": true,
+    "application_route": {
+      "status": "verified_as_stated",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_o0hFrG5T51aXJSr1x4",
+      "locator": "63",
+      "evidence_note": "Online application portal is the stated submission route."
+    },
+    "deadline": {
+      "value": "2026-12-15",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_o0hFrG5T51aXJSr1x4",
+      "locator": "52-63",
+      "evidence_note": "Submit by 15 December 2026; applications are reviewed as received."
+    },
+    "funding": {
+      "value": "Funded by an SNSF grant; salary and individual terms unspecified.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_o0hFrG5T51aXJSr1x4",
+      "locator": "11",
+      "evidence_note": "Position funded by a recently awarded SNSF grant."
+    },
+    "eligibility": {
+      "value": "Ideal candidates have a relevant engineering or physics MSc; English fluency is required.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_o0hFrG5T51aXJSr1x4",
+      "locator": "27-32",
+      "evidence_note": "The MSc fields are framed as ideal candidate backgrounds."
+    },
+    "current_open_status": "unknown",
+    "status_evidence": {
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_o0hFrG5T51aXJSr1x4",
+      "locator": "52-63",
+      "evidence_note": "Future submission date and rolling review are stated.",
+      "interpretation": "listing_or_deadline_text_only_not_current_portal_acceptance"
+    },
+    "limitations": [
+      "MSc wording describes ideal candidates, not an unconditional requirement.",
+      "Portal target and live portal acceptance were not checked.",
+      "Deadline time and timezone are unspecified."
+    ],
+    "verifier": "opportunity_verifier",
+    "verified_at": "2026-10-23T07:36:29Z",
+    "detail_page_content_hash": null,
+    "source_id": "eth-doctoral-listing",
+    "endpoint_id": "eth-doctoral-listing:primary",
+    "candidate_key": "https://jobs.ethz.ch/job/view/JOPG_ethz_o0hFrG5T51aXJSr1x4",
+    "candidate_id": "tcand-6ee3807c9616668c1b515650",
+    "listing_text_status": "open_per_page",
+    "content_verification": {
+      "status": "verified",
+      "scope": "detail_page_content_fields",
+      "evidence": [
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_o0hFrG5T51aXJSr1x4",
+          "claim": "application_route text was reviewed; value remains unspecified",
+          "locator": "63",
+          "evidence_note": "Online application portal is the stated submission route.",
+          "field": "application_route"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_o0hFrG5T51aXJSr1x4",
+          "claim": "deadline is stated as: 2026-12-15",
+          "locator": "52-63",
+          "evidence_note": "Submit by 15 December 2026; applications are reviewed as received.",
+          "field": "deadline"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_o0hFrG5T51aXJSr1x4",
+          "claim": "funding is stated as: Funded by an SNSF grant; salary and individual terms unspecified.",
+          "locator": "11",
+          "evidence_note": "Position funded by a recently awarded SNSF grant.",
+          "field": "funding"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_o0hFrG5T51aXJSr1x4",
+          "claim": "eligibility is stated as: Ideal candidates have a relevant engineering or physics MSc; English fluency is required.",
+          "locator": "27-32",
+          "evidence_note": "The MSc fields are framed as ideal candidate backgrounds.",
+          "field": "eligibility"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_o0hFrG5T51aXJSr1x4",
+          "claim": "This locator contains listing or application wording; live portal acceptance was not verified.",
+          "locator": "52-63",
+          "evidence_note": "Future submission date and rolling review are stated."
+        }
+      ],
+      "method": "Saved structured detail-page review by opportunity_verifier; no detail-page hash was available."
+    }
+  },
+  {
+    "candidate_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+    "verified_content": true,
+    "application_route": {
+      "status": "verified_as_stated",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+      "locator": "68",
+      "evidence_note": "Applications go through the online portal."
+    },
+    "deadline": {
+      "value": "2026-11-10",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+      "locator": "58",
+      "evidence_note": "Application deadline 10 November 2026."
+    },
+    "funding": {
+      "value": "Funded under ETH doctoral salary conditions; amount unspecified.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+      "locator": "47-50",
+      "evidence_note": "Funding follows ETH doctoral salary conditions."
+    },
+    "eligibility": {
+      "value": "Relevant MSc in ecology, biology, environmental science, or related field; quantitative ecology, tropical fieldwork, and English are described.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+      "locator": "30-39",
+      "evidence_note": "Relevant Master's degree in ecology, biology, or environmental sciences."
+    },
+    "current_open_status": "unknown",
+    "status_evidence": {
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+      "locator": "58-68",
+      "evidence_note": "The listed application date is in the future.",
+      "interpretation": "listing_or_deadline_text_only_not_current_portal_acceptance"
+    },
+    "limitations": [
+      "One posting describes two complementary positions; not split into invented records.",
+      "Portal target and live portal acceptance were not checked.",
+      "Deadline time and timezone are unspecified."
+    ],
+    "verifier": "opportunity_verifier",
+    "verified_at": "2026-10-23T07:36:29Z",
+    "detail_page_content_hash": null,
+    "source_id": "eth-doctoral-listing",
+    "endpoint_id": "eth-doctoral-listing:primary",
+    "candidate_key": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+    "candidate_id": "tcand-32fec508af7b751e61eca677",
+    "listing_text_status": "open_per_page",
+    "content_verification": {
+      "status": "verified",
+      "scope": "detail_page_content_fields",
+      "evidence": [
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+          "claim": "application_route text was reviewed; value remains unspecified",
+          "locator": "68",
+          "evidence_note": "Applications go through the online portal.",
+          "field": "application_route"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+          "claim": "deadline is stated as: 2026-11-10",
+          "locator": "58",
+          "evidence_note": "Application deadline 10 November 2026.",
+          "field": "deadline"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+          "claim": "funding is stated as: Funded under ETH doctoral salary conditions; amount unspecified.",
+          "locator": "47-50",
+          "evidence_note": "Funding follows ETH doctoral salary conditions.",
+          "field": "funding"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+          "claim": "eligibility is stated as: Relevant MSc in ecology, biology, environmental science, or related field; quantitative ecology, tropical fieldwork, and English are described.",
+          "locator": "30-39",
+          "evidence_note": "Relevant Master's degree in ecology, biology, or environmental sciences.",
+          "field": "eligibility"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_arYH1qpSQ4ZTGWNApb",
+          "claim": "This locator contains listing or application wording; live portal acceptance was not verified.",
+          "locator": "58-68",
+          "evidence_note": "The listed application date is in the future."
+        }
+      ],
+      "method": "Saved structured detail-page review by opportunity_verifier; no detail-page hash was available."
+    }
+  },
+  {
+    "candidate_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1VGWmPweQ1WxoDNZU6",
+    "verified_content": true,
+    "application_route": {
+      "status": "verified_as_stated",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1VGWmPweQ1WxoDNZU6",
+      "locator": "61",
+      "evidence_note": "Exclusive online portal submission is stated."
+    },
+    "deadline": {
+      "value": "Preferred deadline 2026-11-22; later applications may also be considered.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1VGWmPweQ1WxoDNZU6",
+      "locator": "61-68",
+      "evidence_note": "Preferred deadline is 22 November 2026; later applications may be considered."
+    },
+    "funding": {
+      "value": "Competitive ETH doctoral salary and employment conditions; amount unspecified.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1VGWmPweQ1WxoDNZU6",
+      "locator": "36-45",
+      "evidence_note": "Competitive doctoral salary conditions; amount not listed."
+    },
+    "eligibility": {
+      "value": "Relevant technical MSc; medical or biological data experience is advantageous but not required.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1VGWmPweQ1WxoDNZU6",
+      "locator": "20-28",
+      "evidence_note": "Medical or biological data experience is not required."
+    },
+    "current_open_status": "unknown",
+    "status_evidence": {
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1VGWmPweQ1WxoDNZU6",
+      "locator": "64-68",
+      "evidence_note": "The preferred date has not passed; later applications may be considered.",
+      "interpretation": "listing_or_deadline_text_only_not_current_portal_acceptance"
+    },
+    "limitations": [
+      "The date is preferred, not a final closing date.",
+      "Portal target and live portal acceptance were not checked."
+    ],
+    "verifier": "opportunity_verifier",
+    "verified_at": "2026-10-23T07:36:29Z",
+    "detail_page_content_hash": null,
+    "source_id": "eth-doctoral-listing",
+    "endpoint_id": "eth-doctoral-listing:primary",
+    "candidate_key": "https://jobs.ethz.ch/job/view/JOPG_ethz_1VGWmPweQ1WxoDNZU6",
+    "candidate_id": "tcand-95e4b4abbd781d0d967339d5",
+    "listing_text_status": "open_per_page",
+    "content_verification": {
+      "status": "verified",
+      "scope": "detail_page_content_fields",
+      "evidence": [
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1VGWmPweQ1WxoDNZU6",
+          "claim": "application_route text was reviewed; value remains unspecified",
+          "locator": "61",
+          "evidence_note": "Exclusive online portal submission is stated.",
+          "field": "application_route"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1VGWmPweQ1WxoDNZU6",
+          "claim": "deadline is stated as: Preferred deadline 2026-11-22; later applications may also be considered.",
+          "locator": "61-68",
+          "evidence_note": "Preferred deadline is 22 November 2026; later applications may be considered.",
+          "field": "deadline"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1VGWmPweQ1WxoDNZU6",
+          "claim": "funding is stated as: Competitive ETH doctoral salary and employment conditions; amount unspecified.",
+          "locator": "36-45",
+          "evidence_note": "Competitive doctoral salary conditions; amount not listed.",
+          "field": "funding"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1VGWmPweQ1WxoDNZU6",
+          "claim": "eligibility is stated as: Relevant technical MSc; medical or biological data experience is advantageous but not required.",
+          "locator": "20-28",
+          "evidence_note": "Medical or biological data experience is not required.",
+          "field": "eligibility"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1VGWmPweQ1WxoDNZU6",
+          "claim": "This locator contains listing or application wording; live portal acceptance was not verified.",
+          "locator": "64-68",
+          "evidence_note": "The preferred date has not passed; later applications may be considered."
+        }
+      ],
+      "method": "Saved structured detail-page review by opportunity_verifier; no detail-page hash was available."
+    }
+  },
+  {
+    "candidate_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_j6FN1WlWccXpZipQja",
+    "verified_content": true,
+    "application_route": {
+      "status": "verified_as_stated",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_j6FN1WlWccXpZipQja",
+      "locator": "60-68",
+      "evidence_note": "Online application portal is the stated route."
+    },
+    "deadline": {
+      "value": "Rolling until the positions are filled; no fixed date stated.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_j6FN1WlWccXpZipQja",
+      "locator": "68",
+      "evidence_note": "Applications are considered until the positions are filled."
+    },
+    "funding": {
+      "value": null,
+      "status": "unknown",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_j6FN1WlWccXpZipQja",
+      "locator": "46-49",
+      "evidence_note": null
+    },
+    "eligibility": {
+      "value": "Experimental quantum information interest and experience in one or more listed areas; no degree requirement stated in reviewed text.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_j6FN1WlWccXpZipQja",
+      "locator": "23-38",
+      "evidence_note": "The page describes several possible relevant experience areas."
+    },
+    "current_open_status": "unknown",
+    "status_evidence": {
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_j6FN1WlWccXpZipQja",
+      "locator": "68",
+      "evidence_note": "Applications are considered until positions are filled.",
+      "interpretation": "listing_or_deadline_text_only_not_current_portal_acceptance"
+    },
+    "limitations": [
+      "Number of positions and fixed deadline are not stated.",
+      "Funding remains unknown.",
+      "Portal target and live portal acceptance were not checked."
+    ],
+    "verifier": "opportunity_verifier",
+    "verified_at": "2026-10-23T07:36:29Z",
+    "detail_page_content_hash": null,
+    "source_id": "eth-doctoral-listing",
+    "endpoint_id": "eth-doctoral-listing:primary",
+    "candidate_key": "https://jobs.ethz.ch/job/view/JOPG_ethz_j6FN1WlWccXpZipQja",
+    "candidate_id": "tcand-a6cf04ea0dc08ccdde10caba",
+    "listing_text_status": "open_per_page",
+    "content_verification": {
+      "status": "verified",
+      "scope": "detail_page_content_fields",
+      "evidence": [
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_j6FN1WlWccXpZipQja",
+          "claim": "application_route text was reviewed; value remains unspecified",
+          "locator": "60-68",
+          "evidence_note": "Online application portal is the stated route.",
+          "field": "application_route"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_j6FN1WlWccXpZipQja",
+          "claim": "deadline is stated as: Rolling until the positions are filled; no fixed date stated.",
+          "locator": "68",
+          "evidence_note": "Applications are considered until the positions are filled.",
+          "field": "deadline"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_j6FN1WlWccXpZipQja",
+          "claim": "eligibility is stated as: Experimental quantum information interest and experience in one or more listed areas; no degree requirement stated in reviewed text.",
+          "locator": "23-38",
+          "evidence_note": "The page describes several possible relevant experience areas.",
+          "field": "eligibility"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_j6FN1WlWccXpZipQja",
+          "claim": "This locator contains listing or application wording; live portal acceptance was not verified.",
+          "locator": "68",
+          "evidence_note": "Applications are considered until positions are filled."
+        }
+      ],
+      "method": "Saved structured detail-page review by opportunity_verifier; no detail-page hash was available."
+    }
+  },
+  {
+    "candidate_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_sqsOtdedQzvLzst350",
+    "verified_content": false,
+    "application_route": {
+      "status": "verified_as_stated",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_sqsOtdedQzvLzst350",
+      "locator": "52-61",
+      "evidence_note": "Online application portal is the stated route."
+    },
+    "deadline": {
+      "value": null,
+      "status": "missing",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_sqsOtdedQzvLzst350",
+      "locator": "52-62",
+      "evidence_note": null
+    },
+    "funding": {
+      "value": null,
+      "status": "unknown",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_sqsOtdedQzvLzst350",
+      "locator": "34-45",
+      "evidence_note": null
+    },
+    "eligibility": {
+      "value": null,
+      "status": "unknown",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_sqsOtdedQzvLzst350",
+      "locator": null,
+      "evidence_note": null
+    },
+    "current_open_status": "unknown",
+    "status_evidence": {
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_sqsOtdedQzvLzst350",
+      "locator": "52-62",
+      "evidence_note": null,
+      "interpretation": "listing_or_deadline_text_only_not_current_portal_acceptance"
+    },
+    "limitations": [
+      "Queue summary says Zurich; detail page says PSI Villigen with ETH teaching duties.",
+      "No deadline or closing condition was found.",
+      "Funding and current open status remain unknown; portal was not opened."
+    ],
+    "verifier": "opportunity_verifier",
+    "verified_at": "2026-10-23T07:36:29Z",
+    "detail_page_content_hash": null,
+    "source_id": "eth-doctoral-listing",
+    "endpoint_id": "eth-doctoral-listing:primary",
+    "candidate_key": "https://jobs.ethz.ch/job/view/JOPG_ethz_sqsOtdedQzvLzst350",
+    "candidate_id": "tcand-5793474be73f62594830ff73",
+    "listing_text_status": "unknown",
+    "content_verification": {
+      "status": "insufficient_evidence",
+      "scope": "detail_page_content_fields",
+      "evidence": [
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_sqsOtdedQzvLzst350",
+          "claim": "application_route text was reviewed; value remains unspecified",
+          "locator": "52-61",
+          "evidence_note": "Online application portal is the stated route.",
+          "field": "application_route"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_sqsOtdedQzvLzst350",
+          "claim": "This locator contains listing or application wording; live portal acceptance was not verified.",
+          "locator": "52-62",
+          "evidence_note": null
+        }
+      ],
+      "method": "Saved structured detail-page review by opportunity_verifier; no detail-page hash was available.",
+      "reviewer_note": "Eligibility claim is retained as unverified because its saved evidence note does not support it."
+    },
+    "unverified_agent_claims": [
+      {
+        "field": "eligibility",
+        "value": "Relevant MSc in physics, accelerator science, electrical engineering, photonics, or related field; professional English.",
+        "status": "supported",
+        "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_sqsOtdedQzvLzst350",
+        "locator": "22-26",
+        "evidence_note": "Work base is PSI Villigen with ETH teaching duties.",
+        "reviewer_correction": "The saved note supports work location, not the stated degree or English eligibility. Do not treat this claim as verified."
+      }
+    ],
+    "ledger_review_status": "insufficient_evidence"
+  },
+  {
+    "candidate_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+    "verified_content": true,
+    "application_route": {
+      "status": "verified_as_stated",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+      "locator": "60-68",
+      "evidence_note": "Applications use the online portal."
+    },
+    "deadline": {
+      "value": "2027-01-31",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+      "locator": "67-73",
+      "evidence_note": "Submission deadline is 31 January 2027."
+    },
+    "funding": {
+      "value": "Two paid full-time doctoral fellowships for 3.5 years; salary amount unspecified.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+      "locator": "12-15",
+      "evidence_note": "Programme provides funding for three and a half years."
+    },
+    "eligibility": {
+      "value": "University-level master's degree in architecture, engineering, or related field; English certificate is not formally required.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+      "locator": "37-41",
+      "evidence_note": "English certificate is not formally required."
+    },
+    "current_open_status": "unknown",
+    "status_evidence": {
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+      "locator": "67-73",
+      "evidence_note": "Future application deadline is displayed.",
+      "interpretation": "listing_or_deadline_text_only_not_current_portal_acceptance"
+    },
+    "limitations": [
+      "Portal target and live portal acceptance were not checked.",
+      "Deadline time and timezone are unspecified."
+    ],
+    "verifier": "opportunity_verifier",
+    "verified_at": "2026-10-23T07:36:29Z",
+    "detail_page_content_hash": null,
+    "source_id": "eth-doctoral-listing",
+    "endpoint_id": "eth-doctoral-listing:primary",
+    "candidate_key": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+    "candidate_id": "tcand-0561efe8199619f29532cd18",
+    "listing_text_status": "open_per_page",
+    "content_verification": {
+      "status": "verified",
+      "scope": "detail_page_content_fields",
+      "evidence": [
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+          "claim": "application_route text was reviewed; value remains unspecified",
+          "locator": "60-68",
+          "evidence_note": "Applications use the online portal.",
+          "field": "application_route"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+          "claim": "deadline is stated as: 2027-01-31",
+          "locator": "67-73",
+          "evidence_note": "Submission deadline is 31 January 2027.",
+          "field": "deadline"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+          "claim": "funding is stated as: Two paid full-time doctoral fellowships for 3.5 years; salary amount unspecified.",
+          "locator": "12-15",
+          "evidence_note": "Programme provides funding for three and a half years.",
+          "field": "funding"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+          "claim": "eligibility is stated as: University-level master's degree in architecture, engineering, or related field; English certificate is not formally required.",
+          "locator": "37-41",
+          "evidence_note": "English certificate is not formally required.",
+          "field": "eligibility"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_ImqWbdbtPQtWCAnkbZ",
+          "claim": "This locator contains listing or application wording; live portal acceptance was not verified.",
+          "locator": "67-73",
+          "evidence_note": "Future application deadline is displayed."
+        }
+      ],
+      "method": "Saved structured detail-page review by opportunity_verifier; no detail-page hash was available."
+    }
+  },
+  {
+    "candidate_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1Xb566nCAHVEKPxWxy",
+    "verified_content": true,
+    "application_route": {
+      "status": "verified_as_stated",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1Xb566nCAHVEKPxWxy",
+      "locator": "64-76",
+      "evidence_note": "Online application portal is the stated route."
+    },
+    "deadline": {
+      "value": "Review starts 2026-11-15; closes when a suitable candidate is found.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1Xb566nCAHVEKPxWxy",
+      "locator": "73-76",
+      "evidence_note": "Review begins 15 November 2026; closes when a suitable candidate is found."
+    },
+    "funding": {
+      "value": null,
+      "status": "unknown",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1Xb566nCAHVEKPxWxy",
+      "locator": "55-58",
+      "evidence_note": null
+    },
+    "eligibility": {
+      "value": "Relevant MSc in geophysics, physics, environmental or earth science, or related discipline; English C1-C2.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1Xb566nCAHVEKPxWxy",
+      "locator": "30-47",
+      "evidence_note": "The page labels additional skills as desired, not all required."
+    },
+    "current_open_status": "unknown",
+    "status_evidence": {
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1Xb566nCAHVEKPxWxy",
+      "locator": "73-76",
+      "evidence_note": "The page states a future review start and fill-dependent closing.",
+      "interpretation": "listing_or_deadline_text_only_not_current_portal_acceptance"
+    },
+    "limitations": [
+      "No fixed closing date or funding terms were stated.",
+      "Portal target and live portal acceptance were not checked."
+    ],
+    "verifier": "opportunity_verifier",
+    "verified_at": "2026-10-23T07:36:29Z",
+    "detail_page_content_hash": null,
+    "source_id": "eth-doctoral-listing",
+    "endpoint_id": "eth-doctoral-listing:primary",
+    "candidate_key": "https://jobs.ethz.ch/job/view/JOPG_ethz_1Xb566nCAHVEKPxWxy",
+    "candidate_id": "tcand-daeeb95fbd26a1b587e29c6b",
+    "listing_text_status": "open_per_page",
+    "content_verification": {
+      "status": "verified",
+      "scope": "detail_page_content_fields",
+      "evidence": [
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1Xb566nCAHVEKPxWxy",
+          "claim": "application_route text was reviewed; value remains unspecified",
+          "locator": "64-76",
+          "evidence_note": "Online application portal is the stated route.",
+          "field": "application_route"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1Xb566nCAHVEKPxWxy",
+          "claim": "deadline is stated as: Review starts 2026-11-15; closes when a suitable candidate is found.",
+          "locator": "73-76",
+          "evidence_note": "Review begins 15 November 2026; closes when a suitable candidate is found.",
+          "field": "deadline"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1Xb566nCAHVEKPxWxy",
+          "claim": "eligibility is stated as: Relevant MSc in geophysics, physics, environmental or earth science, or related discipline; English C1-C2.",
+          "locator": "30-47",
+          "evidence_note": "The page labels additional skills as desired, not all required.",
+          "field": "eligibility"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1Xb566nCAHVEKPxWxy",
+          "claim": "This locator contains listing or application wording; live portal acceptance was not verified.",
+          "locator": "73-76",
+          "evidence_note": "The page states a future review start and fill-dependent closing."
+        }
+      ],
+      "method": "Saved structured detail-page review by opportunity_verifier; no detail-page hash was available."
+    }
+  },
+  {
+    "candidate_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_Nnf6ZULCr5G0ihsC1R",
+    "verified_content": true,
+    "application_route": {
+      "status": "verified_as_stated",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_Nnf6ZULCr5G0ihsC1R",
+      "locator": "47-56",
+      "evidence_note": "Applications are submitted through the portal."
+    },
+    "deadline": {
+      "value": "Apply by 2026-11-09; accepted until the position is filled.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_Nnf6ZULCr5G0ihsC1R",
+      "locator": "47-53",
+      "evidence_note": "Apply by 9 November 2026; accepted until filled."
+    },
+    "funding": {
+      "value": "The PRISM-T project is SNSF-funded; individual salary and funding terms unspecified.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_Nnf6ZULCr5G0ihsC1R",
+      "locator": "17",
+      "evidence_note": "PRISM-T is funded by the SNSF."
+    },
+    "eligibility": {
+      "value": "Relevant MSc in civil engineering, operations research, industrial engineering, applied mathematics, or related field; listed technical and English requirements.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_Nnf6ZULCr5G0ihsC1R",
+      "locator": "24-30",
+      "evidence_note": "Master's degree in a related engineering or applied mathematics field."
+    },
+    "current_open_status": "unknown",
+    "status_evidence": {
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_Nnf6ZULCr5G0ihsC1R",
+      "locator": "47-53",
+      "evidence_note": "The page gives a future application date and fill-dependent acceptance.",
+      "interpretation": "listing_or_deadline_text_only_not_current_portal_acceptance"
+    },
+    "limitations": [
+      "SNSF project funding does not establish individual salary or full funding.",
+      "Portal target and live portal acceptance were not checked.",
+      "Deadline time and timezone are unspecified."
+    ],
+    "verifier": "opportunity_verifier",
+    "verified_at": "2026-10-23T07:36:29Z",
+    "detail_page_content_hash": null,
+    "source_id": "eth-doctoral-listing",
+    "endpoint_id": "eth-doctoral-listing:primary",
+    "candidate_key": "https://jobs.ethz.ch/job/view/JOPG_ethz_Nnf6ZULCr5G0ihsC1R",
+    "candidate_id": "tcand-a1d1d3099c70f85cc1bb0ae7",
+    "listing_text_status": "open_per_page",
+    "content_verification": {
+      "status": "verified",
+      "scope": "detail_page_content_fields",
+      "evidence": [
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_Nnf6ZULCr5G0ihsC1R",
+          "claim": "application_route text was reviewed; value remains unspecified",
+          "locator": "47-56",
+          "evidence_note": "Applications are submitted through the portal.",
+          "field": "application_route"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_Nnf6ZULCr5G0ihsC1R",
+          "claim": "deadline is stated as: Apply by 2026-11-09; accepted until the position is filled.",
+          "locator": "47-53",
+          "evidence_note": "Apply by 9 November 2026; accepted until filled.",
+          "field": "deadline"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_Nnf6ZULCr5G0ihsC1R",
+          "claim": "funding is stated as: The PRISM-T project is SNSF-funded; individual salary and funding terms unspecified.",
+          "locator": "17",
+          "evidence_note": "PRISM-T is funded by the SNSF.",
+          "field": "funding"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_Nnf6ZULCr5G0ihsC1R",
+          "claim": "eligibility is stated as: Relevant MSc in civil engineering, operations research, industrial engineering, applied mathematics, or related field; listed technical and English requirements.",
+          "locator": "24-30",
+          "evidence_note": "Master's degree in a related engineering or applied mathematics field.",
+          "field": "eligibility"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_Nnf6ZULCr5G0ihsC1R",
+          "claim": "This locator contains listing or application wording; live portal acceptance was not verified.",
+          "locator": "47-53",
+          "evidence_note": "The page gives a future application date and fill-dependent acceptance."
+        }
+      ],
+      "method": "Saved structured detail-page review by opportunity_verifier; no detail-page hash was available."
+    }
+  },
+  {
+    "candidate_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+    "verified_content": true,
+    "application_route": {
+      "status": "verified_as_stated",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+      "locator": "47-56",
+      "evidence_note": "Applications are submitted through the online portal."
+    },
+    "deadline": {
+      "value": "Apply by 2026-11-09; accepted until the position is filled.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+      "locator": "47-53",
+      "evidence_note": "Apply by 9 November 2026; accepted until filled."
+    },
+    "funding": {
+      "value": "The PRISM-T project is SNSF-funded; individual salary and funding terms unspecified.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+      "locator": "17",
+      "evidence_note": "PRISM-T is funded by the SNSF."
+    },
+    "eligibility": {
+      "value": "Relevant MSc in civil engineering, geomatics, computer science, or related field; listed machine-learning and technical requirements.",
+      "status": "supported",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+      "locator": "24-30",
+      "evidence_note": "Master's degree in a related engineering, geomatics, or computing field."
+    },
+    "current_open_status": "unknown",
+    "status_evidence": {
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+      "locator": "47-53",
+      "evidence_note": "The page gives a future application date and fill-dependent acceptance.",
+      "interpretation": "listing_or_deadline_text_only_not_current_portal_acceptance"
+    },
+    "limitations": [
+      "Different job ID and description from the other tunnel role; keep separate.",
+      "SNSF project funding does not establish individual salary or full funding.",
+      "Portal target and live portal acceptance were not checked."
+    ],
+    "verifier": "opportunity_verifier",
+    "verified_at": "2026-10-23T07:36:29Z",
+    "detail_page_content_hash": null,
+    "source_id": "eth-doctoral-listing",
+    "endpoint_id": "eth-doctoral-listing:primary",
+    "candidate_key": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+    "candidate_id": "tcand-464bba839e96807a0a94662b",
+    "listing_text_status": "open_per_page",
+    "content_verification": {
+      "status": "verified",
+      "scope": "detail_page_content_fields",
+      "evidence": [
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+          "claim": "application_route text was reviewed; value remains unspecified",
+          "locator": "47-56",
+          "evidence_note": "Applications are submitted through the online portal.",
+          "field": "application_route"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+          "claim": "deadline is stated as: Apply by 2026-11-09; accepted until the position is filled.",
+          "locator": "47-53",
+          "evidence_note": "Apply by 9 November 2026; accepted until filled.",
+          "field": "deadline"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+          "claim": "funding is stated as: The PRISM-T project is SNSF-funded; individual salary and funding terms unspecified.",
+          "locator": "17",
+          "evidence_note": "PRISM-T is funded by the SNSF.",
+          "field": "funding"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+          "claim": "eligibility is stated as: Relevant MSc in civil engineering, geomatics, computer science, or related field; listed machine-learning and technical requirements.",
+          "locator": "24-30",
+          "evidence_note": "Master's degree in a related engineering, geomatics, or computing field.",
+          "field": "eligibility"
+        },
+        {
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_kMQAkdBBjFt0CMGG8W",
+          "claim": "This locator contains listing or application wording; live portal acceptance was not verified.",
+          "locator": "47-53",
+          "evidence_note": "The page gives a future application date and fill-dependent acceptance."
+        }
+      ],
+      "method": "Saved structured detail-page review by opportunity_verifier; no detail-page hash was available."
+    }
+  }
+]

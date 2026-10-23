@@ -1,17 +1,8 @@
 name: TERRAFAR Round 002 read-only audit
 
 on:
-  push:
-    branches:
-      - codex/terrafar-source-monitoring-20261022
-    paths:
-      - '.github/workflows/terrafar-round-002-smoke.yml'
-      - 'portfolio/application-board/scripts/terrafar_source_audit.py'
-      - 'portfolio/application-board/scripts/terrafar_round_002_preflight.py'
-      - 'portfolio/application-board/maintenance/terrafar-source-audit/registry/**'
-      - 'portfolio/application-board/maintenance/terrafar-source-audit/round_002/**'
-      - 'portfolio/application-board/tests/test_terrafar_source_audit.py'
-  # No schedule or workflow_dispatch: this only runs from the named feature branch push.
+  workflow_dispatch:
+  # The earlier Round 002 diagnostic is retained for reference, but code pushes no longer repeat it.
 
 permissions:
   contents: read

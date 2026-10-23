@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "catalog_version": "2026-10-23.1",
+  "source_overrides": {
+    "eth-doctoral-listing": {
+      "institution": "ETH Zürich",
+      "opportunity_type": "doctoral vacancies",
+      "filter": "doctoral and PhD titles; excludes postdoctoral titles",
+      "pagination": "The current parser counts displayed cards and checks an explicit total/next-page control. It marks the endpoint partial when a next page exists; multi-page traversal is not yet implemented.",
+      "completeness_rule": "Complete only when an explicit total equals all displayed listing cards and there is no next-page control. If the page has further results, or the total is absent/ambiguous, remain partial.",
+      "endpoints": [{"endpoint_id":"eth-doctoral-listing:primary","url":"https://jobs.ethz.ch/","adapter":"eth_listing","required":true,"scope":"official ETH employer vacancy list"}]
+    },
+    "jobbnorge-uio": {
+      "institution": "University of Oslo / Jobbnorge",
+      "opportunity_type": "PhD employment feed",
+      "filter": "registered jobtypegroupid=2 feed; PhD/doctoral titles and job types; excludes postdoctoral",
+      "pagination": "single RSS document; reject a next-feed relation or malformed/truncated XML",
+      "completeness_rule": "Valid RSS channel, complete XML body, and no next-feed relation; scope is this registered feed only.",
+      "endpoints": [{"endpoint_id":"jobbnorge-uio:primary","url":"https://www.jobbnorge.no/apps/Joblist/JobListBuilder.ashx?id=1e1f1447-9567-4e79-8d0e-b08f5566151f&jobtypegroupid=2","adapter":"jobbnorge_rss","required":true,"scope":"registered UiO jobtypegroupid=2 feed only"}]
+    },
+    "doc-446f8d108f9611b8": {
+      "institution": "University of Helsinki",
+      "opportunity_type": "teaching and research employment listings",
+      "filter": "registered official careers page plus all-job search and Teaching-and-research category as separate scopes; not an admissions feed",
+      "pagination": "Record each search scope independently. The adapter compares visible result totals with unique links on the current response; if more pages are indicated, it remains partial. Multi-page traversal is not yet implemented. Language coverage is bounded to configured English URLs.",
+      "completeness_rule": "List scope complete only when displayed result total equals distinct parsed job links on the response and no next page exists; otherwise partial.",
+      "endpoints": [
+        {"endpoint_id":"doc-446f8d108f9611b8:primary","url":"https://www.helsinki.fi/en/about-us/careers/open-positions","adapter":"university_page_snapshot","required":true,"scope":"official English career entry page only"},
+        {"endpoint_id":"doc-446f8d108f9611b8:all-jobs","url":"https://jobs.helsinki.fi/search","adapter":"helsinki_successfactors","required":true,"scope":"all jobs search; no unregistered category or language expansion"},
+        {"endpoint_id":"doc-446f8d108f9611b8:teaching-research","url":"https://jobs.helsinki.fi/go/Teaching-and-research-positions/8703802/?sortColumn=sort_department&sortDirection=asc","adapter":"helsinki_successfactors","required":true,"scope":"Teaching and research category; separate from all-jobs search"}
+      ]
+    },
+    "doc-350282ccffe5f525": {
+      "institution": "Max Planck Society",
+      "opportunity_type": "doctoral information, young-researcher vacancies, and IMPRS route discovery",
+      "filter": "doctoral information entry; official Jobboard young-researcher filter; IMPRS directory remains a distinct admissions route",
+      "pagination": "Jobboard offers five visible rows and a Show more control; expand until explicit terminal state and compare totals; current HTML adapter will not claim full catalog if expansion evidence is absent",
+      "completeness_rule": "Page snapshots can be complete for each registered page; opportunity-list coverage remains partial until the filtered result count and Show more terminal state are both verified.",
+      "endpoints": [
+        {"endpoint_id":"doc-350282ccffe5f525:primary","url":"https://www.mpg.de/doctoral_students","adapter":"university_page_snapshot","required":true,"scope":"official doctoral information page only"},
+        {"endpoint_id":"doc-350282ccffe5f525:jobboard","url":"https://www.mpg.de/jobboard","adapter":"mpg_jobboard","required":true,"scope":"official jobboard; Young Researchers filter is not assumed selected from this base URL"},
+        {"endpoint_id":"doc-350282ccffe5f525:imprs","url":"https://www.mpg.de/en/imprs","adapter":"university_page_snapshot","required":true,"scope":"separate IMPRS route directory; not merged with employment"}
+      ]
+    },
+    "geo-intake-ubc-dec2026": {
+      "institution": "University of British Columbia, Department of Geography",
+      "opportunity_type": "department MA, MSc, and PhD admissions information",
+      "filter": "only the registered Geography department intake page; follow its funding and UBC Graduate Studies links as distinct evidence, not as a whole-university catalog",
+      "pagination": "single page; validate MA/MSc/PhD program sections and their linked official routes; intake-cycle dates are not inferred",
+      "completeness_rule": "Page scope complete only when the three program sections and application/funding link groups are detected; specific cycle dates and live application state require detail evidence.",
+      "endpoints": [{"endpoint_id":"geo-intake-ubc-dec2026:primary","url":"https://geog.ubc.ca/graduate/admissions/","adapter":"ubc_geography_admissions","required":true,"scope":"Geography department admissions page only"}]
+    },
+    "geo-programme-helsinki-geography": {
+      "institution": "University of Helsinki",
+      "opportunity_type": "Doctoral Programme in Science geography research route",
+      "filter": "registered programme page and official doctoral programme directory; do not merge funded staff vacancies into admissions",
+      "pagination": "single programme page plus separate official programme directory; each is a separate endpoint; intake rounds must be checked at the linked application cycle page",
+      "completeness_rule": "Registered page snapshots complete only when geography field and doctoral-programme route are structurally present; application dates remain unknown until an intake-cycle source is read.",
+      "endpoints": [
+        {"endpoint_id":"geo-programme-helsinki-geography:primary","url":"https://www.helsinki.fi/en/admissions-and-education/apply-doctoral-programmes/doctoral-programmes/doctoral-programme-science","adapter":"helsinki_doctoral_programme","required":true,"scope":"Science doctoral programme page with geography field"},
+        {"endpoint_id":"geo-programme-helsinki-geography:directory","url":"https://www.helsinki.fi/en/admissions-and-education/apply-doctoral-programmes/doctoral-programmes","adapter":"university_page_snapshot","required":true,"scope":"official doctoral programme directory; not all doctoral jobs"}
+      ]
+    },
+    "geo-programme-oxford-geography": {
+      "institution": "University of Oxford, School of Geography and the Environment",
+      "opportunity_type": "DPhil Geography and Environment course admissions",
+      "filter": "single registered course page; keep full-time and part-time route fields separate and follow application/funding links as evidence only",
+      "pagination": "single course page; application cycles are time-specific and must not be inferred from a generic course page",
+      "completeness_rule": "Course-page scope complete when course identity, study modes, application route, and funding/cost section are present; current cycle deadline/status stay unknown without cycle-specific evidence.",
+      "endpoints": [{"endpoint_id":"geo-programme-oxford-geography:primary","url":"https://www.ox.ac.uk/admissions/graduate/courses/dphil-geography-and-environment","adapter":"oxford_course_page","required":true,"scope":"one Geography and Environment DPhil course page, not all Oxford doctoral vacancies"}]
+    },
+    "geo-project-rmit-phenology": {
+      "institution": "RMIT University",
+      "opportunity_type": "project-specific PhD research scholarship",
+      "filter": "only the named Herbaria-to-citizen-science scholarship detail page; do not merge the other RMIT project",
+      "pagination": "single detail page; verify all displayed value, duration, places, eligibility, close date, and application-route sections; missing values stay unknown",
+      "completeness_rule": "Single-detail-page scope complete only when a stable title and scholarship detail structure are present; live acceptance remains unknown unless explicitly stated.",
+      "endpoints": [{"endpoint_id":"geo-project-rmit-phenology:primary","url":"https://www.rmit.edu.au/scholarships/research/phd-scholarship-in-from-herbaria-to-citizen-science-a-continental-scale-assessment-of-plant-phenological-shifts-across-australia","adapter":"rmit_scholarship_detail","required":true,"scope":"one named project scholarship detail page"}]
+    },
+    "geo-project-rmit-spatial-health": {
+      "institution": "RMIT University",
+      "opportunity_type": "project-specific PhD research scholarship",
+      "filter": "only the named Spatial Health and Urban Design scholarship detail page; distinct from the Herbaria project",
+      "pagination": "single detail page; verify all displayed value, duration, places, eligibility, close date, and application-route sections; missing values stay unknown",
+      "completeness_rule": "Single-detail-page scope complete only when a stable title and scholarship detail structure are present; live acceptance remains unknown unless explicitly stated.",
+      "endpoints": [{"endpoint_id":"geo-project-rmit-spatial-health:primary","url":"https://www.rmit.edu.au/scholarships/research/phd-scholarship-in-spatial-health-research-and-urban-design","adapter":"rmit_scholarship_detail","required":true,"scope":"one named project scholarship detail page"}]
+    },
+    "src-17456e71-1ce5-5ac3-b562-4e6dddf8308a": {
+      "institution": "Urban Studies Foundation",
+      "opportunity_type": "research funding current opportunities",
+      "filter": "Current opportunities section only; exclude Grants awarded historical records and do not claim coverage of email-only notices",
+      "pagination": "The adapter extracts links from Current opportunities and excludes Grants awarded; it does not fetch linked program detail pages automatically.",
+      "completeness_rule": "Current opportunities heading and historical section boundary must both be present and all current-section links parsed. This proves the list section only; program detail and status require separate evidence.",
+      "endpoints": [{"endpoint_id":"src-17456e71-1ce5-5ac3-b562-4e6dddf8308a:primary","url":"https://www.urbanstudiesfoundation.org/funding/","adapter":"usf_current_funding","required":true,"scope":"Current opportunities only, excluding Grants awarded"}]
+    }
+  }
+}
