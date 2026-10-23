@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 3223)
-Total output lines: 225
-
 name: TERRAFAR read-only source maintenance
 
 on:
@@ -10,13 +7,7 @@ on:
   # Feature-branch only: code changes run the frozen ten-source read-only smoke.
   push:
     branches:
-      - codex/terrafar-source-monitoring-20261022
-    paths:
-      - '.github/workflows/terrafar-source-maintenance.yml'
-      - 'portfolio/application-board/scripts/terrafar_*.py'
-      - 'portfolio/application-board/maintenance/terrafar-source-audit/adapter_catalog.json'
-      - 'portfolio/application-board/maintenance/terrafar-source-audit/round_002/sample_manifest.json'
-      - 'portfolio/application-board/tests/test_terrafar_source_audit.py'
+      - 'codex/terrafar-source-monitoring-20261022'
   workflow_dispatch:
     inputs:
       mode:
@@ -106,7 +97,65 @@ jobs:
         run: |
           set -euo pipefail
           args=(--artifact-dir "$RUNNER_TEMP/terrafar-restore-artifact" --destination "$STATE_DIR" \
-                --origin-actions-run-id "$ORIGIN_ACTIONS…723 tokens truncated…  run: |
+                --origin-actions-run-id "$ORIGIN_ACTIONS_RUN_ID" --current-actions-run-id "$CURRENT_ACTIONS_RUN_ID" \
+                --registry maintenance/terrafar-source-audit/registry/source_registry.json)
+          if [[ "$ALLOW_LEGACY" == true ]]; then
+            args+=(--allow-legacy-migration --review-results maintenance/terrafar-source-audit/agent-results/round002_eth_first10.json)
+          fi
+          python3 scripts/terrafar_restore_run_state.py "${args[@]}"
+
+      - name: Merge assigned agent results into the durable ledger
+        if: ${{ inputs.review_results_path != '' }}
+        working-directory: portfolio/application-board
+        env:
+          REVIEW_RESULTS_PATH: ${{ inputs.review_results_path }}
+          CURRENT_ACTIONS_RUN_ID: ${{ github.run_id }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          case "$REVIEW_RESULTS_PATH" in
+            maintenance/terrafar-source-audit/agent-results/*.json) ;;
+            *) echo 'Review results must be an agent-results JSON file.' >&2; exit 2 ;;
+          esac
+          if [[ "$REVIEW_RESULTS_PATH" == *'..'* || ! -f "$REVIEW_RESULTS_PATH" ]]; then
+            echo 'Review result path is invalid or missing.' >&2
+            exit 2
+          fi
+          python3 scripts/terrafar_candidate_ledger.py merge-results \
+            --ledger "$STATE_DIR/candidate_ledger.json" \
+            --results "$REVIEW_RESULTS_PATH" --run-id "$CURRENT_ACTIONS_RUN_ID"
+
+      - name: Run the ten-source smoke or all-source plan with a rotating ten-source batch
+        id: audit
+        working-directory: portfolio/application-board
+        env:
+          TERRAFAR_RUN_ID: terrafar-maintenance-${{ github.run_id }}-${{ github.run_attempt }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(run --live --budget 10 --concurrency 3 --timeout 15 --retries 1 \
+                --per-host-delay 1 --http-request-budget 250 \
+                --require-state --require-candidate-ledger --state-dir "$STATE_DIR" --run-id "$TERRAFAR_RUN_ID")
+          if [[ "$RUN_MODE" == sample ]]; then
+            args+=(--source-ids-file maintenance/terrafar-source-audit/round_002/sample_manifest.json)
+          fi
+          python3 scripts/terrafar_source_audit.py "${args[@]}"
+
+      - name: Export a bounded Skill review batch from the persistent ledger
+        if: success()
+        working-directory: portfolio/application-board
+        run: |
+          set -euo pipefail
+          python3 scripts/terrafar_candidate_ledger.py export-batch \
+            --ledger "$STATE_DIR/candidate_ledger.json" \
+            --output "$STATE_DIR/agent_batch.json" --limit 10 --agent opportunity_verifier
+
+      - name: Assemble a narrow, versioned state artifact
+        if: success()
+        working-directory: portfolio/application-board
+        env:
+          TERRAFAR_RUN_ID: terrafar-maintenance-${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
           set -euo pipefail
           export_dir="$RUNNER_TEMP/terrafar-source-maintenance-export"
           run_dir="maintenance/terrafar-source-audit/runs/$TERRAFAR_RUN_ID"
