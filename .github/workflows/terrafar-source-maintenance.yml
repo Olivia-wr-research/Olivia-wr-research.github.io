@@ -166,6 +166,46 @@ jobs:
           github-token: ${{ github.token }}
           path: ${{ runner.temp }}/terrafar-restore-artifact
 
+      - name: Decrypt the checkpoint archive when present
+        id: restore_archive
+        working-directory: portfolio/application-board
+        env:
+          TERRAFAR_STATE_DECRYPTION_KEY: ${{ secrets.TERRAFAR_STATE_DECRYPTION_KEY }}
+          CHECKPOINT_ORIGIN_ACTIONS_RUN_ID: ${{ steps.source-run.outputs.restore_run_id }}
+          CHECKPOINT_ORIGIN_ARTIFACT_NAME: ${{ steps.source-run.outputs.artifact_name }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          download="$RUNNER_TEMP/terrafar-restore-artifact"
+          destination="$RUNNER_TEMP/terrafar-restore-artifact-unpacked"
+          if [[ -f "$download/private_state.cms" ]]; then
+            [[ -n "${TERRAFAR_STATE_DECRYPTION_KEY:-}" ]] || { echo 'Encrypted maintenance checkpoint requires TERRAFAR_STATE_DECRYPTION_KEY.' >&2; exit 2; }
+            manifest="$download/maintenance_artifact_manifest.json"
+            [[ -f "$manifest" ]] || { echo 'Encrypted maintenance checkpoint has no public manifest.' >&2; exit 2; }
+            python3 - "$manifest" "$CHECKPOINT_ORIGIN_ACTIONS_RUN_ID" "$CHECKPOINT_ORIGIN_ARTIFACT_NAME" <<'PY'
+          import json,sys
+          metadata=json.load(open(sys.argv[1],encoding='utf-8'))
+          if metadata.get('format')!='terrafar-source-maintenance-public-artifact-v1' or metadata.get('capture_status')!='complete':
+              raise SystemExit('encrypted maintenance checkpoint manifest is not a complete supported format')
+          if str(metadata.get('actions_run_id'))!=sys.argv[2] or metadata.get('artifact_name')!=sys.argv[3]:
+              raise SystemExit('encrypted maintenance checkpoint origin does not match the selected Actions run and artifact')
+          PY
+            expected_cert="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1],encoding="utf-8")).get("state_encryption_certificate_sha256", ""))' "$manifest")"
+            expected_archive="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1],encoding="utf-8")).get("encrypted_state_sha256", ""))' "$manifest")"
+            actual_cert="$(sha256sum maintenance/terrafar-source-audit/state_archive_recipient.pem | cut -d ' ' -f 1)"
+            actual_archive="$(sha256sum "$download/private_state.cms" | cut -d ' ' -f 1)"
+            [[ -n "$expected_cert" && "$expected_cert" == "$actual_cert" ]] || { echo 'Maintenance checkpoint recipient certificate does not match its manifest.' >&2; exit 2; }
+            [[ -n "$expected_archive" && "$expected_archive" == "$actual_archive" ]] || { echo 'Maintenance checkpoint archive hash does not match its manifest.' >&2; exit 2; }
+            python3 scripts/terrafar_state_archive.py decrypt \
+              --input "$download/private_state.cms" --destination "$destination" \
+              --recipient-certificate maintenance/terrafar-source-audit/state_archive_recipient.pem
+            echo "artifact_dir=$destination" >> "$GITHUB_OUTPUT"
+          else
+            # One-time migration path for already-created plaintext artifacts. New uploads
+            # below contain no raw candidate ledger, candidate text, or agent batch.
+            echo "artifact_dir=$download" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Verify and restore prior state across distinct Actions runs
         working-directory: portfolio/application-board
         env:
@@ -175,7 +215,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          args=(--artifact-dir "$RUNNER_TEMP/terrafar-restore-artifact" --destination "$STATE_DIR" \
+          args=(--artifact-dir "${{ steps.restore_archive.outputs.artifact_dir }}" --destination "$STATE_DIR" \
                 --origin-actions-run-id "$ORIGIN_ACTIONS_RUN_ID" --current-actions-run-id "$CURRENT_ACTIONS_RUN_ID" \
                 --registry maintenance/terrafar-source-audit/registry/source_registry.json)
           if [[ "$ALLOW_LEGACY" == true ]]; then
@@ -232,53 +272,29 @@ jobs:
           set -euo pipefail
           python3 scripts/terrafar_candidate_ledger.py export-batch \
             --ledger "$STATE_DIR/candidate_ledger.json" \
-            --output "$STATE_DIR/agent_batch.json" --limit 10 --agent opportunity_verifier
+            --output "$STATE_DIR/agent_batch.json" --limit 10 --agent opportunity_verifier >/dev/null
 
-      - name: Assemble a narrow, versioned state artifact
+      - name: Build a sanitized public report and encrypted candidate checkpoint
         if: success()
         working-directory: portfolio/application-board
         env:
           TERRAFAR_RUN_ID: terrafar-maintenance-${{ github.run_id }}-${{ github.run_attempt }}
+        shell: bash
         run: |
           set -euo pipefail
-          export_dir="$RUNNER_TEMP/terrafar-source-maintenance-export"
-          run_dir="maintenance/terrafar-source-audit/runs/$TERRAFAR_RUN_ID"
-          mkdir -p "$export_dir/state" "$export_dir/run"
-          cp "$STATE_DIR/state.json" "$STATE_DIR/candidate_ledger.json" "$STATE_DIR/restore_verification.json" "$STATE_DIR/agent_batch.json" "$export_dir/state/"
-          cp "$run_dir/manifest.json" "$run_dir/source_checks.jsonl" "$run_dir/candidate_review_queue.jsonl" \
-             "$run_dir/candidate_ledger.json" "$run_dir/daily_report.json" "$run_dir/daily_report.md" "$export_dir/run/"
-          python3 - "$export_dir" "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" "$TERRAFAR_RUN_ID" <<'PY'
-          import hashlib,json,pathlib,sys
-          root=pathlib.Path(sys.argv[1]); actions_run_id,attempt,program_run_id=sys.argv[2:]
-          state_bytes=(root/'state/state.json').read_bytes(); ledger_bytes=(root/'state/candidate_ledger.json').read_bytes()
-          state=json.loads(state_bytes); ledger=json.loads(ledger_bytes); manifest=json.loads((root/'run/manifest.json').read_text())
-          registry=pathlib.Path('maintenance/terrafar-source-audit/registry/source_registry.json').read_bytes()
-          adapter_catalog=pathlib.Path('maintenance/terrafar-source-audit/adapter_catalog.json').read_bytes()
-          metadata={
-              'format':'terrafar-maintenance-state-v1','origin_actions_run_id':actions_run_id,
-              'origin_run_attempt':attempt,'origin_program_run_id':program_run_id,
-              'state_compatibility_version':3,
-              'artifact_name':f'terrafar-source-maintenance-state-v3-{actions_run_id}-{attempt}',
-              'state_schema_version':state.get('schema_version'),'candidate_ledger_schema_version':ledger.get('schema_version'),
-              'state_sha256':hashlib.sha256(state_bytes).hexdigest(),
-              'candidate_ledger_sha256':hashlib.sha256(ledger_bytes).hexdigest(),
-              'registry_sha256':hashlib.sha256(registry).hexdigest(),
-              'adapter_catalog_sha256':hashlib.sha256(adapter_catalog).hexdigest(),'plan_sha256':manifest['plan_sha256'],
-              'runner_sha256':hashlib.sha256(pathlib.Path('scripts/terrafar_source_audit.py').read_bytes()).hexdigest(),
-              'adapter_implementation_sha256':hashlib.sha256(pathlib.Path('scripts/terrafar_source_adapters.py').read_bytes()).hexdigest(),
-              'candidate_ledger_implementation_sha256':hashlib.sha256(pathlib.Path('scripts/terrafar_candidate_ledger.py').read_bytes()).hexdigest(),
-              'candidate_task_count':len(ledger.get('tasks',{})),
-          }
-          if state.get('last_registry_sha256') != metadata['registry_sha256'] or manifest.get('registry_sha256') != metadata['registry_sha256']:
-              raise SystemExit('state or run manifest registry hash differs from checked-out registry')
-          (root/'state/provenance.json').write_text(json.dumps(metadata,indent=2)+'\n')
-          verification=json.loads((root/'state/restore_verification.json').read_text())
-          if verification.get('origin_actions_run_id') == actions_run_id:
-              raise SystemExit('current Actions run cannot be its own restore origin')
-          print(json.dumps({'state_sha256':metadata['state_sha256'],'candidate_ledger_sha256':metadata['candidate_ledger_sha256'],'candidate_task_count':metadata['candidate_task_count'],'restored_from_actions_run_id':verification['origin_actions_run_id'],'current_actions_run_id':actions_run_id}))
-          PY
-
-      - name: Save successful state, ledger, verification, and per-source logs
+          python3 scripts/terrafar_maintenance_artifact.py success \
+            --state-dir "$STATE_DIR" \
+            --run-dir "maintenance/terrafar-source-audit/runs/$TERRAFAR_RUN_ID" \
+            --output-dir "$RUNNER_TEMP/terrafar-source-maintenance-export" \
+            --recipient-certificate maintenance/terrafar-source-audit/state_archive_recipient.pem \
+            --actions-run-id "$GITHUB_RUN_ID" --run-attempt "$GITHUB_RUN_ATTEMPT" \
+            --program-run-id "$TERRAFAR_RUN_ID" \
+            --registry maintenance/terrafar-source-audit/registry/source_registry.json \
+            --adapter-catalog maintenance/terrafar-source-audit/adapter_catalog.json \
+            --runner scripts/terrafar_source_audit.py \
+            --adapters scripts/terrafar_source_adapters.py \
+            --candidate-ledger-implementation scripts/terrafar_candidate_ledger.py
+      - name: Save sanitized diagnostics and encrypted candidate state
         if: success()
         uses: actions/upload-artifact@v4
         with:
@@ -287,19 +303,23 @@ jobs:
           if-no-files-found: error
           retention-days: 90
 
-      - name: Preserve failure diagnostics without making failed state restorable
+      - name: Build sanitized failure diagnostics
+        if: failure()
+        working-directory: portfolio/application-board
+        env:
+          TERRAFAR_RUN_ID: terrafar-maintenance-${{ github.run_id }}-${{ github.run_attempt }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/terrafar_maintenance_artifact.py failure \
+            --run-dir "maintenance/terrafar-source-audit/runs/$TERRAFAR_RUN_ID" \
+            --output-dir "$RUNNER_TEMP/terrafar-source-maintenance-failure" \
+            --actions-run-id "$GITHUB_RUN_ID" --run-attempt "$GITHUB_RUN_ATTEMPT"
+      - name: Preserve sanitized failure diagnostics only
         if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: terrafar-source-maintenance-failure-${{ github.run_id }}-${{ github.run_attempt }}
-          path: |
-            /tmp/terrafar-source-maintenance-${{ github.run_id }}/state.json
-            /tmp/terrafar-source-maintenance-${{ github.run_id }}/candidate_ledger.json
-            /tmp/terrafar-source-maintenance-${{ github.run_id }}/restore_verification.json
-            /tmp/terrafar-source-maintenance-${{ github.run_id }}/agent_batch.json
-            portfolio/application-board/maintenance/terrafar-source-audit/runs/terrafar-maintenance-${{ github.run_id }}-${{ github.run_attempt }}/manifest.json
-            portfolio/application-board/maintenance/terrafar-source-audit/runs/terrafar-maintenance-${{ github.run_id }}-${{ github.run_attempt }}/source_checks.jsonl
-            portfolio/application-board/maintenance/terrafar-source-audit/runs/terrafar-maintenance-${{ github.run_id }}-${{ github.run_attempt }}/daily_report.json
-            portfolio/application-board/maintenance/terrafar-source-audit/runs/terrafar-maintenance-${{ github.run_id }}-${{ github.run_attempt }}/candidate_review_queue.jsonl
+          path: ${{ runner.temp }}/terrafar-source-maintenance-failure/
           if-no-files-found: ignore
           retention-days: 90
