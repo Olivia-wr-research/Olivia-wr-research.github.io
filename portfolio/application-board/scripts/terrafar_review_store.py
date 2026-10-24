@@ -16,6 +16,7 @@ import json
 import os
 from pathlib import Path
 import re
+import shutil
 import tempfile
 import urllib.error
 import urllib.request
@@ -30,11 +31,78 @@ MANIFEST = f"{ROOT}/store-manifest.json"
 REVIEW_FILES = {"review.json", "review.md"}
 PRIVATE_ARCHIVE = f"{ROOT}/private-review.cms"
 STORE_FORMAT = "terrafar-review-store-v2-encrypted"
+CHUNKED_STORE_FORMAT = "terrafar-review-store-v3-encrypted-parts"
+PRIVATE_PARTS = f"{ROOT}/private-review.parts"
+PART_BYTES = 24 * 1024
+MAX_PARTS = 4096
 RECIPIENT_CERTIFICATE = Path(__file__).resolve().parents[1] / "maintenance/terrafar-source-audit/state_archive_recipient.pem"
 AUTHORIZED_BRANCHES = {"main", "codex/terrafar-full-coverage-quality-gate-20261024",
                        "codex/terrafar-daily-review-integrated-20261024"}
 WORKFLOW = ".github/workflows/terrafar-source-maintenance.yml"
 REVIEW_RUN_PREFIX = "TERRAFAR review · "
+
+
+def encrypted_paths(manifest: dict) -> list[str]:
+    """Validate the bounded, ordered ciphertext layout before reading any paths."""
+    if manifest.get("private_archive") != PRIVATE_ARCHIVE:
+        raise ValueError("review_report_private_archive_identity_invalid")
+    if manifest.get("format") == STORE_FORMAT:
+        if "encrypted_parts" in manifest:
+            raise ValueError("review_report_v2_cannot_declare_parts")
+        return [PRIVATE_ARCHIVE]
+    parts = manifest.get("encrypted_parts")
+    if (manifest.get("format") != CHUNKED_STORE_FORMAT or not isinstance(parts, list)
+            or not 1 <= len(parts) <= MAX_PARTS):
+        raise ValueError("review_report_encrypted_parts_invalid")
+    for number, part in enumerate(parts, 1):
+        if (not isinstance(part, dict) or set(part) != {"path", "sha256", "decoded_bytes"}
+                or part["path"] != f"{PRIVATE_PARTS}/{number:06d}.b64"
+                or not isinstance(part["sha256"], str) or not quality.HASH.fullmatch(part["sha256"])
+                or type(part["decoded_bytes"]) is not int or not 1 <= part["decoded_bytes"] <= PART_BYTES
+                or (number < len(parts) and part["decoded_bytes"] != PART_BYTES)
+                or manifest.get("file_sha256", {}).get(part["path"]) != part["sha256"]):
+            raise ValueError("review_report_encrypted_part_order_size_or_hash_invalid")
+    return [part["path"] for part in parts]
+
+
+def assemble_cipher(manifest: dict, files: dict[str, bytes]) -> bytes:
+    paths = encrypted_paths(manifest)
+    if manifest["format"] == STORE_FORMAT:
+        cipher = files.get(PRIVATE_ARCHIVE, b"")
+    else:
+        chunks = []
+        for part, path in zip(manifest["encrypted_parts"], paths):
+            payload = files.get(path, b"")
+            if (len(payload) > 4 * ((PART_BYTES + 2) // 3) + 1
+                    or hashlib.sha256(payload).hexdigest() != part["sha256"]):
+                raise ValueError("review_report_encrypted_part_missing_or_corrupt")
+            try:
+                chunk = base64.b64decode(payload[:-1], validate=True)
+            except (ValueError, base64.binascii.Error) as error:
+                raise ValueError("review_report_encrypted_part_base64_invalid") from error
+            if (payload != base64.b64encode(chunk) + b"\n" or len(chunk) != part["decoded_bytes"]):
+                raise ValueError("review_report_encrypted_part_not_canonical")
+            chunks.append(chunk)
+        cipher = b"".join(chunks)
+    if hashlib.sha256(cipher).hexdigest() != manifest.get("encrypted_review_sha256"):
+        raise ValueError("review_report_encrypted_archive_missing_or_invalid")
+    state_archive.validate_ciphertext(cipher)
+    return cipher
+
+
+def write_cipher_parts(directory: Path, ciphertext: bytes) -> list[dict]:
+    if len(ciphertext) > PART_BYTES * MAX_PARTS:
+        raise ValueError("review_report_ciphertext_exceeds_bounded_storage")
+    parts = []
+    for offset in range(0, len(ciphertext), PART_BYTES):
+        chunk = ciphertext[offset:offset + PART_BYTES]
+        relative = f"{PRIVATE_PARTS}/{len(parts) + 1:06d}.b64"
+        payload = base64.b64encode(chunk) + b"\n"
+        path = directory / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(payload)
+        parts.append({"path": relative, "sha256": hashlib.sha256(payload).hexdigest(), "decoded_bytes": len(chunk)})
+    return parts
 
 
 def validate_journal(journal: dict) -> None:
@@ -197,11 +265,11 @@ def unconfirmed_review_runs(runs: list[dict], authority: dict | None, current_ru
 def _read_remote_authority(api: GitHub, head: str, repository: str, recipient_certificate: Path) -> dict:
     """Only the encrypted journal is authority; public summaries cannot approve anything."""
     manifest = json.loads(api.file(MANIFEST, head))
-    if (manifest.get("format") != STORE_FORMAT or manifest.get("repository") != repository
+    if (manifest.get("format") not in {STORE_FORMAT, CHUNKED_STORE_FORMAT} or manifest.get("repository") != repository
             or manifest.get("branch") != BRANCH or manifest.get("private_archive") != PRIVATE_ARCHIVE
             or manifest.get("source_branch") not in AUTHORIZED_BRANCHES):
         raise ValueError("review_authority_manifest_or_journal_hash_invalid")
-    encrypted = api.file(PRIVATE_ARCHIVE, head)
+    encrypted = assemble_cipher(manifest, {path: api.file(path, head) for path in encrypted_paths(manifest)})
     if (hashlib.sha256(encrypted).hexdigest() != manifest.get("encrypted_review_sha256")
             or hashlib.sha256(recipient_certificate.read_bytes()).hexdigest() != manifest.get("state_encryption_certificate_sha256")):
         raise ValueError("review_authority_archive_or_certificate_hash_invalid")
@@ -366,13 +434,13 @@ def validate_public_summary(value: dict) -> None:
         raise ValueError("public_review_summary_invalid_count_or_blocker")
 
 
-def public_markdown(summary: dict) -> str:
+def public_markdown(summary: dict, chunked: bool = False) -> str:
     validate_public_summary(summary)
     context = ("**历史证据重建报告。** 此材料在本地从已保存的实际运行证据生成，数据来源运行："
                + ", ".join(summary["data_origin_run_ids"]) + "。最新加密候选账本尚未通过本次重建恢复；"
                "这不是新的 Actions 执行或最新账本核验完成的声明。\n\n"
                if summary["generation_context"] == "local_reconstruction" else "")
-    return ("# TERRAFAR 每日核验状态\n\n" + context +
+    rendered = ("# TERRAFAR 每日核验状态\n\n" + context +
         f"- 日期：{summary['date']}；修订：{summary['revision']}。\n"
         f"- 来源计划 / 尝试：{summary['required_sources']} / {summary['attempted_sources']}。\n"
         f"- 机器完整范围检查 / 独立审核后有效：{summary['machine_complete_sources']} / {summary['effective_complete_sources']}。\n"
@@ -385,6 +453,13 @@ def public_markdown(summary: dict) -> str:
         "由持有匹配私钥的所有者下载并在本地解密；请勿把私钥提交到仓库、聊天或日志。"
         "解密后的 `quality/latest/review.json` 可导入本地审核页面；人工决定必须绑定该版本。"
         "公开摘要仅供查看运行情况，不能替代完整材料或证明人工已经批准。\n")
+    if chunked:
+        rendered = rendered.replace(
+            "候选文本、字段证据、抽检清单和审核历史保存在同目录上级的 `private-review.cms` 加密包中。",
+            "候选文本、字段证据、抽检清单和审核历史加密保存于 `quality/private-review.parts/`。"
+            "请从同一提交下载整个核验分支及 `quality/store-manifest.json`，在可信本地环境运行 "
+            "`terrafar_review_store.py decrypt-store` 自动校验并合并解密；不要手工拼接分片。")
+    return rendered
 
 
 def export_store(journal_path: Path, directory: Path, authority_info: Path, repository: str,
@@ -421,23 +496,33 @@ def export_store(journal_path: Path, directory: Path, authority_info: Path, repo
         quality.export_batch(latest, private_root / "latest", journal)
         state_archive.encrypt_directory(private, directory / PRIVATE_ARCHIVE, recipient_certificate)
         journal_sha = hashlib.sha256((private / "quality_journal.json").read_bytes()).hexdigest()
+    cipher_path = directory / PRIVATE_ARCHIVE
+    ciphertext = cipher_path.read_bytes()
+    cipher_hash = hashlib.sha256(ciphertext).hexdigest()
+    parts = write_cipher_parts(directory, ciphertext) if len(ciphertext) > PART_BYTES else []
+    if parts:
+        cipher_path.unlink()
+        for summary in summaries:
+            (root / summary["date"] / "review.md").write_text(public_markdown(summary, True), encoding="utf-8")
     last_summary = next(row for row in summaries if row["date"] == latest_day)
     quality.write_json(root / "latest/review.json", last_summary)
-    (root / "latest/review.md").write_text(public_markdown(last_summary), encoding="utf-8")
+    (root / "latest/review.md").write_text(public_markdown(last_summary, bool(parts)), encoding="utf-8")
     quality.write_json(root / "index.json", {"format": "terrafar-public-quality-index-v1",
         "latest_date": latest_day, "details_encrypted": True, "batches": list(reversed(summaries))})
     files = {str(path.relative_to(directory)): hashlib.sha256(path.read_bytes()).hexdigest()
              for path in sorted(root.rglob("*")) if path.is_file()}
-    manifest = {"format": STORE_FORMAT, "repository": repository, "branch": BRANCH,
+    manifest = {"format": CHUNKED_STORE_FORMAT if parts else STORE_FORMAT, "repository": repository, "branch": BRANCH,
         "generated_at": quality.now(), "expected_previous_head": authority["head_sha"],
         "source_actions_run_id": os.environ.get("GITHUB_RUN_ID") if generation_context == "github_actions" else None,
         "source_commit_sha": os.environ.get("GITHUB_SHA"), "generation_context": generation_context,
         "data_origin_run_ids": data_origin_run_ids or [],
         "source_branch": os.environ.get("GITHUB_REF_NAME"), "latest_date": latest_day,
         "journal_sha256": journal_sha, "private_archive": PRIVATE_ARCHIVE,
-        "encrypted_review_sha256": files[PRIVATE_ARCHIVE],
+        "encrypted_review_sha256": cipher_hash,
         "state_encryption_certificate_sha256": hashlib.sha256(recipient_certificate.read_bytes()).hexdigest(),
         "file_sha256": files, "batch_count": len(journal["batches"])}
+    if parts:
+        manifest["encrypted_parts"] = parts
     quality.write_json(root / "store-manifest.json", manifest)
     validate_store(directory, repository, recipient_certificate)
     return {"directory": str(directory), "batch_count": len(journal["batches"]), "latest_date": latest_day,
@@ -450,7 +535,9 @@ def validate_store(directory: Path, repository: str, recipient_certificate: Path
         "source_commit_sha", "source_branch", "latest_date", "journal_sha256", "private_archive",
         "encrypted_review_sha256", "state_encryption_certificate_sha256", "file_sha256", "batch_count",
         "generation_context", "data_origin_run_ids"}
-    if (set(manifest) != manifest_keys or manifest.get("format") != STORE_FORMAT or manifest.get("repository") != repository
+    if manifest.get("format") == CHUNKED_STORE_FORMAT:
+        manifest_keys.add("encrypted_parts")
+    if (set(manifest) != manifest_keys or manifest.get("format") not in {STORE_FORMAT, CHUNKED_STORE_FORMAT} or manifest.get("repository") != repository
             or manifest.get("branch") != BRANCH or manifest.get("source_branch") not in AUTHORIZED_BRANCHES
             or manifest.get("private_archive") != PRIVATE_ARCHIVE):
         raise ValueError("review_report_not_from_an_authorized_branch_or_repository")
@@ -468,6 +555,7 @@ def validate_store(directory: Path, repository: str, recipient_certificate: Path
     if (not isinstance(manifest.get("generated_at"), str) or not re.fullmatch(r"\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d+)?(?:Z|[+-]\d\d:\d\d)", manifest["generated_at"])
             or not isinstance(manifest.get("file_sha256"), dict)):
         raise ValueError("review_report_manifest_metadata_invalid")
+    private_paths = set(encrypted_paths(manifest))
     expected = set(manifest.get("file_sha256", {})) | {MANIFEST}
     actual = {str(path.relative_to(directory)) for path in directory.rglob("*") if path.is_file()}
     if actual != expected:
@@ -476,7 +564,7 @@ def validate_store(directory: Path, repository: str, recipient_certificate: Path
     for relative in sorted(expected):
         path = directory / relative
         pieces = Path(relative).parts
-        allowed = (relative in {PRIVATE_ARCHIVE, MANIFEST, f"{ROOT}/index.json"} or
+        allowed = (relative in private_paths | {MANIFEST, f"{ROOT}/index.json"} or
                    (len(pieces) == 3 and pieces[0] == ROOT and (pieces[1] == "latest" or re.fullmatch(r"\d{4}-\d{2}-\d{2}", pieces[1]))
                     and pieces[2] in REVIEW_FILES))
         if not allowed or path.is_symlink() or not path.resolve().is_relative_to(directory.resolve()):
@@ -485,10 +573,7 @@ def validate_store(directory: Path, repository: str, recipient_certificate: Path
         if relative != MANIFEST and hashlib.sha256(payload).hexdigest() != manifest["file_sha256"][relative]:
             raise ValueError("review_report_file_digest_mismatch")
         files[relative] = payload
-    cipher = files.get(PRIVATE_ARCHIVE, b"")
-    if not cipher.startswith(state_archive.MAGIC) or hashlib.sha256(cipher).hexdigest() != manifest["encrypted_review_sha256"]:
-        raise ValueError("review_report_encrypted_archive_missing_or_invalid")
-    state_archive.validate_ciphertext(cipher)
+    assemble_cipher(manifest, files)
     if recipient_certificate is not None and hashlib.sha256(recipient_certificate.read_bytes()).hexdigest() != manifest["state_encryption_certificate_sha256"]:
         raise ValueError("review_report_recipient_certificate_mismatch")
     index = json.loads(files[f"{ROOT}/index.json"])
@@ -504,15 +589,39 @@ def validate_store(directory: Path, repository: str, recipient_certificate: Path
     if (not dates or dates != sorted(set(dates), reverse=True) or dates[0] != manifest["latest_date"]
             or index["latest_date"] != dates[0] or type(manifest["batch_count"]) is not int or manifest["batch_count"] != len(dates)):
         raise ValueError("public_review_index_dates_invalid")
-    required = {MANIFEST, PRIVATE_ARCHIVE, f"{ROOT}/index.json"}
+    required = private_paths | {MANIFEST, f"{ROOT}/index.json"}
     for label, summary in [(row["date"], row) for row in index["batches"]] + [("latest", index["batches"][0])]:
         jpath, mpath = f"{ROOT}/{label}/review.json", f"{ROOT}/{label}/review.md"
         required.update({jpath, mpath})
-        if json.loads(files.get(jpath, b"{}")) != summary or files.get(mpath) != public_markdown(summary).encode():
+        if (json.loads(files.get(jpath, b"{}")) != summary
+                or files.get(mpath) != public_markdown(summary, manifest["format"] == CHUNKED_STORE_FORMAT).encode()):
             raise ValueError("public_review_summary_or_markdown_not_canonical")
     if expected != required:
         raise ValueError("public_review_file_set_not_minimal")
     return manifest, files
+
+
+def decrypt_store(directory: Path, repository: str, destination: Path,
+                  recipient_certificate: Path = RECIPIENT_CERTIFICATE) -> dict:
+    """Verify a downloaded branch snapshot and decrypt it only in the owner's local workspace."""
+    manifest, files = validate_store(directory, repository, recipient_certificate)
+    if destination.is_symlink() or (destination.exists() and (not destination.is_dir() or any(destination.iterdir()))):
+        raise ValueError("review_decrypt_destination_must_be_empty")
+    with tempfile.TemporaryDirectory(prefix="terrafar-local-review-") as tmp:
+        root = Path(tmp)
+        archive = root / "private-review.cms"
+        archive.write_bytes(assemble_cipher(manifest, files))
+        os.chmod(archive, 0o600)
+        state_archive.decrypt_archive(archive, root / "unpacked", recipient_certificate)
+        journal = root / "unpacked/state/quality_journal.json"
+        if hashlib.sha256(journal.read_bytes()).hexdigest() != manifest["journal_sha256"]:
+            raise ValueError("review_authority_manifest_or_journal_hash_invalid")
+        validate_journal(quality.read_json(journal))
+        destination.mkdir(parents=True, exist_ok=True, mode=0o700)
+        os.chmod(destination, 0o700)
+        shutil.copytree(root / "unpacked/state", destination / "state")
+    return {"destination": str(destination), "batch_count": manifest["batch_count"],
+            "latest_date": manifest["latest_date"], "journal_sha256": manifest["journal_sha256"]}
 
 
 def publish_store(directory: Path, repository: str, recipient_certificate: Path = RECIPIENT_CERTIFICATE) -> dict:
@@ -523,15 +632,37 @@ def publish_store(directory: Path, repository: str, recipient_certificate: Path 
         raise ValueError("review_branch_head_changed_refuse_stale_report_push")
     base_tree = None
     existing = {}
+    obsolete = set()
     if expected:
         base_tree = api.request(f"/repos/{repository}/git/commits/{expected}")["tree"]["sha"]
         tree = api.request(f"/repos/{repository}/git/trees/{base_tree}?recursive=1")
         if tree.get("truncated"):
             raise ValueError("review_branch_tree_truncated")
         existing = {entry["path"]: entry["sha"] for entry in tree["tree"] if entry["type"] == "blob"}
-        if set(existing) - set(files):
-            raise ValueError("review_branch_contains_unapproved_files_refuse_to_carry_forward")
-    entries = []
+        obsolete = set(existing) - set(files)
+        if obsolete:
+            # A change in encrypted length can remove tail parts; upgrading v2
+            # also removes its single ciphertext. Never delete history or carry
+            # forward any other unexpected file. Validate the old whole store at
+            # the same pinned HEAD before permitting these atomic deletions.
+            if any(path != PRIVATE_ARCHIVE and not re.fullmatch(re.escape(PRIVATE_PARTS) + r"/\d{6}\.b64", path)
+                   for path in obsolete):
+                raise ValueError("review_branch_contains_unapproved_files_refuse_to_carry_forward")
+            previous_bytes = api.file(MANIFEST, expected)
+            previous = json.loads(previous_bytes)
+            previous_private = set(encrypted_paths(previous))
+            if not obsolete.issubset(previous_private) or set(existing) != set(previous.get("file_sha256", {})) | {MANIFEST}:
+                raise ValueError("review_branch_contains_unapproved_files_refuse_to_carry_forward")
+            with tempfile.TemporaryDirectory(prefix="terrafar-previous-public-review-") as tmp:
+                old_root = Path(tmp)
+                for relative in existing:
+                    path = old_root / relative
+                    if ".." in Path(relative).parts or not path.resolve().is_relative_to(old_root.resolve()):
+                        raise ValueError("review_report_path_not_allowed")
+                    path.parent.mkdir(parents=True, exist_ok=True)
+                    path.write_bytes(previous_bytes if relative == MANIFEST else api.file(relative, expected))
+                validate_store(old_root, repository, recipient_certificate)
+    entries = [{"path": path, "mode": "100644", "type": "blob", "sha": None} for path in sorted(obsolete)]
     for relative, payload in files.items():
         git_sha = hashlib.sha1(f"blob {len(payload)}\0".encode() + payload).hexdigest()
         if existing.get(relative) == git_sha:
@@ -583,6 +714,11 @@ def main() -> None:
     publish.add_argument("--repository", required=True)
     publish.add_argument("--directory", type=Path, required=True)
     publish.add_argument("--recipient-certificate", type=Path, default=RECIPIENT_CERTIFICATE)
+    decrypt = commands.add_parser("decrypt-store")
+    decrypt.add_argument("--repository", required=True)
+    decrypt.add_argument("--directory", type=Path, required=True)
+    decrypt.add_argument("--destination", type=Path, required=True)
+    decrypt.add_argument("--recipient-certificate", type=Path, default=RECIPIENT_CERTIFICATE)
     args = parser.parse_args()
     if args.command == "load-authority":
         result = load_authority(args.repository, args.journal, args.authority_info, args.recipient_certificate)
@@ -591,6 +727,8 @@ def main() -> None:
     elif args.command == "export-store":
         result = export_store(args.journal, args.directory, args.authority_info, args.repository, args.recipient_certificate,
                               args.generation_context, args.data_origin_run_id)
+    elif args.command == "decrypt-store":
+        result = decrypt_store(args.directory, args.repository, args.destination, args.recipient_certificate)
     else:
         result = publish_store(args.directory, args.repository, args.recipient_certificate)
     print(json.dumps(result, ensure_ascii=False))

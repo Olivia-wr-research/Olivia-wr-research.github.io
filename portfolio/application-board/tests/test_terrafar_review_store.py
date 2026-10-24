@@ -1,5 +1,7 @@
 """Offline synthetic review-store tests; no real approvals or remote writes."""
 import copy
+import base64
+import random
 import hashlib
 import json
 from pathlib import Path
@@ -382,6 +384,142 @@ class ReviewStoreTests(unittest.TestCase):
         self.assertIn("最新加密候选账本尚未", files["quality/latest/review.md"].decode())
         summary = json.loads(files["quality/latest/review.json"])
         self.assertEqual(summary["generation_context"], "local_reconstruction")
+
+
+    def chunked_export(self, size=60000):
+        journal = q.read_json(self.fixture.journal)
+        random_bytes = random.Random(123).randbytes(size)
+        journal["events"].append({"type": "synthetic_transport_payload", "payload": base64.b64encode(random_bytes).decode()})
+        q.write_json(self.fixture.journal, journal)
+        return self.export()
+
+    def test_chunked_store_roundtrip_preserves_whole_journal_and_failure(self):
+        self.fixture.review(self.batch, "fail", self.batch["sample"]["record_ids"][:1])
+        directory = self.chunked_export()
+        manifest, files = store.validate_store(directory, self.repo, self.certificate)
+        self.assertEqual(manifest["format"], store.CHUNKED_STORE_FORMAT)
+        self.assertNotIn(store.PRIVATE_ARCHIVE, files)
+        self.assertGreater(len(manifest["encrypted_parts"]), 1)
+        self.assertTrue(all(len(files[p["path"]]) <= 32769 for p in manifest["encrypted_parts"]))
+        with mock.patch.dict("os.environ", {"TERRAFAR_STATE_DECRYPTION_KEY": self.private_key.read_text()}):
+            store.decrypt_store(directory, self.repo, self.root / "owner-copy", self.certificate)
+        actual = self.root / "owner-copy/state/quality_journal.json"
+        self.assertEqual(actual.read_bytes(), self.fixture.journal.read_bytes())
+        self.assertTrue(q.read_json(actual)["batches"][self.batch["date"]]["recheck"]["required"])
+        self.assertIn("decrypt-store", files["quality/latest/review.md"].decode())
+
+    def test_chunked_authority_fetches_every_part_from_one_pinned_head(self):
+        directory = self.chunked_export()
+        manifest, files = store.validate_store(directory, self.repo, self.certificate)
+        api = mock.Mock()
+        api.head.return_value = "1" * 40
+        api.review_runs.return_value = []
+        api.file.side_effect = lambda path, commit: files[path]
+        with mock.patch.object(store, "GitHub", return_value=api), mock.patch.dict("os.environ", {
+                "TERRAFAR_STATE_DECRYPTION_KEY": self.private_key.read_text()}):
+            store.load_authority(self.repo, self.fixture.journal, self.info, self.certificate)
+        self.assertEqual({c.args[0] for c in api.file.call_args_list}, {store.MANIFEST} | set(store.encrypted_paths(manifest)))
+        self.assertTrue(all(c.args[1] == "1" * 40 for c in api.file.call_args_list))
+
+    def test_chunked_store_rejects_missing_or_corrupt_part(self):
+        directory = self.chunked_export()
+        manifest = q.read_json(directory / store.MANIFEST)
+        path = directory / manifest["encrypted_parts"][0]["path"]
+        original = path.read_bytes()
+        path.unlink()
+        with self.assertRaisesRegex(ValueError, "file_set_mismatch"):
+            store.validate_store(directory, self.repo)
+        path.write_bytes(b"A" + original[1:])
+        with self.assertRaisesRegex(ValueError, "file_digest"):
+            store.validate_store(directory, self.repo)
+
+    def test_chunked_store_rejects_reordered_manifest_before_remote_reads(self):
+        directory = self.chunked_export()
+        manifest = q.read_json(directory / store.MANIFEST)
+        manifest["encrypted_parts"].reverse()
+        q.write_json(directory / store.MANIFEST, manifest)
+        with self.assertRaisesRegex(ValueError, "part_order"):
+            store.validate_store(directory, self.repo)
+        api = mock.Mock()
+        api.file.return_value = json.dumps(manifest).encode()
+        with self.assertRaisesRegex(ValueError, "part_order"):
+            store._read_remote_authority(api, "1" * 40, self.repo, self.certificate)
+        self.assertEqual(api.file.call_count, 1)
+
+    def test_chunked_store_rejects_noncanonical_base64_and_whole_cipher_tamper(self):
+        directory = self.chunked_export()
+        manifest = q.read_json(directory / store.MANIFEST)
+        part = manifest["encrypted_parts"][0]
+        path = directory / part["path"]
+        original = path.read_bytes()
+        path.write_bytes(original[:100] + b" " + original[101:])
+        part["sha256"] = manifest["file_sha256"][part["path"]] = hashlib.sha256(path.read_bytes()).hexdigest()
+        q.write_json(directory / store.MANIFEST, manifest)
+        with self.assertRaisesRegex(ValueError, "base64_invalid|not_canonical"):
+            store.validate_store(directory, self.repo)
+        raw = bytearray(base64.b64decode(original)); raw[-1] ^= 1
+        path.write_bytes(base64.b64encode(raw) + b"\n")
+        part["sha256"] = manifest["file_sha256"][part["path"]] = hashlib.sha256(path.read_bytes()).hexdigest()
+        q.write_json(directory / store.MANIFEST, manifest)
+        with self.assertRaisesRegex(ValueError, "encrypted_archive_missing_or_invalid"):
+            store.validate_store(directory, self.repo)
+
+    def test_chunked_store_rejects_extra_plaintext_or_unlisted_part(self):
+        directory = self.chunked_export()
+        path = directory / "quality/private-review.parts/999999.b64"
+        path.write_bytes(b"SYNTHETIC_UNAPPROVED_DATA")
+        with self.assertRaisesRegex(ValueError, "file_set_mismatch"):
+            store.validate_store(directory, self.repo)
+        manifest = q.read_json(directory / store.MANIFEST)
+        manifest["file_sha256"][str(path.relative_to(directory))] = hashlib.sha256(path.read_bytes()).hexdigest()
+        q.write_json(directory / store.MANIFEST, manifest)
+        with self.assertRaisesRegex(ValueError, "path_not_allowed"):
+            store.validate_store(directory, self.repo)
+
+    def simulate_layout_publish(self, directory, previous_files):
+        api = mock.Mock()
+        api.head.return_value = "1" * 40
+        api.file.side_effect = lambda path, commit: previous_files[path]
+        calls = []
+        def request(endpoint, method="GET", data=None):
+            calls.append((endpoint, method, data))
+            if method == "GET" and "/git/commits/" in endpoint:
+                return {"tree": {"sha": "4" * 40}}
+            if method == "GET":
+                return {"truncated": False, "tree": [{"path": name, "type": "blob", "sha": hashlib.sha1(f"blob {len(payload)}\0".encode() + payload).hexdigest()} for name, payload in previous_files.items()]}
+            return {"sha": "5" * 40}
+        api.request.side_effect = request
+        with mock.patch.object(store, "GitHub", return_value=api):
+            store.publish_store(directory, self.repo, self.certificate)
+        tree = next(data for endpoint, method, data in calls if endpoint.endswith("/git/trees") and method == "POST")
+        return {row["path"] for row in tree["tree"] if row.get("sha", "present") is None}
+
+    def test_v2_to_chunked_upgrade_atomically_removes_only_old_ciphertext(self):
+        previous = self.export()
+        _, old_files = store.validate_store(previous, self.repo, self.certificate)
+        previous.rename(self.root / "previous")
+        current = self.chunked_export()
+        self.assertEqual(self.simulate_layout_publish(current, old_files), {store.PRIVATE_ARCHIVE})
+
+    def test_chunk_shrink_deletes_only_validated_obsolete_ciphertext_parts(self):
+        previous = self.chunked_export(90000)
+        old_manifest, old_files = store.validate_store(previous, self.repo, self.certificate)
+        previous.rename(self.root / "previous")
+        # Synthetic transport fixtures only; authority reconciliation is tested separately.
+        q.write_json(self.fixture.journal, self.original)
+        current = self.chunked_export(40000)
+        current_manifest, _ = store.validate_store(current, self.repo, self.certificate)
+        expected = set(store.encrypted_paths(old_manifest)) - set(store.encrypted_paths(current_manifest))
+        self.assertTrue(expected)
+        self.assertEqual(self.simulate_layout_publish(current, old_files), expected)
+
+    def test_local_decrypt_refuses_existing_destination(self):
+        directory = self.export()
+        destination = self.root / "keep-existing"
+        destination.mkdir(); (destination / "user-file").write_text("keep")
+        with self.assertRaisesRegex(ValueError, "destination_must_be_empty"):
+            store.decrypt_store(directory, self.repo, destination, self.certificate)
+        self.assertEqual((destination / "user-file").read_text(), "keep")
 
 
 
