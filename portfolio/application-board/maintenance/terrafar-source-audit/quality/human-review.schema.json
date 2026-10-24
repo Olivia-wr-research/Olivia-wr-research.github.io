@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Actual user supplied review, not a model approval",
+  "type": "object",
+  "required": ["format", "batch_id", "revision", "content_digest", "decision", "reviewer_kind", "reviewer", "reviewed_at", "reviewed_record_ids", "error_record_ids", "authorship"],
+  "properties": {
+    "format": {"const": "terrafar-human-review-v1"},
+    "batch_id": {"type": "string"},
+    "revision": {"type": "integer", "minimum": 1},
+    "content_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "decision": {"enum": ["pass", "fail"]},
+    "reviewer_kind": {"const": "human"},
+    "reviewer": {"type": "string", "minLength": 1},
+    "reviewed_at": {"type": "string", "format": "date-time"},
+    "reviewed_record_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "error_record_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "authorship": {"type": "object", "required": ["kind", "reference"], "properties": {"kind": {"const": "user_supplied"}, "reference": {"type": "string", "minLength": 1}}}
+  }
+}

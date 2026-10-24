@@ -90,6 +90,36 @@ def _copy_regular(source: Path, destination: Path) -> None:
         raise FileNotFoundError(f"maintenance_artifact_required_file_missing:{source.name}")
     destination.parent.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(source, destination)
+    os.chmod(destination, 0o600)
+
+
+PRIVATE_OPTIONAL_FILES = ("quality_journal.json", "quality_batch.json", "active_catalog.json", "review_authority.json")
+PRIVATE_OPTIONAL_DIRS = ("quality-review", "http-responses")
+
+
+def _copy_private_tree(source: Path, destination: Path) -> None:
+    if not source.is_dir() or source.is_symlink():
+        raise ValueError("maintenance_private_directory_invalid")
+    destination.mkdir(parents=True, exist_ok=True, mode=0o700)
+    for path in source.rglob("*"):
+        target = destination / path.relative_to(source)
+        if path.is_symlink():
+            raise ValueError("maintenance_private_symlink_rejected")
+        if path.is_dir():
+            target.mkdir(parents=True, exist_ok=True, mode=0o700)
+        elif path.is_file():
+            _copy_regular(path, target)
+        else:
+            raise ValueError("maintenance_private_non_regular_file_rejected")
+
+
+def _copy_quality_evidence(state_dir: Path, private: Path) -> None:
+    for name in PRIVATE_OPTIONAL_FILES:
+        if (state_dir / name).exists():
+            _copy_regular(state_dir / name, private / name)
+    for name in PRIVATE_OPTIONAL_DIRS:
+        if (state_dir / name).exists():
+            _copy_private_tree(state_dir / name, private / name)
 
 
 def sanitize_source_row(row: dict) -> dict:
@@ -235,6 +265,7 @@ def build_success_artifact(state_dir: Path, run_dir: Path, output_dir: Path,
         private.mkdir(mode=0o700)
         for name in required_state:
             _copy_regular(state_dir / name, private / name)
+        _copy_quality_evidence(state_dir, private)
         private_run = private / "last_run"
         private_run.mkdir()
         for name in required_run:
@@ -283,6 +314,16 @@ def build_success_artifact(state_dir: Path, run_dir: Path, output_dir: Path,
             "adapter_implementation_sha256": _sha(adapters_path),
             "candidate_ledger_implementation_sha256": _sha(candidate_ledger_impl_path),
             "candidate_task_count": len(ledger.get("tasks", {})),
+            "origin_branch": os.environ.get("GITHUB_REF_NAME"),
+            "origin_commit_sha": os.environ.get("GITHUB_SHA"),
+        }
+        for name in ("quality_journal", "quality_batch", "active_catalog"):
+            optional = private / (name + ".json")
+            if optional.is_file():
+                provenance[name + "_sha256"] = _sha(optional)
+        provenance["private_files_sha256"] = {
+            str(path.relative_to(private)): _sha(path)
+            for path in sorted(private.rglob("*")) if path.is_file()
         }
         (private / "provenance.json").write_bytes(_json_bytes(provenance))
         archive_path = output_dir / "private_state.cms"
@@ -325,7 +366,8 @@ def build_success_artifact(state_dir: Path, run_dir: Path, output_dir: Path,
             "encrypted_state_bytes": archive_result["encrypted_bytes"]}
 
 
-def build_failure_artifact(run_dir: Path, output_dir: Path, actions_run_id: str, run_attempt: str) -> dict:
+def build_failure_artifact(run_dir: Path, output_dir: Path, actions_run_id: str, run_attempt: str,
+                           state_dir: Path | None = None, recipient_certificate: Path | None = None) -> dict:
     if output_dir.exists() and any(output_dir.iterdir()):
         raise ValueError("maintenance_failure_output_must_be_empty")
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -335,8 +377,33 @@ def build_failure_artifact(run_dir: Path, output_dir: Path, actions_run_id: str,
         "actions_run_id": str(actions_run_id),
         "run_attempt": str(run_attempt),
     }))
+    encrypted_partial = False
+    if state_dir is not None and state_dir.exists():
+        if recipient_certificate is None:
+            raise ValueError("private_failure_evidence_requires_recipient_certificate")
+        with tempfile.TemporaryDirectory(prefix="terrafar-failed-private-") as tmp:
+            private = Path(tmp) / "state"
+            private.mkdir(mode=0o700)
+            for name in ("state.json", "candidate_ledger.json", "restore_verification.json", "agent_batch.json"):
+                if (state_dir / name).is_file():
+                    _copy_regular(state_dir / name, private / name)
+            _copy_quality_evidence(state_dir, private)
+            if run_dir.is_dir():
+                _copy_private_tree(run_dir, private / "last_run")
+            if any(private.iterdir()):
+                archive = output_dir / "private_failure.cms"
+                state_archive.encrypt_directory(private, archive, recipient_certificate)
+                (output_dir / "private_failure_manifest.json").write_bytes(_json_bytes({
+                    "format": "terrafar-private-failure-artifact-v1", "capture_status": "failed_or_incomplete",
+                    "actions_run_id": str(actions_run_id), "run_attempt": str(run_attempt),
+                    "encrypted_file": "private_failure.cms", "encrypted_sha256": _sha(archive),
+                    "state_encryption_certificate_sha256": _sha(recipient_certificate),
+                    "restorable_checkpoint": False,
+                }))
+                encrypted_partial = True
     if not run_dir.is_dir():
-        return {"capture_status": "failed_or_incomplete", "public_run_evidence": 0}
+        return {"capture_status": "failed_or_incomplete", "public_run_evidence": 0,
+                "encrypted_partial_evidence": encrypted_partial}
     public_run = output_dir / "run"
     public_run.mkdir()
     manifest = run_dir / "manifest.json"
@@ -349,7 +416,7 @@ def build_failure_artifact(run_dir: Path, output_dir: Path, actions_run_id: str,
     if source_checks.is_file() and not source_checks.is_symlink():
         _write_safe_jsonl(source_checks, public_run / "source_checks.jsonl")
     return {"capture_status": "failed_or_incomplete",
-            "public_run_evidence": len(list(public_run.iterdir()))}
+            "public_run_evidence": len(list(public_run.iterdir())), "encrypted_partial_evidence": encrypted_partial}
 
 
 def main() -> None:
@@ -364,6 +431,8 @@ def main() -> None:
     failure = sub.add_parser("failure")
     for name in ("run-dir", "output-dir", "actions-run-id", "run-attempt"):
         failure.add_argument(f"--{name}", required=True)
+    failure.add_argument("--state-dir")
+    failure.add_argument("--recipient-certificate")
     args = parser.parse_args()
     if args.command == "success":
         result = build_success_artifact(
@@ -373,7 +442,9 @@ def main() -> None:
             Path(args.candidate_ledger_implementation),
         )
     else:
-        result = build_failure_artifact(Path(args.run_dir), Path(args.output_dir), args.actions_run_id, args.run_attempt)
+        result = build_failure_artifact(Path(args.run_dir), Path(args.output_dir), args.actions_run_id, args.run_attempt,
+            Path(args.state_dir) if args.state_dir else None,
+            Path(args.recipient_certificate) if args.recipient_certificate else None)
     print(json.dumps(result, ensure_ascii=False, sort_keys=True))
 
 

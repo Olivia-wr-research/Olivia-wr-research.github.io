@@ -1,0 +1,19 @@
+{
+  "format": "terrafar-quality-policy-v1",
+  "timezone": "Asia/Shanghai",
+  "batch_scope": "all records and changes accumulated for the local calendar day across runs",
+  "first_release_requires_full_registered_source_scope": true,
+  "daily_release_requires_full_registered_source_scope": true,
+  "first_release_requires_actual_public_catalog_inventory": true,
+  "source_http_success_is_not_complete_check": true,
+  "random_sample_fraction": 0.1,
+  "random_sample_max": 10,
+  "high_risk_sample_max": 5,
+  "sample_strategy_is_not_population_accuracy_guarantee": true,
+  "any_sample_error_requires_whole_daily_batch_recheck": true,
+  "content_change_invalidates_prior_human_approval": true,
+  "human_review_cannot_be_generated_by_model": true,
+  "pending_template_cannot_approve_release": true,
+  "unresolved_failed_day_blocks_following_release": true,
+  "no_automatic_publication": true
+}

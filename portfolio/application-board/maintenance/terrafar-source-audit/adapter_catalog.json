@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "catalog_version": "2026-10-23.1",
+  "catalog_version": "2026-10-24.2",
   "source_overrides": {
     "eth-doctoral-listing": {
       "institution": "ETH Zürich",
@@ -88,10 +88,199 @@
     "src-17456e71-1ce5-5ac3-b562-4e6dddf8308a": {
       "institution": "Urban Studies Foundation",
       "opportunity_type": "research funding current opportunities",
-      "filter": "Current opportunities section only; exclude Grants awarded historical records and do not claim coverage of email-only notices",
+      "filter": "DOM section between h2#current and h2#past only; exclude introductory links, historical grantees and footer navigation. Closed programme labels remain closed, not open vacancies.",
       "pagination": "The adapter extracts links from Current opportunities and excludes Grants awarded; it does not fetch linked program detail pages automatically.",
-      "completeness_rule": "Current opportunities heading and historical section boundary must both be present and all current-section links parsed. This proves the list section only; program detail and status require separate evidence.",
+      "completeness_rule": "Unique h2#current and h2#past with expected labels and a shared parent; every intervening programme link parsed; no unexpected links or dynamic expansion. Closed labels are retained. This proves only the bounded programme section; detail and portal status need independent checks.",
       "endpoints": [{"endpoint_id":"src-17456e71-1ce5-5ac3-b562-4e6dddf8308a:primary","url":"https://www.urbanstudiesfoundation.org/funding/","adapter":"usf_current_funding","required":true,"scope":"Current opportunities only, excluding Grants awarded"}]
+    },
+    "geo-oct17-wur-coastal-peat": {
+      "institution": "Wageningen University & Research",
+      "opportunity_type": "PhD",
+      "filter": "This registered official job detail only; no institution-wide vacancy-list coverage.",
+      "pagination": "Single identity-bound HTML detail; no pagination inferred. Linked attachments and application submission systems require separate verification.",
+      "completeness_rule": "Matching canonical URL, single JobPosting identity and H1, closed main/html, six complete named vacancy sections, inclusive body deadline and mandatory supplementary-form link when required. Portal acceptance stays unknown.",
+      "structural_evidence": {
+        "observed_at": "2026-10-24T06:15:24.882801Z",
+        "raw_html_sha256": "94baddd10781df06bc551fe3b3dc05a3052abfe40de9dba9f4e0f9fb04deb446",
+        "capture_method": "Public HTTPS fetch after robots allow; preserved configured proxy; raw bytes archived separately, not committed."
+      },
+      "endpoints": [
+        {
+          "endpoint_id": "geo-oct17-wur-coastal-peat:primary",
+          "url": "https://www.wur.nl/en/vacancy/phd-position-modelling-formation-and-flooding-coastal-peat-landscapes",
+          "adapter": "wur_job_detail",
+          "required": true,
+          "scope": "Only this named registered vacancy announcement body; excludes ATS acceptance, linked documents and other university jobs."
+        }
+      ]
+    },
+    "geo-oct17-wur-traits": {
+      "institution": "Wageningen University & Research",
+      "opportunity_type": "PhD",
+      "filter": "This registered official job detail only; no institution-wide vacancy-list coverage.",
+      "pagination": "Single identity-bound HTML detail; no pagination inferred. Linked attachments and application submission systems require separate verification.",
+      "completeness_rule": "Matching canonical URL, single JobPosting identity and H1, closed main/html, six complete named vacancy sections, inclusive body deadline and mandatory supplementary-form link when required. Portal acceptance stays unknown.",
+      "structural_evidence": {
+        "observed_at": "2026-10-24T06:15:26.523730Z",
+        "raw_html_sha256": "7947ab42ddb7d4210984f3bdfa027d1421e87129cba91e80448763d1d971a2e7",
+        "capture_method": "Public HTTPS fetch after robots allow; preserved configured proxy; raw bytes archived separately, not committed."
+      },
+      "endpoints": [
+        {
+          "endpoint_id": "geo-oct17-wur-traits:primary",
+          "url": "https://www.wur.nl/en/vacancy/phd-position-trait-based-drivers-global-plant-distributions",
+          "adapter": "wur_job_detail",
+          "required": true,
+          "scope": "Only this named registered vacancy announcement body; excludes ATS acceptance, linked documents and other university jobs."
+        }
+      ]
+    },
+    "geo-oct17-wur-fire-weather": {
+      "institution": "Wageningen University & Research",
+      "opportunity_type": "PhD",
+      "filter": "This registered official job detail only; no institution-wide vacancy-list coverage.",
+      "pagination": "Single identity-bound HTML detail; no pagination inferred. Linked attachments and application submission systems require separate verification.",
+      "completeness_rule": "Matching canonical URL, single JobPosting identity and H1, closed main/html, six complete named vacancy sections, inclusive body deadline and mandatory supplementary-form link when required. Portal acceptance stays unknown.",
+      "structural_evidence": {
+        "observed_at": "2026-10-24T06:15:28.170290Z",
+        "raw_html_sha256": "9b1ec99e8aad9809371557ca9628649a6101e52d1e9f3c41283764e380d1ad8e",
+        "capture_method": "Public HTTPS fetch after robots allow; preserved configured proxy; raw bytes archived separately, not committed."
+      },
+      "endpoints": [
+        {
+          "endpoint_id": "geo-oct17-wur-fire-weather:primary",
+          "url": "https://www.wur.nl/en/vacancy/phd-researcher-atmospheric-sciences-emerging-extreme-fire-weather-risks",
+          "adapter": "wur_job_detail",
+          "required": true,
+          "scope": "Only this named registered vacancy announcement body; excludes ATS acceptance, linked documents and other university jobs."
+        }
+      ]
+    },
+    "geo-oct17-wur-moss": {
+      "institution": "Wageningen University & Research",
+      "opportunity_type": "PhD",
+      "filter": "This registered official job detail only; no institution-wide vacancy-list coverage.",
+      "pagination": "Single identity-bound HTML detail; no pagination inferred. Linked attachments and application submission systems require separate verification.",
+      "completeness_rule": "Matching canonical URL, single JobPosting identity and H1, closed main/html, six complete named vacancy sections, inclusive body deadline and mandatory supplementary-form link when required. Portal acceptance stays unknown.",
+      "structural_evidence": {
+        "observed_at": "2026-10-24T06:15:29.860974Z",
+        "raw_html_sha256": "cbb22673b44c9cdd200160f03fd3d607bb449199abac708f17cbe71c2adc67fd",
+        "capture_method": "Public HTTPS fetch after robots allow; preserved configured proxy; raw bytes archived separately, not committed."
+      },
+      "endpoints": [
+        {
+          "endpoint_id": "geo-oct17-wur-moss:primary",
+          "url": "https://www.wur.nl/en/vacancy/phd-moss-traits-and-fire-ignition-high-latitude-peatland-tundra-ecosystems",
+          "adapter": "wur_job_detail",
+          "required": true,
+          "scope": "Only this named registered vacancy announcement body; excludes ATS acceptance, linked documents and other university jobs."
+        }
+      ]
+    },
+    "geo-oct17-wur-mountain": {
+      "institution": "Wageningen University & Research",
+      "opportunity_type": "PhD",
+      "filter": "This registered official job detail only; no institution-wide vacancy-list coverage.",
+      "pagination": "Single identity-bound HTML detail; no pagination inferred. Linked attachments and application submission systems require separate verification.",
+      "completeness_rule": "Matching canonical URL, single JobPosting identity and H1, closed main/html, six complete named vacancy sections, inclusive body deadline and mandatory supplementary-form link when required. Portal acceptance stays unknown.",
+      "structural_evidence": {
+        "observed_at": "2026-10-24T06:15:31.579349Z",
+        "raw_html_sha256": "606f21850bcc444e7b1a3d243368de2f2ae5806b45bc9d317c739249e86c9bff",
+        "capture_method": "Public HTTPS fetch after robots allow; preserved configured proxy; raw bytes archived separately, not committed."
+      },
+      "endpoints": [
+        {
+          "endpoint_id": "geo-oct17-wur-mountain:primary",
+          "url": "https://www.wur.nl/en/vacancy/phd-link-between-mountains-downstream-agriculture-and-ecosystems-globally",
+          "adapter": "wur_job_detail",
+          "required": true,
+          "scope": "Only this named registered vacancy announcement body; excludes ATS acceptance, linked documents and other university jobs."
+        }
+      ]
+    },
+    "geo-oct17-wur-policy": {
+      "institution": "Wageningen University & Research",
+      "opportunity_type": "PhD",
+      "filter": "This registered official job detail only; no institution-wide vacancy-list coverage.",
+      "pagination": "Single identity-bound HTML detail; no pagination inferred. Linked attachments and application submission systems require separate verification.",
+      "completeness_rule": "Matching canonical URL, single JobPosting identity and H1, closed main/html, six complete named vacancy sections, inclusive body deadline and mandatory supplementary-form link when required. Portal acceptance stays unknown.",
+      "structural_evidence": {
+        "observed_at": "2026-10-24T06:15:33.281061Z",
+        "raw_html_sha256": "93fe9af84a33d93d41deeef46f40858c491b3579484489d7e4fe3f18c5f45df7",
+        "capture_method": "Public HTTPS fetch after robots allow; preserved configured proxy; raw bytes archived separately, not committed."
+      },
+      "endpoints": [
+        {
+          "endpoint_id": "geo-oct17-wur-policy:primary",
+          "url": "https://www.wur.nl/en/vacancy/phd-impact-evaluation-climate-policies-agricultural-and-forest-landscapes",
+          "adapter": "wur_job_detail",
+          "required": true,
+          "scope": "Only this named registered vacancy announcement body; excludes ATS acceptance, linked documents and other university jobs."
+        }
+      ]
+    },
+    "geo-oct17-wur-governance-postdoc": {
+      "institution": "Wageningen University & Research",
+      "opportunity_type": "postdoc",
+      "filter": "This registered official job detail only; no institution-wide vacancy-list coverage.",
+      "pagination": "Single identity-bound HTML detail; no pagination inferred. Linked attachments and application submission systems require separate verification.",
+      "completeness_rule": "Matching canonical URL, single JobPosting identity and H1, closed main/html, six complete named vacancy sections, inclusive body deadline and mandatory supplementary-form link when required. Portal acceptance stays unknown.",
+      "structural_evidence": {
+        "observed_at": "2026-10-24T06:15:35.351042Z",
+        "raw_html_sha256": "9a2093819d12274bf898148f1300b47abbab0c9fe06432ababbfac67ee3307ba",
+        "capture_method": "Public HTTPS fetch after robots allow; preserved configured proxy; raw bytes archived separately, not committed."
+      },
+      "endpoints": [
+        {
+          "endpoint_id": "geo-oct17-wur-governance-postdoc:primary",
+          "url": "https://www.wur.nl/en/vacancy/postdoc-governance-and-sustainability-transitions-farming-systems-0",
+          "adapter": "wur_job_detail",
+          "required": true,
+          "scope": "Only this named registered vacancy announcement body; excludes ATS acceptance, linked documents and other university jobs."
+        }
+      ]
+    },
+    "geo-eth-glaciology": {
+      "institution": "ETH Zürich",
+      "opportunity_type": "phd",
+      "filter": "This registered official job detail only; no institution-wide vacancy-list coverage.",
+      "pagination": "Single identity-bound HTML detail; no pagination inferred. Linked attachments and application submission systems require separate verification.",
+      "completeness_rule": "Matching JOPG job identity and job-specific ATS link; closed main/html; unique title, employment header and five complete named description/application regions. Portal acceptance stays unknown.",
+      "structural_evidence": {
+        "observed_at": "2026-10-24T06:15:35.987352Z",
+        "raw_html_sha256": "01c1233eb34b5f74bdf60ddb89922bbf81fa6efdf7123a0944d685f034adbb35",
+        "capture_method": "Public HTTPS fetch after robots allow; preserved configured proxy; raw bytes archived separately, not committed."
+      },
+      "endpoints": [
+        {
+          "endpoint_id": "geo-eth-glaciology:primary",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1Xb566nCAHVEKPxWxy",
+          "adapter": "eth_job_detail",
+          "required": true,
+          "scope": "Only this named registered vacancy announcement body; excludes ATS acceptance, linked documents and other university jobs."
+        }
+      ]
+    },
+    "geo-eth-adaptation": {
+      "institution": "ETH Zürich",
+      "opportunity_type": "phd",
+      "filter": "This registered official job detail only; no institution-wide vacancy-list coverage.",
+      "pagination": "Single identity-bound HTML detail; no pagination inferred. Linked attachments and application submission systems require separate verification.",
+      "completeness_rule": "Matching JOPG job identity and job-specific ATS link; closed main/html; unique title, employment header and five complete named description/application regions. Portal acceptance stays unknown.",
+      "structural_evidence": {
+        "observed_at": "2026-10-24T06:15:37.494427Z",
+        "raw_html_sha256": "dae96b6a8c29cbf441fa4c9acccb37e4801257c2786e6b0ff0a90c5648fb5044",
+        "capture_method": "Public HTTPS fetch after robots allow; preserved configured proxy; raw bytes archived separately, not committed."
+      },
+      "endpoints": [
+        {
+          "endpoint_id": "geo-eth-adaptation:primary",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_L9EB3dSHxoSQSAypSG",
+          "adapter": "eth_job_detail",
+          "required": true,
+          "scope": "Only this named registered vacancy announcement body; excludes ATS acceptance, linked documents and other university jobs."
+        }
+      ]
     }
   }
 }

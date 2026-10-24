@@ -31,10 +31,32 @@ def _run_openssl(args: list[str], *, input_bytes: bytes | None = None) -> bytes:
 def _tar_bytes(source_dir: Path) -> bytes:
     if not source_dir.is_dir() or source_dir.is_symlink():
         raise ValueError("state_archive_source_must_be_a_regular_directory")
+    for path in source_dir.rglob("*"):
+        if path.is_symlink() or not (path.is_file() or path.is_dir()):
+            raise ValueError("state_archive_source_contains_non_regular_entry")
     buffer = io.BytesIO()
     with tarfile.open(fileobj=buffer, mode="w:gz") as archive:
         archive.add(source_dir, arcname="state", recursive=True)
     return buffer.getvalue()
+
+
+def validate_ciphertext(ciphertext: bytes) -> None:
+    """Validate the CMS envelope without exposing plaintext or requiring its key."""
+    if not ciphertext.startswith(MAGIC):
+        raise ValueError("state_archive_format_unsupported")
+    der = ciphertext[len(MAGIC):]
+    # CMS SignedData/Data can contain plaintext. Require the outer content type
+    # to be EnvelopedData (1.2.840.113549.1.7.3), not merely any valid CMS object.
+    if len(der) < 2 or der[0] != 0x30:
+        raise ValueError("state_archive_requires_enveloped_data")
+    length_octets = der[1] & 0x7f if der[1] & 0x80 else 0
+    if der[1] == 0x80 or length_octets > 8 or len(der) < 2 + length_octets:
+        raise ValueError("state_archive_requires_definite_der")
+    start = 2 + length_octets
+    declared = int.from_bytes(der[2:start], "big") if length_octets else der[1]
+    if declared != len(der) - start or der[start:start + 11] != bytes.fromhex("06092a864886f70d010703"):
+        raise ValueError("state_archive_requires_enveloped_data")
+    _run_openssl(["-cmsout", "-noout", "-inform", "DER"], input_bytes=der)
 
 
 def encrypt_directory(source_dir: Path, output: Path, recipient_certificate: Path) -> dict:
@@ -69,6 +91,8 @@ def _private_key_from_env(key_env: str) -> Path:
 
 
 def _safe_extract_state(tar_bytes: bytes, destination: Path) -> int:
+    if destination.is_symlink():
+        raise ValueError("state_archive_destination_must_be_regular")
     destination.mkdir(parents=True, exist_ok=True)
     if any(destination.iterdir()):
         raise ValueError("state_archive_destination_must_be_empty")
@@ -104,8 +128,7 @@ def decrypt_archive(input_path: Path, destination: Path, recipient_certificate: 
     if not recipient_certificate.is_file():
         raise FileNotFoundError("state_archive_recipient_certificate_missing")
     ciphertext = input_path.read_bytes()
-    if not ciphertext.startswith(MAGIC):
-        raise ValueError("state_archive_format_unsupported")
+    validate_ciphertext(ciphertext)
     key_path = _private_key_from_env(key_env)
     try:
         plaintext = _run_openssl(
