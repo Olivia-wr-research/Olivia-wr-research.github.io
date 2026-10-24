@@ -34,7 +34,7 @@ concurrency:
 
 jobs:
   all-registered-sources:
-    if: ${{ github.ref == 'refs/heads/codex/terrafar-full-coverage-quality-gate-20261024' && !contains(github.event.head_commit.message || '', '[skip census]') }}
+    if: ${{ github.ref == 'refs/heads/codex/terrafar-full-coverage-quality-gate-20261024' }}
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:
