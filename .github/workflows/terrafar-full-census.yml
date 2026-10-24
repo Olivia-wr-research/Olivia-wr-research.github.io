@@ -53,7 +53,6 @@ jobs:
       - name: Select the latest complete state checkpoint from this feature branch
         id: restore_checkpoint
         env:
-          GH_TOKEN: ${{ github.token }}
           INPUT_RESTORE_ACTIONS_RUN_ID: ${{ github.event.inputs.restore_actions_run_id || '' }}
           INPUT_RESTORE_ARTIFACT_NAME: ${{ github.event.inputs.restore_artifact_name || '' }}
         run: |
@@ -64,14 +63,23 @@ jobs:
             echo "artifact_name=$INPUT_RESTORE_ARTIFACT_NAME" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          runs="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs" -f branch="$GITHUB_REF_NAME" -f status=completed -f per_page=100)"
+          api="https://api.github.com/repos/$GITHUB_REPOSITORY"
+          runs="$(curl --fail --silent --show-error --location --get \
+            --data-urlencode "branch=$GITHUB_REF_NAME" \
+            --data-urlencode 'status=completed' --data-urlencode 'per_page=100' \
+            -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2022-11-28' \
+            "$api/actions/runs")"
           while IFS=$'\t' read -r run_id run_attempt; do
             [[ -n "$run_id" && "$run_id" != "$GITHUB_RUN_ID" ]] || continue
-            jobs="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/jobs" -f per_page=100)"
+            jobs="$(curl --fail --silent --show-error --location \
+              -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2022-11-28' \
+              "$api/actions/runs/$run_id/jobs?per_page=100")"
             capture_steps_ok="$(jq -r '[.jobs[] | select(.name=="all-registered-sources") | .steps[] | select(.name=="Export auditable metadata for the review workspace" or .name=="Preserve public diagnostics and encrypted state checkpoint") | .conclusion] as $steps | ($steps|length)==2 and all($steps[]; .=="success")' <<<"$jobs")"
             [[ "$capture_steps_ok" == true ]] || continue
             artifact_name="terrafar-full-census-$run_id-$run_attempt"
-            artifacts="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/artifacts" -f per_page=100)"
+            artifacts="$(curl --fail --silent --show-error --location \
+              -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2022-11-28' \
+              "$api/actions/runs/$run_id/artifacts?per_page=100")"
             artifact_exists="$(jq -r --arg name "$artifact_name" '[.artifacts[] | select(.name==$name and .expired==false)] | length>0' <<<"$artifacts")"
             if [[ "$artifact_exists" != true ]]; then
               echo 'previous_complete_capture_artifact_missing_or_expired; refusing to roll back to an older checkpoint' >&2

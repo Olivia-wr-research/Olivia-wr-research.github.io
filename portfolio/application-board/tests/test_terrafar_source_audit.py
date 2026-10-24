@@ -166,8 +166,11 @@ class WorkflowRecoveryGuardTests(unittest.TestCase):
         script='\n'.join(line[10:] if line.startswith('          ') else line for line in script.splitlines())+'\n'
         checked=subprocess.run(['bash','-n'],input=script,text=True,capture_output=True,check=False)
         self.assertEqual(checked.returncode,0,checked.stderr)
-        self.assertIn('GH_TOKEN: ${{ github.token }}',selector)
-        self.assertIn('actions/runs" -f branch=',selector)
+        self.assertIn('curl --fail --silent --show-error --location --get',selector)
+        self.assertNotIn('gh api',selector)
+        self.assertIn('api="https://api.github.com/repos/$GITHUB_REPOSITORY"',selector)
+        self.assertIn('--data-urlencode "branch=$GITHUB_REF_NAME"',selector)
+        self.assertNotIn('GH_TOKEN: ${{ github.token }}',selector)
         self.assertIn('select(.path==".github/workflows/terrafar-full-census.yml" and .head_branch==env.GITHUB_REF_NAME)',selector)
         self.assertIn('Export auditable metadata for the review workspace',selector)
         self.assertIn('Preserve public diagnostics and encrypted state checkpoint',selector)
