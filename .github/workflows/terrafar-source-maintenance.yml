@@ -4,11 +4,12 @@ on:
   # GitHub cron is UTC. 02:17 UTC is 10:17 Asia/Shanghai (the previously agreed daily time).
   schedule:
     - cron: '17 2 * * *'
-  # Feature-branch only: code changes run the frozen ten-source read-only smoke.
+  # Feature changes and marked release commits trigger the bounded full-registry maintenance run.
   push:
     branches:
       - 'codex/terrafar-source-monitoring-20261022'
       - 'codex/terrafar-launch-readiness-20261023'
+      - 'main'
   workflow_dispatch:
     inputs:
       mode:

@@ -79,3 +79,27 @@ The GitHub Actions maintenance workflow remains on the default branch schedule (
 - The three pending patch files and previews were regenerated from the imported 39946276972 ledger and their result records. All three outputs were byte-stable on a second generation. The ETH atmospheric-chemistry candidate resolves to exactly one active catalogue entry (`geo-eth-atmosphere`); ETH AI and Vienna have no active entry URL match. Formal data and public files were not written.
 - Review assignment imports now require the pinned Skill digest, a complete candidate identity and fingerprint, exact source provenance and task kind, and the assigned reviewer. State compatibility v2 is rejected; v3 restore checks runner, adapter and candidate-ledger implementation hashes. Only versioned v3 artifacts participate in normal restoration; the legacy Round 002 artifact is accepted only before any v3 artifact exists. Explicit restores must name the latest compatible v3 run across repository branches, preventing old candidate-ledger replay. Bootstrap selectors are ignored on workflow reruns.
 - No hosted PR preview URL, merge, or deployment was created in this change. The disposable local static-site preview is not a public deployment.
+
+## Remote release rehearsal (2026-10-24)
+
+The first pushed attempt did not reach source checks. Actions run `40048793555` stopped during restore selection because the selector excluded the repository's valid compatibility-v1 artifact; the matching application check also exposed that the large Python test file had been truncated by the initial API transfer. The source-selection logic now allows the validated v1 artifact once, only while no v3 state artifact exists. The complete test file was retransmitted in verified chunks: its Git blob SHA matches the local Git object. Failed run `40048793555` created no restorable state.
+
+The corrected commit `30fb4ee9b804efe8e5fcbe590cc5efad0ae92766` completed GitHub CI and live maintenance run `40049038307` successfully. The run restored state from Actions run `39946276972` (`terrafar-maintenance-39946276972-1`): 10 semantic snapshots and 138 candidate tasks. It merged 3 saved, assigned review results, executed the next bounded batch and wrote compatibility-v3 state artifact `terrafar-source-maintenance-state-v3-40049038307-1` (artifact SHA-256 `943577dc98393ea60edc8018e077e2431eaf5cd885e8d0c636ea219341b627f4`). The new ledger contains 139 unique tasks.
+
+| Run `terrafar-maintenance-40049038307-1` | Count |
+|---|---:|
+| Registry sources / planned | 411 / 411 |
+| Sources actually executed | 10 |
+| Full-range checks | 0 |
+| Retrieved page bodies with SHA-256 | 6 |
+| Partial | 1 |
+| Page retrieved, complete-list adapter still needed | 5 |
+| Access/safety blocked | 4 |
+| Failed | 0 |
+| Not attempted | 401 |
+
+The six body captures were ETH Zürich doctoral listings (`eth-doctoral-listing`, partial because pagination was not exhausted), DTU vacant positions (`doc-f3acb969d96ac7f8`), Applied Doctorates NZ (`geo-01980176d3d74a25`), University of Sussex (`geo-04747958dcf3573e`), University of St Andrews (`geo-03ca24d149f4364d`) and San José State (`geo-084ab911207cdca2`). The four blocked rows were EURAXESS (403/robots restriction), Rutgers (robots disallow), Coventry (runner address-safety guard) and Binghamton (403/robots restriction). These are real HTTP/safety outcomes; none means “no update.” The other 401 sources have explicit `not_attempted` rows.
+
+The 3 merged review candidates were `tcand-97c57c520daa0ba0fdd1e11b` (ETH AI Center), `tcand-180658fc2dd19f7a8aa98180` (ETH atmospheric chemistry) and `tcand-cfc80986c8e96017c3258140` (University of Vienna VINAR). The combined ledger now has 12 content-verified records, 121 pending, 6 insufficient-evidence, 0 verification-failed, 0 excluded and 0 duplicate. All 12 content-verified records still have current portal acceptance in the separate unknown-status queue. No candidate patch was written to formal catalog data by the maintenance run.
+
+At 2026-10-24, the authenticated Pages settings page showed the live URL `https://olivia-wr-research.github.io/` published from `main` / `docs`; the displayed previous deployment was Pages run `39118772244` (2026-10-18 18:19 Asia/Shanghai). No setting was changed. The maintenance workflow has no publishing permission or Pages deployment step. PR #7 merging into the feature branch will not publish the site; PR #6 merging to `main` will trigger the Pages build/deployment workflow. The workflow also listens for a `main` push marked `[daily-maintenance]` so the release merge can produce immediate default-branch maintenance evidence.

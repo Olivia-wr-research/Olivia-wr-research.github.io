@@ -115,6 +115,7 @@ class WorkflowRecoveryGuardTests(unittest.TestCase):
 
     def test_restore_selection_is_versioned_and_rejects_legacy_replay(self):
         workflow=(ROOT/'.github/workflows/terrafar-source-maintenance.yml').read_text(encoding='utf-8')
+        self.assertIn("      - 'main'",workflow)
         self.assertIn('startswith("terrafar-source-maintenance-state-v3-")',workflow)
         self.assertIn('startswith("terrafar-source-maintenance-state-")',workflow)
         self.assertIn('name: terrafar-source-maintenance-state-v3-${{ github.run_id }}-${{ github.run_attempt }}',workflow)
