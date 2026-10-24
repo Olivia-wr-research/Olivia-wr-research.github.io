@@ -1,0 +1,31 @@
+{
+  "created_at": "2026-10-22",
+  "before": {
+    "repository_logical_records": 264,
+    "repository_unique_endpoints": 251,
+    "package_seed_sources": 133,
+    "package_link_occurrences": 161
+  },
+  "after": {
+    "logical_source_records": 411,
+    "unique_conservatively_normalized_endpoints": 398,
+    "enabled_for_daily_audit": 411,
+    "seed_exact_unique_mappings": 5,
+    "seed_new_or_ambiguous_records": 128
+  },
+  "package_occurrences": {
+    "retained_or_mapped_source": 147,
+    "excluded_asset": 14
+  },
+  "document_link_review": {
+    "retained_document_source": 20,
+    "excluded_specific_opportunity": 2,
+    "excluded_technical_reference": 3
+  },
+  "notes": [
+    "All existing official-source IDs retained, including same-URL distinct programme scopes.",
+    "The 135-entry discovery catalogue had no IDs; stable geo-* IDs were assigned deterministically and frozen in this baseline.",
+    "Historical verification metadata is retained as original_metadata and does not set current verification status.",
+    "No opportunities or public website data were changed."
+  ]
+}

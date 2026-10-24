@@ -1,0 +1,14 @@
+{
+  "preview_type": "branch-only-pending-data-review",
+  "formal_record_id": "vienna-6233",
+  "title": "城市与高山环境中的气溶胶研究",
+  "candidate_id": "tcand-cfc80986c8e96017c3258140",
+  "changes": {
+    "deadline": {
+      "before": "2026-10-24",
+      "after": "2026-10-31"
+    }
+  },
+  "status": "pending_human_data_review",
+  "public_page_changed": false
+}

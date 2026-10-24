@@ -1,0 +1,108 @@
+{
+  "format": "terrafar-formal-data-review-patch-v1",
+  "candidate_id": "tcand-97c57c520daa0ba0fdd1e11b",
+  "candidate_fingerprint": "955853b9d591b8b428e42ac5060dcfedde5067ef59c1ce168782428093fef0e0",
+  "source_id": "eth-doctoral-listing",
+  "endpoint_id": "eth-doctoral-listing:primary",
+  "source_url": "https://jobs.ethz.ch/",
+  "candidate_url": "https://jobs.ethz.ch/job/view/12136",
+  "formal_record_id": "eth-ai-12136",
+  "content_review_status": "verified",
+  "active_catalog_record_id": null,
+  "active_catalog_match_status": "not_present_in_active_entry_module",
+  "target_record_id": "eth-ai-12136",
+  "target_identity_source": "formal_record_exact_url",
+  "target_identity_verified": true,
+  "candidate_origin": "actions_candidate_snapshot",
+  "candidate_ledger_status_after_merge": "verified",
+  "candidate_review_history_count": 1,
+  "candidate_review_event_id": "6ff1e192beca61acbeb055fae5b1d58e",
+  "current_open_status": "unknown",
+  "field_evidence": {
+    "application_route": {
+      "value": "https://switzerland.recruitee.com/o/eth-ai-center-doctoral-fellowship-2027",
+      "evidence_url": "https://jobs.ethz.ch/job/view/12136",
+      "locator": "Apply online now link on official ETH job detail",
+      "evidence": [
+        {
+          "field": "application_route",
+          "url": "https://jobs.ethz.ch/job/view/12136",
+          "claim": "application_route: https://switzerland.recruitee.com/o/eth-ai-center-doctoral-fellowship-2027",
+          "locator": "Apply online now link on official ETH job detail",
+          "evidence_note": "Direct Recruitee page fetched 2026-10-23 18:21:31 UTC (HTTP 200); form fields were present but the capture did not explicitly confirm current acceptance; no submission.",
+          "page_content_sha256": "b4fd5fe3dad28008c74381449794afeb1e6fc2754f6e720b83fa81dbcff95fb1",
+          "linked_portal_url": "https://switzerland.recruitee.com/o/eth-ai-center-doctoral-fellowship-2027",
+          "linked_portal_page_content_sha256": "8aaf1356bb6bf016ca00fd572f0d962b319a8b0ee18e76e71fd55e67514eb77b",
+          "linked_portal_observed_at": "2026-10-23T18:21:31Z",
+          "portal_acceptance_status": "unknown"
+        }
+      ]
+    },
+    "deadline": {
+      "value": "2026-10-27 16:00 CET",
+      "evidence_url": "https://jobs.ethz.ch/job/view/12136",
+      "locator": "Deadline for applications; official job-detail page line 40",
+      "evidence": [
+        {
+          "field": "deadline",
+          "url": "https://jobs.ethz.ch/job/view/12136",
+          "claim": "deadline: 2026-10-27 16:00 CET; official listing states October 27, 2026 at 16:00 CET",
+          "locator": "Deadline for applications; official job-detail page line 40",
+          "evidence_note": "Official ETH job detail; accessed 2026-10-23 12:21:32-12:21:35 UTC",
+          "page_content_sha256": "b4fd5fe3dad28008c74381449794afeb1e6fc2754f6e720b83fa81dbcff95fb1"
+        }
+      ]
+    },
+    "funding": {
+      "value": "ETH AI Center博士岗位按100%工作量、rate 5标准支付：第一年CHF 73,100，第二年CHF 78,300，第三年CHF 83,500。",
+      "evidence_url": "https://ai.ethz.ch/research/phd-and-postdoc-programs/phd-fellowships.html",
+      "locator": "What we offer → Transparent salary with automatic advancement; ETH AI Center Doctoral Fellowships page",
+      "evidence": [
+        {
+          "field": "funding",
+          "url": "https://ai.ethz.ch/research/phd-and-postdoc-programs/phd-fellowships.html",
+          "claim": "funding: ETH AI Center博士岗位按100%工作量、rate 5标准支付：第一年CHF 73,100，第二年CHF 78,300，第三年CHF 83,500。",
+          "locator": "What we offer → Transparent salary with automatic advancement; ETH AI Center Doctoral Fellowships page",
+          "page_content_sha256": "0378110aac5eb00c15261c0072c690f45dd9f31f6501923c9a5d9a4dd1e8fbf2",
+          "evidence_note": "Official ETH AI Center page fetched and hashed on 2026-10-23; the salary amounts appear in its What we offer section."
+        }
+      ]
+    },
+    "eligibility": {
+      "value": "Completed or expected master's in computer science, machine learning, statistics, physics, engineering, applied mathematics or related fields at least three months before fellowship start and by June 2027; ETH doctoral admission requirements and research-level English are required.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/12136",
+      "locator": "Profile section; official job-detail page lines 20-22",
+      "evidence": [
+        {
+          "field": "eligibility",
+          "url": "https://jobs.ethz.ch/job/view/12136",
+          "claim": "eligibility: Completed or expected master's in computer science, machine learning, statistics, physics, engineering, applied mathematics or related fields at least three months before fellowship start and by June 2027; ETH doctoral admission requirements and research-level English are required.",
+          "locator": "Profile section; official job-detail page lines 20-22",
+          "evidence_note": "Official ETH job detail; accessed 2026-10-23 12:21:32-12:21:35 UTC",
+          "page_content_sha256": "b4fd5fe3dad28008c74381449794afeb1e6fc2754f6e720b83fa81dbcff95fb1"
+        }
+      ]
+    }
+  },
+  "changes": {
+    "funding": {
+      "before": "全职博士 Fellowship；雇佣及资助条款见官方指南",
+      "after": "ETH AI Center博士岗位按100%工作量、rate 5标准支付：第一年CHF 73,100，第二年CHF 78,300，第三年CHF 83,500。"
+    },
+    "salary": {
+      "before": "薪资详见 Fellowship 聘用指南",
+      "after": "ETH AI Center博士岗位按100%工作量、rate 5标准支付：第一年CHF 73,100，第二年CHF 78,300，第三年CHF 83,500。"
+    }
+  },
+  "rollback": {
+    "funding": "全职博士 Fellowship；雇佣及资助条款见官方指南",
+    "salary": "薪资详见 Fellowship 聘用指南"
+  },
+  "formal_data_written": false,
+  "published": false,
+  "source_observed_at": "2026-10-23T18:09:59Z",
+  "source_actions_run_id": "39946276972",
+  "source_capture_id": null,
+  "source_program_run_id": "terrafar-maintenance-39946276972-1",
+  "supersedes_sha256": "bf1fb701b05b2094e823d6276f25a768240594ac07ce54ba42442df0133e7ed9"
+}

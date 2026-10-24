@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "execution_mode": "native Codex subagent; static read-only review; no network; no file edits by reviewer",
+  "reviewer_role": "audit_reviewer",
+  "reviews": [
+    {
+      "round": 1,
+      "findings": [
+        "first-run artifact assembly copied sample_manifest after the provenance code tried to read it",
+        "robots decision cache keyed only by host and could reuse a path-specific decision",
+        "request budget exhaustion could be misclassified as blocked or failed",
+        "preflight host count did not restrict cross-host redirects"
+      ],
+      "disposition": "fixed"
+    },
+    {
+      "round": 2,
+      "findings": [
+        "state restore could appear successful with an empty semantic baseline",
+        "ordinary HTTPS probes and crawler HTTP budget used separate bounded counters",
+        "robots cache key also needed scheme and port",
+        "DNS validation followed by a second hostname resolution could permit a rebinding window"
+      ],
+      "disposition": "fixed_or_explicitly_bounded"
+    },
+    {
+      "round": 3,
+      "findings": [
+        "redirect guard failures could lose a previously received HTTP status and redirect chain in the attempt ledger",
+        "TCP connection failures could be misreported as HTTP requests sent"
+      ],
+      "disposition": "fixed; regressions covered by attempt logging assertions"
+    },
+    {
+      "round": 4,
+      "findings": [
+        "implementation preserves status, redirect chain, transport attempt, and HTTP request flags",
+        "initial redirect regression test did not traverse the attempt serializer"
+      ],
+      "disposition": "implementation confirmed; serializer coverage added after review"
+    }
+  ],
+  "implemented_controls": [
+    "sample manifest copied before provenance calculation",
+    "first runner requires at least one ETH or Jobbnorge semantic snapshot; restore runner requires a matching snapshot and a successful changed/unchanged/empty comparison",
+    "robots policy cache key includes scheme, normalized host, effective port, path, and query",
+    "request budget exhaustion maps to not_attempted before robots completion or partial after robots completion",
+    "preflight restricts redirects to its five declared hostnames; total HTTP budget is at most 15 requests across two explicitly counted channels",
+    "validated numeric DNS addresses are used directly for TCP connect while TLS certificate checks use the original hostname; configured proxies fail closed"
+  ],
+  "remaining_unverified": [
+    "no GitHub Actions run or artifact exists because the feature branch was not pushed",
+    "no live adapter baseline or real cross-run state restoration exists because environment preflight failed",
+    "Pages branch/directory configuration could not be read, so push remains held"
+  ]
+}

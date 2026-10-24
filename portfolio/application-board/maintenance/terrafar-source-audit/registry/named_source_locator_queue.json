@@ -1,0 +1,147 @@
+{
+  "created_at": "2026-10-22",
+  "items": [
+    {
+      "line": 277,
+      "text": "| 专业方向      | 网站                                                                                                                | 主要信息             |"
+    },
+    {
+      "line": 356,
+      "text": "| 学科方向     | 核心检索词                                                                   |"
+    },
+    {
+      "line": 358,
+      "text": "| 人文地理     | Human Geography、Economic Geography、Social Geography、Political Geography |"
+    },
+    {
+      "line": 359,
+      "text": "| 城市与区域研究  | Urban Studies、Regional Studies、Urban Planning、Spatial Planning          |"
+    },
+    {
+      "line": 360,
+      "text": "| 空间与地理信息  | GIS、Geoinformatics、Geospatial Science、Spatial Data Science              |"
+    },
+    {
+      "line": 361,
+      "text": "| 遥感与地球观测  | Remote Sensing、Earth Observation、Geodesy、Geomatics                      |"
+    },
+    {
+      "line": 362,
+      "text": "| 自然地理     | Physical Geography、Hydrology、Geomorphology、Biogeography                 |"
+    },
+    {
+      "line": 363,
+      "text": "| 环境与气候    | Climate Science、Environmental Science、Sustainability、Climate Adaptation |"
+    },
+    {
+      "line": 364,
+      "text": "| 人口、交通与流动 | Population Geography、Demography、Transport Geography、Human Mobility      |"
+    },
+    {
+      "line": 365,
+      "text": "| 地理交叉研究   | Spatial Economics、Regional Innovation、Urban Analytics、Complex Systems   |"
+    },
+    {
+      "line": 369,
+      "text": "| 语言   | 重要关键词举例                                                     |"
+    },
+    {
+      "line": 371,
+      "text": "| 中文   | 地理学、自然地理、人文地理、科研助理、博士后、教师招聘                                 |"
+    },
+    {
+      "line": 372,
+      "text": "| 德语   | Geographie、Doktorand、Wissenschaftlicher Mitarbeiter、Postdoc |"
+    },
+    {
+      "line": 373,
+      "text": "| 法语   | Géographie、Doctorat、Postdoctorat、Chargé de recherche        |"
+    },
+    {
+      "line": 374,
+      "text": "| 西班牙语 | Geografía、Doctorado、Investigador、Profesor                   |"
+    },
+    {
+      "line": 375,
+      "text": "| 葡萄牙语 | Geografia、Mestrado、Doutorado、Pós-doutorado                  |"
+    },
+    {
+      "line": 376,
+      "text": "| 日语   | 地理学、博士課程、研究員、助教、特任研究員                                       |"
+    },
+    {
+      "line": 377,
+      "text": "| 韩语   | 지리학、박사、박사후연구원、연구원                                           |"
+    },
+    {
+      "line": 402,
+      "text": "| 数据字段                          | 说明                |"
+    },
+    {
+      "line": 404,
+      "text": "| `opportunity_id`              | 内部唯一编号            |"
+    },
+    {
+      "line": 405,
+      "text": "| `source_name` / `source_url`  | 来源网站及页面           |"
+    },
+    {
+      "line": 406,
+      "text": "| `official_url`                | 学校或机构的原始招聘公告      |"
+    },
+    {
+      "line": 407,
+      "text": "| `application_url`             | 正式申请入口            |"
+    },
+    {
+      "line": 408,
+      "text": "| `country` / `institution`     | 国家、学校或研究机构        |"
+    },
+    {
+      "line": 409,
+      "text": "| `opportunity_type`            | 硕士、博士、博士后、教职、科研助理 |"
+    },
+    {
+      "line": 410,
+      "text": "| `discipline`                  | 规范化学科类别           |"
+    },
+    {
+      "line": 411,
+      "text": "| `title_original` / `title_en` | 原始职位名称、英文标准化名称    |"
+    },
+    {
+      "line": 412,
+      "text": "| `funding_status`              | 全额资助、部分资助、自费、未知   |"
+    },
+    {
+      "line": 413,
+      "text": "| `employment_type`             | 雇佣岗位、奖学金、招生项目     |"
+    },
+    {
+      "line": 414,
+      "text": "| `salary` / `tuition`          | 薪酬、津贴或学费          |"
+    },
+    {
+      "line": 415,
+      "text": "| `eligibility`                 | 学历、语言、国籍等申请资格     |"
+    },
+    {
+      "line": 416,
+      "text": "| `posted_date` / `deadline`    | 发布日期和申请截止日期       |"
+    },
+    {
+      "line": 417,
+      "text": "| `last_verified_at`            | 最后一次核验时间          |"
+    },
+    {
+      "line": 418,
+      "text": "| `status`                      | 招聘中、已截止、取消、待核实    |"
+    },
+    {
+      "line": 419,
+      "text": "| `verification_level`          | 聚合信息、官方公告、申请入口已核实 |"
+    }
+  ],
+  "scan_scope": "source-directory-original.txt table rows without URL tokens",
+  "note": "No URL-less source rows confidently detected by this bounded scan. Free-text institution mentions were not promoted to fabricated URLs."
+}

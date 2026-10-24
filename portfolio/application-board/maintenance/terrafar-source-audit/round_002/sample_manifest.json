@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "sample_id": "round002-representative-10",
+  "frozen_at_utc": "2026-10-22",
+  "frozen_before_sample_run": true,
+  "registry_source_count": 411,
+  "source_ids": [
+    "eth-doctoral-listing",
+    "jobbnorge-uio",
+    "doc-446f8d108f9611b8",
+    "doc-350282ccffe5f525",
+    "geo-intake-ubc-dec2026",
+    "geo-programme-helsinki-geography",
+    "geo-programme-oxford-geography",
+    "geo-project-rmit-phenology",
+    "geo-project-rmit-spatial-health",
+    "src-17456e71-1ce5-5ac3-b562-4e6dddf8308a"
+  ],
+  "selection": [
+    {"source_id":"eth-doctoral-listing","coverage":"official job list; configured ETH parser; pagination/list structure","reason":"Representative institutional doctoral vacancy list and one of only two existing list adapters."},
+    {"source_id":"jobbnorge-uio","coverage":"official job feed; configured Jobbnorge parser; feed completeness","reason":"Representative official PhD recruitment feed and second existing list adapter."},
+    {"source_id":"doc-446f8d108f9611b8","coverage":"institutional vacancies entry","reason":"Checks a second employment-system route without merging its scope with the ETH or Jobbnorge sources."},
+    {"source_id":"doc-350282ccffe5f525","coverage":"doctoral information entry","reason":"Tests an institutional doctoral entry that may require locating a downstream recruitment list."},
+    {"source_id":"geo-intake-ubc-dec2026","coverage":"geography graduate admissions","reason":"Represents a named admissions source and intake scope."},
+    {"source_id":"geo-programme-helsinki-geography","coverage":"doctoral programme entry","reason":"Represents an official doctoral programme route distinct from recruitment listings."},
+    {"source_id":"geo-programme-oxford-geography","coverage":"doctoral programme entry","reason":"Adds a separate institution and programme route for entry-point verification."},
+    {"source_id":"geo-project-rmit-phenology","coverage":"project-specific funded doctoral opportunity","reason":"Represents a project-level scholarship page where funding and eligibility need evidence."},
+    {"source_id":"geo-project-rmit-spatial-health","coverage":"project-specific funded doctoral opportunity","reason":"Tests whether distinct funded projects at one host remain separate source scopes."},
+    {"source_id":"src-17456e71-1ce5-5ac3-b562-4e6dddf8308a","coverage":"funding programme entry","reason":"Represents a funding source whose current opportunities and dates must remain unknown until verified."}
+  ],
+  "preflight_source_ids": [
+    "eth-doctoral-listing",
+    "jobbnorge-uio",
+    "doc-446f8d108f9611b8",
+    "doc-350282ccffe5f525"
+  ],
+  "preflight_control_url": "https://example.com/",
+  "required_representations": ["jobs", "admissions", "funding", "two existing list adapters"],
+  "execution_status": "frozen_not_live_run",
+  "reason_not_run": "Small-domain environment preflight failed before any source page body was retrieved."
+}

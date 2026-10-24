@@ -1,0 +1,38 @@
+{
+  "run_id": "initial-endpoint-review",
+  "tasks": [
+    {
+      "task_id": "initial-endpoint-review--src-fa868667-bbd8-56ff-97fa-521a84780ffb",
+      "source_id": "src-fa868667-bbd8-56ff-97fa-521a84780ffb",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.academicwork.ca/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-fb683053-31f9-5259-a173-78e34c1a9b67",
+      "source_id": "src-fb683053-31f9-5259-a173-78e34c1a9b67",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.agu.org/advancement",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-fcd15c14-de70-5b45-9208-3068294e3392",
+      "source_id": "src-fcd15c14-de70-5b45-9208-3068294e3392",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.earthworks-jobs.com/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    }
+  ]
+}

@@ -1,0 +1,5509 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "source_id": "src-02d7aa53-cf49-5db2-8e02-9d2c8c9f3432",
+      "name": "中国科学院招聘系统",
+      "canonical_url": "https://www.careers.ac.cn/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.careers.ac.cn/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "中国科学院招聘系统"
+      ],
+      "original_urls": [
+        "https://www.careers.ac.cn/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0067",
+          "line": 144,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "中国大陆",
+            "[中国科学院招聘系统](https://www.careers.ac.cn/?utm_source=chatgpt.com)",
+            "科研机构和科研助理"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-03a897b8-533e-5a53-b107-4a01e073dc54",
+      "name": "加查马达大学",
+      "canonical_url": "https://ugm.ac.id/en/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://ugm.ac.id/en/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "加查马达大学"
+      ],
+      "original_urls": [
+        "https://ugm.ac.id/en/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0088",
+          "line": 165,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "印度尼西亚",
+            "[加查马达大学](https://ugm.ac.id/en/?utm_source=chatgpt.com)",
+            "地理学研究生及研究岗位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-0694943f-aea9-5c4b-8b94-925fd068f963",
+      "name": "Eldis",
+      "canonical_url": "https://www.eldis.org/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.eldis.org/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "Eldis"
+      ],
+      "original_urls": [
+        "https://www.eldis.org/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0150",
+          "line": 288,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "三、地理学及交叉学科专业招聘网站"
+          ],
+          "original_table_cells": [
+            "发展研究",
+            "[Eldis](https://www.eldis.org/?utm_source=chatgpt.com)",
+            "发展研究及项目发现"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-0889504c-129c-5b23-b2fa-5d6ff5852f48",
+      "name": "AcademicJobsOnline",
+      "canonical_url": "https://academicjobsonline.org/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://academicjobsonline.org/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "AcademicJobsOnline"
+      ],
+      "original_urls": [
+        "https://academicjobsonline.org/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0054",
+          "line": 122,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "2. 北美洲"
+          ],
+          "original_table_cells": [
+            "美国",
+            "[AcademicJobsOnline](https://academicjobsonline.org/?utm_source=chatgpt.com)",
+            "学术招聘、研究岗位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-09af2597-7882-56a7-ac57-e2ba4de8bcf2",
+      "name": "斯泰伦博斯大学",
+      "canonical_url": "https://www.sun.ac.za/english",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.sun.ac.za/english",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "斯泰伦博斯大学"
+      ],
+      "original_urls": [
+        "https://www.sun.ac.za/english?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0119",
+          "line": 241,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "6. 非洲"
+          ],
+          "original_table_cells": [
+            "南非",
+            "[斯泰伦博斯大学](https://www.sun.ac.za/english?utm_source=chatgpt.com)",
+            "环境和空间研究"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-0c607d3b-d61c-5b3c-9900-c47c7e7ad72c",
+      "name": "NRF Kenya",
+      "canonical_url": "https://www.nrf.go.ke/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.nrf.go.ke/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "NRF Kenya"
+      ],
+      "original_urls": [
+        "https://www.nrf.go.ke/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0124",
+          "line": 246,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "6. 非洲"
+          ],
+          "original_table_cells": [
+            "肯尼亚",
+            "[NRF Kenya](https://www.nrf.go.ke/?utm_source=chatgpt.com)",
+            "研究资助与项目"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-0e8ac2b9-06d1-596e-b958-03e8e00b376c",
+      "name": "开罗大学",
+      "canonical_url": "https://www.cu.edu.eg/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.cu.edu.eg/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "开罗大学"
+      ],
+      "original_urls": [
+        "https://www.cu.edu.eg/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0122",
+          "line": 244,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "6. 非洲"
+          ],
+          "original_table_cells": [
+            "埃及",
+            "[开罗大学](https://www.cu.edu.eg/?utm_source=chatgpt.com)",
+            "研究生招生和大学招聘"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-0f354699-4472-58c1-9104-fc879f444d11",
+      "name": "墨尔本大学招聘",
+      "canonical_url": "https://jobs.unimelb.edu.au/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://jobs.unimelb.edu.au/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "墨尔本大学招聘"
+      ],
+      "original_urls": [
+        "https://jobs.unimelb.edu.au/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0095",
+          "line": 191,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "4. 大洋洲"
+          ],
+          "original_table_cells": [
+            "澳大利亚",
+            "[墨尔本大学招聘](https://jobs.unimelb.edu.au/?utm_source=chatgpt.com)",
+            "研究助理、博士后、教职"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-11d342e3-5800-5c1d-a24f-c962360f523f",
+      "name": "Research.fi",
+      "canonical_url": "https://www.research.fi/en/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.research.fi/en/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "Research.fi"
+      ],
+      "original_urls": [
+        "https://www.research.fi/en/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0035",
+          "line": 78,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "芬兰",
+            "[Research.fi](https://www.research.fi/en/?utm_source=chatgpt.com)",
+            "科研体系、研究机构与项目发现"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-15b66bae-15b7-596d-ab98-7986adfc254a",
+      "name": "YÖK",
+      "canonical_url": "https://www.yok.gov.tr/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.yok.gov.tr/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "YÖK"
+      ],
+      "original_urls": [
+        "https://www.yok.gov.tr/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0138",
+          "line": 267,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "7. 中东及西亚"
+          ],
+          "original_table_cells": [
+            "土耳其",
+            "[YÖK](https://www.yok.gov.tr/?utm_source=chatgpt.com)",
+            "高等教育和大学招聘制度信息"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-17456e71-1ce5-5ac3-b562-4e6dddf8308a",
+      "name": "Urban Studies Foundation",
+      "canonical_url": "https://www.urbanstudiesfoundation.org/funding/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.urbanstudiesfoundation.org/funding/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "Urban Studies Foundation"
+      ],
+      "original_urls": [
+        "https://www.urbanstudiesfoundation.org/funding/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0144",
+          "line": 282,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "三、地理学及交叉学科专业招聘网站"
+          ],
+          "original_table_cells": [
+            "城市研究",
+            "[Urban Studies Foundation](https://www.urbanstudiesfoundation.org/funding/?utm_source=chatgpt.com)",
+            "研究资助、访问研究及部分博后项目"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-18fbd49a-518e-51f3-aff5-a70fc74169ed",
+      "name": "Minciencias",
+      "canonical_url": "https://minciencias.gov.co/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://minciencias.gov.co/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "Minciencias"
+      ],
+      "original_urls": [
+        "https://minciencias.gov.co/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0110",
+          "line": 218,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "5. 拉丁美洲及加勒比地区"
+          ],
+          "original_table_cells": [
+            "哥伦比亚",
+            "[Minciencias](https://minciencias.gov.co/?utm_source=chatgpt.com)",
+            "科研项目与资助"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-1b91157a-27fd-5245-81b7-9f8b5168af97",
+      "name": "NSF",
+      "canonical_url": "https://www.nsf.gov/funding",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.nsf.gov/funding",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "NSF"
+      ],
+      "original_urls": [
+        "https://www.nsf.gov/funding?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0057",
+          "line": 125,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "2. 北美洲"
+          ],
+          "original_table_cells": [
+            "美国",
+            "[NSF](https://www.nsf.gov/funding?utm_source=chatgpt.com)",
+            "研究资助及项目机会"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-1caa27eb-f94e-599d-91f6-0d24099bb86f",
+      "name": "Plataforma Sucupira",
+      "canonical_url": "https://sucupira.capes.gov.br/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://sucupira.capes.gov.br/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "Plataforma Sucupira"
+      ],
+      "original_urls": [
+        "https://sucupira.capes.gov.br/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0102",
+          "line": 210,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "5. 拉丁美洲及加勒比地区"
+          ],
+          "original_table_cells": [
+            "巴西",
+            "[Plataforma Sucupira](https://sucupira.capes.gov.br/?utm_source=chatgpt.com)",
+            "全国研究生项目发现"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-1cd1dc54-3b6e-56ff-986e-8d1b4660fd80",
+      "name": "SEEK",
+      "canonical_url": "https://www.seek.com.au/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.seek.com.au/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "SEEK"
+      ],
+      "original_urls": [
+        "https://www.seek.com.au/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0091",
+          "line": 187,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "4. 大洋洲"
+          ],
+          "original_table_cells": [
+            "澳大利亚",
+            "[SEEK](https://www.seek.com.au/?utm_source=chatgpt.com)",
+            "研究助理、博士后、教职"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-1e21749e-26eb-59fa-a423-10087895fce7",
+      "name": "捷克科学院",
+      "canonical_url": "https://www.avcr.cz/en/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.avcr.cz/en/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "捷克科学院"
+      ],
+      "original_urls": [
+        "https://www.avcr.cz/en/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0044",
+          "line": 87,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "捷克",
+            "[捷克科学院](https://www.avcr.cz/en/?utm_source=chatgpt.com)",
+            "科研机构与招聘"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-1eea8a3b-803f-5961-b711-4402cc914d9d",
+      "name": "赫尔辛基大学招聘",
+      "canonical_url": "https://www.helsinki.fi/en/open-positions",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.helsinki.fi/en/open-positions",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "赫尔辛基大学招聘"
+      ],
+      "original_urls": [
+        "https://www.helsinki.fi/en/open-positions?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0036",
+          "line": 79,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "芬兰",
+            "[赫尔辛基大学招聘](https://www.helsinki.fi/en/open-positions?utm_source=chatgpt.com)",
+            "博士、博士后、教职"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-1f81fc8a-21c4-5835-b3f1-45f1482361b0",
+      "name": "新加坡国立大学招聘",
+      "canonical_url": "https://www.nus.edu.sg/careers/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.nus.edu.sg/careers/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "新加坡国立大学招聘"
+      ],
+      "original_urls": [
+        "https://www.nus.edu.sg/careers/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0080",
+          "line": 157,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "新加坡",
+            "[新加坡国立大学招聘](https://www.nus.edu.sg/careers/?utm_source=chatgpt.com)",
+            "教职、科研、博士后、助理"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-22932798-6bae-5183-bb31-627ed9367e43",
+      "name": "FCT",
+      "canonical_url": "https://www.fct.pt/en/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.fct.pt/en/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "FCT"
+      ],
+      "original_urls": [
+        "https://www.fct.pt/en/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0042",
+          "line": 85,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "葡萄牙",
+            "[FCT](https://www.fct.pt/en/?utm_source=chatgpt.com)",
+            "科研资助、博士奖学金"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-2339595a-ce05-5b00-b620-8e9782752400",
+      "name": "约旦大学",
+      "canonical_url": "https://www.ju.edu.jo/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.ju.edu.jo/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "约旦大学"
+      ],
+      "original_urls": [
+        "https://www.ju.edu.jo/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0140",
+          "line": 269,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "7. 中东及西亚"
+          ],
+          "original_table_cells": [
+            "约旦",
+            "[约旦大学](https://www.ju.edu.jo/?utm_source=chatgpt.com)",
+            "地理及环境相关学位与研究"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-24fd7039-5047-5497-a998-4efe8c1e588e",
+      "name": "拉各斯大学",
+      "canonical_url": "https://www.unilag.edu.ng/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.unilag.edu.ng/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "拉各斯大学"
+      ],
+      "original_urls": [
+        "https://www.unilag.edu.ng/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0125",
+          "line": 247,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "6. 非洲"
+          ],
+          "original_table_cells": [
+            "尼日利亚",
+            "[拉各斯大学](https://www.unilag.edu.ng/?utm_source=chatgpt.com)",
+            "研究生及教研招聘"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-2998e505-9488-533b-ac21-dd7afc86b3a0",
+      "name": "JST",
+      "canonical_url": "https://www.jst.go.jp/EN/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.jst.go.jp/EN/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "JST"
+      ],
+      "original_urls": [
+        "https://www.jst.go.jp/EN/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0077",
+          "line": 154,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "日本",
+            "[JST](https://www.jst.go.jp/EN/?utm_source=chatgpt.com)",
+            "科研项目及人才支持"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-2f0d880d-9c67-50eb-bace-6144a369e640",
+      "name": "academics.at",
+      "canonical_url": "https://www.academics.at/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.academics.at/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "academics.at"
+      ],
+      "original_urls": [
+        "https://www.academics.at/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0037",
+          "line": 80,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "奥地利",
+            "[academics.at](https://www.academics.at/?utm_source=chatgpt.com)",
+            "德语区学术招聘"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-3a32314f-cb03-5ec0-80af-b7cbb0eb2b03",
+      "name": "1111人力银行",
+      "canonical_url": "https://www.1111.com.tw/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.1111.com.tw/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "1111人力银行"
+      ],
+      "original_urls": [
+        "https://www.1111.com.tw/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0074",
+          "line": 151,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "中国台湾",
+            "[1111人力银行](https://www.1111.com.tw/?utm_source=chatgpt.com)",
+            "高校、研究助理及职位补充"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-3b7544b5-8ba8-568b-8497-9b033572d5bb",
+      "name": "jobs.ac.uk",
+      "canonical_url": "https://www.jobs.ac.uk/search/geography",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.jobs.ac.uk/search/geography",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": "P0",
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "jobs.ac.uk"
+      ],
+      "original_urls": [
+        "https://www.jobs.ac.uk/search/geography?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0002",
+          "line": 21,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "一、全球最值得优先接入的核心平台"
+          ],
+          "original_table_cells": [
+            "[jobs.ac.uk](https://www.jobs.ac.uk/search/geography?utm_source=chatgpt.com)",
+            "英国及国际",
+            "博士、博后、科研、教职",
+            "P0"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-3f5b4bc2-cff9-5f01-ba52-09c3a85857bd",
+      "name": "ANID",
+      "canonical_url": "https://anid.cl/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://anid.cl/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "ANID"
+      ],
+      "original_urls": [
+        "https://anid.cl/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0108",
+          "line": 216,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "5. 拉丁美洲及加勒比地区"
+          ],
+          "original_table_cells": [
+            "智利",
+            "[ANID](https://anid.cl/?utm_source=chatgpt.com)",
+            "博士奖学金、博士后资助"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-41113967-0962-58c2-8405-70666a339c16",
+      "name": "AcademicTransfer",
+      "canonical_url": "https://www.academictransfer.com/en/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.academictransfer.com/en/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": "P0",
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "AcademicTransfer"
+      ],
+      "original_urls": [
+        "https://www.academictransfer.com/en/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0003",
+          "line": 22,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "一、全球最值得优先接入的核心平台"
+          ],
+          "original_table_cells": [
+            "[AcademicTransfer](https://www.academictransfer.com/en/?utm_source=chatgpt.com)",
+            "荷兰",
+            "带薪博士、博后、教职、科研助理",
+            "P0"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-41b5a40b-5bb3-550c-97b4-ffd694131120",
+      "name": "南洋理工大学招聘",
+      "canonical_url": "https://www.ntu.edu.sg/careers",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.ntu.edu.sg/careers",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "南洋理工大学招聘"
+      ],
+      "original_urls": [
+        "https://www.ntu.edu.sg/careers?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0081",
+          "line": 158,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "新加坡",
+            "[南洋理工大学招聘](https://www.ntu.edu.sg/careers?utm_source=chatgpt.com)",
+            "科研与教学职位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-41c0d75f-13f8-5424-9af0-4b45ddda219b",
+      "name": "澳大利亚教育部科研资助",
+      "canonical_url": "https://www.education.gov.au/research-block-grants",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.education.gov.au/research-block-grants",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "澳大利亚教育部科研资助"
+      ],
+      "original_urls": [
+        "https://www.education.gov.au/research-block-grants?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0093",
+          "line": 189,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "4. 大洋洲"
+          ],
+          "original_table_cells": [
+            "澳大利亚",
+            "[澳大利亚教育部科研资助](https://www.education.gov.au/research-block-grants?utm_source=chatgpt.com)",
+            "博士资助体系信息"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-441264cb-c008-53a4-976c-3d8afbd3a3f3",
+      "name": "University Affairs",
+      "canonical_url": "https://universityaffairs.ca/search-jobs/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://universityaffairs.ca/search-jobs/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": "P0",
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "University Affairs"
+      ],
+      "original_urls": [
+        "https://universityaffairs.ca/search-jobs/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0010",
+          "line": 29,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "一、全球最值得优先接入的核心平台"
+          ],
+          "original_table_cells": [
+            "[University Affairs](https://universityaffairs.ca/search-jobs/?utm_source=chatgpt.com)",
+            "加拿大",
+            "教职、科研职位",
+            "P0"
+          ]
+        },
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0058",
+          "line": 126,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "2. 北美洲"
+          ],
+          "original_table_cells": [
+            "加拿大",
+            "[University Affairs](https://universityaffairs.ca/search-jobs/?utm_source=chatgpt.com)",
+            "大学教职和科研招聘"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-4441f8c6-909b-55c3-a69b-4719eb8a9c31",
+      "name": "OeAD",
+      "canonical_url": "https://www.oead.at/en/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.oead.at/en/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "OeAD"
+      ],
+      "original_urls": [
+        "https://www.oead.at/en/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0038",
+          "line": 81,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "奥地利",
+            "[OeAD](https://www.oead.at/en/?utm_source=chatgpt.com)",
+            "国际学生和研究人员项目"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-480e3d56-c854-5d3c-9727-301e85e8cf52",
+      "name": "印度理工学院孟买分校",
+      "canonical_url": "https://www.iitb.ac.in/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.iitb.ac.in/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "印度理工学院孟买分校"
+      ],
+      "original_urls": [
+        "https://www.iitb.ac.in/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0084",
+          "line": 161,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "印度",
+            "[印度理工学院孟买分校](https://www.iitb.ac.in/?utm_source=chatgpt.com)",
+            "博士与研究招聘"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-4866f6f3-30ba-5aef-9159-7c4b5ef40364",
+      "name": "GISjobs",
+      "canonical_url": "https://www.gisjobs.com/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.gisjobs.com/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "GISjobs"
+      ],
+      "original_urls": [
+        "https://www.gisjobs.com/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0145",
+          "line": 283,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "三、地理学及交叉学科专业招聘网站"
+          ],
+          "original_table_cells": [
+            "地理信息系统",
+            "[GISjobs](https://www.gisjobs.com/?utm_source=chatgpt.com)",
+            "地理信息、空间分析、遥感相关工作"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-489c2d59-5288-5c03-a903-260d622d33e7",
+      "name": "中国博士后网站",
+      "canonical_url": "https://www.chinapostdoctor.org.cn/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.chinapostdoctor.org.cn/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "中国博士后网站"
+      ],
+      "original_urls": [
+        "https://www.chinapostdoctor.org.cn/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0068",
+          "line": 145,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "中国大陆",
+            "[中国博士后网站](https://www.chinapostdoctor.org.cn/?utm_source=chatgpt.com)",
+            "博士后政策及招聘信息入口"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-4f35f396-6386-5cf4-91d6-709b1cc24e5c",
+      "name": "Chronicle Jobs",
+      "canonical_url": "https://www.chronicle.com/jobs",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.chronicle.com/jobs",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "Chronicle Jobs"
+      ],
+      "original_urls": [
+        "https://www.chronicle.com/jobs?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0053",
+          "line": 121,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "2. 北美洲"
+          ],
+          "original_table_cells": [
+            "美国",
+            "[Chronicle Jobs](https://www.chronicle.com/jobs?utm_source=chatgpt.com)",
+            "高等教育学术职位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-51fab4ad-13a8-5230-86d3-8655806bf941",
+      "name": "AESOP",
+      "canonical_url": "https://aesop-planning.eu/resources/news-archive/jobs",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://aesop-planning.eu/resources/news-archive/jobs",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "AESOP",
+        "AESOP Jobs"
+      ],
+      "original_urls": [
+        "https://aesop-planning.eu/resources/news-archive/jobs?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0143",
+          "line": 281,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "三、地理学及交叉学科专业招聘网站"
+          ],
+          "original_table_cells": [
+            "城市与区域规划",
+            "[AESOP](https://aesop-planning.eu/resources/news-archive/jobs?utm_source=chatgpt.com)",
+            "城市规划、区域研究职位"
+          ]
+        },
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0157",
+          "line": 308,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "三、地理学及交叉学科专业招聘网站"
+          ],
+          "original_table_cells": []
+        }
+      ]
+    },
+    {
+      "source_id": "src-53b3e35e-465e-55a9-8227-fcf21b84239c",
+      "name": "智利大学",
+      "canonical_url": "https://www.uchile.cl/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.uchile.cl/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "智利大学"
+      ],
+      "original_urls": [
+        "https://www.uchile.cl/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0109",
+          "line": 217,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "5. 拉丁美洲及加勒比地区"
+          ],
+          "original_table_cells": [
+            "智利",
+            "[智利大学](https://www.uchile.cl/?utm_source=chatgpt.com)",
+            "研究生及教研招聘"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-5469a0d6-755b-5db8-8bf7-3d8aae89d1c1",
+      "name": "GALAXIE / ODYSSÉE",
+      "canonical_url": "https://www.galaxie.enseignementsup-recherche.gouv.fr/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.galaxie.enseignementsup-recherche.gouv.fr/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "GALAXIE / ODYSSÉE"
+      ],
+      "original_urls": [
+        "https://www.galaxie.enseignementsup-recherche.gouv.fr/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0026",
+          "line": 69,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "法国",
+            "[GALAXIE / ODYSSÉE](https://www.galaxie.enseignementsup-recherche.gouv.fr/?utm_source=chatgpt.com)",
+            "公立大学教研岗位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-552171e3-469d-5430-ad5c-f90630446bdf",
+      "name": "JSPS",
+      "canonical_url": "https://www.jsps.go.jp/english/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.jsps.go.jp/english/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "JSPS"
+      ],
+      "original_urls": [
+        "https://www.jsps.go.jp/english/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0076",
+          "line": 153,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "日本",
+            "[JSPS](https://www.jsps.go.jp/english/?utm_source=chatgpt.com)",
+            "博士后与科研资助"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-568be24c-b757-5eea-aa37-b9a474fe1102",
+      "name": "塔尔图大学",
+      "canonical_url": "https://ut.ee/en",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://ut.ee/en",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "塔尔图大学"
+      ],
+      "original_urls": [
+        "https://ut.ee/en?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0045",
+          "line": 88,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "爱沙尼亚",
+            "[塔尔图大学](https://ut.ee/en?utm_source=chatgpt.com)",
+            "研究生招生及科研职位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-58795e92-0fb4-52aa-a9b9-0759c73648ff",
+      "name": "澳门大学",
+      "canonical_url": "https://www.um.edu.mo/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.um.edu.mo/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "澳门大学"
+      ],
+      "original_urls": [
+        "https://www.um.edu.mo/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0073",
+          "line": 150,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "中国澳门",
+            "[澳门大学](https://www.um.edu.mo/?utm_source=chatgpt.com)",
+            "硕博招生及研究岗位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-58f5ae4b-a332-5880-8ae8-cc520d523d0e",
+      "name": "澳大利亚国立大学招聘",
+      "canonical_url": "https://www.anu.edu.au/jobs",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.anu.edu.au/jobs",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "澳大利亚国立大学招聘"
+      ],
+      "original_urls": [
+        "https://www.anu.edu.au/jobs?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0094",
+          "line": 190,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "4. 大洋洲"
+          ],
+          "original_table_cells": [
+            "澳大利亚",
+            "[澳大利亚国立大学招聘](https://www.anu.edu.au/jobs?utm_source=chatgpt.com)",
+            "科研与教职"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-59601000-ed85-57fd-afcb-0deb6d63c6e4",
+      "name": "西印度群岛大学",
+      "canonical_url": "https://www.uwi.edu/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.uwi.edu/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "西印度群岛大学"
+      ],
+      "original_urls": [
+        "https://www.uwi.edu/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0115",
+          "line": 223,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "5. 拉丁美洲及加勒比地区"
+          ],
+          "original_table_cells": [
+            "加勒比地区",
+            "[西印度群岛大学](https://www.uwi.edu/?utm_source=chatgpt.com)",
+            "研究生招生、研究岗位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-5d0d4cd1-d2a2-5d52-8bca-9a56317c13c6",
+      "name": "希伯来大学",
+      "canonical_url": "https://www.huji.ac.il/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.huji.ac.il/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "希伯来大学"
+      ],
+      "original_urls": [
+        "https://www.huji.ac.il/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0136",
+          "line": 265,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "7. 中东及西亚"
+          ],
+          "original_table_cells": [
+            "以色列",
+            "[希伯来大学](https://www.huji.ac.il/?utm_source=chatgpt.com)",
+            "地理学、城市研究、博士后"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-5fd7670b-1e59-5ca9-980a-bc0f70d4b5b5",
+      "name": "AERE",
+      "canonical_url": "https://www.aere.org/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.aere.org/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "AERE"
+      ],
+      "original_urls": [
+        "https://www.aere.org/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0152",
+          "line": 290,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "三、地理学及交叉学科专业招聘网站"
+          ],
+          "original_table_cells": [
+            "环境经济学",
+            "[AERE](https://www.aere.org/?utm_source=chatgpt.com)",
+            "环境经济研究网络与职位资源"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-627478fb-4134-5f94-b5a1-3360fc5ea524",
+      "name": "UGC",
+      "canonical_url": "https://www.ugc.gov.in/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.ugc.gov.in/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "UGC"
+      ],
+      "original_urls": [
+        "https://www.ugc.gov.in/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0083",
+          "line": 160,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "印度",
+            "[UGC](https://www.ugc.gov.in/?utm_source=chatgpt.com)",
+            "高等教育机构和招聘政策"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-648da507-4cb8-5bd5-9ba9-b92db3324a9c",
+      "name": "CNRS 招聘门户",
+      "canonical_url": "https://emploi.cnrs.fr/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://emploi.cnrs.fr/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "CNRS 招聘门户"
+      ],
+      "original_urls": [
+        "https://emploi.cnrs.fr/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0025",
+          "line": 68,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "法国",
+            "[CNRS 招聘门户](https://emploi.cnrs.fr/?utm_source=chatgpt.com)",
+            "博士合同、科研支持、科研岗位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-658b46a8-0d38-5a72-b31a-46707fede892",
+      "name": "CONCYTEC",
+      "canonical_url": "https://www.gob.pe/concytec",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.gob.pe/concytec",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "CONCYTEC"
+      ],
+      "original_urls": [
+        "https://www.gob.pe/concytec?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0112",
+          "line": 220,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "5. 拉丁美洲及加勒比地区"
+          ],
+          "original_table_cells": [
+            "秘鲁",
+            "[CONCYTEC](https://www.gob.pe/concytec?utm_source=chatgpt.com)",
+            "科研资助与机构信息"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-671b2697-5f7b-512e-a7ea-23e1a5599032",
+      "name": "洛桑联邦理工学院",
+      "canonical_url": "https://www.epfl.ch/about/working/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.epfl.ch/about/working/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "洛桑联邦理工学院"
+      ],
+      "original_urls": [
+        "https://www.epfl.ch/about/working/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0030",
+          "line": 73,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "瑞士",
+            "[洛桑联邦理工学院](https://www.epfl.ch/about/working/?utm_source=chatgpt.com)",
+            "科研及教学招聘"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-68a6a5c6-3ba8-5c56-8060-cd743c6a896c",
+      "name": "AAG Jobs & Careers",
+      "canonical_url": "https://www.aag.org/jobs-careers/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.aag.org/jobs-careers/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "AAG Jobs & Careers",
+        "AAG"
+      ],
+      "original_urls": [
+        "https://www.aag.org/jobs-careers/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0050",
+          "line": 118,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "2. 北美洲"
+          ],
+          "original_table_cells": [
+            "美国",
+            "[AAG Jobs & Careers](https://www.aag.org/jobs-careers/?utm_source=chatgpt.com)",
+            "地理学专门招聘"
+          ]
+        },
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0141",
+          "line": 279,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "三、地理学及交叉学科专业招聘网站"
+          ],
+          "original_table_cells": [
+            "综合地理学",
+            "[AAG](https://www.aag.org/jobs-careers/?utm_source=chatgpt.com)",
+            "地理学相关就业"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-6935c8d2-39b0-56c1-9b79-a1b353890454",
+      "name": "Study in Korea",
+      "canonical_url": "https://www.studyinkorea.go.kr/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.studyinkorea.go.kr/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "Study in Korea"
+      ],
+      "original_urls": [
+        "https://www.studyinkorea.go.kr/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0079",
+          "line": 156,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "韩国",
+            "[Study in Korea](https://www.studyinkorea.go.kr/?utm_source=chatgpt.com)",
+            "国际硕博招生"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-6eb44c1c-5526-5134-b780-1c72fb959d61",
+      "name": "苏黎世联邦理工学院",
+      "canonical_url": "https://www.ethz.ch/en/the-eth-zurich/working-teaching-and-research.html",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.ethz.ch/en/the-eth-zurich/working-teaching-and-research.html",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "苏黎世联邦理工学院"
+      ],
+      "original_urls": [
+        "https://www.ethz.ch/en/the-eth-zurich/working-teaching-and-research.html?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0029",
+          "line": 72,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "瑞士",
+            "[苏黎世联邦理工学院](https://www.ethz.ch/en/the-eth-zurich/working-teaching-and-research.html?utm_source=chatgpt.com)",
+            "博士、博士后、教职"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-732f80f3-d9d4-53b0-bb83-f416903df54f",
+      "name": "墨西哥国立自治大学",
+      "canonical_url": "https://www.unam.mx/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.unam.mx/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "墨西哥国立自治大学"
+      ],
+      "original_urls": [
+        "https://www.unam.mx/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0063",
+          "line": 131,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "2. 北美洲"
+          ],
+          "original_table_cells": [
+            "墨西哥",
+            "[墨西哥国立自治大学](https://www.unam.mx/?utm_source=chatgpt.com)",
+            "硕博招生、科研招聘"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-74cefa49-2430-5a5a-9804-4582795cccd0",
+      "name": "鲁汶大学招聘",
+      "canonical_url": "https://www.kuleuven.be/personeel/jobsite/en/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.kuleuven.be/personeel/jobsite/en/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "鲁汶大学招聘"
+      ],
+      "original_urls": [
+        "https://www.kuleuven.be/personeel/jobsite/en/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0039",
+          "line": 82,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "比利时",
+            "[鲁汶大学招聘](https://www.kuleuven.be/personeel/jobsite/en/?utm_source=chatgpt.com)",
+            "博士、博后、科研、教职"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-77111b24-2cad-5aa2-bb74-345004ea2435",
+      "name": "开普敦大学",
+      "canonical_url": "https://www.uct.ac.za/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.uct.ac.za/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "开普敦大学"
+      ],
+      "original_urls": [
+        "https://www.uct.ac.za/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0117",
+          "line": 239,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "6. 非洲"
+          ],
+          "original_table_cells": [
+            "南非",
+            "[开普敦大学](https://www.uct.ac.za/?utm_source=chatgpt.com)",
+            "地理与环境相关硕博、教研岗位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-77630c91-ee3f-55fa-9ca5-25e75469d866",
+      "name": "非洲联盟",
+      "canonical_url": "https://www.african-union.org/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.african-union.org/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "非洲联盟"
+      ],
+      "original_urls": [
+        "https://www.african-union.org/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0130",
+          "line": 252,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "6. 非洲"
+          ],
+          "original_table_cells": [
+            "泛非洲",
+            "[非洲联盟](https://www.african-union.org/?utm_source=chatgpt.com)",
+            "区域科研、教育及相关项目"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-77bea8f6-40e0-5188-b302-af64fb995712",
+      "name": "THE UniJobs",
+      "canonical_url": "https://www.timeshighereducation.com/unijobs",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.timeshighereducation.com/unijobs",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": "P1",
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "THE UniJobs"
+      ],
+      "original_urls": [
+        "https://www.timeshighereducation.com/unijobs?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0011",
+          "line": 30,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "一、全球最值得优先接入的核心平台"
+          ],
+          "original_table_cells": [
+            "[THE UniJobs](https://www.timeshighereducation.com/unijobs?utm_source=chatgpt.com)",
+            "全球",
+            "教职、科研、部分博士岗位",
+            "P1"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-79bb558e-75c8-54ae-9f59-208bceced203",
+      "name": "马克斯·普朗克学会",
+      "canonical_url": "https://www.mpg.de/career",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.mpg.de/career",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "马克斯·普朗克学会"
+      ],
+      "original_urls": [
+        "https://www.mpg.de/career?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0023",
+          "line": 66,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "德国",
+            "[马克斯·普朗克学会](https://www.mpg.de/career?utm_source=chatgpt.com)",
+            "博士、博士后、科研岗位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-7bea9cfd-ade1-5f66-b4ca-b0a1efdb7fc0",
+      "name": "香港科技大学招聘",
+      "canonical_url": "https://hkustcareers.ust.hk/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://hkustcareers.ust.hk/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "香港科技大学招聘"
+      ],
+      "original_urls": [
+        "https://hkustcareers.ust.hk/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0071",
+          "line": 148,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "中国香港",
+            "[香港科技大学招聘](https://hkustcareers.ust.hk/?utm_source=chatgpt.com)",
+            "科研、教职"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-7e1af851-a5f0-5700-8917-6693d6e28cb2",
+      "name": "香港中文大学招聘",
+      "canonical_url": "https://www2.jobs.cuhk.edu.hk/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www2.jobs.cuhk.edu.hk/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "香港中文大学招聘"
+      ],
+      "original_urls": [
+        "https://www2.jobs.cuhk.edu.hk/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0070",
+          "line": 147,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "中国香港",
+            "[香港中文大学招聘](https://www2.jobs.cuhk.edu.hk/?utm_source=chatgpt.com)",
+            "科研助理、教职"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-7fd94c82-2a06-5e04-80aa-238f8af4384d",
+      "name": "高校人才网",
+      "canonical_url": "https://www.gaoxiaojob.com/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.gaoxiaojob.com/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "高校人才网"
+      ],
+      "original_urls": [
+        "https://www.gaoxiaojob.com/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0066",
+          "line": 143,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "中国大陆",
+            "[高校人才网](https://www.gaoxiaojob.com/?utm_source=chatgpt.com)",
+            "高校教师、博士后、科研助理"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-83abbd7d-21e7-5314-8918-534c895854a6",
+      "name": "CAPES",
+      "canonical_url": "https://www.gov.br/capes/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.gov.br/capes/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "CAPES"
+      ],
+      "original_urls": [
+        "https://www.gov.br/capes/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0101",
+          "line": 209,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "5. 拉丁美洲及加勒比地区"
+          ],
+          "original_table_cells": [
+            "巴西",
+            "[CAPES](https://www.gov.br/capes/?utm_source=chatgpt.com)",
+            "硕博项目、研究生奖学金"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-83fd4541-5c41-54a2-8504-2245e7dabc2e",
+      "name": "KAUST",
+      "canonical_url": "https://www.kaust.edu.sa/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.kaust.edu.sa/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "KAUST"
+      ],
+      "original_urls": [
+        "https://www.kaust.edu.sa/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0131",
+          "line": 260,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "7. 中东及西亚"
+          ],
+          "original_table_cells": [
+            "沙特阿拉伯",
+            "[KAUST](https://www.kaust.edu.sa/?utm_source=chatgpt.com)",
+            "环境、遥感、地球系统科研及学位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-843dc639-c69d-5787-9701-386c56ade30a",
+      "name": "哥伦比亚国立大学",
+      "canonical_url": "https://unal.edu.co/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://unal.edu.co/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "哥伦比亚国立大学"
+      ],
+      "original_urls": [
+        "https://unal.edu.co/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0111",
+          "line": 219,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "5. 拉丁美洲及加勒比地区"
+          ],
+          "original_table_cells": [
+            "哥伦比亚",
+            "[哥伦比亚国立大学](https://unal.edu.co/?utm_source=chatgpt.com)",
+            "硕博与教职"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-84819319-0160-59f7-b17d-d2466290fb80",
+      "name": "哈利法大学",
+      "canonical_url": "https://www.ku.ac.ae/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.ku.ac.ae/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "哈利法大学"
+      ],
+      "original_urls": [
+        "https://www.ku.ac.ae/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0134",
+          "line": 263,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "7. 中东及西亚"
+          ],
+          "original_table_cells": [
+            "阿联酋",
+            "[哈利法大学](https://www.ku.ac.ae/?utm_source=chatgpt.com)",
+            "气候、遥感、环境科研"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-8563b73a-d188-56d1-b7c3-0fa6aecbbf3c",
+      "name": "斯德哥尔摩大学招聘系统",
+      "canonical_url": "https://su.varbi.com/en/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://su.varbi.com/en/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "斯德哥尔摩大学招聘系统"
+      ],
+      "original_urls": [
+        "https://su.varbi.com/en/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0048",
+          "line": 106,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": []
+        }
+      ]
+    },
+    {
+      "source_id": "src-8c889c1e-96b9-5b73-b81d-d95e20610844",
+      "name": "加拿大政府招聘",
+      "canonical_url": "https://www.canada.ca/en/services/jobs/opportunities/government.html",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.canada.ca/en/services/jobs/opportunities/government.html",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "加拿大政府招聘"
+      ],
+      "original_urls": [
+        "https://www.canada.ca/en/services/jobs/opportunities/government.html?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0061",
+          "line": 129,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "2. 北美洲"
+          ],
+          "original_table_cells": [
+            "加拿大",
+            "[加拿大政府招聘](https://www.canada.ca/en/services/jobs/opportunities/government.html?utm_source=chatgpt.com)",
+            "公共科研机构职位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-8dd3c56f-d9b3-53c9-87dc-e70559c8a76c",
+      "name": "TÜBİTAK",
+      "canonical_url": "https://www.tubitak.gov.tr/en",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.tubitak.gov.tr/en",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "TÜBİTAK"
+      ],
+      "original_urls": [
+        "https://www.tubitak.gov.tr/en?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0139",
+          "line": 268,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "7. 中东及西亚"
+          ],
+          "original_table_cells": [
+            "土耳其",
+            "[TÜBİTAK](https://www.tubitak.gov.tr/en?utm_source=chatgpt.com)",
+            "科研项目、研究资助"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-8dd8bb17-55a4-556c-8444-720802d8dec6",
+      "name": "Varbi",
+      "canonical_url": "https://www.varbi.com/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.varbi.com/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "Varbi"
+      ],
+      "original_urls": [
+        "https://www.varbi.com/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0031",
+          "line": 74,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "瑞典",
+            "[Varbi](https://www.varbi.com/?utm_source=chatgpt.com)",
+            "多所高校使用的招聘系统"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-8ea3f4ff-83a7-5230-a512-1dd1b6bf1d31",
+      "name": "奥克兰大学招聘",
+      "canonical_url": "https://www.auckland.ac.nz/en/about-us/about-the-university/working-at-the-university.html",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.auckland.ac.nz/en/about-us/about-the-university/working-at-the-university.html",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "奥克兰大学招聘"
+      ],
+      "original_urls": [
+        "https://www.auckland.ac.nz/en/about-us/about-the-university/working-at-the-university.html?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0098",
+          "line": 194,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "4. 大洋洲"
+          ],
+          "original_table_cells": [
+            "新西兰",
+            "[奥克兰大学招聘](https://www.auckland.ac.nz/en/about-us/about-the-university/working-at-the-university.html?utm_source=chatgpt.com)",
+            "教职、科研及博士后"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-91c3db89-23fc-56a7-9331-b070f198be24",
+      "name": "AcademicTransfer",
+      "canonical_url": "https://www.academictransfer.com/en/jobs/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.academictransfer.com/en/jobs/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "AcademicTransfer"
+      ],
+      "original_urls": [
+        "https://www.academictransfer.com/en/jobs/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0020",
+          "line": 63,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "荷兰",
+            "[AcademicTransfer](https://www.academictransfer.com/en/jobs/?utm_source=chatgpt.com)",
+            "全国高校及研究机构岗位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-92158e4c-b0f9-5580-a3f0-95af0de3f5c5",
+      "name": "ANII",
+      "canonical_url": "https://www.anii.org.uy/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.anii.org.uy/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "ANII"
+      ],
+      "original_urls": [
+        "https://www.anii.org.uy/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0113",
+          "line": 221,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "5. 拉丁美洲及加勒比地区"
+          ],
+          "original_table_cells": [
+            "乌拉圭",
+            "[ANII](https://www.anii.org.uy/?utm_source=chatgpt.com)",
+            "研究资助及人才计划"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-92371686-a7ac-5bfe-a1ad-6bf3f90107e3",
+      "name": "奥塔哥大学",
+      "canonical_url": "https://www.otago.ac.nz/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.otago.ac.nz/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "奥塔哥大学"
+      ],
+      "original_urls": [
+        "https://www.otago.ac.nz/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0099",
+          "line": 195,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "4. 大洋洲"
+          ],
+          "original_table_cells": [
+            "新西兰",
+            "[奥塔哥大学](https://www.otago.ac.nz/?utm_source=chatgpt.com)",
+            "硕博、科研及教职"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-925d1b85-3aec-5f7d-9780-c6ee5007d7ed",
+      "name": "jobs.ch",
+      "canonical_url": "https://www.jobs.ch/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.jobs.ch/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "jobs.ch"
+      ],
+      "original_urls": [
+        "https://www.jobs.ch/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0028",
+          "line": 71,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "瑞士",
+            "[jobs.ch](https://www.jobs.ch/?utm_source=chatgpt.com)",
+            "高校及科研机构职位补充"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-98a693fd-c0bc-52fe-b39c-11a995e81fe3",
+      "name": "加纳大学",
+      "canonical_url": "https://www.ug.edu.gh/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.ug.edu.gh/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "加纳大学"
+      ],
+      "original_urls": [
+        "https://www.ug.edu.gh/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0126",
+          "line": 248,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "6. 非洲"
+          ],
+          "original_table_cells": [
+            "加纳",
+            "[加纳大学](https://www.ug.edu.gh/?utm_source=chatgpt.com)",
+            "地理学及资源发展"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-9b391e88-258d-5666-868d-191c36d16262",
+      "name": "SECIHTI",
+      "canonical_url": "https://secihti.mx/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://secihti.mx/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "SECIHTI"
+      ],
+      "original_urls": [
+        "https://secihti.mx/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0062",
+          "line": 130,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "2. 北美洲"
+          ],
+          "original_table_cells": [
+            "墨西哥",
+            "[SECIHTI](https://secihti.mx/?utm_source=chatgpt.com)",
+            "国家科研及研究生资助信息"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-9ee903fc-4702-537b-9e4f-0daf5256e2ce",
+      "name": "Mastersportal",
+      "canonical_url": "https://www.mastersportal.com/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.mastersportal.com/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": "P1",
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "Mastersportal"
+      ],
+      "original_urls": [
+        "https://www.mastersportal.com/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0014",
+          "line": 33,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "一、全球最值得优先接入的核心平台"
+          ],
+          "original_table_cells": [
+            "[Mastersportal](https://www.mastersportal.com/?utm_source=chatgpt.com)",
+            "全球",
+            "硕士项目",
+            "P1"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-a0660b80-b333-5aef-bbdb-86ef731529cf",
+      "name": "圣保罗大学",
+      "canonical_url": "https://www.usp.br/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.usp.br/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "圣保罗大学"
+      ],
+      "original_urls": [
+        "https://www.usp.br/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0104",
+          "line": 212,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "5. 拉丁美洲及加勒比地区"
+          ],
+          "original_table_cells": [
+            "巴西",
+            "[圣保罗大学](https://www.usp.br/?utm_source=chatgpt.com)",
+            "研究生项目与招聘公告"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-a074191e-cd73-528f-9810-480c1a631666",
+      "name": "阿联酋大学",
+      "canonical_url": "https://www.uaeu.ac.ae/en/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.uaeu.ac.ae/en/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "阿联酋大学"
+      ],
+      "original_urls": [
+        "https://www.uaeu.ac.ae/en/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0133",
+          "line": 262,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "7. 中东及西亚"
+          ],
+          "original_table_cells": [
+            "阿联酋",
+            "[阿联酋大学](https://www.uaeu.ac.ae/en/?utm_source=chatgpt.com)",
+            "硕博与教职"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-a0809c92-77ba-57ed-8169-cc9981b83794",
+      "name": "ASRT",
+      "canonical_url": "https://www.asrt.sci.eg/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.asrt.sci.eg/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "ASRT"
+      ],
+      "original_urls": [
+        "https://www.asrt.sci.eg/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0121",
+          "line": 243,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "6. 非洲"
+          ],
+          "original_table_cells": [
+            "埃及",
+            "[ASRT](https://www.asrt.sci.eg/?utm_source=chatgpt.com)",
+            "科研机构及资助资讯"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-a138868d-6c54-5059-a91a-b3fee9f6a506",
+      "name": "内罗毕大学",
+      "canonical_url": "https://www.uonbi.ac.ke/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.uonbi.ac.ke/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "内罗毕大学"
+      ],
+      "original_urls": [
+        "https://www.uonbi.ac.ke/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0123",
+          "line": 245,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "6. 非洲"
+          ],
+          "original_table_cells": [
+            "肯尼亚",
+            "[内罗毕大学](https://www.uonbi.ac.ke/?utm_source=chatgpt.com)",
+            "地理、规划与环境相关机会"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-a1473a3c-e241-511b-991b-a7a8cd74f3de",
+      "name": "CNPq",
+      "canonical_url": "https://www.gov.br/cnpq/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.gov.br/cnpq/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "CNPq"
+      ],
+      "original_urls": [
+        "https://www.gov.br/cnpq/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0103",
+          "line": 211,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "5. 拉丁美洲及加勒比地区"
+          ],
+          "original_table_cells": [
+            "巴西",
+            "[CNPq](https://www.gov.br/cnpq/?utm_source=chatgpt.com)",
+            "科研资助、博士后"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-a42edab5-0726-528f-8c17-9162642257ca",
+      "name": "卡塔尔大学",
+      "canonical_url": "https://www.qu.edu.qa/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.qu.edu.qa/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "卡塔尔大学"
+      ],
+      "original_urls": [
+        "https://www.qu.edu.qa/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0135",
+          "line": 264,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "7. 中东及西亚"
+          ],
+          "original_table_cells": [
+            "卡塔尔",
+            "[卡塔尔大学](https://www.qu.edu.qa/?utm_source=chatgpt.com)",
+            "地理、城市与环境相关项目"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-a507bfb0-ebc2-5991-9980-e45981298e24",
+      "name": "GIScience",
+      "canonical_url": "https://www.giscience.org/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.giscience.org/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "GIScience"
+      ],
+      "original_urls": [
+        "https://www.giscience.org/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0149",
+          "line": 287,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "三、地理学及交叉学科专业招聘网站"
+          ],
+          "original_table_cells": [
+            "地理信息科学",
+            "[GIScience](https://www.giscience.org/?utm_source=chatgpt.com)",
+            "学科交流与研究团队发现"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-a5c8785d-21d6-5ea8-8d12-e80fdca4aa8a",
+      "name": "CSIC",
+      "canonical_url": "https://www.csic.es/en",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.csic.es/en",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "CSIC"
+      ],
+      "original_urls": [
+        "https://www.csic.es/en?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0041",
+          "line": 84,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "西班牙",
+            "[CSIC](https://www.csic.es/en?utm_source=chatgpt.com)",
+            "国家科研委员会招聘信息"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-a5e1c1fb-3296-58f6-8810-a1b92a5a4cd9",
+      "name": "PAA",
+      "canonical_url": "https://populationassociation.org/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://populationassociation.org/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "PAA"
+      ],
+      "original_urls": [
+        "https://populationassociation.org/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0151",
+          "line": 289,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "三、地理学及交叉学科专业招聘网站"
+          ],
+          "original_table_cells": [
+            "人口学与人口地理",
+            "[PAA](https://populationassociation.org/?utm_source=chatgpt.com)",
+            "人口研究学术与职业资源"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-a5e2ade5-c307-5617-b31f-b1d1c081709d",
+      "name": "非洲科学院",
+      "canonical_url": "https://www.aasciences.africa/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.aasciences.africa/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "非洲科学院"
+      ],
+      "original_urls": [
+        "https://www.aasciences.africa/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0129",
+          "line": 251,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "6. 非洲"
+          ],
+          "original_table_cells": [
+            "泛非洲",
+            "[非洲科学院](https://www.aasciences.africa/?utm_source=chatgpt.com)",
+            "科研资助和科研网络"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-a72f7251-d493-5ef4-a2fc-9b3f376e4ee8",
+      "name": "Hibrain",
+      "canonical_url": "https://www.hibrain.net/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.hibrain.net/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "Hibrain"
+      ],
+      "original_urls": [
+        "https://www.hibrain.net/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0078",
+          "line": 155,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "韩国",
+            "[Hibrain](https://www.hibrain.net/?utm_source=chatgpt.com)",
+            "高校教职、科研招聘"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-a7ce345b-4c40-5be3-877d-5bd7fe6adb85",
+      "name": "JREC-IN",
+      "canonical_url": "https://jrecin.jst.go.jp/seek/?ln=1",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://jrecin.jst.go.jp/seek/?ln=1",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": "P0",
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "JREC-IN"
+      ],
+      "original_urls": [
+        "https://jrecin.jst.go.jp/seek/?ln=1\\&utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0009",
+          "line": 28,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "一、全球最值得优先接入的核心平台"
+          ],
+          "original_table_cells": [
+            "[JREC-IN](https://jrecin.jst.go.jp/seek/?ln=1\\&utm_source=chatgpt.com)",
+            "日本",
+            "博后、教职、研究员、科研岗位",
+            "P0"
+          ]
+        },
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0075",
+          "line": 152,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "日本",
+            "[JREC-IN](https://jrecin.jst.go.jp/seek/?ln=1\\&utm_source=chatgpt.com)",
+            "全国科研人才招聘"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-acee3098-af96-529b-9b88-61391352e1ff",
+      "name": "悉尼大学招聘",
+      "canonical_url": "https://www.sydney.edu.au/about-us/careers-at-sydney.html",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.sydney.edu.au/about-us/careers-at-sydney.html",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "悉尼大学招聘"
+      ],
+      "original_urls": [
+        "https://www.sydney.edu.au/about-us/careers-at-sydney.html?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0096",
+          "line": 192,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "4. 大洋洲"
+          ],
+          "original_table_cells": [
+            "澳大利亚",
+            "[悉尼大学招聘](https://www.sydney.edu.au/about-us/careers-at-sydney.html?utm_source=chatgpt.com)",
+            "学术岗位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-ad3ddda5-aa78-518e-93e6-c8c2dfb1da69",
+      "name": "KFUPM",
+      "canonical_url": "https://www.kfupm.edu.sa/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.kfupm.edu.sa/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "KFUPM"
+      ],
+      "original_urls": [
+        "https://www.kfupm.edu.sa/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0132",
+          "line": 261,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "7. 中东及西亚"
+          ],
+          "original_table_cells": [
+            "沙特阿拉伯",
+            "[KFUPM](https://www.kfupm.edu.sa/?utm_source=chatgpt.com)",
+            "地理空间与环境相关研究"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-af281e68-ed4b-55f0-9957-87f942bd1ea7",
+      "name": "SEEK NZ",
+      "canonical_url": "https://www.seek.co.nz/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.seek.co.nz/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "SEEK NZ"
+      ],
+      "original_urls": [
+        "https://www.seek.co.nz/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0097",
+          "line": 193,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "4. 大洋洲"
+          ],
+          "original_table_cells": [
+            "新西兰",
+            "[SEEK NZ](https://www.seek.co.nz/?utm_source=chatgpt.com)",
+            "学术及研究工作"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-b37a03dd-e931-58d3-afc5-1c8b7cd0c6fc",
+      "name": "马来亚大学",
+      "canonical_url": "https://www.um.edu.my/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.um.edu.my/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "马来亚大学"
+      ],
+      "original_urls": [
+        "https://www.um.edu.my/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0086",
+          "line": 163,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "马来西亚",
+            "[马来亚大学](https://www.um.edu.my/?utm_source=chatgpt.com)",
+            "研究生项目及大学职位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-b963edc8-b0c2-5a55-af05-a0f4e7c5d818",
+      "name": "哥斯达黎加大学",
+      "canonical_url": "https://www.ucr.ac.cr/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.ucr.ac.cr/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "哥斯达黎加大学"
+      ],
+      "original_urls": [
+        "https://www.ucr.ac.cr/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0114",
+          "line": 222,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "5. 拉丁美洲及加勒比地区"
+          ],
+          "original_table_cells": [
+            "哥斯达黎加",
+            "[哥斯达黎加大学](https://www.ucr.ac.cr/?utm_source=chatgpt.com)",
+            "地理与环境相关研究生及教研机会"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-b9ac47a6-f02e-57f2-b961-bccf59280d1e",
+      "name": "NSERC",
+      "canonical_url": "https://www.nserc-crsng.gc.ca/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.nserc-crsng.gc.ca/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "NSERC"
+      ],
+      "original_urls": [
+        "https://www.nserc-crsng.gc.ca/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0060",
+          "line": 128,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "2. 北美洲"
+          ],
+          "original_table_cells": [
+            "加拿大",
+            "[NSERC](https://www.nserc-crsng.gc.ca/?utm_source=chatgpt.com)",
+            "科研奖学金及博士后资助"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-b9d87b8a-8450-5733-a515-816578e5a874",
+      "name": "jobs.ac.uk",
+      "canonical_url": "https://www.jobs.ac.uk/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.jobs.ac.uk/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "jobs.ac.uk"
+      ],
+      "original_urls": [
+        "https://www.jobs.ac.uk/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0017",
+          "line": 60,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "英国",
+            "[jobs.ac.uk](https://www.jobs.ac.uk/?utm_source=chatgpt.com)",
+            "全阶段学术招聘"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-ba6d97c1-442d-5583-b15a-77c4d1cf8ac9",
+      "name": "朱拉隆功大学",
+      "canonical_url": "https://www.chula.ac.th/en/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.chula.ac.th/en/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "朱拉隆功大学"
+      ],
+      "original_urls": [
+        "https://www.chula.ac.th/en/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0087",
+          "line": 164,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "泰国",
+            "[朱拉隆功大学](https://www.chula.ac.th/en/?utm_source=chatgpt.com)",
+            "硕博和科研机会"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-bb6f167e-915e-514e-a210-883df5f8914c",
+      "name": "NRF",
+      "canonical_url": "https://www.nrf.ac.za/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.nrf.ac.za/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "NRF"
+      ],
+      "original_urls": [
+        "https://www.nrf.ac.za/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0120",
+          "line": 242,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "6. 非洲"
+          ],
+          "original_table_cells": [
+            "南非",
+            "[NRF](https://www.nrf.ac.za/?utm_source=chatgpt.com)",
+            "科研资助、研究人员发展"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-bd1f72eb-6f3c-563f-b72e-2862e4c5a2ba",
+      "name": "FindAPhD",
+      "canonical_url": "https://www.findaphd.com/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.findaphd.com/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": "P0",
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "FindAPhD"
+      ],
+      "original_urls": [
+        "https://www.findaphd.com/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0005",
+          "line": 24,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "一、全球最值得优先接入的核心平台"
+          ],
+          "original_table_cells": [
+            "[FindAPhD](https://www.findaphd.com/?utm_source=chatgpt.com)",
+            "英国及国际",
+            "博士项目、奖学金",
+            "P0"
+          ]
+        },
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0018",
+          "line": 61,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "英国",
+            "[FindAPhD](https://www.findaphd.com/?utm_source=chatgpt.com)",
+            "博士项目、奖学金"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-bfff081d-f914-5887-8b4a-ea666c3a11f7",
+      "name": "中国研究生招生信息网（研招网）",
+      "canonical_url": "https://www.chsi.com.cn/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.chsi.com.cn/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "中国研究生招生信息网（研招网）"
+      ],
+      "original_urls": [
+        "https://www.chsi.com.cn/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0064",
+          "line": 141,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "中国大陆",
+            "[中国研究生招生信息网（研招网）](https://www.chsi.com.cn/?utm_source=chatgpt.com)",
+            "硕博招生信息入口"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-c3ae01e4-fb0d-5318-b2d0-54ba534f467c",
+      "name": "MUR Bandi",
+      "canonical_url": "https://bandi.mur.gov.it/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://bandi.mur.gov.it/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "MUR Bandi"
+      ],
+      "original_urls": [
+        "https://bandi.mur.gov.it/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0040",
+          "line": 83,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "意大利",
+            "[MUR Bandi](https://bandi.mur.gov.it/?utm_source=chatgpt.com)",
+            "国家级高校及科研招聘公告"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-c3c487a7-eee0-5780-ad7d-2a42468117cd",
+      "name": "亚的斯亚贝巴大学",
+      "canonical_url": "https://www.aau.edu.et/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.aau.edu.et/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "亚的斯亚贝巴大学"
+      ],
+      "original_urls": [
+        "https://www.aau.edu.et/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0127",
+          "line": 249,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "6. 非洲"
+          ],
+          "original_table_cells": [
+            "埃塞俄比亚",
+            "[亚的斯亚贝巴大学](https://www.aau.edu.et/?utm_source=chatgpt.com)",
+            "地理、规划、环境"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-c3ff0d88-338c-5964-a291-afaab67e3572",
+      "name": "ISPRS",
+      "canonical_url": "https://www.isprs.org/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.isprs.org/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "ISPRS"
+      ],
+      "original_urls": [
+        "https://www.isprs.org/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0148",
+          "line": 286,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "三、地理学及交叉学科专业招聘网站"
+          ],
+          "original_table_cells": [
+            "遥感与摄影测量",
+            "[ISPRS](https://www.isprs.org/?utm_source=chatgpt.com)",
+            "学会、科研网络和相关机会"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-c8008e99-fc19-5e75-8ec3-d093892f74e0",
+      "name": "FindAMasters",
+      "canonical_url": "https://www.findamasters.com/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.findamasters.com/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": "P0",
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "FindAMasters"
+      ],
+      "original_urls": [
+        "https://www.findamasters.com/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0006",
+          "line": 25,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "一、全球最值得优先接入的核心平台"
+          ],
+          "original_table_cells": [
+            "[FindAMasters](https://www.findamasters.com/?utm_source=chatgpt.com)",
+            "英国及国际",
+            "授课型及研究型硕士",
+            "P0"
+          ]
+        },
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0019",
+          "line": 62,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "英国",
+            "[FindAMasters](https://www.findamasters.com/?utm_source=chatgpt.com)",
+            "硕士项目"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-c83c6124-11ec-5494-a1b5-491518ab75dc",
+      "name": "Academic Positions",
+      "canonical_url": "https://academicpositions.com/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://academicpositions.com/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": "P0",
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "Academic Positions"
+      ],
+      "original_urls": [
+        "https://academicpositions.com/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0008",
+          "line": 27,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "一、全球最值得优先接入的核心平台"
+          ],
+          "original_table_cells": [
+            "[Academic Positions](https://academicpositions.com/?utm_source=chatgpt.com)",
+            "欧洲及国际",
+            "博士、博后、科研、教职",
+            "P0"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-c9033388-bec5-50e6-aec1-c1d24bc68ff4",
+      "name": "EURAXESS",
+      "canonical_url": "https://euraxess.ec.europa.eu/jobs/search",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://euraxess.ec.europa.eu/jobs/search",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": "P0",
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "EURAXESS"
+      ],
+      "original_urls": [
+        "https://euraxess.ec.europa.eu/jobs/search?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0001",
+          "line": 20,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "一、全球最值得优先接入的核心平台"
+          ],
+          "original_table_cells": [
+            "[EURAXESS](https://euraxess.ec.europa.eu/jobs/search?utm_source=chatgpt.com)",
+            "欧洲为主、兼及其他地区",
+            "博士、博后、科研、教职",
+            "P0"
+          ]
+        },
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0016",
+          "line": 59,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "欧盟及关联国家",
+            "[EURAXESS](https://euraxess.ec.europa.eu/jobs/search?utm_source=chatgpt.com)",
+            "跨国博士、博士后、教职和科研职位"
+          ]
+        },
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0043",
+          "line": 86,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "波兰",
+            "[EURAXESS](https://euraxess.ec.europa.eu/jobs/search?utm_source=chatgpt.com)",
+            "博士和研究岗位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-c965eadc-6571-5b15-8db5-3739dda8db5b",
+      "name": "特拉维夫大学",
+      "canonical_url": "https://www.tau.ac.il/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.tau.ac.il/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "特拉维夫大学"
+      ],
+      "original_urls": [
+        "https://www.tau.ac.il/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0137",
+          "line": 266,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "7. 中东及西亚"
+          ],
+          "original_table_cells": [
+            "以色列",
+            "[特拉维夫大学](https://www.tau.ac.il/?utm_source=chatgpt.com)",
+            "地理与环境相关研究"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-cabb093f-b72d-5040-a791-713fab191973",
+      "name": "穆罕默德五世大学",
+      "canonical_url": "https://www.um5.ac.ma/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.um5.ac.ma/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "穆罕默德五世大学"
+      ],
+      "original_urls": [
+        "https://www.um5.ac.ma/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0128",
+          "line": 250,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "6. 非洲"
+          ],
+          "original_table_cells": [
+            "摩洛哥",
+            "[穆罕默德五世大学](https://www.um5.ac.ma/?utm_source=chatgpt.com)",
+            "地理及环境研究"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-cffcfb36-4780-5fb3-8652-4dbf50d1fa8b",
+      "name": "布宜诺斯艾利斯大学",
+      "canonical_url": "https://www.uba.ar/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.uba.ar/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "布宜诺斯艾利斯大学"
+      ],
+      "original_urls": [
+        "https://www.uba.ar/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0107",
+          "line": 215,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "5. 拉丁美洲及加勒比地区"
+          ],
+          "original_table_cells": [
+            "阿根廷",
+            "[布宜诺斯艾利斯大学](https://www.uba.ar/?utm_source=chatgpt.com)",
+            "学位与教研机会"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-d27fccfd-a693-5b3a-b1c4-5b14e97f07cd",
+      "name": "ScholarshipPortal",
+      "canonical_url": "https://www.scholarshipportal.com/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.scholarshipportal.com/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": "P1",
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "ScholarshipPortal"
+      ],
+      "original_urls": [
+        "https://www.scholarshipportal.com/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0012",
+          "line": 31,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "一、全球最值得优先接入的核心平台"
+          ],
+          "original_table_cells": [
+            "[ScholarshipPortal](https://www.scholarshipportal.com/?utm_source=chatgpt.com)",
+            "全球",
+            "硕博奖学金",
+            "P1"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-d28037a1-8656-5988-bcd9-599ec60cfe67",
+      "name": "DAAD",
+      "canonical_url": "https://www.daad.de/en/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.daad.de/en/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "DAAD"
+      ],
+      "original_urls": [
+        "https://www.daad.de/en/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0022",
+          "line": 65,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "德国",
+            "[DAAD](https://www.daad.de/en/?utm_source=chatgpt.com)",
+            "硕博留学及奖学金"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-d34ad5d5-c906-501b-a84c-d0705ba7b435",
+      "name": "USAJOBS",
+      "canonical_url": "https://www.usajobs.gov/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.usajobs.gov/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "USAJOBS"
+      ],
+      "original_urls": [
+        "https://www.usajobs.gov/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0056",
+          "line": 124,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "2. 北美洲"
+          ],
+          "original_table_cells": [
+            "美国",
+            "[USAJOBS](https://www.usajobs.gov/?utm_source=chatgpt.com)",
+            "联邦地理、遥感、环境及地质岗位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-d474bd1e-37be-526c-9c08-d1f72b5cc706",
+      "name": "金山大学",
+      "canonical_url": "https://www.wits.ac.za/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.wits.ac.za/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "金山大学"
+      ],
+      "original_urls": [
+        "https://www.wits.ac.za/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0118",
+          "line": 240,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "6. 非洲"
+          ],
+          "original_table_cells": [
+            "南非",
+            "[金山大学](https://www.wits.ac.za/?utm_source=chatgpt.com)",
+            "城市、社会与环境研究"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-d6a6d4cc-03e3-5f6d-aab6-77b5987f157a",
+      "name": "亥姆霍兹联合会",
+      "canonical_url": "https://www.helmholtz.de/en/career/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.helmholtz.de/en/career/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "亥姆霍兹联合会"
+      ],
+      "original_urls": [
+        "https://www.helmholtz.de/en/career/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0024",
+          "line": 67,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "德国",
+            "[亥姆霍兹联合会](https://www.helmholtz.de/en/career/?utm_source=chatgpt.com)",
+            "地球科学、环境、空间科研"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-d6b1184f-d7b0-57f9-84fb-43b26041528b",
+      "name": "Regional Studies Association",
+      "canonical_url": "https://www.regionalstudies.org/communities/opportunities/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.regionalstudies.org/communities/opportunities/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "Regional Studies Association",
+        "Regional Studies Association Opportunities"
+      ],
+      "original_urls": [
+        "https://www.regionalstudies.org/communities/opportunities/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0142",
+          "line": 280,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "三、地理学及交叉学科专业招聘网站"
+          ],
+          "original_table_cells": [
+            "人文与社会地理",
+            "[Regional Studies Association](https://www.regionalstudies.org/communities/opportunities/?utm_source=chatgpt.com)",
+            "博士、博后、教职、区域经济研究"
+          ]
+        },
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0154",
+          "line": 296,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "三、地理学及交叉学科专业招聘网站"
+          ],
+          "original_table_cells": []
+        }
+      ]
+    },
+    {
+      "source_id": "src-e22bd0b9-e8e5-5efc-80c4-0fd49c560b54",
+      "name": "HEC",
+      "canonical_url": "https://www.hec.gov.pk/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.hec.gov.pk/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "HEC"
+      ],
+      "original_urls": [
+        "https://www.hec.gov.pk/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0085",
+          "line": 162,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "巴基斯坦",
+            "[HEC](https://www.hec.gov.pk/?utm_source=chatgpt.com)",
+            "高等教育及奖学金"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-e8172b80-616f-563f-a3f6-0a519a5537b4",
+      "name": "academics",
+      "canonical_url": "https://www.academics.de/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.academics.de/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "academics"
+      ],
+      "original_urls": [
+        "https://www.academics.de/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0021",
+          "line": 64,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "德国",
+            "[academics](https://www.academics.de/?utm_source=chatgpt.com)",
+            "学术教职、科研人员、博士岗位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-e8954e20-083d-5ffe-8928-1853138cb520",
+      "name": "HigherEdJobs",
+      "canonical_url": "https://www.higheredjobs.com/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.higheredjobs.com/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": "P0",
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "HigherEdJobs"
+      ],
+      "original_urls": [
+        "https://www.higheredjobs.com/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0007",
+          "line": 26,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "一、全球最值得优先接入的核心平台"
+          ],
+          "original_table_cells": [
+            "[HigherEdJobs](https://www.higheredjobs.com/?utm_source=chatgpt.com)",
+            "美国为主",
+            "教职、博士后、科研助理",
+            "P0"
+          ]
+        },
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0052",
+          "line": 120,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "2. 北美洲"
+          ],
+          "original_table_cells": [
+            "美国",
+            "[HigherEdJobs](https://www.higheredjobs.com/?utm_source=chatgpt.com)",
+            "大学教职和研究职位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-e8d843c2-d4ce-5554-a976-0eb6edc616b1",
+      "name": "A*STAR",
+      "canonical_url": "https://www.a-star.edu.sg/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.a-star.edu.sg/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "A*STAR"
+      ],
+      "original_urls": [
+        "https://www.a-star.edu.sg/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0082",
+          "line": 159,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "新加坡",
+            "[A\\*STAR](https://www.a-star.edu.sg/?utm_source=chatgpt.com)",
+            "科研岗位、奖学金"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-ea354829-3e02-5057-ae89-b82fa38594e6",
+      "name": "CONICET",
+      "canonical_url": "https://www.conicet.gov.ar/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.conicet.gov.ar/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "CONICET"
+      ],
+      "original_urls": [
+        "https://www.conicet.gov.ar/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0106",
+          "line": 214,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "5. 拉丁美洲及加勒比地区"
+          ],
+          "original_table_cells": [
+            "阿根廷",
+            "[CONICET](https://www.conicet.gov.ar/?utm_source=chatgpt.com)",
+            "国家科研职位、博士与博士后奖学金"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-ea78189b-e6bf-5af4-9898-2ee34ece8de4",
+      "name": "Campus France",
+      "canonical_url": "https://www.campusfrance.org/en",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.campusfrance.org/en",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "Campus France"
+      ],
+      "original_urls": [
+        "https://www.campusfrance.org/en?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0027",
+          "line": 70,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "法国",
+            "[Campus France](https://www.campusfrance.org/en?utm_source=chatgpt.com)",
+            "硕博项目及奖学金信息"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-ed74cd2d-c167-5c8e-8fc4-bee7d26fb89d",
+      "name": "国家留学基金委",
+      "canonical_url": "https://www.csc.edu.cn/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.csc.edu.cn/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "国家留学基金委"
+      ],
+      "original_urls": [
+        "https://www.csc.edu.cn/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0065",
+          "line": 142,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "中国大陆",
+            "[国家留学基金委](https://www.csc.edu.cn/?utm_source=chatgpt.com)",
+            "海外博士及联合培养资助"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-edb0561f-5d38-5e79-9e44-6fdcd7a9cb4b",
+      "name": "Jobindex",
+      "canonical_url": "https://www.jobindex.dk/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.jobindex.dk/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "Jobindex"
+      ],
+      "original_urls": [
+        "https://www.jobindex.dk/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0034",
+          "line": 77,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "丹麦",
+            "[Jobindex](https://www.jobindex.dk/?utm_source=chatgpt.com)",
+            "当地学术及研究职位补充"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-f22a0c51-169f-55d8-b709-95c321c8bf80",
+      "name": "香港大学招聘",
+      "canonical_url": "https://jobs.hku.hk/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://jobs.hku.hk/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "香港大学招聘"
+      ],
+      "original_urls": [
+        "https://jobs.hku.hk/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0069",
+          "line": 146,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "中国香港",
+            "[香港大学招聘](https://jobs.hku.hk/?utm_source=chatgpt.com)",
+            "教职、博士后、研究助理"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-f3d83f8d-79b7-54c2-b50f-30a7d591a6ab",
+      "name": "美国地理学家协会 AAG",
+      "canonical_url": "https://www.aag.org/studentopportunities/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.aag.org/studentopportunities/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": "P0",
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "美国地理学家协会 AAG",
+        "AAG Student Opportunities"
+      ],
+      "original_urls": [
+        "https://www.aag.org/studentopportunities/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0004",
+          "line": 23,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "一、全球最值得优先接入的核心平台"
+          ],
+          "original_table_cells": [
+            "[美国地理学家协会 AAG](https://www.aag.org/studentopportunities/?utm_source=chatgpt.com)",
+            "美国为主、国际补充",
+            "研究生助研、博士后、实习",
+            "P0"
+          ]
+        },
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0051",
+          "line": 119,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "2. 北美洲"
+          ],
+          "original_table_cells": [
+            "美国",
+            "[AAG Student Opportunities](https://www.aag.org/studentopportunities/?utm_source=chatgpt.com)",
+            "硕博助研、博士后"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-f41e76db-3347-503d-a215-c71e718e7644",
+      "name": "Jobbnorge",
+      "canonical_url": "https://www.jobbnorge.no/search",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.jobbnorge.no/search",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "Jobbnorge"
+      ],
+      "original_urls": [
+        "https://www.jobbnorge.no/search?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0033",
+          "line": 76,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "挪威",
+            "[Jobbnorge](https://www.jobbnorge.no/search?utm_source=chatgpt.com)",
+            "大学博士、博后、研究职位"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-f44e5157-10f8-5c89-88da-c873a18957d9",
+      "name": "University Positions",
+      "canonical_url": "https://www.universitypositions.eu/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.universitypositions.eu/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "University Positions"
+      ],
+      "original_urls": [
+        "https://www.universitypositions.eu/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0032",
+          "line": 75,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "1. 欧洲"
+          ],
+          "original_table_cells": [
+            "瑞典",
+            "[University Positions](https://www.universitypositions.eu/?utm_source=chatgpt.com)",
+            "北欧及欧洲学术职位"
+          ]
+        },
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0092",
+          "line": 188,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "4. 大洋洲"
+          ],
+          "original_table_cells": [
+            "澳大利亚",
+            "[University Positions](https://www.universitypositions.eu/?utm_source=chatgpt.com)",
+            "国际发布的澳洲学术职位补充"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-f4920605-6b57-5ba6-84d3-623ab163bb81",
+      "name": "PhDportal",
+      "canonical_url": "https://www.phdportal.com/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.phdportal.com/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": "P1",
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "PhDportal"
+      ],
+      "original_urls": [
+        "https://www.phdportal.com/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0013",
+          "line": 32,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "一、全球最值得优先接入的核心平台"
+          ],
+          "original_table_cells": [
+            "[PhDportal](https://www.phdportal.com/?utm_source=chatgpt.com)",
+            "全球",
+            "博士项目",
+            "P1"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-f4b1d527-978a-5bdb-a65d-def899d5064d",
+      "name": "FAPESP",
+      "canonical_url": "https://fapesp.br/en",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://fapesp.br/en",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "FAPESP"
+      ],
+      "original_urls": [
+        "https://fapesp.br/en?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0105",
+          "line": 213,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "5. 拉丁美洲及加勒比地区"
+          ],
+          "original_table_cells": [
+            "巴西",
+            "[FAPESP](https://fapesp.br/en?utm_source=chatgpt.com)",
+            "圣保罗州科研奖学金、博士后"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-f5e5e457-71df-5a4b-96e6-d0a0db51074b",
+      "name": "香港城市大学",
+      "canonical_url": "https://www.cityu.edu.hk/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.cityu.edu.hk/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "香港城市大学"
+      ],
+      "original_urls": [
+        "https://www.cityu.edu.hk/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0072",
+          "line": 149,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "3. 亚洲"
+          ],
+          "original_table_cells": [
+            "中国香港",
+            "[香港城市大学](https://www.cityu.edu.hk/?utm_source=chatgpt.com)",
+            "科研及教师招聘"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-fa868667-bbd8-56ff-97fa-521a84780ffb",
+      "name": "AcademicWork",
+      "canonical_url": "https://www.academicwork.ca/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.academicwork.ca/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "AcademicWork"
+      ],
+      "original_urls": [
+        "https://www.academicwork.ca/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0059",
+          "line": 127,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "2. 北美洲"
+          ],
+          "original_table_cells": [
+            "加拿大",
+            "[AcademicWork](https://www.academicwork.ca/?utm_source=chatgpt.com)",
+            "就业平台补充"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-fb683053-31f9-5259-a173-78e34c1a9b67",
+      "name": "AGU Career Center",
+      "canonical_url": "https://www.agu.org/advancement",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.agu.org/advancement",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "AGU Career Center",
+        "AGU"
+      ],
+      "original_urls": [
+        "https://www.agu.org/advancement?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0055",
+          "line": 123,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "二、按国家和地区建立招聘来源清单",
+            "2. 北美洲"
+          ],
+          "original_table_cells": [
+            "美国",
+            "[AGU Career Center](https://www.agu.org/advancement?utm_source=chatgpt.com)",
+            "自然地理、气候、地球科学"
+          ]
+        },
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0147",
+          "line": 285,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "三、地理学及交叉学科专业招聘网站"
+          ],
+          "original_table_cells": [
+            "地球系统科学",
+            "[AGU](https://www.agu.org/advancement?utm_source=chatgpt.com)",
+            "地球环境、气候、科研就业"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-fcd15c14-de70-5b45-9208-3068294e3392",
+      "name": "Earthworks Jobs",
+      "canonical_url": "https://www.earthworks-jobs.com/",
+      "url_aliases": [],
+      "active": true,
+      "parent_source_id": null,
+      "source_layer": "unclassified",
+      "page_kind": "unresolved",
+      "discovery_url": "https://www.earthworks-jobs.com/",
+      "monitor_endpoint": null,
+      "adapter": null,
+      "priority": null,
+      "intended_check_interval_hours": 24,
+      "verification_status": "unverified_seed",
+      "last_verified_at": null,
+      "original_labels": [
+        "Earthworks Jobs"
+      ],
+      "original_urls": [
+        "https://www.earthworks-jobs.com/?utm_source=chatgpt.com"
+      ],
+      "input_refs": [
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0146",
+          "line": 284,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "三、地理学及交叉学科专业招聘网站"
+          ],
+          "original_table_cells": [
+            "自然地理与地球科学",
+            "[Earthworks Jobs](https://www.earthworks-jobs.com/?utm_source=chatgpt.com)",
+            "博士后、科研岗位、教职"
+          ]
+        },
+        {
+          "input_sha256": "9327c7072a76627fd9ae685656579bcaaf6e6a94e4c35725c3678dea47091553",
+          "occurrence_id": "link-0160",
+          "line": 320,
+          "section_path": [
+            "全球地理学硕士、博士、博士后、教职及科研助理招聘信息源总目录",
+            "三、地理学及交叉学科专业招聘网站"
+          ],
+          "original_table_cells": []
+        }
+      ]
+    }
+  ]
+}

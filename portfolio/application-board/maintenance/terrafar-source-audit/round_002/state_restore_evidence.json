@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "live_first_run": "not_run_environment_preflight_failed",
+  "live_second_run_restore": "not_run_environment_preflight_failed",
+  "restored_source_snapshot_count": 0,
+  "live_comparison_outcome": "unknown",
+  "simulation": {
+    "test_name": "test_fixture_state_restores_in_a_new_process_and_checks_unchanged_and_changed",
+    "status": "passed",
+    "fresh_subprocess_runs": 2,
+    "outputs": [
+      {"candidate_fixture":"fixture-a","outcome":"checked_unchanged","baseline_available":true},
+      {"candidate_fixture":"fixture-b","outcome":"checked_changed","baseline_available":true}
+    ],
+    "source": "fixed fixture; no network; simulation only"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "run_id": "initial-endpoint-review",
+  "tasks": [
+    {
+      "task_id": "initial-endpoint-review--src-ad3ddda5-aa78-518e-93e6-c8c2dfb1da69",
+      "source_id": "src-ad3ddda5-aa78-518e-93e6-c8c2dfb1da69",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.kfupm.edu.sa/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-af281e68-ed4b-55f0-9957-87f942bd1ea7",
+      "source_id": "src-af281e68-ed4b-55f0-9957-87f942bd1ea7",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.seek.co.nz/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-b37a03dd-e931-58d3-afc5-1c8b7cd0c6fc",
+      "source_id": "src-b37a03dd-e931-58d3-afc5-1c8b7cd0c6fc",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.um.edu.my/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-b963edc8-b0c2-5a55-af05-a0f4e7c5d818",
+      "source_id": "src-b963edc8-b0c2-5a55-af05-a0f4e7c5d818",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.ucr.ac.cr/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-b9ac47a6-f02e-57f2-b961-bccf59280d1e",
+      "source_id": "src-b9ac47a6-f02e-57f2-b961-bccf59280d1e",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.nserc-crsng.gc.ca/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-b9d87b8a-8450-5733-a515-816578e5a874",
+      "source_id": "src-b9d87b8a-8450-5733-a515-816578e5a874",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.jobs.ac.uk/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-ba6d97c1-442d-5583-b15a-77c4d1cf8ac9",
+      "source_id": "src-ba6d97c1-442d-5583-b15a-77c4d1cf8ac9",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.chula.ac.th/en/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-bb6f167e-915e-514e-a210-883df5f8914c",
+      "source_id": "src-bb6f167e-915e-514e-a210-883df5f8914c",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.nrf.ac.za/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-bd1f72eb-6f3c-563f-b72e-2862e4c5a2ba",
+      "source_id": "src-bd1f72eb-6f3c-563f-b72e-2862e4c5a2ba",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.findaphd.com/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-bfff081d-f914-5887-8b4a-ea666c3a11f7",
+      "source_id": "src-bfff081d-f914-5887-8b4a-ea666c3a11f7",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.chsi.com.cn/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "run_id": "initial-endpoint-review",
+  "tasks": [
+    {
+      "task_id": "initial-endpoint-review--src-02d7aa53-cf49-5db2-8e02-9d2c8c9f3432",
+      "source_id": "src-02d7aa53-cf49-5db2-8e02-9d2c8c9f3432",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.careers.ac.cn/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-03a897b8-533e-5a53-b107-4a01e073dc54",
+      "source_id": "src-03a897b8-533e-5a53-b107-4a01e073dc54",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://ugm.ac.id/en/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-0694943f-aea9-5c4b-8b94-925fd068f963",
+      "source_id": "src-0694943f-aea9-5c4b-8b94-925fd068f963",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.eldis.org/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-0889504c-129c-5b23-b2fa-5d6ff5852f48",
+      "source_id": "src-0889504c-129c-5b23-b2fa-5d6ff5852f48",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://academicjobsonline.org/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-09af2597-7882-56a7-ac57-e2ba4de8bcf2",
+      "source_id": "src-09af2597-7882-56a7-ac57-e2ba4de8bcf2",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.sun.ac.za/english",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-0c607d3b-d61c-5b3c-9900-c47c7e7ad72c",
+      "source_id": "src-0c607d3b-d61c-5b3c-9900-c47c7e7ad72c",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.nrf.go.ke/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-0e8ac2b9-06d1-596e-b958-03e8e00b376c",
+      "source_id": "src-0e8ac2b9-06d1-596e-b958-03e8e00b376c",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.cu.edu.eg/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-0f354699-4472-58c1-9104-fc879f444d11",
+      "source_id": "src-0f354699-4472-58c1-9104-fc879f444d11",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://jobs.unimelb.edu.au/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-11d342e3-5800-5c1d-a24f-c962360f523f",
+      "source_id": "src-11d342e3-5800-5c1d-a24f-c962360f523f",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.research.fi/en/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-15b66bae-15b7-596d-ab98-7986adfc254a",
+      "source_id": "src-15b66bae-15b7-596d-ab98-7986adfc254a",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.yok.gov.tr/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    }
+  ]
+}

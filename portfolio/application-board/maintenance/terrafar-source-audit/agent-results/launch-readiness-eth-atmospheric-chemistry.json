@@ -1,0 +1,108 @@
+{
+  "review_task_kind": "content_review",
+  "candidate_id": "tcand-180658fc2dd19f7a8aa98180",
+  "candidate_fingerprint": "dcf959c53f2a5712b62823f87a68dd490bddd5fe5876ad299bd5f6cc217ef8c9",
+  "source_id": "eth-doctoral-listing",
+  "endpoint_id": "eth-doctoral-listing:primary",
+  "candidate_key": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+  "candidate_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+  "formal_record_id": "eth-86a50882f2d1",
+  "source_actions_run_id": "39946276972",
+  "source_capture_id": "agent-page-capture-2026-10-23",
+  "status": "verified",
+  "decision_scope": "page_content",
+  "reviewer": "opportunity_verifier",
+  "reviewed_at": "2026-10-23T12:22:41Z",
+  "current_open_status": "unknown",
+  "reason": "The official detail page has no fixed deadline; evaluation begins 2026-11-15 and continues until filled. The linked portal returned only a small JavaScript shell without readable form or status evidence, so current acceptance remains unknown.",
+  "content_verification": {
+    "status": "verified",
+    "evidence": [
+      {
+        "field": "funding",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+        "claim": "funding: Funding is secured for 4 years; the projected start window is March through September 2027.",
+        "locator": "Position details; official detail page lines 39-47",
+        "page_content_sha256": "79e65ae6f27f04bc5291c6a3b287cdbc1156fba4bf17f6e7b72caf9966c3e158"
+      },
+      {
+        "field": "eligibility",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+        "claim": "eligibility: MSc in atmospheric, earth, or environmental science, chemistry, physics, or a related field before the start; atmospheric chemistry experience, strong programming skills, and good English.",
+        "locator": "Profile section; official detail page lines 24-29",
+        "page_content_sha256": "79e65ae6f27f04bc5291c6a3b287cdbc1156fba4bf17f6e7b72caf9966c3e158"
+      },
+      {
+        "field": "application_route",
+        "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+        "claim": "application_route: The detail page directs applicants exclusively to https://emea2.softfactors.com/job-opening/rgum-UtuGzrXTpseTskgjY9#!/?lang=en.",
+        "locator": "Application instructions; official detail page lines 39-47",
+        "page_content_sha256": "79e65ae6f27f04bc5291c6a3b287cdbc1156fba4bf17f6e7b72caf9966c3e158"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "field": "funding",
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+      "claim": "funding: Funding is secured for 4 years; the projected start window is March through September 2027.",
+      "locator": "Position details; official detail page lines 39-47",
+      "evidence_note": "Official employer detail page; directly inspected by opportunity_verifier",
+      "page_content_sha256": "79e65ae6f27f04bc5291c6a3b287cdbc1156fba4bf17f6e7b72caf9966c3e158"
+    },
+    {
+      "field": "eligibility",
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+      "claim": "eligibility: MSc in atmospheric, earth, or environmental science, chemistry, physics, or a related field before the start; atmospheric chemistry experience, strong programming skills, and good English.",
+      "locator": "Profile section; official detail page lines 24-29",
+      "evidence_note": "Official employer detail page; accessed 2026-10-23 12:21:45-12:21:46 UTC",
+      "page_content_sha256": "79e65ae6f27f04bc5291c6a3b287cdbc1156fba4bf17f6e7b72caf9966c3e158"
+    },
+    {
+      "field": "application_route",
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+      "claim": "application_route: The detail page directs applicants exclusively to https://emea2.softfactors.com/job-opening/rgum-UtuGzrXTpseTskgjY9#!/?lang=en.",
+      "locator": "Application instructions; official detail page lines 39-47",
+      "evidence_note": "The linked portal was directly fetched; only an unreadable JavaScript shell was returned",
+      "page_content_sha256": "79e65ae6f27f04bc5291c6a3b287cdbc1156fba4bf17f6e7b72caf9966c3e158",
+      "linked_application_url": "https://emea2.softfactors.com/job-opening/rgum-UtuGzrXTpseTskgjY9#!/?lang=en",
+      "linked_portal_observed_at": "2026-10-23T12:22:41Z",
+      "linked_portal_page_content_sha256": "bc6e675731137a3e2fbb6fecaf2f510b60a325da0e87e9e5dd881f265170b2cf",
+      "portal_acceptance_status": "unknown"
+    }
+  ],
+  "deadline": {
+    "status": "unknown",
+    "value": null,
+    "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+    "locator": "Application instructions; no fixed deadline stated, evaluation starts 2026-11-15 until filled"
+  },
+  "funding": {
+    "status": "verified_as_stated",
+    "value": "Funding is secured for 4 years; the projected start window is March through September 2027.",
+    "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+    "locator": "Position details; official detail page lines 39-47"
+  },
+  "eligibility": {
+    "status": "verified_as_stated",
+    "value": "MSc in atmospheric, earth, or environmental science, chemistry, physics, or a related field before the start; atmospheric chemistry experience, strong programming skills, and good English.",
+    "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+    "locator": "Profile section; official detail page lines 24-29"
+  },
+  "application_route": {
+    "status": "verified_as_stated",
+    "value": "https://emea2.softfactors.com/job-opening/rgum-UtuGzrXTpseTskgjY9#!/?lang=en",
+    "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+    "locator": "Application instructions; official detail page lines 39-47",
+    "portal_observation": {
+      "url": "https://emea2.softfactors.com/job-opening/rgum-UtuGzrXTpseTskgjY9#!/?lang=en",
+      "observed_at": "2026-10-23T12:22:39Z",
+      "page_content_sha256": "bc6e675731137a3e2fbb6fecaf2f510b60a325da0e87e9e5dd881f265170b2cf",
+      "visible": "small JavaScript shell; no readable form or status evidence",
+      "current_acceptance": "unknown"
+    }
+  },
+  "formal_patch": {
+    "funding": "Funding is secured for 4 years; the projected start window is March through September 2027."
+  }
+}

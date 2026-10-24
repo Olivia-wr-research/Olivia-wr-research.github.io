@@ -1,0 +1,115 @@
+{
+  "run_id": "initial-endpoint-review",
+  "tasks": [
+    {
+      "task_id": "initial-endpoint-review--src-58795e92-0fb4-52aa-a9b9-0759c73648ff",
+      "source_id": "src-58795e92-0fb4-52aa-a9b9-0759c73648ff",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.um.edu.mo/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-58f5ae4b-a332-5880-8ae8-cc520d523d0e",
+      "source_id": "src-58f5ae4b-a332-5880-8ae8-cc520d523d0e",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.anu.edu.au/jobs",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-59601000-ed85-57fd-afcb-0deb6d63c6e4",
+      "source_id": "src-59601000-ed85-57fd-afcb-0deb6d63c6e4",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.uwi.edu/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-5d0d4cd1-d2a2-5d52-8bca-9a56317c13c6",
+      "source_id": "src-5d0d4cd1-d2a2-5d52-8bca-9a56317c13c6",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.huji.ac.il/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-5fd7670b-1e59-5ca9-980a-bc0f70d4b5b5",
+      "source_id": "src-5fd7670b-1e59-5ca9-980a-bc0f70d4b5b5",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.aere.org/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-627478fb-4134-5f94-b5a1-3360fc5ea524",
+      "source_id": "src-627478fb-4134-5f94-b5a1-3360fc5ea524",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.ugc.gov.in/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-648da507-4cb8-5bd5-9ba9-b92db3324a9c",
+      "source_id": "src-648da507-4cb8-5bd5-9ba9-b92db3324a9c",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://emploi.cnrs.fr/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-658b46a8-0d38-5a72-b31a-46707fede892",
+      "source_id": "src-658b46a8-0d38-5a72-b31a-46707fede892",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.gob.pe/concytec",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-671b2697-5f7b-512e-a7ea-23e1a5599032",
+      "source_id": "src-671b2697-5f7b-512e-a7ea-23e1a5599032",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.epfl.ch/about/working/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-68a6a5c6-3ba8-5c56-8060-cd743c6a896c",
+      "source_id": "src-68a6a5c6-3ba8-5c56-8060-cd743c6a896c",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.aag.org/jobs-careers/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    }
+  ]
+}

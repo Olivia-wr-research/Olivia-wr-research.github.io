@@ -1,0 +1,115 @@
+{
+  "run_id": "initial-endpoint-review",
+  "tasks": [
+    {
+      "task_id": "initial-endpoint-review--src-17456e71-1ce5-5ac3-b562-4e6dddf8308a",
+      "source_id": "src-17456e71-1ce5-5ac3-b562-4e6dddf8308a",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.urbanstudiesfoundation.org/funding/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-18fbd49a-518e-51f3-aff5-a70fc74169ed",
+      "source_id": "src-18fbd49a-518e-51f3-aff5-a70fc74169ed",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://minciencias.gov.co/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-1b91157a-27fd-5245-81b7-9f8b5168af97",
+      "source_id": "src-1b91157a-27fd-5245-81b7-9f8b5168af97",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.nsf.gov/funding",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-1caa27eb-f94e-599d-91f6-0d24099bb86f",
+      "source_id": "src-1caa27eb-f94e-599d-91f6-0d24099bb86f",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://sucupira.capes.gov.br/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-1cd1dc54-3b6e-56ff-986e-8d1b4660fd80",
+      "source_id": "src-1cd1dc54-3b6e-56ff-986e-8d1b4660fd80",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.seek.com.au/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-1e21749e-26eb-59fa-a423-10087895fce7",
+      "source_id": "src-1e21749e-26eb-59fa-a423-10087895fce7",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.avcr.cz/en/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-1eea8a3b-803f-5961-b711-4402cc914d9d",
+      "source_id": "src-1eea8a3b-803f-5961-b711-4402cc914d9d",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.helsinki.fi/en/open-positions",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-1f81fc8a-21c4-5835-b3f1-45f1482361b0",
+      "source_id": "src-1f81fc8a-21c4-5835-b3f1-45f1482361b0",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.nus.edu.sg/careers/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-22932798-6bae-5183-bb31-627ed9367e43",
+      "source_id": "src-22932798-6bae-5183-bb31-627ed9367e43",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.fct.pt/en/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-2339595a-ce05-5b00-b620-8e9782752400",
+      "source_id": "src-2339595a-ce05-5b00-b620-8e9782752400",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.ju.edu.jo/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    }
+  ]
+}

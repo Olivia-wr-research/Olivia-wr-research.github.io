@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "run_id": "round002-preflight-20261022T120620Z",
+  "started_at": "2026-10-22T12:06:20Z",
+  "finished_at": "2026-10-22T12:06:20Z",
+  "python_version": "3.14.5",
+  "registry_sha256": "76872d4e25b95e8f3cfa6482709e80550b1796dfdf57135fac6b5829ee9646d4",
+  "sample_manifest_sha256": "1032ac441b24e22dcffe5cb42e8b289a7fe1bb62360af1a6d3cb0ca12d5ea033",
+  "proxy": {
+    "configured": false,
+    "schemes": []
+  },
+  "request_scope": {
+    "distinct_hosts": 5,
+    "allowed_hostnames": [
+      "example.com",
+      "jobs.ethz.ch",
+      "www.helsinki.fi",
+      "www.jobbnorge.no",
+      "www.mpg.de"
+    ],
+    "redirects_outside_allowlist_rejected": true,
+    "ordinary_https_request_limit": 5,
+    "ordinary_https_attempts": 0,
+    "runner_http_request_budget": {
+      "used": 0,
+      "limit": 10
+    },
+    "maximum_total_http_requests": 15,
+    "control_hosts": 1,
+    "registered_source_hosts": 4,
+    "target_page_requests": 0,
+    "retries": 0,
+    "concurrency": 1
+  },
+  "environment_preflight_passed": false,
+  "systemic_environment_block": true,
+  "runner_transport_responses_from_sample_hosts": 0,
+  "address_guard_blocks_from_sample_hosts": 4,
+  "runner_transport_configuration_blocks_from_sample_hosts": 0,
+  "results": [
+    {
+      "source_id": "connectivity_control",
+      "host": "example.com",
+      "url": "https://example.com/",
+      "dns": {
+        "addresses": [
+          {
+            "address": "198.18.5.161",
+            "is_global": false
+          }
+        ],
+        "error_type": null
+      },
+      "runner_guard": "private_or_non_global_address",
+      "ordinary_https_robots": {
+        "status": null,
+        "request_attempted": false,
+        "skipped": "non_global_or_unresolved_dns",
+        "redirect_followed": false
+      },
+      "runner_robots": {
+        "allowed": false,
+        "status": null,
+        "reason": "runner_safety_guard_block",
+        "error": "ValueError",
+        "error_detail": "private_or_non_global_address",
+        "cache_hit": false,
+        "attempts": [
+          {
+            "attempt_id": "a3ee32c5-ac3b-4467-bfd6-527331f9fff0",
+            "attempt_number": 1,
+            "endpoint": "robots.txt",
+            "started_at": "2026-10-22T12:06:20Z",
+            "completed_at": "2026-10-22T12:06:20Z",
+            "http_status": null,
+            "request_sent": false,
+            "error": "ValueError",
+            "error_detail": "private_or_non_global_address"
+          }
+        ]
+      },
+      "source_page_request": {
+        "attempted": false,
+        "body_bytes": 0,
+        "reason": "preflight_only_no_target_page_fetch"
+      }
+    },
+    {
+      "source_id": "eth-doctoral-listing",
+      "host": "jobs.ethz.ch",
+      "url": "https://jobs.ethz.ch/",
+      "dns": {
+        "addresses": [
+          {
+            "address": "198.18.4.89",
+            "is_global": false
+          }
+        ],
+        "error_type": null
+      },
+      "runner_guard": "private_or_non_global_address",
+      "ordinary_https_robots": {
+        "status": null,
+        "request_attempted": false,
+        "skipped": "non_global_or_unresolved_dns",
+        "redirect_followed": false
+      },
+      "runner_robots": {
+        "allowed": false,
+        "status": null,
+        "reason": "runner_safety_guard_block",
+        "error": "ValueError",
+        "error_detail": "private_or_non_global_address",
+        "cache_hit": false,
+        "attempts": [
+          {
+            "attempt_id": "9a1c637f-41e8-428c-9a64-3d12dc2da42c",
+            "attempt_number": 1,
+            "endpoint": "robots.txt",
+            "started_at": "2026-10-22T12:06:20Z",
+            "completed_at": "2026-10-22T12:06:20Z",
+            "http_status": null,
+            "request_sent": false,
+            "error": "ValueError",
+            "error_detail": "private_or_non_global_address"
+          }
+        ]
+      },
+      "source_page_request": {
+        "attempted": false,
+        "body_bytes": 0,
+        "reason": "preflight_only_no_target_page_fetch"
+      }
+    },
+    {
+      "source_id": "jobbnorge-uio",
+      "host": "www.jobbnorge.no",
+      "url": "https://www.jobbnorge.no/apps/Joblist/JobListBuilder.ashx?id=1e1f1447-9567-4e79-8d0e-b08f5566151f&jobtypegroupid=2",
+      "dns": {
+        "addresses": [
+          {
+            "address": "198.18.5.35",
+            "is_global": false
+          }
+        ],
+        "error_type": null
+      },
+      "runner_guard": "private_or_non_global_address",
+      "ordinary_https_robots": {
+        "status": null,
+        "request_attempted": false,
+        "skipped": "non_global_or_unresolved_dns",
+        "redirect_followed": false
+      },
+      "runner_robots": {
+        "allowed": false,
+        "status": null,
+        "reason": "runner_safety_guard_block",
+        "error": "ValueError",
+        "error_detail": "private_or_non_global_address",
+        "cache_hit": false,
+        "attempts": [
+          {
+            "attempt_id": "56e18df4-014a-43ac-87ca-346d86566362",
+            "attempt_number": 1,
+            "endpoint": "robots.txt",
+            "started_at": "2026-10-22T12:06:20Z",
+            "completed_at": "2026-10-22T12:06:20Z",
+            "http_status": null,
+            "request_sent": false,
+            "error": "ValueError",
+            "error_detail": "private_or_non_global_address"
+          }
+        ]
+      },
+      "source_page_request": {
+        "attempted": false,
+        "body_bytes": 0,
+        "reason": "preflight_only_no_target_page_fetch"
+      }
+    },
+    {
+      "source_id": "doc-446f8d108f9611b8",
+      "host": "www.helsinki.fi",
+      "url": "https://www.helsinki.fi/en/about-us/careers/open-positions",
+      "dns": {
+        "addresses": [
+          {
+            "address": "198.18.4.80",
+            "is_global": false
+          }
+        ],
+        "error_type": null
+      },
+      "runner_guard": "private_or_non_global_address",
+      "ordinary_https_robots": {
+        "status": null,
+        "request_attempted": false,
+        "skipped": "non_global_or_unresolved_dns",
+        "redirect_followed": false
+      },
+      "runner_robots": {
+        "allowed": false,
+        "status": null,
+        "reason": "runner_safety_guard_block",
+        "error": "ValueError",
+        "error_detail": "private_or_non_global_address",
+        "cache_hit": false,
+        "attempts": [
+          {
+            "attempt_id": "eed45c41-efe0-4ca3-a8e9-a03f22be0c1d",
+            "attempt_number": 1,
+            "endpoint": "robots.txt",
+            "started_at": "2026-10-22T12:06:20Z",
+            "completed_at": "2026-10-22T12:06:20Z",
+            "http_status": null,
+            "request_sent": false,
+            "error": "ValueError",
+            "error_detail": "private_or_non_global_address"
+          }
+        ]
+      },
+      "source_page_request": {
+        "attempted": false,
+        "body_bytes": 0,
+        "reason": "preflight_only_no_target_page_fetch"
+      }
+    },
+    {
+      "source_id": "doc-350282ccffe5f525",
+      "host": "www.mpg.de",
+      "url": "https://www.mpg.de/doctoral_students",
+      "dns": {
+        "addresses": [
+          {
+            "address": "198.18.4.76",
+            "is_global": false
+          }
+        ],
+        "error_type": null
+      },
+      "runner_guard": "private_or_non_global_address",
+      "ordinary_https_robots": {
+        "status": null,
+        "request_attempted": false,
+        "skipped": "non_global_or_unresolved_dns",
+        "redirect_followed": false
+      },
+      "runner_robots": {
+        "allowed": false,
+        "status": null,
+        "reason": "runner_safety_guard_block",
+        "error": "ValueError",
+        "error_detail": "private_or_non_global_address",
+        "cache_hit": false,
+        "attempts": [
+          {
+            "attempt_id": "a870da6f-ef40-43b3-a768-3fa3e30d9fbb",
+            "attempt_number": 1,
+            "endpoint": "robots.txt",
+            "started_at": "2026-10-22T12:06:20Z",
+            "completed_at": "2026-10-22T12:06:20Z",
+            "http_status": null,
+            "request_sent": false,
+            "error": "ValueError",
+            "error_detail": "private_or_non_global_address"
+          }
+        ]
+      },
+      "source_page_request": {
+        "attempted": false,
+        "body_bytes": 0,
+        "reason": "preflight_only_no_target_page_fetch"
+      }
+    }
+  ],
+  "decision": "circuit_break_before_sample_fetch"
+}

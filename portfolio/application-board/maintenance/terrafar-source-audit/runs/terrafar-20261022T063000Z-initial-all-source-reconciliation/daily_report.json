@@ -1,0 +1,33 @@
+{
+  "run_id": "terrafar-20261022T063000Z-initial-all-source-reconciliation",
+  "created_at": "2026-10-22T06:23:45Z",
+  "completed_at": "2026-10-22T06:25:15Z",
+  "network_mode": "live",
+  "execution_mode": "program_http_plus_configured_adapters",
+  "registry_sha256": "76872d4e25b95e8f3cfa6482709e80550b1796dfdf57135fac6b5829ee9646d4",
+  "plan_sha256": "267f845ad02a1b880dd222f71eadc7722cd2926484d2782a74f41a6f43c2a5c6",
+  "total_sources": 411,
+  "active_sources": 411,
+  "planned_sources": 411,
+  "status_counts": {
+    "blocked": 411,
+    "checked_changed": 0,
+    "checked_empty": 0,
+    "checked_unchanged": 0,
+    "failed": 0,
+    "needs_endpoint": 0,
+    "not_attempted": 0,
+    "partial": 0
+  },
+  "result_conservation": true,
+  "complete_success_count": 0,
+  "coverage": 0.0,
+  "candidate_data_written_to_formal_site": false,
+  "results_path": "source_checks.jsonl",
+  "notes": [
+    "HTTP availability is not opportunity verification.",
+    "needs_endpoint means page access may succeed but the full target list is not yet represented by a validated adapter.",
+    "partial on first parsed baseline means no prior successful comparison; it does not mean a newly published opportunity.",
+    "Failures, access blocks and not_attempted are never counted as no update."
+  ]
+}

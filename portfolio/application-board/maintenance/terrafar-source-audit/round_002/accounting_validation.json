@@ -1,0 +1,22 @@
+{
+  "registry_sources": 411,
+  "full_result_rows": 411,
+  "full_unique_ids": 411,
+  "full_id_set_matches_registry": true,
+  "full_status_counts": {
+    "blocked": 5,
+    "not_attempted": 406
+  },
+  "sample_manifest_ids": 10,
+  "sample_result_rows": 10,
+  "sample_unique_ids": 10,
+  "sample_id_set_matches_manifest": true,
+  "sample_status_counts": {
+    "blocked": 4,
+    "not_attempted": 6
+  },
+  "source_page_bodies": 0,
+  "complete_list_checks": 0,
+  "candidate_review_items": 0,
+  "skill_verified_items": 0
+}

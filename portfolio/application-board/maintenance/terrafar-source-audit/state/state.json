@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "snapshots": {},
+  "last_run_id": "terrafar-20261022T063000Z-initial-all-source-reconciliation",
+  "note": "First observed baselines are not evidence of source publication date.",
+  "last_run_completed_at": "2026-10-22T06:25:15Z",
+  "last_registry_sha256": "76872d4e25b95e8f3cfa6482709e80550b1796dfdf57135fac6b5829ee9646d4",
+  "last_plan_sha256": "267f845ad02a1b880dd222f71eadc7722cd2926484d2782a74f41a6f43c2a5c6"
+}

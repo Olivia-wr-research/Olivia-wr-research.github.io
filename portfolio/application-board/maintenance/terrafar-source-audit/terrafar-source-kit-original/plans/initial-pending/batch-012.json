@@ -1,0 +1,115 @@
+{
+  "run_id": "initial-endpoint-review",
+  "tasks": [
+    {
+      "task_id": "initial-endpoint-review--src-d28037a1-8656-5988-bcd9-599ec60cfe67",
+      "source_id": "src-d28037a1-8656-5988-bcd9-599ec60cfe67",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.daad.de/en/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-d34ad5d5-c906-501b-a84c-d0705ba7b435",
+      "source_id": "src-d34ad5d5-c906-501b-a84c-d0705ba7b435",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.usajobs.gov/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-d474bd1e-37be-526c-9c08-d1f72b5cc706",
+      "source_id": "src-d474bd1e-37be-526c-9c08-d1f72b5cc706",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.wits.ac.za/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-d6a6d4cc-03e3-5f6d-aab6-77b5987f157a",
+      "source_id": "src-d6a6d4cc-03e3-5f6d-aab6-77b5987f157a",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.helmholtz.de/en/career/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-d6b1184f-d7b0-57f9-84fb-43b26041528b",
+      "source_id": "src-d6b1184f-d7b0-57f9-84fb-43b26041528b",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.regionalstudies.org/communities/opportunities/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-e22bd0b9-e8e5-5efc-80c4-0fd49c560b54",
+      "source_id": "src-e22bd0b9-e8e5-5efc-80c4-0fd49c560b54",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.hec.gov.pk/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-e8172b80-616f-563f-a3f6-0a519a5537b4",
+      "source_id": "src-e8172b80-616f-563f-a3f6-0a519a5537b4",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.academics.de/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-e8954e20-083d-5ffe-8928-1853138cb520",
+      "source_id": "src-e8954e20-083d-5ffe-8928-1853138cb520",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.higheredjobs.com/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-e8d843c2-d4ce-5554-a976-0eb6edc616b1",
+      "source_id": "src-e8d843c2-d4ce-5554-a976-0eb6edc616b1",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.a-star.edu.sg/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-ea354829-3e02-5057-ae89-b82fa38594e6",
+      "source_id": "src-ea354829-3e02-5057-ae89-b82fa38594e6",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.conicet.gov.ar/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    }
+  ]
+}

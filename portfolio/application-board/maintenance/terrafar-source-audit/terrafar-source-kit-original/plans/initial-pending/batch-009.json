@@ -1,0 +1,115 @@
+{
+  "run_id": "initial-endpoint-review",
+  "tasks": [
+    {
+      "task_id": "initial-endpoint-review--src-a138868d-6c54-5059-a91a-b3fee9f6a506",
+      "source_id": "src-a138868d-6c54-5059-a91a-b3fee9f6a506",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.uonbi.ac.ke/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-a1473a3c-e241-511b-991b-a7a8cd74f3de",
+      "source_id": "src-a1473a3c-e241-511b-991b-a7a8cd74f3de",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.gov.br/cnpq/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-a42edab5-0726-528f-8c17-9162642257ca",
+      "source_id": "src-a42edab5-0726-528f-8c17-9162642257ca",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.qu.edu.qa/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-a507bfb0-ebc2-5991-9980-e45981298e24",
+      "source_id": "src-a507bfb0-ebc2-5991-9980-e45981298e24",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.giscience.org/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-a5c8785d-21d6-5ea8-8d12-e80fdca4aa8a",
+      "source_id": "src-a5c8785d-21d6-5ea8-8d12-e80fdca4aa8a",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.csic.es/en",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-a5e1c1fb-3296-58f6-8810-a1b92a5a4cd9",
+      "source_id": "src-a5e1c1fb-3296-58f6-8810-a1b92a5a4cd9",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://populationassociation.org/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-a5e2ade5-c307-5617-b31f-b1d1c081709d",
+      "source_id": "src-a5e2ade5-c307-5617-b31f-b1d1c081709d",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.aasciences.africa/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-a72f7251-d493-5ef4-a2fc-9b3f376e4ee8",
+      "source_id": "src-a72f7251-d493-5ef4-a2fc-9b3f376e4ee8",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.hibrain.net/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-a7ce345b-4c40-5be3-877d-5bd7fe6adb85",
+      "source_id": "src-a7ce345b-4c40-5be3-877d-5bd7fe6adb85",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://jrecin.jst.go.jp/seek/?ln=1",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-acee3098-af96-529b-9b88-61391352e1ff",
+      "source_id": "src-acee3098-af96-529b-9b88-61391352e1ff",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.sydney.edu.au/about-us/careers-at-sydney.html",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    }
+  ]
+}

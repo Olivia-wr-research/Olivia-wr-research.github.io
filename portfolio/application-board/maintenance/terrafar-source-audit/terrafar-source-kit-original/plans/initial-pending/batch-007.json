@@ -1,0 +1,115 @@
+{
+  "run_id": "initial-endpoint-review",
+  "tasks": [
+    {
+      "task_id": "initial-endpoint-review--src-7fd94c82-2a06-5e04-80aa-238f8af4384d",
+      "source_id": "src-7fd94c82-2a06-5e04-80aa-238f8af4384d",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.gaoxiaojob.com/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-83abbd7d-21e7-5314-8918-534c895854a6",
+      "source_id": "src-83abbd7d-21e7-5314-8918-534c895854a6",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.gov.br/capes/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-83fd4541-5c41-54a2-8504-2245e7dabc2e",
+      "source_id": "src-83fd4541-5c41-54a2-8504-2245e7dabc2e",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.kaust.edu.sa/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-843dc639-c69d-5787-9701-386c56ade30a",
+      "source_id": "src-843dc639-c69d-5787-9701-386c56ade30a",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://unal.edu.co/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-84819319-0160-59f7-b17d-d2466290fb80",
+      "source_id": "src-84819319-0160-59f7-b17d-d2466290fb80",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.ku.ac.ae/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-8563b73a-d188-56d1-b7c3-0fa6aecbbf3c",
+      "source_id": "src-8563b73a-d188-56d1-b7c3-0fa6aecbbf3c",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://su.varbi.com/en/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-8c889c1e-96b9-5b73-b81d-d95e20610844",
+      "source_id": "src-8c889c1e-96b9-5b73-b81d-d95e20610844",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.canada.ca/en/services/jobs/opportunities/government.html",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-8dd3c56f-d9b3-53c9-87dc-e70559c8a76c",
+      "source_id": "src-8dd3c56f-d9b3-53c9-87dc-e70559c8a76c",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.tubitak.gov.tr/en",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-8dd8bb17-55a4-556c-8444-720802d8dec6",
+      "source_id": "src-8dd8bb17-55a4-556c-8444-720802d8dec6",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.varbi.com/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-8ea3f4ff-83a7-5230-a512-1dd1b6bf1d31",
+      "source_id": "src-8ea3f4ff-83a7-5230-a512-1dd1b6bf1d31",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.auckland.ac.nz/en/about-us/about-the-university/working-at-the-university.html",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    }
+  ]
+}

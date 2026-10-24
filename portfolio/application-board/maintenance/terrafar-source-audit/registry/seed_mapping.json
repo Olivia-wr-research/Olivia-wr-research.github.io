@@ -1,0 +1,931 @@
+{
+  "count": 133,
+  "mappings": [
+    {
+      "seed_source_id": "src-02d7aa53-cf49-5db2-8e02-9d2c8c9f3432",
+      "registry_source_id": "src-02d7aa53-cf49-5db2-8e02-9d2c8c9f3432",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.careers.ac.cn/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-03a897b8-533e-5a53-b107-4a01e073dc54",
+      "registry_source_id": "src-03a897b8-533e-5a53-b107-4a01e073dc54",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://ugm.ac.id/en/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-0694943f-aea9-5c4b-8b94-925fd068f963",
+      "registry_source_id": "src-0694943f-aea9-5c4b-8b94-925fd068f963",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.eldis.org/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-0889504c-129c-5b23-b2fa-5d6ff5852f48",
+      "registry_source_id": "geo-b08df78c2d1e8936",
+      "decision": "exact_endpoint_unique_existing",
+      "canonical_url": "https://academicjobsonline.org/"
+    },
+    {
+      "seed_source_id": "src-09af2597-7882-56a7-ac57-e2ba4de8bcf2",
+      "registry_source_id": "src-09af2597-7882-56a7-ac57-e2ba4de8bcf2",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.sun.ac.za/english",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-0c607d3b-d61c-5b3c-9900-c47c7e7ad72c",
+      "registry_source_id": "src-0c607d3b-d61c-5b3c-9900-c47c7e7ad72c",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.nrf.go.ke/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-0e8ac2b9-06d1-596e-b958-03e8e00b376c",
+      "registry_source_id": "src-0e8ac2b9-06d1-596e-b958-03e8e00b376c",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.cu.edu.eg/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-0f354699-4472-58c1-9104-fc879f444d11",
+      "registry_source_id": "src-0f354699-4472-58c1-9104-fc879f444d11",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://jobs.unimelb.edu.au/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-11d342e3-5800-5c1d-a24f-c962360f523f",
+      "registry_source_id": "src-11d342e3-5800-5c1d-a24f-c962360f523f",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.research.fi/en/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-15b66bae-15b7-596d-ab98-7986adfc254a",
+      "registry_source_id": "src-15b66bae-15b7-596d-ab98-7986adfc254a",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.yok.gov.tr/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-17456e71-1ce5-5ac3-b562-4e6dddf8308a",
+      "registry_source_id": "src-17456e71-1ce5-5ac3-b562-4e6dddf8308a",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.urbanstudiesfoundation.org/funding/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-18fbd49a-518e-51f3-aff5-a70fc74169ed",
+      "registry_source_id": "src-18fbd49a-518e-51f3-aff5-a70fc74169ed",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://minciencias.gov.co/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-1b91157a-27fd-5245-81b7-9f8b5168af97",
+      "registry_source_id": "src-1b91157a-27fd-5245-81b7-9f8b5168af97",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.nsf.gov/funding",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-1caa27eb-f94e-599d-91f6-0d24099bb86f",
+      "registry_source_id": "src-1caa27eb-f94e-599d-91f6-0d24099bb86f",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://sucupira.capes.gov.br/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-1cd1dc54-3b6e-56ff-986e-8d1b4660fd80",
+      "registry_source_id": "src-1cd1dc54-3b6e-56ff-986e-8d1b4660fd80",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.seek.com.au/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-1e21749e-26eb-59fa-a423-10087895fce7",
+      "registry_source_id": "src-1e21749e-26eb-59fa-a423-10087895fce7",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.avcr.cz/en/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-1eea8a3b-803f-5961-b711-4402cc914d9d",
+      "registry_source_id": "src-1eea8a3b-803f-5961-b711-4402cc914d9d",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.helsinki.fi/en/open-positions",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-1f81fc8a-21c4-5835-b3f1-45f1482361b0",
+      "registry_source_id": "src-1f81fc8a-21c4-5835-b3f1-45f1482361b0",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.nus.edu.sg/careers/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-22932798-6bae-5183-bb31-627ed9367e43",
+      "registry_source_id": "src-22932798-6bae-5183-bb31-627ed9367e43",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.fct.pt/en/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-2339595a-ce05-5b00-b620-8e9782752400",
+      "registry_source_id": "src-2339595a-ce05-5b00-b620-8e9782752400",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.ju.edu.jo/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-24fd7039-5047-5497-a998-4efe8c1e588e",
+      "registry_source_id": "src-24fd7039-5047-5497-a998-4efe8c1e588e",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.unilag.edu.ng/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-2998e505-9488-533b-ac21-dd7afc86b3a0",
+      "registry_source_id": "src-2998e505-9488-533b-ac21-dd7afc86b3a0",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.jst.go.jp/EN/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-2f0d880d-9c67-50eb-bace-6144a369e640",
+      "registry_source_id": "src-2f0d880d-9c67-50eb-bace-6144a369e640",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.academics.at/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-3a32314f-cb03-5ec0-80af-b7cbb0eb2b03",
+      "registry_source_id": "src-3a32314f-cb03-5ec0-80af-b7cbb0eb2b03",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.1111.com.tw/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-3b7544b5-8ba8-568b-8497-9b033572d5bb",
+      "registry_source_id": "src-3b7544b5-8ba8-568b-8497-9b033572d5bb",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.jobs.ac.uk/search/geography",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-3f5b4bc2-cff9-5f01-ba52-09c3a85857bd",
+      "registry_source_id": "src-3f5b4bc2-cff9-5f01-ba52-09c3a85857bd",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://anid.cl/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-41113967-0962-58c2-8405-70666a339c16",
+      "registry_source_id": "src-41113967-0962-58c2-8405-70666a339c16",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.academictransfer.com/en/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-41b5a40b-5bb3-550c-97b4-ffd694131120",
+      "registry_source_id": "src-41b5a40b-5bb3-550c-97b4-ffd694131120",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.ntu.edu.sg/careers",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-41c0d75f-13f8-5424-9af0-4b45ddda219b",
+      "registry_source_id": "src-41c0d75f-13f8-5424-9af0-4b45ddda219b",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.education.gov.au/research-block-grants",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-441264cb-c008-53a4-976c-3d8afbd3a3f3",
+      "registry_source_id": "src-441264cb-c008-53a4-976c-3d8afbd3a3f3",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://universityaffairs.ca/search-jobs/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-4441f8c6-909b-55c3-a69b-4719eb8a9c31",
+      "registry_source_id": "src-4441f8c6-909b-55c3-a69b-4719eb8a9c31",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.oead.at/en/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-480e3d56-c854-5d3c-9727-301e85e8cf52",
+      "registry_source_id": "src-480e3d56-c854-5d3c-9727-301e85e8cf52",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.iitb.ac.in/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-4866f6f3-30ba-5aef-9159-7c4b5ef40364",
+      "registry_source_id": "src-4866f6f3-30ba-5aef-9159-7c4b5ef40364",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.gisjobs.com/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-489c2d59-5288-5c03-a903-260d622d33e7",
+      "registry_source_id": "src-489c2d59-5288-5c03-a903-260d622d33e7",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.chinapostdoctor.org.cn/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-4f35f396-6386-5cf4-91d6-709b1cc24e5c",
+      "registry_source_id": "src-4f35f396-6386-5cf4-91d6-709b1cc24e5c",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.chronicle.com/jobs",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-51fab4ad-13a8-5230-86d3-8655806bf941",
+      "registry_source_id": "src-51fab4ad-13a8-5230-86d3-8655806bf941",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://aesop-planning.eu/resources/news-archive/jobs",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-53b3e35e-465e-55a9-8227-fcf21b84239c",
+      "registry_source_id": "src-53b3e35e-465e-55a9-8227-fcf21b84239c",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.uchile.cl/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-5469a0d6-755b-5db8-8bf7-3d8aae89d1c1",
+      "registry_source_id": "src-5469a0d6-755b-5db8-8bf7-3d8aae89d1c1",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.galaxie.enseignementsup-recherche.gouv.fr/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-552171e3-469d-5430-ad5c-f90630446bdf",
+      "registry_source_id": "src-552171e3-469d-5430-ad5c-f90630446bdf",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.jsps.go.jp/english/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-568be24c-b757-5eea-aa37-b9a474fe1102",
+      "registry_source_id": "src-568be24c-b757-5eea-aa37-b9a474fe1102",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://ut.ee/en",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-58795e92-0fb4-52aa-a9b9-0759c73648ff",
+      "registry_source_id": "src-58795e92-0fb4-52aa-a9b9-0759c73648ff",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.um.edu.mo/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-58f5ae4b-a332-5880-8ae8-cc520d523d0e",
+      "registry_source_id": "src-58f5ae4b-a332-5880-8ae8-cc520d523d0e",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.anu.edu.au/jobs",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-59601000-ed85-57fd-afcb-0deb6d63c6e4",
+      "registry_source_id": "src-59601000-ed85-57fd-afcb-0deb6d63c6e4",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.uwi.edu/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-5d0d4cd1-d2a2-5d52-8bca-9a56317c13c6",
+      "registry_source_id": "src-5d0d4cd1-d2a2-5d52-8bca-9a56317c13c6",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.huji.ac.il/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-5fd7670b-1e59-5ca9-980a-bc0f70d4b5b5",
+      "registry_source_id": "src-5fd7670b-1e59-5ca9-980a-bc0f70d4b5b5",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.aere.org/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-627478fb-4134-5f94-b5a1-3360fc5ea524",
+      "registry_source_id": "src-627478fb-4134-5f94-b5a1-3360fc5ea524",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.ugc.gov.in/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-648da507-4cb8-5bd5-9ba9-b92db3324a9c",
+      "registry_source_id": "geo-159ef6efb6522a7c",
+      "decision": "exact_endpoint_unique_existing",
+      "canonical_url": "https://emploi.cnrs.fr/"
+    },
+    {
+      "seed_source_id": "src-658b46a8-0d38-5a72-b31a-46707fede892",
+      "registry_source_id": "src-658b46a8-0d38-5a72-b31a-46707fede892",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.gob.pe/concytec",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-671b2697-5f7b-512e-a7ea-23e1a5599032",
+      "registry_source_id": "src-671b2697-5f7b-512e-a7ea-23e1a5599032",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.epfl.ch/about/working/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-68a6a5c6-3ba8-5c56-8060-cd743c6a896c",
+      "registry_source_id": "src-68a6a5c6-3ba8-5c56-8060-cd743c6a896c",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.aag.org/jobs-careers/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-6935c8d2-39b0-56c1-9b79-a1b353890454",
+      "registry_source_id": "src-6935c8d2-39b0-56c1-9b79-a1b353890454",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.studyinkorea.go.kr/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-6eb44c1c-5526-5134-b780-1c72fb959d61",
+      "registry_source_id": "src-6eb44c1c-5526-5134-b780-1c72fb959d61",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.ethz.ch/en/the-eth-zurich/working-teaching-and-research.html",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-732f80f3-d9d4-53b0-bb83-f416903df54f",
+      "registry_source_id": "src-732f80f3-d9d4-53b0-bb83-f416903df54f",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.unam.mx/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-74cefa49-2430-5a5a-9804-4582795cccd0",
+      "registry_source_id": "src-74cefa49-2430-5a5a-9804-4582795cccd0",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.kuleuven.be/personeel/jobsite/en/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-77111b24-2cad-5aa2-bb74-345004ea2435",
+      "registry_source_id": "src-77111b24-2cad-5aa2-bb74-345004ea2435",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.uct.ac.za/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-77630c91-ee3f-55fa-9ca5-25e75469d866",
+      "registry_source_id": "src-77630c91-ee3f-55fa-9ca5-25e75469d866",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.african-union.org/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-77bea8f6-40e0-5188-b302-af64fb995712",
+      "registry_source_id": "src-77bea8f6-40e0-5188-b302-af64fb995712",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.timeshighereducation.com/unijobs",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-79bb558e-75c8-54ae-9f59-208bceced203",
+      "registry_source_id": "src-79bb558e-75c8-54ae-9f59-208bceced203",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.mpg.de/career",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-7bea9cfd-ade1-5f66-b4ca-b0a1efdb7fc0",
+      "registry_source_id": "src-7bea9cfd-ade1-5f66-b4ca-b0a1efdb7fc0",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://hkustcareers.ust.hk/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-7e1af851-a5f0-5700-8917-6693d6e28cb2",
+      "registry_source_id": "src-7e1af851-a5f0-5700-8917-6693d6e28cb2",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www2.jobs.cuhk.edu.hk/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-7fd94c82-2a06-5e04-80aa-238f8af4384d",
+      "registry_source_id": "src-7fd94c82-2a06-5e04-80aa-238f8af4384d",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.gaoxiaojob.com/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-83abbd7d-21e7-5314-8918-534c895854a6",
+      "registry_source_id": "src-83abbd7d-21e7-5314-8918-534c895854a6",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.gov.br/capes/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-83fd4541-5c41-54a2-8504-2245e7dabc2e",
+      "registry_source_id": "src-83fd4541-5c41-54a2-8504-2245e7dabc2e",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.kaust.edu.sa/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-843dc639-c69d-5787-9701-386c56ade30a",
+      "registry_source_id": "src-843dc639-c69d-5787-9701-386c56ade30a",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://unal.edu.co/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-84819319-0160-59f7-b17d-d2466290fb80",
+      "registry_source_id": "src-84819319-0160-59f7-b17d-d2466290fb80",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.ku.ac.ae/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-8563b73a-d188-56d1-b7c3-0fa6aecbbf3c",
+      "registry_source_id": "src-8563b73a-d188-56d1-b7c3-0fa6aecbbf3c",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://su.varbi.com/en/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-8c889c1e-96b9-5b73-b81d-d95e20610844",
+      "registry_source_id": "src-8c889c1e-96b9-5b73-b81d-d95e20610844",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.canada.ca/en/services/jobs/opportunities/government.html",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-8dd3c56f-d9b3-53c9-87dc-e70559c8a76c",
+      "registry_source_id": "src-8dd3c56f-d9b3-53c9-87dc-e70559c8a76c",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.tubitak.gov.tr/en",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-8dd8bb17-55a4-556c-8444-720802d8dec6",
+      "registry_source_id": "src-8dd8bb17-55a4-556c-8444-720802d8dec6",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.varbi.com/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-8ea3f4ff-83a7-5230-a512-1dd1b6bf1d31",
+      "registry_source_id": "src-8ea3f4ff-83a7-5230-a512-1dd1b6bf1d31",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.auckland.ac.nz/en/about-us/about-the-university/working-at-the-university.html",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-91c3db89-23fc-56a7-9331-b070f198be24",
+      "registry_source_id": "src-91c3db89-23fc-56a7-9331-b070f198be24",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.academictransfer.com/en/jobs/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-92158e4c-b0f9-5580-a3f0-95af0de3f5c5",
+      "registry_source_id": "src-92158e4c-b0f9-5580-a3f0-95af0de3f5c5",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.anii.org.uy/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-92371686-a7ac-5bfe-a1ad-6bf3f90107e3",
+      "registry_source_id": "src-92371686-a7ac-5bfe-a1ad-6bf3f90107e3",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.otago.ac.nz/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-925d1b85-3aec-5f7d-9780-c6ee5007d7ed",
+      "registry_source_id": "src-925d1b85-3aec-5f7d-9780-c6ee5007d7ed",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.jobs.ch/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-98a693fd-c0bc-52fe-b39c-11a995e81fe3",
+      "registry_source_id": "src-98a693fd-c0bc-52fe-b39c-11a995e81fe3",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.ug.edu.gh/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-9b391e88-258d-5666-868d-191c36d16262",
+      "registry_source_id": "src-9b391e88-258d-5666-868d-191c36d16262",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://secihti.mx/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-9ee903fc-4702-537b-9e4f-0daf5256e2ce",
+      "registry_source_id": "src-9ee903fc-4702-537b-9e4f-0daf5256e2ce",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.mastersportal.com/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-a0660b80-b333-5aef-bbdb-86ef731529cf",
+      "registry_source_id": "src-a0660b80-b333-5aef-bbdb-86ef731529cf",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.usp.br/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-a074191e-cd73-528f-9810-480c1a631666",
+      "registry_source_id": "src-a074191e-cd73-528f-9810-480c1a631666",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.uaeu.ac.ae/en/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-a0809c92-77ba-57ed-8169-cc9981b83794",
+      "registry_source_id": "src-a0809c92-77ba-57ed-8169-cc9981b83794",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.asrt.sci.eg/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-a138868d-6c54-5059-a91a-b3fee9f6a506",
+      "registry_source_id": "src-a138868d-6c54-5059-a91a-b3fee9f6a506",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.uonbi.ac.ke/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-a1473a3c-e241-511b-991b-a7a8cd74f3de",
+      "registry_source_id": "src-a1473a3c-e241-511b-991b-a7a8cd74f3de",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.gov.br/cnpq/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-a42edab5-0726-528f-8c17-9162642257ca",
+      "registry_source_id": "src-a42edab5-0726-528f-8c17-9162642257ca",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.qu.edu.qa/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-a507bfb0-ebc2-5991-9980-e45981298e24",
+      "registry_source_id": "src-a507bfb0-ebc2-5991-9980-e45981298e24",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.giscience.org/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-a5c8785d-21d6-5ea8-8d12-e80fdca4aa8a",
+      "registry_source_id": "src-a5c8785d-21d6-5ea8-8d12-e80fdca4aa8a",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.csic.es/en",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-a5e1c1fb-3296-58f6-8810-a1b92a5a4cd9",
+      "registry_source_id": "src-a5e1c1fb-3296-58f6-8810-a1b92a5a4cd9",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://populationassociation.org/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-a5e2ade5-c307-5617-b31f-b1d1c081709d",
+      "registry_source_id": "src-a5e2ade5-c307-5617-b31f-b1d1c081709d",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.aasciences.africa/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-a72f7251-d493-5ef4-a2fc-9b3f376e4ee8",
+      "registry_source_id": "src-a72f7251-d493-5ef4-a2fc-9b3f376e4ee8",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.hibrain.net/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-a7ce345b-4c40-5be3-877d-5bd7fe6adb85",
+      "registry_source_id": "src-a7ce345b-4c40-5be3-877d-5bd7fe6adb85",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://jrecin.jst.go.jp/seek/?ln=1",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-acee3098-af96-529b-9b88-61391352e1ff",
+      "registry_source_id": "src-acee3098-af96-529b-9b88-61391352e1ff",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.sydney.edu.au/about-us/careers-at-sydney.html",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-ad3ddda5-aa78-518e-93e6-c8c2dfb1da69",
+      "registry_source_id": "src-ad3ddda5-aa78-518e-93e6-c8c2dfb1da69",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.kfupm.edu.sa/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-af281e68-ed4b-55f0-9957-87f942bd1ea7",
+      "registry_source_id": "src-af281e68-ed4b-55f0-9957-87f942bd1ea7",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.seek.co.nz/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-b37a03dd-e931-58d3-afc5-1c8b7cd0c6fc",
+      "registry_source_id": "src-b37a03dd-e931-58d3-afc5-1c8b7cd0c6fc",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.um.edu.my/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-b963edc8-b0c2-5a55-af05-a0f4e7c5d818",
+      "registry_source_id": "src-b963edc8-b0c2-5a55-af05-a0f4e7c5d818",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.ucr.ac.cr/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-b9ac47a6-f02e-57f2-b961-bccf59280d1e",
+      "registry_source_id": "src-b9ac47a6-f02e-57f2-b961-bccf59280d1e",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.nserc-crsng.gc.ca/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-b9d87b8a-8450-5733-a515-816578e5a874",
+      "registry_source_id": "src-b9d87b8a-8450-5733-a515-816578e5a874",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.jobs.ac.uk/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-ba6d97c1-442d-5583-b15a-77c4d1cf8ac9",
+      "registry_source_id": "src-ba6d97c1-442d-5583-b15a-77c4d1cf8ac9",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.chula.ac.th/en/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-bb6f167e-915e-514e-a210-883df5f8914c",
+      "registry_source_id": "src-bb6f167e-915e-514e-a210-883df5f8914c",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.nrf.ac.za/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-bd1f72eb-6f3c-563f-b72e-2862e4c5a2ba",
+      "registry_source_id": "src-bd1f72eb-6f3c-563f-b72e-2862e4c5a2ba",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.findaphd.com/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-bfff081d-f914-5887-8b4a-ea666c3a11f7",
+      "registry_source_id": "src-bfff081d-f914-5887-8b4a-ea666c3a11f7",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.chsi.com.cn/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-c3ae01e4-fb0d-5318-b2d0-54ba534f467c",
+      "registry_source_id": "src-c3ae01e4-fb0d-5318-b2d0-54ba534f467c",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://bandi.mur.gov.it/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-c3c487a7-eee0-5780-ad7d-2a42468117cd",
+      "registry_source_id": "src-c3c487a7-eee0-5780-ad7d-2a42468117cd",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.aau.edu.et/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-c3ff0d88-338c-5964-a291-afaab67e3572",
+      "registry_source_id": "src-c3ff0d88-338c-5964-a291-afaab67e3572",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.isprs.org/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-c8008e99-fc19-5e75-8ec3-d093892f74e0",
+      "registry_source_id": "src-c8008e99-fc19-5e75-8ec3-d093892f74e0",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.findamasters.com/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-c83c6124-11ec-5494-a1b5-491518ab75dc",
+      "registry_source_id": "geo-7c2b44a901c5d60e",
+      "decision": "exact_endpoint_unique_existing",
+      "canonical_url": "https://academicpositions.com/"
+    },
+    {
+      "seed_source_id": "src-c9033388-bec5-50e6-aec1-c1d24bc68ff4",
+      "registry_source_id": "portal-02c07dd0a66f5266",
+      "decision": "exact_endpoint_unique_existing",
+      "canonical_url": "https://euraxess.ec.europa.eu/jobs/search"
+    },
+    {
+      "seed_source_id": "src-c965eadc-6571-5b15-8db5-3739dda8db5b",
+      "registry_source_id": "src-c965eadc-6571-5b15-8db5-3739dda8db5b",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.tau.ac.il/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-cabb093f-b72d-5040-a791-713fab191973",
+      "registry_source_id": "src-cabb093f-b72d-5040-a791-713fab191973",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.um5.ac.ma/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-cffcfb36-4780-5fb3-8652-4dbf50d1fa8b",
+      "registry_source_id": "src-cffcfb36-4780-5fb3-8652-4dbf50d1fa8b",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.uba.ar/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-d27fccfd-a693-5b3a-b1c4-5b14e97f07cd",
+      "registry_source_id": "src-d27fccfd-a693-5b3a-b1c4-5b14e97f07cd",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.scholarshipportal.com/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-d28037a1-8656-5988-bcd9-599ec60cfe67",
+      "registry_source_id": "src-d28037a1-8656-5988-bcd9-599ec60cfe67",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.daad.de/en/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-d34ad5d5-c906-501b-a84c-d0705ba7b435",
+      "registry_source_id": "src-d34ad5d5-c906-501b-a84c-d0705ba7b435",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.usajobs.gov/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-d474bd1e-37be-526c-9c08-d1f72b5cc706",
+      "registry_source_id": "src-d474bd1e-37be-526c-9c08-d1f72b5cc706",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.wits.ac.za/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-d6a6d4cc-03e3-5f6d-aab6-77b5987f157a",
+      "registry_source_id": "src-d6a6d4cc-03e3-5f6d-aab6-77b5987f157a",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.helmholtz.de/en/career/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-d6b1184f-d7b0-57f9-84fb-43b26041528b",
+      "registry_source_id": "src-d6b1184f-d7b0-57f9-84fb-43b26041528b",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.regionalstudies.org/communities/opportunities/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-e22bd0b9-e8e5-5efc-80c4-0fd49c560b54",
+      "registry_source_id": "src-e22bd0b9-e8e5-5efc-80c4-0fd49c560b54",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.hec.gov.pk/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-e8172b80-616f-563f-a3f6-0a519a5537b4",
+      "registry_source_id": "src-e8172b80-616f-563f-a3f6-0a519a5537b4",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.academics.de/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-e8954e20-083d-5ffe-8928-1853138cb520",
+      "registry_source_id": "src-e8954e20-083d-5ffe-8928-1853138cb520",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.higheredjobs.com/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-e8d843c2-d4ce-5554-a976-0eb6edc616b1",
+      "registry_source_id": "src-e8d843c2-d4ce-5554-a976-0eb6edc616b1",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.a-star.edu.sg/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-ea354829-3e02-5057-ae89-b82fa38594e6",
+      "registry_source_id": "src-ea354829-3e02-5057-ae89-b82fa38594e6",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.conicet.gov.ar/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-ea78189b-e6bf-5af4-9898-2ee34ece8de4",
+      "registry_source_id": "src-ea78189b-e6bf-5af4-9898-2ee34ece8de4",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.campusfrance.org/en",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-ed74cd2d-c167-5c8e-8fc4-bee7d26fb89d",
+      "registry_source_id": "src-ed74cd2d-c167-5c8e-8fc4-bee7d26fb89d",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.csc.edu.cn/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-edb0561f-5d38-5e79-9e44-6fdcd7a9cb4b",
+      "registry_source_id": "src-edb0561f-5d38-5e79-9e44-6fdcd7a9cb4b",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.jobindex.dk/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-f22a0c51-169f-55d8-b709-95c321c8bf80",
+      "registry_source_id": "geo-a18239b4d88f9ef1",
+      "decision": "exact_endpoint_unique_existing",
+      "canonical_url": "https://jobs.hku.hk/"
+    },
+    {
+      "seed_source_id": "src-f3d83f8d-79b7-54c2-b50f-30a7d591a6ab",
+      "registry_source_id": "src-f3d83f8d-79b7-54c2-b50f-30a7d591a6ab",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.aag.org/studentopportunities/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-f41e76db-3347-503d-a215-c71e718e7644",
+      "registry_source_id": "src-f41e76db-3347-503d-a215-c71e718e7644",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.jobbnorge.no/search",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-f44e5157-10f8-5c89-88da-c873a18957d9",
+      "registry_source_id": "src-f44e5157-10f8-5c89-88da-c873a18957d9",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.universitypositions.eu/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-f4920605-6b57-5ba6-84d3-623ab163bb81",
+      "registry_source_id": "src-f4920605-6b57-5ba6-84d3-623ab163bb81",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.phdportal.com/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-f4b1d527-978a-5bdb-a65d-def899d5064d",
+      "registry_source_id": "src-f4b1d527-978a-5bdb-a65d-def899d5064d",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://fapesp.br/en",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-f5e5e457-71df-5a4b-96e6-d0a0db51074b",
+      "registry_source_id": "src-f5e5e457-71df-5a4b-96e6-d0a0db51074b",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.cityu.edu.hk/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-fa868667-bbd8-56ff-97fa-521a84780ffb",
+      "registry_source_id": "src-fa868667-bbd8-56ff-97fa-521a84780ffb",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.academicwork.ca/",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-fb683053-31f9-5259-a173-78e34c1a9b67",
+      "registry_source_id": "src-fb683053-31f9-5259-a173-78e34c1a9b67",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.agu.org/advancement",
+      "existing_matches": []
+    },
+    {
+      "seed_source_id": "src-fcd15c14-de70-5b45-9208-3068294e3392",
+      "registry_source_id": "src-fcd15c14-de70-5b45-9208-3068294e3392",
+      "decision": "retained_new_or_ambiguous_scope",
+      "canonical_url": "https://www.earthworks-jobs.com/",
+      "existing_matches": []
+    }
+  ]
+}

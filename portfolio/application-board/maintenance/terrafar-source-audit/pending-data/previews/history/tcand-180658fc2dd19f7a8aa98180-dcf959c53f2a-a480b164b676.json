@@ -1,0 +1,18 @@
+{
+  "preview_type": "branch-only-pending-data-review",
+  "formal_record_id": "eth-86a50882f2d1",
+  "title": "大气化学",
+  "active_catalog_record_id": "geo-eth-atmosphere",
+  "target_record_id": "geo-eth-atmosphere",
+  "target_identity_source": "active_catalog_exact_url",
+  "candidate_id": "tcand-180658fc2dd19f7a8aa98180",
+  "changes": {
+    "funding": {
+      "before": "博士研究岗位",
+      "after": "项目资金已落实4年；预计入职时间为March–September 2027。"
+    }
+  },
+  "status": "pending_human_data_review",
+  "public_page_changed": false,
+  "supersedes_sha256": "ef6307554e848ac08eb6fbf93ff650e1b82e1e44624ab6dc8ddc5973a651b402"
+}

@@ -1,0 +1,115 @@
+{
+  "run_id": "initial-endpoint-review",
+  "tasks": [
+    {
+      "task_id": "initial-endpoint-review--src-ea78189b-e6bf-5af4-9898-2ee34ece8de4",
+      "source_id": "src-ea78189b-e6bf-5af4-9898-2ee34ece8de4",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.campusfrance.org/en",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-ed74cd2d-c167-5c8e-8fc4-bee7d26fb89d",
+      "source_id": "src-ed74cd2d-c167-5c8e-8fc4-bee7d26fb89d",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.csc.edu.cn/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-edb0561f-5d38-5e79-9e44-6fdcd7a9cb4b",
+      "source_id": "src-edb0561f-5d38-5e79-9e44-6fdcd7a9cb4b",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.jobindex.dk/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-f22a0c51-169f-55d8-b709-95c321c8bf80",
+      "source_id": "src-f22a0c51-169f-55d8-b709-95c321c8bf80",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://jobs.hku.hk/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-f3d83f8d-79b7-54c2-b50f-30a7d591a6ab",
+      "source_id": "src-f3d83f8d-79b7-54c2-b50f-30a7d591a6ab",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.aag.org/studentopportunities/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-f41e76db-3347-503d-a215-c71e718e7644",
+      "source_id": "src-f41e76db-3347-503d-a215-c71e718e7644",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.jobbnorge.no/search",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-f44e5157-10f8-5c89-88da-c873a18957d9",
+      "source_id": "src-f44e5157-10f8-5c89-88da-c873a18957d9",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.universitypositions.eu/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-f4920605-6b57-5ba6-84d3-623ab163bb81",
+      "source_id": "src-f4920605-6b57-5ba6-84d3-623ab163bb81",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.phdportal.com/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-f4b1d527-978a-5bdb-a65d-def899d5064d",
+      "source_id": "src-f4b1d527-978a-5bdb-a65d-def899d5064d",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://fapesp.br/en",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-f5e5e457-71df-5a4b-96e6-d0a0db51074b",
+      "source_id": "src-f5e5e457-71df-5a4b-96e6-d0a0db51074b",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.cityu.edu.hk/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    }
+  ]
+}

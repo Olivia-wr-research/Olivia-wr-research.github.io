@@ -1,0 +1,115 @@
+{
+  "run_id": "initial-endpoint-review",
+  "tasks": [
+    {
+      "task_id": "initial-endpoint-review--src-6935c8d2-39b0-56c1-9b79-a1b353890454",
+      "source_id": "src-6935c8d2-39b0-56c1-9b79-a1b353890454",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.studyinkorea.go.kr/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-6eb44c1c-5526-5134-b780-1c72fb959d61",
+      "source_id": "src-6eb44c1c-5526-5134-b780-1c72fb959d61",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.ethz.ch/en/the-eth-zurich/working-teaching-and-research.html",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-732f80f3-d9d4-53b0-bb83-f416903df54f",
+      "source_id": "src-732f80f3-d9d4-53b0-bb83-f416903df54f",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.unam.mx/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-74cefa49-2430-5a5a-9804-4582795cccd0",
+      "source_id": "src-74cefa49-2430-5a5a-9804-4582795cccd0",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.kuleuven.be/personeel/jobsite/en/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-77111b24-2cad-5aa2-bb74-345004ea2435",
+      "source_id": "src-77111b24-2cad-5aa2-bb74-345004ea2435",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.uct.ac.za/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-77630c91-ee3f-55fa-9ca5-25e75469d866",
+      "source_id": "src-77630c91-ee3f-55fa-9ca5-25e75469d866",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.african-union.org/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-77bea8f6-40e0-5188-b302-af64fb995712",
+      "source_id": "src-77bea8f6-40e0-5188-b302-af64fb995712",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.timeshighereducation.com/unijobs",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-79bb558e-75c8-54ae-9f59-208bceced203",
+      "source_id": "src-79bb558e-75c8-54ae-9f59-208bceced203",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www.mpg.de/career",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-7bea9cfd-ade1-5f66-b4ca-b0a1efdb7fc0",
+      "source_id": "src-7bea9cfd-ade1-5f66-b4ca-b0a1efdb7fc0",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://hkustcareers.ust.hk/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    },
+    {
+      "task_id": "initial-endpoint-review--src-7e1af851-a5f0-5700-8917-6693d6e28cb2",
+      "source_id": "src-7e1af851-a5f0-5700-8917-6693d6e28cb2",
+      "run_id": "initial-endpoint-review",
+      "state": "pending",
+      "attempts": 0,
+      "endpoint": null,
+      "discovery_url": "https://www2.jobs.cuhk.edu.hk/",
+      "task_kind": "resolve_endpoint",
+      "note": "Plan only; no agent launched and no URL checked."
+    }
+  ]
+}
