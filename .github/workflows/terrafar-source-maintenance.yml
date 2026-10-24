@@ -124,22 +124,16 @@ jobs:
             metadata="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$restore_run_id")"
             python3 -c 'import json,sys; r=json.load(sys.stdin); sys.exit(0 if r.get("conclusion")=="success" and r.get("path","").split("@",1)[0]==sys.argv[1] and (r.get("head_repository") or {}).get("full_name")==sys.argv[2] else 1)' '.github/workflows/terrafar-source-maintenance.yml' "$GITHUB_REPOSITORY" <<<"$metadata" || { echo 'Explicit restore run is not a successful run of this repository workflow.' >&2; exit 1; }
             artifacts="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$restore_run_id/artifacts?per_page=100")"
-            artifact_name="$(python3 -c 'import json,sys; d=json.load(sys.stdin); a=[x for x in d.get("artifacts",[]) if not x.get("expired") and (x.get("name","").startswith("terrafar-source-maintenance-state-v3-") or x.get("name","").startswith("terrafar-round-002-first-"))]; a.sort(key=lambda x:x.get("created_at", "")); print(a[-1]["name"] if a else "")' <<<"$artifacts")"
+            artifact_name="$(python3 -c 'import json,sys; d=json.load(sys.stdin); a=[x for x in d.get("artifacts",[]) if not x.get("expired") and (x.get("name","").startswith("terrafar-source-maintenance-state-") or x.get("name","").startswith("terrafar-round-002-first-"))]; a.sort(key=lambda x:x.get("created_at", "")); print(a[-1]["name"] if a else "")' <<<"$artifacts")"
           fi
           if [[ -z "$restore_run_id" ]]; then
             echo 'No prior successful maintenance run with an unexpired state artifact was found on this branch or the default branch. Supply an explicit successful restore_run_id only after reviewing its artifact.' >&2
             exit 1
           fi
           [[ -n "$artifact_name" ]] || { echo "No unexpired versioned state artifact found for Actions run $restore_run_id." >&2; exit 1; }
-          if [[ "$artifact_name" == terrafar-round-002-first-* ]]; then
-            latest_branch_v3="$(find_valid_run "$GITHUB_REF_NAME" || true)"
-            default_branch="$(gh api "repos/$GITHUB_REPOSITORY" --jq .default_branch)"
-            latest_default_v3=""
-            if [[ "$default_branch" != "$GITHUB_REF_NAME" ]]; then
-              latest_default_v3="$(find_valid_run "$default_branch" || true)"
-            fi
+          if [[ "$artifact_name" == terrafar-round-002-first-* || ( "$artifact_name" == terrafar-source-maintenance-state-* && "$artifact_name" != terrafar-source-maintenance-state-v3-* ) ]]; then
             latest_any_v3="$(find_valid_run '*' || true)"
-            if [[ -n "$latest_branch_v3" || -n "$latest_default_v3" || -n "$latest_any_v3" ]]; then
+            if [[ -n "$latest_any_v3" ]]; then
               echo 'Legacy bootstrap is one-time only; a version 3 state artifact already exists in this repository.' >&2
               exit 1
             fi
