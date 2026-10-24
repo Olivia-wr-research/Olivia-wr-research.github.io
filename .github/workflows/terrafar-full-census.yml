@@ -64,7 +64,7 @@ jobs:
             echo "artifact_name=$INPUT_RESTORE_ARTIFACT_NAME" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          runs="$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/terrafar-full-census.yml/runs" -f branch="$GITHUB_REF_NAME" -f status=completed -f per_page=100)"
+          runs="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs" -f branch="$GITHUB_REF_NAME" -f status=completed -f per_page=100)"
           while IFS=$'\t' read -r run_id run_attempt; do
             [[ -n "$run_id" && "$run_id" != "$GITHUB_RUN_ID" ]] || continue
             jobs="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/jobs" -f per_page=100)"
@@ -78,7 +78,7 @@ jobs:
             echo "artifact_name=$artifact_name" >> "$GITHUB_OUTPUT"
             echo "restore_source=previous_census_run" >> "$GITHUB_OUTPUT"
             exit 0
-          done < <(jq -r '.workflow_runs[] | select(.head_branch==env.GITHUB_REF_NAME) | [.id,.run_attempt] | @tsv' <<<"$runs")
+          done < <(jq -r '.workflow_runs[] | select(.path==\".github/workflows/terrafar-full-census.yml\" and .head_branch==env.GITHUB_REF_NAME) | [.id,.run_attempt] | @tsv' <<<"$runs")
           echo 'run_id=40059887717' >> "$GITHUB_OUTPUT"
           echo 'artifact_name=terrafar-source-maintenance-state-v3-40059887717-1' >> "$GITHUB_OUTPUT"
           echo 'restore_source=trusted_legacy_bootstrap' >> "$GITHUB_OUTPUT"
