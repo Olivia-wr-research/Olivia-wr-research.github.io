@@ -25,3 +25,9 @@
  .top nav button,.top nav a{min-width:0;max-width:100%;white-space:normal!important;overflow-wrap:anywhere;text-align:center;line-height:1.35;min-height:44px;padding:8px 4px!important;display:flex;align-items:center;justify-content:center}
  .top{max-width:100%;box-sizing:border-box}.top .brand{min-width:0}.page-route{overflow-wrap:anywhere}
 }
+
+/* Expired dates remain readable and saved; color is paired with the shared text label. */
+.job[data-deadline=past],.unit-card[data-deadline=past]{border-left:4px solid #a4475d}
+.deadline-expiry-notice{border-left:4px solid #a4475d;background:#f8e9ee;color:#702d41;padding:14px 18px;border-radius:4px;font-weight:600;line-height:1.7}
+.night-mode .deadline-expiry-notice{background:#442736;color:#f4cfdb}
+.night-mode .opportunity-state .state[data-state=closed]{background:#442736;color:#f4cfdb}
