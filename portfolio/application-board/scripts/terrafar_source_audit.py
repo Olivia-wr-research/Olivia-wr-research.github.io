@@ -46,10 +46,12 @@ def request_sent_for_error(error):
  if isinstance(error,RequestBudgetExceeded): return False
  return not (isinstance(error,ValueError) and str(error) in ('private_or_non_global_address','destination_dns_resolution_failed','invalid_dns_address','non_public_http_url','proxy_configured_unverified_by_pinned_transport','request_host_outside_preflight_scope'))
 
-def attach_http_trace(error,transport_attempted=False,http_request_started=False,http_request_sent=False,http_status=None,redirect_chain=None):
+def attach_http_trace(error,transport_attempted=False,http_request_started=False,http_request_sent=False,http_status=None,redirect_chain=None,http_request_count=0,http_request_count_exact=True):
  error.transport_attempted=bool(transport_attempted or getattr(error,'transport_attempted',False))
  error.http_request_started=bool(http_request_started or getattr(error,'http_request_started',False))
  error.http_request_sent=bool(http_request_sent or getattr(error,'http_request_sent',False))
+ error.http_request_count=max(int(http_request_count or 0),int(getattr(error,'http_request_count',0) or 0))
+ error.http_request_count_exact=bool(http_request_count_exact and getattr(error,'http_request_count_exact',True))
  if http_status is not None or not hasattr(error,'http_status'): error.http_status=http_status
  if redirect_chain is not None: error.redirect_chain=list(redirect_chain)
  elif not hasattr(error,'redirect_chain'): error.redirect_chain=[]
@@ -202,42 +204,48 @@ def paced(host, rate):
   last_by_host[host]=time.monotonic()
 
 def http_get(url, timeout, rate, headers=None):
- request_url=url; redirects=[]; transport_attempted=False; http_request_started=False; http_request_sent=False; last_status=None
+ request_url=url; redirects=[]; transport_attempted=False; http_request_started=False; http_request_sent=False; http_request_count=0; last_status=None
  try: p,addresses=resolve_public_url(request_url)
- except Exception as error: raise attach_http_trace(error,redirect_chain=redirects)
+ except Exception as error: raise attach_http_trace(error,redirect_chain=redirects,http_request_count=http_request_count)
  for redirect_count in range(6):
   try:
    paced(p.hostname,rate); reserve_http_request()
-  except Exception as error: raise attach_http_trace(error,transport_attempted,http_request_started,http_request_sent,last_status,redirects)
+  except Exception as error: raise attach_http_trace(error,transport_attempted,http_request_started,http_request_sent,last_status,redirects,http_request_count)
   try: conn=pinned_connection(p,addresses,timeout)
   except Exception as error:
-   raise attach_http_trace(error,transport_attempted or transport_attempted_for_error(error),http_request_started,http_request_sent,last_status,redirects)
+   raise attach_http_trace(error,transport_attempted or transport_attempted_for_error(error),http_request_started,http_request_sent,last_status,redirects,http_request_count)
   transport_attempted=True
   target=p.path or '/'
   if p.query: target+='?'+p.query
   try:
    http_request_started=True
-   conn.request('GET',target,headers={'User-Agent':UA,'Accept':'text/html,application/xhtml+xml,application/rss+xml,application/xml;q=0.9,*/*;q=0.5',**(headers or {})})
-   http_request_sent=True
+   try:
+    conn.request('GET',target,headers={'User-Agent':UA,'Accept':'text/html,application/xhtml+xml,application/rss+xml,application/xml;q=0.9,*/*;q=0.5',**(headers or {})})
+   except Exception as error:
+    # The transport failed while sending; the peer may have received none, some,
+    # or all of the request. Preserve that uncertainty instead of asserting 0.
+    error.http_request_count_exact=False
+    raise
+   http_request_sent=True; http_request_count+=1
    response=conn.getresponse(); status=response.status; response_headers=dict(response.getheaders())
    last_status=status
    body=response.read(MAX_BYTES+1); complete=len(body)<=MAX_BYTES
   except Exception as error:
-   raise attach_http_trace(error,transport_attempted,http_request_started,http_request_sent,last_status,redirects)
+   raise attach_http_trace(error,transport_attempted,http_request_started,http_request_sent,last_status,redirects,http_request_count)
   finally:
    conn.close()
   location=next((value for key,value in response_headers.items() if key.lower()=='location'),None)
   if status in (301,302,303,307,308) and location:
    new=urljoin(request_url,location)
    redirects.append({'from':request_url,'status':status,'to':new})
-   if redirect_count>=5: raise attach_http_trace(ValueError('redirect_limit_exceeded'),transport_attempted,http_request_started,http_request_sent,last_status,redirects)
+   if redirect_count>=5: raise attach_http_trace(ValueError('redirect_limit_exceeded'),transport_attempted,http_request_started,http_request_sent,last_status,redirects,http_request_count)
    try: new_parts,new_addresses=resolve_public_url(new)
-   except Exception as error: raise attach_http_trace(error,transport_attempted,http_request_started,http_request_sent,last_status,redirects)
-   if p.scheme=='https' and new_parts.scheme!='https': raise attach_http_trace(ValueError('https_downgrade_redirect'),transport_attempted,http_request_started,http_request_sent,last_status,redirects)
+   except Exception as error: raise attach_http_trace(error,transport_attempted,http_request_started,http_request_sent,last_status,redirects,http_request_count)
+   if p.scheme=='https' and new_parts.scheme!='https': raise attach_http_trace(ValueError('https_downgrade_redirect'),transport_attempted,http_request_started,http_request_sent,last_status,redirects,http_request_count)
    request_url=new; p=new_parts; addresses=new_addresses
    continue
-  return {'status':status,'url':request_url,'headers':response_headers,'body':body[:MAX_BYTES],'complete':complete,'redirect_chain':redirects}
- raise attach_http_trace(ValueError('redirect_limit_exceeded'),transport_attempted,http_request_started,http_request_sent,last_status,redirects)
+  return {'status':status,'url':request_url,'headers':response_headers,'body':body[:MAX_BYTES],'complete':complete,'redirect_chain':redirects,'request_count':http_request_count,'request_count_exact':True}
+ raise attach_http_trace(ValueError('redirect_limit_exceeded'),transport_attempted,http_request_started,http_request_sent,last_status,redirects,http_request_count)
 
 def parse_robots(text,path):
  ua='*'; active=False; disallow=[]; allow=[]
@@ -268,7 +276,7 @@ def robots_gate(url,timeout,rate,retries=1):
    aid=str(uuid.uuid4()); started=now()
    try:
     res=http_get(f'{p.scheme}://{p.netloc}/robots.txt',timeout,rate)
-    attempts.append({'attempt_id':aid,'attempt_number':n+1,'endpoint':'robots.txt','started_at':started,'completed_at':now(),'request_sent':True,'http_status':res['status'],'redirect_chain':res.get('redirect_chain',[]),'error':None})
+    attempts.append({'attempt_id':aid,'attempt_number':n+1,'endpoint':'robots.txt','started_at':started,'completed_at':now(),'request_sent':True,'http_request_count':res.get('request_count',1),'http_request_count_exact':res.get('request_count_exact',True),'http_status':res['status'],'redirect_chain':res.get('redirect_chain',[]),'error':None})
     if res['status'] in (429,500,502,503,504) and n<retries:
      time.sleep(min(2**n,4)); continue
     if res['status']==404: result={'allowed':True,'status':404,'reason':'robots_not_found'}
@@ -281,7 +289,7 @@ def robots_gate(url,timeout,rate,retries=1):
     else: result={'allowed':False,'status':res['status'],'reason':'robots_policy_unresolved'}
     break
    except Exception as e:
-    attempts.append({'attempt_id':aid,'attempt_number':n+1,'endpoint':'robots.txt','started_at':started,'completed_at':now(),'transport_attempted':transport_attempted_for_error(e),'http_request_started':bool(getattr(e,'http_request_started',False)),'http_status':http_status_for_error(e),'request_sent':request_sent_for_error(e),'redirect_chain':redirect_chain_for_error(e),'error':type(e).__name__,'error_detail':str(e)[:300]})
+    attempts.append({'attempt_id':aid,'attempt_number':n+1,'endpoint':'robots.txt','started_at':started,'completed_at':now(),'transport_attempted':transport_attempted_for_error(e),'http_request_started':bool(getattr(e,'http_request_started',False)),'http_request_count':int(getattr(e,'http_request_count',0) or 0),'http_request_count_exact':bool(getattr(e,'http_request_count_exact',True)),'http_status':http_status_for_error(e),'request_sent':request_sent_for_error(e),'redirect_chain':redirect_chain_for_error(e),'error':type(e).__name__,'error_detail':str(e)[:300]})
     if n<retries and not isinstance(e,RequestBudgetExceeded) and not is_safety_guard_error(e): time.sleep(min(2**n,4)); continue
     guard_reason=is_safety_guard_error(e) and str(e)!='request_host_outside_preflight_scope'
     scope_guard=isinstance(e,ValueError) and str(e)=='request_host_outside_preflight_scope'
@@ -338,20 +346,28 @@ def fetch_endpoint(url, timeout, rate, retries, conditional, cached):
  rob=robots_gate(url,timeout,rate,retries); attempts=list(rob.get('attempts',[]))
  if not rob['allowed']:
   outcome='not_attempted' if rob['reason']=='runner_request_budget_exhausted' else 'blocked'
-  return {'outcome':outcome,'attempts':attempts,'http_status':rob.get('status'),'reason':rob['reason'],'robots':rob,'body':None,'response_url':None,'response_hash':None,'etag':None,'last_modified':None,'content_complete':False}
+  return {'outcome':outcome,'attempts':attempts,'http_status':rob.get('status'),'reason':rob['reason'],'robots':rob,'body':None,'response_url':None,'response_hash':None,'etag':None,'last_modified':None,'content_complete':False,'response_body_bytes':0}
+ # Conditional requests are safe only when a validated semantic baseline exists.
+ # Transport-only ETags can otherwise turn a required first read into an empty 304.
+ semantic_cache=cached if conditional and cached and cached.get('semantic_hash') else None
  for n in range(retries+1):
   aid=str(uuid.uuid4()); started=now(); hdr={}
-  if cached:
-   if cached.get('etag'): hdr['If-None-Match']=cached['etag']
-   if cached.get('last_modified'): hdr['If-Modified-Since']=cached['last_modified']
+  if semantic_cache:
+   if semantic_cache.get('etag'): hdr['If-None-Match']=semantic_cache['etag']
+   if semantic_cache.get('last_modified'): hdr['If-Modified-Since']=semantic_cache['last_modified']
   try:
    res=http_get(url,timeout,rate,hdr); last=res
-   attempts.append({'attempt_id':aid,'attempt_number':n+1,'started_at':started,'completed_at':now(),'request_sent':True,'http_status':res['status'],'redirect_chain':res.get('redirect_chain',[]),'error':None})
+   attempt={'attempt_id':aid,'attempt_number':n+1,'started_at':started,'completed_at':now(),'request_sent':True,'http_request_count':res.get('request_count',1),'http_request_count_exact':res.get('request_count_exact',True),'http_status':res['status'],'redirect_chain':res.get('redirect_chain',[]),'error':None}
+   attempts.append(attempt)
+   if res['status']==304 and not semantic_cache and n<retries:
+    attempt['retry_reason']='304_without_successful_semantic_baseline_retry_unconditional'
+    time.sleep(min(2**n,4))
+    continue
    if res['status'] in (429,500,502,503,504) and n<retries:
     time.sleep(min(2**n,4)); continue
-   h=res['headers']; return {'outcome':'response','attempts':attempts,'http_status':res['status'],'reason':None,'robots':rob,'body':res['body'],'response_url':res['url'],'response_hash':sha(res['body']) if res['complete'] else None,'etag':h.get('ETag'),'last_modified':h.get('Last-Modified'),'content_complete':res['complete']}
+   h=res['headers']; return {'outcome':'response','attempts':attempts,'http_status':res['status'],'reason':None,'robots':rob,'body':res['body'],'response_url':res['url'],'response_hash':sha(res['body']) if res['complete'] else None,'etag':h.get('ETag'),'last_modified':h.get('Last-Modified'),'content_complete':res['complete'],'response_body_bytes':len(res['body'])}
   except Exception as e:
-   attempts.append({'attempt_id':aid,'attempt_number':n+1,'started_at':started,'completed_at':now(),'transport_attempted':transport_attempted_for_error(e),'http_request_started':bool(getattr(e,'http_request_started',False)),'http_status':http_status_for_error(e),'request_sent':request_sent_for_error(e),'redirect_chain':redirect_chain_for_error(e),'error':type(e).__name__,'error_detail':str(e)[:300]})
+   attempts.append({'attempt_id':aid,'attempt_number':n+1,'started_at':started,'completed_at':now(),'transport_attempted':transport_attempted_for_error(e),'http_request_started':bool(getattr(e,'http_request_started',False)),'http_request_count':int(getattr(e,'http_request_count',0) or 0),'http_request_count_exact':bool(getattr(e,'http_request_count_exact',True)),'http_status':http_status_for_error(e),'request_sent':request_sent_for_error(e),'redirect_chain':redirect_chain_for_error(e),'error':type(e).__name__,'error_detail':str(e)[:300]})
    if n<retries and not isinstance(e,RequestBudgetExceeded) and not is_safety_guard_error(e): time.sleep(min(2**n,4)); continue
  budget_exhausted=bool(attempts and attempts[-1].get('error')=='RequestBudgetExceeded')
  if budget_exhausted:
@@ -369,7 +385,7 @@ def check_one(source, run_id, state, timeout, rate, retries):
   with state_guard:
    cached=state.get('snapshots',{}).get(key)
    transport_key=key_for(url,None); cached_transport=state.get('snapshots',{}).get(transport_key)
-  conditional_state=cached if adapter else cached_transport
+  conditional_state=cached if adapter and cached and cached.get('semantic_hash') else None
   f=fetch_endpoint(url,timeout,rate,retries,True,conditional_state)
   status=f['http_status']; body=f['body']; outcome='failed'; reason=f['reason'] or 'unknown'; complete=False; target=False; candidate_rows=None; scope=None
   first_observed=False; transport_changed=None
@@ -410,7 +426,7 @@ def check_one(source, run_id, state, timeout, rate, retries):
      outcome='failed'; reason='adapter_parse_error:'+type(e).__name__+':'+str(e)[:240]
    else:
     outcome='needs_endpoint'; reason='page_retrieved_but_no_complete_opportunity_list_adapter';
-  result={'endpoint_id':endpoint.get('endpoint_id',f'{source["source_id"]}:primary'),'url':url,'adapter':adapter,'outcome':outcome,'attempted':any(a.get('request_sent',True) for a in f['attempts']) or outcome=='blocked','attempts':f['attempts'],'completed_at':now(),'http_status':status,'response_url':f.get('response_url'),'content_sha256':f.get('response_hash'),'transport_changed':transport_changed,'robots':f['robots'],'scope':source_adapters.enrich_scope(endpoint,scope) or {'page_fetch_only':adapter is None},'target_validated':target,'content_complete':complete,'baseline_available':bool(cached and cached.get('semantic_hash')),'first_observed':first_observed,'candidate_count':len(candidate_rows) if candidate_rows is not None else 0,'candidate_rows':candidate_rows or [],'reason':reason}
+  result={'endpoint_id':endpoint.get('endpoint_id',f'{source["source_id"]}:primary'),'url':url,'adapter':adapter,'outcome':outcome,'attempted':any(a.get('request_sent',True) for a in f['attempts']) or outcome=='blocked','attempts':f['attempts'],'completed_at':now(),'http_status':status,'response_url':f.get('response_url'),'content_sha256':f.get('response_hash'),'response_body_bytes':f.get('response_body_bytes',0),'transport_changed':transport_changed,'robots':f['robots'],'scope':source_adapters.enrich_scope(endpoint,scope) or {'page_fetch_only':adapter is None},'target_validated':target,'content_complete':complete,'baseline_available':bool(cached and cached.get('semantic_hash')),'first_observed':first_observed,'candidate_count':len(candidate_rows) if candidate_rows is not None else 0,'candidate_rows':candidate_rows or [],'reason':reason}
   if outcome not in VALID: raise ValueError('invalid outcome')
   all_results.append(result)
  # Required endpoints all have a terminal result; a source-level summary is full only if all required endpoints are full.
@@ -483,6 +499,40 @@ def build_candidate_observations(sources,state,results):
                     'adapter_scope':endpoint.get('adapter_scope',source.get('adapter_scope',{})), 'candidate':row,
                 })
     return observations
+
+def source_run_metrics(results):
+ # Separate scheduled source workers from HTTP requests actually sent.
+ endpoints=[endpoint for result in results for endpoint in result.get('endpoints',[])]
+ target_attempts=[attempt for endpoint in endpoints for attempt in endpoint.get('attempts',[])]
+ robots_attempts=[attempt for endpoint in endpoints for attempt in endpoint.get('robots',{}).get('attempts',[])]
+ target_sent=[attempt for attempt in target_attempts if attempt.get('request_sent') and attempt.get('endpoint')!='robots.txt']
+ robots_sent=[attempt for attempt in robots_attempts if attempt.get('request_sent')]
+ target_rows=[attempt for attempt in target_attempts if attempt.get('endpoint')!='robots.txt']
+ exact_request_counts=all('http_request_count' in attempt and attempt.get('http_request_count_exact') is True for attempt in target_rows+robots_attempts)
+ sources_with_target_request=sum(any(attempt.get('request_sent') for endpoint in result.get('endpoints',[])
+                                     for attempt in endpoint.get('attempts',[]) if attempt.get('endpoint')!='robots.txt') for result in results)
+ sources_with_target_response=sum(any(attempt.get('http_status') is not None for endpoint in result.get('endpoints',[])
+                                      for attempt in endpoint.get('attempts',[]) if attempt.get('endpoint')!='robots.txt') for result in results)
+ endpoint_response_count=sum(any(attempt.get('http_status') is not None and attempt.get('endpoint')!='robots.txt' for attempt in endpoint.get('attempts',[]))
+                             for endpoint in endpoints)
+ body_count=sum(int(endpoint.get('response_body_bytes') or 0)>0 for endpoint in endpoints)
+ complete_sources=sum(result.get('outcome') in {'checked_changed','checked_unchanged','checked_empty'} for result in results)
+ return {
+  'worker_started_sources':sum(bool(result.get('attempted')) for result in results),
+  'sources_with_target_http_request':sources_with_target_request,
+  'sources_with_target_http_response':sources_with_target_response,
+  'endpoints_with_target_http_request':sum(any(attempt.get('request_sent') and attempt.get('endpoint')!='robots.txt' for attempt in endpoint.get('attempts',[])) for endpoint in endpoints),
+  'endpoints_with_target_http_response':endpoint_response_count,
+  'target_http_requests_sent':sum(int(attempt.get('http_request_count',bool(attempt.get('request_sent')))) for attempt in target_rows),
+  'robots_http_requests_sent':sum(int(attempt.get('http_request_count',bool(attempt.get('request_sent')))) for attempt in robots_attempts),
+  'target_request_sent_attempt_rows':len(target_sent),
+  'robots_request_sent_attempt_rows':len(robots_sent),
+  'total_http_requests_sent':sum(int(attempt.get('http_request_count',bool(attempt.get('request_sent')))) for attempt in target_rows+robots_attempts),
+  'http_request_counts_exact':exact_request_counts,
+  'target_response_bodies_with_bytes':body_count,
+  'complete_range_checks':complete_sources,
+ }
+
 
 def run(args):
  configure_request_budget(getattr(args,'http_request_budget',2000))
@@ -564,7 +614,8 @@ def run(args):
  endpoint_results=[endpoint for result in results for endpoint in result.get('endpoints',[])]
  endpoint_counts=Counter(item.get('outcome','unknown') for item in endpoint_results)
  if sum(counts.values())!=len(plan_ids): raise RuntimeError('result conservation failed')
- manifest['status']='complete'; manifest['completed_at']=now(); manifest['result_count']=len(results); manifest['status_counts']=dict(counts); manifest['executed_source_ids']=[sid for sid in plan_ids if completed[sid].get('attempted')]; manifest['executed_source_count']=len(manifest['executed_source_ids']); manifest['write_permission_required']=False; writej(run_dir/'manifest.json',manifest)
+ network_metrics=source_run_metrics(results)
+ manifest['status']='complete'; manifest['completed_at']=now(); manifest['result_count']=len(results); manifest['status_counts']=dict(counts); manifest['executed_source_ids']=[sid for sid in plan_ids if completed[sid].get('attempted')]; manifest['executed_source_count']=len(manifest['executed_source_ids']); manifest['network_metrics']=network_metrics; manifest['write_permission_required']=False; writej(run_dir/'manifest.json',manifest)
  observations=build_candidate_observations(sources,state,results)
  with candidate_ledger.ledger_lock(ledger_path):
   ledger=candidate_ledger.load_ledger(ledger_path,require_existing=getattr(args,'require_candidate_ledger',False))
@@ -578,7 +629,7 @@ def run(args):
  candidate_ledger.save_ledger(run_dir/'candidate_ledger.json',ledger)
  successful=sum(counts[k] for k in ('checked_changed','checked_unchanged','checked_empty'))
  ledger_status_counts={status:sum(task.get('status')==status for task in ledger.get('tasks',{}).values()) for status in ('pending','verification_failed','insufficient_evidence','verified','excluded','duplicate')}
- report={'run_id':run_id,'created_at':manifest['created_at'],'completed_at':manifest['completed_at'],'network_mode':manifest['network_mode'],'execution_mode':manifest['execution_mode'],'registry_sha256':manifest['registry_sha256'],'adapter_catalog_sha256':manifest['adapter_catalog_sha256'],'plan_sha256':plan_hash,'total_sources':len(reg['sources']),'active_sources':len(active_sources),'planned_sources':len(plan_ids),'executed_sources':len(manifest['executed_source_ids']),'planned_endpoints':len(endpoint_results),'endpoint_status_counts':{k:endpoint_counts.get(k,0) for k in sorted(VALID)},'scope_mode':manifest['scope_mode'],'batch_offset':manifest['batch_offset'],'http_request_budget':http_request_budget_stats(),'status_counts':{k:counts.get(k,0) for k in sorted(VALID)},'result_conservation':sum(counts.values())==len(plan_ids),'complete_success_count':successful,'coverage':successful/len(plan_ids) if plan_ids else None,'candidate_review_tasks':len(queue),'candidate_content_review_tasks':len(content_review_queue),'candidate_open_status_review_tasks':len(open_status_queue),'candidate_ledger_revision':ledger.get('revision',0),'candidate_ledger_status_counts':ledger_status_counts,'skill_verified_count':ledger_status_counts['verified'],'candidate_data_written_to_formal_site':False,'results_path':'source_checks.jsonl','candidate_review_queue_path':'candidate_review_queue.jsonl','candidate_ledger_path':'candidate_ledger.json','notes':['HTTP availability is not opportunity verification.','needs_endpoint means page access may succeed but the full target list is not yet represented by a validated adapter.','partial on first parsed baseline means no prior comparison; it does not mean a newly published opportunity.','Adapter completeness applies only to its explicitly configured institution, opportunity type, filter and page scope; page snapshots do not prove site-wide opportunity coverage.','Candidate content review and current application-open status are independent tasks.','Candidate ledger preserves pending, failed and insufficient-evidence tasks across runs; terminal decisions require evidence.','Candidate rows remain separate from formal site data; this program does not invoke Codex models or publish data.','Failures, access blocks and not_attempted are never counted as no update.']}
+ report={'run_id':run_id,'created_at':manifest['created_at'],'completed_at':manifest['completed_at'],'network_mode':manifest['network_mode'],'execution_mode':manifest['execution_mode'],'registry_sha256':manifest['registry_sha256'],'adapter_catalog_sha256':manifest['adapter_catalog_sha256'],'plan_sha256':plan_hash,'total_sources':len(reg['sources']),'active_sources':len(active_sources),'planned_sources':len(plan_ids),'executed_sources':len(manifest['executed_source_ids']),'network_metrics':network_metrics,'planned_endpoints':len(endpoint_results),'endpoint_status_counts':{k:endpoint_counts.get(k,0) for k in sorted(VALID)},'scope_mode':manifest['scope_mode'],'batch_offset':manifest['batch_offset'],'http_request_budget':http_request_budget_stats(),'status_counts':{k:counts.get(k,0) for k in sorted(VALID)},'result_conservation':sum(counts.values())==len(plan_ids),'complete_success_count':successful,'coverage':successful/len(plan_ids) if plan_ids else None,'candidate_review_tasks':len(queue),'candidate_content_review_tasks':len(content_review_queue),'candidate_open_status_review_tasks':len(open_status_queue),'candidate_ledger_revision':ledger.get('revision',0),'candidate_ledger_status_counts':ledger_status_counts,'skill_verified_count':ledger_status_counts['verified'],'candidate_data_written_to_formal_site':False,'results_path':'source_checks.jsonl','candidate_review_queue_path':'candidate_review_queue.jsonl','candidate_ledger_path':'candidate_ledger.json','notes':['HTTP availability is not opportunity verification.','needs_endpoint means page access may succeed but the full target list is not yet represented by a validated adapter.','partial on first parsed baseline means no prior comparison; it does not mean a newly published opportunity.','Adapter completeness applies only to its explicitly configured institution, opportunity type, filter and page scope; page snapshots do not prove site-wide opportunity coverage.','Candidate content review and current application-open status are independent tasks.','Candidate ledger preserves pending, failed and insufficient-evidence tasks across runs; terminal decisions require evidence.','Candidate rows remain separate from formal site data; this program does not invoke Codex models or publish data.','Failures, access blocks and not_attempted are never counted as no update.','executed_sources counts source workers entered by the runner; use network_metrics to identify sources with actual HTTP requests and responses.']}
  writej(run_dir/'daily_report.json',report)
  md=['# TERRAFAR 来源检查日报', '',f'- Run: `{run_id}`',f'- 模式：`{manifest["network_mode"]}` / `{manifest["execution_mode"]}`',f'- 来源总数 / 启用 / 计划：{len(reg["sources"])} / {len(active_sources)} / {len(plan_ids)}',f'- 计划范围：`{manifest["scope_mode"]}`',f'- 对账守恒：{sum(counts.values())} = {len(plan_ids)}',f'- 完整成功覆盖率：{successful}/{len(plan_ids)}' if plan_ids else '- 完整成功覆盖率：未知（计划数为 0）','', '## 状态数量','']
  md += [f'- `{k}`：{counts.get(k,0)}' for k in sorted(VALID)]

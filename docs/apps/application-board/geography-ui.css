@@ -194,3 +194,18 @@ dialog.np-panel::backdrop{background:#05152370;backdrop-filter:blur(3px)}
 /* Brand refinement only; keep Earth photography, ocean palette and layout. */
 .top .brand .symbol{width:43px;height:43px;border-radius:50%;background:linear-gradient(145deg,#194b68,#0b293f);box-shadow:inset 0 0 0 1px #98d6ef55,0 2px 9px #092b4820}
 .top .brand .symbol svg{width:42px;height:42px}.top .brand{letter-spacing:2px;font-weight:600;color:#173f59!important}.top .brand small{font-size:9px;letter-spacing:3.4px;margin-top:3px;color:#557d96!important}
+
+/* Compact listing cards; preserve the established Earth palette and all controls. */
+.job{grid-template-columns:minmax(0,1fr) 190px;gap:14px;padding:14px 18px;margin-bottom:10px}
+.job h3{font-size:17px;line-height:1.4;margin:2px 0 6px}
+.job .original-title{font-size:11px;margin:2px 0 6px}
+.job .meta{font-size:11px;margin-bottom:6px}
+.job .summary{font-size:12px;line-height:1.55;margin:5px 0}
+.job .tags{gap:4px}.job .tag{font-size:10px;padding:2px 6px}
+.job .geo-card-essentials p{font-size:12px;line-height:1.55}
+.job .job-side{gap:7px}.job .card-finance{padding-left:12px}
+.job .card-finance h4{font-size:12px;margin:0 0 4px}.job .card-finance p{font-size:11px;line-height:1.5}
+.job .side-actions{gap:5px}.job .side-actions .official-card-link{min-height:32px;padding:6px 8px;font-size:11px}
+.job .side-actions button,.job .side-actions .detail{min-height:30px;padding:4px 7px;font-size:11px}
+@media(min-width:651px) and (max-width:1050px){.job{grid-template-columns:minmax(0,1fr) 172px;gap:12px;padding:13px 15px}.job .geo-card-essentials p{grid-template-columns:82px minmax(0,1fr)}}
+@media(max-width:650px){.job{grid-template-columns:1fr;padding:16px 15px;gap:10px}.job .job-side{display:flex;flex-direction:column;align-items:stretch}.job .card-finance{border-left:0;border-top:1px solid #b8cbd9;padding:10px 0 0}.job .side-actions{flex-direction:row;flex-wrap:wrap}.job .side-actions .official-card-link{flex:1 1 100%}.job .side-actions button{flex:1}}
