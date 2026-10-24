@@ -78,7 +78,7 @@ jobs:
             echo "artifact_name=$artifact_name" >> "$GITHUB_OUTPUT"
             echo "restore_source=previous_census_run" >> "$GITHUB_OUTPUT"
             exit 0
-          done < <(jq -r '.workflow_runs[] | select(.path==\".github/workflows/terrafar-full-census.yml\" and .head_branch==env.GITHUB_REF_NAME) | [.id,.run_attempt] | @tsv' <<<"$runs")
+          done < <(jq -r '.workflow_runs[] | select(.path==".github/workflows/terrafar-full-census.yml" and .head_branch==env.GITHUB_REF_NAME) | [.id,.run_attempt] | @tsv' <<<"$runs")
           echo 'run_id=40059887717' >> "$GITHUB_OUTPUT"
           echo 'artifact_name=terrafar-source-maintenance-state-v3-40059887717-1' >> "$GITHUB_OUTPUT"
           echo 'restore_source=trusted_legacy_bootstrap' >> "$GITHUB_OUTPUT"
