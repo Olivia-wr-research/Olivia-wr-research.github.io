@@ -10,6 +10,7 @@ on:
       - 'portfolio/application-board/scripts/terrafar_candidate_ledger.py'
       - 'portfolio/application-board/scripts/terrafar_restore_run_state.py'
       - 'portfolio/application-board/scripts/terrafar_state_archive.py'
+      - 'portfolio/application-board/scripts/terrafar_maintenance_artifact.py'
       - 'portfolio/application-board/maintenance/terrafar-source-audit/registry/**'
       - 'portfolio/application-board/maintenance/terrafar-source-audit/adapter_catalog.json'
       - 'portfolio/application-board/maintenance/terrafar-source-audit/state_archive_recipient.pem'
@@ -104,6 +105,8 @@ jobs:
         working-directory: portfolio/application-board
         env:
           TERRAFAR_STATE_DECRYPTION_KEY: ${{ secrets.TERRAFAR_STATE_DECRYPTION_KEY }}
+          CHECKPOINT_ORIGIN_ACTIONS_RUN_ID: ${{ steps.restore_checkpoint.outputs.run_id }}
+          CHECKPOINT_ORIGIN_ARTIFACT_NAME: ${{ steps.restore_checkpoint.outputs.artifact_name }}
         run: |
           set -euo pipefail
           download="$RUNNER_TEMP/terrafar-production-origin-download"
@@ -113,15 +116,47 @@ jobs:
               echo 'Encrypted state restore requires the TERRAFAR_STATE_DECRYPTION_KEY Actions secret.' >&2
               exit 2
             fi
-            expected_cert="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1])).get("state_encryption_certificate_sha256", ""))' "$download/artifact_manifest.json")"
+            if [[ -f "$download/artifact_manifest.json" ]]; then
+              manifest="$download/artifact_manifest.json"
+              manifest_format="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1],encoding="utf-8")).get("format", ""))' "$manifest")"
+            elif [[ -f "$download/maintenance_artifact_manifest.json" ]]; then
+              manifest="$download/maintenance_artifact_manifest.json"
+              manifest_format="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1],encoding="utf-8")).get("format", ""))' "$manifest")"
+            else
+              echo 'Encrypted checkpoint has no supported capture manifest.' >&2
+              exit 2
+            fi
+            expected_cert="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1],encoding="utf-8")).get("state_encryption_certificate_sha256", ""))' "$manifest")"
+          python3 - "$manifest" "$manifest_format" "$CHECKPOINT_ORIGIN_ACTIONS_RUN_ID" "$CHECKPOINT_ORIGIN_ARTIFACT_NAME" <<'PY'
+          import json,sys
+          metadata=json.load(open(sys.argv[1],encoding='utf-8'))
+          if metadata.get('format')!=sys.argv[2] or metadata.get('capture_status')!='complete':
+              raise SystemExit('encrypted checkpoint manifest is incomplete or has an unsupported format')
+          if str(metadata.get('actions_run_id'))!=sys.argv[3]:
+              raise SystemExit('encrypted checkpoint origin run does not match the selected Actions run')
+          expected_name=metadata.get('artifact_name') or f"terrafar-full-census-{metadata.get('actions_run_id')}-{metadata.get('run_attempt')}"
+          if expected_name!=sys.argv[4]:
+              raise SystemExit('encrypted checkpoint artifact name does not match its selected capture manifest')
+          PY
+            expected_archive="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1],encoding="utf-8")).get("encrypted_state_sha256", ""))' "$manifest")"
             actual_cert="$(sha256sum maintenance/terrafar-source-audit/state_archive_recipient.pem | cut -d ' ' -f 1)"
             [[ -n "$expected_cert" && "$expected_cert" == "$actual_cert" ]] || { echo 'Encrypted state recipient certificate does not match its capture manifest.' >&2; exit 2; }
+            if [[ -n "$expected_archive" ]]; then
+              actual_archive="$(sha256sum "$download/private_state.cms" | cut -d ' ' -f 1)"
+              [[ "$expected_archive" == "$actual_archive" ]] || { echo 'Encrypted state archive hash does not match its capture manifest.' >&2; exit 2; }
+            fi
+            if [[ "$manifest_format" != 'terrafar-full-census-artifact-v1' && "$manifest_format" != 'terrafar-source-maintenance-public-artifact-v1' ]]; then
+              echo 'Encrypted checkpoint format is unsupported.' >&2
+              exit 2
+            fi
             python3 scripts/terrafar_state_archive.py decrypt \
               --input "$download/private_state.cms" \
               --destination "$origin" \
               --recipient-certificate maintenance/terrafar-source-audit/state_archive_recipient.pem
-            cp -a "$download/run" "$origin/run"
-            cp "$download/artifact_manifest.json" "$origin/artifact_manifest.json"
+            if [[ -d "$download/run" ]]; then cp -a "$download/run" "$origin/run"; fi
+            if [[ "$manifest_format" == 'terrafar-full-census-artifact-v1' ]]; then
+              cp "$manifest" "$origin/artifact_manifest.json"
+            fi
           else
             mkdir -p "$origin"
             cp -a "$download/." "$origin/"
@@ -173,12 +208,13 @@ jobs:
           sys.path.insert(0,'scripts')
           import terrafar_candidate_ledger as candidate_ledger
           import terrafar_source_adapters as source_adapters
+          import terrafar_maintenance_artifact as public_artifact
           root=pathlib.Path('maintenance/terrafar-source-audit/runs')/os.environ['CENSUS_RUN_ID']
           state=pathlib.Path(os.environ['STATE_DIR'])
           export=pathlib.Path(os.environ['RUNNER_TEMP'])/'terrafar-full-census-export'
           private_state=pathlib.Path(os.environ['RUNNER_TEMP'])/'terrafar-full-census-state-private'
           private_state.mkdir(mode=0o700,parents=True,exist_ok=False); (export/'run').mkdir(parents=True,exist_ok=True)
-          for name in ('manifest.json','daily_report.json','source_checks.jsonl','daily_report.md','initial_release_gate.json'):
+          for name in ('manifest.json','source_checks.jsonl','initial_release_gate.json'):
               source=root/name
               if source.is_file(): shutil.copy2(source,export/'run'/name)
           for name in ('state.json','candidate_ledger.json','restore_verification.json','agent_batch.json'):
@@ -192,16 +228,14 @@ jobs:
               for line in checks_path.read_text(encoding='utf-8').splitlines():
                   if not line.strip(): continue
                   row=json.loads(line)
-                  row.pop('candidate_rows',None)
-                  for evidence in row.get('evidence',[]): evidence.pop('excerpt',None)
-                  for endpoint in row.get('endpoints',[]):
-                      endpoint.pop('candidate_rows',None)
-                      for evidence in endpoint.get('evidence',[]): evidence.pop('excerpt',None)
+                  row=public_artifact.sanitize_source_row(row)
                   safe_lines.append(json.dumps(row,ensure_ascii=False,separators=(',',':')))
               checks_path.write_text('\n'.join(safe_lines)+'\n',encoding='utf-8')
           report_path=root/'daily_report.json'
           if report_path.is_file():
-              report=json.loads(report_path.read_text())
+              safe_report=public_artifact.sanitize_report(json.loads(report_path.read_text(encoding='utf-8')))
+              (export/'run/daily_report.json').write_text(json.dumps(safe_report,ensure_ascii=False,sort_keys=True)+'\n',encoding='utf-8')
+              report=safe_report
               ready=report.get('planned_sources')==411 and report.get('complete_success_count')==411
               gate={'initial_scope_complete':ready,'source_count':411,'complete_sources':report.get('complete_success_count'),
                     'publication_authorized':False,'human_sample_review':'not_performed',
@@ -209,7 +243,13 @@ jobs:
               gate_path=root/'initial_release_gate.json'
               gate_path.write_text(json.dumps(gate,indent=2)+'\n')
               shutil.copy2(gate_path,export/'run/initial_release_gate.json')
-              (export/'run/daily_report.md').write_text('# Initial full-source census\n\n'+json.dumps(report,ensure_ascii=False,indent=2)+'\n\nPublication remains gated by source scope and actual human review.\n')
+              md=['# Initial full-source census','',
+                  f"- Run: `{report.get('run_id','unknown')}`",
+                  f"- Planned / executed sources: {report.get('planned_sources','unknown')} / {report.get('executed_sources','unknown')}",
+                  f"- Complete configured-range checks: {report.get('complete_success_count','unknown')}",
+                  '- Candidate-level material is excluded from this public report.',
+                  '', 'Publication remains gated by source scope and actual human review.', '']
+              (export/'run/daily_report.md').write_text('\n'.join(md),encoding='utf-8')
               summary={key:report.get(key) for key in ('run_id','planned_sources','executed_sources','network_metrics','status_counts','complete_success_count','candidate_review_tasks','candidate_ledger_status_counts','candidate_data_written_to_formal_site')}
               with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out:
                   out.write('# Initial full-source census\n\n```json\n'+json.dumps(summary,ensure_ascii=False,indent=2)+'\n```\n\nPublication remains gated.\n')
@@ -260,6 +300,8 @@ jobs:
           archive=subprocess.run(['python3','scripts/terrafar_state_archive.py','encrypt','--source-dir',str(private_state),
               '--output',str(encrypted),'--recipient-certificate','maintenance/terrafar-source-audit/state_archive_recipient.pem'],
               check=True,text=True,capture_output=True)
+          capture['encrypted_state_sha256']=hashlib.sha256(encrypted.read_bytes()).hexdigest()
+          (export/'artifact_manifest.json').write_text(json.dumps(capture,indent=2)+'\n')
           shutil.rmtree(private_state)
           # Only the encrypted state and public-safe source diagnostics are retained in this artifact.
           print(archive.stdout.strip())
