@@ -4,6 +4,12 @@
 
 **截至 2026-10-24，本集成分支以 PR #8 的分支为基线，尚未合入 `main`。新的加密恢复、全量日检和固定核验报告仍需真实在线验收。本文中的固定地址是工作流成功写入后的入口，不表示该入口现在已经有有效的新报告。**
 
+## 公开归档授权状态
+
+自动审批已拒绝将完整加密核验档案上传这个公开 GitHub 仓库：候选详情、证据和审核历史的完整包需要明确的目的地授权，加密本身不代替该授权。当前未创建 `terrafar-review` 详细档案分支，也不会通过 Actions 间接绕过这次拒绝。完整当批材料已单独保存给所有者，本仓库仅有不含详情的 [状态摘要](STATUS.md)。
+
+只有所有者明确批准本公开仓库接收完整加密归档后，才在 Actions repository **Variables** 中设置 `TERRAFAR_PUBLIC_ENCRYPTED_ARCHIVES_APPROVED=true`。维护工作流在该变量未获批准时先停止，尚不会读取旧私有账本或上传详细材料。此变量与下述解密 secret 是两件事；两者都不能代替内容完整性和用户抽检门槛。
+
 ## 1. 先完成一次仓库配置
 
 当前最新完整状态已加密，运行必须使用与仓库现有接收证书匹配的私钥。仓库所有者在 GitHub 中打开：
@@ -30,7 +36,7 @@
 | `quality/latest/review.json` | 同一天的白名单机器摘要 | 否 |
 | `quality/YYYY-MM-DD/review.md`、`review.json` | 历史各天的公开摘要 | 否 |
 | `quality/index.json` | 日期索引 | 否 |
-| `quality/private-review.cms` | 所有日期的完整记录、逐字段证据、抽检清单、重核任务、审核历史和权威日志 | **加密保存** |
+| `quality/private-review.cms`（小包）或 `quality/private-review.parts/`（分片包） | 所有日期的完整记录、逐字段证据、抽检清单、重核任务、审核历史和权威日志 | **加密保存** |
 | `quality/store-manifest.json` | 对应运行、代码版本、各文件哈希、加密包和接收证书指纹 | 否 |
 
 每天先看日期、来源覆盖、未解决失败、整批重核进度和人工抽检状态。报告长时间未更新时，应查看运行是否失败；旧报告仍存在不代表今天已检查。
@@ -39,17 +45,20 @@
 
 ### 本地查看完整材料
 
-1. 从 `terrafar-review` 的**同一固定提交**下载 `quality/private-review.cms` 和 `quality/store-manifest.json`，保留提交 SHA。
-2. 核对包的 SHA-256 与 manifest 的 `encrypted_review_sha256` 一致；接收证书的 SHA-256 与 `state_encryption_certificate_sha256` 一致。不要把不同提交的 manifest、包和证书混用。
-3. 在可信本地环境中准备 `TERRAFAR_STATE_DECRYPTION_KEY`；关闭会打印环境变量或命令展开内容的调试输出。使用 Python 3 和具备 CMS 支持的 OpenSSL。
-4. 在 `portfolio/application-board/` 运行以下命令。示例中的两个绝对路径应改为自己的本地路径；解密目标目录必须为空。
+1. 从 `terrafar-review` 的**同一固定提交**下载完整分支快照（ZIP），解压后保留其中整个 `quality/` 目录及提交 SHA。不要把不同提交的 manifest、分片和证书混用。
+2. `quality/store-manifest.json` 指明格式、密文完整 SHA-256、每个分片的顺序、长度与哈希，以及接收证书指纹。大于 24 KiB 的密文分成独立的小文件，所有分片仍然是加密内容；分片不会减少记录或省略核验历史。
+3. 在可信本地环境中准备已有的 `TERRAFAR_STATE_DECRYPTION_KEY`；关闭会打印环境变量或命令展开内容的调试输出。使用 Python 3 和具备 CMS 支持的 OpenSSL。不要自行手工拼接分片。
+4. 在 `portfolio/application-board/` 运行以下命令。`--directory` 指向解压快照的根目录，其下面应直接有 `quality/store-manifest.json`；解密目标目录必须为空。
 
 ```bash
-python3 scripts/terrafar_state_archive.py decrypt \
-  --input /absolute/local/download/private-review.cms \
+python3 scripts/terrafar_review_store.py decrypt-store \
+  --repository Olivia-wr-research/Olivia-wr-research.github.io \
+  --directory /absolute/local/downloaded-review-branch \
   --destination /absolute/local/private-review-unpacked \
   --recipient-certificate maintenance/terrafar-source-audit/state_archive_recipient.pem
 ```
+
+该命令兼容既有 v2 单包和 v3 分片格式。它先校验所有公开文件、连续分片顺序、每片长度与哈希、完整密文、CMS 加密类型和证书，再用已有私钥解密，检查完整审核日志的哈希与结构；任何缺失、篡改或未知附加文件都会停止，不用旧日志补齐。不会覆盖已有目标目录。
 
 解密后的目录包含：
 
@@ -185,3 +194,9 @@ checkpoint selector 另做过真实只读 GitHub API 验证：正确选中了最
 5. 默认分支实际运行与首轮定时运行分别有证据；来源和目录字段的全部发布条件满足后，再处理正式内容发布。
 
 目前不能把“程序测试通过”“已登记 411 条来源”“完成一次部署”或“抽检流程已编写”写成“网站信息已经完整、准确、每天正常自动更新”。
+
+### 大核验包传输验证
+
+完整证据较大时，v3 格式把同一 CMS 密文拆成每片最多 24 KiB 的二进制内容，按规范 Base64 保存为 `quality/private-review.parts/000001.b64` 等小文件。每片长度、每片 SHA-256、连续顺序和合并后的完整密文 SHA-256 都必须一致；仍保留既有 v2 读取兼容。固定分支更新在一次 Git 提交中完成，只有经过验证的旧密文文件或多余尾片可以删除，审核日期与其他历史材料不会由此移除。
+
+这解决大包单次上传中断的问题，不改变来源完整性、用户实际抽检或解密密钥的要求。传输和加密测试通过不代表真实信息准确或生产恢复成功。
