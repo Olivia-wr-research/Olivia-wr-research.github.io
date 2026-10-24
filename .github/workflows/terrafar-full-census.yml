@@ -73,7 +73,10 @@ jobs:
             artifact_name="terrafar-full-census-$run_id-$run_attempt"
             artifacts="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/artifacts" -f per_page=100)"
             artifact_exists="$(jq -r --arg name "$artifact_name" '[.artifacts[] | select(.name==$name and .expired==false)] | length>0' <<<"$artifacts")"
-            [[ "$artifact_exists" == true ]] || continue
+            if [[ "$artifact_exists" != true ]]; then
+              echo 'previous_complete_capture_artifact_missing_or_expired; refusing to roll back to an older checkpoint' >&2
+              exit 2
+            fi
             echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
             echo "artifact_name=$artifact_name" >> "$GITHUB_OUTPUT"
             echo "restore_source=previous_census_run" >> "$GITHUB_OUTPUT"

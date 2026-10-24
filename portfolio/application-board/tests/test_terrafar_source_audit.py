@@ -171,6 +171,7 @@ class WorkflowRecoveryGuardTests(unittest.TestCase):
         self.assertIn('select(.path==".github/workflows/terrafar-full-census.yml" and .head_branch==env.GITHUB_REF_NAME)',selector)
         self.assertIn('Export auditable metadata for the review workspace',selector)
         self.assertIn('Preserve public diagnostics and encrypted state checkpoint',selector)
+        self.assertIn('previous_complete_capture_artifact_missing_or_expired',selector)
         self.assertIn("default: ''",workflow)
 
 
