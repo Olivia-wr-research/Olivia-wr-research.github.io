@@ -113,22 +113,28 @@ class RegistryUnionTests(unittest.TestCase):
 
 
 class WorkflowRecoveryGuardTests(unittest.TestCase):
-    def test_bootstrap_selectors_only_apply_on_first_attempt(self):
+    def test_daily_workflow_uses_checkpoint_selector_without_legacy_replay(self):
         workflow=(ROOT/'.github/workflows/terrafar-source-maintenance.yml').read_text(encoding='utf-8')
-        self.assertIn('if [[ "${GITHUB_RUN_ATTEMPT:-1}" == 1 ]]',workflow)
-        self.assertIn('&& "${GITHUB_RUN_ATTEMPT:-1}" == 1',workflow)
-        self.assertIn('No prior successful maintenance run with an unexpired state artifact was found',workflow)
-
-    def test_restore_selection_is_versioned_and_rejects_legacy_replay(self):
-        workflow=(ROOT/'.github/workflows/terrafar-source-maintenance.yml').read_text(encoding='utf-8')
-        self.assertIn("      - 'main'",workflow)
-        self.assertIn('startswith("terrafar-source-maintenance-state-v3-")',workflow)
-        self.assertIn('startswith("terrafar-source-maintenance-state-")',workflow)
+        self.assertIn('scripts/terrafar_select_checkpoint.py',workflow)
+        self.assertIn('--current-run-id "$GITHUB_RUN_ID" --branch "$GITHUB_REF_NAME"',workflow)
+        self.assertIn('--origin-commit-sha "${{ steps.source-run.outputs.head_sha }}"',workflow)
+        self.assertNotIn('--allow-legacy-migration',workflow)
+        self.assertNotIn('bootstrap-run=',workflow)
         self.assertIn('name: terrafar-source-maintenance-state-v3-${{ github.run_id }}-${{ github.run_attempt }}',workflow)
-        self.assertIn('Legacy bootstrap is one-time only; a version 3 state artifact already exists in this repository.',workflow)
-        self.assertIn('Refusing stale explicit restore run',workflow)
-        self.assertIn('selected="$(find_valid_run \'*\' || true)"',workflow)
-        self.assertIn('latest_compatible="$(find_valid_run \'*\' || true)"',workflow)
+        # Behavioral latest/expired/stale/branch/attempt guarantees are exercised
+        # against the selector API in test_terrafar_select_checkpoint.py.
+
+    def test_public_archive_authorization_precedes_private_state_access(self):
+        workflow=(ROOT/'.github/workflows/terrafar-source-maintenance.yml').read_text(encoding='utf-8')
+        marker='      - name: Require explicit owner authorization for public encrypted archives\n'
+        self.assertLess(workflow.index(marker),workflow.index('      - name: Select the latest complete checkpoint'))
+        step=workflow.split(marker,1)[1].split('\n      - ',1)[0]
+        self.assertIn('vars.TERRAFAR_PUBLIC_ENCRYPTED_ARCHIVES_APPROVED',step)
+        script=step.split('        run: |\n',1)[1]
+        script='\n'.join(line[10:] if line.startswith('          ') else line for line in script.splitlines())+'\n'
+        for value,allowed in [('',False),('false',False),('true',True)]:
+            checked=subprocess.run(['bash','-c',script],env={**os.environ,'ARCHIVE_UPLOAD_AUTHORIZED':value},text=True,capture_output=True,check=False)
+            self.assertEqual(checked.returncode==0,allowed)
 
     def test_full_census_uses_feature_sha_and_private_non_log_candidate_state(self):
         workflow=(ROOT/'.github/workflows/terrafar-full-census.yml').read_text(encoding='utf-8')
@@ -589,7 +595,7 @@ class StatusAndNetworkTests(unittest.TestCase):
 
     def test_304_with_successful_baseline_is_unchanged(self):
         state = {'snapshots': {audit.key_for('https://example.test/list', 'fake'):
-            {'semantic_hash': 'x', 'semantic_rows': [{'id': 1}], 'scope': {}, 'content_hash': 'a'*64}}}
+            {'semantic_hash': audit.sha(b'[{"id":1}]'), 'semantic_rows': [{'id': 1}], 'scope': {}, 'content_hash': 'a'*64, 'last_success_at':'2026-01-01T00:00:00Z'}}}
         with patch.object(audit, 'fetch_endpoint', return_value=self.fake_response(status=304, body=b'')):
             result = audit.check_one(self.source(), 'r1', state, 1, 0, 0)
         self.assertEqual(result['outcome'], 'checked_unchanged')
@@ -1034,7 +1040,7 @@ print(json.dumps({'outcome':result['outcome'],'baseline_available':result['basel
             active_catalog=root/'active.mjs'
             original='export const positions=[{"id":"formal-1","url":"https://jobs.example/job-review","salary":"unknown salary","funding":"unknown funding"}];\n'
             formal.write_text(original,encoding='utf-8')
-            active_catalog.write_text("record({\n    id:'active-1',\n    url:'https://jobs.example/job-review',\n  }),\n",encoding='utf-8')
+            active_catalog.write_text("export const geographyOpportunities=[{\n    id:'active-1',\n    url:'https://jobs.example/job-review',\n    salary:'unknown salary', funding:'unknown funding',\n  }];\n",encoding='utf-8')
             ledger=candidate_ledger.empty_ledger()
             observation={'source_id':'s','endpoint_id':'s:list','candidate_key':'job-review','candidate_url':'https://jobs.example/job-review','source_url':'https://jobs.example/list','candidate':{'id':'job-review'},'retrieved_at':'2026-01-01T00:00:00Z'}
             candidate_ledger.merge_observations(ledger,[observation],'source-run')

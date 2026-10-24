@@ -1,0 +1,27 @@
+{
+  "validation_time_utc": "2026-10-24T18:25:05.493244+00:00",
+  "base_commit": "e3d77d4de9267f521c54617588f0c2703ff442fd",
+  "python_tests_passed": 223,
+  "python_tests_failed": 0,
+  "node_test_files_passed": 9,
+  "node_individual_case_count_not_reported_locally": true,
+  "workflow_yaml_and_15_shell_blocks_valid": true,
+  "website_source_and_published_copy_equal": true,
+  "website_file_changes_relative_to_pr8": 0,
+  "registry_source_records": 411,
+  "previous_ids_and_seed_mappings_preserved": true,
+  "latest_real_checkpoint_selected": "40088463064",
+  "latest_private_checkpoint_decrypted": false,
+  "upgraded_live_source_execution_complete": false,
+  "human_sample_approval": false,
+  "new_content_release_authorized": false,
+  "migration_from_capture_40088463064_is_hash_pinned": true,
+  "critical_tests": [
+    "whole-day failure persists across date and content revisions",
+    "late recheck evidence rejected",
+    "undelivered human review blocks ordinary runs",
+    "latest expired checkpoint never rolls back",
+    "encrypted detailed review and raw response artifacts only",
+    "real network counts separate from worker attempts"
+  ]
+}

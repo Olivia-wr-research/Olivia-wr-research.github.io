@@ -17,6 +17,64 @@ VALID={'checked_changed','checked_unchanged','checked_empty','partial','needs_en
 MAX_BYTES=4_000_000; UA='TERRAFAR-Source-Audit/1.0 (+https://olivia-wr-research.github.io/apps/application-board/)'
 locks={}; locks_guard=threading.Lock(); last_by_host={}; robots_cache={}; robots_locks={}; state_guard=threading.Lock()
 request_budget_lock=threading.Lock(); request_budget_limit=None; request_budget_used=0; request_allowed_hosts=None
+response_capture_lock=threading.Lock(); response_capture_dir=None; response_capture_run_id=None
+response_capture_count=0; response_capture_hashes=set()
+
+def configure_response_capture(directory=None,run_id=None):
+ global response_capture_dir,response_capture_run_id,response_capture_count,response_capture_hashes
+ path=Path(directory).resolve() if directory is not None else None
+ if path is not None and any(path==public or public in path.parents for public in ((ROOT/'docs').resolve(),(APP/'dist').resolve())):
+  raise ValueError('response_archive_must_not_be_in_public_site')
+ with response_capture_lock:
+  response_capture_dir=path; response_capture_run_id=run_id
+  response_capture_count=0; response_capture_hashes=set()
+
+def capture_response(request_url,response):
+ """Archive complete 200 response bytes; this is not an opportunity verdict."""
+ global response_capture_count
+ body=response.get('body')
+ if (response_capture_dir is None or response.get('status')!=200 or response.get('complete') is not True
+     or not isinstance(body,bytes) or not body or len(body)>MAX_BYTES): return None
+ content_hash=sha(body); headers=response.get('headers') or {}
+ content_type=next((str(value) for key,value in headers.items() if key.lower()=='content-type'),None)
+ charset=re.search(r'charset\s*=\s*["\']?([^;\s"\']+)',content_type or '',re.I)
+ record={'run_id':response_capture_run_id,'origin_actions_run_id':os.environ.get('GITHUB_RUN_ID'),
+         'request_url':request_url,'response_url':response.get('url') or request_url,'retrieved_at':now(),
+         'http_status':200,'content_sha256':content_hash,'byte_count':len(body),'content_type':content_type,
+         'charset':charset.group(1) if charset else None,'body_file':content_hash+'.body',
+         'archive_scope':'complete_transport_body_only_not_content_verification'}
+ with response_capture_lock:
+  response_capture_dir.mkdir(parents=True,exist_ok=True)
+  target=response_capture_dir/record['body_file']
+  if target.exists():
+   if sha(target.read_bytes())!=content_hash: raise ValueError('response_archive_existing_body_hash_mismatch')
+  else:
+   temporary=target.with_name(target.name+'.'+uuid.uuid4().hex+'.tmp')
+   temporary.write_bytes(body); temporary.replace(target)
+  with (response_capture_dir/'index.jsonl').open('a',encoding='utf-8') as stream:
+   stream.write(json.dumps(record,ensure_ascii=False,sort_keys=True)+'\n'); stream.flush()
+  response_capture_count+=1; response_capture_hashes.add(content_hash)
+ return record
+
+def usable_semantic_baseline(cached):
+ if not isinstance(cached,dict): return False
+ if (not isinstance(cached.get('semantic_rows'),list) or not isinstance(cached.get('scope'),dict)
+     or not re.fullmatch(r'[0-9a-f]{64}',str(cached.get('content_hash','')))
+     or not cached.get('last_success_at')): return False
+ expected=sha(json.dumps(cached['semantic_rows'],ensure_ascii=False,sort_keys=True,separators=(',',':')).encode())
+ return cached.get('semantic_hash')==expected
+
+def archived_baseline_body_available(cached):
+ """A scheduled run must retain reviewable bytes, not just an expiring artifact hash."""
+ if response_capture_dir is None: return True
+ content_hash=(cached or {}).get('content_hash')
+ if not re.fullmatch(r'[0-9a-f]{64}',str(content_hash or '')): return False
+ with response_capture_lock:
+  path=response_capture_dir/(content_hash+'.body')
+  try:
+   with path.open('rb') as stream: body=stream.read(MAX_BYTES+1)
+  except OSError: return False
+ return bool(body) and len(body)<=MAX_BYTES and sha(body)==content_hash
 
 class RequestBudgetExceeded(RuntimeError): pass
 
@@ -110,6 +168,10 @@ def select_maintenance_batch(pending,retry_ids,state,batch_size):
  """Select retries fairly while guaranteeing rotation work a recurring slot."""
  if batch_size<=0 or not pending: return []
  batch_size=min(batch_size,len(pending))
+ if batch_size == len(pending):
+  # A full-source request must not leave retries out merely because their fair
+  # share in a *bounded* batch is smaller than the available source budget.
+  return list(pending)
  by_id={source['source_id']:source for source in pending}
  plan_ids=[source['source_id'] for source in pending]
  retries=list(dict.fromkeys(sid for sid in retry_ids if sid in by_id))
@@ -349,7 +411,7 @@ def fetch_endpoint(url, timeout, rate, retries, conditional, cached):
   return {'outcome':outcome,'attempts':attempts,'http_status':rob.get('status'),'reason':rob['reason'],'robots':rob,'body':None,'response_url':None,'response_hash':None,'etag':None,'last_modified':None,'content_complete':False,'response_body_bytes':0}
  # Conditional requests are safe only when a validated semantic baseline exists.
  # Transport-only ETags can otherwise turn a required first read into an empty 304.
- semantic_cache=cached if conditional and cached and cached.get('semantic_hash') else None
+ semantic_cache=cached if conditional and usable_semantic_baseline(cached) and archived_baseline_body_available(cached) else None
  for n in range(retries+1):
   aid=str(uuid.uuid4()); started=now(); hdr={}
   if semantic_cache:
@@ -365,7 +427,8 @@ def fetch_endpoint(url, timeout, rate, retries, conditional, cached):
     continue
    if res['status'] in (429,500,502,503,504) and n<retries:
     time.sleep(min(2**n,4)); continue
-   h=res['headers']; return {'outcome':'response','attempts':attempts,'http_status':res['status'],'reason':None,'robots':rob,'body':res['body'],'response_url':res['url'],'response_hash':sha(res['body']) if res['complete'] else None,'etag':h.get('ETag'),'last_modified':h.get('Last-Modified'),'content_complete':res['complete'],'response_body_bytes':len(res['body'])}
+   h=res['headers']; captured=capture_response(url,res)
+   return {'outcome':'response','attempts':attempts,'http_status':res['status'],'reason':None,'robots':rob,'body':res['body'],'response_url':res['url'],'response_hash':sha(res['body']) if res['complete'] and res['status']!=304 else None,'etag':h.get('ETag'),'last_modified':h.get('Last-Modified'),'content_complete':res['complete'],'response_capture':captured,'response_body_bytes':len(res['body'])}
   except Exception as e:
    attempts.append({'attempt_id':aid,'attempt_number':n+1,'started_at':started,'completed_at':now(),'transport_attempted':transport_attempted_for_error(e),'http_request_started':bool(getattr(e,'http_request_started',False)),'http_request_count':int(getattr(e,'http_request_count',0) or 0),'http_request_count_exact':bool(getattr(e,'http_request_count_exact',True)),'http_status':http_status_for_error(e),'request_sent':request_sent_for_error(e),'redirect_chain':redirect_chain_for_error(e),'error':type(e).__name__,'error_detail':str(e)[:300]})
    if n<retries and not isinstance(e,RequestBudgetExceeded) and not is_safety_guard_error(e): time.sleep(min(2**n,4)); continue
@@ -385,18 +448,22 @@ def check_one(source, run_id, state, timeout, rate, retries):
   with state_guard:
    cached=state.get('snapshots',{}).get(key)
    transport_key=key_for(url,None); cached_transport=state.get('snapshots',{}).get(transport_key)
-  conditional_state=cached if adapter and cached and cached.get('semantic_hash') else None
+  conditional_state=cached if adapter and usable_semantic_baseline(cached) else None
   f=fetch_endpoint(url,timeout,rate,retries,True,conditional_state)
   status=f['http_status']; body=f['body']; outcome='failed'; reason=f['reason'] or 'unknown'; complete=False; target=False; candidate_rows=None; scope=None
-  first_observed=False; transport_changed=None
+  first_observed=False; transport_changed=None; content_observed_at=None; revalidated_at=None; evidence_origin='current_response'
   if f['outcome']=='error': outcome='failed'; reason=f['reason']
   elif f['outcome']=='not_attempted': outcome='not_attempted'; reason=f['reason']
   elif f['outcome']=='partial' and f['reason']=='runner_request_budget_exhausted': outcome='partial'; reason=f['reason']
   elif f['outcome']=='blocked': outcome='blocked'; reason=f['reason']
   elif status==304:
-   if adapter and cached and cached.get('semantic_hash'):
+   if adapter and usable_semantic_baseline(cached) and archived_baseline_body_available(cached):
     outcome='checked_unchanged'; reason='valid_304_with_successful_semantic_baseline'; complete=True; target=True; candidate_rows=cached.get('semantic_rows',[]); scope=cached.get('scope',{})
-   else: outcome='partial'; reason='304_without_successful_semantic_baseline'; complete=False
+    f['response_hash']=cached['content_hash']; f['response_capture']=cached.get('response_capture')
+    content_observed_at=cached['last_success_at']; revalidated_at=now(); evidence_origin='successful_semantic_baseline_revalidated_by_304'
+   else:
+    outcome='partial'; reason='304_without_successful_semantic_baseline'; complete=False
+    f['response_hash']=None; f['response_capture']=None
   elif status in (401,403,429): outcome='blocked'; reason='http_access_restricted'
   elif status>=500 or status<200 or status>=400: outcome='failed'; reason=f'http_{status}'
   elif body is None: outcome='failed'; reason='empty_transport_body'
@@ -413,20 +480,21 @@ def check_one(source, run_id, state, timeout, rate, retries):
      candidate_rows,scope=semantic_result(adapter,url,body); target=True; complete=scope.pop('_complete',True); candidates=len(candidate_rows)
      if not complete: raise IncompleteScope('adapter_pagination_detected_but_not_exhausted')
      sig=sha(json.dumps(candidate_rows,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode())
-     if cached and cached.get('semantic_hash'):
+     if usable_semantic_baseline(cached):
       if sig==cached['semantic_hash']:
        outcome='checked_empty' if not candidate_rows else 'checked_unchanged'; reason='complete_adapter_scope_matches_successful_baseline'
       else: outcome='checked_changed'; reason='complete_adapter_scope_differs_from_successful_baseline'
      else: outcome='partial'; reason='complete_adapter_baseline_established_no_prior_comparison'; first_observed=True
      with state_guard:
-      state.setdefault('snapshots',{})[key]={'semantic_hash':sig,'semantic_rows':candidate_rows,'scope':scope,'content_hash':f['response_hash'],'etag':f['etag'],'last_modified':f['last_modified'],'last_success_at':now(),'adapter':adapter,'url':url}
+      state.setdefault('snapshots',{})[key]={'semantic_hash':sig,'semantic_rows':candidate_rows,'scope':scope,'content_hash':f['response_hash'],'etag':f['etag'],'last_modified':f['last_modified'],'last_success_at':now(),'adapter':adapter,'url':url,'response_capture':f.get('response_capture')}
     except IncompleteScope as e:
      outcome='partial'; reason=str(e)
     except Exception as e:
      outcome='failed'; reason='adapter_parse_error:'+type(e).__name__+':'+str(e)[:240]
    else:
     outcome='needs_endpoint'; reason='page_retrieved_but_no_complete_opportunity_list_adapter';
-  result={'endpoint_id':endpoint.get('endpoint_id',f'{source["source_id"]}:primary'),'url':url,'adapter':adapter,'outcome':outcome,'attempted':any(a.get('request_sent',True) for a in f['attempts']) or outcome=='blocked','attempts':f['attempts'],'completed_at':now(),'http_status':status,'response_url':f.get('response_url'),'content_sha256':f.get('response_hash'),'response_body_bytes':f.get('response_body_bytes',0),'transport_changed':transport_changed,'robots':f['robots'],'scope':source_adapters.enrich_scope(endpoint,scope) or {'page_fetch_only':adapter is None},'target_validated':target,'content_complete':complete,'baseline_available':bool(cached and cached.get('semantic_hash')),'first_observed':first_observed,'candidate_count':len(candidate_rows) if candidate_rows is not None else 0,'candidate_rows':candidate_rows or [],'reason':reason}
+  result={'endpoint_id':endpoint.get('endpoint_id',f'{source["source_id"]}:primary'),'url':url,'adapter':adapter,'outcome':outcome,'attempted':any(a.get('request_sent',True) for a in f['attempts']) or outcome=='blocked','attempts':f['attempts'],'completed_at':now(),'http_status':status,'response_url':f.get('response_url'),'content_sha256':f.get('response_hash'),'response_body_bytes':f.get('response_body_bytes',0),'transport_changed':transport_changed,'robots':f['robots'],'scope':source_adapters.enrich_scope(endpoint,scope) or {'page_fetch_only':adapter is None},'target_validated':target,'content_complete':complete,'baseline_available':usable_semantic_baseline(cached),'first_observed':first_observed,'candidate_count':len(candidate_rows) if candidate_rows is not None else 0,'candidate_rows':candidate_rows or [],'reason':reason}
+  result.update({'response_capture':f.get('response_capture'),'content_observed_at':content_observed_at or result['completed_at'],'revalidated_at':revalidated_at,'evidence_origin':evidence_origin})
   if outcome not in VALID: raise ValueError('invalid outcome')
   all_results.append(result)
  # Required endpoints all have a terminal result; a source-level summary is full only if all required endpoints are full.
@@ -438,7 +506,7 @@ def check_one(source, run_id, state, timeout, rate, retries):
  elif any(x['outcome']=='checked_changed' for x in required): outcome='checked_changed'
  elif required and all(x['outcome']=='checked_empty' for x in required): outcome='checked_empty'
  else: outcome='checked_unchanged'
- return {'run_id':run_id,'task_id':f'{run_id}:{source["source_id"]}','source_id':source['source_id'],'outcome':outcome,'attempted':any(x['attempted'] for x in all_results),'started_at':all_results[0]['attempts'][0]['started_at'] if all_results and all_results[0]['attempts'] else None,'completed_at':now(),'scope':'all required monitor_endpoints; no opportunity publication','target_validated':all(x['target_validated'] for x in required),'content_complete':all(x['content_complete'] for x in required),'baseline_available':all(x['baseline_available'] for x in required),'http_status':required[0]['http_status'] if len(required)==1 else None,'first_observed':any(x['first_observed'] for x in all_results),'evidence':[{'url':x['response_url'] or x['url'],'retrieved_at':x['completed_at'],'content_sha256':x['content_sha256'],'locator':'HTTP response / configured adapter scope','excerpt':''} for x in all_results if x['content_sha256']],'reason':'; '.join(f'{x["endpoint_id"]}: {x["reason"]}' for x in all_results),'candidate_count':sum(x['candidate_count'] for x in all_results),'endpoints':all_results}
+ return {'run_id':run_id,'task_id':f'{run_id}:{source["source_id"]}','source_id':source['source_id'],'outcome':outcome,'attempted':any(x['attempted'] for x in all_results),'started_at':all_results[0]['attempts'][0]['started_at'] if all_results and all_results[0]['attempts'] else None,'completed_at':now(),'scope':'all required monitor_endpoints; no opportunity publication','target_validated':all(x['target_validated'] for x in required),'content_complete':all(x['content_complete'] for x in required),'baseline_available':all(x['baseline_available'] for x in required),'http_status':required[0]['http_status'] if len(required)==1 else None,'first_observed':any(x['first_observed'] for x in all_results),'evidence':[{'url':x['response_url'] or x['url'],'retrieved_at':x['content_observed_at'],'revalidated_at':x['revalidated_at'],'content_sha256':x['content_sha256'],'evidence_origin':x['evidence_origin'],'response_capture':x['response_capture'],'locator':'HTTP response / configured adapter scope','excerpt':''} for x in all_results if x['content_sha256']],'reason':'; '.join(f'{x["endpoint_id"]}: {x["reason"]}' for x in all_results),'candidate_count':sum(x['candidate_count'] for x in all_results),'endpoints':all_results}
 
 def load_state(path, require_existing=False):
  p=path/'state.json'
@@ -535,6 +603,7 @@ def source_run_metrics(results):
 
 
 def run(args):
+ if args.budget < 0: raise ValueError('source_budget_must_be_nonnegative')
  configure_request_budget(getattr(args,'http_request_budget',2000))
  reg=readj(REGISTRY); active_sources=[s for s in reg['sources'] if s.get('active') and s.get('enabled_for_daily_audit')]
  sources=active_sources
@@ -554,9 +623,14 @@ def run(args):
  run_id=args.run_id or dt.datetime.now(dt.timezone.utc).strftime('terrafar-%Y%m%dT%H%M%SZ')+'-'+uuid.uuid4().hex[:8]
  run_dir=RUNS/run_id; run_dir.mkdir(parents=True,exist_ok=True)
  state_dir=Path(args.state_dir).resolve(); state_dir.mkdir(parents=True,exist_ok=True); state=load_state(state_dir,require_existing=getattr(args,'require_state',False))
+ configure_response_capture(getattr(args,'capture_responses_dir',None) or state_dir/'http-responses',run_id)
  ledger_path=Path(getattr(args,'candidate_ledger',None) or state_dir/'candidate_ledger.json').resolve()
  ledger=candidate_ledger.load_ledger(ledger_path,require_existing=getattr(args,'require_candidate_ledger',False))
  plan_ids=[s['source_id'] for s in sources]; plan_hash=sha(json.dumps(plan_ids,sort_keys=True).encode()); ids_file_hash=sha(Path(source_ids_file).read_bytes()) if source_ids_file else None; prior_manifest=readj(run_dir/'manifest.json') if (run_dir/'manifest.json').exists() else {}; batch_offset=int(prior_manifest.get('batch_offset',state.get('maintenance_cursor',0))) if not source_ids_file else 0; manifest={'run_id':run_id,'created_at':prior_manifest.get('created_at',now()),'registry_sha256':sha(REGISTRY.read_bytes()),'registry_path':'maintenance/terrafar-source-audit/registry/source_registry.json','adapter_catalog_sha256':sha(source_adapters.CATALOG_PATH.read_bytes()),'plan_sha256':plan_hash,'planned_source_ids':plan_ids,'planned_count':len(plan_ids),'active_registry_source_count':len(active_sources),'scope_mode':'explicit_source_subset' if source_ids_file else 'full_active_registry','source_ids_file':Path(source_ids_file).name if source_ids_file else None,'source_ids_file_sha256':ids_file_hash,'batch_offset':batch_offset,'http_request_budget':getattr(args,'http_request_budget',2000),'max_sources':args.budget,'network_mode':'live' if args.live else 'simulated','execution_mode':'program_http_plus_configured_adapters','concurrency':args.concurrency,'retry_count':args.retries,'per_host_delay_seconds':args.per_host_delay,'status':'running'}
+ if prior_manifest and any(prior_manifest.get(key)!=manifest[key] for key in ('registry_sha256','adapter_catalog_sha256','plan_sha256','network_mode')):
+  raise ValueError('run_resume_scope_or_implementation_changed')
+ manifest['all_sources_requested']=bool(getattr(args,'all_sources',False))
+ if manifest['all_sources_requested']: manifest['max_sources']=len(plan_ids)
  writej(run_dir/'manifest.json',manifest)
  output=run_dir/'source_checks.jsonl'; completed={}
  if output.exists():
@@ -573,7 +647,7 @@ def run(args):
    r={'run_id':run_id,'task_id':f'{run_id}:{s["source_id"]}','source_id':s['source_id'],'outcome':'not_attempted','attempted':False,'started_at':None,'completed_at':now(),'scope':'simulation does not contact network','target_validated':False,'content_complete':False,'baseline_available':False,'http_status':None,'first_observed':False,'evidence':[],'reason':'simulated_mode_network_not_used','candidate_count':0,'endpoints':[]}
    upsert_result(output,r); completed[s['source_id']]=r
  else:
-  batch_size=min(max(args.budget,0),len(pending))
+  batch_size=len(pending) if manifest['all_sources_requested'] else min(max(args.budget,0),len(pending))
   if not source_ids_file and pending:
    if 'maintenance_cursor' not in state:
     state['maintenance_cursor']=batch_offset
@@ -596,6 +670,12 @@ def run(args):
     except Exception as e: r={'run_id':run_id,'task_id':f'{run_id}:{s["source_id"]}','source_id':s['source_id'],'outcome':'failed','attempted':True,'started_at':None,'completed_at':now(),'scope':'runner guard','target_validated':False,'content_complete':False,'baseline_available':False,'http_status':None,'first_observed':False,'evidence':[],'reason':'runner_exception:'+type(e).__name__+':'+str(e)[:240],'candidate_count':0,'endpoints':[]}
     r=merge_attempt_history(completed.get(s['source_id']),r)
     upsert_result(output,r); completed[s['source_id']]=r
+    # Results and state are checkpointed together so an interrupted long sweep
+    # can resume without pretending unfinished sources were checked.
+    with state_guard:
+     state['last_checkpoint_run_id']=run_id
+     state['last_checkpoint_at']=now()
+     writej(state_dir/'state.json',state)
   state['last_run_id']=run_id
   state['last_run_completed_at']=now()
   state['last_registry_sha256']=manifest['registry_sha256']
@@ -630,16 +710,25 @@ def run(args):
  successful=sum(counts[k] for k in ('checked_changed','checked_unchanged','checked_empty'))
  ledger_status_counts={status:sum(task.get('status')==status for task in ledger.get('tasks',{}).values()) for status in ('pending','verification_failed','insufficient_evidence','verified','excluded','duplicate')}
  report={'run_id':run_id,'created_at':manifest['created_at'],'completed_at':manifest['completed_at'],'network_mode':manifest['network_mode'],'execution_mode':manifest['execution_mode'],'registry_sha256':manifest['registry_sha256'],'adapter_catalog_sha256':manifest['adapter_catalog_sha256'],'plan_sha256':plan_hash,'total_sources':len(reg['sources']),'active_sources':len(active_sources),'planned_sources':len(plan_ids),'executed_sources':len(manifest['executed_source_ids']),'network_metrics':network_metrics,'planned_endpoints':len(endpoint_results),'endpoint_status_counts':{k:endpoint_counts.get(k,0) for k in sorted(VALID)},'scope_mode':manifest['scope_mode'],'batch_offset':manifest['batch_offset'],'http_request_budget':http_request_budget_stats(),'status_counts':{k:counts.get(k,0) for k in sorted(VALID)},'result_conservation':sum(counts.values())==len(plan_ids),'complete_success_count':successful,'coverage':successful/len(plan_ids) if plan_ids else None,'candidate_review_tasks':len(queue),'candidate_content_review_tasks':len(content_review_queue),'candidate_open_status_review_tasks':len(open_status_queue),'candidate_ledger_revision':ledger.get('revision',0),'candidate_ledger_status_counts':ledger_status_counts,'skill_verified_count':ledger_status_counts['verified'],'candidate_data_written_to_formal_site':False,'results_path':'source_checks.jsonl','candidate_review_queue_path':'candidate_review_queue.jsonl','candidate_ledger_path':'candidate_ledger.json','notes':['HTTP availability is not opportunity verification.','needs_endpoint means page access may succeed but the full target list is not yet represented by a validated adapter.','partial on first parsed baseline means no prior comparison; it does not mean a newly published opportunity.','Adapter completeness applies only to its explicitly configured institution, opportunity type, filter and page scope; page snapshots do not prove site-wide opportunity coverage.','Candidate content review and current application-open status are independent tasks.','Candidate ledger preserves pending, failed and insufficient-evidence tasks across runs; terminal decisions require evidence.','Candidate rows remain separate from formal site data; this program does not invoke Codex models or publish data.','Failures, access blocks and not_attempted are never counted as no update.','executed_sources counts source workers entered by the runner; use network_metrics to identify sources with actual HTTP requests and responses.']}
+ report['all_sources_requested']=manifest['all_sources_requested']
+ report['response_archive']={'scope':'complete_HTTP_200_body_bytes_not_opportunity_verification','captured_response_events':response_capture_count,'distinct_bodies':len(response_capture_hashes),'path':str(response_capture_dir),'index':'index.jsonl'}
+ report['all_planned_sources_attempted']=bool(plan_ids) and len(manifest['executed_source_ids'])==len(plan_ids)
+ report['all_planned_sources_complete']=bool(plan_ids) and successful==len(plan_ids) and args.live
+ report['incomplete_source_ids']=[row['source_id'] for row in results if row['outcome'] not in {'checked_changed','checked_unchanged','checked_empty'}]
+ report['source_gate']={'allowed':report['all_planned_sources_complete'] and manifest['scope_mode']=='full_active_registry',
+                       'reason':None if report['all_planned_sources_complete'] and manifest['scope_mode']=='full_active_registry' else 'initial_release_requires_complete_live_full_registry_coverage'}
  writej(run_dir/'daily_report.json',report)
  md=['# TERRAFAR 来源检查日报', '',f'- Run: `{run_id}`',f'- 模式：`{manifest["network_mode"]}` / `{manifest["execution_mode"]}`',f'- 来源总数 / 启用 / 计划：{len(reg["sources"])} / {len(active_sources)} / {len(plan_ids)}',f'- 计划范围：`{manifest["scope_mode"]}`',f'- 对账守恒：{sum(counts.values())} = {len(plan_ids)}',f'- 完整成功覆盖率：{successful}/{len(plan_ids)}' if plan_ids else '- 完整成功覆盖率：未知（计划数为 0）','', '## 状态数量','']
  md += [f'- `{k}`：{counts.get(k,0)}' for k in sorted(VALID)]
  md += ['', '## 边界','',*['- '+x for x in report['notes']],'']
  (run_dir/'daily_report.md').write_text('\n'.join(md),encoding='utf-8')
  print(json.dumps(report,ensure_ascii=False,indent=2))
+ configure_response_capture(None)
 
 def main():
  ap=argparse.ArgumentParser(); sub=ap.add_subparsers(dest='cmd',required=True)
- r=sub.add_parser('run'); r.add_argument('--live',action='store_true'); r.add_argument('--state-dir',default=str(DEFAULT_STATE)); r.add_argument('--require-state',action='store_true'); r.add_argument('--candidate-ledger'); r.add_argument('--require-candidate-ledger',action='store_true'); r.add_argument('--source-ids-file'); r.add_argument('--http-request-budget',type=int,default=2000); r.add_argument('--run-id'); r.add_argument('--budget',type=int,default=100000); r.add_argument('--concurrency',type=int,default=4); r.add_argument('--timeout',type=int,default=12); r.add_argument('--retries',type=int,default=1); r.add_argument('--per-host-delay',type=float,default=.4)
+ r=sub.add_parser('run'); r.add_argument('--live',action='store_true'); r.add_argument('--state-dir',default=str(DEFAULT_STATE)); r.add_argument('--require-state',action='store_true'); r.add_argument('--candidate-ledger'); r.add_argument('--require-candidate-ledger',action='store_true'); r.add_argument('--source-ids-file'); r.add_argument('--http-request-budget',type=int,default=2000); r.add_argument('--run-id'); r.add_argument('--budget',type=int,default=100000); r.add_argument('--all-sources',action='store_true',help='Attempt every selected source; request and access limits still apply and remain explicit'); r.add_argument('--concurrency',type=int,default=4); r.add_argument('--timeout',type=int,default=12); r.add_argument('--retries',type=int,default=1); r.add_argument('--per-host-delay',type=float,default=.4)
+ r.add_argument('--capture-responses-dir',help='Private response archive; defaults to STATE_DIR/http-responses, never the public site')
  a=ap.parse_args()
  if a.cmd=='run': run(a)
 if __name__=='__main__': main()

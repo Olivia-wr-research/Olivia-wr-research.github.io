@@ -1,178 +1,156 @@
-name: TERRAFAR read-only source maintenance
-
-on:
-  # GitHub cron is UTC. 02:17 UTC is 10:17 Asia/Shanghai (the previously agreed daily time).
+name: TERRAFAR source maintenance and daily review
+run-name: TERRAFAR ${{ inputs.mode || (github.event_name == 'schedule' && 'daily') || 'daily' }} · ${{ github.ref_name }}
+'on':
   schedule:
-    - cron: '17 2 * * *'
-  # Feature changes and marked release commits trigger the bounded full-registry maintenance run.
+    - cron: 17 2 * * *
   push:
     branches:
-      - 'codex/terrafar-source-monitoring-20261022'
-      - 'codex/terrafar-launch-readiness-20261023'
-      - 'main'
+      - main
+      - codex/terrafar-daily-review-integrated-20261024
+    paths-ignore:
+      - portfolio/application-board/maintenance/terrafar-source-audit/quality/review-inputs/**
   workflow_dispatch:
     inputs:
       mode:
-        description: 'sample runs the frozen 10-source smoke; daily plans all active sources and rotates a bounded batch'
+        description: daily/full checks all sources; sample checks ten; review imports a real user decision or whole-batch rechecks
         type: choice
-        options: [sample, daily]
-        default: sample
+        options:
+          - sample
+          - daily
+          - full
+          - review
+        default: daily
         required: true
       restore_run_id:
-        description: 'Most recent compatible state run, or the one-time Round 002 bootstrap before v3 state exists'
+        description: Optional latest successful source run; normal production restores stay on the default branch
         type: string
         required: false
+      allow_cross_branch_restore:
+        description: Explicit reviewed state handoff only; false keeps production on its own branch
+        type: boolean
+        default: false
+        required: false
+      state_migration_manifest:
+        description: Reviewed hash-pinned migration JSON under maintenance/terrafar-source-audit/migrations/
+        type: string
+        required: false
+      http_request_budget:
+        description: HTTP request limit; exhaustion is reported as incomplete, never successful coverage
+        type: number
+        default: 6000
+        required: true
       review_results_path:
-        description: 'Optional structured agent-result JSON under maintenance/terrafar-source-audit/agent-results/'
+        description: Optional structured agent-result JSON under maintenance/terrafar-source-audit/agent-results/
         type: string
         required: false
       review_assignment_path:
-        description: 'Assignment manifest matching the selected review result batch'
+        description: Assignment manifest matching the selected review result batch
+        type: string
+        required: false
+      review_input_archive:
+        description: 'mode=review: encrypted .cms bundle under quality/review-inputs/ with decision.json and/or recheck.json'
+        type: string
+        required: false
+      restore_artifact_name:
+        description: Exact artifact name required with explicit restore_run_id; stale overrides are rejected
         type: string
         required: false
 permissions:
   actions: read
   contents: read
-
 concurrency:
-  group: terrafar-source-maintenance-${{ github.ref }}
+  group: terrafar-source-maintenance-review-authority
   cancel-in-progress: false
-
 jobs:
   source-maintenance:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 90
     env:
       TZ: Asia/Shanghai
       STATE_DIR: /tmp/terrafar-source-maintenance-${{ github.run_id }}
-      RUN_MODE: ${{ github.event_name == 'schedule' && 'daily' || inputs.mode || 'sample' }}
+      RUN_MODE: ${{ github.event_name == 'schedule' && 'daily' || inputs.mode || 'daily' }}
+      HTTP_REQUEST_BUDGET: ${{ github.event_name == 'workflow_dispatch' && format('{0}', inputs.http_request_budget) || '6000' }}
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-
       - name: Select daily plan for an explicitly tagged branch validation
         if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message, '[daily-maintenance]') }}
         shell: bash
         run: echo 'RUN_MODE=daily' >> "$GITHUB_ENV"
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
-      - name: Select explicit restore, then branch history, then default-branch history
-        id: source-run
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate explicit maintenance or encrypted review mode
         env:
-          GH_TOKEN: ${{ github.token }}
-          BOOTSTRAP_RUN_ID: ${{ inputs.restore_run_id }}
+          REVIEW_INPUT_ARCHIVE: ${{ inputs.review_input_archive }}
         shell: bash
         run: |
           set -euo pipefail
-          bootstrap=false
-          artifact_name=""
-          restore_run_id=""
-          workflow_path='.github/workflows/terrafar-source-maintenance.yml'
-          if [[ "${GITHUB_RUN_ATTEMPT:-1}" == 1 ]]; then
-            restore_run_id="$BOOTSTRAP_RUN_ID"
+          case "$RUN_MODE" in daily|full|sample|review) ;; *) exit 2 ;; esac
+          if [[ "$RUN_MODE" == review ]]; then
+            [[ "$GITHUB_REF_NAME" == main || "$GITHUB_REF_NAME" == codex/terrafar-daily-review-integrated-20261024 ]] || { echo 'Review imports require an authorized branch.' >&2; exit 2; }
+            case "$REVIEW_INPUT_ARCHIVE" in maintenance/terrafar-source-audit/quality/review-inputs/*.cms) ;; *) echo 'Review mode requires a protected input archive.' >&2; exit 2 ;; esac
+            [[ "$REVIEW_INPUT_ARCHIVE" != *'..'* && -f "portfolio/application-board/$REVIEW_INPUT_ARCHIVE" ]] || { echo 'Review input archive is missing or invalid.' >&2; exit 2; }
+          elif [[ -n "$REVIEW_INPUT_ARCHIVE" ]]; then
+            echo 'Use review mode for a decision against its unchanged content digest.' >&2; exit 2
           fi
-          if [[ -z "$restore_run_id" && "$GITHUB_EVENT_NAME" == push && "${GITHUB_RUN_ATTEMPT:-1}" == 1 ]]; then
-            restore_run_id="$(python3 - "$GITHUB_EVENT_PATH" <<'PY'
-          import json,re,sys
-          event=json.load(open(sys.argv[1],encoding='utf-8'))
-          message=(event.get('head_commit') or {}).get('message','')
-          match=re.search(r'\[bootstrap-run=(\d+)\]',message)
-          print(match.group(1) if match else '')
-          PY
-          )"
+      - name: Require explicit owner authorization for public encrypted archives
+        env:
+          ARCHIVE_UPLOAD_AUTHORIZED: ${{ vars.TERRAFAR_PUBLIC_ENCRYPTED_ARCHIVES_APPROVED }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$ARCHIVE_UPLOAD_AUTHORIZED" != true ]]; then
+            echo 'Detailed encrypted archive publication is awaiting explicit owner authorization.' >&2
+            echo 'Set TERRAFAR_PUBLIC_ENCRYPTED_ARCHIVES_APPROVED=true only after approving this public repository destination.' >&2
+            exit 2
           fi
-          find_valid_run() {
-            local branch="$1" pages run_id metadata artifacts name
-            local runs_endpoint="repos/$GITHUB_REPOSITORY/actions/workflows/terrafar-source-maintenance.yml/runs?per_page=100"
-            if [[ "$branch" != '*' ]]; then
-              runs_endpoint+="&branch=$branch"
-            fi
-            pages="$(gh api --paginate --slurp "$runs_endpoint")"
-            while IFS= read -r run_id; do
-              [[ -z "$run_id" ]] && continue
-              metadata="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id")"
-              if ! python3 -c 'import json,sys; r=json.load(sys.stdin); sys.exit(0 if r.get("conclusion")=="success" and r.get("path","").split("@",1)[0]==sys.argv[1] and (r.get("head_repository") or {}).get("full_name")==sys.argv[2] else 1)' "$workflow_path" "$GITHUB_REPOSITORY" <<<"$metadata"; then
-                continue
-              fi
-              artifacts="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/artifacts?per_page=100")"
-              name="$(python3 -c 'import json,sys; d=json.load(sys.stdin); a=[x for x in d.get("artifacts",[]) if not x.get("expired") and x.get("name","").startswith("terrafar-source-maintenance-state-v3-")]; a.sort(key=lambda x:x.get("created_at", "")); print(a[-1]["name"] if a else "")' <<<"$artifacts")"
-              if [[ -n "$name" ]]; then
-                printf '%s\t%s\n' "$run_id" "$name"
-                return 0
-              fi
-            done < <(python3 -c 'import json,sys; d=json.load(sys.stdin); rows=[r for page in d for r in page.get("workflow_runs",[]) if r.get("conclusion")=="success" and (sys.argv[1]=="*" or r.get("head_branch")==sys.argv[1]) and str(r.get("id"))!=sys.argv[2]]; rows.sort(key=lambda r:(r.get("run_number",0),r.get("run_attempt",0)),reverse=True); print("\n".join(str(r["id"]) for r in rows))' "$branch" "$GITHUB_RUN_ID" <<<"$pages")
-          }
-          if [[ -z "$restore_run_id" ]]; then
-            selected="$(find_valid_run "$GITHUB_REF_NAME" || true)"
-            if [[ -z "$selected" ]]; then
-              default_branch="$(gh api "repos/$GITHUB_REPOSITORY" --jq .default_branch)"
-              if [[ "$default_branch" != "$GITHUB_REF_NAME" ]]; then
-                selected="$(find_valid_run "$default_branch" || true)"
-              fi
-            fi
-            if [[ -z "$selected" ]]; then
-              selected="$(find_valid_run '*' || true)"
-            fi
-            if [[ -n "$selected" ]]; then
-              IFS=$'\t' read -r restore_run_id artifact_name <<<"$selected"
-            fi
+      - name: Select the latest complete checkpoint without rolling back state
+        if: ${{ success() && env.RUN_MODE != 'review' }}
+        id: source-run
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPLICIT_RESTORE_RUN_ID: ${{ inputs.restore_run_id }}
+          EXPLICIT_RESTORE_ARTIFACT: ${{ inputs.restore_artifact_name }}
+          ALLOW_CROSS_BRANCH: ${{ inputs.allow_cross_branch_restore || false }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(--repository "$GITHUB_REPOSITORY" --current-run-id "$GITHUB_RUN_ID" --branch "$GITHUB_REF_NAME" --github-output "$GITHUB_OUTPUT")
+          # This integration branch explicitly carries forward the latest protected predecessor state.
+          # Production only crosses branches with the reviewed handoff input.
+          if [[ "$GITHUB_REF_NAME" == codex/terrafar-daily-review-integrated-20261024 ]]; then
+            args+=(--handoff-branch codex/terrafar-full-coverage-quality-gate-20261024)
+          elif [[ "$ALLOW_CROSS_BRANCH" == true ]]; then
+            args+=(--handoff-branch codex/terrafar-daily-review-integrated-20261024)
           fi
-          if [[ -n "$restore_run_id" && -z "$artifact_name" ]]; then
-            metadata="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$restore_run_id")"
-            python3 -c 'import json,sys; r=json.load(sys.stdin); sys.exit(0 if r.get("conclusion")=="success" and r.get("path","").split("@",1)[0]==sys.argv[1] and (r.get("head_repository") or {}).get("full_name")==sys.argv[2] else 1)' '.github/workflows/terrafar-source-maintenance.yml' "$GITHUB_REPOSITORY" <<<"$metadata" || { echo 'Explicit restore run is not a successful run of this repository workflow.' >&2; exit 1; }
-            artifacts="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$restore_run_id/artifacts?per_page=100")"
-            artifact_name="$(python3 -c 'import json,sys; d=json.load(sys.stdin); a=[x for x in d.get("artifacts",[]) if not x.get("expired") and (x.get("name","").startswith("terrafar-source-maintenance-state-") or x.get("name","").startswith("terrafar-round-002-first-"))]; a.sort(key=lambda x:x.get("created_at", "")); print(a[-1]["name"] if a else "")' <<<"$artifacts")"
+          if [[ -n "$EXPLICIT_RESTORE_RUN_ID" || -n "$EXPLICIT_RESTORE_ARTIFACT" ]]; then
+            args+=(--restore-run-id "$EXPLICIT_RESTORE_RUN_ID" --restore-artifact-name "$EXPLICIT_RESTORE_ARTIFACT")
           fi
-          if [[ -z "$restore_run_id" ]]; then
-            echo 'No prior successful maintenance run with an unexpired state artifact was found on this branch or the default branch. Supply an explicit successful restore_run_id only after reviewing its artifact.' >&2
-            exit 1
-          fi
-          [[ -n "$artifact_name" ]] || { echo "No unexpired versioned state artifact found for Actions run $restore_run_id." >&2; exit 1; }
-          if [[ "$artifact_name" == terrafar-round-002-first-* || ( "$artifact_name" == terrafar-source-maintenance-state-* && "$artifact_name" != terrafar-source-maintenance-state-v3-* ) ]]; then
-            latest_any_v3="$(find_valid_run '*' || true)"
-            if [[ -n "$latest_any_v3" ]]; then
-              echo 'Legacy bootstrap is one-time only; a version 3 state artifact already exists in this repository.' >&2
-              exit 1
-            fi
-            bootstrap=true
-          elif [[ "$artifact_name" != terrafar-source-maintenance-state-v3-* ]]; then
-            echo "Refusing unversioned or stale restore artifact $artifact_name; only version 3 state artifacts or the one-time Round 002 bootstrap are accepted." >&2
-            exit 1
-          else
-            latest_compatible="$(find_valid_run '*' || true)"
-            if [[ -n "$latest_compatible" ]]; then
-              IFS=$'\t' read -r latest_compatible_run_id latest_compatible_artifact <<<"$latest_compatible"
-              if [[ "$restore_run_id" != "$latest_compatible_run_id" ]]; then
-                echo "Refusing stale explicit restore run $restore_run_id; latest compatible state is run $latest_compatible_run_id ($latest_compatible_artifact)." >&2
-                exit 1
-              fi
-            fi
-          fi
-          if [[ -z "$artifact_name" ]]; then
-            echo "No unexpired state artifact found for Actions run $restore_run_id; refusing to start from empty state." >&2
-            exit 1
-          fi
-          printf 'restore_run_id=%s\nartifact_name=%s\nbootstrap=%s\n' "$restore_run_id" "$artifact_name" "$bootstrap" >> "$GITHUB_OUTPUT"
-
+          python3 scripts/terrafar_select_checkpoint.py "${args[@]}"
+        working-directory: portfolio/application-board
       - name: Download the prior state and candidate ledger artifact
+        if: ${{ success() && env.RUN_MODE != 'review' }}
         uses: actions/download-artifact@v4
         with:
           name: ${{ steps.source-run.outputs.artifact_name }}
-          run-id: ${{ steps.source-run.outputs.restore_run_id }}
+          run-id: ${{ steps.source-run.outputs.run_id }}
           github-token: ${{ github.token }}
           path: ${{ runner.temp }}/terrafar-restore-artifact
-
       - name: Decrypt the checkpoint archive when present
         id: restore_archive
         working-directory: portfolio/application-board
         env:
           TERRAFAR_STATE_DECRYPTION_KEY: ${{ secrets.TERRAFAR_STATE_DECRYPTION_KEY }}
-          CHECKPOINT_ORIGIN_ACTIONS_RUN_ID: ${{ steps.source-run.outputs.restore_run_id }}
+          CHECKPOINT_ORIGIN_ACTIONS_RUN_ID: ${{ steps.source-run.outputs.run_id }}
           CHECKPOINT_ORIGIN_ARTIFACT_NAME: ${{ steps.source-run.outputs.artifact_name }}
+          CHECKPOINT_ORIGIN_ARTIFACT_ID: ${{ steps.source-run.outputs.artifact_id }}
+          CHECKPOINT_ORIGIN_COMMIT_SHA: ${{ steps.source-run.outputs.head_sha }}
+          MIGRATION_MANIFEST_PATH: ${{ inputs.state_migration_manifest || 'maintenance/terrafar-source-audit/migrations/current.json' }}
         shell: bash
         run: |
           set -euo pipefail
@@ -181,17 +159,44 @@ jobs:
           if [[ -f "$download/private_state.cms" ]]; then
             [[ -n "${TERRAFAR_STATE_DECRYPTION_KEY:-}" ]] || { echo 'Encrypted maintenance checkpoint requires TERRAFAR_STATE_DECRYPTION_KEY.' >&2; exit 2; }
             manifest="$download/maintenance_artifact_manifest.json"
+            if [[ ! -f "$manifest" && -f "$download/artifact_manifest.json" ]]; then manifest="$download/artifact_manifest.json"; fi
             [[ -f "$manifest" ]] || { echo 'Encrypted maintenance checkpoint has no public manifest.' >&2; exit 2; }
             python3 - "$manifest" "$CHECKPOINT_ORIGIN_ACTIONS_RUN_ID" "$CHECKPOINT_ORIGIN_ARTIFACT_NAME" <<'PY'
           import json,sys
           metadata=json.load(open(sys.argv[1],encoding='utf-8'))
-          if metadata.get('format')!='terrafar-source-maintenance-public-artifact-v1' or metadata.get('capture_status')!='complete':
+          if metadata.get('format') not in {'terrafar-source-maintenance-public-artifact-v1','terrafar-full-census-artifact-v1'} or metadata.get('capture_status')!='complete':
               raise SystemExit('encrypted maintenance checkpoint manifest is not a complete supported format')
-          if str(metadata.get('actions_run_id'))!=sys.argv[2] or metadata.get('artifact_name')!=sys.argv[3]:
+          artifact_name=metadata.get('artifact_name') or f"terrafar-full-census-{metadata.get('actions_run_id')}-{metadata.get('run_attempt')}"
+          if str(metadata.get('actions_run_id'))!=sys.argv[2] or artifact_name!=sys.argv[3]:
               raise SystemExit('encrypted maintenance checkpoint origin does not match the selected Actions run and artifact')
           PY
             expected_cert="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1],encoding="utf-8")).get("state_encryption_certificate_sha256", ""))' "$manifest")"
-            expected_archive="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1],encoding="utf-8")).get("encrypted_state_sha256", ""))' "$manifest")"
+            expected_archive="$(python3 - "$manifest" <<'PYBIND'
+          import hashlib,json,os,pathlib,sys
+          capture_path=pathlib.Path(sys.argv[1]);capture=json.loads(capture_path.read_text());checksum=capture.get('encrypted_state_sha256')
+          if not checksum:
+              # One reviewed legacy encrypted census omitted a ciphertext digest in its
+              # public manifest. Bind the actual downloaded bytes to the independently
+              # selected GitHub capture; never infer a new checksum or accept old state.
+              path=pathlib.Path(os.environ['MIGRATION_MANIFEST_PATH'])
+              approved=pathlib.Path('maintenance/terrafar-source-audit/migrations').resolve()
+              if path.is_absolute() or '..' in path.parts or not path.resolve().is_relative_to(approved):
+                  raise SystemExit('invalid reviewed migration path')
+              binding=json.loads(path.read_text()).get('expected_origin_archive',{})
+              expected={'actions_run_id':os.environ['CHECKPOINT_ORIGIN_ACTIONS_RUN_ID'],
+                        'artifact_id':os.environ['CHECKPOINT_ORIGIN_ARTIFACT_ID'],
+                        'artifact_name':os.environ['CHECKPOINT_ORIGIN_ARTIFACT_NAME'],
+                        'origin_commit_sha':os.environ['CHECKPOINT_ORIGIN_COMMIT_SHA'],
+                        'capture_manifest_sha256':hashlib.sha256(capture_path.read_bytes()).hexdigest(),
+                        'state_encryption_certificate_sha256':capture.get('state_encryption_certificate_sha256')}
+              if capture.get('format')!='terrafar-full-census-artifact-v1' or any(binding.get(k)!=v for k,v in expected.items()):
+                  raise SystemExit('legacy encrypted capture is not the exact reviewed handoff')
+              checksum=binding.get('encrypted_state_sha256')
+          if not isinstance(checksum,str) or len(checksum)!=64 or any(c not in '0123456789abcdef' for c in checksum):
+              raise SystemExit('encrypted checkpoint digest missing or invalid')
+          print(checksum)
+          PYBIND
+          )"
             actual_cert="$(sha256sum maintenance/terrafar-source-audit/state_archive_recipient.pem | cut -d ' ' -f 1)"
             actual_archive="$(sha256sum "$download/private_state.cms" | cut -d ' ' -f 1)"
             [[ -n "$expected_cert" && "$expected_cert" == "$actual_cert" ]] || { echo 'Maintenance checkpoint recipient certificate does not match its manifest.' >&2; exit 2; }
@@ -199,36 +204,70 @@ jobs:
             python3 scripts/terrafar_state_archive.py decrypt \
               --input "$download/private_state.cms" --destination "$destination" \
               --recipient-certificate maintenance/terrafar-source-audit/state_archive_recipient.pem
+            if [[ -d "$download/run" ]]; then cp -a "$download/run" "$destination/run"; fi
+            if [[ -f "$download/artifact_manifest.json" ]]; then cp "$download/artifact_manifest.json" "$destination/artifact_manifest.json"; fi
             echo "artifact_dir=$destination" >> "$GITHUB_OUTPUT"
           else
-            # One-time migration path for already-created plaintext artifacts. New uploads
-            # below contain no raw candidate ledger, candidate text, or agent batch.
-            echo "artifact_dir=$download" >> "$GITHUB_OUTPUT"
+            echo 'Selected checkpoint has no encrypted state; refusing plaintext fallback.' >&2
+            exit 2
           fi
-
+        if: ${{ success() && env.RUN_MODE != 'review' }}
       - name: Verify and restore prior state across distinct Actions runs
+        if: ${{ success() && env.RUN_MODE != 'review' }}
         working-directory: portfolio/application-board
         env:
-          ORIGIN_ACTIONS_RUN_ID: ${{ steps.source-run.outputs.restore_run_id }}
+          ORIGIN_ACTIONS_RUN_ID: ${{ steps.source-run.outputs.run_id }}
           CURRENT_ACTIONS_RUN_ID: ${{ github.run_id }}
-          ALLOW_LEGACY: ${{ steps.source-run.outputs.bootstrap }}
+          MIGRATION_MANIFEST_PATH: ${{ inputs.state_migration_manifest || 'maintenance/terrafar-source-audit/migrations/current.json' }}
         shell: bash
         run: |
           set -euo pipefail
           args=(--artifact-dir "${{ steps.restore_archive.outputs.artifact_dir }}" --destination "$STATE_DIR" \
-                --origin-actions-run-id "$ORIGIN_ACTIONS_RUN_ID" --current-actions-run-id "$CURRENT_ACTIONS_RUN_ID" \
+                --origin-actions-run-id "$ORIGIN_ACTIONS_RUN_ID" --origin-commit-sha "${{ steps.source-run.outputs.head_sha }}" --current-actions-run-id "$CURRENT_ACTIONS_RUN_ID" \
                 --registry maintenance/terrafar-source-audit/registry/source_registry.json)
-          if [[ "$ALLOW_LEGACY" == true ]]; then
-            args+=(--allow-legacy-migration --review-results maintenance/terrafar-source-audit/agent-results/round002_eth_first10.json)
+          if [[ -f "$MIGRATION_MANIFEST_PATH" ]]; then
+            case "$MIGRATION_MANIFEST_PATH" in
+              maintenance/terrafar-source-audit/migrations/*.json) ;;
+              *) echo 'Migration manifest must be a reviewed migration JSON.' >&2; exit 2 ;;
+            esac
+            [[ "$MIGRATION_MANIFEST_PATH" != *'..'* ]] || { echo 'Invalid migration path.' >&2; exit 2; }
+            args+=(--migration-manifest "$MIGRATION_MANIFEST_PATH")
           fi
           python3 scripts/terrafar_restore_run_state.py "${args[@]}"
-
-      - name: Merge assigned agent results into the durable ledger
-        if: ${{ inputs.review_results_path != '' || (github.event_name == 'push' && contains(github.event.head_commit.message, '[merge-agent-results]')) }}
+      - name: Reconcile the durable review authority before making any new daily batch
         working-directory: portfolio/application-board
         env:
-          REVIEW_RESULTS_PATH: ${{ inputs.review_results_path || (github.event_name == 'push' && contains(github.event.head_commit.message, '[merge-agent-results]') && 'maintenance/terrafar-source-audit/agent-results/launch-readiness-import-batch.json') || '' }}
-          REVIEW_ASSIGNMENT_PATH: ${{ inputs.review_assignment_path || (github.event_name == 'push' && contains(github.event.head_commit.message, '[merge-agent-results]') && 'maintenance/terrafar-source-audit/agent-results/launch-readiness-import-assignment.json') || '' }}
+          GH_TOKEN: ${{ github.token }}
+          TERRAFAR_STATE_DECRYPTION_KEY: ${{ secrets.TERRAFAR_STATE_DECRYPTION_KEY }}
+        run: |
+          set -euo pipefail
+          python3 scripts/terrafar_review_store.py load-authority \
+            --repository "$GITHUB_REPOSITORY" --journal "$STATE_DIR/quality_journal.json" \
+            --authority-info "$STATE_DIR/review_authority.json"
+      - name: Import the actual encrypted user decision or whole-batch rechecks
+        if: ${{ success() && env.RUN_MODE == 'review' }}
+        working-directory: portfolio/application-board
+        env:
+          REVIEW_INPUT_ARCHIVE: ${{ inputs.review_input_archive }}
+          TERRAFAR_STATE_DECRYPTION_KEY: ${{ secrets.TERRAFAR_STATE_DECRYPTION_KEY }}
+        run: |
+          set -euo pipefail
+          private_input="maintenance/terrafar-source-audit/quality/runtime-inputs-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          trap 'rm -rf "$private_input"' EXIT
+          python3 scripts/terrafar_state_archive.py decrypt --input "$REVIEW_INPUT_ARCHIVE" --destination "$private_input" --recipient-certificate maintenance/terrafar-source-audit/state_archive_recipient.pem
+          args=(import-inputs --journal "$STATE_DIR/quality_journal.json" --batch "$STATE_DIR/quality_batch.json")
+          if [[ -f "$private_input/state/decision.json" ]]; then args+=(--decision "$private_input/state/decision.json"); fi
+          if [[ -f "$private_input/state/recheck.json" ]]; then args+=(--recheck "$private_input/state/recheck.json"); fi
+          python3 scripts/terrafar_review_store.py "${args[@]}" >/dev/null
+      - name: Merge assigned agent results into the durable ledger
+        if: ${{ success() && env.RUN_MODE != 'review' && (inputs.review_results_path != '' || (github.event_name == 'push' && contains(github.event.head_commit.message,
+          '[merge-agent-results]'))) }}
+        working-directory: portfolio/application-board
+        env:
+          REVIEW_RESULTS_PATH: ${{ inputs.review_results_path || (github.event_name == 'push' && contains(github.event.head_commit.message, '[merge-agent-results]')
+            && 'maintenance/terrafar-source-audit/agent-results/launch-readiness-import-batch.json') || '' }}
+          REVIEW_ASSIGNMENT_PATH: ${{ inputs.review_assignment_path || (github.event_name == 'push' && contains(github.event.head_commit.message,
+            '[merge-agent-results]') && 'maintenance/terrafar-source-audit/agent-results/launch-readiness-import-assignment.json') || '' }}
           CURRENT_ACTIONS_RUN_ID: ${{ github.run_id }}
         shell: bash
         run: |
@@ -248,8 +287,8 @@ jobs:
           python3 scripts/terrafar_candidate_ledger.py merge-results \
             --ledger "$STATE_DIR/candidate_ledger.json" \
             --results "$REVIEW_RESULTS_PATH" --assignment "$REVIEW_ASSIGNMENT_PATH" --run-id "$CURRENT_ACTIONS_RUN_ID"
-
-      - name: Run the ten-source smoke or all-source plan with a rotating ten-source batch
+      - name: Check the explicit sample or attempt every active source
+        if: ${{ success() && env.RUN_MODE != 'review' }}
         id: audit
         working-directory: portfolio/application-board
         env:
@@ -257,25 +296,68 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          args=(run --live --budget 10 --concurrency 3 --timeout 15 --retries 1 \
-                --per-host-delay 1 --http-request-budget 250 \
+          args=(run --live --concurrency 4 --timeout 15 --retries 1 \
+                --per-host-delay 1 --http-request-budget "$HTTP_REQUEST_BUDGET" \
                 --require-state --require-candidate-ledger --state-dir "$STATE_DIR" --run-id "$TERRAFAR_RUN_ID")
           if [[ "$RUN_MODE" == sample ]]; then
-            args+=(--source-ids-file maintenance/terrafar-source-audit/round_002/sample_manifest.json)
+            args+=(--budget 10 --source-ids-file maintenance/terrafar-source-audit/round_002/sample_manifest.json)
+          else
+            args+=(--all-sources)
           fi
           python3 scripts/terrafar_source_audit.py "${args[@]}"
-
       - name: Export a bounded Skill review batch from the persistent ledger
-        if: success()
+        if: ${{ success() && env.RUN_MODE != 'review' }}
         working-directory: portfolio/application-board
         run: |
           set -euo pipefail
           python3 scripts/terrafar_candidate_ledger.py export-batch \
             --ledger "$STATE_DIR/candidate_ledger.json" \
             --output "$STATE_DIR/agent_batch.json" --limit 10 --agent opportunity_verifier >/dev/null
-
-      - name: Build a sanitized public report and encrypted candidate checkpoint
+      - name: Prepare the daily human-review batch and persistent rejection journal
+        if: ${{ success() && env.RUN_MODE != 'review' }}
+        working-directory: portfolio/application-board
+        env:
+          TERRAFAR_RUN_ID: terrafar-maintenance-${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          set -euo pipefail
+          node --input-type=module - "$STATE_DIR/active_catalog.json" <<'JS'
+          import {writeFileSync} from 'node:fs';
+          import {geographyCatalog} from './dist/geography-catalog.mjs';
+          writeFileSync(process.argv[2], JSON.stringify(geographyCatalog, null, 2) + '\n');
+          JS
+          args=(build --run-dir "maintenance/terrafar-source-audit/runs/$TERRAFAR_RUN_ID" \
+                --registry maintenance/terrafar-source-audit/registry/source_registry.json \
+                --ledger "$STATE_DIR/candidate_ledger.json" --output "$STATE_DIR/quality_batch.json" \
+                --journal "$STATE_DIR/quality_journal.json" --catalog "$STATE_DIR/active_catalog.json")
+          if [[ "$RUN_MODE" == full ]]; then
+            args+=(--initial-release)
+          fi
+          python3 scripts/terrafar_quality_gate.py "${args[@]}" >/dev/null
+          python3 scripts/terrafar_quality_gate.py export \
+            --batch "$STATE_DIR/quality_batch.json" --output-dir "$STATE_DIR/quality-review" >/dev/null
+      - name: Prepare persistent reports for every review date
         if: success()
+        working-directory: portfolio/application-board
+        run: |
+          set -euo pipefail
+          python3 scripts/terrafar_review_store.py export-store \
+            --journal "$STATE_DIR/quality_journal.json" --authority-info "$STATE_DIR/review_authority.json" \
+            --repository "$GITHUB_REPOSITORY" --directory "$STATE_DIR/review-store"
+          if [[ "$RUN_MODE" == review ]]; then
+            python3 scripts/terrafar_quality_gate.py export \
+              --batch "$STATE_DIR/quality_batch.json" --output-dir "$STATE_DIR/quality-review" >/dev/null
+          fi
+          cat "$STATE_DIR/review-store/quality/latest/review.md" >> "$GITHUB_STEP_SUMMARY"
+      - name: Pass only sanitized summaries and encrypted review state to the publishing job
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: terrafar-review-report-${{ github.run_id }}-${{ github.run_attempt }}
+          path: /tmp/terrafar-source-maintenance-${{ github.run_id }}/review-store/
+          if-no-files-found: error
+          retention-days: 90
+      - name: Build a sanitized public report and encrypted candidate checkpoint
+        if: ${{ success() && env.RUN_MODE != 'review' }}
         working-directory: portfolio/application-board
         env:
           TERRAFAR_RUN_ID: terrafar-maintenance-${{ github.run_id }}-${{ github.run_attempt }}
@@ -295,14 +377,13 @@ jobs:
             --adapters scripts/terrafar_source_adapters.py \
             --candidate-ledger-implementation scripts/terrafar_candidate_ledger.py
       - name: Save sanitized diagnostics and encrypted candidate state
-        if: success()
+        if: ${{ success() && env.RUN_MODE != 'review' }}
         uses: actions/upload-artifact@v4
         with:
           name: terrafar-source-maintenance-state-v3-${{ github.run_id }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/terrafar-source-maintenance-export/
           if-no-files-found: error
           retention-days: 90
-
       - name: Build sanitized failure diagnostics
         if: failure()
         working-directory: portfolio/application-board
@@ -312,6 +393,8 @@ jobs:
         run: |
           set -euo pipefail
           python3 scripts/terrafar_maintenance_artifact.py failure \
+            --state-dir "$STATE_DIR" \
+            --recipient-certificate maintenance/terrafar-source-audit/state_archive_recipient.pem \
             --run-dir "maintenance/terrafar-source-audit/runs/$TERRAFAR_RUN_ID" \
             --output-dir "$RUNNER_TEMP/terrafar-source-maintenance-failure" \
             --actions-run-id "$GITHUB_RUN_ID" --run-attempt "$GITHUB_RUN_ATTEMPT"
@@ -323,3 +406,31 @@ jobs:
           path: ${{ runner.temp }}/terrafar-source-maintenance-failure/
           if-no-files-found: ignore
           retention-days: 90
+  publish-review-reports:
+    needs: source-maintenance
+    if: ${{ success() && (github.ref_name == 'main' || github.ref_name == 'codex/terrafar-daily-review-integrated-20261024') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      actions: read
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          name: terrafar-review-report-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/terrafar-review-report
+      - name: Update the dedicated review branch using its expected HEAD, never force
+        working-directory: portfolio/application-board
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python3 scripts/terrafar_review_store.py publish-store \
+            --repository "$GITHUB_REPOSITORY" --directory "$RUNNER_TEMP/terrafar-review-report"
+          printf '%s\n' 'Daily review reports: https://github.com/'"$GITHUB_REPOSITORY"'/tree/terrafar-review/quality' >> "$GITHUB_STEP_SUMMARY"

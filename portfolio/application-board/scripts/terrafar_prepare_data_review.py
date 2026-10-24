@@ -7,12 +7,162 @@ import copy
 import hashlib
 import json
 import re
+import subprocess
 import sys
 import tempfile
 from pathlib import Path
 from typing import Any
 
 import terrafar_candidate_ledger as candidate_ledger
+
+
+REPOSITORY_ROOT = Path(__file__).resolve().parents[3]
+
+
+def source_path(path: Path) -> str:
+    """Use reproducible repository paths while supporting isolated test fixtures."""
+    resolved = path.resolve()
+    try:
+        return resolved.relative_to(REPOSITORY_ROOT).as_posix()
+    except ValueError:
+        return str(resolved)
+
+
+def catalog_inputs(path: Path) -> list[dict[str, str]]:
+    """Bind the evaluated module and all of its local static module dependencies."""
+    root = path.resolve().parent
+    pending, seen, rows = [path.resolve()], set(), []
+    while pending:
+        current = pending.pop()
+        if current in seen:
+            continue
+        if not current.is_relative_to(root):
+            raise ValueError("active_catalog_dependency_outside_directory")
+        seen.add(current)
+        data = current.read_bytes()
+        rows.append({"source_path": source_path(current), "sha256": hashlib.sha256(data).hexdigest()})
+        text = data.decode("utf-8")
+        # Catalogue modules are trusted repository code, not fetched page bodies.
+        # Refuse hidden/dynamic inputs: a target digest must cover every dependency.
+        if re.search(r"\bimport\s*\(", text):
+            raise ValueError("active_catalog_dynamic_import_not_supported")
+        dependencies = re.findall(r"\b(?:import|export)\s+[^;]*?\bfrom\s*['\"]([^'\"]+)['\"]", text)
+        dependencies += re.findall(r"\bimport\s*['\"]([^'\"]+)['\"]", text)
+        for dependency in dependencies:
+            if not dependency.startswith(".") or "?" in dependency or "#" in dependency:
+                raise ValueError("active_catalog_nonlocal_dependency_not_supported")
+            pending.append((current.parent / dependency).resolve())
+    return sorted(rows, key=lambda row: row["source_path"])
+
+
+def read_active_catalog(path: Path) -> tuple[list[dict[str, Any]], str, list[dict[str, str]]]:
+    """Read the actual exported records, including defaults and catalogue overrides.
+
+    This intentionally does not extract id/url with a regex and then borrow field
+    values from positions.mjs. The latter is a separate, potentially stale store.
+    """
+    inputs = catalog_inputs(path)
+    loader = """
+import {pathToFileURL} from 'node:url';
+const module = await import(pathToFileURL(process.argv[1]).href);
+const preferred = ['geographyCatalog', 'geographyOpportunities'];
+let name = preferred.find(key => Array.isArray(module[key]));
+if (!name) {
+  const names = Object.keys(module).filter(key => Array.isArray(module[key]));
+  if (names.length !== 1) throw new Error('catalogue_array_export_not_unique');
+  name = names[0];
+}
+process.stdout.write(JSON.stringify({export_name:name,records:module[name]}));
+"""
+    try:
+        completed = subprocess.run(["node", "--input-type=module", "-e", loader, str(path.resolve())],
+                                   check=True, capture_output=True, text=True, timeout=20)
+        value = json.loads(completed.stdout)
+    except (OSError, subprocess.SubprocessError, json.JSONDecodeError) as error:
+        raise ValueError(f"active_catalog_module_unreadable:{source_path(path)}") from error
+    rows = value.get("records") if isinstance(value, dict) else None
+    if (not isinstance(rows, list) or not all(isinstance(row, dict) and isinstance(row.get("id"), str)
+                                             for row in rows)):
+        raise ValueError("active_catalog_records_invalid")
+    if len({row["id"] for row in rows}) != len(rows):
+        raise ValueError("active_catalog_record_ids_not_unique")
+    return rows, value["export_name"], inputs
+
+
+def resolve_target(formal_path: Path | None, active_catalog_path: Path | None,
+                   result: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any], str | None]:
+    """Resolve the real target first; a legacy record is an optional identity alias."""
+    candidate_url = result.get("candidate_url")
+    def matching_legacy_rows():
+        rows = read_positions(formal_path) if formal_path and formal_path.is_file() else []
+        return [row for row in rows if row.get("id") == result.get("formal_record_id")]
+    if active_catalog_path:
+        records, export_name, inputs = read_active_catalog(active_catalog_path)
+        matches = [row for row in records if row.get("url") == candidate_url]
+        if len(matches) > 1:
+            raise ValueError("active_catalog_url_match_not_unique")
+        if matches:
+            record = matches[0]
+            if result.get("active_catalog_record_id") not in (None, record["id"]):
+                raise ValueError("active_catalog_target_identity_mismatch")
+            legacy_id = None
+            declared_id = result.get("formal_record_id")
+            if declared_id not in (None, record["id"]):
+                legacy_matches = matching_legacy_rows()
+                if len(legacy_matches) != 1:
+                    raise ValueError("formal_record_id_missing_or_not_unique")
+                if legacy_matches[0].get("url") != candidate_url:
+                    raise ValueError("formal_record_url_identity_mismatch")
+                legacy_id = legacy_matches[0]["id"]
+            binding = {
+                "target_kind": "active_catalog_record", "source_path": source_path(active_catalog_path),
+                "module_sha256": hashlib.sha256(active_catalog_path.read_bytes()).hexdigest(),
+                "export_name": export_name, "record_id": record["id"],
+                "record_sha256": candidate_ledger.digest(record), "record_snapshot": record,
+                "catalog_inputs": inputs,
+            }
+            return record, binding, legacy_id
+        if result.get("active_catalog_record_id"):
+            raise ValueError("active_catalog_target_identity_mismatch")
+    legacy_matches = matching_legacy_rows()
+    if len(legacy_matches) != 1:
+        raise ValueError("formal_record_id_missing_or_not_unique")
+    record = legacy_matches[0]
+    if record.get("url") != candidate_url:
+        raise ValueError("formal_record_url_identity_mismatch")
+    binding = {
+        "target_kind": "legacy_positions_record", "source_path": source_path(formal_path),
+        "module_sha256": hashlib.sha256(formal_path.read_bytes()).hexdigest(),
+        "export_name": "positions", "record_id": record["id"],
+        "record_sha256": candidate_ledger.digest(record), "record_snapshot": record,
+        "catalog_inputs": [{"source_path": source_path(formal_path),
+                            "sha256": hashlib.sha256(formal_path.read_bytes()).hexdigest()}],
+    }
+    return record, binding, record["id"]
+
+
+def validate_target_binding(binding: dict[str, Any], changes: dict[str, Any]) -> None:
+    """Re-read a pending target before any future approved application of a patch."""
+    def resolve(value: str) -> Path:
+        path = Path(value)
+        return path if path.is_absolute() else REPOSITORY_ROOT / path
+    path = resolve(binding["source_path"])
+    if hashlib.sha256(path.read_bytes()).hexdigest() != binding["module_sha256"]:
+        raise ValueError("data_review_target_module_changed")
+    if binding.get("target_kind") == "active_catalog_record":
+        rows, export_name, inputs = read_active_catalog(path)
+        if export_name != binding.get("export_name") or inputs != binding.get("catalog_inputs"):
+            raise ValueError("data_review_target_catalog_inputs_changed")
+    elif binding.get("target_kind") == "legacy_positions_record":
+        rows = read_positions(path)
+    else:
+        raise ValueError("data_review_target_kind_unknown")
+    matches = [row for row in rows if row.get("id") == binding.get("record_id")]
+    if len(matches) != 1 or candidate_ledger.digest(matches[0]) != binding.get("record_sha256"):
+        raise ValueError("data_review_target_record_changed")
+    for field, change in changes.items():
+        if field not in matches[0] or matches[0][field] != change.get("before"):
+            raise ValueError(f"data_review_target_before_value_mismatch:{field}")
 
 
 def read_positions(path: Path) -> list[dict[str, Any]]:
@@ -27,8 +177,15 @@ def read_positions(path: Path) -> list[dict[str, Any]]:
 
 
 def find_active_catalog_match(path: Path, candidate_url: str) -> str | None:
-    """Resolve a reviewed URL against the active geography entry module by exact URL."""
+    """Resolve a reviewed URL against the actual exported catalogue by exact URL."""
     text = path.read_text(encoding="utf-8")
+    if re.search(r"\bexport\b", text):
+        rows, _, _ = read_active_catalog(path)
+        matching = [row["id"] for row in rows if row.get("url") == candidate_url]
+        if len(matching) > 1:
+            raise ValueError("active_catalog_url_match_not_unique")
+        return matching[0] if matching else None
+    # Diagnose ambiguous legacy snippets without evaluating non-module text.
     matches = []
     for match in re.finditer(r"record\(\{(.*?)\n\s*\}\)", text, re.S):
         block = match.group(1)
@@ -38,7 +195,7 @@ def find_active_catalog_match(path: Path, candidate_url: str) -> str | None:
             matches.append(identifier.group(2))
     if len(matches) > 1:
         raise ValueError("active_catalog_url_match_not_unique")
-    return matches[0] if matches else None
+    raise ValueError("active_catalog_module_export_missing")
 
 
 def patch_values(record: dict[str, Any], patch_fields: dict[str, Any]) -> dict[str, dict[str, Any]]:
@@ -103,7 +260,7 @@ def write_idempotent_json(path: Path, value: dict[str, Any], identity_keys: tupl
     temporary_path.replace(path)
 
 
-def prepare(ledger_path: Path, result_path: Path, formal_path: Path, output_dir: Path, run_id: str,
+def prepare(ledger_path: Path, result_path: Path, formal_path: Path | None, output_dir: Path, run_id: str,
             active_catalog_path: Path | None = None) -> dict[str, Any]:
     result = json.loads(result_path.read_text(encoding="utf-8"))
     if not isinstance(result, dict):
@@ -111,25 +268,30 @@ def prepare(ledger_path: Path, result_path: Path, formal_path: Path, output_dir:
     candidate_id = result.get("candidate_id")
     if result.get("status") != "verified" or result.get("decision_scope") != "page_content":
         raise ValueError("formal_data_patch_requires_verified_page_content")
-    rows = read_positions(formal_path)
-    record_rows = [row for row in rows if row.get("id") == result.get("formal_record_id")]
-    if len(record_rows) != 1:
-        raise ValueError("formal_record_id_missing_or_not_unique")
-    record = record_rows[0]
-    active_catalog_record_id = (find_active_catalog_match(active_catalog_path, result.get("candidate_url", ""))
-                                if active_catalog_path else None)
-    if active_catalog_record_id and result.get("active_catalog_record_id") not in (None, active_catalog_record_id):
-        raise ValueError("active_catalog_target_identity_mismatch")
-    if record.get("url") != result.get("candidate_url"):
-        raise ValueError("formal_record_url_identity_mismatch")
+    record, target_binding, legacy_formal_record_id = resolve_target(formal_path, active_catalog_path, result)
+    active_catalog_record_id = record["id"] if target_binding["target_kind"] == "active_catalog_record" else None
+    formal_record_id = legacy_formal_record_id or record["id"]
     expected_candidate_id = candidate_ledger.stable_candidate_id(
         result.get("source_id", ""), result.get("endpoint_id", ""), result.get("candidate_key", ""))
     if expected_candidate_id != candidate_id:
         raise ValueError("data_review_candidate_stable_identity_mismatch")
     supported = candidate_ledger._supported_content_fields(result)
     field_sources = {"deadline": "deadline", "funding": "funding", "salary": "funding",
-                     "requirements": "eligibility", "url": "application_route"}
+                     "requirements": "eligibility", "applicationUrl": "application_route"}
+    route_binding = None
     for field, value in result.get("formal_patch", {}).items():
+        # The announcement URL is the candidate's identity. An application portal
+        # belongs in applicationUrl and must never silently replace that identity.
+        if field == "url":
+            raise ValueError("formal_patch_announcement_url_is_identity_use_applicationUrl")
+        if field == "applicationUrl":
+            route_binding = candidate_ledger._validated_application_route(
+                {"candidate_url": result.get("candidate_url"),
+                 "content_fingerprint": result.get("candidate_fingerprint")},
+                result.get("evidence", []), result.get("application_route_binding"))
+            if not route_binding or value != route_binding["application_url"]:
+                raise ValueError("formal_patch_applicationUrl_requires_bound_official_link")
+            continue
         evidence_field = supported.get(field_sources.get(field, field))
         source_value = evidence_field.get("value", "") if evidence_field else ""
         if (not evidence_field or not isinstance(value, str) or not isinstance(source_value, str)
@@ -140,6 +302,8 @@ def prepare(ledger_path: Path, result_path: Path, formal_path: Path, output_dir:
         raise ValueError("formal_patch_has_no_field_changes")
     if not verify_rollback_roundtrip(record, proposed):
         raise ValueError("formal_patch_rollback_roundtrip_failed")
+    target_binding["field_before"] = {field: change["before"] for field, change in proposed.items()}
+    validate_target_binding(target_binding, proposed)
     output_dir.mkdir(parents=True, exist_ok=True)
     stem = f"{candidate_id}-{result['candidate_fingerprint'][:12]}"
     patch_path = output_dir / f"{stem}.json"
@@ -190,23 +354,43 @@ def prepare(ledger_path: Path, result_path: Path, formal_path: Path, output_dir:
                 "locator": finding.get("locator"),
                 "evidence": [item for item in result.get("evidence", []) if item.get("field") == field_name],
             }
+        for field in proposed:
+            evidence_name = field_sources.get(field, field)
+            if field == "applicationUrl":
+                evidence_by_field[field] = {
+                    "value": route_binding["application_url"],
+                    "evidence_url": route_binding["evidence_url"],
+                    "locator": route_binding["locator"], "source_field": "application_route",
+                    "evidence": [item for item in result.get("evidence", [])
+                                 if item.get("field") == "application_route"
+                                 and item.get("url") == route_binding["evidence_url"]
+                                 and item.get("locator") == route_binding["locator"]],
+                    "application_route_binding": route_binding,
+                }
+            elif field != evidence_name:
+                field_evidence = copy.deepcopy(evidence_by_field[evidence_name])
+                field_evidence["source_field"] = evidence_name
+                evidence_by_field[field] = field_evidence
         payload = {
         "format": "terrafar-formal-data-review-patch-v1",
         "candidate_id": candidate_id,
         "candidate_fingerprint": result["candidate_fingerprint"],
         "source_id": task["source_id"], "endpoint_id": task["endpoint_id"],
         "source_url": task["source_url"], "candidate_url": task["candidate_url"],
-        "formal_record_id": record["id"], "content_review_status": "verified",
+        "formal_record_id": formal_record_id, "legacy_formal_record_id": legacy_formal_record_id,
+        "content_review_status": "verified",
         "active_catalog_record_id": active_catalog_record_id,
         "active_catalog_match_status": ("unique_url_match" if active_catalog_record_id else "not_present_in_active_entry_module"),
         "target_record_id": active_catalog_record_id or record["id"],
         "target_identity_source": "active_catalog_exact_url" if active_catalog_record_id else "formal_record_exact_url",
         "target_identity_verified": True,
+        "target_binding": target_binding,
         "candidate_origin": candidate_origin,
         "candidate_ledger_status_after_merge": task_after.get("status"),
         "candidate_review_history_count": len(task_after.get("review_history", [])),
         "candidate_review_event_id": review_event_id,
-        "current_open_status": task.get("current_open_status", "unknown"),
+        "current_open_status": task_after.get("current_open_status", "unknown"),
+        "application_route_binding": task_after.get("application_route_binding"),
         "field_evidence": evidence_by_field,
         "changes": proposed,
         "rollback": {field: change["before"] for field, change in proposed.items()},
@@ -218,10 +402,11 @@ def prepare(ledger_path: Path, result_path: Path, formal_path: Path, output_dir:
         }
         preview = {
         "preview_type": "branch-only-pending-data-review",
-        "formal_record_id": record["id"], "title": record.get("title"),
+        "formal_record_id": formal_record_id, "title": record.get("title"),
         "active_catalog_record_id": active_catalog_record_id,
         "target_record_id": active_catalog_record_id or record["id"],
         "target_identity_source": "active_catalog_exact_url" if active_catalog_record_id else "formal_record_exact_url",
+        "target_binding": target_binding,
         "candidate_id": candidate_id, "changes": proposed,
         "status": "pending_human_data_review", "public_page_changed": False,
         }
@@ -238,12 +423,14 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--ledger", required=True)
     parser.add_argument("--result", required=True)
-    parser.add_argument("--formal-data", required=True)
-    parser.add_argument("--active-catalog", help="Optional active geography-opportunities.mjs source for exact URL mapping")
+    parser.add_argument("--formal-data", help="Optional legacy positions.mjs; not required for active-only records")
+    parser.add_argument("--active-catalog", help="Actual exported catalogue module, preferably geography-catalog.mjs")
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--run-id", required=True)
     args = parser.parse_args()
-    result = prepare(Path(args.ledger), Path(args.result), Path(args.formal_data), Path(args.output_dir), args.run_id,
+    if not args.formal_data and not args.active_catalog:
+        parser.error("provide --active-catalog or --formal-data")
+    result = prepare(Path(args.ledger), Path(args.result), Path(args.formal_data) if args.formal_data else None, Path(args.output_dir), args.run_id,
                      Path(args.active_catalog) if args.active_catalog else None)
     print(json.dumps(result, ensure_ascii=False))
 

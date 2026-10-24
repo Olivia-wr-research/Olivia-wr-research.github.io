@@ -11,10 +11,11 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlsplit
 
 
 SCHEMA_VERSION = 2
-EVIDENCE_POLICY_VERSION = 2
+EVIDENCE_POLICY_VERSION = 3
 SKILL_PATH = Path(__file__).resolve().parents[3] / ".agents/skills/terrafar-source-audit/SKILL.md"
 OPEN_STATUSES = {"pending", "verification_failed", "insufficient_evidence"}
 TERMINAL_STATUSES = {"verified", "excluded", "duplicate"}
@@ -83,7 +84,8 @@ def migrate_ledger_payload(ledger: dict[str, Any]) -> dict[str, Any]:
             status = finding.get("current_open_status", "unknown")
             evidence = finding.get("current_status_evidence")
             try:
-                _validate_current_open_status(candidate_id, status, evidence, task, review.get("evidence", []))
+                _validate_current_open_status(candidate_id, status, evidence, task, review.get("evidence", []),
+                                              finding.get("application_route_binding"))
             except (TypeError, ValueError):
                 continue
             if status in {"open", "closed"}:
@@ -231,6 +233,15 @@ def merge_observations(ledger: dict[str, Any], observations: list[dict[str, Any]
                 task["current_open_status"] = "unknown"
                 task["current_status_evidence"] = None
                 task["current_open_status_checked_at"] = None
+                if task.get("application_route_binding"):
+                    task.setdefault("application_route_history", []).append({
+                        "binding": task["application_route_binding"],
+                        "evidence": task.get("application_route_evidence", []),
+                        "reason": "candidate_content_changed; route binding needs re-verification",
+                    })
+                task.pop("application_route_binding", None)
+                task.pop("application_route_evidence", None)
+                task.pop("application_url", None)
                 task.pop("last_review_status", None)
                 changed = True
             elif task.get("last_seen_at") != now:
@@ -311,18 +322,80 @@ def _supported_content_fields(result: dict[str, Any]) -> dict[str, dict[str, Any
     return fields
 
 
+def _validated_application_route(task: dict[str, Any], evidence: list[Any],
+                                 binding: Any = None) -> dict[str, Any] | None:
+    """Accept an external portal only with evidence of this official detail's link.
+
+    A URL found in a candidate or a model answer alone is not a route binding.
+    Stored bindings remain usable only for the same candidate content version.
+    """
+    if binding is None:
+        binding = task.get("application_route_binding")
+        route_evidence = task.get("application_route_evidence", [])
+    else:
+        route_evidence = evidence
+    if binding is None:
+        return None
+    if not isinstance(binding, dict):
+        raise ValueError("application_route_binding_invalid")
+    portal_url = binding.get("application_url")
+    try:
+        parsed = urlsplit(portal_url) if isinstance(portal_url, str) else None
+    except ValueError as error:
+        raise ValueError("application_route_binding_url_invalid") from error
+    if (not parsed or parsed.scheme not in {"https", "http"} or not parsed.hostname
+            or parsed.username is not None or parsed.password is not None):
+        raise ValueError("application_route_binding_url_invalid")
+    if (binding.get("candidate_url") != task.get("candidate_url")
+            or binding.get("candidate_fingerprint") != task.get("content_fingerprint")
+            or binding.get("evidence_url") != task.get("candidate_url")
+            or binding.get("relationship") != "official_detail_links_to_application"
+            or not isinstance(binding.get("locator"), str) or not binding["locator"].strip()
+            or binding["locator"].strip().lower() in {"page", "unknown", "n/a"}
+            or not isinstance(binding.get("page_content_sha256"), str)
+            or not re.fullmatch(r"[0-9a-f]{64}", binding["page_content_sha256"])
+            or not any(isinstance(item, dict)
+                       and item.get("field") == "application_route"
+                       and item.get("url") == task.get("candidate_url")
+                       and item.get("locator") == binding["locator"]
+                       and item.get("page_content_sha256") == binding["page_content_sha256"]
+                       and isinstance(item.get("claim"), str)
+                       and portal_url in item["claim"]
+                       for item in route_evidence)):
+        raise ValueError("application_route_requires_official_detail_link_evidence")
+    return binding
+
+
+def _record_application_route(task: dict[str, Any], binding: dict[str, Any] | None,
+                              evidence: list[Any]) -> None:
+    if binding is None:
+        return
+    task["application_route_binding"] = json.loads(json.dumps(binding))
+    task["application_route_evidence"] = [json.loads(json.dumps(item)) for item in evidence
+                                          if isinstance(item, dict)
+                                          and item.get("field") == "application_route"
+                                          and item.get("url") == task.get("candidate_url")
+                                          and item.get("locator") == binding["locator"]]
+    task["application_url"] = binding["application_url"]
+
+
 def _validate_current_open_status(candidate_id: str, current_status: Any, status_evidence: Any,
-                                  task: dict[str, Any], evidence: list[Any]) -> None:
+                                  task: dict[str, Any], evidence: list[Any],
+                                  application_route_binding: Any = None) -> None:
     if current_status in (None, "", "unknown"):
         return
     if current_status not in CURRENT_OPEN_STATUSES:
         raise ValueError(f"current_status_value_not_allowed:{candidate_id}")
+    route = _validated_application_route(task, evidence, application_route_binding)
+    allowed_urls = {task.get("candidate_url")}
+    if route:
+        allowed_urls.add(route["application_url"])
     expected_claim = CURRENT_STATUS_CLAIMS[current_status]
     if (not isinstance(status_evidence, dict)
             or status_evidence.get("status") != current_status
             or status_evidence.get("scope") != "application_portal"
             or status_evidence.get("claim") != expected_claim
-            or status_evidence.get("url") != task.get("candidate_url")
+            or status_evidence.get("url") not in allowed_urls
             or not isinstance(status_evidence.get("locator"), str)
             or not status_evidence.get("locator").strip()
             or status_evidence.get("locator", "").strip().lower() in {"page", "unknown", "n/a"}
@@ -381,8 +454,11 @@ def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id:
         if not isinstance(evidence, list):
             raise ValueError(f"candidate_review_evidence_missing:{candidate_id}")
         _validate_review_timestamp_and_identity(candidate_id, result.get("reviewer"), result.get("reviewed_at"))
+        route_binding = _validated_application_route(task, evidence, result.get("application_route_binding"))
         if status in TERMINAL_STATUSES:
             allowed_urls = {task.get("candidate_url"), task.get("source_url")}
+            if route_binding:
+                allowed_urls.add(route_binding["application_url"])
             # Field-specific official evidence may be hosted on a separate institutional
             # page (for example, an employer's salary scale). Bind that URL through the
             # structured finding instead of forcing every claim onto the job listing.
@@ -467,7 +543,8 @@ def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id:
         if current_status not in CURRENT_OPEN_STATUSES:
             raise ValueError(f"current_status_value_not_allowed:{candidate_id}")
         if current_status in {"open", "closed"}:
-            _validate_current_open_status(candidate_id, current_status, result.get("current_status_evidence"), task, evidence)
+            _validate_current_open_status(candidate_id, current_status, result.get("current_status_evidence"), task, evidence,
+                                          result.get("application_route_binding"))
         decision = {
             "status": status,
             "run_id": run_id,
@@ -482,6 +559,8 @@ def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id:
         decision["review_fingerprint"] = digest({key: value for key, value in decision.items() if key != "run_id"})
         if any(item.get("review_fingerprint") == decision["review_fingerprint"] for item in prior):
             continue
+        if result.get("application_route_binding") is not None:
+            _record_application_route(task, route_binding, evidence)
         task.setdefault("review_history", []).append(decision)
         task["status"] = status if status in TERMINAL_STATUSES else status
         task["last_review_status"] = status
@@ -490,6 +569,7 @@ def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id:
                 "candidate_id": candidate_id, "candidate_fingerprint": task.get("content_fingerprint"),
                 "current_open_status": current_status, "current_status_evidence": result.get("current_status_evidence"),
                 "evidence": evidence, "reviewer": result.get("reviewer"), "reviewed_at": result.get("reviewed_at"),
+                "application_route_binding": result.get("application_route_binding"),
             }], run_id)
         event = {"event_id": digest({"candidate_id": candidate_id, "review_fingerprint": decision["review_fingerprint"]})[:32],
                  "candidate_id": candidate_id, "event_type": "review_result", **decision}
@@ -571,15 +651,21 @@ def apply_open_status_reviews(ledger: dict[str, Any], results: list[dict[str, An
         status, evidence = result.get("current_open_status", "unknown"), result.get("evidence")
         if status not in CURRENT_OPEN_STATUSES or not isinstance(evidence, list) or not evidence:
             raise ValueError(f"open_status_review_requires_status_and_evidence:{candidate_id}")
+        route_binding = _validated_application_route(task, evidence, result.get("application_route_binding"))
+        route_urls = {task.get("candidate_url")}
+        if route_binding:
+            route_urls.add(route_binding["application_url"])
         if status in {"open", "closed"}:
-            _validate_current_open_status(candidate_id, status, result.get("current_status_evidence"), task, evidence)
-        elif not any(isinstance(item, dict) and item.get("url") == task.get("candidate_url")
+            _validate_current_open_status(candidate_id, status, result.get("current_status_evidence"), task, evidence,
+                                          result.get("application_route_binding"))
+        elif not any(isinstance(item, dict) and item.get("url") in route_urls
                      and isinstance(item.get("claim"), str) and item["claim"].strip()
                      and isinstance(item.get("locator"), str) and item["locator"].strip() for item in evidence):
             raise ValueError(f"unknown_open_status_requires_route_observation:{candidate_id}")
         record = {
             "candidate_id": candidate_id, "candidate_fingerprint": task["content_fingerprint"], "status": status,
             "evidence": evidence, "current_status_evidence": result.get("current_status_evidence"),
+            "application_route_binding": route_binding,
             "reviewer": result.get("reviewer"), "reviewed_at": result.get("reviewed_at"),
             "run_id": run_id, "reason": result.get("reason"),
         }
@@ -587,6 +673,8 @@ def apply_open_status_reviews(ledger: dict[str, Any], results: list[dict[str, An
         history = task.setdefault("open_status_history", [])
         if any(item.get("review_fingerprint") == record["review_fingerprint"] for item in history):
             continue
+        if result.get("application_route_binding") is not None:
+            _record_application_route(task, route_binding, evidence)
         history.append(record)
         task["current_open_status"] = status
         task["current_status_evidence"] = result.get("current_status_evidence") if status in {"open", "closed"} else None
