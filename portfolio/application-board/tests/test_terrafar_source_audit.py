@@ -124,6 +124,18 @@ class WorkflowRecoveryGuardTests(unittest.TestCase):
         # Behavioral latest/expired/stale/branch/attempt guarantees are exercised
         # against the selector API in test_terrafar_select_checkpoint.py.
 
+    def test_public_archive_authorization_precedes_private_state_access(self):
+        workflow=(ROOT/'.github/workflows/terrafar-source-maintenance.yml').read_text(encoding='utf-8')
+        marker='      - name: Require explicit owner authorization for public encrypted archives\n'
+        self.assertLess(workflow.index(marker),workflow.index('      - name: Select the latest complete checkpoint'))
+        step=workflow.split(marker,1)[1].split('\n      - ',1)[0]
+        self.assertIn('vars.TERRAFAR_PUBLIC_ENCRYPTED_ARCHIVES_APPROVED',step)
+        script=step.split('        run: |\n',1)[1]
+        script='\n'.join(line[10:] if line.startswith('          ') else line for line in script.splitlines())+'\n'
+        for value,allowed in [('',False),('false',False),('true',True)]:
+            checked=subprocess.run(['bash','-c',script],env={**os.environ,'ARCHIVE_UPLOAD_AUTHORIZED':value},text=True,capture_output=True,check=False)
+            self.assertEqual(checked.returncode==0,allowed)
+
     def test_full_census_uses_feature_sha_and_private_non_log_candidate_state(self):
         workflow=(ROOT/'.github/workflows/terrafar-full-census.yml').read_text(encoding='utf-8')
         self.assertIn('ref: ${{ github.sha }}',workflow)

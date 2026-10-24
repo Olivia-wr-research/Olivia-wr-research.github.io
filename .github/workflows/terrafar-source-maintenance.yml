@@ -98,6 +98,17 @@ jobs:
           elif [[ -n "$REVIEW_INPUT_ARCHIVE" ]]; then
             echo 'Use review mode for a decision against its unchanged content digest.' >&2; exit 2
           fi
+      - name: Require explicit owner authorization for public encrypted archives
+        env:
+          ARCHIVE_UPLOAD_AUTHORIZED: ${{ vars.TERRAFAR_PUBLIC_ENCRYPTED_ARCHIVES_APPROVED }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$ARCHIVE_UPLOAD_AUTHORIZED" != true ]]; then
+            echo 'Detailed encrypted archive publication is awaiting explicit owner authorization.' >&2
+            echo 'Set TERRAFAR_PUBLIC_ENCRYPTED_ARCHIVES_APPROVED=true only after approving this public repository destination.' >&2
+            exit 2
+          fi
       - name: Select the latest complete checkpoint without rolling back state
         if: ${{ success() && env.RUN_MODE != 'review' }}
         id: source-run
