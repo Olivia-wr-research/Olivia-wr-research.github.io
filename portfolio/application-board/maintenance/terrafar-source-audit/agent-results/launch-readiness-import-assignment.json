@@ -1,0 +1,71 @@
+{
+  "format": "terrafar-review-assignment-v1",
+  "skill": {
+    "name": "terrafar-source-audit",
+    "path": ".agents/skills/terrafar-source-audit/SKILL.md",
+    "sha256": "25e734cdd1f90ae7ee89b3f272b75c4677faddded70256c6bf80ad63641ca850"
+  },
+  "source_run_ids": [
+    "source_actions_run_id:39946276972",
+    "source_capture_id:agent-page-capture-2026-10-23",
+    "source_program_run_id:terrafar-maintenance-39946276972-1"
+  ],
+  "tasks": [
+    {
+      "candidate_id": "tcand-97c57c520daa0ba0fdd1e11b",
+      "candidate_fingerprint": "955853b9d591b8b428e42ac5060dcfedde5067ef59c1ce168782428093fef0e0",
+      "source_id": "eth-doctoral-listing",
+      "endpoint_id": "eth-doctoral-listing:primary",
+      "candidate_key": "https://jobs.ethz.ch/job/view/12136",
+      "candidate_url": "https://jobs.ethz.ch/job/view/12136",
+      "review_task_kind": "content_review",
+      "assigned_agent": "opportunity_verifier",
+      "source_provenance": {
+        "source_actions_run_id": "39946276972",
+        "source_program_run_id": "terrafar-maintenance-39946276972-1",
+        "source_capture_id": null
+      },
+      "source_run_ids": [
+        "source_actions_run_id:39946276972",
+        "source_program_run_id:terrafar-maintenance-39946276972-1"
+      ]
+    },
+    {
+      "candidate_id": "tcand-180658fc2dd19f7a8aa98180",
+      "candidate_fingerprint": "dcf959c53f2a5712b62823f87a68dd490bddd5fe5876ad299bd5f6cc217ef8c9",
+      "source_id": "eth-doctoral-listing",
+      "endpoint_id": "eth-doctoral-listing:primary",
+      "candidate_key": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+      "candidate_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+      "review_task_kind": "content_review",
+      "assigned_agent": "opportunity_verifier",
+      "source_provenance": {
+        "source_actions_run_id": "39946276972",
+        "source_program_run_id": null,
+        "source_capture_id": "agent-page-capture-2026-10-23"
+      },
+      "source_run_ids": [
+        "source_actions_run_id:39946276972",
+        "source_capture_id:agent-page-capture-2026-10-23"
+      ]
+    },
+    {
+      "candidate_id": "tcand-cfc80986c8e96017c3258140",
+      "candidate_fingerprint": "b64ae7139fb403d34d33b7c43f1210afcc996cb26f8649e09d9d473405bdcec3",
+      "source_id": "portal-48cd340b8b216122",
+      "endpoint_id": "portal-48cd340b8b216122:primary",
+      "candidate_key": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+      "candidate_url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
+      "review_task_kind": "content_review",
+      "assigned_agent": "opportunity_verifier",
+      "source_provenance": {
+        "source_actions_run_id": null,
+        "source_program_run_id": null,
+        "source_capture_id": "agent-page-capture-2026-10-23"
+      },
+      "source_run_ids": [
+        "source_capture_id:agent-page-capture-2026-10-23"
+      ]
+    }
+  ]
+}

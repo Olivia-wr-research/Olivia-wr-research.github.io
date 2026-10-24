@@ -1,0 +1,88 @@
+{
+  "format": "terrafar-formal-data-review-patch-v1",
+  "candidate_id": "tcand-180658fc2dd19f7a8aa98180",
+  "candidate_fingerprint": "dcf959c53f2a5712b62823f87a68dd490bddd5fe5876ad299bd5f6cc217ef8c9",
+  "source_id": "eth-doctoral-listing",
+  "endpoint_id": "eth-doctoral-listing:primary",
+  "source_url": "https://jobs.ethz.ch/",
+  "candidate_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+  "formal_record_id": "eth-86a50882f2d1",
+  "content_review_status": "verified",
+  "active_catalog_record_id": "geo-eth-atmosphere",
+  "active_catalog_match_status": "unique_url_match",
+  "target_record_id": "geo-eth-atmosphere",
+  "target_identity_source": "active_catalog_exact_url",
+  "target_identity_verified": true,
+  "candidate_origin": "actions_candidate_snapshot",
+  "candidate_ledger_status_after_merge": "verified",
+  "candidate_review_history_count": 2,
+  "candidate_review_event_id": "3cef99f1763e4b183fdbcf0e422f3724",
+  "current_open_status": "unknown",
+  "field_evidence": {
+    "application_route": {
+      "value": "https://emea2.softfactors.com/job-opening/rgum-UtuGzrXTpseTskgjY9#!/?lang=en",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+      "locator": "Application instructions; official detail page lines 39-47",
+      "evidence": [
+        {
+          "field": "application_route",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+          "claim": "application_route: The detail page directs applicants exclusively to https://emea2.softfactors.com/job-opening/rgum-UtuGzrXTpseTskgjY9#!/?lang=en.",
+          "locator": "Application instructions; official detail page lines 39-47",
+          "evidence_note": "The linked portal was directly fetched; only an unreadable JavaScript shell was returned",
+          "page_content_sha256": "79e65ae6f27f04bc5291c6a3b287cdbc1156fba4bf17f6e7b72caf9966c3e158",
+          "linked_application_url": "https://emea2.softfactors.com/job-opening/rgum-UtuGzrXTpseTskgjY9#!/?lang=en",
+          "linked_portal_observed_at": "2026-10-23T12:22:41Z",
+          "linked_portal_page_content_sha256": "bc6e675731137a3e2fbb6fecaf2f510b60a325da0e87e9e5dd881f265170b2cf",
+          "portal_acceptance_status": "unknown"
+        }
+      ]
+    },
+    "funding": {
+      "value": "Funding is secured for 4 years; the projected start window is March through September 2027.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+      "locator": "Position details; official detail page lines 39-47",
+      "evidence": [
+        {
+          "field": "funding",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+          "claim": "funding: Funding is secured for 4 years; the projected start window is March through September 2027.",
+          "locator": "Position details; official detail page lines 39-47",
+          "evidence_note": "Official employer detail page; directly inspected by opportunity_verifier",
+          "page_content_sha256": "79e65ae6f27f04bc5291c6a3b287cdbc1156fba4bf17f6e7b72caf9966c3e158"
+        }
+      ]
+    },
+    "eligibility": {
+      "value": "MSc in atmospheric, earth, or environmental science, chemistry, physics, or a related field before the start; atmospheric chemistry experience, strong programming skills, and good English.",
+      "evidence_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+      "locator": "Profile section; official detail page lines 24-29",
+      "evidence": [
+        {
+          "field": "eligibility",
+          "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
+          "claim": "eligibility: MSc in atmospheric, earth, or environmental science, chemistry, physics, or a related field before the start; atmospheric chemistry experience, strong programming skills, and good English.",
+          "locator": "Profile section; official detail page lines 24-29",
+          "evidence_note": "Official employer detail page; accessed 2026-10-23 12:21:45-12:21:46 UTC",
+          "page_content_sha256": "79e65ae6f27f04bc5291c6a3b287cdbc1156fba4bf17f6e7b72caf9966c3e158"
+        }
+      ]
+    }
+  },
+  "changes": {
+    "funding": {
+      "before": "博士研究岗位",
+      "after": "Funding is secured for 4 years; the projected start window is March through September 2027."
+    }
+  },
+  "rollback": {
+    "funding": "博士研究岗位"
+  },
+  "formal_data_written": false,
+  "published": false,
+  "source_observed_at": "2026-10-23T12:22:41Z",
+  "source_actions_run_id": "39946276972",
+  "source_capture_id": "agent-page-capture-2026-10-23",
+  "source_program_run_id": null,
+  "supersedes_sha256": "57285eb261cd7d71ac88ad9fecb1e74876167d7d40f0972f47c01cb20bb14c44"
+}

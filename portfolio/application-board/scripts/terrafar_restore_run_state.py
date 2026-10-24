@@ -22,6 +22,18 @@ def sha(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+def runner_sha() -> str:
+    return sha((APP / "scripts/terrafar_source_audit.py").read_bytes())
+
+
+def adapter_implementation_sha() -> str:
+    return sha(Path(source_adapters.__file__).read_bytes())
+
+
+def candidate_ledger_implementation_sha() -> str:
+    return sha(Path(candidate_ledger.__file__).read_bytes())
+
+
 def read_json(path: Path) -> dict:
     try:
         value = json.loads(path.read_text(encoding="utf-8"))
@@ -67,8 +79,15 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
     current_catalog_sha = sha(source_adapters.CATALOG_PATH.read_bytes())
     if not legacy and current_catalog_sha != provenance.get("adapter_catalog_sha256"):
         raise ValueError("restored_adapter_catalog_version_mismatch")
-    if not legacy and provenance.get("state_compatibility_version") != 1:
+    compatibility = provenance.get("state_compatibility_version", 1) if not legacy else 1
+    if not legacy and compatibility not in {1, 3}:
         raise ValueError("restored_state_compatibility_version_unsupported")
+    if not legacy and compatibility == 3 and provenance.get("runner_sha256") != runner_sha():
+        raise ValueError("restored_runner_version_mismatch")
+    if not legacy and compatibility == 3 and provenance.get("adapter_implementation_sha256") != adapter_implementation_sha():
+        raise ValueError("restored_adapter_implementation_version_mismatch")
+    if not legacy and compatibility == 3 and provenance.get("candidate_ledger_implementation_sha256") != candidate_ledger_implementation_sha():
+        raise ValueError("restored_candidate_ledger_implementation_version_mismatch")
 
     policy_demoted_task_count = 0
     if not legacy:
@@ -76,13 +95,22 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
         if not ledger_path.is_file():
             raise FileNotFoundError("cross_run_candidate_ledger_missing")
         ledger_bytes = ledger_path.read_bytes()
-        ledger = candidate_ledger.load_ledger(ledger_path, require_existing=True)
         if sha(ledger_bytes) != provenance.get("candidate_ledger_sha256"):
             raise ValueError("restored_candidate_ledger_hash_mismatch")
-        if provenance.get("candidate_ledger_schema_version") != ledger.get("schema_version"):
+        try:
+            raw_ledger = json.loads(ledger_bytes)
+        except json.JSONDecodeError as error:
+            raise ValueError("restored_candidate_ledger_unreadable") from error
+        raw_schema = raw_ledger.get("schema_version") if isinstance(raw_ledger, dict) else None
+        if provenance.get("candidate_ledger_schema_version") != raw_schema:
             raise ValueError("restored_candidate_ledger_schema_version_mismatch")
-        if provenance.get("candidate_task_count") != len(ledger.get("tasks", {})):
+        raw_task_count = len(raw_ledger.get("tasks", {})) if isinstance(raw_ledger, dict) else -1
+        if provenance.get("candidate_task_count") != raw_task_count:
             raise ValueError("restored_candidate_task_count_mismatch")
+        ledger = candidate_ledger.load_ledger(ledger_path, require_existing=True)
+        ledger_schema_migrated = raw_schema != ledger.get("schema_version")
+        if len(ledger.get("tasks", {})) != raw_task_count:
+            raise ValueError("candidate_ledger_migration_task_loss")
         if provenance.get("origin_program_run_id") != state.get("last_run_id"):
             raise ValueError("restored_program_run_id_mismatch")
         verified_before_policy_audit = sum(task.get("status") == "verified" for task in ledger.get("tasks", {}).values())
@@ -192,8 +220,12 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
         "semantic_snapshot_count": sum(bool(item.get("semantic_hash")) for item in state["snapshots"].values()),
         "candidate_ledger_revision": ledger.get("revision", 0),
         "candidate_task_count": len(ledger.get("tasks", {})),
-        "candidate_open_task_count": len(candidate_ledger.open_tasks(ledger)),
+        "candidate_open_task_count": len(candidate_ledger.review_queue(ledger)),
+        "candidate_content_review_task_count": len(candidate_ledger.open_tasks(ledger)),
+        "candidate_open_status_review_task_count": len(candidate_ledger.open_status_tasks(ledger)),
         "candidate_ledger_migrated_from_legacy_queue": ledger_migrated,
+        "candidate_ledger_schema_migrated": bool(not legacy and ledger_schema_migrated),
+        "state_compatibility_migrated_from": compatibility if compatibility < 3 else None,
         "candidate_ledger_policy_demoted_task_count": policy_demoted_task_count,
         "candidate_ledger_task_ids_unique": len(ledger.get("tasks", {})) == len(set(ledger.get("tasks", {}))),
     }

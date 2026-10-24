@@ -1,11 +1,13 @@
 import argparse
 import contextlib
+from concurrent.futures import ThreadPoolExecutor
 import io
 import json
 import socket
 import subprocess
 import sys
 import tempfile
+import time
 import threading
 import unittest
 from urllib.parse import urlsplit
@@ -20,6 +22,25 @@ import terrafar_source_audit as audit
 import terrafar_candidate_ledger as candidate_ledger
 import terrafar_restore_run_state as restore_run_state
 import terrafar_source_adapters as source_adapters
+import terrafar_prepare_data_review as prepare_data_review
+
+
+def assignment_manifest(rows):
+    provenance_fields = ("source_actions_run_id", "source_program_run_id", "source_capture_id")
+    tasks = []
+    all_source_ids = set()
+    for row in rows:
+        provenance = {field: row.get(field) for field in provenance_fields}
+        source_run_ids = sorted(f"{field}:{provenance[field]}" for field in provenance_fields
+                                if provenance[field] is not None)
+        all_source_ids.update(source_run_ids)
+        tasks.append({field: row.get(field) for field in (
+            "candidate_id", "candidate_fingerprint", "source_id", "endpoint_id", "candidate_key", "candidate_url")}
+            | {"review_task_kind": row.get("review_task_kind", "content_review"),
+               "assigned_agent": row.get("reviewer"), "source_provenance": provenance,
+               "source_run_ids": source_run_ids})
+    return {"format": "terrafar-review-assignment-v1", "skill": candidate_ledger.skill_pin(),
+            "source_run_ids": sorted(all_source_ids), "tasks": tasks}
 
 
 class RegistryUnionTests(unittest.TestCase):
@@ -83,6 +104,25 @@ class RegistryUnionTests(unittest.TestCase):
         seed = next(x for x in rows if x.get('unverified_seed'))
         self.assertEqual(seed['verified_metadata'], {'status': 'unknown', 'fields': {}})
         self.assertIsNone(seed['last_verified_at'])
+
+
+class WorkflowRecoveryGuardTests(unittest.TestCase):
+    def test_bootstrap_selectors_only_apply_on_first_attempt(self):
+        workflow=(ROOT/'.github/workflows/terrafar-source-maintenance.yml').read_text(encoding='utf-8')
+        self.assertIn('if [[ "${GITHUB_RUN_ATTEMPT:-1}" == 1 ]]',workflow)
+        self.assertIn('&& "${GITHUB_RUN_ATTEMPT:-1}" == 1',workflow)
+        self.assertIn('No prior successful maintenance run with an unexpired state artifact was found',workflow)
+
+    def test_restore_selection_is_versioned_and_rejects_legacy_replay(self):
+        workflow=(ROOT/'.github/workflows/terrafar-source-maintenance.yml').read_text(encoding='utf-8')
+        self.assertIn("      - 'main'",workflow)
+        self.assertIn('startswith("terrafar-source-maintenance-state-v3-")',workflow)
+        self.assertIn('startswith("terrafar-source-maintenance-state-")',workflow)
+        self.assertIn('name: terrafar-source-maintenance-state-v3-${{ github.run_id }}-${{ github.run_attempt }}',workflow)
+        self.assertIn('Legacy bootstrap is one-time only; a version 3 state artifact already exists in this repository.',workflow)
+        self.assertIn('Refusing stale explicit restore run',workflow)
+        self.assertIn('selected="$(find_valid_run \'*\' || true)"',workflow)
+        self.assertIn('latest_compatible="$(find_valid_run \'*\' || true)"',workflow)
 
 
 class StatusAndNetworkTests(unittest.TestCase):
@@ -437,6 +477,327 @@ print(json.dumps({'outcome':result['outcome'],'baseline_available':result['basel
         self.assertFalse(ledger['tasks'][candidate_id]['formal_site_write'])
         self.assertEqual(ledger['tasks'][candidate_id]['observed_runs'],['run-a','run-b','run-c'])
 
+    def test_v1_candidate_ledger_migration_preserves_stable_ids_and_review_history(self):
+        observation={'source_id':'s','endpoint_id':'s:list','candidate_key':'job-v1','candidate_url':'https://jobs.example/job-v1','source_url':'https://jobs.example/list','candidate':{'id':'job-v1'},'retrieved_at':'2026-01-01T00:00:00Z'}
+        ledger=candidate_ledger.empty_ledger()
+        candidate_ledger.merge_observations(ledger,[observation],'run-old')
+        candidate_id=next(iter(ledger['tasks']))
+        ledger['tasks'][candidate_id]['review_history']=[{'status':'insufficient_evidence','reviewer':'verifier','run_id':'old','finding':{'reason':'missing evidence'}}]
+        ledger['schema_version']=1
+        migrated=candidate_ledger.migrate_ledger_payload(ledger)
+        self.assertEqual(migrated['schema_version'],2)
+        self.assertIn(candidate_id,migrated['tasks'])
+        self.assertEqual(migrated['tasks'][candidate_id]['status'],'pending')
+        self.assertEqual(migrated['tasks'][candidate_id]['review_history'],ledger['tasks'][candidate_id]['review_history'])
+        self.assertEqual(migrated['tasks'][candidate_id]['current_open_status'],'unknown')
+        self.assertEqual(migrated['migration_history'][-1]['preserved_task_count'],1)
+
+    def test_unknown_application_status_is_queued_separately_from_verified_content(self):
+        observation={'source_id':'s','endpoint_id':'s:list','candidate_key':'job-status','candidate_url':'https://jobs.example/job-status','source_url':'https://jobs.example/list','candidate':{'id':'job-status'},'retrieved_at':'2026-01-01T00:00:00Z'}
+        ledger=candidate_ledger.empty_ledger()
+        candidate_ledger.merge_observations(ledger,[observation],'run-1')
+        task=next(iter(ledger['tasks'].values()))
+        task['status']='verified'
+        self.assertEqual(candidate_ledger.open_tasks(ledger),[])
+        status_queue=candidate_ledger.open_status_tasks(ledger,today='2026-01-03')
+        self.assertEqual(len(status_queue),1)
+        self.assertEqual(status_queue[0]['review_task_kind'],'current_open_status_review')
+        item={'url':task['candidate_url'],'claim':'The application page could not be loaded for status confirmation.','locator':'Application route response','page_content_sha256':'a'*64}
+        result={'candidate_id':task['candidate_id'],'candidate_fingerprint':task['content_fingerprint'],'current_open_status':'unknown','evidence':[item],'reviewer':'opportunity_verifier','reviewed_at':'2026-01-03T00:00:00Z','reason':'portal state not confirmed'}
+        candidate_ledger.apply_open_status_reviews(ledger,[result],'status-run-1')
+        candidate_ledger.apply_open_status_reviews(ledger,[result],'status-run-2')
+        self.assertEqual(len(task['open_status_history']),1)
+        self.assertEqual(task['status'],'verified')
+        self.assertEqual(len(candidate_ledger.open_status_tasks(ledger,today='2026-01-04')),1)
+
+    def test_verified_open_status_near_deadline_is_rechecked_more_frequently(self):
+        observation={'source_id':'s','endpoint_id':'s:list','candidate_key':'job-near-deadline','candidate_url':'https://jobs.example/job-near-deadline','source_url':'https://jobs.example/list','candidate':{'id':'job-near-deadline'},'retrieved_at':'2026-01-01T00:00:00Z'}
+        ledger=candidate_ledger.empty_ledger(); candidate_ledger.merge_observations(ledger,[observation],'run-1')
+        task=next(iter(ledger['tasks'].values())); task['status']='verified'
+        task['current_open_status']='open'; task['current_open_status_checked_at']='2026-01-01T00:00:00Z'
+        task['review_history']=[{'status':'verified','finding':{'deadline':{'value':'2026-01-05'}}}]
+        self.assertEqual(len(candidate_ledger.open_status_tasks(ledger,today='2026-01-02')),1)
+        task['current_open_status_checked_at']='2026-01-01T00:00:00Z'
+        task['review_history']=[{'status':'verified','finding':{'deadline':{'value':'2026-03-01'}}}]
+        self.assertEqual(candidate_ledger.open_status_tasks(ledger,today='2026-01-02'),[])
+
+    def test_open_status_review_requires_portal_page_hash(self):
+        observation={'source_id':'s','endpoint_id':'s:list','candidate_key':'job-status-hash','candidate_url':'https://jobs.example/job-status-hash','source_url':'https://jobs.example/list','candidate':{'id':'job-status-hash'},'retrieved_at':'2026-01-01T00:00:00Z'}
+        ledger=candidate_ledger.empty_ledger(); candidate_ledger.merge_observations(ledger,[observation],'run-1')
+        task=next(iter(ledger['tasks'].values())); task['status']='verified'
+        evidence=[{'field':'current_open_status','url':task['candidate_url'],'claim':candidate_ledger.CURRENT_STATUS_CLAIMS['open'],'locator':'Apply button'}]
+        result={'candidate_id':task['candidate_id'],'candidate_fingerprint':task['content_fingerprint'],'current_open_status':'open','current_status_evidence':{'status':'open','scope':'application_portal','claim':candidate_ledger.CURRENT_STATUS_CLAIMS['open'],'url':task['candidate_url'],'locator':'Apply button'},'evidence':evidence,'reviewer':'opportunity_verifier','reviewed_at':'2026-01-02T00:00:00Z'}
+        with self.assertRaisesRegex(ValueError,'explicit_portal_acceptance_evidence'):
+            candidate_ledger.apply_open_status_reviews(ledger,[result],'run-2')
+
+    def test_incomplete_partial_candidate_rows_are_not_merged(self):
+        source=self.source()
+        state={'snapshots':{}}
+        result=[{'source_id':'test-source','endpoints':[{'endpoint_id':'test-source:primary','adapter':'fake','outcome':'partial','content_complete':False,'candidate_rows':[{'id':'partial-only'}]}]}]
+        self.assertEqual(audit.build_candidate_observations([source],state,result),[])
+        result[0]['endpoints'][0]['content_complete']=True
+        self.assertEqual(len(audit.build_candidate_observations([source],state,result)),1)
+
+    def test_incomplete_sources_stay_in_retry_queue_until_complete_success(self):
+        state={'maintenance_retry_ids':['old','retry-me']}
+        plan=['retry-me','new']
+        audit.update_maintenance_retry_queue(state,plan,{'retry-me':{'outcome':'failed'},'new':{'outcome':'not_attempted'}})
+        self.assertEqual(state['maintenance_retry_ids'],['old','retry-me'])
+        audit.update_maintenance_retry_queue(state,plan,{'retry-me':{'outcome':'partial'},'new':{'outcome':'blocked'}})
+        self.assertEqual(state['maintenance_retry_ids'],['old','retry-me','new'])
+        audit.update_maintenance_retry_queue(state,plan,{'retry-me':{'outcome':'checked_unchanged'},'new':{'outcome':'checked_empty'}})
+        self.assertEqual(state['maintenance_retry_ids'],['old'])
+
+    def test_persistent_retries_cannot_starve_rotating_sources_across_many_rounds(self):
+        sources=[{'source_id':f'source-{index:02d}'} for index in range(36)]
+        persistent={'source-00','source-01','source-02'}
+        state={'maintenance_retry_ids':sorted(persistent),'maintenance_cursor':0,'maintenance_retry_cursor':0}
+        visited=[]; retry_visit_counts={sid:0 for sid in persistent}
+        for round_number in range(1,9):
+            chosen=audit.select_maintenance_batch(sources,state['maintenance_retry_ids'],state,6)
+            selected=[row['source_id'] for row in chosen]
+            self.assertEqual(len(selected),6)
+            self.assertEqual(len(selected),len(set(selected)))
+            self.assertGreaterEqual(len(set(selected)-persistent),4)
+            visited.extend(set(selected)-persistent)
+            retry_visit_counts.update({sid:retry_visit_counts.get(sid,0)+1 for sid in selected if sid in persistent})
+            outcomes={sid:{'outcome':'failed'} for sid in selected if sid in persistent}
+            outcomes.update({sid:{'outcome':'checked_unchanged'} for sid in selected if sid not in persistent})
+            audit.update_maintenance_retry_queue(state,[row['source_id'] for row in sources],outcomes)
+            self.assertTrue(persistent.issubset(state['maintenance_retry_ids']))
+        self.assertEqual(set(visited),{row['source_id'] for row in sources}-persistent)
+        self.assertTrue(all(count>0 for count in retry_visit_counts.values()))
+
+    def test_single_source_budget_alternates_persistent_retries_and_rotation(self):
+        sources=[{'source_id':sid} for sid in ('failed','healthy-1','healthy-2')]
+        state={'maintenance_retry_ids':['failed'],'maintenance_retry_turn':True}
+        selected=[]
+        for _ in range(6):
+            selected.append(audit.select_maintenance_batch(sources,state['maintenance_retry_ids'],state,1)[0]['source_id'])
+        self.assertEqual(selected[::2],['failed','failed','failed'])
+        self.assertEqual(set(selected[1::2]),{'healthy-1','healthy-2'})
+
+    def test_same_run_resume_retries_partial_but_reuses_settled_checks(self):
+        sources=[{'source_id':sid} for sid in ('complete','partial','blocked')]
+        completed={'complete':{'outcome':'checked_empty'},'partial':{'outcome':'partial'},'blocked':{'outcome':'blocked'}}
+        self.assertEqual([row['source_id'] for row in audit.resumable_sources(sources,completed)],['partial','blocked'])
+
+    def test_data_review_patch_is_idempotent_evidence_bound_and_rollback_safe(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            ledger_path=root/'candidate_ledger.json'
+            formal=root/'positions.mjs'
+            output=root/'pending-data'
+            active_catalog=root/'active.mjs'
+            original='export const positions=[{"id":"formal-1","url":"https://jobs.example/job-review","salary":"unknown salary","funding":"unknown funding"}];\n'
+            formal.write_text(original,encoding='utf-8')
+            active_catalog.write_text("record({\n    id:'active-1',\n    url:'https://jobs.example/job-review',\n  }),\n",encoding='utf-8')
+            ledger=candidate_ledger.empty_ledger()
+            observation={'source_id':'s','endpoint_id':'s:list','candidate_key':'job-review','candidate_url':'https://jobs.example/job-review','source_url':'https://jobs.example/list','candidate':{'id':'job-review'},'retrieved_at':'2026-01-01T00:00:00Z'}
+            candidate_ledger.merge_observations(ledger,[observation],'source-run')
+            candidate_id=next(iter(ledger['tasks']))
+            candidate_ledger.save_ledger(ledger_path,ledger)
+            claim={'field':'funding','url':'https://jobs.example/job-review','claim':'funding: CHF 1000 annual salary','locator':'Salary section'}
+            result={'candidate_id':candidate_id,'candidate_fingerprint':ledger['tasks'][candidate_id]['content_fingerprint'],'source_id':'s','endpoint_id':'s:list','candidate_key':'job-review','source_url':'https://jobs.example/list','candidate_url':'https://jobs.example/job-review','formal_record_id':'formal-1','status':'verified','decision_scope':'page_content','reviewer':'opportunity_verifier','reviewed_at':'2026-01-02T00:00:00Z','source_capture_id':'test-capture-1','evidence':[claim],'content_verification':{'status':'verified','evidence':[dict(claim)]},'funding':{'status':'verified_as_stated','value':'CHF 1000 annual salary','evidence_url':'https://jobs.example/job-review','locator':'Salary section'},'formal_patch':{'salary':'CHF 1000 annual salary'}}
+            result_path=root/'review.json'; result_path.write_text(json.dumps(result),encoding='utf-8')
+            first=prepare_data_review.prepare(ledger_path,result_path,formal,output,'data-review-run',active_catalog)
+            wrong_target=dict(result); wrong_target['active_catalog_record_id']='active-wrong'
+            wrong_target_path=root/'wrong-target-review.json'
+            wrong_target_path.write_text(json.dumps(wrong_target),encoding='utf-8')
+            with self.assertRaisesRegex(ValueError,'active_catalog_target_identity_mismatch'):
+                prepare_data_review.prepare(ledger_path,wrong_target_path,formal,output,'wrong-target-run',active_catalog)
+            unsupported_text=dict(result); unsupported_text['formal_patch']={'salary':'Guaranteed CHF 1000 annual salary'}
+            unsupported_text_path=root/'unsupported-claim.json'
+            unsupported_text_path.write_text(json.dumps(unsupported_text),encoding='utf-8')
+            with self.assertRaisesRegex(ValueError,'formal_patch_field_not_supported_by_verified_finding:salary'):
+                prepare_data_review.prepare(ledger_path,unsupported_text_path,formal,output,'unsupported-claim-run',active_catalog)
+            stale=json.loads(Path(first['patch_path']).read_text(encoding='utf-8'))
+            stale.pop('target_record_id'); stale.pop('target_identity_source'); stale.pop('target_identity_verified')
+            Path(first['patch_path']).write_text(json.dumps(stale,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+            preview=Path(first['preview_path'])
+            stale_preview=json.loads(preview.read_text(encoding='utf-8'))
+            stale_preview.pop('target_record_id'); stale_preview.pop('target_identity_source')
+            preview.write_text(json.dumps(stale_preview,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+            second=prepare_data_review.prepare(ledger_path,result_path,formal,output,'data-review-run-retry',active_catalog)
+            before_patch=Path(first['patch_path']).read_text(encoding='utf-8')
+            unrelated=candidate_ledger.load_ledger(ledger_path,require_existing=True)
+            unrelated['revision']+=1
+            candidate_ledger.save_ledger(ledger_path,unrelated)
+            third=prepare_data_review.prepare(ledger_path,result_path,formal,output,'data-review-run-after-unrelated-review',active_catalog)
+            restored=candidate_ledger.load_ledger(ledger_path,require_existing=True)
+            patch=json.loads(Path(first['patch_path']).read_text())
+            self.assertEqual(first['ledger_revision'],second['ledger_revision'])
+            self.assertEqual(Path(third['patch_path']).read_text(encoding='utf-8'),before_patch)
+            self.assertEqual(len(restored['tasks'][candidate_id]['review_history']),1)
+            self.assertEqual(patch['changes']['salary']['before'],'unknown salary')
+            self.assertEqual(patch['rollback']['salary'],'unknown salary')
+            self.assertTrue(first['rollback_roundtrip_verified'])
+            self.assertFalse(patch['formal_data_written'])
+            self.assertFalse(patch['published'])
+            self.assertEqual(formal.read_text(encoding='utf-8'),original)
+            self.assertEqual(patch['target_record_id'],'active-1')
+            self.assertEqual(patch['target_identity_source'],'active_catalog_exact_url')
+            self.assertTrue(patch['target_identity_verified'])
+            self.assertTrue(list((output/'history').glob('*.json')))
+
+    def test_data_review_patch_write_failure_does_not_advance_ledger_and_retry_recovers(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp); ledger_path=root/'candidate_ledger.json'; formal=root/'positions.mjs'; output=root/'pending-data'
+            formal.write_text('export const positions=[{"id":"formal-1","url":"https://jobs.example/job-review","salary":"unknown salary"}];\n',encoding='utf-8')
+            ledger=candidate_ledger.empty_ledger()
+            observation={'source_id':'s','endpoint_id':'s:list','candidate_key':'job-review','candidate_url':'https://jobs.example/job-review','source_url':'https://jobs.example/list','candidate':{'id':'job-review'},'retrieved_at':'2026-01-01T00:00:00Z'}
+            candidate_ledger.merge_observations(ledger,[observation],'source-run')
+            candidate_id=next(iter(ledger['tasks']))
+            candidate_ledger.save_ledger(ledger_path,ledger)
+            claim={'field':'funding','url':'https://jobs.example/job-review','claim':'funding: CHF 1000 annual salary','locator':'Salary section'}
+            result={'candidate_id':candidate_id,'candidate_fingerprint':ledger['tasks'][candidate_id]['content_fingerprint'],'source_id':'s','endpoint_id':'s:list','candidate_key':'job-review','source_url':'https://jobs.example/list','candidate_url':'https://jobs.example/job-review','formal_record_id':'formal-1','status':'verified','decision_scope':'page_content','reviewer':'opportunity_verifier','reviewed_at':'2026-01-02T00:00:00Z','source_capture_id':'test-capture-1','evidence':[claim],'content_verification':{'status':'verified','evidence':[dict(claim)]},'funding':{'status':'verified_as_stated','value':'CHF 1000 annual salary','evidence_url':'https://jobs.example/job-review','locator':'Salary section'},'formal_patch':{'salary':'CHF 1000 annual salary'}}
+            result_path=root/'review.json'; result_path.write_text(json.dumps(result),encoding='utf-8')
+            original_ledger=ledger_path.read_bytes()
+            original_writer=prepare_data_review.write_idempotent_json
+            calls={'count':0}
+            def fail_preview(path,value,identity_keys):
+                calls['count']+=1
+                if calls['count']==2:
+                    raise OSError('simulated interruption during preview write')
+                original_writer(path,value,identity_keys)
+            with patch.object(prepare_data_review,'write_idempotent_json',side_effect=fail_preview):
+                with self.assertRaisesRegex(OSError,'simulated interruption'):
+                    prepare_data_review.prepare(ledger_path,result_path,formal,output,'interrupted-run')
+            self.assertEqual(ledger_path.read_bytes(),original_ledger)
+            self.assertTrue(list(output.glob('*.json')))
+            recovered=prepare_data_review.prepare(ledger_path,result_path,formal,output,'retry-run')
+            self.assertEqual(recovered['ledger_status'],'verified')
+            self.assertTrue(Path(recovered['preview_path']).exists())
+            self.assertEqual(len(candidate_ledger.load_ledger(ledger_path,True)['tasks'][candidate_id]['review_history']),1)
+
+    def test_concurrent_data_review_preparations_retain_both_ledger_updates(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp); ledger_path=root/'candidate_ledger.json'; formal=root/'positions.mjs'; output=root/'pending-data'
+            formal.write_text('export const positions=[{"id":"formal-1","url":"https://jobs.example/job-1","salary":"unknown"},{"id":"formal-2","url":"https://jobs.example/job-2","salary":"unknown"}];\n',encoding='utf-8')
+            ledger=candidate_ledger.empty_ledger(); results=[]
+            for n in (1,2):
+                observation={'source_id':'s','endpoint_id':'s:list','candidate_key':f'job-{n}','candidate_url':f'https://jobs.example/job-{n}','source_url':'https://jobs.example/list','candidate':{'id':f'job-{n}'},'retrieved_at':'2026-01-01T00:00:00Z'}
+                candidate_ledger.merge_observations(ledger,[observation],f'source-run-{n}')
+                candidate_id=candidate_ledger.stable_candidate_id('s','s:list',f'job-{n}')
+                finding={'status':'verified_as_stated','value':f'CHF {n}000 annual salary','evidence_url':observation['candidate_url'],'locator':'Salary section'}
+                claim={'field':'funding','url':observation['candidate_url'],'claim':f"funding: {finding['value']}",'locator':'Salary section'}
+                results.append({'candidate_id':candidate_id,'candidate_fingerprint':ledger['tasks'][candidate_id]['content_fingerprint'],'source_id':'s','endpoint_id':'s:list','candidate_key':f'job-{n}','source_url':'https://jobs.example/list','candidate_url':observation['candidate_url'],'formal_record_id':f'formal-{n}','status':'verified','decision_scope':'page_content','reviewer':'opportunity_verifier','reviewed_at':f'2026-01-0{n+2}T00:00:00Z','source_capture_id':f'capture-{n}','evidence':[claim],'content_verification':{'status':'verified','evidence':[dict(claim)]},'funding':finding,'formal_patch':{'salary':finding['value']}})
+            candidate_ledger.save_ledger(ledger_path,ledger)
+            paths=[]
+            for n,result in enumerate(results,1):
+                path=root/f'review-{n}.json'; path.write_text(json.dumps(result),encoding='utf-8'); paths.append(path)
+            original_load=candidate_ledger.load_ledger
+            def delayed_load(*args,**kwargs):
+                value=original_load(*args,**kwargs)
+                time.sleep(0.03)
+                return value
+            def execute(pair):
+                result_path,run_id=pair
+                return prepare_data_review.prepare(ledger_path,result_path,formal,output,run_id)
+            with patch.object(candidate_ledger,'load_ledger',side_effect=delayed_load):
+                with ThreadPoolExecutor(max_workers=2) as pool:
+                    list(pool.map(execute,[(paths[0],'parallel-1'),(paths[1],'parallel-2')]))
+            saved=candidate_ledger.load_ledger(ledger_path,require_existing=True)
+            self.assertEqual({task['status'] for task in saved['tasks'].values()},{'verified'})
+            self.assertEqual(sum(len(task['review_history']) for task in saved['tasks'].values()),2)
+
+    def test_data_review_rejects_formal_record_url_mismatch_before_any_ledger_write(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp); ledger_path=root/'candidate_ledger.json'; formal=root/'positions.mjs'; output=root/'pending-data'
+            formal.write_text('export const positions=[{"id":"formal-1","url":"https://jobs.example/different","salary":"unknown salary"}];\n',encoding='utf-8')
+            ledger=candidate_ledger.empty_ledger()
+            observation={'source_id':'s','endpoint_id':'s:list','candidate_key':'job-review','candidate_url':'https://jobs.example/job-review','source_url':'https://jobs.example/list','candidate':{'id':'job-review'},'retrieved_at':'2026-01-01T00:00:00Z'}
+            candidate_ledger.merge_observations(ledger,[observation],'source-run'); candidate_ledger.save_ledger(ledger_path,ledger)
+            candidate_id=next(iter(ledger['tasks']))
+            result={'candidate_id':candidate_id,'candidate_fingerprint':ledger['tasks'][candidate_id]['content_fingerprint'],'source_id':'s','endpoint_id':'s:list','candidate_key':'job-review','source_url':'https://jobs.example/list','candidate_url':'https://jobs.example/job-review','formal_record_id':'formal-1','status':'verified','decision_scope':'page_content','reviewer':'opportunity_verifier','reviewed_at':'2026-01-02T00:00:00Z','source_capture_id':'test-capture-1','evidence':[],'content_verification':{'status':'verified','evidence':[]},'funding':{'status':'verified_as_stated','value':'CHF 1000','evidence_url':'https://jobs.example/job-review','locator':'Salary'},'formal_patch':{'salary':'CHF 1000'}}
+            result_path=root/'review.json'; result_path.write_text(json.dumps(result),encoding='utf-8')
+            before=ledger_path.read_bytes()
+            with self.assertRaisesRegex(ValueError,'formal_record_url_identity_mismatch'):
+                prepare_data_review.prepare(ledger_path,result_path,formal,output,'wrong-url-run')
+            self.assertEqual(ledger_path.read_bytes(),before)
+
+    def test_imports_launch_readiness_reviews_with_identity_and_assignment_checks(self):
+        results_dir=Path(__file__).parents[1]/'maintenance/terrafar-source-audit/agent-results'
+        rows=[json.loads((results_dir/name).read_text(encoding='utf-8')) for name in (
+            'launch-readiness-eth-ai-12136.json','launch-readiness-eth-atmospheric-chemistry.json',
+            'launch-readiness-vienna-6233.json')]
+        assignment=json.loads((results_dir/'launch-readiness-import-assignment.json').read_text(encoding='utf-8'))
+        ledger=candidate_ledger.empty_ledger()
+        # The first two records represent tasks recovered from the prior Actions artifact.
+        for result in rows[:2]:
+            cid=result['candidate_id']; source_id=result['source_id']; endpoint_id=result['endpoint_id']; key=result['candidate_key']
+            ledger['tasks'][cid]={'candidate_id':cid,'source_id':source_id,'endpoint_id':endpoint_id,'candidate_key':key,
+                'candidate_url':result['candidate_url'],'source_url':result['candidate_url'],'candidate':{},
+                'content_fingerprint':result['candidate_fingerprint'],'status':'pending','review_history':[],
+                'current_open_status':'unknown','open_status_history':[],'formal_site_write':False}
+        candidate_ledger.merge_review_results(ledger,rows,'actions-run-1',assignment)
+        self.assertEqual(len(ledger['tasks']),3)
+        self.assertTrue(all(ledger['tasks'][row['candidate_id']]['status']=='verified' for row in rows))
+        self.assertTrue(all(ledger['tasks'][row['candidate_id']]['current_open_status']=='unknown' for row in rows))
+        self.assertEqual(sum(len(ledger['tasks'][row['candidate_id']]['review_history']) for row in rows),3)
+        revision=ledger['revision']
+        candidate_ledger.merge_review_results(ledger,rows,'actions-run-1',assignment)
+        self.assertEqual(ledger['revision'],revision)
+        self.assertEqual(sum(len(ledger['tasks'][row['candidate_id']]['review_history']) for row in rows),3)
+        wrong=json.loads(json.dumps(assignment)); wrong['tasks'][0]['source_id']='wrong-source'
+        with self.assertRaisesRegex(ValueError,'review_result_assignment_identity_mismatch'):
+            candidate_ledger.merge_review_results(ledger,rows,'actions-run-2',wrong)
+        incomplete=json.loads(json.dumps(assignment)); incomplete['tasks'][0].pop('candidate_fingerprint')
+        with self.assertRaisesRegex(ValueError,'review_assignment_task_identity_incomplete'):
+            candidate_ledger.merge_review_results(ledger,rows,'actions-run-3',incomplete)
+        wrong_run=json.loads(json.dumps(rows)); wrong_run[0]['source_actions_run_id']='99999999999'
+        with self.assertRaisesRegex(ValueError,'review_result_source_provenance_not_assigned'):
+            candidate_ledger.merge_review_results(ledger,wrong_run,'actions-run-4',assignment)
+
+    def test_review_import_merges_embedded_candidate_observation_before_review_idempotently(self):
+        observation={'source_id':'s','endpoint_id':'s:list','candidate_key':'job-captured','candidate_url':'https://jobs.example/captured','source_url':'https://jobs.example/list','candidate':{'id':'captured','title':'Captured from source'},'retrieved_at':'2026-01-01T00:00:00Z','parser':'agent_page_capture'}
+        candidate_id=candidate_ledger.stable_candidate_id('s','s:list','job-captured')
+        candidate_fingerprint=candidate_ledger.digest(observation['candidate'])
+        review={'review_task_kind':'content_review','candidate_id':candidate_id,'candidate_fingerprint':candidate_fingerprint,'source_id':'s','endpoint_id':'s:list','candidate_key':'job-captured','candidate_url':'https://jobs.example/captured','candidate_observation':observation,'source_capture_id':'capture-1','status':'insufficient_evidence','reviewer':'opportunity_verifier','reviewed_at':'2026-01-02T00:00:00Z','evidence':[],'reason':'Captured page fields do not support a formal update.'}
+        second_observation={**observation,'candidate_key':'job-captured-2','candidate_url':'https://jobs.example/captured-2','candidate':{'id':'captured-2','title':'Second captured record'}}
+        second_id=candidate_ledger.stable_candidate_id('s','s:list','job-captured-2')
+        second_review={**review,'candidate_id':second_id,'candidate_fingerprint':candidate_ledger.digest(second_observation['candidate']),'candidate_key':'job-captured-2','candidate_url':second_observation['candidate_url'],'candidate_observation':second_observation}
+        second_review['source_capture_id']='capture-2'
+        assignment=assignment_manifest([review,second_review])
+        ledger=candidate_ledger.empty_ledger()
+        candidate_ledger.merge_review_results(ledger,[review,second_review],'actions-run-1',assignment)
+        candidate_ledger.merge_review_results(ledger,[review,second_review],'actions-run-1',assignment)
+        task=ledger['tasks'][candidate_id]
+        self.assertEqual(len(ledger['tasks']),2)
+        self.assertEqual(task['status'],'insufficient_evidence')
+        self.assertEqual(task['parser'],'agent_page_capture')
+        self.assertEqual(task['current_open_status'],'unknown')
+        self.assertEqual(len(task['review_history']),1)
+        self.assertEqual(sum(event['event_type']=='observed' for event in ledger['events']),2)
+        candidate_ledger.merge_review_results(ledger,[review,second_review],'actions-run-2',assignment)
+        self.assertEqual(len(ledger['tasks']),2)
+        self.assertEqual(len(task['review_history']),1)
+        self.assertEqual(task['observed_runs'],['actions-run-1','actions-run-2'])
+        unassigned=assignment_manifest([review]); unassigned['tasks']=[]; unassigned['source_run_ids']=[]
+        with self.assertRaisesRegex(ValueError,'review_result_not_assigned'):
+            candidate_ledger.merge_review_results(ledger,[review], 'actions-run-3', unassigned)
+        stale_assignment=assignment_manifest([review]); stale_assignment['tasks'][0]['candidate_fingerprint']='stale-fingerprint'
+        with self.assertRaisesRegex(ValueError,'review_result_fingerprint_not_assigned'):
+            candidate_ledger.merge_review_results(ledger,[review],'actions-run-4',stale_assignment)
+
+    def test_review_import_rejects_candidate_observation_with_wrong_stable_identity(self):
+        observation={'source_id':'s','endpoint_id':'s:list','candidate_key':'job-captured','candidate_url':'https://jobs.example/captured','source_url':'https://jobs.example/list','candidate':{'id':'captured'},'retrieved_at':'2026-01-01T00:00:00Z'}
+        review={'review_task_kind':'content_review','candidate_id':'tcand-wrong','candidate_fingerprint':candidate_ledger.digest(observation['candidate']),'source_id':'s','endpoint_id':'s:list','candidate_key':'job-captured','candidate_url':observation['candidate_url'],'candidate_observation':observation,'source_capture_id':'capture-1','status':'insufficient_evidence','reviewer':'opportunity_verifier','reviewed_at':'2026-01-02T00:00:00Z','evidence':[]}
+        assignment=assignment_manifest([review])
+        with self.assertRaisesRegex(ValueError,'review_result_stable_identity_mismatch'):
+            candidate_ledger.merge_review_results(candidate_ledger.empty_ledger(),[review],'actions-run-1',assignment)
+
+    def test_reviewed_candidate_maps_to_exactly_one_active_catalog_record(self):
+        candidate_url='https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9'
+        active_catalog=Path(__file__).parents[3]/'docs/apps/application-board/geography-opportunities.mjs'
+        self.assertEqual(prepare_data_review.find_active_catalog_match(active_catalog,candidate_url),'geo-eth-atmosphere')
+        with tempfile.TemporaryDirectory() as tmp:
+            repeated=Path(tmp)/'ambiguous.mjs'
+            block="record({\n    id:'duplicate',\n    url:'https://example.test/job',\n  }),\n"
+            repeated.write_text(block+block,encoding='utf-8')
+            with self.assertRaisesRegex(ValueError,'active_catalog_url_match_not_unique'):
+                prepare_data_review.find_active_catalog_match(repeated,'https://example.test/job')
+
     def test_candidate_ledger_migrates_legacy_rows_deduplicates_and_retains_provenance(self):
         source=self.source()
         rows=[{'task_id':f'old-run:test-source:{n}','run_id':'old-run','source_id':'test-source','candidate_key':f'https://example.test/jobs/{n}','candidate_url':f'https://example.test/jobs/{n}','source_url':'https://example.test/list','candidate':{'id':f'job-{n}'},'retrieved_at':'2026-01-01T00:00:00Z','content_sha256':'a'*64} for n in range(60)]
@@ -536,7 +897,7 @@ print(json.dumps({'outcome':result['outcome'],'baseline_available':result['basel
         self.assertEqual(ledger['tasks'][candidate_id]['status'],'pending')
 
     def test_duplicate_conclusion_requires_existing_stable_target(self):
-        observations=[{'source_id':'s','endpoint_id':'s:list','candidate_key':key,'candidate_url':f'https://jobs.example/{key}','source_url':'https://jobs.example/list','candidate':{'id':key},'retrieved_at':'2026-01-01T00:00:00Z'} for key in ('job-1','job-2')]
+        observations=[{'source_id':'s','endpoint_id':'s:list','candidate_key':key,'candidate_url':f'https://jobs.example/{key}','source_url':'https://jobs.example/list','candidate':{'id':key,'title':'Same exact role'},'retrieved_at':'2026-01-01T00:00:00Z'} for key in ('job-1','job-2')]
         ledger=candidate_ledger.empty_ledger()
         candidate_ledger.merge_observations(ledger,observations,'run-1')
         first,second=ledger['tasks'].values()
@@ -544,6 +905,8 @@ print(json.dumps({'outcome':result['outcome'],'baseline_available':result['basel
         with self.assertRaisesRegex(ValueError,'duplicate_candidate_review_missing_or_invalid_target'):
             candidate_ledger.apply_reviews(ledger,[result],'review-duplicate-invalid')
         result['duplicate_of']=second['candidate_id']
+        result['duplicate_match']={'source_fingerprint':first['content_fingerprint'],'target_fingerprint':second['content_fingerprint'],'matching_fields':['title'],'identity_claim':'Both official pages identify the same position'}
+        result['evidence'].append({'url':second['candidate_url'],'claim':'Same exact role title as the first page','locator':'Title field'})
         candidate_ledger.apply_reviews(ledger,[result],'review-duplicate-valid')
         self.assertEqual(ledger['tasks'][first['candidate_id']]['status'],'duplicate')
 
@@ -649,17 +1012,81 @@ print(json.dumps({'outcome':result['outcome'],'baseline_available':result['basel
             state2=(destination1/'state.json').read_bytes(); ledger2=(destination1/'candidate_ledger.json').read_bytes()
             (new_artifact/'state/state.json').write_bytes(state2)
             (new_artifact/'state/candidate_ledger.json').write_bytes(ledger2)
-            provenance2={'format':'terrafar-maintenance-state-v1','origin_actions_run_id':'1002','origin_program_run_id':json.loads(state2)['last_run_id'],'state_compatibility_version':1,'state_sha256':audit.sha(state2),'state_schema_version':1,'candidate_ledger_schema_version':1,'candidate_task_count':1,'candidate_ledger_sha256':audit.sha(ledger2),'registry_sha256':registry_sha,'adapter_catalog_sha256':audit.sha(source_adapters.CATALOG_PATH.read_bytes())}
+            provenance2={'format':'terrafar-maintenance-state-v1','origin_actions_run_id':'1002','origin_program_run_id':json.loads(state2)['last_run_id'],'state_compatibility_version':1,'state_sha256':audit.sha(state2),'state_schema_version':1,'candidate_ledger_schema_version':json.loads(ledger2)['schema_version'],'candidate_task_count':1,'candidate_ledger_sha256':audit.sha(ledger2),'registry_sha256':registry_sha,'adapter_catalog_sha256':audit.sha(source_adapters.CATALOG_PATH.read_bytes())}
             (new_artifact/'state/provenance.json').write_text(json.dumps(provenance2),encoding='utf-8')
             second=restore_run_state.restore(new_artifact,destination2,'1002','1003',registry.REGISTRY)
             self.assertFalse(second['candidate_ledger_migrated_from_legacy_queue'])
             self.assertEqual(second['origin_actions_run_id'],'1002')
             self.assertEqual(second['current_actions_run_id'],'1003')
             self.assertEqual(second['candidate_task_count'],1)
+            self.assertFalse(second['candidate_ledger_schema_migrated'])
             provenance2['candidate_ledger_sha256']='d'*64
             (new_artifact/'state/provenance.json').write_text(json.dumps(provenance2),encoding='utf-8')
             with self.assertRaisesRegex(ValueError,'candidate_ledger_hash_mismatch'):
                 restore_run_state.restore(new_artifact,base/'corrupt','1002','1004',registry.REGISTRY)
+
+    def test_cross_actions_run_restore_migrates_hashed_v1_ledger_without_losing_tasks(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            base=Path(tmp); artifact=base/'artifact'; (artifact/'state').mkdir(parents=True)
+            registry_sha=audit.sha(registry.REGISTRY.read_bytes())
+            state={'schema_version':1,'snapshots':{'https://jobs.example/list\nfake':{'semantic_hash':'a'*64,'semantic_rows':[{'id':'job-1'}],'adapter':'fake'}},'last_run_id':'program-2001','last_registry_sha256':registry_sha}
+            state_bytes=json.dumps(state).encode(); (artifact/'state/state.json').write_bytes(state_bytes)
+            ledger=candidate_ledger.empty_ledger()
+            observation={'source_id':'s','endpoint_id':'s:list','candidate_key':'job-1','candidate_url':'https://jobs.example/job-1','source_url':'https://jobs.example/list','candidate':{'id':'job-1'},'retrieved_at':'2026-01-01T00:00:00Z'}
+            candidate_ledger.merge_observations(ledger,[observation],'program-2001')
+            candidate_id=next(iter(ledger['tasks']))
+            ledger['schema_version']=1
+            for name in ('current_open_status','current_status_evidence','current_open_status_checked_at','open_status_history'):
+                ledger['tasks'][candidate_id].pop(name,None)
+            ledger_bytes=json.dumps(ledger,ensure_ascii=False).encode()
+            (artifact/'state/candidate_ledger.json').write_bytes(ledger_bytes)
+            provenance={'format':'terrafar-maintenance-state-v1','origin_actions_run_id':'2001','origin_program_run_id':'program-2001','state_compatibility_version':1,'state_sha256':audit.sha(state_bytes),'state_schema_version':1,'candidate_ledger_schema_version':1,'candidate_task_count':1,'candidate_ledger_sha256':audit.sha(ledger_bytes),'registry_sha256':registry_sha,'adapter_catalog_sha256':audit.sha(source_adapters.CATALOG_PATH.read_bytes())}
+            (artifact/'state/provenance.json').write_text(json.dumps(provenance),encoding='utf-8')
+            restored=restore_run_state.restore(artifact,base/'restored','2001','2002',registry.REGISTRY)
+            migrated=json.loads((base/'restored/candidate_ledger.json').read_text())
+            self.assertTrue(restored['candidate_ledger_schema_migrated'])
+            self.assertEqual(migrated['schema_version'],2)
+            self.assertEqual(set(migrated['tasks']),{candidate_id})
+            self.assertEqual(migrated['tasks'][candidate_id]['current_open_status'],'unknown')
+            self.assertEqual(restored['candidate_task_count'],1)
+
+    def test_cross_actions_run_restore_checks_v3_runner_adapter_and_ledger_implementation_hashes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            base=Path(tmp); artifact=base/'artifact'; (artifact/'state').mkdir(parents=True)
+            registry_sha=audit.sha(registry.REGISTRY.read_bytes())
+            state={'schema_version':1,'snapshots':{},'last_run_id':'program-7001','last_registry_sha256':registry_sha}
+            state_bytes=json.dumps(state,sort_keys=True).encode(); (artifact/'state/state.json').write_bytes(state_bytes)
+            ledger=candidate_ledger.empty_ledger(); ledger_bytes=json.dumps(ledger,sort_keys=True).encode()
+            (artifact/'state/candidate_ledger.json').write_bytes(ledger_bytes)
+            provenance={'format':'terrafar-maintenance-state-v1','origin_actions_run_id':'7001','origin_program_run_id':'program-7001',
+                'state_compatibility_version':3,'state_sha256':audit.sha(state_bytes),'state_schema_version':1,
+                'candidate_ledger_schema_version':ledger['schema_version'],'candidate_task_count':0,
+                'candidate_ledger_sha256':audit.sha(ledger_bytes),'registry_sha256':registry_sha,
+                'adapter_catalog_sha256':audit.sha(source_adapters.CATALOG_PATH.read_bytes()),
+                'runner_sha256':restore_run_state.runner_sha(),
+                'adapter_implementation_sha256':restore_run_state.adapter_implementation_sha(),
+                'candidate_ledger_implementation_sha256':restore_run_state.candidate_ledger_implementation_sha()}
+            provenance_path=artifact/'state/provenance.json'
+            provenance_path.write_text(json.dumps(provenance),encoding='utf-8')
+            restored=restore_run_state.restore(artifact,base/'restored','7001','7002',registry.REGISTRY)
+            self.assertEqual(restored['origin_actions_run_id'],'7001')
+            self.assertEqual(restored['state_compatibility_migrated_from'],None)
+            wrong_runner=dict(provenance); wrong_runner['runner_sha256']='0'*64
+            provenance_path.write_text(json.dumps(wrong_runner),encoding='utf-8')
+            with self.assertRaisesRegex(ValueError,'restored_runner_version_mismatch'):
+                restore_run_state.restore(artifact,base/'wrong-runner','7001','7003',registry.REGISTRY)
+            wrong_adapter=dict(provenance); wrong_adapter['adapter_implementation_sha256']='1'*64
+            provenance_path.write_text(json.dumps(wrong_adapter),encoding='utf-8')
+            with self.assertRaisesRegex(ValueError,'restored_adapter_implementation_version_mismatch'):
+                restore_run_state.restore(artifact,base/'wrong-adapter','7001','7004',registry.REGISTRY)
+            wrong_ledger=dict(provenance); wrong_ledger['candidate_ledger_implementation_sha256']='2'*64
+            provenance_path.write_text(json.dumps(wrong_ledger),encoding='utf-8')
+            with self.assertRaisesRegex(ValueError,'restored_candidate_ledger_implementation_version_mismatch'):
+                restore_run_state.restore(artifact,base/'wrong-ledger','7001','7005',registry.REGISTRY)
+            unsupported_compat=dict(provenance); unsupported_compat['state_compatibility_version']=2
+            provenance_path.write_text(json.dumps(unsupported_compat),encoding='utf-8')
+            with self.assertRaisesRegex(ValueError,'restored_state_compatibility_version_unsupported'):
+                restore_run_state.restore(artifact,base/'unsupported-compat','7001','7006',registry.REGISTRY)
 
     def test_current_open_status_requires_current_portal_acceptance_not_a_deadline(self):
         observation={'source_id':'s','endpoint_id':'s:list','candidate_key':'job-1','candidate_url':'https://jobs.example/job-1','source_url':'https://jobs.example/list','candidate':{'id':'job-1'},'retrieved_at':'2026-01-01T00:00:00Z'}
@@ -679,7 +1106,7 @@ print(json.dumps({'outcome':result['outcome'],'baseline_available':result['basel
         with self.assertRaisesRegex(ValueError,'explicit_portal_acceptance_evidence'):
             candidate_ledger.apply_reviews(ledger,[result],'review-unlinked-status')
         result['current_status_evidence']['locator']='Application portal status'
-        result['evidence'].append({'field':'current_open_status','url':'https://jobs.example/job-1','claim':candidate_ledger.CURRENT_STATUS_CLAIMS['open'],'locator':'Application portal status'})
+        result['evidence'].append({'field':'current_open_status','url':'https://jobs.example/job-1','claim':candidate_ledger.CURRENT_STATUS_CLAIMS['open'],'locator':'Application portal status','page_content_sha256':'a'*64})
         candidate_ledger.apply_reviews(ledger,[result],'review-live-portal')
 
     def test_sample_adapter_catalog_is_additive_and_completeness_fails_closed(self):

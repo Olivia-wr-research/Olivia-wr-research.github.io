@@ -96,7 +96,7 @@ export const geographyOpportunities = [
     url:'https://jobs.ethz.ch/job/view/JOPG_ethz_L9EB3dSHxoSQSAypSG',
   }),
   record({
-    id:'geo-eth-atmosphere',type:'phd',title:'大气化学与空气质量博士',titleEn:'PhD Position in Atmospheric Chemistry',
+    id:'geo-eth-atmosphere',type:'phd',status:'listed',checkedAt:'2026-10-23',title:'大气化学与空气质量博士',titleEn:'PhD Position in Atmospheric Chemistry',
     institution:'苏黎世联邦理工学院',institutionEn:'ETH Zürich',short:'ETH Zürich',country:'瑞士',countryEn:'Switzerland',city:'Zurich',
     field:'自然地理与环境',fieldEn:'Physical geography and environment',topics:['大气化学','空气质量','气候','卫星观测'],methods:['全球模型','编程','观测数据分析'],degree:'master',language:'良好的英语',languageEn:'Good spoken and written English',
     funding:'雇佣制博士；已落实4年资金',fundingEn:'Doctoral employment; funding secured for four years',duration:'4年',durationEn:'Four years',deadlineType:'rolling',reviewDate:'2026-11-15',

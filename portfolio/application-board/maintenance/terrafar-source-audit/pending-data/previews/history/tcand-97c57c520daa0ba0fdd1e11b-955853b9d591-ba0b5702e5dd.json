@@ -1,0 +1,22 @@
+{
+  "preview_type": "branch-only-pending-data-review",
+  "formal_record_id": "eth-ai-12136",
+  "title": "ETH AI Center 跨学科人工智能博士项目",
+  "active_catalog_record_id": null,
+  "target_record_id": "eth-ai-12136",
+  "target_identity_source": "formal_record_exact_url",
+  "candidate_id": "tcand-97c57c520daa0ba0fdd1e11b",
+  "changes": {
+    "funding": {
+      "before": "全职博士 Fellowship；雇佣及资助条款见官方指南",
+      "after": "ETH AI Center博士岗位，100%工作量，按rate 5标准支付：第一年CHF 73,100、第二年CHF 78,300、第三年CHF 83,500。"
+    },
+    "salary": {
+      "before": "薪资详见 Fellowship 聘用指南",
+      "after": "CHF 73,100（第一年）、CHF 78,300（第二年）、CHF 83,500（第三年）；ETH AI Center rate 5，100%工作量。"
+    }
+  },
+  "status": "pending_human_data_review",
+  "public_page_changed": false,
+  "supersedes_sha256": "41647432904fa84972586f145215a8c343dc692c8155f6891811b0163696c1dd"
+}
