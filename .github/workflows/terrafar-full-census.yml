@@ -1,0 +1,123 @@
+name: TERRAFAR complete initial source census
+
+on:
+  push:
+    branches: ['codex/terrafar-full-coverage-quality-gate-20261024']
+    paths: ['.github/workflows/terrafar-full-census.yml']
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: terrafar-initial-census
+  cancel-in-progress: false
+
+jobs:
+  all-registered-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      TZ: Asia/Shanghai
+      STATE_DIR: ${{ runner.temp }}/terrafar-initial-census-state
+      CENSUS_RUN_ID: terrafar-full-census-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - name: Check out the independently reviewed production baseline
+        uses: actions/checkout@v4
+        with:
+          ref: 65ebd3d587f5cad74150dfcb5fb461d7e9f3f5db
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download the actual production state and candidate ledger
+        uses: actions/download-artifact@v4
+        with:
+          name: terrafar-source-maintenance-state-v3-40059887717-1
+          run-id: 40059887717
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/terrafar-production-origin
+      - name: Validate and restore without replacing the production state
+        working-directory: portfolio/application-board
+        run: |
+          python3 scripts/terrafar_restore_run_state.py \
+            --artifact-dir "$RUNNER_TEMP/terrafar-production-origin" \
+            --destination "$STATE_DIR" \
+            --origin-actions-run-id 40059887717 \
+            --current-actions-run-id "$GITHUB_RUN_ID" \
+            --registry maintenance/terrafar-source-audit/registry/source_registry.json
+      - name: Freeze every registered source into the explicit initial scope
+        working-directory: portfolio/application-board
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib
+          registry=pathlib.Path('maintenance/terrafar-source-audit/registry/source_registry.json')
+          rows=json.loads(registry.read_text())['sources']
+          ids=[r['source_id'] for r in rows if r.get('active') and r.get('enabled_for_daily_audit')]
+          assert len(ids)==411 and len(ids)==len(set(ids)), 'initial source set changed; review scope before proceeding'
+          target=pathlib.Path(os.environ['RUNNER_TEMP'])/'terrafar-full-source-ids.json'
+          target.write_text(json.dumps({'source_ids':ids,'registry_sha256':hashlib.sha256(registry.read_bytes()).hexdigest()},indent=2)+'\n')
+          print(json.dumps({'planned_unique_source_ids':len(ids),'registry_sha256':hashlib.sha256(registry.read_bytes()).hexdigest()}))
+          PY
+      - name: Really attempt all 411 sources with the existing access safeguards
+        working-directory: portfolio/application-board
+        run: |
+          python3 -u scripts/terrafar_source_audit.py run --live \
+            --source-ids-file "$RUNNER_TEMP/terrafar-full-source-ids.json" \
+            --budget 411 --concurrency 3 --timeout 15 --retries 1 \
+            --per-host-delay 1 --http-request-budget 6000 \
+            --require-state --require-candidate-ledger \
+            --state-dir "$STATE_DIR" --run-id "$CENSUS_RUN_ID"
+      - name: Export auditable metadata for the review workspace
+        if: always()
+        working-directory: portfolio/application-board
+        run: |
+          python3 - <<'PY'
+          import base64,gzip,hashlib,json,os,pathlib
+          root=pathlib.Path('maintenance/terrafar-source-audit/runs')/os.environ['CENSUS_RUN_ID']
+          state=pathlib.Path(os.environ['STATE_DIR'])
+          wanted={'manifest.json':root/'manifest.json','daily_report.json':root/'daily_report.json',
+                  'source_checks.jsonl':root/'source_checks.jsonl','candidate_review_queue.jsonl':root/'candidate_review_queue.jsonl',
+                  'candidate_ledger.json':state/'candidate_ledger.json','state.json':state/'state.json',
+                  'restore_verification.json':state/'restore_verification.json'}
+          package={name:p.read_text() for name,p in wanted.items() if p.is_file()}
+          raw=json.dumps(package,ensure_ascii=False).encode()
+          encoded=base64.b64encode(gzip.compress(raw)).decode()
+          print('TERRAFAR_REVIEW_PACKAGE_SHA256 '+hashlib.sha256(raw).hexdigest())
+          for index in range(0,len(encoded),3000):
+              print('TERRAFAR_REVIEW_PACKAGE_CHUNK '+encoded[index:index+3000])
+          print('TERRAFAR_REVIEW_PACKAGE_END')
+          if (root/'daily_report.json').is_file():
+              report=json.loads((root/'daily_report.json').read_text())
+              ready=report.get('planned_sources')==411 and report.get('complete_success_count')==411
+              gate={'initial_scope_complete':ready,'source_count':411,'complete_sources':report.get('complete_success_count'),
+                    'publication_authorized':False,'human_sample_review':'not_performed',
+                    'reason':'all-source completion and actual user review are required before release'}
+              (root/'initial_release_gate.json').write_text(json.dumps(gate,indent=2)+'\n')
+              with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out:
+                  out.write('# Initial full-source census\n\n'+json.dumps(report,ensure_ascii=False,indent=2)+'\n\n')
+                  out.write('Publication remains gated by complete source scope, field evidence and actual user review.\n')
+          PY
+      - name: Preserve all evidence and recovered candidate history
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: terrafar-full-census-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/terrafar-initial-census-state/
+            portfolio/application-board/maintenance/terrafar-source-audit/runs/terrafar-full-census-${{ github.run_id }}-${{ github.run_attempt }}/
+          if-no-files-found: error
+          retention-days: 90
+      - name: Enforce the user's complete-initial-scope release requirement
+        working-directory: portfolio/application-board
+        run: |
+          python3 - <<'PY'
+          import json,os,pathlib,sys
+          p=pathlib.Path('maintenance/terrafar-source-audit/runs')/os.environ['CENSUS_RUN_ID']/'initial_release_gate.json'
+          gate=json.loads(p.read_text())
+          print(json.dumps(gate))
+          if not gate['initial_scope_complete']:
+              print('Initial source scope is incomplete. Evidence is preserved; no site data has been published.',file=sys.stderr)
+              sys.exit(1)
+          PY
