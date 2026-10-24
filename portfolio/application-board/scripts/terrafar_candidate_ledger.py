@@ -39,6 +39,24 @@ def stable_candidate_id(source_id: str, endpoint_id: str, candidate_key: str) ->
     return "tcand-" + hashlib.sha256(seed.encode("utf-8")).hexdigest()[:24]
 
 
+def assigned_source_run_ids(result: dict[str, Any]) -> list[str]:
+    identifiers = []
+    for field in ("source_actions_run_id", "source_program_run_id", "source_capture_id"):
+        value = result.get(field)
+        if value is not None:
+            if not isinstance(value, (str, int)) or not str(value).strip():
+                raise ValueError(f"review_result_source_provenance_invalid:{field}")
+            identifiers.append(f"{field}:{value}")
+    if not identifiers:
+        raise ValueError("review_result_source_provenance_missing")
+    return sorted(set(identifiers))
+
+
+def skill_pin() -> dict[str, str]:
+    return {"name": "terrafar-source-audit", "path": ".agents/skills/terrafar-source-audit/SKILL.md",
+            "sha256": hashlib.sha256(SKILL_PATH.read_bytes()).hexdigest()}
+
+
 def empty_ledger() -> dict[str, Any]:
     return {"schema_version": SCHEMA_VERSION, "evidence_policy_version": EVIDENCE_POLICY_VERSION,
             "revision": 0, "tasks": {}, "events": []}
@@ -365,6 +383,13 @@ def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id:
         _validate_review_timestamp_and_identity(candidate_id, result.get("reviewer"), result.get("reviewed_at"))
         if status in TERMINAL_STATUSES:
             allowed_urls = {task.get("candidate_url"), task.get("source_url")}
+            # Field-specific official evidence may be hosted on a separate institutional
+            # page (for example, an employer's salary scale). Bind that URL through the
+            # structured finding instead of forcing every claim onto the job listing.
+            for finding in _supported_content_fields(result).values():
+                evidence_url = finding.get("evidence_url")
+                if isinstance(evidence_url, str) and evidence_url.strip():
+                    allowed_urls.add(evidence_url)
             duplicate_target = None
             if status == "duplicate":
                 duplicate_id = result.get("duplicate_of")
@@ -576,6 +601,113 @@ def apply_open_status_reviews(ledger: dict[str, Any], results: list[dict[str, An
     return ledger
 
 
+def merge_review_results(ledger: dict[str, Any], rows: list[dict[str, Any]], run_id: str,
+                        assignment: dict[str, Any]) -> dict[str, Any]:
+    """Import captured candidate snapshots before merging their assigned reviews."""
+    if not isinstance(rows, list):
+        raise ValueError("candidate_review_results_must_be_a_json_array")
+    if not isinstance(assignment, dict) or assignment.get("format") != "terrafar-review-assignment-v1" or not isinstance(assignment.get("tasks"), list):
+        raise ValueError("review_assignment_manifest_required")
+    if assignment.get("skill") != skill_pin():
+        raise ValueError("review_assignment_skill_pin_mismatch")
+    assigned = {}
+    assigned_source_ids = set()
+    required_identity = ("candidate_id", "candidate_fingerprint", "source_id", "endpoint_id", "candidate_key", "candidate_url")
+    for task in assignment["tasks"]:
+        if not isinstance(task, dict) or not isinstance(task.get("candidate_id"), str):
+            raise ValueError("review_assignment_task_identity_invalid")
+        if any(not isinstance(task.get(field), str) or not task[field].strip() for field in required_identity):
+            raise ValueError("review_assignment_task_identity_incomplete")
+        if not isinstance(task.get("review_task_kind"), str) or not task["review_task_kind"].strip():
+            raise ValueError("review_assignment_task_kind_missing")
+        if not isinstance(task.get("assigned_agent"), str) or not task["assigned_agent"].strip():
+            raise ValueError("review_assignment_agent_missing")
+        provenance = task.get("source_provenance")
+        if not isinstance(provenance, dict) or set(provenance) != {"source_actions_run_id", "source_program_run_id", "source_capture_id"}:
+            raise ValueError("review_assignment_source_provenance_missing")
+        source_run_ids = task.get("source_run_ids")
+        if not isinstance(source_run_ids, list) or not source_run_ids or not all(isinstance(value, str) for value in source_run_ids):
+            raise ValueError("review_assignment_source_run_ids_missing")
+        if source_run_ids != sorted(set(source_run_ids)):
+            raise ValueError("review_assignment_source_run_ids_not_canonical")
+        assigned_source_ids.update(source_run_ids)
+        candidate_id = task["candidate_id"]
+        if candidate_id in assigned:
+            raise ValueError(f"review_assignment_duplicate_candidate:{candidate_id}")
+        assigned[candidate_id] = task
+    content_rows = [row for row in rows if isinstance(row, dict)
+                    and row.get("review_task_kind", "content_review") == "content_review"]
+    status_rows = [row for row in rows if isinstance(row, dict)
+                   and row.get("review_task_kind") == "current_open_status_review"]
+    if len(content_rows) + len(status_rows) != len(rows):
+        raise ValueError("candidate_review_task_kind_invalid")
+    for result in rows:
+        assignment_task = assigned.get(result.get("candidate_id"))
+        if assignment_task is None:
+            raise ValueError(f"review_result_not_assigned:{result.get('candidate_id')}")
+        expected_kind = assignment_task.get("review_task_kind", "content_review")
+        actual_kind = result.get("review_task_kind", "content_review")
+        if expected_kind != actual_kind:
+            raise ValueError(f"review_result_task_kind_not_assigned:{result.get('candidate_id')}")
+        if result.get("candidate_fingerprint") != assignment_task.get("candidate_fingerprint"):
+            raise ValueError(f"review_result_fingerprint_not_assigned:{result.get('candidate_id')}")
+        stable_identity = (result.get("source_id"), result.get("endpoint_id"), result.get("candidate_key"))
+        if (not all(isinstance(value, str) and value for value in stable_identity)
+                or result.get("candidate_id") != stable_candidate_id(*stable_identity)):
+            raise ValueError(f"review_result_stable_identity_mismatch:{result.get('candidate_id')}")
+        for field in ("source_id", "endpoint_id", "candidate_key", "candidate_url"):
+            if result.get(field) != assignment_task.get(field):
+                raise ValueError(f"review_result_assignment_identity_mismatch:{result.get('candidate_id')}:{field}")
+        actual_provenance = {field: result.get(field) for field in (
+            "source_actions_run_id", "source_program_run_id", "source_capture_id")}
+        if actual_provenance != assignment_task["source_provenance"]:
+            raise ValueError(f"review_result_source_provenance_not_assigned:{result.get('candidate_id')}")
+        result_source_ids = assigned_source_run_ids(result)
+        if result_source_ids != assignment_task["source_run_ids"]:
+            raise ValueError(f"review_result_source_run_ids_not_assigned:{result.get('candidate_id')}")
+        if result.get("reviewer") != assignment_task["assigned_agent"]:
+            raise ValueError(f"review_result_agent_not_assigned:{result.get('candidate_id')}")
+    if assignment.get("source_run_ids") != sorted(assigned_source_ids):
+        raise ValueError("review_assignment_source_run_ids_manifest_mismatch")
+    observations = []
+    for result in content_rows:
+        observation = result.get("candidate_observation")
+        if observation is None:
+            continue
+        if not isinstance(observation, dict):
+            raise ValueError("candidate_observation_payload_invalid")
+        identity = (observation.get("source_id"), observation.get("endpoint_id"), observation.get("candidate_key"))
+        if not all(isinstance(value, str) and value for value in identity):
+            raise ValueError("candidate_observation_missing_stable_identity")
+        expected_id = stable_candidate_id(*identity)
+        if (result.get("candidate_id") != expected_id
+                or result.get("source_id") != observation.get("source_id")
+                or result.get("endpoint_id") != observation.get("endpoint_id")
+                or result.get("candidate_key") != observation.get("candidate_key")
+                or result.get("candidate_url") != observation.get("candidate_url")):
+            raise ValueError("candidate_observation_review_identity_mismatch")
+        candidate = observation.get("candidate")
+        if not isinstance(candidate, dict) or digest(candidate) != result.get("candidate_fingerprint"):
+            raise ValueError(f"candidate_observation_review_fingerprint_mismatch:{expected_id}")
+        observations.append(observation)
+    if observations:
+        merge_observations(ledger, observations, run_id)
+    # Validate the assigned candidate after import/upsert, including duplicate
+    # observations in a batch and changes that reopened a task.
+    for result in content_rows:
+        task = ledger.get("tasks", {}).get(result.get("candidate_id"))
+        if task is None:
+            raise ValueError(f"unassigned_candidate_review:{result.get('candidate_id')}")
+        if (result.get("candidate_fingerprint") != task.get("content_fingerprint")
+                or any(result.get(field) != task.get(field)
+                       for field in ("source_id", "endpoint_id", "candidate_key", "candidate_url"))):
+            raise ValueError(f"candidate_review_identity_or_fingerprint_mismatch:{result.get('candidate_id')}")
+    revalidate_terminal_reviews(ledger, f"agent-merge-policy-{run_id}")
+    apply_reviews(ledger, content_rows, run_id)
+    apply_open_status_reviews(ledger, status_rows, run_id)
+    return ledger
+
+
 def open_status_tasks(ledger: dict[str, Any], today: str | None = None, recheck_days: int = 7) -> list[dict[str, Any]]:
     current_day = datetime.fromisoformat(today).date() if today else datetime.now(timezone.utc).date()
     output = []
@@ -659,6 +791,7 @@ def main() -> None:
     merge = sub.add_parser("merge-results")
     merge.add_argument("--ledger", required=True)
     merge.add_argument("--results", required=True)
+    merge.add_argument("--assignment", required=True)
     merge.add_argument("--run-id", required=True)
     args = parser.parse_args()
     ledger_path = Path(args.ledger)
@@ -671,17 +804,10 @@ def main() -> None:
         print(json.dumps({"candidate_count": batch["candidate_count"], "candidate_ids": batch["candidate_ids"]}))
     elif args.command == "merge-results":
         rows = json.loads(Path(args.results).read_text(encoding="utf-8"))
-        if not isinstance(rows, list):
-            raise ValueError("candidate_review_results_must_be_a_json_array")
+        assignment = json.loads(Path(args.assignment).read_text(encoding="utf-8"))
         with ledger_lock(ledger_path):
             ledger = load_ledger(ledger_path, require_existing=True)
-            revalidate_terminal_reviews(ledger, f"agent-merge-policy-{args.run_id}")
-            content_rows = [row for row in rows if row.get("review_task_kind", "content_review") == "content_review"]
-            status_rows = [row for row in rows if row.get("review_task_kind") == "current_open_status_review"]
-            if len(content_rows) + len(status_rows) != len(rows):
-                raise ValueError("candidate_review_task_kind_invalid")
-            apply_reviews(ledger, content_rows, args.run_id)
-            apply_open_status_reviews(ledger, status_rows, args.run_id)
+            merge_review_results(ledger, rows, args.run_id, assignment)
             save_ledger(ledger_path, ledger)
         print(json.dumps({"merged": len(rows), "open_tasks": len(review_queue(ledger)), "ledger_revision": ledger["revision"]}))
 

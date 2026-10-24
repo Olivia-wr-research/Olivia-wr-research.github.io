@@ -8,11 +8,15 @@
   "candidate_url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
   "formal_record_id": "eth-86a50882f2d1",
   "content_review_status": "verified",
+  "active_catalog_record_id": "geo-eth-atmosphere",
+  "active_catalog_match_status": "unique_url_match",
+  "target_record_id": "geo-eth-atmosphere",
+  "target_identity_source": "active_catalog_exact_url",
+  "target_identity_verified": true,
   "candidate_origin": "actions_candidate_snapshot",
   "candidate_ledger_status_after_merge": "verified",
-  "candidate_ledger_revision_after_merge": 11,
   "candidate_review_history_count": 2,
-  "candidate_review_event_id": "5e79e635d016de77cc9ea4f9f7f343e7",
+  "candidate_review_event_id": "3cef99f1763e4b183fdbcf0e422f3724",
   "current_open_status": "unknown",
   "field_evidence": {
     "application_route": {
@@ -68,7 +72,7 @@
   "changes": {
     "funding": {
       "before": "博士研究岗位",
-      "after": "项目资金已落实4年；预计入职时间为March–September 2027。"
+      "after": "Funding is secured for 4 years; the projected start window is March through September 2027."
     }
   },
   "rollback": {
@@ -80,38 +84,5 @@
   "source_actions_run_id": "39946276972",
   "source_capture_id": "agent-page-capture-2026-10-23",
   "source_program_run_id": null,
-  "active_catalog_record_id": "geo-eth-atmosphere",
-  "active_catalog_match_status": "unique_url_match",
-  "active_catalog_source_path": "docs/apps/application-board/geography-opportunities.mjs",
-  "active_catalog_changes": {
-    "status": {
-      "before": "open",
-      "after": "listed"
-    },
-    "checkedAt": {
-      "before": "2026-10-16",
-      "after": "2026-10-23"
-    },
-    "statusLabel": {
-      "before": "核对时开放申请",
-      "after": "无固定截止 · 门户当前受理状态待核实"
-    },
-    "applicationUrl": {
-      "before": null,
-      "after": "https://emea2.softfactors.com/job-opening/rgum-UtuGzrXTpseTskgjY9#!/?lang=en"
-    },
-    "current_open_status": {
-      "before": "open_at_last_check",
-      "after": "unknown"
-    }
-  },
-  "active_catalog_evidence": {
-    "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
-    "observed_at": "2026-10-23T12:21:45Z",
-    "page_content_sha256": "79e65ae6f27f04bc5291c6a3b287cdbc1156fba4bf17f6e7b72caf9966c3e158",
-    "portal_url": "https://emea2.softfactors.com/job-opening/rgum-UtuGzrXTpseTskgjY9#!/?lang=en",
-    "portal_observed_at": "2026-10-23T12:22:41Z",
-    "portal_page_content_sha256": "bc6e675731137a3e2fbb6fcecaf2f510b60a325da0e87e9e5dd881f265170b2cf",
-    "portal_acceptance_status": "unknown"
-  }
+  "supersedes_sha256": "57285eb261cd7d71ac88ad9fecb1e74876167d7d40f0972f47c01cb20bb14c44"
 }

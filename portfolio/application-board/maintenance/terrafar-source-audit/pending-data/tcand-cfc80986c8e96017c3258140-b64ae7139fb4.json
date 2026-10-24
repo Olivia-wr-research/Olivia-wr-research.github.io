@@ -8,9 +8,13 @@
   "candidate_url": "https://jobs.univie.ac.at/job/University-assistant-predoctoral-Vienna-Network-for-Atmospheric-Research-(VINAR)/1447669433/",
   "formal_record_id": "vienna-6233",
   "content_review_status": "verified",
+  "active_catalog_record_id": null,
+  "active_catalog_match_status": "not_present_in_active_entry_module",
+  "target_record_id": "vienna-6233",
+  "target_identity_source": "formal_record_exact_url",
+  "target_identity_verified": true,
   "candidate_origin": "agent_observed_candidate_snapshot",
   "candidate_ledger_status_after_merge": "verified",
-  "candidate_ledger_revision_after_merge": 10,
   "candidate_review_history_count": 1,
   "candidate_review_event_id": "b7186e9b4fdc385421647791999b73f9",
   "current_open_status": "unknown",
@@ -75,5 +79,6 @@
   "source_observed_at": "2026-10-23T12:21:32Z",
   "source_actions_run_id": null,
   "source_capture_id": "agent-page-capture-2026-10-23",
-  "source_program_run_id": null
+  "source_program_run_id": null,
+  "supersedes_sha256": "92c372a10f5d3d3c3d43a04a0739f06d37264cc2dcc871b931dca81171469d6b"
 }

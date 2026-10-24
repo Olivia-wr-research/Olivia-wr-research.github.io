@@ -2,6 +2,9 @@
   "preview_type": "branch-only-pending-data-review",
   "formal_record_id": "vienna-6233",
   "title": "城市与高山环境中的气溶胶研究",
+  "active_catalog_record_id": null,
+  "target_record_id": "vienna-6233",
+  "target_identity_source": "formal_record_exact_url",
   "candidate_id": "tcand-cfc80986c8e96017c3258140",
   "changes": {
     "deadline": {
@@ -10,5 +13,6 @@
     }
   },
   "status": "pending_human_data_review",
-  "public_page_changed": false
+  "public_page_changed": false,
+  "supersedes_sha256": "80f7562a562ca93bc01cb8d57b0a26a223f728106491be4c8ccef0c018b68511"
 }

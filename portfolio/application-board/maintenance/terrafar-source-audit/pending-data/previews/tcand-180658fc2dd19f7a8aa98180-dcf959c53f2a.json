@@ -1,41 +1,18 @@
 {
-  "preview_type": "active-catalog-branch-data-review",
+  "preview_type": "branch-only-pending-data-review",
   "formal_record_id": "eth-86a50882f2d1",
   "title": "大气化学",
+  "active_catalog_record_id": "geo-eth-atmosphere",
+  "target_record_id": "geo-eth-atmosphere",
+  "target_identity_source": "active_catalog_exact_url",
   "candidate_id": "tcand-180658fc2dd19f7a8aa98180",
   "changes": {
     "funding": {
       "before": "博士研究岗位",
-      "after": "项目资金已落实4年；预计入职时间为March–September 2027。"
+      "after": "Funding is secured for 4 years; the projected start window is March through September 2027."
     }
   },
-  "status": "listed_unconfirmed",
+  "status": "pending_human_data_review",
   "public_page_changed": false,
-  "active_catalog_record_id": "geo-eth-atmosphere",
-  "branch_data_changed": true,
-  "live_site_changed": false,
-  "current_open_status": "unknown",
-  "application_route": "https://emea2.softfactors.com/job-opening/rgum-UtuGzrXTpseTskgjY9#!/?lang=en",
-  "active_catalog_changes": {
-    "status": {
-      "before": "open",
-      "after": "listed"
-    },
-    "checkedAt": {
-      "before": "2026-10-16",
-      "after": "2026-10-23"
-    },
-    "statusLabel": {
-      "before": "核对时开放申请",
-      "after": "无固定截止 · 门户当前受理状态待核实"
-    },
-    "applicationUrl": {
-      "before": null,
-      "after": "https://emea2.softfactors.com/job-opening/rgum-UtuGzrXTpseTskgjY9#!/?lang=en"
-    },
-    "current_open_status": {
-      "before": "open_at_last_check",
-      "after": "unknown"
-    }
-  }
+  "supersedes_sha256": "ef6307554e848ac08eb6fbf93ff650e1b82e1e44624ab6dc8ddc5973a651b402"
 }

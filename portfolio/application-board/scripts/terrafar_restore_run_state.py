@@ -26,6 +26,14 @@ def runner_sha() -> str:
     return sha((APP / "scripts/terrafar_source_audit.py").read_bytes())
 
 
+def adapter_implementation_sha() -> str:
+    return sha(Path(source_adapters.__file__).read_bytes())
+
+
+def candidate_ledger_implementation_sha() -> str:
+    return sha(Path(candidate_ledger.__file__).read_bytes())
+
+
 def read_json(path: Path) -> dict:
     try:
         value = json.loads(path.read_text(encoding="utf-8"))
@@ -72,10 +80,14 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
     if not legacy and current_catalog_sha != provenance.get("adapter_catalog_sha256"):
         raise ValueError("restored_adapter_catalog_version_mismatch")
     compatibility = provenance.get("state_compatibility_version", 1) if not legacy else 1
-    if not legacy and compatibility not in {1, 2}:
+    if not legacy and compatibility not in {1, 3}:
         raise ValueError("restored_state_compatibility_version_unsupported")
-    if not legacy and compatibility == 2 and provenance.get("runner_sha256") != runner_sha():
+    if not legacy and compatibility == 3 and provenance.get("runner_sha256") != runner_sha():
         raise ValueError("restored_runner_version_mismatch")
+    if not legacy and compatibility == 3 and provenance.get("adapter_implementation_sha256") != adapter_implementation_sha():
+        raise ValueError("restored_adapter_implementation_version_mismatch")
+    if not legacy and compatibility == 3 and provenance.get("candidate_ledger_implementation_sha256") != candidate_ledger_implementation_sha():
+        raise ValueError("restored_candidate_ledger_implementation_version_mismatch")
 
     policy_demoted_task_count = 0
     if not legacy:
@@ -213,7 +225,7 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
         "candidate_open_status_review_task_count": len(candidate_ledger.open_status_tasks(ledger)),
         "candidate_ledger_migrated_from_legacy_queue": ledger_migrated,
         "candidate_ledger_schema_migrated": bool(not legacy and ledger_schema_migrated),
-        "state_compatibility_migrated_from": compatibility if compatibility == 1 else None,
+        "state_compatibility_migrated_from": compatibility if compatibility < 3 else None,
         "candidate_ledger_policy_demoted_task_count": policy_demoted_task_count,
         "candidate_ledger_task_ids_unique": len(ledger.get("tasks", {})) == len(set(ledger.get("tasks", {}))),
     }

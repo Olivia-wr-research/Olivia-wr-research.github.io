@@ -84,14 +84,71 @@ def upsert_result(p,row):
  tmp=p.with_suffix(p.suffix+'.tmp')
  tmp.write_text(''.join(json.dumps(x,ensure_ascii=False,separators=(',',':'))+'\n' for x in rows),encoding='utf-8'); tmp.replace(p)
 def update_maintenance_retry_queue(state,planned_source_ids,results_by_id):
- """Keep every incomplete planned source queued until a complete check succeeds."""
- retryable={'failed','blocked','not_attempted','partial'}
+ """Retain actual incomplete attempts; budget-deferred sources use the rotation cursor."""
+ retryable={'failed','blocked','partial'}
+ complete={'checked_changed','checked_unchanged','checked_empty'}
  planned=set(planned_source_ids)
  prior=state.get('maintenance_retry_ids',[])
- next_ids=[sid for sid in prior if sid not in planned]
- next_ids.extend(sid for sid in planned_source_ids if results_by_id.get(sid,{}).get('outcome') in retryable)
+ next_ids=[]
+ for sid in prior:
+  if sid not in planned:
+   next_ids.append(sid)
+   continue
+  outcome=results_by_id.get(sid,{}).get('outcome')
+  if outcome not in complete:
+   # Keep prior retries through a budget-deferred/not-attempted round. Do not
+   # promote every unselected source into the retry queue.
+   next_ids.append(sid)
+ next_ids.extend(sid for sid in planned_source_ids
+                 if sid not in prior and results_by_id.get(sid,{}).get('outcome') in retryable)
  state['maintenance_retry_ids']=list(dict.fromkeys(next_ids))
  return state['maintenance_retry_ids']
+
+def select_maintenance_batch(pending,retry_ids,state,batch_size):
+ """Select retries fairly while guaranteeing rotation work a recurring slot."""
+ if batch_size<=0 or not pending: return []
+ batch_size=min(batch_size,len(pending))
+ by_id={source['source_id']:source for source in pending}
+ plan_ids=[source['source_id'] for source in pending]
+ retries=list(dict.fromkeys(sid for sid in retry_ids if sid in by_id))
+ retry_set=set(retries)
+ fresh=[sid for sid in plan_ids if sid not in retry_set]
+ if not retries or not fresh:
+  retry_slots=min(batch_size,len(retries))
+ elif batch_size==1:
+  # A one-source budget alternates retries with rotation work when both exist.
+  retry_slots=1 if state.get('maintenance_retry_turn',True) else 0
+  state['maintenance_retry_turn']=not bool(retry_slots)
+ else:
+  retry_slots=min(len(retries),max(1,batch_size//4),batch_size-1)
+ retry_start=int(state.get('maintenance_retry_cursor',0))%len(retries) if retries else 0
+ chosen=[by_id[retries[(retry_start+i)%len(retries)]] for i in range(retry_slots)]
+ if retries and retry_slots:
+  state['maintenance_retry_cursor']=(retry_start+retry_slots)%len(retries)
+ chosen_ids={source['source_id'] for source in chosen}
+ fresh_slots=batch_size-len(chosen)
+ if fresh_slots:
+  cursor=int(state.get('maintenance_cursor',0))%len(plan_ids)
+  scanned=0
+  while scanned<len(plan_ids) and fresh_slots:
+   source=by_id[plan_ids[cursor]]
+   cursor=(cursor+1)%len(plan_ids)
+   scanned+=1
+   sid=source['source_id']
+   if sid in retry_set or sid in chosen_ids:
+    continue
+   chosen.append(source)
+   chosen_ids.add(sid)
+   fresh_slots-=1
+  state['maintenance_cursor']=cursor
+ return chosen
+
+def resumable_sources(sources,completed):
+ """Return sources whose latest result is unresolved, including partial attempts."""
+ settled={'checked_changed','checked_unchanged','checked_empty','needs_endpoint'}
+ return [source for source in sources
+         if not completed.get(source['source_id'])
+         or completed[source['source_id']].get('outcome') not in settled]
 
 def merge_attempt_history(old,new):
  if not old:return new
@@ -458,35 +515,19 @@ def run(args):
     row=json.loads(line)
     if row['source_id'] in completed: raise ValueError('duplicate_source_result_in_run_log:'+row['source_id'])
     completed[row['source_id']]=row
- # Existing resolved outcomes are idempotently reused; failures are retried on resume.
- pending=[]
- for s in sources:
-  old=completed.get(s['source_id'])
-  if old and old.get('outcome') not in ('failed','blocked','not_attempted'): continue
-  pending.append(s)
+ # Existing settled outcomes are idempotently reused; partial and failed outcomes
+ # remain eligible for a retry when resuming an interrupted run.
+ pending=resumable_sources(sources,completed)
  if not args.live:
   for s in pending:
    r={'run_id':run_id,'task_id':f'{run_id}:{s["source_id"]}','source_id':s['source_id'],'outcome':'not_attempted','attempted':False,'started_at':None,'completed_at':now(),'scope':'simulation does not contact network','target_validated':False,'content_complete':False,'baseline_available':False,'http_status':None,'first_observed':False,'evidence':[],'reason':'simulated_mode_network_not_used','candidate_count':0,'endpoints':[]}
    upsert_result(output,r); completed[s['source_id']]=r
  else:
   batch_size=min(max(args.budget,0),len(pending))
-  retry_ids=[]
   if not source_ids_file and pending:
-   by_id={s['source_id']:s for s in pending}
-   retry_ids=[sid for sid in state.get('maintenance_retry_ids',[]) if sid in by_id]
-   chosen=[by_id[sid] for sid in retry_ids[:batch_size]]
-   chosen_ids={s['source_id'] for s in chosen}
-   rotation_count=batch_size-len(chosen)
-   start=batch_offset%len(pending)
-   rotated=[]
-   if rotation_count:
-    for offset in range(len(pending)):
-     candidate=pending[(start+offset)%len(pending)]
-     if candidate['source_id'] in chosen_ids: continue
-     rotated.append(candidate); chosen_ids.add(candidate['source_id'])
-     if len(rotated)==rotation_count: break
-   chosen.extend(rotated)
-   state['maintenance_cursor']=(start+rotation_count)%len(pending)
+   if 'maintenance_cursor' not in state:
+    state['maintenance_cursor']=batch_offset
+   chosen=select_maintenance_batch(pending,state.get('maintenance_retry_ids',[]),state,batch_size)
   else:
    chosen=pending[:batch_size]
   chosen_ids={s['source_id'] for s in chosen}

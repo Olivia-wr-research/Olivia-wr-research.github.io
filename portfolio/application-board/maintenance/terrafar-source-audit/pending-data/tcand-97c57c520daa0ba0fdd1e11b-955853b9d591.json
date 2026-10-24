@@ -8,11 +8,15 @@
   "candidate_url": "https://jobs.ethz.ch/job/view/12136",
   "formal_record_id": "eth-ai-12136",
   "content_review_status": "verified",
+  "active_catalog_record_id": null,
+  "active_catalog_match_status": "not_present_in_active_entry_module",
+  "target_record_id": "eth-ai-12136",
+  "target_identity_source": "formal_record_exact_url",
+  "target_identity_verified": true,
   "candidate_origin": "actions_candidate_snapshot",
   "candidate_ledger_status_after_merge": "verified",
-  "candidate_ledger_revision_after_merge": 8,
   "candidate_review_history_count": 1,
-  "candidate_review_event_id": "7391b00fcf7d816d0e59aebaf8f577da",
+  "candidate_review_event_id": "6ff1e192beca61acbeb055fae5b1d58e",
   "current_open_status": "unknown",
   "field_evidence": {
     "application_route": {
@@ -25,11 +29,11 @@
           "url": "https://jobs.ethz.ch/job/view/12136",
           "claim": "application_route: https://switzerland.recruitee.com/o/eth-ai-center-doctoral-fellowship-2027",
           "locator": "Apply online now link on official ETH job detail",
-          "evidence_note": "Linked application form opened at 2026-10-23 12:22:31-12:22:34 UTC; form fields were visible; no submission",
+          "evidence_note": "Direct Recruitee page fetched 2026-10-23 18:21:31 UTC (HTTP 200); form fields were present but the capture did not explicitly confirm current acceptance; no submission.",
           "page_content_sha256": "b4fd5fe3dad28008c74381449794afeb1e6fc2754f6e720b83fa81dbcff95fb1",
           "linked_portal_url": "https://switzerland.recruitee.com/o/eth-ai-center-doctoral-fellowship-2027",
           "linked_portal_page_content_sha256": "8aaf1356bb6bf016ca00fd572f0d962b319a8b0ee18e76e71fd55e67514eb77b",
-          "linked_portal_observed_at": "2026-10-23T12:22:31Z",
+          "linked_portal_observed_at": "2026-10-23T18:21:31Z",
           "portal_acceptance_status": "unknown"
         }
       ]
@@ -50,17 +54,17 @@
       ]
     },
     "funding": {
-      "value": "ETH standard salary at 100% is CHF 73,100 in year 1, CHF 78,300 in year 2, and CHF 83,500 in year 3; normally three years, with up to one additional year only subject to committee approval.",
-      "evidence_url": "https://jobs.ethz.ch/job/view/12136",
-      "locator": "Salary / We offer sections; official job-detail page and linked 2027 fellowship guidelines",
+      "value": "ETH AI Center博士岗位按100%工作量、rate 5标准支付：第一年CHF 73,100，第二年CHF 78,300，第三年CHF 83,500。",
+      "evidence_url": "https://ai.ethz.ch/research/phd-and-postdoc-programs/phd-fellowships.html",
+      "locator": "What we offer → Transparent salary with automatic advancement; ETH AI Center Doctoral Fellowships page",
       "evidence": [
         {
           "field": "funding",
-          "url": "https://jobs.ethz.ch/job/view/12136",
-          "claim": "funding: ETH standard salary at 100% is CHF 73,100 in year 1, CHF 78,300 in year 2, and CHF 83,500 in year 3; normally three years, with up to one additional year only subject to committee approval.",
-          "locator": "Salary / We offer sections; official job-detail page and linked 2027 fellowship guidelines",
-          "evidence_note": "Official ETH job detail; directly observed by opportunity_verifier; SHA-256 binds the downloaded response",
-          "page_content_sha256": "b4fd5fe3dad28008c74381449794afeb1e6fc2754f6e720b83fa81dbcff95fb1"
+          "url": "https://ai.ethz.ch/research/phd-and-postdoc-programs/phd-fellowships.html",
+          "claim": "funding: ETH AI Center博士岗位按100%工作量、rate 5标准支付：第一年CHF 73,100，第二年CHF 78,300，第三年CHF 83,500。",
+          "locator": "What we offer → Transparent salary with automatic advancement; ETH AI Center Doctoral Fellowships page",
+          "page_content_sha256": "0378110aac5eb00c15261c0072c690f45dd9f31f6501923c9a5d9a4dd1e8fbf2",
+          "evidence_note": "Official ETH AI Center page fetched and hashed on 2026-10-23; the salary amounts appear in its What we offer section."
         }
       ]
     },
@@ -83,11 +87,11 @@
   "changes": {
     "funding": {
       "before": "全职博士 Fellowship；雇佣及资助条款见官方指南",
-      "after": "全职 ETH 博士雇佣（100%）；第一至第三年年薪分别为 CHF 73,100、CHF 78,300、CHF 83,500。通常三年；最多延长一年须经委员会批准，不保证续期。"
+      "after": "ETH AI Center博士岗位按100%工作量、rate 5标准支付：第一年CHF 73,100，第二年CHF 78,300，第三年CHF 83,500。"
     },
     "salary": {
       "before": "薪资详见 Fellowship 聘用指南",
-      "after": "CHF 73,100（第一年）、CHF 78,300（第二年）、CHF 83,500（第三年）；按 ETH 100% 标准薪酬。"
+      "after": "ETH AI Center博士岗位按100%工作量、rate 5标准支付：第一年CHF 73,100，第二年CHF 78,300，第三年CHF 83,500。"
     }
   },
   "rollback": {
@@ -96,8 +100,9 @@
   },
   "formal_data_written": false,
   "published": false,
-  "source_observed_at": "2026-10-23T12:22:34Z",
+  "source_observed_at": "2026-10-23T18:09:59Z",
   "source_actions_run_id": "39946276972",
   "source_capture_id": null,
-  "source_program_run_id": "terrafar-maintenance-39946276972-1"
+  "source_program_run_id": "terrafar-maintenance-39946276972-1",
+  "supersedes_sha256": "bf1fb701b05b2094e823d6276f25a768240594ac07ce54ba42442df0133e7ed9"
 }
