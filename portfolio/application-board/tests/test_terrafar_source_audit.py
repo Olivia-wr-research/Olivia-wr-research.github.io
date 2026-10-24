@@ -158,6 +158,20 @@ class WorkflowRecoveryGuardTests(unittest.TestCase):
         checked=subprocess.run(['bash','-n'],input=script,text=True,capture_output=True,check=False)
         self.assertEqual(checked.returncode,0,checked.stderr)
 
+    def test_full_census_restore_selector_is_branch_scoped_and_shell_valid(self):
+        workflow=(ROOT/'.github/workflows/terrafar-full-census.yml').read_text(encoding='utf-8')
+        selector=workflow.split('      - name: Select the latest complete state checkpoint from this feature branch\n',1)[1]
+        selector=selector.split('      - name: Download the actual production state and candidate ledger\n',1)[0]
+        script=selector.split('        run: |\n',1)[1]
+        script='\n'.join(line[10:] if line.startswith('          ') else line for line in script.splitlines())+'\n'
+        checked=subprocess.run(['bash','-n'],input=script,text=True,capture_output=True,check=False)
+        self.assertEqual(checked.returncode,0,checked.stderr)
+        self.assertIn('GH_TOKEN: ${{ github.token }}',selector)
+        self.assertIn('select(.head_branch==env.GITHUB_REF_NAME)',selector)
+        self.assertIn('Export auditable metadata for the review workspace',selector)
+        self.assertIn('Preserve public diagnostics and encrypted state checkpoint',selector)
+        self.assertIn("default: ''",workflow)
+
 
 class CardLayoutContractTests(unittest.TestCase):
     def test_public_and_build_card_styles_stay_identical_and_responsive(self):
