@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import hashlib
 import json
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -16,6 +18,8 @@ import terrafar_source_adapters as source_adapters
 
 APP = Path(__file__).resolve().parents[1]
 MAINT = APP / "maintenance/terrafar-source-audit"
+# Preserve the predecessor's narrowly bound historical runner-only transition.
+# The workflow still selects the newest checkpoint; this is not a stale-run fallback.
 RUNNER_VERSION_MIGRATIONS = {"40059887717": "b80237b98e497239cabbe28754d449c30186b9bf974da56748a8ce9995690711"}
 
 
@@ -106,8 +110,99 @@ def validate_capture_artifact(artifact_dir: Path, expected_actions_run_id: str) 
     return metadata
 
 
+
+def version_hashes(current_registry: Path) -> dict[str, str]:
+    return {
+        "registry_sha256": sha(current_registry.read_bytes()),
+        "adapter_catalog_sha256": sha(source_adapters.CATALOG_PATH.read_bytes()),
+        "runner_sha256": runner_sha(),
+        "adapter_implementation_sha256": adapter_implementation_sha(),
+        "candidate_ledger_implementation_sha256": candidate_ledger_implementation_sha(),
+    }
+
+
+def validate_migration(path: Path | None, provenance: dict, target: dict,
+                       current_registry: Path) -> dict | None:
+    """Allow only an explicit, reviewed, hash-pinned v3 implementation transition.
+
+    Registry changes still require their separate ID-preserving registry migration.
+    An implementation change never silently authorizes a different source set.
+    """
+    changed = [key for key, value in target.items() if provenance.get(key) != value]
+    if not changed:
+        return None
+    if path is None:
+        old_runner = RUNNER_VERSION_MIGRATIONS.get(str(provenance.get("origin_actions_run_id")))
+        if changed == ["runner_sha256"] and old_runner and provenance.get("runner_sha256") == old_runner:
+            migration = {"migration_id": "legacy-exact-runner-" + str(provenance["origin_actions_run_id"]),
+                "reviewed_by": "predecessor reviewed runner migration",
+                "reason": "Preserve the exact historical run/hash transition; all other version hashes match",
+                "changed_hash_fields": changed, "invalidate_semantic_baselines": "all",
+                "runner_sha_migrated_from": old_runner}
+            migration["manifest_sha256"] = sha(json.dumps(migration, sort_keys=True).encode())
+            return migration
+        messages = {"registry_sha256": "restored_registry_version_mismatch",
+                    "adapter_catalog_sha256": "restored_adapter_catalog_version_mismatch",
+                    "runner_sha256": "restored_runner_version_mismatch",
+                    "adapter_implementation_sha256": "restored_adapter_implementation_version_mismatch",
+                    "candidate_ledger_implementation_sha256": "restored_candidate_ledger_implementation_version_mismatch"}
+        raise ValueError(messages[changed[0]])
+    migration = read_json(path)
+    if (migration.get("format") != "terrafar-state-migration-v1"
+            or provenance.get("state_compatibility_version") != 3
+            or not all(isinstance(migration.get(key), str) and migration[key].strip()
+                       for key in ("migration_id", "reviewed_by", "reason"))):
+        raise ValueError("state_migration_requires_reviewed_v3_manifest")
+    for binding, actual in (("expected_origin_actions_run_id", "origin_actions_run_id"),
+                            ("expected_origin_commit_sha", "origin_commit_sha")):
+        expected = migration.get(binding)
+        if expected is not None and provenance.get(actual) != expected:
+            raise ValueError("state_migration_exact_origin_mismatch:" + actual)
+    origin = migration.get("from")
+    destination = migration.get("to")
+    if not isinstance(origin, dict) or not isinstance(destination, dict):
+        raise ValueError("state_migration_version_bindings_missing")
+    if any(origin.get(key) != provenance.get(key) for key in target):
+        raise ValueError("state_migration_origin_hash_mismatch")
+    if destination != target:
+        raise ValueError("state_migration_target_hash_mismatch")
+    if origin.get("registry_sha256") != target["registry_sha256"]:
+        raise ValueError("registry_change_requires_separate_registry_migration")
+    source_ids = [row["source_id"] for row in read_json(current_registry)["sources"]]
+    retained = migration.get("preserved_source_ids")
+    if (not isinstance(retained, list) or len(retained) != len(set(retained))
+            or set(retained) != set(source_ids)):
+        raise ValueError("state_migration_source_id_set_mismatch")
+    if migration.get("invalidate_semantic_baselines") != "all":
+        raise ValueError("implementation_migration_requires_explicit_baseline_invalidation")
+    migration["manifest_sha256"] = sha(path.read_bytes())
+    migration["changed_hash_fields"] = changed
+    return migration
+
+
+def migrate_baselines(state: dict, migration: dict) -> dict:
+    """Archive old parser baselines, retaining task history and source identities."""
+    migrated = copy.deepcopy(state)
+    snapshots = migrated["snapshots"]
+    invalidated = {key: snapshots.pop(key) for key in list(snapshots)
+                   if snapshots[key].get("semantic_hash")}
+    migrated.setdefault("baseline_migration_archive", []).append({
+        "migration_id": migration["migration_id"],
+        "manifest_sha256": migration["manifest_sha256"],
+        "reason": migration["reason"], "reviewed_by": migration["reviewed_by"],
+        "changed_hash_fields": migration["changed_hash_fields"],
+        "invalidated_snapshots": invalidated,
+    })
+    # A new parser must fetch fresh bodies, not inherit conditional 304 responses.
+    for snapshot in snapshots.values():
+        snapshot.pop("etag", None)
+        snapshot.pop("last_modified", None)
+    return migrated
+
+
 def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, current_actions_run_id: str,
-            current_registry: Path, allow_legacy: bool = False, review_results_path: Path | None = None) -> dict:
+            current_registry: Path, allow_legacy: bool = False, review_results_path: Path | None = None,
+            migration_manifest: Path | None = None, origin_commit_sha: str | None = None) -> dict:
     if not origin_actions_run_id or not current_actions_run_id or origin_actions_run_id == current_actions_run_id:
         raise ValueError("cross_run_restore_requires_distinct_nonempty_actions_run_ids")
     destination.mkdir(parents=True, exist_ok=True)
@@ -117,8 +212,32 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
         raise FileNotFoundError("restore_artifact_missing_state_or_provenance")
     state_bytes = state_path.read_bytes()
     provenance = read_json(provenance_path)
+    # The workflow obtains this from the selected run's GitHub API identity,
+    # independently of the migration file. Never infer it from desired hashes.
+    if origin_commit_sha is not None:
+        if not re.fullmatch(r"[0-9a-f]{40}", origin_commit_sha):
+            raise ValueError("restore_origin_commit_sha_invalid")
+        if provenance.get("origin_commit_sha") not in {None, origin_commit_sha}:
+            raise ValueError("restore_archive_and_actions_commit_mismatch")
+    migration_provenance = dict(provenance)
+    if origin_commit_sha is not None:
+        migration_provenance["origin_commit_sha"] = origin_commit_sha
     capture_metadata = validate_capture_artifact(artifact_dir, str(origin_actions_run_id))
     state = json.loads(state_bytes)
+    if capture_metadata and capture_metadata.get("program_run_id") != state.get("last_run_id"):
+        raise ValueError("census_artifact_program_run_id_mismatch")
+    private_hashes = provenance.get("private_files_sha256")
+    if private_hashes is not None:
+        if not isinstance(private_hashes, dict):
+            raise ValueError("restored_private_files_manifest_invalid")
+        private_root = artifact_dir / "state"
+        actual_files = {str(path.relative_to(private_root)) for path in private_root.rglob("*") if path.is_file()} - {"provenance.json"}
+        if actual_files != set(private_hashes):
+            raise ValueError("restored_private_files_set_mismatch")
+        for relative, expected_sha in private_hashes.items():
+            path = private_root / relative
+            if path.is_symlink() or not path.resolve().is_relative_to(private_root.resolve()) or sha(path.read_bytes()) != expected_sha:
+                raise ValueError("restored_private_file_hash_or_path_mismatch")
     provenance_format = provenance.get("format")
     if provenance_format not in {None, "terrafar-maintenance-state-v1"}:
         raise ValueError("restored_state_provenance_format_unsupported")
@@ -128,8 +247,6 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
         raise ValueError("restore_origin_run_id_mismatch")
     if source_run_id == str(current_actions_run_id):
         raise ValueError("same_actions_run_cannot_satisfy_cross_run_restore")
-    if capture_metadata and capture_metadata.get("program_run_id") != state.get("last_run_id"):
-        raise ValueError("census_artifact_program_run_id_mismatch")
     if sha(state_bytes) != provenance.get("state_sha256"):
         raise ValueError("restored_state_hash_mismatch")
     if (not isinstance(state, dict) or state.get("schema_version") != provenance.get("state_schema_version")
@@ -137,26 +254,29 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
         raise ValueError("restored_state_schema_version_mismatch")
     if not isinstance(state.get("snapshots"), dict):
         raise ValueError("restored_state_snapshots_invalid")
-    current_registry_sha = sha(current_registry.read_bytes())
+    target_hashes = version_hashes(current_registry)
+    current_registry_sha = target_hashes["registry_sha256"]
     expected_registry_sha = provenance.get("registry_sha256")
     if current_registry_sha != expected_registry_sha:
         raise ValueError("restored_registry_version_mismatch")
     current_catalog_sha = sha(source_adapters.CATALOG_PATH.read_bytes())
-    if not legacy and current_catalog_sha != provenance.get("adapter_catalog_sha256"):
-        raise ValueError("restored_adapter_catalog_version_mismatch")
     compatibility = provenance.get("state_compatibility_version", 1) if not legacy else 1
     if not legacy and compatibility not in {1, 3}:
         raise ValueError("restored_state_compatibility_version_unsupported")
-    runner_migrated_from = None
-    if not legacy and compatibility == 3 and provenance.get("runner_sha256") != runner_sha():
-        approved_previous_runner = RUNNER_VERSION_MIGRATIONS.get(str(origin_actions_run_id))
-        if provenance.get("runner_sha256") != approved_previous_runner:
-            raise ValueError("restored_runner_version_mismatch")
-        runner_migrated_from = approved_previous_runner
-    if not legacy and compatibility == 3 and provenance.get("adapter_implementation_sha256") != adapter_implementation_sha():
-        raise ValueError("restored_adapter_implementation_version_mismatch")
-    if not legacy and compatibility == 3 and provenance.get("candidate_ledger_implementation_sha256") != candidate_ledger_implementation_sha():
-        raise ValueError("restored_candidate_ledger_implementation_version_mismatch")
+    migration = (validate_migration(migration_manifest, migration_provenance, target_hashes, current_registry)
+                 if not legacy and compatibility == 3 else None)
+    if not legacy and compatibility != 3 and current_catalog_sha != provenance.get("adapter_catalog_sha256"):
+        raise ValueError("restored_adapter_catalog_version_mismatch")
+
+    quality_path = artifact_dir / "state/quality_journal.json"
+    quality_sha = provenance.get("quality_journal_sha256")
+    quality_bytes = quality_path.read_bytes() if quality_path.is_file() else None
+    if quality_sha is not None or quality_bytes is not None:
+        if quality_bytes is None or sha(quality_bytes) != quality_sha:
+            raise ValueError("restored_quality_journal_hash_mismatch")
+        read_json(quality_path)
+    elif (destination / "quality_journal.json").exists():
+        raise ValueError("existing_quality_journal_is_not_bound_to_restore_origin")
 
     policy_demoted_task_count = 0
     if not legacy:
@@ -178,15 +298,26 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
             raise ValueError("restored_candidate_task_count_mismatch")
         ledger = candidate_ledger.load_ledger(ledger_path, require_existing=True)
         ledger_schema_migrated = raw_schema != ledger.get("schema_version")
-        if len(ledger.get("tasks", {})) != raw_task_count:
+        if set(ledger.get("tasks", {})) != set(raw_ledger.get("tasks", {})):
             raise ValueError("candidate_ledger_migration_task_loss")
         if provenance.get("origin_program_run_id") != state.get("last_run_id"):
             raise ValueError("restored_program_run_id_mismatch")
         verified_before_policy_audit = sum(task.get("status") == "verified" for task in ledger.get("tasks", {}).values())
         candidate_ledger.revalidate_terminal_reviews(ledger, f"restore-policy-{current_actions_run_id}")
+        for task_id, old_task in raw_ledger.get("tasks", {}).items():
+            old_history = old_task.get("review_history", [])
+            if ledger["tasks"][task_id].get("review_history", [])[:len(old_history)] != old_history:
+                raise ValueError("candidate_ledger_migration_review_history_loss")
+        prior_events = raw_ledger.get("events", [])
+        if ledger.get("events", [])[:len(prior_events)] != prior_events:
+            raise ValueError("candidate_ledger_migration_event_history_loss")
         verified_after_policy_audit = sum(task.get("status") == "verified" for task in ledger.get("tasks", {}).values())
         policy_demoted_task_count = verified_before_policy_audit - verified_after_policy_audit
-        shutil.copy2(state_path, destination / "state.json")
+        if migration:
+            state = migrate_baselines(state, migration)
+            (destination / "state.json").write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        else:
+            shutil.copy2(state_path, destination / "state.json")
         candidate_ledger.save_ledger(destination / "candidate_ledger.json", ledger)
         ledger_migrated = False
     else:
@@ -277,13 +408,33 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
         shutil.copy2(state_path, destination / "state.json")
         candidate_ledger.save_ledger(destination / "candidate_ledger.json", ledger)
         ledger_migrated = True
+    if quality_bytes is not None:
+        (destination / "quality_journal.json").write_bytes(quality_bytes)
+    for name in ("quality_batch.json", "active_catalog.json"):
+        private_file = artifact_dir / "state" / name
+        expected_hash = provenance.get(name[:-5] + "_sha256")
+        if private_file.exists() or expected_hash is not None:
+            if not private_file.is_file() or private_file.is_symlink() or sha(private_file.read_bytes()) != expected_hash:
+                raise ValueError("restored_private_quality_file_hash_mismatch")
+            shutil.copy2(private_file, destination / name)
+    if private_hashes is not None:
+        for name in ("http-responses", "quality-review"):
+            source_dir = artifact_dir / "state" / name
+            if source_dir.is_dir():
+                if source_dir.is_symlink():
+                    raise ValueError("restored_private_evidence_symlink_rejected")
+                shutil.copytree(source_dir, destination / name, dirs_exist_ok=True)
     restored_meta = {
         "status": "passed",
+        "origin_evidence_capture_status": capture_metadata.get("capture_status") if capture_metadata else "validated_v3_state",
+        "origin_release_gate_status": capture_metadata.get("release_gate_status") if capture_metadata else None,
         "origin_actions_run_id": source_run_id,
+        "validated_origin_commit_sha": migration_provenance.get("origin_commit_sha"),
         "current_actions_run_id": str(current_actions_run_id),
         "origin_program_run_id": state.get("last_run_id"),
         "state_schema_version": state.get("schema_version"),
         "state_sha256": sha(state_bytes),
+        "restored_state_sha256": sha((destination / "state.json").read_bytes()),
         "registry_sha256": current_registry_sha,
         "adapter_catalog_sha256": current_catalog_sha,
         "semantic_snapshot_count": sum(bool(item.get("semantic_hash")) for item in state["snapshots"].values()),
@@ -295,11 +446,15 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
         "candidate_ledger_migrated_from_legacy_queue": ledger_migrated,
         "candidate_ledger_schema_migrated": bool(not legacy and ledger_schema_migrated),
         "state_compatibility_migrated_from": compatibility if compatibility < 3 else None,
-        "runner_sha_migrated_from": runner_migrated_from,
         "candidate_ledger_policy_demoted_task_count": policy_demoted_task_count,
         "candidate_ledger_task_ids_unique": len(ledger.get("tasks", {})) == len(set(ledger.get("tasks", {}))),
-        "origin_evidence_capture_status": capture_metadata.get("capture_status") if capture_metadata else "validated_legacy_v3_state",
-        "origin_release_gate_status": capture_metadata.get("release_gate_status") if capture_metadata else None,
+        "implementation_migration_id": migration["migration_id"] if migration else None,
+        "runner_sha_migrated_from": migration.get("runner_sha_migrated_from") if migration else None,
+        "implementation_migration_manifest_sha256": migration["manifest_sha256"] if migration else None,
+        "invalidated_semantic_baseline_count": (len(state["baseline_migration_archive"][-1]["invalidated_snapshots"])
+                                                if migration else 0),
+        "quality_journal_restored": quality_bytes is not None,
+        "quality_journal_sha256": quality_sha,
     }
     (destination / "restore_verification.json").write_text(json.dumps(restored_meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return restored_meta
@@ -314,10 +469,14 @@ def main() -> None:
     parser.add_argument("--registry", default=str(source_registry.REGISTRY))
     parser.add_argument("--allow-legacy-migration", action="store_true")
     parser.add_argument("--review-results")
+    parser.add_argument("--migration-manifest", help="Reviewed old/new implementation hashes; never disables provenance validation")
+    parser.add_argument("--origin-commit-sha", help="Selected run head SHA independently checked through the GitHub API")
     args = parser.parse_args()
     result = restore(Path(args.artifact_dir), Path(args.destination), args.origin_actions_run_id,
                      args.current_actions_run_id, Path(args.registry), args.allow_legacy_migration,
-                     Path(args.review_results) if args.review_results else None)
+                     Path(args.review_results) if args.review_results else None,
+                     Path(args.migration_manifest) if args.migration_manifest else None,
+                     args.origin_commit_sha)
     print(json.dumps(result, ensure_ascii=False))
 
 
