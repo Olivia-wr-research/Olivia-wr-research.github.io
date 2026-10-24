@@ -20,7 +20,7 @@ jobs:
     timeout-minutes: 90
     env:
       TZ: Asia/Shanghai
-      STATE_DIR: ${{ runner.temp }}/terrafar-initial-census-state
+      STATE_DIR: /tmp/terrafar-initial-census-state-${{ github.run_id }}
       CENSUS_RUN_ID: terrafar-full-census-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
       - name: Check out the independently reviewed production baseline
