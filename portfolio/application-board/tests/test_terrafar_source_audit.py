@@ -141,8 +141,22 @@ class WorkflowRecoveryGuardTests(unittest.TestCase):
         self.assertIn("github.ref == 'refs/heads/codex/terrafar-full-coverage-quality-gate-20261024'",workflow)
         self.assertIn('TERRAFAR_STATE_DECRYPTION_KEY',workflow)
         self.assertIn("'scripts/terrafar_state_archive.py','encrypt'",workflow)
-        self.assertIn("shutil.rmtree(export/'state')",workflow)
+        self.assertIn("private_state=pathlib.Path(os.environ['RUNNER_TEMP'])/'terrafar-full-census-state-private'",workflow)
+        self.assertIn("verification.get('origin_actions_run_id')!=os.environ['RESTORE_ACTIONS_RUN_ID']",workflow)
+        self.assertIn("verification.get('current_actions_run_id')!=os.environ['GITHUB_RUN_ID']",workflow)
+        self.assertIn("shutil.rmtree(private_state)",workflow)
         self.assertIn('private_state.cms',workflow)
+        self.assertIn("steps.export.outputs.capture_complete == 'true'",workflow)
+        self.assertNotIn("export/'state'",workflow)
+
+    def test_full_census_export_shell_syntax_is_valid(self):
+        workflow=(ROOT/'.github/workflows/terrafar-full-census.yml').read_text(encoding='utf-8')
+        export_step=workflow.split('      - name: Export auditable metadata for the review workspace\n',1)[1]
+        export_step=export_step.split('      - name: Preserve public diagnostics and encrypted state checkpoint\n',1)[0]
+        script=export_step.split('        run: |\n',1)[1]
+        script='\n'.join(line[10:] if line.startswith('          ') else line for line in script.splitlines())+'\n'
+        checked=subprocess.run(['bash','-n'],input=script,text=True,capture_output=True,check=False)
+        self.assertEqual(checked.returncode,0,checked.stderr)
 
 
 class CardLayoutContractTests(unittest.TestCase):
