@@ -1,6 +1,7 @@
 """Synthetic protocol tests; none is evidence of a real model invocation."""
 import copy
 import json
+from datetime import timedelta
 from pathlib import Path
 import tempfile
 import unittest
@@ -32,6 +33,33 @@ class NativeReviewTests(unittest.TestCase):
             'result': supported_model_result(task['candidate_url'])}
         return lp, sp, assignment, submission
 
+    def fixture_batch(self, root, count):
+        lp = root / 'ledger.json'
+        value = ledger.empty_ledger()
+        rows = [observation(f'job-{index}') for index in range(count)]
+        ledger.merge_observations(value, rows, 'synthetic-run')
+        assignment = ex.claim_batch(value, 'synthetic-native', limit=count, run_id='synthetic-run')
+        ledger.save_ledger(lp, value)
+        sp = root / 'snapshots'; sp.mkdir()
+        submissions = []
+        for task in assignment['tasks']:
+            snap = snapshot_for(task)
+            ex.atomic_private_json(sp / (task['candidate_id'] + '.json'), snap)
+            submissions.append({'task_id': task['task_id'], 'input_sha256': snap['text_sha256'],
+                'processed_at': ex.utc_now(), 'execution': {'mode': 'native_codex_session',
+                'session_id': 'synthetic-session', 'agent_name': 'synthetic-native',
+                'execution_reference': 'offline protocol fixture', 'api_calls': 0, 'human_reviewed': False},
+                'result': supported_model_result(task['candidate_url'])})
+        return lp, sp, assignment, submissions
+
+    @staticmethod
+    def defer_record(task, reason='review deferred before execution'):
+        lease = task['lease']
+        return {'task_id': task['task_id'], 'candidate_id': task['candidate_id'],
+                'candidate_fingerprint': task['candidate_fingerprint'],
+                'attempt_id': lease['attempt_id'], 'lease_id': lease['lease_id'],
+                'owner': lease['owner'], 'reason': reason}
+
     def test_native_import_replays_without_second_review_and_conflict_fails(self):
         with tempfile.TemporaryDirectory() as d:
             root = Path(d); lp, sp, assignment, sub = self.fixture(root)
@@ -56,6 +84,101 @@ class NativeReviewTests(unittest.TestCase):
             ledger.save_ledger(lp,value)
             with self.assertRaisesRegex(ValueError,'native_lease_expired_or_replaced'):
                 native.import_reviews(lp,sp,root/'results',assignment,[sub],'synthetic-run')
+
+    def test_five_submitted_five_deferred_do_not_spend_retry_budget(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            lp, sp, assignment, submissions = self.fixture_batch(root, 10)
+            deferred_tasks = assignment['tasks'][5:]
+            deferred = [self.defer_record(task) for task in deferred_tasks]
+            report = native.import_reviews(lp, sp, root/'results', assignment,
+                                           submissions[:5], 'synthetic-import-run', deferred=deferred)
+            self.assertEqual(report['merged_native_results'], 5)
+            self.assertEqual(report['deferred'], 5)
+            saved = ledger.load_ledger(lp)
+            execution = ex._execution_state(saved)
+            outcomes = [execution['tasks'][task['task_id']]['attempts'][0]['outcome']
+                        for task in deferred_tasks]
+            self.assertEqual(outcomes, ['deferred'] * 5)
+            defer_events = [event for event in execution['events'] if event['event_type'] == 'task_deferred']
+            self.assertEqual(len(defer_events), 5)
+            self.assertTrue(all(event['reason'] == 'review deferred before execution'
+                                and event['claim_identity']['task_id'] == event['task_id']
+                                and event['claim_identity']['attempt_id'] == event['attempt_id']
+                                and event['claim_identity']['lease_id'] == event['lease_id']
+                                for event in defer_events))
+            self.assertEqual(execution['tasks'][deferred_tasks[0]['task_id']]['attempts'][0]['defer_reason'],
+                             'review deferred before execution')
+            self.assertEqual(sum(task['status'] == 'verified' for task in saved['tasks'].values()), 5)
+
+            before_replay = lp.read_bytes()
+            replay = native.import_reviews(lp, sp, root/'results', assignment, [],
+                                           'synthetic-import-run', deferred=deferred)
+            self.assertEqual(replay['idempotent_defer_replays'], 5)
+            self.assertEqual(lp.read_bytes(), before_replay)
+
+            deferred_ids = {task['candidate_id'] for task in deferred_tasks}
+            deferred_keys = {ex.review_task_key(task) for task in ledger.review_queue(saved)
+                             if task['candidate_id'] in deferred_ids
+                             and task.get('review_task_kind', 'content_review') == 'content_review'}
+            reclaimed = ex.claim_batch(saved, 'synthetic-retry', limit=10, max_attempts=1,
+                                       run_id='synthetic-retry-run', eligible_task_keys=deferred_keys)
+            self.assertEqual(reclaimed['claimed_count'], 5)
+            self.assertEqual({task['task_id'] for task in reclaimed['tasks']},
+                             {task['task_id'] for task in deferred_tasks})
+            self.assertTrue(all(task['lease']['attempt_number'] == 1
+                                and task['lease']['claim_sequence'] == 2 for task in reclaimed['tasks']))
+
+    def test_expired_worker_cannot_release_replacement_lease(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            lp, sp, assignment, _ = self.fixture(root)
+            original_task = assignment['tasks'][0]
+            start = ex.parse_utc(ex.utc_now())
+            current_value = ledger.load_ledger(lp)
+            replacement = ex.claim_batch(current_value, 'replacement-worker', limit=1,
+                                         run_id='replacement-run',
+                                         now=(start + timedelta(minutes=16)).isoformat().replace('+00:00', 'Z'))
+            self.assertEqual(replacement['claimed_count'], 1)
+            live_lease = replacement['tasks'][0]['lease']
+            ledger.save_ledger(lp, current_value)
+            with self.assertRaisesRegex(ValueError, 'deferred_claim_lease_expired_or_replaced'):
+                native.import_reviews(lp, sp, root/'results', assignment, [], 'stale-release-run',
+                                      deferred=[self.defer_record(original_task)])
+            current = ledger.load_ledger(lp)
+            self.assertEqual(current['model_execution']['tasks'][original_task['task_id']]['lease'], live_lease)
+            self.assertFalse(any(event['event_type'] == 'task_deferred'
+                                 for event in current['model_execution']['events']))
+
+    def test_defer_cannot_hide_started_provider_call_or_saved_result(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            lp, sp, assignment, _ = self.fixture(root)
+            task = assignment['tasks'][0]
+            record = self.defer_record(task)
+            saved = ledger.load_ledger(lp)
+            attempt = saved['model_execution']['tasks'][task['task_id']]['attempts'][0]
+            attempt['provider_call_invocations'] = 1
+            ledger.save_ledger(lp, saved)
+            with self.assertRaisesRegex(ValueError, 'deferred_claim_execution_already_started'):
+                native.import_reviews(lp, sp, root/'results', assignment, [], 'defer-after-call',
+                                      deferred=[record])
+
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            lp, sp, assignment, _ = self.fixture(root)
+            task = assignment['tasks'][0]
+            record = self.defer_record(task)
+            results = root / 'results'; results.mkdir()
+            ex.atomic_private_json(results / f"{task['task_id']}-{task['lease']['attempt_id']}.json",
+                                   {'synthetic': 'saved result awaiting recovery'})
+            with self.assertRaisesRegex(ValueError, 'deferred_claim_saved_result_pending_recovery'):
+                native.import_reviews(lp, sp, results, assignment, [], 'defer-with-orphan-result',
+                                      deferred=[record])
+            current = ledger.load_ledger(lp)
+            self.assertEqual(current['model_execution']['tasks'][task['task_id']]['status'], 'claimed')
+            self.assertFalse(any(event['event_type'] == 'task_deferred'
+                                 for event in current['model_execution']['events']))
 
     def test_partial_text_is_preserved_but_cannot_be_terminal(self):
         with tempfile.TemporaryDirectory() as d:

@@ -4,6 +4,7 @@ import hashlib
 import json
 import tempfile
 import unittest
+from datetime import timedelta
 from pathlib import Path
 from unittest.mock import patch
 import sys
@@ -119,6 +120,93 @@ class TerraFARPipelineTests(unittest.TestCase):
         self.assertEqual(state["status"], "exhausted")
         self.assertIsNone(state["lease"])
         model_executor._execution_state(value)
+
+    def test_deferred_claim_preserves_failure_count_and_real_failures_exhaust_normally(self):
+        value = self._ledger_with_tasks(1)
+        start = model_executor.parse_utc("2026-10-25T00:00:00Z")
+        first = model_executor.claim_batch(value, "worker-a", limit=1, max_attempts=2,
+                                          run_id="run-one", now="2026-10-25T00:00:00Z")
+        first_task = first["tasks"][0]
+        model_executor._mark_failure(value, first_task["task_id"], first_task["lease"]["attempt_id"],
+                                     "provider_timeout", 2, now="2026-10-25T00:00:00Z")
+        second = model_executor.claim_batch(value, "worker-b", limit=1, max_attempts=2,
+                                           run_id="run-two", now="2026-10-25T00:02:00Z")
+        second_task = second["tasks"][0]
+        lease = second_task["lease"]
+        defer = {"task_id": second_task["task_id"], "candidate_id": second_task["candidate_id"],
+                 "candidate_fingerprint": second_task["candidate_fingerprint"],
+                 "attempt_id": lease["attempt_id"], "lease_id": lease["lease_id"],
+                 "owner": lease["owner"], "reason": "reviewer unavailable before execution"}
+        deferred_at = (start + timedelta(minutes=2, seconds=1)).isoformat().replace("+00:00", "Z")
+        with tempfile.TemporaryDirectory() as results_dir:
+            self.assertEqual(model_executor.release_deferred_claim(value, second_task, defer,
+                                                                    "defer-run", Path(results_dir),
+                                                                    now=deferred_at), "deferred")
+        execution = model_executor._execution_state(value)
+        self.assertEqual(model_executor.retry_consuming_attempts(execution["tasks"][first_task["task_id"]]), 1)
+
+        third = model_executor.claim_batch(value, "worker-c", limit=1, max_attempts=2,
+                                          run_id="run-three", now="2026-10-25T00:03:00Z")
+        third_task = third["tasks"][0]
+        model_executor._mark_failure(value, third_task["task_id"], third_task["lease"]["attempt_id"],
+                                     "provider_timeout", 2, now="2026-10-25T00:03:00Z")
+        state = model_executor._execution_state(value)["tasks"][first_task["task_id"]]
+        self.assertEqual(state["status"], "exhausted")
+        self.assertEqual([attempt["outcome"] for attempt in state["attempts"]],
+                         ["provider_timeout", "deferred", "provider_timeout"])
+        self.assertEqual(model_executor.retry_consuming_attempts(state), 2)
+
+    def test_deferred_history_cannot_be_relabelled_after_provider_execution(self):
+        value = self._ledger_with_tasks(1)
+        claimed = model_executor.claim_batch(value, "worker-a", limit=1, run_id="run-one")
+        task_id = claimed["tasks"][0]["task_id"]
+        attempt = value["model_execution"]["tasks"][task_id]["attempts"][0]
+        attempt.update({"outcome": "deferred", "provider_call_invocations": 1})
+        with self.assertRaisesRegex(ValueError, "deferred_attempt_has_execution_evidence"):
+            model_executor._execution_state(value)
+
+    def test_attempt_history_limit_blocks_without_appending_or_losing_history(self):
+        value = self._ledger_with_tasks(1)
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        root = Path(temporary.name)
+        start = model_executor.parse_utc("2026-10-25T00:00:00Z")
+        first = model_executor.claim_batch(value, "worker-a", limit=1, max_attempts=1,
+                                          run_id="run-one", now="2026-10-25T00:00:00Z")["tasks"][0]
+
+        def defer(task, at, run_id):
+            lease = task["lease"]
+            record = {"task_id": task["task_id"], "candidate_id": task["candidate_id"],
+                      "candidate_fingerprint": task["candidate_fingerprint"],
+                      "attempt_id": lease["attempt_id"], "lease_id": lease["lease_id"],
+                      "owner": lease["owner"], "reason": "operator deferred before execution"}
+            return model_executor.release_deferred_claim(
+                value, task, record, run_id, root / "results",
+                now=at.isoformat().replace("+00:00", "Z"))
+
+        self.assertEqual(defer(first, start + timedelta(seconds=1), "defer-one"), "deferred")
+        second = model_executor.claim_batch(value, "worker-b", limit=1, max_attempts=1,
+                                            run_id="run-two", now="2026-10-25T00:00:02Z")["tasks"][0]
+        self.assertEqual(defer(second, start + timedelta(seconds=3), "defer-two"), "deferred")
+        task_id = second["task_id"]
+        attempts_before = json.loads(json.dumps(value["model_execution"]["tasks"][task_id]["attempts"]))
+
+        with patch.object(model_executor, "MAX_ATTEMPT_HISTORY", 2):
+            blocked = model_executor.claim_batch(value, "worker-c", limit=1, max_attempts=1,
+                                                 run_id="run-three", now="2026-10-25T00:00:04Z")
+        self.assertEqual(blocked["claimed_count"], 0)
+        state = value["model_execution"]["tasks"][task_id]
+        self.assertEqual(state["status"], "blocked")
+        self.assertEqual(state["blocked_reason"], "model_attempt_history_limit_reached")
+        self.assertEqual(state["attempts"], attempts_before)
+        self.assertIsNone(state["lease"])
+        model_executor._execution_state(value)
+        persisted = root / "ledger.json"
+        ledger.save_ledger(persisted, value)
+        restored = ledger.load_ledger(persisted, require_existing=True)
+        restored_state = restored["model_execution"]["tasks"][task_id]
+        self.assertEqual(restored_state["attempts"], attempts_before)
+        self.assertEqual(restored_state["blocked_reason"], "model_attempt_history_limit_reached")
 
     def test_portal_review_is_bound_to_explicit_application_url(self):
         value = self._ledger_with_tasks(1)

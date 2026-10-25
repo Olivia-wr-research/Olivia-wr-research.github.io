@@ -64,8 +64,38 @@ python portfolio/application-board/scripts/terrafar_native_review.py \
   --results "$PRIVATE_STATE/model_results" \
   --assignment "$PRIVATE_STATE/assignment.json" \
   --submissions "$PRIVATE_STATE/native-submissions.json" \
+  --deferred "$PRIVATE_STATE/deferred.json" \
   --run-id "$PROGRAM_RUN_ID"
 ```
+
+`--deferred` is an optional JSON array for assigned tasks intentionally released
+before execution. A deferral record must echo the exact claim identity and give
+a reason; a defer-only import uses an empty `[]` submissions file:
+
+```json
+[
+  {
+    "task_id": "mtask-…",
+    "candidate_id": "opp-…",
+    "candidate_fingerprint": "<assigned fingerprint>",
+    "attempt_id": "<assigned attempt id>",
+    "lease_id": "<assigned lease id>",
+    "owner": "<assigned lease owner>",
+    "reason": "Reviewer unavailable before execution"
+  }
+]
+```
+
+The combined `submissions` and `deferred` lists may contain at most ten tasks,
+with no task repeated or listed in both. A deferral is accepted only while the
+exact lease is live and no provider call, response, native result, or saved
+result bundle exists. The reason and claim identity are retained in the private
+attempt history and an idempotent event. Replaying the same deferral leaves the
+prior decision unchanged; changing its reason is a conflict. Deferrals remain
+claimable and do not consume retry attempts. Actual provider failures continue
+to count toward the configured retry limit; they cannot be reclassified as
+deferrals or reset by later claims. The separate claim sequence records every
+lease, while `attempt_number` counts retry-consuming executions.
 
 All paths must remain private and outside the public checkout. No candidate or
 page evidence belongs in a commit or public Actions artifact, even encrypted.

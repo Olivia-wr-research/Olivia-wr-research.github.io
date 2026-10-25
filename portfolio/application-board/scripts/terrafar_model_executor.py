@@ -27,6 +27,7 @@ ROOT = Path(__file__).resolve().parents[3]
 MAX_BATCH_SIZE = 10
 MAX_SNAPSHOT_CHARS = 120_000
 MAX_RETRIES = 3
+MAX_ATTEMPT_HISTORY = 10_000
 TASK_STATUSES = {"claimed", "retry_wait", "completed", "exhausted", "blocked"}
 AGENT_ROLES = {"endpoint_resolver", "opportunity_verifier", "audit_reviewer"}
 PROVENANCE_FIELDS = ("source_actions_run_id", "source_program_run_id", "source_capture_id")
@@ -60,6 +61,19 @@ def parse_utc(value: str) -> datetime:
     return parsed.astimezone(timezone.utc)
 
 
+def _attempt_has_execution_evidence(attempt: dict[str, Any]) -> bool:
+    for key in ("provider_call_invocations", "provider_responses_received", "native_results_received"):
+        try:
+            if int(attempt.get(key, 0) or 0) > 0:
+                return True
+        except (TypeError, ValueError):
+            return True
+    return any(attempt.get(key) not in (None, "", 0, False) for key in (
+        "provider_call_kind", "provider_call_started_at", "provider_response_received_at",
+        "provider", "response_id", "provider_response_id", "result_file", "result_sha256",
+        "completed_at"))
+
+
 def sha256_bytes(value: bytes) -> str:
     return hashlib.sha256(value).hexdigest()
 
@@ -85,13 +99,23 @@ def _execution_state(ledger: dict[str, Any]) -> dict[str, Any]:
                 or state.get("task_id") != task_id or not isinstance(state.get("candidate_id"), str)
                 or not isinstance(state.get("candidate_fingerprint"), str)
                 or state.get("status") not in TASK_STATUSES or not isinstance(state.get("attempts"), list)
-                or len(state["attempts"]) > MAX_RETRIES):
+                or len(state["attempts"]) > MAX_ATTEMPT_HISTORY
+                or any(not isinstance(attempt, dict) for attempt in state["attempts"])):
             raise ValueError("model_execution_task_identity_or_status_invalid")
+        if any(attempt.get("outcome") == "deferred" and _attempt_has_execution_evidence(attempt)
+               for attempt in state["attempts"]):
+            raise ValueError("deferred_attempt_has_execution_evidence")
         if state.get("status") == "claimed" and not isinstance(state.get("lease"), dict):
             raise ValueError("claimed_model_task_missing_lease")
         if state.get("status") != "claimed" and state.get("lease") is not None:
             raise ValueError("unclaimed_model_task_has_active_lease")
     return execution
+
+
+def retry_consuming_attempts(state: dict[str, Any]) -> int:
+    """Count actual failed/expired executions, excluding explicitly deferred claims."""
+    return sum(1 for attempt in state.get("attempts", [])
+               if attempt.get("outcome") != "deferred")
 
 
 def _last_review_cycle(task: dict[str, Any], kind: str) -> str:
@@ -293,7 +317,13 @@ def claim_batch(ledger: dict[str, Any], owner: str, limit: int = MAX_BATCH_SIZE,
             attempts[-1]["completed_at"] = started_text
             state["status"] = "retry_wait"
             state["lease"] = None
-        if len(attempts) >= max_attempts:
+        if len(attempts) >= MAX_ATTEMPT_HISTORY:
+            state.update({"status": "blocked", "lease": None,
+                          "blocked_reason": "model_attempt_history_limit_reached",
+                          "terminal_reason": "model_attempt_history_limit_reached"})
+            changed = True
+            continue
+        if retry_consuming_attempts(state) >= max_attempts:
             state["status"] = "exhausted"
             state["lease"] = None
             state["terminal_reason"] = "retry_limit_reached"
@@ -305,11 +335,15 @@ def claim_batch(ledger: dict[str, Any], owner: str, limit: int = MAX_BATCH_SIZE,
                 continue
         attempt_id = str(uuid.uuid4())
         token = uuid.uuid4().hex
+        attempt_number = retry_consuming_attempts(state) + 1
+        claim_sequence = len(attempts) + 1
         expires_text = (started + timedelta(seconds=lease_seconds)).replace(microsecond=0).isoformat().replace("+00:00", "Z")
         lease = {"lease_id": token, "owner": owner, "claimed_at": started_text, "expires_at": expires_text,
-                 "attempt_id": attempt_id, "attempt_number": len(attempts) + 1}
+                 "attempt_id": attempt_id, "attempt_number": attempt_number,
+                 "claim_sequence": claim_sequence}
         state.update({"status": "claimed", "lease": lease, "not_before": None, "last_claimed_at": started_text})
-        attempts.append({"attempt_id": attempt_id, "attempt_number": len(attempts) + 1,
+        attempts.append({"attempt_id": attempt_id, "attempt_number": attempt_number,
+                         "claim_sequence": claim_sequence,
                          "claimed_at": started_text, "owner": owner, "run_id": run_id,
                          "outcome": "in_progress", "provider_call_invocations": 0,
                          "provider_responses_received": 0})
@@ -345,6 +379,89 @@ def task_assignment(assignment: dict[str, Any], task_id: str) -> dict[str, Any]:
     task = matches[0]
     return {"format": "terrafar-review-assignment-v1", "source_run_ids": task["source_run_ids"],
             "skill": assignment["skill"], "tasks": [task]}
+
+
+def release_deferred_claim(ledger: dict[str, Any], assigned_task: dict[str, Any],
+                           defer_record: dict[str, Any], deferred_run_id: str, result_dir: Path,
+                           now: str | None = None) -> str:
+    """Release an unstarted lease with a durable, idempotent audit event.
+
+    Deferred claims stay in history but do not consume the bounded retry budget.
+    Release is allowed only for the exact live lease before any call/result exists.
+    """
+    if not isinstance(assigned_task, dict) or not isinstance(defer_record, dict):
+        raise ValueError("deferred_claim_record_invalid")
+    lease = assigned_task.get("lease")
+    if not isinstance(lease, dict):
+        raise ValueError("deferred_claim_assignment_lease_missing")
+    identity = {
+        "task_id": assigned_task.get("task_id"),
+        "candidate_id": assigned_task.get("candidate_id"),
+        "candidate_fingerprint": assigned_task.get("candidate_fingerprint"),
+        "attempt_id": lease.get("attempt_id"),
+        "lease_id": lease.get("lease_id"),
+        "owner": lease.get("owner"),
+    }
+    if (not all(isinstance(value, str) and value.strip() for value in identity.values())
+            or any(defer_record.get(key) != value for key, value in identity.items())):
+        raise ValueError("deferred_claim_identity_mismatch")
+    reason = defer_record.get("reason")
+    if not isinstance(reason, str) or not reason.strip() or len(reason.strip()) > 500:
+        raise ValueError("deferred_claim_reason_required")
+    if not isinstance(deferred_run_id, str) or not deferred_run_id.strip():
+        raise ValueError("deferred_run_id_required")
+
+    task_id = identity["task_id"]
+    attempt_id = identity["attempt_id"]
+    lease_id = identity["lease_id"]
+    private_results = safe_private_directory(Path(result_dir))
+    possible_saved_result = private_results / f"{task_id}-{attempt_id}.json"
+    if possible_saved_result.is_symlink():
+        raise ValueError("deferred_claim_result_symlink_rejected")
+    execution = _execution_state(ledger)
+    state = execution["tasks"].get(task_id)
+    if (not isinstance(state, dict) or state.get("candidate_id") != identity["candidate_id"]
+            or state.get("candidate_fingerprint") != identity["candidate_fingerprint"]):
+        raise ValueError("deferred_claim_task_identity_stale")
+    attempt = next((row for row in state.get("attempts", []) if row.get("attempt_id") == attempt_id), None)
+    if attempt is None:
+        raise ValueError("deferred_claim_attempt_missing")
+    event_id = candidate_ledger.digest({"event": "task_deferred", "task_id": task_id,
+                                        "attempt_id": attempt_id, "lease_id": lease_id})[:32]
+    existing = next((event for event in execution["events"] if event.get("event_id") == event_id), None)
+    claim_identity = {**identity, "claim_run_id": attempt.get("run_id")}
+    if existing is not None:
+        if existing.get("reason") != reason.strip() or existing.get("claim_identity") != claim_identity:
+            raise ValueError("deferred_claim_replay_conflict")
+        return "replayed"
+    if possible_saved_result.exists():
+        raise ValueError("deferred_claim_saved_result_pending_recovery")
+
+    at = parse_utc(now) if now else datetime.now(timezone.utc)
+    at_text = at.replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    live_lease = state.get("lease")
+    if state.get("status") != "claimed" or live_lease != lease:
+        raise ValueError("deferred_claim_lease_expired_or_replaced")
+    if parse_utc(live_lease.get("expires_at")) <= at:
+        raise ValueError("deferred_claim_lease_expired_or_replaced")
+    if attempt.get("outcome") != "in_progress":
+        raise ValueError("deferred_claim_attempt_not_in_progress")
+    if _attempt_has_execution_evidence(attempt):
+        raise ValueError("deferred_claim_execution_already_started")
+
+    event = {"event_id": event_id, "event_type": "task_deferred", "task_id": task_id,
+             "candidate_id": identity["candidate_id"], "candidate_fingerprint": identity["candidate_fingerprint"],
+             "attempt_id": attempt_id, "lease_id": lease_id, "owner": identity["owner"],
+             "claim_identity": claim_identity, "reason": reason.strip(), "at": at_text,
+             "deferred_run_id": deferred_run_id}
+    attempt.update({"outcome": "deferred", "deferred_at": at_text,
+                    "deferred_run_id": deferred_run_id, "defer_reason": reason.strip(),
+                    "deferred_event_id": event_id})
+    state.update({"status": "retry_wait", "lease": None, "not_before": at_text,
+                  "last_deferred_at": at_text, "last_defer_reason": reason.strip()})
+    execution["events"].append(event)
+    ledger["revision"] = int(ledger.get("revision", 0)) + 1
+    return "deferred"
 
 
 def safe_private_directory(path: Path) -> Path:
@@ -765,12 +882,13 @@ def _mark_failure(ledger: dict[str, Any], task_id: str, attempt_id: str, kind: s
     at = parse_utc(now) if now else datetime.now(timezone.utc)
     attempt.update({"outcome": kind, "completed_at": at.replace(microsecond=0).isoformat().replace("+00:00", "Z")})
     state["lease"] = None
-    if len(state.get("attempts", [])) >= max_attempts:
+    failure_count = retry_consuming_attempts(state)
+    if failure_count >= max_attempts:
         state["status"] = "exhausted"
         state["terminal_reason"] = kind
     else:
         state["status"] = "retry_wait"
-        retry_at = at + timedelta(seconds=_failure_delay(len(state.get("attempts", []))))
+        retry_at = at + timedelta(seconds=_failure_delay(failure_count))
         state["not_before"] = retry_at.replace(microsecond=0).isoformat().replace("+00:00", "Z")
     ledger["revision"] = int(ledger.get("revision", 0)) + 1
 
