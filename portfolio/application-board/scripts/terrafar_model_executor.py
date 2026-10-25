@@ -571,6 +571,81 @@ def atomic_private_json(path: Path, value: Any) -> None:
     atomic_private_text(path, json.dumps(value, ensure_ascii=False, indent=2) + "\n")
 
 
+def claim_persisted_batch(ledger_path: Path, output_dir: Path, owner: str,
+                          run_id: str, batch_key: str, limit: int = MAX_BATCH_SIZE,
+                          lease_seconds: int = 900, max_attempts: int = MAX_RETRIES,
+                          role: str = "opportunity_verifier",
+                          eligible_task_keys: set[str] | None = None) -> tuple[dict[str, Any], Path]:
+    """Resume the same assignment after local preparation failures.
+
+    Keep one output directory and ledger for a batch. A new batch key permits
+    another bounded claim against that ledger; it never initializes a ledger.
+    This cannot protect against callers deliberately creating unrelated copies.
+    """
+    if not isinstance(batch_key, str) or not batch_key.strip():
+        raise ValueError("persistent_claim_batch_key_required")
+    ledger_path = ledger_path.resolve()
+    out = safe_private_directory(output_dir)
+    key = candidate_ledger.digest({"batch_key": batch_key})
+    marker_path = out / f"claim-{key}.json"
+    assignment_path = out / f"assignment-{key}.json"
+    if any(p.is_symlink() for p in (marker_path, assignment_path, marker_path.with_suffix(".json.lock"))):
+        raise ValueError("persistent_claim_symlink_rejected")
+    binding = {"ledger_path": str(ledger_path), "owner": owner, "run_id": run_id,
+               "batch_key": batch_key, "limit": limit, "lease_seconds": lease_seconds,
+               "max_attempts": max_attempts, "role": role,
+               "eligible_task_keys": sorted(eligible_task_keys) if eligible_task_keys is not None else None}
+    # Lock the output first: two ledger copies must not claim into one workspace.
+    with candidate_ledger.ledger_lock(marker_path):
+        marker = None
+        if marker_path.exists():
+            marker = json.loads(marker_path.read_text())
+            if marker.get("binding") != binding:
+                raise ValueError("persistent_claim_binding_changed")
+        with candidate_ledger.ledger_lock(ledger_path):
+            ledger = candidate_ledger.load_ledger(ledger_path, require_existing=True)
+            execution = _execution_state(ledger)
+            batches = execution.setdefault("persisted_assignments", {})
+            slot = candidate_ledger.digest({"directory": str(out), "batch_key": batch_key})
+            saved = batches.get(slot)
+            if saved is not None:
+                if saved.get("binding") != binding:
+                    raise ValueError("persistent_claim_ledger_binding_changed")
+                assignment = saved["assignment"]
+                for task in assignment["tasks"]:
+                    state = execution["tasks"].get(task["task_id"], {})
+                    if not any(a.get("attempt_id") == task["lease"]["attempt_id"]
+                               for a in state.get("attempts", [])):
+                        raise ValueError("persistent_claim_attempt_history_missing")
+                if marker and marker.get("assignment_sha256") not in (None, candidate_ledger.digest(assignment)):
+                    raise ValueError("persistent_claim_assignment_conflict")
+            else:
+                before = candidate_ledger.digest(ledger)
+                if marker and (marker.get("state") != "preparing"
+                               or marker.get("input_ledger_sha256") != before):
+                    raise ValueError("persistent_claim_ledger_rewound_or_changed")
+                if assignment_path.exists():
+                    raise ValueError("persistent_claim_orphan_assignment")
+                if marker is None:
+                    marker = {"format": "terrafar-persisted-claim-v1", "state": "preparing",
+                              "binding": binding, "input_ledger_sha256": before}
+                    atomic_private_json(marker_path, marker)
+                assignment = claim_batch(ledger, owner, limit, lease_seconds, max_attempts,
+                                         role=role, run_id=run_id,
+                                         eligible_task_keys=eligible_task_keys)
+                batches[slot] = {"binding": binding, "assignment": assignment}
+                candidate_ledger.save_ledger(ledger_path, ledger)
+            # Ledger stores the exact assignment before any export. An interrupted
+            # export is regenerated without another claim or a new retry budget.
+            if assignment_path.exists() and json.loads(assignment_path.read_text()) != assignment:
+                raise ValueError("persistent_claim_export_conflict")
+            atomic_private_json(assignment_path, assignment)
+            atomic_private_json(marker_path, {**(marker or {}), "format": "terrafar-persisted-claim-v1",
+                                "binding": binding, "state": "saved",
+                                "assignment_sha256": candidate_ledger.digest(assignment)})
+    return assignment, assignment_path
+
+
 def load_snapshot(snapshot_dir: Path, task: dict[str, Any]) -> dict[str, Any]:
     path = snapshot_dir / f"{task['candidate_id']}.json"
     try:
@@ -1216,6 +1291,7 @@ def main() -> None:
     claim.add_argument("--output-dir", required=True)
     claim.add_argument("--owner", required=True)
     claim.add_argument("--run-id", required=True)
+    claim.add_argument("--batch-key", help="Stable batch identity; defaults to run/owner/role. Reuse it after interruptions.")
     claim.add_argument("--limit", type=int, default=MAX_BATCH_SIZE)
     claim.add_argument("--lease-seconds", type=int, default=900)
     claim.add_argument("--max-attempts", type=int, default=MAX_RETRIES)
@@ -1234,14 +1310,11 @@ def main() -> None:
     args = parser.parse_args()
     ledger_path = Path(args.ledger).resolve()
     if args.command == "claim":
-        output_dir = safe_private_directory(Path(args.output_dir))
-        with candidate_ledger.ledger_lock(ledger_path):
-            ledger = candidate_ledger.load_ledger(ledger_path, require_existing=True)
-            assignment = claim_batch(ledger, args.owner, args.limit, args.lease_seconds,
-                                     args.max_attempts, role=args.role, run_id=args.run_id)
-            candidate_ledger.save_ledger(ledger_path, ledger)
-        out = output_dir / f"assignment-{uuid.uuid4().hex}.json"
-        atomic_private_json(out, assignment)
+        batch_key = args.batch_key or candidate_ledger.digest({"run_id": args.run_id,
+                                                             "owner": args.owner, "role": args.role})
+        assignment, out = claim_persisted_batch(ledger_path, Path(args.output_dir), args.owner,
+                                               args.run_id, batch_key, args.limit, args.lease_seconds,
+                                               args.max_attempts, args.role)
         print(json.dumps({"claimed": assignment["claimed_count"], "assignment_path": str(out),
                           "ledger_revision": assignment["ledger_revision"]}))
     else:

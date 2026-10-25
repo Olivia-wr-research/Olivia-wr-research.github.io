@@ -61,12 +61,28 @@ Claims must retain their originating run before work starts:
 python portfolio/application-board/scripts/terrafar_model_executor.py claim \
   --ledger "$PRIVATE_STATE/candidate_ledger.json" \
   --output-dir "$PRIVATE_STATE/assignments" --owner "$REVIEWER_ID" \
-  --run-id "$PROGRAM_RUN_ID" --limit 10
+  --run-id "$PROGRAM_RUN_ID" --batch-key "$BATCH_ID" --limit 10
 ```
 
 The claim command requires `--run-id`; a claim without it cannot be imported.
 Older malformed claims and direct-merge results must remain visible in recovery
 history. Re-importing an existing result is not another model invocation.
+
+Keep the same ledger, output directory and batch key when retrying local
+preparation or export errors. The command persists the assignment inside the
+ledger before exporting it; rerunning returns that assignment and creates no
+new attempts. Use the returned `assignment_path` for import. A changed ledger
+path, rewound ledger, changed batch parameters or conflicting export fails
+closed. Expiration does not silently reclaim the same batch: use the existing
+retry policy with a new batch key on the same ledger after inspecting the old
+attempt. Use a distinct batch key for the next batch. Omission defaults to one
+batch per run, owner and role.
+
+Do not copy the initial ledger to another retry directory. The workspace binding
+cannot detect arbitrary independent copies in unrelated directories. Keep any
+already-created copies as audit evidence and reconcile every attempt before
+using their results. Deferred claims and repeated native executions have
+different counts, even when they concern the same candidate.
 
 After a real native session processes an existing claimed batch:
 
