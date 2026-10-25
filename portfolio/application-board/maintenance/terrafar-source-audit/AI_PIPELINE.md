@@ -55,6 +55,19 @@ git diff --check
 
 ## Native import (private local paths supplied by operator)
 
+Claims must retain their originating run before work starts:
+
+```sh
+python portfolio/application-board/scripts/terrafar_model_executor.py claim \
+  --ledger "$PRIVATE_STATE/candidate_ledger.json" \
+  --output-dir "$PRIVATE_STATE/assignments" --owner "$REVIEWER_ID" \
+  --run-id "$PROGRAM_RUN_ID" --limit 10
+```
+
+The claim command requires `--run-id`; a claim without it cannot be imported.
+Older malformed claims and direct-merge results must remain visible in recovery
+history. Re-importing an existing result is not another model invocation.
+
 After a real native session processes an existing claimed batch:
 
 ```sh
@@ -96,6 +109,12 @@ claimable and do not consume retry attempts. Actual provider failures continue
 to count toward the configured retry limit; they cannot be reclassified as
 deferrals or reset by later claims. The separate claim sequence records every
 lease, while `attempt_number` counts retry-consuming executions.
+
+Claims also bind the candidate review-history digest. A review added after the
+claim prevents a pre-execution deferral even when a legacy worker bypassed the
+executor and wrote no result file. Older claims without that digest use their
+review timestamps conservatively. Unknown legacy timestamps require reconciliation;
+they do not establish that a task was unexecuted.
 
 All paths must remain private and outside the public checkout. No candidate or
 page evidence belongs in a commit or public Actions artifact, even encrypted.

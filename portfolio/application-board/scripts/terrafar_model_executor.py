@@ -264,6 +264,8 @@ def claim_batch(ledger: dict[str, Any], owner: str, limit: int = MAX_BATCH_SIZE,
                 eligible_task_keys: set[str] | None = None) -> dict[str, Any]:
     if not owner.strip():
         raise ValueError("claim_owner_required")
+    if run_id is not None and (not isinstance(run_id, str) or not run_id.strip()):
+        raise ValueError("claim_run_id_invalid")
     if not 1 <= limit <= MAX_BATCH_SIZE:
         raise ValueError("model_batch_limit_must_be_between_1_and_10")
     if not 30 <= lease_seconds <= 86_400:
@@ -371,6 +373,7 @@ def claim_batch(ledger: dict[str, Any], owner: str, limit: int = MAX_BATCH_SIZE,
         attempts.append({"attempt_id": attempt_id, "attempt_number": attempt_number,
                          "claim_sequence": claim_sequence,
                          "claimed_at": started_text, "owner": owner, "run_id": run_id,
+                         "review_history_sha256_at_claim": candidate_ledger.digest(task.get("review_history", [])),
                          "outcome": "in_progress", "provider_call_invocations": 0,
                          "provider_responses_received": 0})
         assignments.append(_assignment_task(task, role, provenance, run_ids, tid, lease))
@@ -474,6 +477,23 @@ def release_deferred_claim(ledger: dict[str, Any], assigned_task: dict[str, Any]
         raise ValueError("deferred_claim_attempt_not_in_progress")
     if _attempt_has_execution_evidence(attempt):
         raise ValueError("deferred_claim_execution_already_started")
+    # Legacy/native workers may have merged directly without writing an executor
+    # result file. A missing file is therefore not proof that no work happened.
+    candidate = ledger.get("tasks", {}).get(identity["candidate_id"], {})
+    history = candidate.get("review_history", [])
+    prior_history_hash = attempt.get("review_history_sha256_at_claim")
+    if prior_history_hash is not None:
+        if candidate_ledger.digest(history) != prior_history_hash:
+            raise ValueError("deferred_claim_candidate_review_changed")
+    else:
+        for review in history:
+            try:
+                reviewed = parse_utc(review["reviewed_at"])
+                claimed = parse_utc(attempt["claimed_at"])
+            except (KeyError, TypeError, ValueError):
+                raise ValueError("deferred_claim_legacy_review_time_unknown")
+            if reviewed >= claimed:
+                raise ValueError("deferred_claim_candidate_review_changed")
 
     event = {"event_id": event_id, "event_type": "task_deferred", "task_id": task_id,
              "candidate_id": identity["candidate_id"], "candidate_fingerprint": identity["candidate_fingerprint"],
@@ -1148,6 +1168,7 @@ def main() -> None:
     claim.add_argument("--ledger", required=True)
     claim.add_argument("--output-dir", required=True)
     claim.add_argument("--owner", required=True)
+    claim.add_argument("--run-id", required=True)
     claim.add_argument("--limit", type=int, default=MAX_BATCH_SIZE)
     claim.add_argument("--lease-seconds", type=int, default=900)
     claim.add_argument("--max-attempts", type=int, default=MAX_RETRIES)
@@ -1170,7 +1191,7 @@ def main() -> None:
         with candidate_ledger.ledger_lock(ledger_path):
             ledger = candidate_ledger.load_ledger(ledger_path, require_existing=True)
             assignment = claim_batch(ledger, args.owner, args.limit, args.lease_seconds,
-                                     args.max_attempts, role=args.role)
+                                     args.max_attempts, role=args.role, run_id=args.run_id)
             candidate_ledger.save_ledger(ledger_path, ledger)
         out = output_dir / f"assignment-{uuid.uuid4().hex}.json"
         atomic_private_json(out, assignment)

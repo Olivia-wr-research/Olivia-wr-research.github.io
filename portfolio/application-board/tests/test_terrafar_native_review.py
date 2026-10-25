@@ -5,6 +5,9 @@ from datetime import timedelta
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
+from contextlib import redirect_stdout, redirect_stderr
+from io import StringIO
 
 from test_terrafar_ai_pipeline import observation, snapshot_for, supported_model_result
 import terrafar_candidate_ledger as ledger
@@ -192,6 +195,57 @@ class NativeReviewTests(unittest.TestCase):
             saved=ledger.load_ledger(lp)
             self.assertEqual(saved['tasks'][task['candidate_id']]['status'],'insufficient_evidence')
             self.assertTrue(ledger.review_queue(saved))
+
+    def test_claim_cli_requires_and_persists_origin_run(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d); lp = root/'ledger.json'
+            value = ledger.empty_ledger()
+            ledger.merge_observations(value, [observation()], 'synthetic-discovery')
+            ledger.save_ledger(lp, value)
+            argv = ['executor', 'claim', '--ledger', str(lp), '--output-dir', str(root/'out'),
+                    '--owner', 'synthetic-native']
+            before = lp.read_bytes()
+            with patch('sys.argv', argv), redirect_stderr(StringIO()), self.assertRaises(SystemExit):
+                ex.main()
+            self.assertEqual(before, lp.read_bytes())
+            with patch('sys.argv', argv + ['--run-id', 'synthetic-cli-run']), redirect_stdout(StringIO()):
+                ex.main()
+            saved = ledger.load_ledger(lp)
+            attempts = [a for t in saved['model_execution']['tasks'].values() for a in t['attempts']]
+            self.assertEqual(len(attempts), 1)
+            self.assertEqual(attempts[0]['run_id'], 'synthetic-cli-run')
+
+    def test_direct_review_without_executor_result_cannot_be_deferred(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d); lp,sp,assignment,sub=self.fixture(root)
+            task=assignment['tasks'][0]; value=ledger.load_ledger(lp)
+            review=ex.validate_model_result(sub['result'],task,snapshot_for(task),
+                                           {'provider':'synthetic-fixture'},ex.utc_now())
+            ledger.merge_review_results(value,[review], 'direct-review-run',
+                                        assignment=ex.task_assignment(assignment,task['task_id']))
+            ledger.save_ledger(lp,value); before=lp.read_bytes()
+            with self.assertRaisesRegex(ValueError,'deferred_claim_candidate_review_changed'):
+                native.import_reviews(lp,sp,root/'results',assignment,[], 'incorrect-defer',
+                                      deferred=[self.defer_record(task)])
+            self.assertEqual(before,lp.read_bytes())
+
+    def test_legacy_claim_without_review_digest_rejects_post_claim_review(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d); lp,sp,assignment,sub=self.fixture(root)
+            task=assignment['tasks'][0]; value=ledger.load_ledger(lp)
+            attempt=value['model_execution']['tasks'][task['task_id']]['attempts'][0]
+            attempt.pop('review_history_sha256_at_claim')
+            value['tasks'][task['candidate_id']]['review_history'].append(
+                {'reviewed_at':attempt['claimed_at'],'status':'insufficient_evidence'})
+            ledger.save_ledger(lp,value)
+            with self.assertRaisesRegex(ValueError,'deferred_claim_candidate_review_changed'):
+                native.import_reviews(lp,sp,root/'results',assignment,[], 'incorrect-legacy-defer',
+                                      deferred=[self.defer_record(task)])
+
+    def test_optional_legacy_claim_run_cannot_be_blank(self):
+        value=ledger.empty_ledger()
+        with self.assertRaisesRegex(ValueError,'claim_run_id_invalid'):
+            ex.claim_batch(value,'synthetic',run_id='  ')
 
     def test_truncation_returns_partial_reason_and_keeps_text(self):
         text,reason=detail._text_from_response(('<p>'+'x'*(detail.MAX_TEXT_CHARS+10)+'</p>').encode(),'text/html')
