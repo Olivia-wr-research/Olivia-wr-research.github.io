@@ -97,11 +97,14 @@ def build_funnel(run_dir: Path, ledger_path: Path, detail_results_path: Path | N
     observed_by_run = {event.get("candidate_id") for event in ledger_events}
     tasks = ledger.get("tasks", {})
     execution_tasks = (ledger.get("model_execution") or {}).get("tasks", {})
+    def touched_in_run(item):
+        return (item.get("merged_in_run_id") == run_id
+                or any(a.get("run_id") == run_id for a in item.get("attempts", [])))
     # Restored pending tasks can receive details/reviews when this run's listing
     # is unchanged. Include their identities even without a fresh listing row.
     processed_ids = set(detail_by_id) | observed_by_run | {t['candidate_id'] for t in candidate_ledger.review_queue(ledger)} | {
         t.get("candidate_id") for t in execution_tasks.values()
-        if any(a.get("run_id") == run_id for a in t.get("attempts", []))}
+        if touched_in_run(t)}
     for candidate_id in processed_ids:
         if candidate_id not in candidate_source_map:
             task = tasks.get(candidate_id) or {}
@@ -114,7 +117,7 @@ def build_funnel(run_dir: Path, ledger_path: Path, detail_results_path: Path | N
         task = tasks.get(candidate_id)
         model_task_rows = [(task_id, value) for task_id, value in execution_tasks.items()
                            if value.get("candidate_id") == candidate_id and
-                           any(attempt.get("run_id") == run_id for attempt in value.get("attempts", []))]
+                           touched_in_run(value)]
         latest_review = task.get("review_history", [])[-1] if task and task.get("review_history") else None
         detail = detail_by_id.get(candidate_id)
         trace_rows.append({**base, "listing_occurrences": occurrences[candidate_id],
@@ -124,9 +127,14 @@ def build_funnel(run_dir: Path, ledger_path: Path, detail_results_path: Path | N
                            "detail_outcome": detail.get("outcome") if detail else "not_run",
                            "model_task_ids": [item[0] for item in model_task_rows],
                            "model_task_statuses": [item[1].get("status") for item in model_task_rows],
+                           "model_claim_run_ids": sorted({a["run_id"] for _, item in model_task_rows
+                                                          for a in item.get("attempts", []) if a.get("run_id")}),
+                           "model_task_ids_merged_this_run": [key for key, item in model_task_rows
+                                                               if item.get("merged_in_run_id") == run_id],
                            "model_successful_responses": sum(
                                1 for _, item in model_task_rows for attempt in item.get("attempts", [])
-                               if attempt.get("response_id") and attempt.get("outcome") == "merged"),
+                               if attempt.get("run_id") == run_id and attempt.get("response_id")
+                               and attempt.get("outcome") == "merged"),
                            "review_disposition": latest_review.get("status") if latest_review else None,
                            "review_run_id": latest_review.get("run_id") if latest_review else None})
 
@@ -138,7 +146,7 @@ def build_funnel(run_dir: Path, ledger_path: Path, detail_results_path: Path | N
     ledger_status_counts_run = Counter(tasks[candidate_id].get("status", "unknown")
                                        for candidate_id in observed_by_run if candidate_id in tasks)
     model_tasks_run = {task_id: item for task_id, item in execution_tasks.items()
-                       if any(attempt.get("run_id") == run_id for attempt in item.get("attempts", []))}
+                       if touched_in_run(item)}
     model_status_counts_run = Counter(task.get("status", "unknown") for task in model_tasks_run.values())
     model_status_counts_total = Counter(task.get("status", "unknown") for task in execution_tasks.values())
     run_attempts = [attempt for item in execution_tasks.values() for attempt in item.get("attempts", [])
@@ -178,6 +186,9 @@ def build_funnel(run_dir: Path, ledger_path: Path, detail_results_path: Path | N
         "native_results_received_this_run": sum(int(a.get("native_results_received", 0)) for a in run_attempts),
         "trace_candidate_count": len(trace_rows),
         "model_results_merged_this_run": merged_this_run,
+        "native_results_merged_this_run": sum(1 for item in execution_tasks.values()
+            if item.get("merged_in_run_id") == run_id and item.get("provider") == "native_codex_session"),
+        "model_counting_scope": "Calls and received-response counters retain their original claim run; merge counters use the actual import run. A later import is not a new model call.",
         "model_provider_ready": provider_ready, "model_provider_gate": provider_gate,
         "model_provider_ready_but_unused_this_run": bool(provider_ready and actual_model_call_invocations == 0),
         "formal_site_data_written": False,

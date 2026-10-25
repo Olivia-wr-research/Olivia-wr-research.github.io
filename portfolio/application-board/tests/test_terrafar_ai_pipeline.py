@@ -471,6 +471,36 @@ class TerraFARPipelineTests(unittest.TestCase):
             self.assertEqual(pipeline_funnel._provider_readiness_for_reporting(),
                              (False, "model_credentials_missing"))
 
+    def test_funnel_preserves_later_run_merge_without_counting_a_new_call(self):
+        value = self._ledger_with_tasks(1)
+        candidate_id = next(iter(value["tasks"]))
+        # A terminal exclusion is no longer in the pending review queue. Its
+        # result must still be traceable when a later run imports the old claim.
+        value['tasks'][candidate_id]['status'] = 'excluded'
+        value['model_execution'] = {'schema_version': 1, 'executor_version': 1, 'events': [],
+            'tasks': {'mtask-later-import': {'task_id': 'mtask-later-import', 'candidate_id': candidate_id,
+                'candidate_fingerprint': value['tasks'][candidate_id]['content_fingerprint'],
+                'status': 'completed', 'merged_in_run_id': 'import-run',
+                'attempts': [{'run_id': 'original-claim-run', 'response_id': 'old-response',
+                    'provider_call_kind': 'configured_provider', 'provider_call_invocations': 1,
+                    'provider_responses_received': 1, 'outcome': 'merged'}]}}}
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); run_dir = root/'import-only'; run_dir.mkdir()
+            (run_dir/'manifest.json').write_text(json.dumps({'run_id': 'import-run',
+                'planned_source_ids': [], 'registry_sha256': 'f'*64}))
+            (run_dir/'source_checks.jsonl').write_text('')
+            ledger_path=root/'ledger.json'; ledger.save_ledger(ledger_path,value)
+            report=pipeline_funnel.build_funnel(run_dir,ledger_path,output_dir=root/'funnel')
+            trace=[json.loads(line) for line in (root/'funnel/candidate_trace.jsonl').read_text().splitlines()]
+        self.assertEqual([row['candidate_id'] for row in trace],[candidate_id])
+        self.assertEqual(trace[0]['model_task_ids_merged_this_run'],['mtask-later-import'])
+        self.assertEqual(trace[0]['model_claim_run_ids'],['original-claim-run'])
+        self.assertEqual(trace[0]['model_successful_responses'],0)
+        self.assertEqual(report['model_results_merged_this_run'],1)
+        self.assertEqual(report['model_task_status_counts_this_run'],{'completed':1})
+        self.assertEqual(report['actual_model_call_invocations_this_run'],0)
+        self.assertEqual(report['model_responses_received_this_run'],0)
+
     def test_independent_eval_requires_human_gold_and_reports_no_fake_metric(self):
         value = self._ledger_with_tasks()
         with tempfile.TemporaryDirectory() as tmp:
