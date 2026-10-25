@@ -194,7 +194,33 @@ def _task_provenance(task: dict[str, Any], ledger: dict[str, Any]) -> tuple[dict
 def _clean_public_text(value: Any, limit: int = 1200) -> Any:
     if isinstance(value, str):
         value = re.sub(r"\b[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}\b", "[email omitted]", value)
-        value = re.sub(r"(?<!\w)(?:\+?\d[\d ()-]{7,}\d)(?!\w)", "[phone omitted]", value)
+        # A broad phone pattern also matches ISO deadlines and funding year
+        # intervals. Retain those facts without weakening explicit contact
+        # redaction. This is input minimisation, not a public-release gate.
+        def redact_phone(match):
+            token = match.group(0)
+            before = value[max(0, match.start() - 32):match.start()]
+            if re.search(r"(?i)(?:phone|telephone|mobile|fax|call|tel\.?|电话)\s*[:：]?\s*$", before):
+                return "[phone omitted]"
+            if re.fullmatch(r"(?:19|20|21)\d{2}-\d{2}-\d{2}", token):
+                try:
+                    datetime.strptime(token, "%Y-%m-%d")
+                    return token
+                except ValueError:
+                    pass
+            # The phone match stops at the colon in an ISO date and clock time.
+            if (re.fullmatch(r"(?:19|20|21)\d{2}-\d{2}-\d{2} [0-2]\d", token)
+                    and re.match(r":[0-5]\d(?:\b|:)", value[match.end():])):
+                try:
+                    datetime.strptime(token, "%Y-%m-%d %H")
+                    return token
+                except ValueError:
+                    pass
+            years = re.fullmatch(r"((?:19|20|21)\d{2})\s*-\s*((?:19|20|21)\d{2})", token)
+            if years and 0 <= int(years[2]) - int(years[1]) <= 100:
+                return token
+            return "[phone omitted]"
+        value = re.sub(r"(?<!\w)(?:\+?\d[\d ()-]{7,}\d)(?!\w)", redact_phone, value)
         return value[:limit]
     if value is None or isinstance(value, (bool, int, float)):
         return value
