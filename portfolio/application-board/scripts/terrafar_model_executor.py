@@ -589,14 +589,25 @@ def claim_persisted_batch(ledger_path: Path, output_dir: Path, owner: str,
     key = candidate_ledger.digest({"batch_key": batch_key})
     marker_path = out / f"claim-{key}.json"
     assignment_path = out / f"assignment-{key}.json"
-    if any(p.is_symlink() for p in (marker_path, assignment_path, marker_path.with_suffix(".json.lock"))):
+    workspace_path = out / "claim-workspace.json"
+    if any(p.is_symlink() for p in (marker_path, assignment_path, workspace_path,
+                                   workspace_path.with_suffix(".json.lock"))):
         raise ValueError("persistent_claim_symlink_rejected")
     binding = {"ledger_path": str(ledger_path), "owner": owner, "run_id": run_id,
                "batch_key": batch_key, "limit": limit, "lease_seconds": lease_seconds,
                "max_attempts": max_attempts, "role": role,
                "eligible_task_keys": sorted(eligible_task_keys) if eligible_task_keys is not None else None}
     # Lock the output first: two ledger copies must not claim into one workspace.
-    with candidate_ledger.ledger_lock(marker_path):
+    with candidate_ledger.ledger_lock(workspace_path):
+        if workspace_path.exists():
+            if json.loads(workspace_path.read_text()).get("ledger_path") != str(ledger_path):
+                raise ValueError("persistent_claim_workspace_binding_changed")
+        else:
+            for prior in out.glob("claim-*.json"):
+                if prior.is_symlink() or json.loads(prior.read_text()).get("binding", {}).get("ledger_path") != str(ledger_path):
+                    raise ValueError("persistent_claim_workspace_binding_changed")
+            atomic_private_json(workspace_path, {"format": "terrafar-claim-workspace-v1",
+                                                "ledger_path": str(ledger_path)})
         marker = None
         if marker_path.exists():
             marker = json.loads(marker_path.read_text())
@@ -606,6 +617,20 @@ def claim_persisted_batch(ledger_path: Path, output_dir: Path, owner: str,
             ledger = candidate_ledger.load_ledger(ledger_path, require_existing=True)
             execution = _execution_state(ledger)
             batches = execution.setdefault("persisted_assignments", {})
+            # A new batch key cannot bypass a rollback of a preceding batch.
+            for prior in out.glob("claim-*.json"):
+                if prior == workspace_path:
+                    continue
+                if prior.is_symlink():
+                    raise ValueError("persistent_claim_symlink_rejected")
+                item = json.loads(prior.read_text())
+                prior_slot = candidate_ledger.digest({"directory": str(out), "batch_key": item["binding"]["batch_key"]})
+                prior_saved = batches.get(prior_slot)
+                if item.get("state") == "saved" and (prior_saved is None or
+                        candidate_ledger.digest(prior_saved["assignment"]) != item.get("assignment_sha256")):
+                    raise ValueError("persistent_claim_ledger_rewound_or_changed")
+                if item.get("state") == "preparing" and prior != marker_path and prior_saved is None:
+                    raise ValueError("persistent_claim_previous_prepare_unresolved")
             slot = candidate_ledger.digest({"directory": str(out), "batch_key": batch_key})
             saved = batches.get(slot)
             if saved is not None:
@@ -617,6 +642,10 @@ def claim_persisted_batch(ledger_path: Path, output_dir: Path, owner: str,
                     if not any(a.get("attempt_id") == task["lease"]["attempt_id"]
                                for a in state.get("attempts", [])):
                         raise ValueError("persistent_claim_attempt_history_missing")
+                    if state.get("status") != "claimed" or state.get("lease") != task["lease"]:
+                        raise ValueError("persistent_claim_lease_replaced_or_finished")
+                    if parse_utc(task["lease"]["expires_at"]) <= parse_utc(utc_now()):
+                        raise ValueError("persistent_claim_lease_expired")
                 if marker and marker.get("assignment_sha256") not in (None, candidate_ledger.digest(assignment)):
                     raise ValueError("persistent_claim_assignment_conflict")
             else:
@@ -631,7 +660,7 @@ def claim_persisted_batch(ledger_path: Path, output_dir: Path, owner: str,
                               "binding": binding, "input_ledger_sha256": before}
                     atomic_private_json(marker_path, marker)
                 assignment = claim_batch(ledger, owner, limit, lease_seconds, max_attempts,
-                                         role=role, run_id=run_id,
+                                         role=role, run_id=run_id, now=utc_now(),
                                          eligible_task_keys=eligible_task_keys)
                 batches[slot] = {"binding": binding, "assignment": assignment}
                 candidate_ledger.save_ledger(ledger_path, ledger)

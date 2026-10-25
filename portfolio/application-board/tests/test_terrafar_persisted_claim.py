@@ -114,11 +114,84 @@ class PersistedClaimTests(unittest.TestCase):
 
     def test_time_passing_does_not_reclaim_same_batch(self):
         with patch.object(executor, "utc_now", return_value="2026-10-25T00:00:00Z"):
-            first, _ = self.claim()
+            self.claim()
         with patch.object(executor, "utc_now", return_value="2026-10-26T00:00:00Z"):
-            second, _ = self.claim()
-        self.assertEqual(first, second)
+            with self.assertRaisesRegex(ValueError, "lease_expired"):
+                self.claim()
         self.assertEqual(len(self.attempts()), 1)
+
+    def test_new_batch_key_cannot_use_another_ledger_copy(self):
+        self.claim()
+        other = self.root / "copy.json"
+        other.write_bytes(self.original)
+        with self.assertRaisesRegex(ValueError, "workspace_binding_changed"):
+            self.claim(ledger_path=other, batch_key="batch-002")
+        self.assertEqual(other.read_bytes(), self.original)
+
+    def test_new_batch_key_cannot_bypass_rewind(self):
+        self.claim()
+        self.path.write_bytes(self.original)
+        with self.assertRaisesRegex(ValueError, "rewound_or_changed"):
+            self.claim(batch_key="batch-002")
+        self.assertEqual(self.path.read_bytes(), self.original)
+
+    def test_replaced_lease_cannot_be_returned_as_executable(self):
+        value = ledger.empty_ledger()
+        ledger.merge_observations(value, [observation("only-job")], "capture-one")
+        ledger.save_ledger(self.path, value)
+        with patch.object(executor, "utc_now", return_value="2026-10-25T00:00:00Z"):
+            first, _ = self.claim()
+        with patch.object(executor, "utc_now", return_value="2026-10-25T00:16:00Z"):
+            second, _ = self.claim(batch_key="batch-002")
+            self.assertNotEqual(first["tasks"][0]["lease"], second["tasks"][0]["lease"])
+            with self.assertRaisesRegex(ValueError, "lease_replaced_or_finished"):
+                self.claim()
+        self.assertEqual(len(self.attempts()), 2)
+
+    def test_other_batch_waits_for_unresolved_prepare(self):
+        with patch.object(ledger, "save_ledger", side_effect=OSError("synthetic save interruption")):
+            with self.assertRaises(OSError):
+                self.claim()
+        with self.assertRaisesRegex(ValueError, "previous_prepare_unresolved"):
+            self.claim(batch_key="batch-002")
+        self.assertEqual(self.path.read_bytes(), self.original)
+
+    def test_new_keys_keep_three_attempt_limit_on_same_ledger(self):
+        value = ledger.empty_ledger()
+        ledger.merge_observations(value, [observation("only-job")], "capture-one")
+        ledger.save_ledger(self.path, value)
+        counts = []
+        for index, minute in enumerate([0, 16, 32, 48]):
+            with patch.object(executor, "utc_now", return_value=f"2026-10-25T00:{minute:02}:00Z"):
+                assignment, _ = self.claim(batch_key=f"batch-{index}")
+                counts.append(assignment["claimed_count"])
+        self.assertEqual(counts, [1, 1, 1, 0])
+        self.assertEqual(len(self.attempts()), 3)
+
+    def test_completed_assignment_not_reissued_as_executable(self):
+        assignment, _ = self.claim()
+        value = ledger.load_ledger(self.path)
+        state = value["model_execution"]["tasks"][assignment["tasks"][0]["task_id"]]
+        state.update(status="completed", lease=None)
+        state["attempts"][0]["outcome"] = "merged"
+        ledger.save_ledger(self.path, value)
+        with self.assertRaisesRegex(ValueError, "lease_replaced_or_finished"):
+            self.claim()
+
+    def test_concurrent_copies_with_different_keys_share_workspace_lock(self):
+        from concurrent.futures import ThreadPoolExecutor
+        other = self.root / "copy.json"
+        other.write_bytes(self.original)
+        def attempt(path, key):
+            try:
+                self.claim(ledger_path=path, batch_key=key)
+                return "claimed"
+            except ValueError as error:
+                return str(error)
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            outcomes = list(pool.map(lambda item: attempt(*item), [(self.path, "one"), (other, "two")]))
+        self.assertEqual(outcomes.count("claimed"), 1)
+        self.assertIn("persistent_claim_workspace_binding_changed", outcomes)
 
     def test_symlink_export_rejected_without_reading_target(self):
         _, path = self.claim()

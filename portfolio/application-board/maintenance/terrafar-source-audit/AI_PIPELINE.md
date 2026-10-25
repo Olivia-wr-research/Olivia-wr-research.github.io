@@ -71,12 +71,16 @@ history. Re-importing an existing result is not another model invocation.
 Keep the same ledger, output directory and batch key when retrying local
 preparation or export errors. The command persists the assignment inside the
 ledger before exporting it; rerunning returns that assignment and creates no
-new attempts. Use the returned `assignment_path` for import. A changed ledger
+new attempts while the saved lease remains live. Use the returned
+`assignment_path` for import. A changed ledger
 path, rewound ledger, changed batch parameters or conflicting export fails
 closed. Expiration does not silently reclaim the same batch: use the existing
 retry policy with a new batch key on the same ledger after inspecting the old
 attempt. Use a distinct batch key for the next batch. Omission defaults to one
-batch per run, owner and role.
+batch per run, owner and role. The output workspace is bound to one ledger
+across all batch keys. A replaced, expired or finished lease is not returned as
+executable work. For idempotent import replay, use the already-saved assignment
+file directly; do not claim the completed batch again.
 
 Do not copy the initial ledger to another retry directory. The workspace binding
 cannot detect arbitrary independent copies in unrelated directories. Keep any
