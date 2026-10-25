@@ -91,7 +91,9 @@ class DataPipelineTests(unittest.TestCase):
             result = review_api.prepare(ledger_path, result_path, legacy, root / "pending", "synthetic-review", catalog)
             patch = json.loads(Path(result["patch_path"]).read_text())
             self.assertEqual(patch["changes"]["funding"]["before"], "Effective public value")
-            self.assertEqual(patch["target_binding"]["source_path"], str(catalog))
+            # Binding deliberately resolves symlinks (/var -> /private/var on
+            # macOS); compare the canonical identity, not the alias spelling.
+            self.assertEqual(patch["target_binding"]["source_path"], str(catalog.resolve()))
             self.assertEqual(len(patch["target_binding"]["catalog_inputs"]), 2)
             review_api.validate_target_binding(patch["target_binding"], patch["changes"])
             before = Path(result["patch_path"]).read_bytes()

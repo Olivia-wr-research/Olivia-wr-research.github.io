@@ -385,22 +385,23 @@ def semantic_result(adapter,url,body):
   if sys_path not in os.sys.path: os.sys.path.insert(0,sys_path)
   import import_eth
   text=body.decode('utf-8','replace')
-  rows=import_eth.parse_listing(text)
-  structural=('job-ad__item__link' in text) or bool(re.search(r'no (open )?positions|no vacancies|no jobs found',text,re.I))
+  parsed=import_eth.parse_listing_cards(text)
+  doctoral_cards=[row for row in parsed['cards'] if import_eth.doctoral(row['titleEn'])]
+  rows=list({row['url']:row for row in doctoral_cards}.values())
+  structural=bool(parsed['advertised_cards']) or bool(re.search(r'no (open )?positions|no vacancies|no jobs found',text,re.I))
   if not structural: raise ValueError('listing_structure_not_confirmed')
-  cards=re.findall(r'<a\b[^>]*class=["\'][^"\']*job-ad__item__link[^"\']*["\'][\s\S]*?</a>',text,re.I)
   visible=html.unescape(re.sub(r'<[^>]+>',' ',text))
-  total_match=re.search(r'\b(\d+)\s+(?:open\s+)?(?:positions?|jobs?|vacancies|vacancy|results?)\b',visible,re.I)
+  total_match=re.search(r'\b(\d+)\s+(?:(?:open\s+)?(?:positions?|jobs?|vacancies|vacancy|results?)|offene\s+Stellen)\b',visible,re.I)
   total=int(total_match.group(1)) if total_match else None
   query=parse_qs(urlsplit(url).query)
   current_page=int(query.get('page',['1'])[0]) if query.get('page',['1'])[0].isdigit() else 1
   linked_pages=[int(value) for value in re.findall(r'<a\b[^>]*href=["\'][^"\']*[?&]page=(\d+)[^"\']*["\']',text,re.I)]
   next_link=bool(re.search(r'<a\b[^>]*(?:rel=["\'][^"\']*next|aria-label=["\'][^"\']*next|class=["\'][^"\']*(?:next|pagination__next))',text,re.I)) or any(page>current_page for page in linked_pages)
   parsed_count=len({item['url'] for item in rows})
-  all_cards=len(cards)
-  complete=total is not None and total==all_cards and not next_link
-  normalized=[{'url':r['url'],'titleEn':r['titleEn'],'listingDetails':r.get('listingDetails','')} for r in rows]
-  return normalized,{'doctoral_records':parsed_count,'all_listing_cards_on_page':all_cards,'explicit_total':total,'_complete':complete,'pagination_detected':next_link or (total is not None and total>all_cards),'completeness_reason':'displayed total equals all parsed listing cards with no next link' if complete else 'explicit total or terminal-pagination proof missing'}
+  all_cards=parsed['advertised_cards']
+  complete=total is not None and total==all_cards and not next_link and not parsed['errors']
+  normalized=[{'url':r['url'],'titleEn':r['titleEn'],'listingDetails':r.get('listingDetails',''),**({'listingParseWarnings':r['listingParseWarnings']} if r.get('listingParseWarnings') else {})} for r in rows]
+  return normalized,{'doctoral_records':parsed_count,'candidate_scope':'doctoral_title_discovery_only','excluded_non_doctoral_cards':len(parsed['cards'])-len(doctoral_cards),'all_listing_cards_on_page':all_cards,'parsed_listing_cards':len(parsed['cards']),'unparsed_listing_cards':all_cards-len(parsed['cards']),'cards_with_parse_errors':len(parsed['errors']),'card_errors':parsed['errors'],'explicit_total':total,'_complete':complete,'pagination_detected':next_link or (total is not None and total>all_cards),'completeness_reason':'displayed total equals all structurally parsed listing cards with no next link; doctoral discovery scope only' if complete else 'listing cards have structural errors' if parsed['errors'] else 'explicit total or terminal-pagination proof missing'}
  return source_adapters.semantic_result(adapter,url,body)
 
 def fetch_endpoint(url, timeout, rate, retries, conditional, cached):
@@ -478,7 +479,9 @@ def check_one(source, run_id, state, timeout, rate, retries):
    elif adapter:
     try:
      candidate_rows,scope=semantic_result(adapter,url,body); target=True; complete=scope.pop('_complete',True); candidates=len(candidate_rows)
-     if not complete: raise IncompleteScope('adapter_pagination_detected_but_not_exhausted')
+     if not complete:
+      incomplete_reason='adapter_listing_cards_incomplete' if scope.get('card_errors') else 'adapter_pagination_detected_but_not_exhausted' if scope.get('pagination_detected') else 'adapter_scope_not_proven_complete'
+      raise IncompleteScope(incomplete_reason)
      sig=sha(json.dumps(candidate_rows,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode())
      if usable_semantic_baseline(cached):
       if sig==cached['semantic_hash']:
@@ -534,13 +537,22 @@ def reconcile_task_results(planned_ids, returned_rows):
     return [seen[sid] if sid in seen else {'source_id':sid,'outcome':'not_attempted','attempted':False,'reason':'missing_worker_result_reconciled'} for sid in planned_ids]
 
 def build_candidate_observations(sources,state,results):
-    """Read parsed candidates from successful semantic snapshots, including unchanged lists."""
+    """Read complete snapshots and structurally parsed rows from partial responses.
+
+    A partial source check is not a complete-range result. If its configured adapter
+    nevertheless validated the target and returned candidate rows, preserve those rows
+    as pending review work with their partial-scope provenance.
+    """
     observed_endpoints={}
     eligible={'checked_changed','checked_unchanged','checked_empty','partial'}
     for result in results:
         for endpoint_result in result.get('endpoints',[]):
+            rows=endpoint_result.get('candidate_rows')
+            parsed_partial=(endpoint_result.get('outcome')=='partial'
+                            and endpoint_result.get('target_validated') is True
+                            and isinstance(rows,list) and bool(rows))
             if (endpoint_result.get('outcome') in eligible and endpoint_result.get('adapter')
-                    and (endpoint_result.get('outcome') != 'partial' or endpoint_result.get('content_complete') is True)):
+                    and (endpoint_result.get('outcome') != 'partial' or parsed_partial)):
                 observed_endpoints[(result.get('source_id'),endpoint_result.get('endpoint_id'))]=endpoint_result
     observations=[]
     for source in sources:
@@ -551,7 +563,7 @@ def build_candidate_observations(sources,state,results):
             endpoint_id=endpoint.get('endpoint_id',f'{source["source_id"]}:primary')
             if (source['source_id'],endpoint_id) not in observed_endpoints: continue
             url=endpoint['url']; snapshot=state.get('snapshots',{}).get(key_for(url,adapter)); endpoint_result=observed_endpoints[(source['source_id'],endpoint_id)]
-            if endpoint_result.get('outcome')=='partial' and endpoint_result.get('content_complete') is True and endpoint_result.get('candidate_rows'):
+            if endpoint_result.get('outcome')=='partial' and endpoint_result.get('target_validated') is True and endpoint_result.get('candidate_rows'):
                 rows=endpoint_result['candidate_rows']; observed_at=endpoint_result.get('completed_at'); content_hash=endpoint_result.get('content_sha256')
             elif snapshot and snapshot.get('semantic_hash'):
                 rows=snapshot.get('semantic_rows',[]); observed_at=snapshot.get('last_success_at'); content_hash=snapshot.get('content_hash')
@@ -564,7 +576,10 @@ def build_candidate_observations(sources,state,results):
                     'candidate_url':row.get('source_url') or row.get('url') or url,
                     'retrieved_at':observed_at,
                     'content_sha256':content_hash, 'parser':adapter,
-                    'adapter_scope':endpoint.get('adapter_scope',source.get('adapter_scope',{})), 'candidate':row,
+                    'adapter_scope':endpoint.get('adapter_scope',source.get('adapter_scope',{})),
+                    'discovery_scope_status':endpoint_result.get('outcome'),
+                    'discovery_scope_complete':endpoint_result.get('content_complete') is True,
+                    'candidate':row,
                 })
     return observations
 

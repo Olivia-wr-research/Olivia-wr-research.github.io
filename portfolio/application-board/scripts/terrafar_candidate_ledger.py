@@ -7,7 +7,10 @@ import contextlib
 import fcntl
 import hashlib
 import json
+import os
+import tempfile
 import re
+import threading
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -16,7 +19,11 @@ from urllib.parse import urlsplit
 
 SCHEMA_VERSION = 2
 EVIDENCE_POLICY_VERSION = 3
-SKILL_PATH = Path(__file__).resolve().parents[3] / ".agents/skills/terrafar-source-audit/SKILL.md"
+_REPO_ROOT = Path(__file__).resolve().parents[3]
+_REPO_SKILL_PATH = _REPO_ROOT / ".agents/skills/terrafar-source-audit/SKILL.md"
+_BUNDLED_SKILL_PATH = (Path(__file__).resolve().parents[1] / "maintenance/terrafar-source-audit/"
+                       "terrafar-source-kit-original/.agents/skills/terrafar-source-audit/SKILL.md")
+SKILL_PATH = _REPO_SKILL_PATH if _REPO_SKILL_PATH.is_file() else _BUNDLED_SKILL_PATH
 OPEN_STATUSES = {"pending", "verification_failed", "insufficient_evidence"}
 TERMINAL_STATUSES = {"verified", "excluded", "duplicate"}
 REVIEW_STATUSES = TERMINAL_STATUSES | {"verification_failed", "insufficient_evidence"}
@@ -25,6 +32,7 @@ CURRENT_STATUS_CLAIMS = {
     "open": "official application portal explicitly confirms applications are currently being accepted",
     "closed": "official application portal explicitly confirms applications are no longer being accepted",
 }
+_HELD_LEDGER_LOCKS = threading.local()
 
 
 def canonical_json(value: Any) -> bytes:
@@ -54,8 +62,20 @@ def assigned_source_run_ids(result: dict[str, Any]) -> list[str]:
 
 
 def skill_pin() -> dict[str, str]:
-    return {"name": "terrafar-source-audit", "path": ".agents/skills/terrafar-source-audit/SKILL.md",
+    return {"name": "terrafar-source-audit", "path": str(SKILL_PATH.relative_to(_REPO_ROOT)),
             "sha256": hashlib.sha256(SKILL_PATH.read_bytes()).hexdigest()}
+
+
+def skill_pin_matches(pin: Any) -> bool:
+    """Accept the exact current pin or its historical logical-path alias.
+
+    Older assignments named the checkout-local path even when the bundled
+    Skill was read. Keep those receipts usable only with the same name/hash;
+    never resolve arbitrary caller-supplied paths or accept a changed Skill.
+    """
+    current = skill_pin()
+    legacy = {**current, "path": ".agents/skills/terrafar-source-audit/SKILL.md"}
+    return pin == current or pin == legacy
 
 
 def empty_ledger() -> dict[str, Any]:
@@ -134,21 +154,45 @@ def load_ledger(path: Path, require_existing: bool = False) -> dict[str, Any]:
 
 def save_ledger(path: Path, ledger: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_suffix(path.suffix + ".tmp")
-    temporary.write_text(json.dumps(ledger, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    temporary.replace(path)
+    if path.is_symlink():
+        raise ValueError("candidate_ledger_symlink_rejected")
+    fd, name = tempfile.mkstemp(prefix='.' + path.name + '.', dir=path.parent)
+    temporary = Path(name)
+    try:
+        with os.fdopen(fd, 'w', encoding='utf-8') as stream:
+            os.fchmod(stream.fileno(), 0o600)
+            stream.write(json.dumps(ledger, ensure_ascii=False, indent=2) + "\n")
+            stream.flush()
+            os.fsync(stream.fileno())
+        temporary.replace(path)
+    finally:
+        temporary.unlink(missing_ok=True)
 
 
 @contextlib.contextmanager
 def ledger_lock(path: Path):
     """Serialize read-modify-write transactions while allowing atomic readers."""
+    if path.is_symlink():
+        raise ValueError("candidate_ledger_symlink_rejected")
     lock_path = path.with_suffix(path.suffix + ".lock")
+    if lock_path.is_symlink():
+        raise ValueError("candidate_ledger_lock_symlink_rejected")
+    key = (os.getpid(), str(lock_path.resolve()))
+    held = getattr(_HELD_LEDGER_LOCKS, "paths", None)
+    if held is None:
+        held = _HELD_LEDGER_LOCKS.paths = set()
+    if key in held:
+        # flock on a second descriptor can wait on this thread's own lock.
+        # Importers own their transaction; callers must not wrap them in it.
+        raise RuntimeError("candidate_ledger_lock_reentry")
     lock_path.parent.mkdir(parents=True, exist_ok=True)
     with lock_path.open("a+") as lock_file:
         fcntl.flock(lock_file.fileno(), fcntl.LOCK_EX)
+        held.add(key)
         try:
             yield
         finally:
+            held.remove(key)
             fcntl.flock(lock_file.fileno(), fcntl.LOCK_UN)
 
 
@@ -185,6 +229,8 @@ def merge_observations(ledger: dict[str, Any], observations: list[dict[str, Any]
             "content_fingerprint": fingerprint,
             "source_content_sha256": observation.get("content_sha256"),
             "source_url": observation.get("source_url"),
+            "discovery_scope_status": observation.get("discovery_scope_status"),
+            "discovery_scope_complete": observation.get("discovery_scope_complete"),
         }
         if task is None:
             task = {
@@ -194,8 +240,11 @@ def merge_observations(ledger: dict[str, Any], observations: list[dict[str, Any]
                 "candidate_key": candidate_key,
                 "candidate_url": observation.get("candidate_url"),
                 "source_url": observation.get("source_url"),
+                "source_content_sha256": observation.get("content_sha256"),
                 "parser": observation.get("parser"),
                 "adapter_scope": observation.get("adapter_scope", {}),
+                "discovery_scope_status": observation.get("discovery_scope_status"),
+                "discovery_scope_complete": observation.get("discovery_scope_complete"),
                 "candidate": candidate,
                 "content_fingerprint": fingerprint,
                 "first_seen_at": now,
@@ -219,8 +268,11 @@ def merge_observations(ledger: dict[str, Any], observations: list[dict[str, Any]
                 task["content_fingerprint"] = fingerprint
                 task["candidate_url"] = observation.get("candidate_url")
                 task["source_url"] = observation.get("source_url")
+                task["source_content_sha256"] = observation.get("content_sha256", task.get("source_content_sha256"))
                 task["parser"] = observation.get("parser", task.get("parser"))
                 task["adapter_scope"] = observation.get("adapter_scope", task.get("adapter_scope", {}))
+                task["discovery_scope_status"] = observation.get("discovery_scope_status", task.get("discovery_scope_status"))
+                task["discovery_scope_complete"] = observation.get("discovery_scope_complete", task.get("discovery_scope_complete"))
                 task["last_seen_at"] = now
                 task["status"] = "pending"
                 task["reopened_reason"] = "candidate_content_changed"
@@ -250,6 +302,13 @@ def merge_observations(ledger: dict[str, Any], observations: list[dict[str, Any]
             if observation.get("adapter_scope") and task.get("adapter_scope") != observation.get("adapter_scope"):
                 task["adapter_scope"] = observation["adapter_scope"]
                 changed = True
+            if observation.get("content_sha256") and task.get("source_content_sha256") != observation.get("content_sha256"):
+                task["source_content_sha256"] = observation["content_sha256"]
+                changed = True
+            for field in ("discovery_scope_status", "discovery_scope_complete"):
+                if field in observation and task.get(field) != observation[field]:
+                    task[field] = observation[field]
+                    changed = True
             if run_id not in task.setdefault("observed_runs", []):
                 task["observed_runs"].append(run_id)
                 changed = True
@@ -310,6 +369,11 @@ def migrate_legacy_queue(ledger: dict[str, Any], rows: list[dict[str, Any]], sou
 
 def _supported_content_fields(result: dict[str, Any]) -> dict[str, dict[str, Any]]:
     fields: dict[str, dict[str, Any]] = {}
+    for name in ("application_route", "deadline", "funding", "eligibility"):
+        finding = result.get(name)
+        if (isinstance(finding, dict) and "claims" in finding
+                and finding.get("status") != "multiple_supported_claims"):
+            raise ValueError(f"mixed_single_and_multiple_claims:{name}")
     route = result.get("application_route")
     if (isinstance(route, dict) and route.get("status") in {"supported", "verified_as_stated"}
             and isinstance(route.get("value"), str) and route["value"].strip()):
@@ -320,6 +384,23 @@ def _supported_content_fields(result: dict[str, Any]) -> dict[str, dict[str, Any
                 and isinstance(finding.get("value"), str) and finding["value"].strip()):
             fields[name] = finding
     return fields
+
+
+def _supported_content_claims(result: dict[str, Any]) -> list[tuple[str, dict[str, Any]]]:
+    """Preserve and validate every supported clause, including legacy singles."""
+    claims = list(_supported_content_fields(result).items())
+    for name in ("application_route", "deadline", "funding", "eligibility"):
+        finding = result.get(name)
+        if not isinstance(finding, dict) or finding.get("status") != "multiple_supported_claims":
+            continue
+        rows = finding.get("claims")
+        if (finding.get("value") is not None or not isinstance(rows, list) or len(rows) < 2
+                or any(not isinstance(row, dict) or row.get("status") != "supported" or "claims" in row
+                       or not isinstance(row.get("value"), str) or not row["value"].strip()
+                       for row in rows)):
+            raise ValueError(f"invalid_multiple_supported_claims:{name}")
+        claims.extend((name, row) for row in rows)
+    return claims
 
 
 def _validated_application_route(task: dict[str, Any], evidence: list[Any],
@@ -462,7 +543,7 @@ def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id:
             # Field-specific official evidence may be hosted on a separate institutional
             # page (for example, an employer's salary scale). Bind that URL through the
             # structured finding instead of forcing every claim onto the job listing.
-            for finding in _supported_content_fields(result).values():
+            for _, finding in _supported_content_claims(result):
                 evidence_url = finding.get("evidence_url")
                 if isinstance(evidence_url, str) and evidence_url.strip():
                     allowed_urls.add(evidence_url)
@@ -490,10 +571,10 @@ def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id:
                                for item in content["evidence"])):
                     raise ValueError(f"verified_candidate_requires_scoped_content_evidence:{candidate_id}")
                 content_evidence = content["evidence"]
-                supported_fields = _supported_content_fields(result)
+                supported_fields = _supported_content_claims(result)
                 if not supported_fields:
                     raise ValueError(f"verified_candidate_requires_supported_detail_field:{candidate_id}")
-                for field_name, finding in supported_fields.items():
+                for field_name, finding in supported_fields:
                     field_evidence = [item for item in content_evidence if isinstance(item, dict) and item.get("field") == field_name]
                     if not any(
                         item.get("url") == finding.get("evidence_url")
@@ -696,7 +777,7 @@ def merge_review_results(ledger: dict[str, Any], rows: list[dict[str, Any]], run
         raise ValueError("candidate_review_results_must_be_a_json_array")
     if not isinstance(assignment, dict) or assignment.get("format") != "terrafar-review-assignment-v1" or not isinstance(assignment.get("tasks"), list):
         raise ValueError("review_assignment_manifest_required")
-    if assignment.get("skill") != skill_pin():
+    if not skill_pin_matches(assignment.get("skill")):
         raise ValueError("review_assignment_skill_pin_mismatch")
     assigned = {}
     assigned_source_ids = set()
@@ -796,6 +877,33 @@ def merge_review_results(ledger: dict[str, Any], rows: list[dict[str, Any]], run
     return ledger
 
 
+def _date_for_recheck(value: str):
+    """Parse explicit dates for scheduling only; never choose a deadline fact.
+
+    Ambiguous numeric locale formats remain unknown. Day precision does not
+    imply a timezone, closing time, or that the date is a final deadline.
+    """
+    iso = re.match(r"^(\d{4}-\d{2}-\d{2})(?:\b|T)", value.strip())
+    if iso:
+        try:
+            return datetime.fromisoformat(iso[1]).date()
+        except ValueError:
+            return None
+    month_first = re.fullmatch(r"([A-Za-z]+)\s+(\d{1,2}),?\s+(\d{4})", value.strip())
+    day_first = re.fullmatch(r"(\d{1,2})\s+([A-Za-z]+),?\s+(\d{4})", value.strip())
+    if not month_first and not day_first:
+        return None
+    month_name, day, year = month_first.groups() if month_first else (day_first[2], day_first[1], day_first[3])
+    months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
+    matches = [i + 1 for i, name in enumerate(months) if month_name.casefold() in {name, name[:3]}]
+    if len(matches) != 1:
+        return None
+    try:
+        return datetime(int(year), matches[0], int(day)).date()
+    except ValueError:
+        return None
+
+
 def open_status_tasks(ledger: dict[str, Any], today: str | None = None, recheck_days: int = 7) -> list[dict[str, Any]]:
     current_day = datetime.fromisoformat(today).date() if today else datetime.now(timezone.utc).date()
     output = []
@@ -803,21 +911,30 @@ def open_status_tasks(ledger: dict[str, Any], today: str | None = None, recheck_
         if task.get("status") != "verified":
             continue
         checked = task.get("current_open_status_checked_at")
-        deadline_value = None
+        deadline_values = []
         for review in reversed(task.get("review_history", [])):
             finding = review.get("finding", {})
             deadline = finding.get("deadline") if isinstance(finding, dict) else None
             if isinstance(deadline, dict) and isinstance(deadline.get("value"), str):
-                deadline_value = deadline["value"][:10]
+                deadline_values = [deadline["value"]]
+                break
+            if isinstance(deadline, dict) and deadline.get("status") == "multiple_supported_claims":
+                deadline_values = [claim["value"] for name, claim in _supported_content_claims(finding)
+                                   if name == "deadline"]
                 break
         interval = recheck_days
-        if deadline_value:
+        # Multiple dated clauses remain separate. A near date can accelerate
+        # rechecking without selecting it as the confirmed application deadline.
+        for deadline_value in deadline_values:
             try:
-                days_until_deadline = (datetime.fromisoformat(deadline_value).date() - current_day).days
+                date_value = _date_for_recheck(deadline_value)
+                if date_value is None:
+                    continue
+                days_until_deadline = (date_value - current_day).days
                 if 0 <= days_until_deadline <= 7:
                     interval = 1
                 elif 0 <= days_until_deadline <= 30:
-                    interval = min(recheck_days, 3)
+                    interval = min(interval, 3)
             except ValueError:
                 pass
         if task.get("current_open_status") == "closed":
@@ -855,8 +972,7 @@ def export_agent_batch(ledger: dict[str, Any], limit: int = 10, agent: str | Non
             "candidate_count": len(tasks), "candidate_ids": [task["candidate_id"] for task in tasks],
             "task_kinds": [task["review_task_kind"] for task in tasks],
             "tasks": tasks,
-            "skill": {"name": "terrafar-source-audit", "path": str(SKILL_PATH.relative_to(SKILL_PATH.parents[3])),
-                      "sha256": hashlib.sha256(SKILL_PATH.read_bytes()).hexdigest()},
+            "skill": skill_pin(),
             "instruction": "Use the pinned Skill above; distinguish page content, application route, and current open status; preserve unknowns; do not write formal site data. A future deadline or a page listing is not evidence of current portal acceptance.",
             "result_schema": {"candidate_id": "stable ledger id", "candidate_fingerprint": "copy the assigned task content_fingerprint; stale results are rejected after content changes", "status": "verified|excluded|duplicate|verification_failed|insufficient_evidence", "decision_scope": "page_content for verified; excluded or duplicate for those conclusions", "content_verification": {"status": "verified", "evidence": "same cited items that support inspected page content; each structured evidence item must include field=application_route|deadline|funding|eligibility"}, "reviewer": "actual agent name; required, never inferred", "reviewed_at": "UTC ISO-8601", "evidence": [{"url": "official candidate or source page", "claim": "one specific supported claim", "locator": "visible heading, field, or page lines", "evidence_note": "paraphrase; do not label as a direct quote"}], "application_route": "verified_as_stated or unknown, with its own evidence and nonempty value", "current_open_status": "unknown unless the official application portal explicitly confirms acceptance or closure; a future deadline or listing label is insufficient", "current_status_evidence": {"scope": "application_portal", "status": "open|closed", "claim": {"open": "official application portal explicitly confirms applications are currently being accepted", "closed": "official application portal explicitly confirms applications are no longer being accepted"}, "url": "candidate page", "locator": "portal status element"}, "duplicate_of": "required existing stable candidate id only for duplicate", "reason": "optional", "finding": "structured field findings; unknowns remain null/unknown"}}
 

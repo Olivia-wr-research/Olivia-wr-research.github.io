@@ -96,6 +96,9 @@ def validate_state(root):
         raise StoreError("private_state_schema_invalid")
     # Migration belongs to the existing reviewed importer, never to this transport.
     candidates = ledger.load_ledger(root / "candidate_ledger.json", require_existing=True)
+    if candidates.get('model_execution'):
+        from terrafar_model_executor import _execution_state
+        _execution_state(candidates)
     if candidates != read_json(root / "candidate_ledger.json"):
         raise StoreError("private_state_requires_explicit_schema_migration")
     if any(t["source_id"] not in ids for t in candidates["tasks"].values()):
@@ -122,8 +125,31 @@ def extends(new_root, old_root):
             if current.get(identity) != previous.get(identity):
                 raise StoreError("private_state_candidate_identity_changed")
         for history, value in previous.items():
-            if history.endswith("history") and isinstance(value, list) and current.get(history, [])[:len(value)] != value:
+            if (history.endswith("history") or history == 'content_versions') and isinstance(value, list) and current.get(history, [])[:len(value)] != value:
                 raise StoreError("private_state_candidate_review_history_loss")
+    old_execution, new_execution = o.get('model_execution', {}), n.get('model_execution', {})
+    old_captures = o.get('detail_capture', {}).get('events', [])
+    if n.get('detail_capture', {}).get('events', [])[:len(old_captures)] != old_captures:
+        raise StoreError('private_state_detail_capture_history_loss')
+    old_events = old_execution.get('events', [])
+    if new_execution.get('events', [])[:len(old_events)] != old_events:
+        raise StoreError('private_state_model_event_history_loss')
+    for task_id, prior in old_execution.get('tasks', {}).items():
+        current = new_execution.get('tasks', {}).get(task_id)
+        if not current or any(current.get(k) != prior.get(k) for k in ('task_id', 'candidate_id', 'candidate_fingerprint', 'review_task_kind')):
+            raise StoreError('private_state_model_task_identity_loss')
+        before, after = prior.get('attempts', []), current.get('attempts', [])
+        if len(after) < len(before) or any(a.get('attempt_id') != b.get('attempt_id') for a,b in zip(before,after)):
+            raise StoreError('private_state_model_attempt_history_loss')
+        for a,b in zip(before,after):
+            if a.get('outcome') not in {None, 'in_progress'} and a != b:
+                raise StoreError('private_state_terminal_model_attempt_rewritten')
+            if any(a.get(k) != b.get(k) for k in ('attempt_id','attempt_number','claimed_at','owner','run_id')):
+                raise StoreError('private_state_model_attempt_origin_rewritten')
+            if any(int(b.get(k,0)) < int(a.get(k,0)) for k in ('provider_call_invocations','provider_responses_received','native_results_received')):
+                raise StoreError('private_state_model_call_history_loss')
+        if prior.get('status') == 'completed' and current.get('status') != 'completed':
+            raise StoreError('private_state_completed_model_result_regressed')
     if not reviews.is_extension(read_json(new_root / "quality_journal.json"), read_json(old_root / "quality_journal.json")):
         raise StoreError("private_state_review_history_loss")
     # Old evidence is immutable. Only root runtime files may change; historical
