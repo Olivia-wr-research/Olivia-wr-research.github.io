@@ -94,7 +94,9 @@ def _copy_regular(source: Path, destination: Path) -> None:
 
 
 PRIVATE_OPTIONAL_FILES = ("quality_journal.json", "quality_batch.json", "active_catalog.json", "review_authority.json")
-PRIVATE_OPTIONAL_DIRS = ("quality-review", "http-responses")
+PRIVATE_OPTIONAL_DIRS = (
+    "quality-review", "http-responses", "page_snapshots", "model_results", "pipeline_diagnostics",
+)
 
 
 def _copy_private_tree(source: Path, destination: Path) -> None:
@@ -251,7 +253,20 @@ def build_success_artifact(state_dir: Path, run_dir: Path, output_dir: Path,
                            run_attempt: str, program_run_id: str,
                            registry_path: Path, adapter_catalog_path: Path,
                            runner_path: Path, adapters_path: Path,
-                           candidate_ledger_impl_path: Path) -> dict:
+                           candidate_ledger_impl_path: Path,
+                           model_executor_impl_path: Path | None = None,
+                           detail_capture_impl_path: Path | None = None,
+                           pipeline_funnel_impl_path: Path | None = None) -> dict:
+    pipeline_bindings = (
+        ("model_results", model_executor_impl_path, "executor"),
+        ("page_snapshots", detail_capture_impl_path, "detail_capture"),
+        ("pipeline_diagnostics", pipeline_funnel_impl_path, "pipeline_funnel"),
+    )
+    for directory, implementation, label in pipeline_bindings:
+        if (state_dir / directory).exists() and implementation is None:
+            raise ValueError(f"maintenance_{directory}_require_{label}_implementation_pin")
+        if implementation is not None and (not implementation.is_file() or implementation.is_symlink()):
+            raise FileNotFoundError(f"maintenance_{label}_implementation_missing_or_invalid")
     if output_dir.exists() and any(output_dir.iterdir()):
         raise ValueError("maintenance_artifact_output_must_be_empty")
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -313,6 +328,15 @@ def build_success_artifact(state_dir: Path, run_dir: Path, output_dir: Path,
             "runner_sha256": _sha(runner_path),
             "adapter_implementation_sha256": _sha(adapters_path),
             "candidate_ledger_implementation_sha256": _sha(candidate_ledger_impl_path),
+            "model_executor_implementation_sha256": (
+                _sha(model_executor_impl_path) if model_executor_impl_path is not None else None
+            ),
+            "detail_capture_implementation_sha256": (
+                _sha(detail_capture_impl_path) if detail_capture_impl_path is not None else None
+            ),
+            "pipeline_funnel_implementation_sha256": (
+                _sha(pipeline_funnel_impl_path) if pipeline_funnel_impl_path is not None else None
+            ),
             "candidate_task_count": len(ledger.get("tasks", {})),
             "origin_branch": os.environ.get("GITHUB_REF_NAME"),
             "origin_commit_sha": os.environ.get("GITHUB_SHA"),
@@ -426,6 +450,9 @@ def main() -> None:
     for name in ("state-dir", "run-dir", "output-dir", "recipient-certificate", "registry",
                  "adapter-catalog", "runner", "adapters", "candidate-ledger-implementation"):
         success.add_argument(f"--{name}", required=True)
+    success.add_argument("--model-executor-implementation")
+    success.add_argument("--detail-capture-implementation")
+    success.add_argument("--pipeline-funnel-implementation")
     for name in ("actions-run-id", "run-attempt", "program-run-id"):
         success.add_argument(f"--{name}", required=True)
     failure = sub.add_parser("failure")
@@ -440,6 +467,9 @@ def main() -> None:
             args.actions_run_id, args.run_attempt, args.program_run_id, Path(args.registry),
             Path(args.adapter_catalog), Path(args.runner), Path(args.adapters),
             Path(args.candidate_ledger_implementation),
+            Path(args.model_executor_implementation) if args.model_executor_implementation else None,
+            Path(args.detail_capture_implementation) if args.detail_capture_implementation else None,
+            Path(args.pipeline_funnel_implementation) if args.pipeline_funnel_implementation else None,
         )
     else:
         result = build_failure_artifact(Path(args.run_dir), Path(args.output_dir), args.actions_run_id, args.run_attempt,

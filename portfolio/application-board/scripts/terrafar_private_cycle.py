@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import hashlib
 import os
 from pathlib import Path
 import shutil
@@ -24,6 +25,20 @@ APP = Path(__file__).resolve().parents[1]
 MAINT = APP / "maintenance/terrafar-source-audit"
 WORKFLOW = ".github/workflows/terrafar-private-maintenance.yml"
 REVIEW_PREFIX = "TERRAFAR private review · "
+
+
+def pipeline_versions():
+    names = ('terrafar_model_executor.py', 'terrafar_detail_capture.py',
+             'terrafar_native_review.py', 'terrafar_pipeline_funnel.py',
+             'terrafar_independent_eval.py')
+    return {name: hashlib.sha256((APP / 'scripts' / name).read_bytes()).hexdigest() for name in names}
+
+
+def check_pipeline_versions(workspace):
+    if any((workspace / name).exists() for name in ('page_snapshots', 'model_results', 'pipeline_diagnostics')):
+        version_file = workspace / 'pipeline_versions.json'
+        if not version_file.is_file() or storage.read_json(version_file) != pipeline_versions():
+            raise storage.StoreError('private_pipeline_requires_reviewed_version_migration')
 
 
 def check_review_deliveries(journal, api=None):
@@ -44,9 +59,12 @@ def run_command(args, log):
     subprocess.run(args, cwd=APP, stdout=log, stderr=log, check=True)
 
 
-def run_cycle(vault, workspace, mode="daily", review_input=None):
+def run_cycle(vault, workspace, mode="daily", review_input=None, detail_limit=0):
+    if not 0 <= detail_limit <= 10:
+        raise storage.StoreError('private_pipeline_detail_limit_invalid')
     receipt = workspace.parent / (workspace.name + "-receipt.json")
     vault.restore(workspace, receipt)
+    check_pipeline_versions(workspace)
     if (workspace / "source_registry.json").read_bytes() != (MAINT / "registry/source_registry.json").read_bytes():
         raise storage.StoreError("private_cycle_registry_requires_reviewed_migration")
     if storage.read_json(workspace / "runtime_versions.json") != restore.version_hashes(MAINT / "registry/source_registry.json"):
@@ -106,6 +124,24 @@ def run_cycle(vault, workspace, mode="daily", review_input=None):
                          "--concurrency", "4", "--timeout", "15", "--retries", "1", "--per-host-delay", "1",
                          "--http-request-budget", "6000", "--require-state", "--require-candidate-ledger",
                          "--state-dir", str(workspace), "--run-id", run_id])
+                if detail_limit:
+                    # Opt-in only after private owner authorization and restore.
+                    # No native dispatcher or paid model API is implied here.
+                    from terrafar_model_executor import atomic_private_json
+                    atomic_private_json(workspace / 'pipeline_versions.json', pipeline_versions())
+                    command(['python3', 'scripts/terrafar_detail_capture.py',
+                             '--ledger', str(workspace / 'candidate_ledger.json'),
+                             '--registry', str(MAINT / 'registry/source_registry.json'),
+                             '--snapshot-dir', str(workspace / 'page_snapshots' / run_id),
+                             '--results', str(workspace / 'pipeline_diagnostics' / run_id / 'detail-results.jsonl'),
+                             '--run-id', run_id, '--limit', str(detail_limit), '--http-request-budget', '60'])
+                    command(['python3', 'scripts/terrafar_pipeline_funnel.py', '--run-dir', str(run_dir),
+                             '--ledger', str(workspace / 'candidate_ledger.json'),
+                             '--detail-results', str(workspace / 'pipeline_diagnostics' / run_id / 'detail-results.jsonl'),
+                             '--output-dir', str(workspace / 'pipeline_diagnostics' / run_id)])
+                    command(['python3', 'scripts/terrafar_independent_eval.py',
+                             '--ledger', str(workspace / 'candidate_ledger.json'),
+                             '--output-dir', str(workspace / 'pipeline_diagnostics' / run_id / 'independent-eval')])
                 command(["node", "--input-type=module", "-e",
                          "import {writeFileSync} from 'node:fs'; import {geographyCatalog} from './dist/geography-catalog.mjs';"
                          "writeFileSync(process.argv[1],JSON.stringify(geographyCatalog));", str(workspace / "active_catalog.json")])
@@ -130,6 +166,7 @@ def main():
     p.add_argument("--workspace", type=Path, required=True)
     p.add_argument("--mode", choices=("daily", "review"), default="daily")
     p.add_argument("--review-input", type=Path)
+    p.add_argument("--detail-limit", type=int, default=0, help='Optional private detail stage; 0 keeps it disabled')
     args = p.parse_args()
     try:
         if (os.environ.get("TERRAFAR_PRIVATE_STORAGE_APPROVED") != "true"
@@ -137,7 +174,7 @@ def main():
             raise storage.StoreError("private_cycle_owner_approval_and_private_runner_required")
         backend = storage.S3(os.environ["TERRAFAR_STATE_BUCKET"], os.environ["TERRAFAR_STATE_PREFIX"], os.environ["TERRAFAR_AWS_ACCOUNT_ID"])
         vault = storage.Vault(backend, reviews.RECIPIENT_CERTIFICATE)
-        result = run_cycle(vault, args.workspace, args.mode, args.review_input)
+        result = run_cycle(vault, args.workspace, args.mode, args.review_input, args.detail_limit)
         print(json.dumps(result, sort_keys=True))
         if result["cycle"] != "completed": raise SystemExit(2)
     except Exception as error:

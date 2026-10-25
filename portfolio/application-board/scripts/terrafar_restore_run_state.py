@@ -6,9 +6,11 @@ import argparse
 import copy
 import hashlib
 import json
+import os
 import re
 import shutil
 import sys
+import tempfile
 from pathlib import Path
 
 import terrafar_candidate_ledger as candidate_ledger
@@ -37,6 +39,21 @@ def adapter_implementation_sha() -> str:
 
 def candidate_ledger_implementation_sha() -> str:
     return sha(Path(candidate_ledger.__file__).read_bytes())
+
+
+def model_executor_implementation_sha() -> str | None:
+    path = APP / "scripts/terrafar_model_executor.py"
+    return sha(path.read_bytes()) if path.is_file() and not path.is_symlink() else None
+
+
+def detail_capture_implementation_sha() -> str | None:
+    path = APP / "scripts/terrafar_detail_capture.py"
+    return sha(path.read_bytes()) if path.is_file() and not path.is_symlink() else None
+
+
+def pipeline_funnel_implementation_sha() -> str | None:
+    path = APP / "scripts/terrafar_pipeline_funnel.py"
+    return sha(path.read_bytes()) if path.is_file() and not path.is_symlink() else None
 
 
 def read_json(path: Path) -> dict:
@@ -231,7 +248,15 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
         if not isinstance(private_hashes, dict):
             raise ValueError("restored_private_files_manifest_invalid")
         private_root = artifact_dir / "state"
-        actual_files = {str(path.relative_to(private_root)) for path in private_root.rglob("*") if path.is_file()} - {"provenance.json"}
+        actual_files = set()
+        for path in private_root.rglob("*"):
+            if path.is_symlink():
+                raise ValueError("restored_private_file_symlink_rejected")
+            if path.is_file():
+                actual_files.add(str(path.relative_to(private_root)))
+            elif not path.is_dir():
+                raise ValueError("restored_private_non_regular_entry_rejected")
+        actual_files.discard("provenance.json")
         if actual_files != set(private_hashes):
             raise ValueError("restored_private_files_set_mismatch")
         for relative, expected_sha in private_hashes.items():
@@ -267,6 +292,20 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
                  if not legacy and compatibility == 3 else None)
     if not legacy and compatibility != 3 and current_catalog_sha != provenance.get("adapter_catalog_sha256"):
         raise ValueError("restored_adapter_catalog_version_mismatch")
+    pipeline_version_checks = (
+        ("model_results", "model_executor_implementation_sha256", model_executor_implementation_sha,
+         "restored_model_executor_implementation_version_mismatch"),
+        ("page_snapshots", "detail_capture_implementation_sha256", detail_capture_implementation_sha,
+         "restored_detail_capture_implementation_version_mismatch"),
+        ("pipeline_diagnostics", "pipeline_funnel_implementation_sha256", pipeline_funnel_implementation_sha,
+         "restored_pipeline_funnel_implementation_version_mismatch"),
+    )
+    for directory, provenance_key, current_hash, mismatch_error in pipeline_version_checks:
+        expected_hash = provenance.get(provenance_key)
+        if (artifact_dir / "state" / directory).exists() and expected_hash is None:
+            raise ValueError(f"restored_{directory}_implementation_hash_missing")
+        if expected_hash is not None and expected_hash != current_hash():
+            raise ValueError(mismatch_error)
 
     quality_path = artifact_dir / "state/quality_journal.json"
     quality_sha = provenance.get("quality_journal_sha256")
@@ -417,13 +456,61 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
             if not private_file.is_file() or private_file.is_symlink() or sha(private_file.read_bytes()) != expected_hash:
                 raise ValueError("restored_private_quality_file_hash_mismatch")
             shutil.copy2(private_file, destination / name)
+    restored_private_directories = []
     if private_hashes is not None:
-        for name in ("http-responses", "quality-review"):
+        for name in ("http-responses", "quality-review", "page_snapshots", "model_results", "pipeline_diagnostics"):
             source_dir = artifact_dir / "state" / name
-            if source_dir.is_dir():
-                if source_dir.is_symlink():
+            if not source_dir.exists():
+                continue
+            if source_dir.is_symlink() or not source_dir.is_dir():
+                raise ValueError("restored_private_evidence_directory_invalid")
+            source_files = {}
+            for source in sorted(source_dir.rglob("*")):
+                if source.is_symlink():
                     raise ValueError("restored_private_evidence_symlink_rejected")
-                shutil.copytree(source_dir, destination / name, dirs_exist_ok=True)
+                if source.is_file():
+                    source_files[source.relative_to(source_dir).as_posix()] = sha(source.read_bytes())
+                elif not source.is_dir():
+                    raise ValueError("restored_private_evidence_non_regular_entry_rejected")
+            target_dir = destination / name
+            if target_dir.exists():
+                if target_dir.is_symlink() or not target_dir.is_dir():
+                    raise ValueError("restored_private_evidence_destination_invalid")
+                target_files = {}
+                for target in sorted(target_dir.rglob("*")):
+                    if target.is_symlink():
+                        raise ValueError("restored_private_evidence_destination_symlink_rejected")
+                    if target.is_file():
+                        target_files[target.relative_to(target_dir).as_posix()] = sha(target.read_bytes())
+                    elif not target.is_dir():
+                        raise ValueError("restored_private_evidence_destination_non_regular_entry_rejected")
+                if target_files != source_files:
+                    raise ValueError("restored_private_evidence_destination_conflict")
+                restored_private_directories.append(name)
+                continue
+            staged_dir = Path(tempfile.mkdtemp(prefix=f".{name}.restore-", dir=destination))
+            try:
+                for source in sorted(source_dir.rglob("*")):
+                    if source.is_symlink():
+                        raise ValueError("restored_private_evidence_symlink_rejected")
+                    target = staged_dir / source.relative_to(source_dir)
+                    if source.is_dir():
+                        target.mkdir(mode=0o700)
+                        target.chmod(0o700)
+                    elif source.is_file():
+                        target.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
+                        shutil.copyfile(source, target)
+                        target.chmod(0o600)
+                        if target.stat().st_mode & 0o077:
+                            raise PermissionError("restored_private_evidence_file_permissions_not_0600")
+                staged_dir.chmod(0o700)
+                if staged_dir.stat().st_mode & 0o077:
+                    raise PermissionError("restored_private_evidence_directory_permissions_not_0700")
+                os.replace(staged_dir, target_dir)
+            finally:
+                if staged_dir.exists():
+                    shutil.rmtree(staged_dir)
+            restored_private_directories.append(name)
     restored_meta = {
         "status": "passed",
         "origin_evidence_capture_status": capture_metadata.get("capture_status") if capture_metadata else "validated_v3_state",
@@ -455,6 +542,7 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
                                                 if migration else 0),
         "quality_journal_restored": quality_bytes is not None,
         "quality_journal_sha256": quality_sha,
+        "private_evidence_directories_restored": restored_private_directories,
     }
     (destination / "restore_verification.json").write_text(json.dumps(restored_meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return restored_meta

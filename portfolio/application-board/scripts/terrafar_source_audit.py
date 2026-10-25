@@ -534,13 +534,22 @@ def reconcile_task_results(planned_ids, returned_rows):
     return [seen[sid] if sid in seen else {'source_id':sid,'outcome':'not_attempted','attempted':False,'reason':'missing_worker_result_reconciled'} for sid in planned_ids]
 
 def build_candidate_observations(sources,state,results):
-    """Read parsed candidates from successful semantic snapshots, including unchanged lists."""
+    """Read complete snapshots and structurally parsed rows from partial responses.
+
+    A partial source check is not a complete-range result. If its configured adapter
+    nevertheless validated the target and returned candidate rows, preserve those rows
+    as pending review work with their partial-scope provenance.
+    """
     observed_endpoints={}
     eligible={'checked_changed','checked_unchanged','checked_empty','partial'}
     for result in results:
         for endpoint_result in result.get('endpoints',[]):
+            rows=endpoint_result.get('candidate_rows')
+            parsed_partial=(endpoint_result.get('outcome')=='partial'
+                            and endpoint_result.get('target_validated') is True
+                            and isinstance(rows,list) and bool(rows))
             if (endpoint_result.get('outcome') in eligible and endpoint_result.get('adapter')
-                    and (endpoint_result.get('outcome') != 'partial' or endpoint_result.get('content_complete') is True)):
+                    and (endpoint_result.get('outcome') != 'partial' or parsed_partial)):
                 observed_endpoints[(result.get('source_id'),endpoint_result.get('endpoint_id'))]=endpoint_result
     observations=[]
     for source in sources:
@@ -551,7 +560,7 @@ def build_candidate_observations(sources,state,results):
             endpoint_id=endpoint.get('endpoint_id',f'{source["source_id"]}:primary')
             if (source['source_id'],endpoint_id) not in observed_endpoints: continue
             url=endpoint['url']; snapshot=state.get('snapshots',{}).get(key_for(url,adapter)); endpoint_result=observed_endpoints[(source['source_id'],endpoint_id)]
-            if endpoint_result.get('outcome')=='partial' and endpoint_result.get('content_complete') is True and endpoint_result.get('candidate_rows'):
+            if endpoint_result.get('outcome')=='partial' and endpoint_result.get('target_validated') is True and endpoint_result.get('candidate_rows'):
                 rows=endpoint_result['candidate_rows']; observed_at=endpoint_result.get('completed_at'); content_hash=endpoint_result.get('content_sha256')
             elif snapshot and snapshot.get('semantic_hash'):
                 rows=snapshot.get('semantic_rows',[]); observed_at=snapshot.get('last_success_at'); content_hash=snapshot.get('content_hash')
@@ -564,7 +573,10 @@ def build_candidate_observations(sources,state,results):
                     'candidate_url':row.get('source_url') or row.get('url') or url,
                     'retrieved_at':observed_at,
                     'content_sha256':content_hash, 'parser':adapter,
-                    'adapter_scope':endpoint.get('adapter_scope',source.get('adapter_scope',{})), 'candidate':row,
+                    'adapter_scope':endpoint.get('adapter_scope',source.get('adapter_scope',{})),
+                    'discovery_scope_status':endpoint_result.get('outcome'),
+                    'discovery_scope_complete':endpoint_result.get('content_complete') is True,
+                    'candidate':row,
                 })
     return observations
 

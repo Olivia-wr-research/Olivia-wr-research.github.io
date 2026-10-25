@@ -314,6 +314,17 @@ class FullCensusEvidenceTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp); state_dir=root/'state-input'; run_dir=root/'run-input'; output=root/'public-artifact'
             state_dir.mkdir(); run_dir.mkdir()
+            private_pipeline_text='synthetic private model result and page capture'
+            for directory in ('page_snapshots','model_results','pipeline_diagnostics'):
+                payload=state_dir/directory/'nested'/'record.json'
+                payload.parent.mkdir(parents=True)
+                payload.write_text(json.dumps({'private_text':private_pipeline_text}),encoding='utf-8')
+            model_executor_impl=root/'terrafar_model_executor.py'
+            model_executor_impl.write_text('# synthetic implementation pin\n',encoding='utf-8')
+            detail_capture_impl=root/'terrafar_detail_capture.py'
+            detail_capture_impl.write_text('# synthetic capture implementation pin\n',encoding='utf-8')
+            pipeline_funnel_impl=root/'terrafar_pipeline_funnel.py'
+            pipeline_funnel_impl.write_text('# synthetic funnel implementation pin\n',encoding='utf-8')
             private_key=root/'private.pem'; cert=root/'recipient.pem'
             generated=subprocess.run([
                 'openssl','req','-x509','-newkey','rsa:2048','-keyout',str(private_key),
@@ -351,17 +362,22 @@ class FullCensusEvidenceTests(unittest.TestCase):
             (run_dir/'daily_report.json').write_text(json.dumps({"run_id":program_id,"planned_sources":1,
                 "executed_sources":1,"result_conservation":True,"status_counts":{"partial":1},"notes":[secret]}),encoding='utf-8')
             (run_dir/'daily_report.md').write_text(secret,encoding='utf-8')
-            result=maintenance_artifact.build_success_artifact(
+            artifact_args=(
                 state_dir,run_dir,output,cert,'2002','1',program_id,registry.REGISTRY,source_adapters.CATALOG_PATH,
                 ROOT/'portfolio/application-board/scripts/terrafar_source_audit.py',
                 ROOT/'portfolio/application-board/scripts/terrafar_source_adapters.py',
                 ROOT/'portfolio/application-board/scripts/terrafar_candidate_ledger.py')
+            with self.assertRaisesRegex(ValueError,'maintenance_model_results_require_executor_implementation_pin'):
+                maintenance_artifact.build_success_artifact(*artifact_args)
+            result=maintenance_artifact.build_success_artifact(
+                *artifact_args,model_executor_impl,detail_capture_impl,pipeline_funnel_impl)
             self.assertEqual(result['capture_status'],'complete')
             self.assertTrue((output/'private_state.cms').is_file())
             self.assertFalse((output/'state/candidate_ledger.json').exists())
             self.assertFalse((output/'run/candidate_review_queue.jsonl').exists())
             visible=b'\n'.join(path.read_bytes() for path in output.rglob('*') if path.is_file() and path.name!='private_state.cms')
             self.assertNotIn(secret.encode(),visible)
+            self.assertNotIn(private_pipeline_text.encode(),visible)
             self.assertNotIn(secret.encode(),(output/'private_state.cms').read_bytes())
             public_rows=[json.loads(line) for line in (output/'run/source_checks.jsonl').read_text().splitlines()]
             self.assertNotIn('candidate_rows',public_rows[0])
@@ -377,6 +393,15 @@ class FullCensusEvidenceTests(unittest.TestCase):
                 state_archive.decrypt_archive(output/'private_state.cms',restored,cert,env_name)
                 restored_ledger=json.loads((restored/'state/candidate_ledger.json').read_text())
                 self.assertEqual(restored_ledger['tasks']['private-id']['title'],secret)
+                provenance=json.loads((restored/'state/provenance.json').read_text())
+                self.assertEqual(provenance['model_executor_implementation_sha256'],audit.sha(model_executor_impl.read_bytes()))
+                self.assertEqual(provenance['detail_capture_implementation_sha256'],audit.sha(detail_capture_impl.read_bytes()))
+                self.assertEqual(provenance['pipeline_funnel_implementation_sha256'],audit.sha(pipeline_funnel_impl.read_bytes()))
+                for directory in ('page_snapshots','model_results','pipeline_diagnostics'):
+                    restored_payload=restored/'state'/directory/'nested'/'record.json'
+                    self.assertEqual(json.loads(restored_payload.read_text())['private_text'],private_pipeline_text)
+                    relative=f'{directory}/nested/record.json'
+                    self.assertEqual(provenance['private_files_sha256'][relative],audit.sha(restored_payload.read_bytes()))
                 private_queue=json.loads((restored/'state/last_run/candidate_review_queue.jsonl').read_text())
                 self.assertEqual(private_queue['title'],secret)
             finally:
@@ -979,13 +1004,23 @@ print(json.dumps({'outcome':result['outcome'],'baseline_available':result['basel
         with self.assertRaisesRegex(ValueError,'explicit_portal_acceptance_evidence'):
             candidate_ledger.apply_open_status_reviews(ledger,[result],'run-2')
 
-    def test_incomplete_partial_candidate_rows_are_not_merged(self):
+    def test_structurally_parsed_partial_candidates_are_merged_without_complete_range(self):
         source=self.source()
         state={'snapshots':{}}
-        result=[{'source_id':'test-source','endpoints':[{'endpoint_id':'test-source:primary','adapter':'fake','outcome':'partial','content_complete':False,'candidate_rows':[{'id':'partial-only'}]}]}]
+        result=[{'source_id':'test-source','outcome':'partial','endpoints':[{'endpoint_id':'test-source:primary','adapter':'fake','outcome':'partial','target_validated':True,'content_complete':False,'completed_at':'2026-01-01T00:00:00Z','content_sha256':'a'*64,'candidate_rows':[{'id':'partial-only'}]}]}]
+        observations=audit.build_candidate_observations([source],state,result)
+        self.assertEqual(len(observations),1)
+        self.assertEqual(observations[0]['discovery_scope_status'],'partial')
+        self.assertFalse(observations[0]['discovery_scope_complete'])
+        ledger=candidate_ledger.empty_ledger()
+        candidate_ledger.merge_observations(ledger,observations,'partial-run')
+        task=next(iter(ledger['tasks'].values()))
+        self.assertEqual(task['source_content_sha256'],'a'*64)
+        self.assertEqual(task['discovery_scope_status'],'partial')
+        self.assertFalse(task['discovery_scope_complete'])
+        # Partial does not imply that every row was validated by the target adapter.
+        result[0]['endpoints'][0]['target_validated']=False
         self.assertEqual(audit.build_candidate_observations([source],state,result),[])
-        result[0]['endpoints'][0]['content_complete']=True
-        self.assertEqual(len(audit.build_candidate_observations([source],state,result)),1)
 
     def test_incomplete_sources_stay_in_retry_queue_until_complete_success(self):
         state={'maintenance_retry_ids':['old','retry-me']}
@@ -1536,6 +1571,68 @@ print(json.dumps({'outcome':result['outcome'],'baseline_available':result['basel
             provenance_path.write_text(json.dumps(unsupported_compat),encoding='utf-8')
             with self.assertRaisesRegex(ValueError,'restored_state_compatibility_version_unsupported'):
                 restore_run_state.restore(artifact,base/'unsupported-compat','7001','7006',registry.REGISTRY)
+
+    def test_cross_actions_run_restore_recovers_hashed_private_ai_pipeline_state(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            base=Path(tmp); artifact=base/'artifact'; state_root=artifact/'state'; state_root.mkdir(parents=True)
+            registry_sha=audit.sha(registry.REGISTRY.read_bytes())
+            state={'schema_version':1,'snapshots':{},'last_run_id':'program-ai-1','last_registry_sha256':registry_sha}
+            (state_root/'state.json').write_text(json.dumps(state,sort_keys=True),encoding='utf-8')
+            ledger=candidate_ledger.empty_ledger()
+            (state_root/'candidate_ledger.json').write_text(json.dumps(ledger,sort_keys=True),encoding='utf-8')
+            private_text='synthetic private restored pipeline state'
+            directories=('page_snapshots','model_results','pipeline_diagnostics','quality-review','http-responses')
+            for directory in directories:
+                payload=state_root/directory/'nested'/'record.json'
+                payload.parent.mkdir(parents=True)
+                payload.write_text(json.dumps({'private_text':private_text}),encoding='utf-8')
+            private_hashes={str(path.relative_to(state_root)):audit.sha(path.read_bytes())
+                            for path in sorted(state_root.rglob('*')) if path.is_file()}
+            target=restore_run_state.version_hashes(registry.REGISTRY)
+            model_sha='a'*64
+            detail_sha='b'*64
+            funnel_sha='c'*64
+            provenance={'format':'terrafar-maintenance-state-v1','origin_actions_run_id':'7101',
+                'origin_program_run_id':'program-ai-1','state_compatibility_version':3,
+                'state_sha256':audit.sha((state_root/'state.json').read_bytes()),'state_schema_version':1,
+                'candidate_ledger_schema_version':ledger['schema_version'],'candidate_task_count':0,
+                'candidate_ledger_sha256':audit.sha((state_root/'candidate_ledger.json').read_bytes()),
+                'private_files_sha256':private_hashes,'model_executor_implementation_sha256':model_sha,
+                'detail_capture_implementation_sha256':detail_sha,
+                'pipeline_funnel_implementation_sha256':funnel_sha,
+                **target}
+            (state_root/'provenance.json').write_text(json.dumps(provenance),encoding='utf-8')
+            with patch.object(restore_run_state,'model_executor_implementation_sha',return_value=model_sha), \
+                    patch.object(restore_run_state,'detail_capture_implementation_sha',return_value=detail_sha), \
+                    patch.object(restore_run_state,'pipeline_funnel_implementation_sha',return_value=funnel_sha):
+                restored=restore_run_state.restore(artifact,base/'restored','7101','7102',registry.REGISTRY)
+            self.assertEqual(set(restored['private_evidence_directories_restored']),set(directories))
+            for directory in directories:
+                payload=base/'restored'/directory/'nested'/'record.json'
+                self.assertEqual(json.loads(payload.read_text())['private_text'],private_text)
+                self.assertEqual(payload.stat().st_mode & 0o777,0o600)
+                self.assertEqual((base/'restored'/directory).stat().st_mode & 0o777,0o700)
+            wrong=dict(provenance); wrong['model_executor_implementation_sha256']='b'*64
+            (state_root/'provenance.json').write_text(json.dumps(wrong),encoding='utf-8')
+            with patch.object(restore_run_state,'model_executor_implementation_sha',return_value=model_sha), \
+                    patch.object(restore_run_state,'detail_capture_implementation_sha',return_value=detail_sha), \
+                    patch.object(restore_run_state,'pipeline_funnel_implementation_sha',return_value=funnel_sha):
+                with self.assertRaisesRegex(ValueError,'restored_model_executor_implementation_version_mismatch'):
+                    restore_run_state.restore(artifact,base/'wrong-version','7101','7103',registry.REGISTRY)
+            missing_detail=dict(provenance); missing_detail.pop('detail_capture_implementation_sha256')
+            (state_root/'provenance.json').write_text(json.dumps(missing_detail),encoding='utf-8')
+            with patch.object(restore_run_state,'model_executor_implementation_sha',return_value=model_sha), \
+                    patch.object(restore_run_state,'detail_capture_implementation_sha',return_value=detail_sha), \
+                    patch.object(restore_run_state,'pipeline_funnel_implementation_sha',return_value=funnel_sha):
+                with self.assertRaisesRegex(ValueError,'restored_page_snapshots_implementation_hash_missing'):
+                    restore_run_state.restore(artifact,base/'missing-detail-pin','7101','7104',registry.REGISTRY)
+            wrong_detail=dict(provenance); wrong_detail['detail_capture_implementation_sha256']='d'*64
+            (state_root/'provenance.json').write_text(json.dumps(wrong_detail),encoding='utf-8')
+            with patch.object(restore_run_state,'model_executor_implementation_sha',return_value=model_sha), \
+                    patch.object(restore_run_state,'detail_capture_implementation_sha',return_value=detail_sha), \
+                    patch.object(restore_run_state,'pipeline_funnel_implementation_sha',return_value=funnel_sha):
+                with self.assertRaisesRegex(ValueError,'restored_detail_capture_implementation_version_mismatch'):
+                    restore_run_state.restore(artifact,base/'wrong-detail-pin','7101','7105',registry.REGISTRY)
 
     def test_current_open_status_requires_current_portal_acceptance_not_a_deadline(self):
         observation={'source_id':'s','endpoint_id':'s:list','candidate_key':'job-1','candidate_url':'https://jobs.example/job-1','source_url':'https://jobs.example/list','candidate':{'id':'job-1'},'retrieved_at':'2026-01-01T00:00:00Z'}

@@ -1,0 +1,36 @@
+name: TERRAFAR isolated bounded transport pilot
+on:
+  push:
+    branches: ['codex/terrafar-stepwise-pilot-20261025']
+    paths:
+      - '.github/workflows/terrafar-isolated-pilot.yml'
+      - 'portfolio/application-board/scripts/terrafar_isolated_pilot.py'
+permissions:
+  contents: read
+concurrency:
+  group: terrafar-isolated-bounded-pilot
+  cancel-in-progress: false
+jobs:
+  transport:
+    if: ${{ github.ref == 'refs/heads/codex/terrafar-stepwise-pilot-20261025' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Isolated new-input trial with aggregate-only public output
+        env:
+          PILOT_PRIVATE_DIR: ${{ runner.temp }}/terrafar-isolated-${{ github.run_id }}-${{ github.run_attempt }}
+          PILOT_RUN_ID: isolated-${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          set -euo pipefail
+          umask 077
+          python portfolio/application-board/scripts/terrafar_isolated_pilot.py \
+            --private-dir "$PILOT_PRIVATE_DIR" --run-id "$PILOT_RUN_ID"
+      # Deliberately no artifact upload, cache, secret, model call or deployment.
+      # Raw runner-only trial data is not a durable private checkpoint.

@@ -7,6 +7,8 @@ import contextlib
 import fcntl
 import hashlib
 import json
+import os
+import tempfile
 import re
 from datetime import datetime, timezone
 from pathlib import Path
@@ -16,7 +18,10 @@ from urllib.parse import urlsplit
 
 SCHEMA_VERSION = 2
 EVIDENCE_POLICY_VERSION = 3
-SKILL_PATH = Path(__file__).resolve().parents[3] / ".agents/skills/terrafar-source-audit/SKILL.md"
+_REPO_SKILL_PATH = Path(__file__).resolve().parents[3] / ".agents/skills/terrafar-source-audit/SKILL.md"
+_BUNDLED_SKILL_PATH = (Path(__file__).resolve().parents[1] / "maintenance/terrafar-source-audit/"
+                       "terrafar-source-kit-original/.agents/skills/terrafar-source-audit/SKILL.md")
+SKILL_PATH = _REPO_SKILL_PATH if _REPO_SKILL_PATH.is_file() else _BUNDLED_SKILL_PATH
 OPEN_STATUSES = {"pending", "verification_failed", "insufficient_evidence"}
 TERMINAL_STATUSES = {"verified", "excluded", "duplicate"}
 REVIEW_STATUSES = TERMINAL_STATUSES | {"verification_failed", "insufficient_evidence"}
@@ -134,9 +139,19 @@ def load_ledger(path: Path, require_existing: bool = False) -> dict[str, Any]:
 
 def save_ledger(path: Path, ledger: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_suffix(path.suffix + ".tmp")
-    temporary.write_text(json.dumps(ledger, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    temporary.replace(path)
+    if path.is_symlink():
+        raise ValueError("candidate_ledger_symlink_rejected")
+    fd, name = tempfile.mkstemp(prefix='.' + path.name + '.', dir=path.parent)
+    temporary = Path(name)
+    try:
+        with os.fdopen(fd, 'w', encoding='utf-8') as stream:
+            os.fchmod(stream.fileno(), 0o600)
+            stream.write(json.dumps(ledger, ensure_ascii=False, indent=2) + "\n")
+            stream.flush()
+            os.fsync(stream.fileno())
+        temporary.replace(path)
+    finally:
+        temporary.unlink(missing_ok=True)
 
 
 @contextlib.contextmanager
@@ -185,6 +200,8 @@ def merge_observations(ledger: dict[str, Any], observations: list[dict[str, Any]
             "content_fingerprint": fingerprint,
             "source_content_sha256": observation.get("content_sha256"),
             "source_url": observation.get("source_url"),
+            "discovery_scope_status": observation.get("discovery_scope_status"),
+            "discovery_scope_complete": observation.get("discovery_scope_complete"),
         }
         if task is None:
             task = {
@@ -194,8 +211,11 @@ def merge_observations(ledger: dict[str, Any], observations: list[dict[str, Any]
                 "candidate_key": candidate_key,
                 "candidate_url": observation.get("candidate_url"),
                 "source_url": observation.get("source_url"),
+                "source_content_sha256": observation.get("content_sha256"),
                 "parser": observation.get("parser"),
                 "adapter_scope": observation.get("adapter_scope", {}),
+                "discovery_scope_status": observation.get("discovery_scope_status"),
+                "discovery_scope_complete": observation.get("discovery_scope_complete"),
                 "candidate": candidate,
                 "content_fingerprint": fingerprint,
                 "first_seen_at": now,
@@ -219,8 +239,11 @@ def merge_observations(ledger: dict[str, Any], observations: list[dict[str, Any]
                 task["content_fingerprint"] = fingerprint
                 task["candidate_url"] = observation.get("candidate_url")
                 task["source_url"] = observation.get("source_url")
+                task["source_content_sha256"] = observation.get("content_sha256", task.get("source_content_sha256"))
                 task["parser"] = observation.get("parser", task.get("parser"))
                 task["adapter_scope"] = observation.get("adapter_scope", task.get("adapter_scope", {}))
+                task["discovery_scope_status"] = observation.get("discovery_scope_status", task.get("discovery_scope_status"))
+                task["discovery_scope_complete"] = observation.get("discovery_scope_complete", task.get("discovery_scope_complete"))
                 task["last_seen_at"] = now
                 task["status"] = "pending"
                 task["reopened_reason"] = "candidate_content_changed"
@@ -250,6 +273,13 @@ def merge_observations(ledger: dict[str, Any], observations: list[dict[str, Any]
             if observation.get("adapter_scope") and task.get("adapter_scope") != observation.get("adapter_scope"):
                 task["adapter_scope"] = observation["adapter_scope"]
                 changed = True
+            if observation.get("content_sha256") and task.get("source_content_sha256") != observation.get("content_sha256"):
+                task["source_content_sha256"] = observation["content_sha256"]
+                changed = True
+            for field in ("discovery_scope_status", "discovery_scope_complete"):
+                if field in observation and task.get(field) != observation[field]:
+                    task[field] = observation[field]
+                    changed = True
             if run_id not in task.setdefault("observed_runs", []):
                 task["observed_runs"].append(run_id)
                 changed = True
