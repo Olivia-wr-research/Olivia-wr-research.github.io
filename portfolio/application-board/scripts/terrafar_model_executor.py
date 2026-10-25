@@ -713,8 +713,10 @@ def call_openai_responses(task: dict[str, Any], snapshot: dict[str, Any], model:
         "Return only the required JSON. Preserve unknowns. Do not infer deadlines, funding, qualifications, or open status. "
         "Use only exact short quotes from the supplied page text and identify their visible section/label. A listing or future deadline "
         "does not prove that an application portal currently accepts submissions. Do not merge records by similar title alone. "
-        "For every supported field, raw_value must be copied verbatim from its evidence quote. Set scope_relevance to relevant or "
-        "not_relevant only when the supplied page itself supports that conclusion; otherwise use unknown.\n\n"
+        "For every supported field, raw_value must be copied verbatim from its evidence quote. "
+        "Keep each normalized_value limited to facts supported by that same evidence item. Split multiple qualifications or "
+        "conditions into separate field rows with their own quotes; do not add uncited requirements to a degree quote. "
+        "Set scope_relevance to relevant or not_relevant only when the supplied page itself supports that conclusion; otherwise use unknown.\n\n"
         "Apply this pinned project Skill (SHA256 " + skill_pin["sha256"] + "):\n" + skill_text
     )
     user_payload = {"candidate_id": task["candidate_id"], "candidate_fingerprint": task["candidate_fingerprint"],
@@ -825,11 +827,29 @@ def validate_model_result(model_result: dict[str, Any], task: dict[str, Any], sn
             quote = evidence[evidence_index]["quote"]
             if normalized_text(raw_value) not in normalized_text(quote):
                 raise ModelExecutionError("supported_raw_value_not_present_in_quote")
+            normalized_value = finding.get("normalized_value")
+            if isinstance(normalized_value, str) and finding["field"] == "eligibility":
+                # Catch an explicit optional -> mandatory reversal. This narrow
+                # guard is not a semantic evaluator; other paraphrases remain
+                # proposals for independent review below.
+                optional = r"\b(?:not\s+(?:required|necessary|mandatory)|optional|preferred|desirable)\b"
+                mandatory = r"\b(?:required|mandatory|must|necessary)\b|必须|必需|硬性要求"
+                preserves_qualification = optional + r"|无需|不要求|非必须|非必需|优先|加分|可选|例外"
+                if (re.search(optional, raw_value, re.I)
+                        and not re.search(mandatory, re.sub(optional, "", raw_value, flags=re.I), re.I)
+                        and re.search(mandatory, normalized_value, re.I)
+                        and not re.search(preserves_qualification, normalized_value, re.I)):
+                    raise ModelExecutionError("eligibility_normalization_strengthens_optional_condition")
         elif evidence_index is not None and (not isinstance(evidence_index, int) or not 0 <= evidence_index < len(evidence)):
             raise ModelExecutionError("field_evidence_index_invalid")
         normalized_fields.append({"field": finding["field"], "status": field_status,
                                   "raw_value": finding.get("raw_value"),
                                   "normalized_value": finding.get("normalized_value"),
+                                  "normalization_status": (
+                                      "verbatim" if isinstance(finding.get("raw_value"), str)
+                                      and isinstance(finding.get("normalized_value"), str)
+                                      and normalized_text(finding["raw_value"]) == normalized_text(finding["normalized_value"])
+                                      else "model_proposal_requires_semantic_review"),
                                   "evidence_index": evidence_index,
                                   "reason": finding.get("reason")})
     if kind == "current_open_status_review":
@@ -891,11 +911,24 @@ def validate_model_result(model_result: dict[str, Any], task: dict[str, Any], sn
         # The durable ledger requires a supported assertion to be field-scoped
         # and contain the supported value. Bind that normalized claim to the
         # model-selected verbatim quote and its snapshot locator.
-        cited["model_claim"] = cited["claim"]
-        cited["claim"] = f"{item['field']}: {value}"
-        result[item["field"]] = {"status": "supported", "value": item["raw_value"],
+        cited.setdefault("model_claim", cited["claim"])
+        # Two clauses may legitimately share one quote. Bind the whole quoted
+        # statement so processing the later clause cannot erase the earlier one.
+        cited["claim"] = f"{item['field']}: {cited['quote']}"
+        claim = {"status": "supported", "value": item["raw_value"],
                                   "evidence_url": cited["url"], "locator": cited["locator"],
                                   "evidence_note": cited["evidence_note"]}
+        previous = result.get(item["field"])
+        if previous is None:
+            result[item["field"]] = claim
+        else:
+            claims = previous.get("claims", [previous])
+            if claim not in claims:
+                # Never silently choose the last qualification/funding clause.
+                # Legacy single-value consumers must treat this as unresolved
+                # rather than publishing one fragment as the whole field.
+                result[item["field"]] = {"status": "multiple_supported_claims", "value": None,
+                                          "claims": [*claims, claim]}
     if kind == "current_open_status_review":
         status_evidence = next((item for item in evidence if item["field"] == "current_open_status"), None)
         result["review_url"] = task.get("review_url", task["candidate_url"])

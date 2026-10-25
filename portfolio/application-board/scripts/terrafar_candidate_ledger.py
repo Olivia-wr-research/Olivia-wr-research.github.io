@@ -353,6 +353,11 @@ def migrate_legacy_queue(ledger: dict[str, Any], rows: list[dict[str, Any]], sou
 
 def _supported_content_fields(result: dict[str, Any]) -> dict[str, dict[str, Any]]:
     fields: dict[str, dict[str, Any]] = {}
+    for name in ("application_route", "deadline", "funding", "eligibility"):
+        finding = result.get(name)
+        if (isinstance(finding, dict) and "claims" in finding
+                and finding.get("status") != "multiple_supported_claims"):
+            raise ValueError(f"mixed_single_and_multiple_claims:{name}")
     route = result.get("application_route")
     if (isinstance(route, dict) and route.get("status") in {"supported", "verified_as_stated"}
             and isinstance(route.get("value"), str) and route["value"].strip()):
@@ -363,6 +368,23 @@ def _supported_content_fields(result: dict[str, Any]) -> dict[str, dict[str, Any
                 and isinstance(finding.get("value"), str) and finding["value"].strip()):
             fields[name] = finding
     return fields
+
+
+def _supported_content_claims(result: dict[str, Any]) -> list[tuple[str, dict[str, Any]]]:
+    """Preserve and validate every supported clause, including legacy singles."""
+    claims = list(_supported_content_fields(result).items())
+    for name in ("application_route", "deadline", "funding", "eligibility"):
+        finding = result.get(name)
+        if not isinstance(finding, dict) or finding.get("status") != "multiple_supported_claims":
+            continue
+        rows = finding.get("claims")
+        if (finding.get("value") is not None or not isinstance(rows, list) or len(rows) < 2
+                or any(not isinstance(row, dict) or row.get("status") != "supported" or "claims" in row
+                       or not isinstance(row.get("value"), str) or not row["value"].strip()
+                       for row in rows)):
+            raise ValueError(f"invalid_multiple_supported_claims:{name}")
+        claims.extend((name, row) for row in rows)
+    return claims
 
 
 def _validated_application_route(task: dict[str, Any], evidence: list[Any],
@@ -505,7 +527,7 @@ def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id:
             # Field-specific official evidence may be hosted on a separate institutional
             # page (for example, an employer's salary scale). Bind that URL through the
             # structured finding instead of forcing every claim onto the job listing.
-            for finding in _supported_content_fields(result).values():
+            for _, finding in _supported_content_claims(result):
                 evidence_url = finding.get("evidence_url")
                 if isinstance(evidence_url, str) and evidence_url.strip():
                     allowed_urls.add(evidence_url)
@@ -533,10 +555,10 @@ def apply_reviews(ledger: dict[str, Any], results: list[dict[str, Any]], run_id:
                                for item in content["evidence"])):
                     raise ValueError(f"verified_candidate_requires_scoped_content_evidence:{candidate_id}")
                 content_evidence = content["evidence"]
-                supported_fields = _supported_content_fields(result)
+                supported_fields = _supported_content_claims(result)
                 if not supported_fields:
                     raise ValueError(f"verified_candidate_requires_supported_detail_field:{candidate_id}")
-                for field_name, finding in supported_fields.items():
+                for field_name, finding in supported_fields:
                     field_evidence = [item for item in content_evidence if isinstance(item, dict) and item.get("field") == field_name]
                     if not any(
                         item.get("url") == finding.get("evidence_url")
@@ -839,6 +861,33 @@ def merge_review_results(ledger: dict[str, Any], rows: list[dict[str, Any]], run
     return ledger
 
 
+def _date_for_recheck(value: str):
+    """Parse explicit dates for scheduling only; never choose a deadline fact.
+
+    Ambiguous numeric locale formats remain unknown. Day precision does not
+    imply a timezone, closing time, or that the date is a final deadline.
+    """
+    iso = re.match(r"^(\d{4}-\d{2}-\d{2})(?:\b|T)", value.strip())
+    if iso:
+        try:
+            return datetime.fromisoformat(iso[1]).date()
+        except ValueError:
+            return None
+    month_first = re.fullmatch(r"([A-Za-z]+)\s+(\d{1,2}),?\s+(\d{4})", value.strip())
+    day_first = re.fullmatch(r"(\d{1,2})\s+([A-Za-z]+),?\s+(\d{4})", value.strip())
+    if not month_first and not day_first:
+        return None
+    month_name, day, year = month_first.groups() if month_first else (day_first[2], day_first[1], day_first[3])
+    months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
+    matches = [i + 1 for i, name in enumerate(months) if month_name.casefold() in {name, name[:3]}]
+    if len(matches) != 1:
+        return None
+    try:
+        return datetime(int(year), matches[0], int(day)).date()
+    except ValueError:
+        return None
+
+
 def open_status_tasks(ledger: dict[str, Any], today: str | None = None, recheck_days: int = 7) -> list[dict[str, Any]]:
     current_day = datetime.fromisoformat(today).date() if today else datetime.now(timezone.utc).date()
     output = []
@@ -846,21 +895,30 @@ def open_status_tasks(ledger: dict[str, Any], today: str | None = None, recheck_
         if task.get("status") != "verified":
             continue
         checked = task.get("current_open_status_checked_at")
-        deadline_value = None
+        deadline_values = []
         for review in reversed(task.get("review_history", [])):
             finding = review.get("finding", {})
             deadline = finding.get("deadline") if isinstance(finding, dict) else None
             if isinstance(deadline, dict) and isinstance(deadline.get("value"), str):
-                deadline_value = deadline["value"][:10]
+                deadline_values = [deadline["value"]]
+                break
+            if isinstance(deadline, dict) and deadline.get("status") == "multiple_supported_claims":
+                deadline_values = [claim["value"] for name, claim in _supported_content_claims(finding)
+                                   if name == "deadline"]
                 break
         interval = recheck_days
-        if deadline_value:
+        # Multiple dated clauses remain separate. A near date can accelerate
+        # rechecking without selecting it as the confirmed application deadline.
+        for deadline_value in deadline_values:
             try:
-                days_until_deadline = (datetime.fromisoformat(deadline_value).date() - current_day).days
+                date_value = _date_for_recheck(deadline_value)
+                if date_value is None:
+                    continue
+                days_until_deadline = (date_value - current_day).days
                 if 0 <= days_until_deadline <= 7:
                     interval = 1
                 elif 0 <= days_until_deadline <= 30:
-                    interval = min(recheck_days, 3)
+                    interval = min(interval, 3)
             except ValueError:
                 pass
         if task.get("current_open_status") == "closed":
