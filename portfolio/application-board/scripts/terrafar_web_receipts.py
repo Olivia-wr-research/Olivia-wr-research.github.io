@@ -26,7 +26,8 @@ def index_receipts(receipts):
         if receipt.get('tool') != 'web.run' or not receipt.get('captured_at'):
             raise ValueError('web_receipt_provenance_missing')
         for block in split_response_blocks(receipt['request_response']):
-            heading = re.search(r'^(.+?) \((https?://.+)\)\n', block)
+            # PDF responses can have an empty title before their URL.
+            heading = re.search(r'^(.*?)\s*\((https?://.+)\)\r?\n', block)
             if not heading:
                 continue
             title, url = heading.groups()
@@ -34,7 +35,11 @@ def index_receipts(receipts):
                 'observed_at': receipt['captured_at'], 'tool_refs': [],
                 'collection_method': 'authorized_web_tool', 'http_status': None,
                 'underlying_http_requests': None, 'capture_status': 'partial'})
-            page['lines'].update({int(n): t for n, t in re.findall(r'^L(\d+): ?(.*)$', block, re.M)})
+            # Preserve PDF page locators while retaining global display-line
+            # identity. PDF text is evidence too, not an empty HTTP response.
+            for n, page_marker, text in re.findall(r'^L(\d+)(@P\d+(?:-\d+)?)?: ?(.*)$', block, re.M):
+                page['lines'][int(n)] = text
+                page.setdefault('line_locators', {})[int(n)] = f'L{n}{page_marker}'
             count = re.search(r'Total lines: (\d+)', block)
             if count:
                 page['display_total_lines'] = int(count[1])

@@ -32,6 +32,27 @@ class WebReceiptBoundaryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'web_receipt_response_not_text'):
             web.split_response_blocks({'unexpected':'mapping'})
 
+    def test_untitled_pdf_preserves_page_and_cross_page_locators(self):
+        response = (' (https://a.example/position.pdf)\nref turn3view0; Total lines: 3\n'
+                    'L0@P0: MSc Position\nL1@P0-1: Funding subject to confirmation\n'
+                    'L2@P1: Review until filled')
+        pages = web.index_receipts([{'tool': 'web.run', 'captured_at': '2026-10-25T00:00:00Z',
+                                    'request_response': response}])
+        self.assertEqual(len(pages), 1)
+        self.assertEqual(pages[0]['url'], 'https://a.example/position.pdf')
+        self.assertEqual(pages[0]['lines'][1], 'Funding subject to confirmation')
+        self.assertEqual(pages[0]['line_locators'][1], 'L1@P0-1')
+        self.assertEqual(pages[0]['display_missing_line_count'], 0)
+        self.assertEqual(pages[0]['capture_status'], 'partial')
+
+    def test_untitled_pdf_next_to_html_is_not_lost_or_combined(self):
+        response = (' (https://a.example/position.pdf)\nref turn3view0; Total lines: 1\n'
+                    'L0@P0: MSc Position' + '-' * 80 + '\n'
+                    'Job (https://b.example/job)\nref turn3view1; Total lines: 1\nL0: Postdoc')
+        pages = web.index_receipts([{'tool': 'web.run', 'captured_at': '2026-10-25T00:00:00Z',
+                                    'request_response': response}])
+        self.assertEqual([p['text'] for p in pages], ['L0: MSc Position', 'L0: Postdoc'])
+
 
 if __name__=='__main__':
     unittest.main()
