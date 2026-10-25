@@ -17,7 +17,7 @@ def import_reviews(ledger_path, snapshot_dir, result_dir, assignment, submission
     out = executor.safe_private_directory(result_dir)
     if assignment.get('format') != 'terrafar-model-assignment-v1':
         raise ValueError('native_assignment_invalid')
-    if assignment.get('skill') != ledger_api.skill_pin():
+    if not ledger_api.skill_pin_matches(assignment.get('skill')):
         raise ValueError('native_skill_changed')
     if not isinstance(assignment.get('tasks'), list) or not assignment['tasks']:
         raise ValueError('native_assignment_tasks_invalid')
@@ -43,7 +43,7 @@ def import_reviews(ledger_path, snapshot_dir, result_dir, assignment, submission
     for record in deferred:
         task = tasks[record['task_id']]
         lease = task.get('lease') if isinstance(task.get('lease'), dict) else {}
-        if task.get('skill') != ledger_api.skill_pin():
+        if not ledger_api.skill_pin_matches(task.get('skill')):
             raise ValueError('native_skill_changed')
         expected = {'task_id': task.get('task_id'), 'candidate_id': task.get('candidate_id'),
                     'candidate_fingerprint': task.get('candidate_fingerprint'),
@@ -90,7 +90,7 @@ def import_reviews(ledger_path, snapshot_dir, result_dir, assignment, submission
             lease = state.get('lease') or {}
             if (lease != task['lease'] or executor.parse_utc(lease['expires_at']) <= executor.parse_utc(executor.utc_now())):
                 raise ValueError('native_lease_expired_or_replaced')
-            if task['skill'] != ledger_api.skill_pin():
+            if not ledger_api.skill_pin_matches(task['skill']):
                 raise ValueError('native_skill_changed')
             attempt = next(a for a in state['attempts'] if a['attempt_id'] == receipt['attempt_id'])
             if not attempt.get('run_id'):

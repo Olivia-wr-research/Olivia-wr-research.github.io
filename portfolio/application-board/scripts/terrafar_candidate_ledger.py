@@ -18,7 +18,8 @@ from urllib.parse import urlsplit
 
 SCHEMA_VERSION = 2
 EVIDENCE_POLICY_VERSION = 3
-_REPO_SKILL_PATH = Path(__file__).resolve().parents[3] / ".agents/skills/terrafar-source-audit/SKILL.md"
+_REPO_ROOT = Path(__file__).resolve().parents[3]
+_REPO_SKILL_PATH = _REPO_ROOT / ".agents/skills/terrafar-source-audit/SKILL.md"
 _BUNDLED_SKILL_PATH = (Path(__file__).resolve().parents[1] / "maintenance/terrafar-source-audit/"
                        "terrafar-source-kit-original/.agents/skills/terrafar-source-audit/SKILL.md")
 SKILL_PATH = _REPO_SKILL_PATH if _REPO_SKILL_PATH.is_file() else _BUNDLED_SKILL_PATH
@@ -59,8 +60,20 @@ def assigned_source_run_ids(result: dict[str, Any]) -> list[str]:
 
 
 def skill_pin() -> dict[str, str]:
-    return {"name": "terrafar-source-audit", "path": ".agents/skills/terrafar-source-audit/SKILL.md",
+    return {"name": "terrafar-source-audit", "path": str(SKILL_PATH.relative_to(_REPO_ROOT)),
             "sha256": hashlib.sha256(SKILL_PATH.read_bytes()).hexdigest()}
+
+
+def skill_pin_matches(pin: Any) -> bool:
+    """Accept the exact current pin or its historical logical-path alias.
+
+    Older assignments named the checkout-local path even when the bundled
+    Skill was read. Keep those receipts usable only with the same name/hash;
+    never resolve arbitrary caller-supplied paths or accept a changed Skill.
+    """
+    current = skill_pin()
+    legacy = {**current, "path": ".agents/skills/terrafar-source-audit/SKILL.md"}
+    return pin == current or pin == legacy
 
 
 def empty_ledger() -> dict[str, Any]:
@@ -726,7 +739,7 @@ def merge_review_results(ledger: dict[str, Any], rows: list[dict[str, Any]], run
         raise ValueError("candidate_review_results_must_be_a_json_array")
     if not isinstance(assignment, dict) or assignment.get("format") != "terrafar-review-assignment-v1" or not isinstance(assignment.get("tasks"), list):
         raise ValueError("review_assignment_manifest_required")
-    if assignment.get("skill") != skill_pin():
+    if not skill_pin_matches(assignment.get("skill")):
         raise ValueError("review_assignment_skill_pin_mismatch")
     assigned = {}
     assigned_source_ids = set()
@@ -885,8 +898,7 @@ def export_agent_batch(ledger: dict[str, Any], limit: int = 10, agent: str | Non
             "candidate_count": len(tasks), "candidate_ids": [task["candidate_id"] for task in tasks],
             "task_kinds": [task["review_task_kind"] for task in tasks],
             "tasks": tasks,
-            "skill": {"name": "terrafar-source-audit", "path": str(SKILL_PATH.relative_to(SKILL_PATH.parents[3])),
-                      "sha256": hashlib.sha256(SKILL_PATH.read_bytes()).hexdigest()},
+            "skill": skill_pin(),
             "instruction": "Use the pinned Skill above; distinguish page content, application route, and current open status; preserve unknowns; do not write formal site data. A future deadline or a page listing is not evidence of current portal acceptance.",
             "result_schema": {"candidate_id": "stable ledger id", "candidate_fingerprint": "copy the assigned task content_fingerprint; stale results are rejected after content changes", "status": "verified|excluded|duplicate|verification_failed|insufficient_evidence", "decision_scope": "page_content for verified; excluded or duplicate for those conclusions", "content_verification": {"status": "verified", "evidence": "same cited items that support inspected page content; each structured evidence item must include field=application_route|deadline|funding|eligibility"}, "reviewer": "actual agent name; required, never inferred", "reviewed_at": "UTC ISO-8601", "evidence": [{"url": "official candidate or source page", "claim": "one specific supported claim", "locator": "visible heading, field, or page lines", "evidence_note": "paraphrase; do not label as a direct quote"}], "application_route": "verified_as_stated or unknown, with its own evidence and nonempty value", "current_open_status": "unknown unless the official application portal explicitly confirms acceptance or closure; a future deadline or listing label is insufficient", "current_status_evidence": {"scope": "application_portal", "status": "open|closed", "claim": {"open": "official application portal explicitly confirms applications are currently being accepted", "closed": "official application portal explicitly confirms applications are no longer being accepted"}, "url": "candidate page", "locator": "portal status element"}, "duplicate_of": "required existing stable candidate id only for duplicate", "reason": "optional", "finding": "structured field findings; unknowns remain null/unknown"}}
 
