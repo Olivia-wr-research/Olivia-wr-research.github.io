@@ -31,6 +31,7 @@ jobs:
           set -euo pipefail
           umask 077
           python portfolio/application-board/scripts/terrafar_isolated_pilot.py \
-            --private-dir "$PILOT_PRIVATE_DIR" --run-id "$PILOT_RUN_ID"
+            --private-dir "$PILOT_PRIVATE_DIR" --run-id "$PILOT_RUN_ID" \
+            --source-http-budget 30 --detail-http-budget 20 --detail-limit 4
       # Deliberately no artifact upload, cache, secret, model call or deployment.
       # Raw runner-only trial data is not a durable private checkpoint.

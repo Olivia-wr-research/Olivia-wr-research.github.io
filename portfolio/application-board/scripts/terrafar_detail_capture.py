@@ -267,7 +267,9 @@ def capture_batch(ledger_path: Path, registry_path: Path, snapshot_dir: Path, re
                                                for item in results))
     counts = {status: sum(item["outcome"] == status for item in results) for status in sorted(ALLOWED_OUTCOMES)}
     sent_requests = sum(int(attempt.get("http_request_count", int(bool(attempt.get("request_sent")))))
-                        for item in results for attempt in (item.get("attempts", []) + item.get('robots', {}).get('attempts', []))
+                        for item in results for attempt in (
+                            [a for a in item.get("attempts", []) if a.get('endpoint') != 'robots.txt']
+                            + item.get('robots', {}).get('attempts', []))
                         if attempt.get("request_sent"))
     return {"format": "terrafar-detail-capture-report-v1", "run_id": run_id,
             "planned": len(selected), "http_requests_sent": sent_requests,

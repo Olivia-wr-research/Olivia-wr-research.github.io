@@ -281,12 +281,16 @@ class TerraFARPipelineTests(unittest.TestCase):
             fake_fetch = {"outcome": "response", "http_status": 200, "response_url": task["candidate_url"],
                           "body": body, "headers": {"Content-Type": "text/html; charset=utf-8"},
                           "content_complete": True,
-                          "response_hash": hashlib.sha256(body).hexdigest(), "attempts": [],
-                          "robots": {"allowed": True, "reason": "robots_allowed"}}
+                          "response_hash": hashlib.sha256(body).hexdigest(), "attempts": [
+                              {"endpoint":"robots.txt","request_sent":True,"http_request_count":1},
+                              {"endpoint":"target","request_sent":True,"http_request_count":1}],
+                          "robots": {"allowed": True, "reason": "robots_allowed", "attempts":[
+                              {"endpoint":"robots.txt","request_sent":True,"http_request_count":1}]}}
             with patch.object(detail_capture.source_audit, "fetch_endpoint", return_value=fake_fetch):
                 report = detail_capture.capture_batch(ledger_path, registry_path, root / "private-snapshots",
                     root / "private-results" / "detail.jsonl", "capture-run", limit=10)
             self.assertEqual(report["captured"], 1)
+            self.assertEqual(report["http_requests_sent"], 2)  # robots appears in both input traces; count once
             snapshot_path = root / "private-snapshots" / f"{task['candidate_id']}.json"
             snapshot = json.loads(snapshot_path.read_text(encoding="utf-8"))
             self.assertEqual(snapshot["page_kind"], "detail")

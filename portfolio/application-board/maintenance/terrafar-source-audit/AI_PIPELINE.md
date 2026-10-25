@@ -81,6 +81,11 @@ No daily native agent dispatcher is implemented or enabled by this patch.
 read-only permissions, no credentials, artifact/cache uploads or deployment.
 Ten registered sources share 70 source HTTP slots and 30 detail HTTP slots,
 including robots, redirects and retries; at most ten details are selected.
+The initial real run used 36 budget slots. The current follow-up invocation is
+reduced to 30 source + 20 detail slots and four details, so the two program runs
+cannot exceed 86 slots in total. Web-tool internal transport counts are not
+available and are reported separately. Repeating the workflow is a fresh
+collection, not historical or cross-run restoration.
 The data is new isolated input, not a replacement for recovered authority.
 Only fixed aggregate counters reach public logs. Runner-only bodies and
 candidate records are ephemeral, so this cannot demonstrate durable private

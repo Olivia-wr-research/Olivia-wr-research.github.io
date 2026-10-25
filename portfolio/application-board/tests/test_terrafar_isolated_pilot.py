@@ -10,6 +10,12 @@ import terrafar_candidate_ledger as ledger
 
 
 class IsolatedPilotTests(unittest.TestCase):
+    def test_pilot_cannot_expand_budget_or_detail_scope(self):
+        with tempfile.TemporaryDirectory() as d:
+            for budgets in ((71,30,10),(70,31,10),(70,30,11),(0,30,10)):
+                with self.assertRaisesRegex(ValueError,'budget_out_of_range'):
+                    pilot.run(Path(d),'synthetic',*budgets)
+
     def test_zero_request_guard_failure_is_not_execution(self):
         with tempfile.TemporaryDirectory() as d, patch.object(pilot.audit, 'resolve_public_url', side_effect=ValueError('guard')):
             result=pilot.run(Path(d), 'synthetic-zero')
@@ -39,6 +45,7 @@ class IsolatedPilotTests(unittest.TestCase):
         def fake_detail(*args, **kw):
             self.assertEqual(kw['http_budget'],30)
             self.assertEqual(kw['limit'],10)
+            args[3].write_text('')
             return {'planned':0,'captured':0,'unchanged':0,'partial':0,'blocked':0,'failed':0,
                     'not_attempted':0,'http_requests_sent':0,'request_budget_slots_used':30}
         with tempfile.TemporaryDirectory() as d, patch.object(pilot.audit,'resolve_public_url'), \
