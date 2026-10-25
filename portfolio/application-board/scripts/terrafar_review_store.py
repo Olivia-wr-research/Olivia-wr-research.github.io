@@ -223,15 +223,16 @@ class GitHub:
 
 
 def unconfirmed_review_runs(runs: list[dict], authority: dict | None, current_run_id: str | None,
-                            repository: str | None = None) -> list[str]:
+                            repository: str | None = None, *, workflow: str = WORKFLOW,
+                            authorized_branches: set | None = None, run_prefix: str = REVIEW_RUN_PREFIX) -> list[str]:
     """Only the published authority can acknowledge a delivered review input."""
     receipts = {str(event["actions_run_id"]) for event in (authority or {}).get("events", [])
                 if event.get("type") == "review_input_imported" and event.get("actions_run_id")
                 and event.get("input_sha256") and quality.HASH.fullmatch(str(event.get("input_sha256", "")))}
     eligible = []
     for run in runs:
-        if (not str(run.get("display_title", "")).startswith(REVIEW_RUN_PREFIX)
-                or run.get("event") != "workflow_dispatch" or run.get("head_branch") not in AUTHORIZED_BRANCHES):
+        if (not str(run.get("display_title", "")).startswith(run_prefix)
+                or run.get("event") != "workflow_dispatch" or run.get("head_branch") not in (authorized_branches or AUTHORIZED_BRANCHES)):
             continue
         if repository is not None:
             origin = (run.get("head_repository") or {}).get("full_name")
@@ -239,7 +240,7 @@ def unconfirmed_review_runs(runs: list[dict], authority: dict | None, current_ru
                 raise ValueError("review_delivery_repository_identity_unavailable")
             if origin != repository:
                 continue
-        if str(run.get("path", "")).split("@", 1)[0] != WORKFLOW:
+        if str(run.get("path", "")).split("@", 1)[0] != workflow:
             raise ValueError("review_delivery_workflow_identity_unavailable")
         eligible.append(run)
     current = next((run for run in eligible if str(run.get("id")) == str(current_run_id or "")), None)
@@ -319,7 +320,10 @@ def controlled_input(app_root: Path, supplied: str) -> Path:
     return actual
 
 
-def import_inputs(app_root: Path, journal_path: Path, batch_path: Path, decision: str | None, recheck: str | None) -> dict:
+def import_inputs(app_root: Path, journal_path: Path, batch_path: Path, decision: str | None, recheck: str | None,
+                  delivery_workflow: str = WORKFLOW) -> dict:
+    if delivery_workflow not in {WORKFLOW, ".github/workflows/terrafar-private-maintenance.yml"}:
+        raise ValueError("review_delivery_workflow_invalid")
     if not decision and not recheck:
         raise ValueError("review_mode_requires_actual_review_or_recheck_input")
     journal = quality.read_json(journal_path)
@@ -355,7 +359,7 @@ def import_inputs(app_root: Path, journal_path: Path, batch_path: Path, decision
     if actions_run_id is not None and not actions_run_id.isdigit():
         raise ValueError("review_import_actions_run_id_invalid")
     receipt = {"type": "review_input_imported", "actions_run_id": actions_run_id,
-               "actions_run_attempt": os.environ.get("GITHUB_RUN_ATTEMPT"), "workflow_path": WORKFLOW,
+               "actions_run_attempt": os.environ.get("GITHUB_RUN_ATTEMPT"), "workflow_path": delivery_workflow,
                "input_sha256": quality.digest(inputs), "inputs": inputs, "at": quality.now(),
                "batch_id": batch["batch_id"], "revision": batch["revision"], "content_digest": batch["content_digest"],
                "human_decision": batch["human_review"]["decision"], "recheck_required": batch["recheck"]["required"]}
@@ -702,6 +706,7 @@ def main() -> None:
     inputs.add_argument("--batch", type=Path, required=True)
     inputs.add_argument("--decision")
     inputs.add_argument("--recheck")
+    inputs.add_argument("--delivery-workflow", default=WORKFLOW)
     export = commands.add_parser("export-store")
     export.add_argument("--journal", type=Path, required=True)
     export.add_argument("--authority-info", type=Path, required=True)
@@ -723,7 +728,7 @@ def main() -> None:
     if args.command == "load-authority":
         result = load_authority(args.repository, args.journal, args.authority_info, args.recipient_certificate)
     elif args.command == "import-inputs":
-        result = import_inputs(args.app_root, args.journal, args.batch, args.decision, args.recheck)
+        result = import_inputs(args.app_root, args.journal, args.batch, args.decision, args.recheck, args.delivery_workflow)
     elif args.command == "export-store":
         result = export_store(args.journal, args.directory, args.authority_info, args.repository, args.recipient_certificate,
                               args.generation_context, args.data_origin_run_id)

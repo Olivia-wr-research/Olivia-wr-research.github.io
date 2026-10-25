@@ -90,15 +90,23 @@ def _private_key_from_env(key_env: str) -> Path:
     return path
 
 
-def _safe_extract_state(tar_bytes: bytes, destination: Path) -> int:
+def _safe_extract_state(tar_bytes: bytes, destination: Path, *, max_bytes: int | None = None,
+                        max_members: int | None = None) -> int:
     if destination.is_symlink():
         raise ValueError("state_archive_destination_must_be_regular")
     destination.mkdir(parents=True, exist_ok=True)
     if any(destination.iterdir()):
         raise ValueError("state_archive_destination_must_be_empty")
     count = 0
+    total_bytes = 0
+    entries = 0
     with tarfile.open(fileobj=io.BytesIO(tar_bytes), mode="r:gz") as archive:
-        for member in archive.getmembers():
+        for member in archive:
+            entries += 1
+            total_bytes += member.size
+            if ((max_members is not None and entries > max_members)
+                    or (max_bytes is not None and total_bytes > max_bytes)):
+                raise ValueError("state_archive_extraction_limit")
             member_path = PurePosixPath(member.name)
             if member_path.is_absolute() or ".." in member_path.parts or not member_path.parts or member_path.parts[0] != "state":
                 raise ValueError("state_archive_path_rejected")
@@ -124,7 +132,8 @@ def _safe_extract_state(tar_bytes: bytes, destination: Path) -> int:
 
 
 def decrypt_archive(input_path: Path, destination: Path, recipient_certificate: Path,
-                    key_env: str = DEFAULT_KEY_ENV) -> dict:
+                    key_env: str = DEFAULT_KEY_ENV, *, max_extracted_bytes: int | None = None,
+                    max_members: int | None = None) -> dict:
     if not recipient_certificate.is_file():
         raise FileNotFoundError("state_archive_recipient_certificate_missing")
     ciphertext = input_path.read_bytes()
@@ -137,7 +146,7 @@ def decrypt_archive(input_path: Path, destination: Path, recipient_certificate: 
         )
     finally:
         key_path.unlink(missing_ok=True)
-    file_count = _safe_extract_state(plaintext, destination)
+    file_count = _safe_extract_state(plaintext, destination, max_bytes=max_extracted_bytes, max_members=max_members)
     return {"restored_files": file_count, "encrypted_bytes": len(ciphertext)}
 
 

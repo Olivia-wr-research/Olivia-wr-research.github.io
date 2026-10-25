@@ -1,0 +1,86 @@
+# INACTIVE: install ONLY in the separately owner-approved private runner repository.
+# Do not copy the other public repository workflows into that runner repository.
+name: TERRAFAR private state maintenance
+run-name: TERRAFAR private ${{ inputs.mode || 'daily' }} · ${{ github.ref_name }}
+'on':
+  schedule:
+    - cron: '17 2 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        options: [daily, review]
+        default: daily
+      review_input:
+        type: string
+        description: Owner-delivered encrypted input path in the PRIVATE repository only
+        required: false
+permissions:
+  contents: read
+concurrency:
+  group: terrafar-private-authority
+  cancel-in-progress: false
+jobs:
+  maintain:
+    if: ${{ github.event.repository.private == true && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: read
+      id-token: write
+      actions: read
+    env:
+      GITHUB_REPOSITORY_VISIBILITY: ${{ github.event.repository.visibility }}
+      TERRAFAR_PRIVATE_STORAGE_APPROVED: ${{ vars.TERRAFAR_PRIVATE_STORAGE_APPROVED }}
+      TERRAFAR_STATE_BUCKET: ${{ vars.TERRAFAR_STATE_BUCKET }}
+      TERRAFAR_STATE_PREFIX: ${{ vars.TERRAFAR_STATE_PREFIX }}
+      TERRAFAR_AWS_ACCOUNT_ID: ${{ vars.TERRAFAR_AWS_ACCOUNT_ID }}
+      TZ: Asia/Shanghai
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify the owner enabled this private destination
+        env:
+          TERRAFAR_STATE_DECRYPTION_KEY: ${{ secrets.TERRAFAR_STATE_DECRYPTION_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$GITHUB_REPOSITORY_VISIBILITY" == private ]]
+          [[ "$TERRAFAR_PRIVATE_STORAGE_APPROVED" == true ]]
+          [[ -n "$TERRAFAR_STATE_DECRYPTION_KEY" ]]
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.TERRAFAR_STATE_ROLE_ARN }}
+          aws-region: ${{ vars.TERRAFAR_STATE_REGION }}
+          allowed-account-ids: ${{ vars.TERRAFAR_AWS_ACCOUNT_ID }}
+          role-session-name: terrafar-${{ github.run_id }}
+      - name: Install the storage SDK
+        working-directory: portfolio/application-board
+        run: python -m pip install -r maintenance/terrafar-source-audit/private-storage/requirements.txt
+      - name: Restore, maintain, and commit one private authority
+        working-directory: portfolio/application-board
+        env:
+          RUN_MODE: ${{ inputs.mode || 'daily' }}
+          REVIEW_INPUT: ${{ inputs.review_input }}
+          TERRAFAR_STATE_DECRYPTION_KEY: ${{ secrets.TERRAFAR_STATE_DECRYPTION_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=(--workspace "$RUNNER_TEMP/terrafar-private-state" --mode "$RUN_MODE")
+          if [[ -n "$REVIEW_INPUT" ]]; then args+=(--review-input "$REVIEW_INPUT"); fi
+          python scripts/terrafar_private_cycle.py "${args[@]}"
+      - name: Remove ephemeral plaintext
+        if: always()
+        shell: bash
+        run: |
+          rm -rf "$RUNNER_TEMP/terrafar-private-state" "$RUNNER_TEMP/terrafar-private-state-receipt.json"
+          rm -rf portfolio/application-board/maintenance/terrafar-source-audit/runs
+# Deliberately no upload-artifact, cache, public git push or opportunity publisher.
