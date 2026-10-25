@@ -161,6 +161,19 @@ candidate records are ephemeral, so this cannot demonstrate durable private
 saving or supply a later model with recovered remote evidence. Authorizing a
 private destination remains necessary for that complete remote path.
 
+## ETH listing accounting
+
+The ETH doctoral-discovery adapter parses class tokens and HTML attributes
+before applying its existing doctoral title filter. Extra CSS classes, single
+quotes and uppercase tags must not hide cards. Every advertised card either
+produces a title and allowed detail URL or a diagnostic. A broken card makes
+the range partial while preserving the other discovered candidates.
+An explicit matching English/German list total and no next-page indicator are
+necessary for this adapter's range check; unparsed cards prevent completion.
+This does not verify doctoral status from detail content, cover all ETH job
+types, prove application acceptance or establish source-wide completeness.
+Synthetic parser regressions are separate from real network validation.
+
 ## Activation and unresolved gates
 
 Before private activation, the owner must approve the exact private runner and

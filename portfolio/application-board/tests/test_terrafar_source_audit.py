@@ -1695,6 +1695,56 @@ print(json.dumps({'outcome':result['outcome'],'baseline_available':result['basel
         with self.assertRaises(ValueError):
             audit.reconcile_task_results(['a'], [{'source_id': 'a'}, {'source_id': 'a'}])
 
+    def test_eth_completeness_requires_every_card_to_parse(self):
+        valid="<a class='job-ad__item__link featured' href='/job/view/1'><h3>PhD Ecology</h3></a>"
+        broken="<a class='job-ad__item__link'><h3>Doctoral role with missing URL</h3></a>"
+        rows,scope=audit.semantic_result('eth_listing','https://jobs.ethz.ch/',('2 open positions'+valid+broken).encode())
+        self.assertEqual(len(rows),1)
+        self.assertFalse(scope['_complete'])
+        self.assertEqual(scope['unparsed_listing_cards'],1)
+        self.assertEqual(scope['card_errors'][0]['reason'],'missing_or_unsafe_detail_url')
+
+    def test_eth_german_total_is_scoped_and_non_doctoral_cards_are_counted(self):
+        cards="<a class='job-ad__item__link featured' href='/job/view/1'><h3>PhD Ecology</h3></a><a class='job-ad__item__link' href='/job/view/2'><h3>Postdoctoral researcher</h3></a>"
+        rows,scope=audit.semantic_result('eth_listing','https://jobs.ethz.ch/',('2 offene Stellen'+cards).encode())
+        self.assertEqual(len(rows),1)
+        self.assertTrue(scope['_complete'])
+        self.assertEqual(scope['excluded_non_doctoral_cards'],1)
+        self.assertEqual(scope['candidate_scope'],'doctoral_title_discovery_only')
+
+    def test_eth_unclosed_title_does_not_establish_complete_scope(self):
+        body=b"1 open position<a class='job-ad__item__link' href='/job/view/1'><h3>PhD Ecology<div>more card text</div></a>"
+        rows,scope=audit.semantic_result('eth_listing','https://jobs.ethz.ch/',body)
+        self.assertEqual(len(rows),1)
+        self.assertEqual(rows[0]['titleEn'],'PhD Ecology')
+        self.assertIn('unclosed_title',rows[0]['listingParseWarnings'])
+        self.assertFalse(scope['_complete'])
+
+    def test_eth_partial_reason_and_candidate_survive_full_observation_path(self):
+        card="<a class='job-ad__item__link' href='/job/view/1'><h3>PhD Ecology</h3></a>"
+        cases=[
+            (card,'adapter_scope_not_proven_complete'),
+            ('2 open positions'+card+"<a href='?page=2'>2</a>",'adapter_pagination_detected_but_not_exhausted'),
+            ("1 open position<a class='job-ad__item__link' href='/job/view/1'><h3>PhD Ecology</h3><a href='/department'>Department</a></a>",'adapter_listing_cards_incomplete'),
+            ("1 open position<a class='job-ad__item__link' class='featured' href='/job/view/1'><h3>PhD Ecology</h3></a>",'adapter_listing_cards_incomplete'),
+            ("1 open position<a class='job-ad__item__link' href='/job/view/1'><h3>PhD Ecology<div>more text</div></a>",'adapter_listing_cards_incomplete'),
+            ('1 open position'+card[:-4],'adapter_listing_cards_incomplete'),
+        ]
+        for body,reason in cases:
+            with self.subTest(reason=reason,body=body):
+                source=self.source('eth_listing');state={'snapshots':{}}
+                with patch.object(audit,'fetch_endpoint',return_value=self.fake_response(body=body.encode())):
+                    result=audit.check_one(source,'eth-partial',state,1,0,0)
+                self.assertEqual(result['outcome'],'partial')
+                self.assertEqual(result['endpoints'][0]['reason'],reason)
+                observations=audit.build_candidate_observations([source],state,[result])
+                self.assertEqual(len(observations),1)
+                self.assertFalse(observations[0]['discovery_scope_complete'])
+                ledger=candidate_ledger.empty_ledger()
+                candidate_ledger.merge_observations(ledger,observations,'eth-partial')
+                candidate_ledger.merge_observations(ledger,observations,'eth-retry')
+                self.assertEqual(len(ledger['tasks']),1)
+
     def test_zero_denominator_is_unknown_coverage(self):
         with tempfile.TemporaryDirectory() as tmp:
             base=Path(tmp); regp=base/'registry.json'; runs=base/'runs'

@@ -6,7 +6,7 @@ Output is a review queue; it does not publish or overwrite the production datase
 import argparse, datetime, hashlib, html, json, re, time, subprocess
 from html.parser import HTMLParser
 from urllib.request import Request, urlopen
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlsplit
 
 BASE='https://jobs.ethz.ch/'
 def fetch(url):
@@ -18,15 +18,71 @@ def clean(value):
     return re.sub(r'\s+',' ',html.unescape(re.sub('<[^>]+>',' ',value))).strip()
 def doctoral(title):
     return bool(re.search(r'\bph\.?d\b|doctoral|doktorand',title,re.I)) and not re.search(r'post.?doc|postdoctoral',title,re.I)
+class _ListingParser(HTMLParser):
+    """Account for every advertised card before applying the doctoral scope."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.cards=[];self.errors=[];self.advertised=0;self.current=None;self.stack=[]
+    def finish(self,reason=None):
+        item=self.current
+        if item is None:return
+        warnings=list(item['warnings'])
+        if reason:warnings.append(reason)
+        if any(tag=='h3' for tag,_ in self.stack):warnings.append('unclosed_title')
+        title=re.sub(r'\s+',' ',' '.join(item['titleEn'])).strip()
+        raw=item['href'];url='';parsed=None
+        try:url=urljoin(BASE,raw);parsed=urlsplit(url)
+        except ValueError:pass
+        usable_url=parsed is not None and bool(raw) and not raw.startswith('#') and parsed.scheme=='https' and parsed.netloc=='jobs.ethz.ch' and parsed.path not in ('','/') and not item['ambiguous_href']
+        if not title:warnings.append('missing_title')
+        if not usable_url:warnings.append('missing_or_unsafe_detail_url')
+        warnings=list(dict.fromkeys(warnings))
+        if warnings:self.errors.append({'card_index':item['index'],'reason':warnings[0],'reasons':warnings,'title':title,'href':raw})
+        # Structural damage prevents a complete scope, but an already discovered
+        # title/URL remains a review candidate instead of silently disappearing.
+        if title and usable_url:
+            card={'titleEn':title,'url':url,**{key:re.sub(r'\s+',' ',' '.join(item[key])).strip() for key in ('listingDetails','listingDepartment')}}
+            if warnings:card['listingParseWarnings']=warnings
+            self.cards.append(card)
+        self.current=None;self.stack=[]
+    def handle_starttag(self,tag,attrs):
+        attribute_pairs=attrs
+        classes=[token for name,value in attribute_pairs if name=='class' for token in (value or '').split()]
+        attrs=dict(attribute_pairs)
+        if tag=='a':
+            if self.current is not None:self.finish('nested_anchor_in_card')
+            if 'job-ad__item__link' in classes:
+                self.advertised+=1
+                duplicate_attrs=[name for name in ('class','href') if sum(key==name for key,_ in attribute_pairs)>1]
+                self.current={'index':self.advertised,'href':(attrs.get('href') or '').strip(),'titleEn':[],'listingDetails':[],'listingDepartment':[],
+                              'warnings':['duplicate_card_attribute'] if duplicate_attrs else [],'ambiguous_href':len({value for key,value in attribute_pairs if key=='href'})>1}
+        if self.current is None:return
+        if tag not in ('span','b','em','strong','i','small','sup','sub','abbr','br','wbr'):
+            for i,(parent,_) in enumerate(self.stack):
+                if parent=='h3':
+                    self.current['warnings'].append('unclosed_title');self.stack=self.stack[:i];break
+        field='titleEn' if tag=='h3' else 'listingDetails' if 'job-ad__item__details' in classes else 'listingDepartment' if 'job-ad__item__company' in classes else None
+        if tag not in ('br','img','input','hr','meta','link','wbr','source','area','base','col','embed','param','track'):
+            self.stack.append((tag,field))
+    def handle_endtag(self,tag):
+        if self.current is None:return
+        if tag=='a':self.finish();return
+        for i in range(len(self.stack)-1,-1,-1):
+            if self.stack[i][0]==tag:
+                self.stack=self.stack[:i];break
+    def handle_data(self,data):
+        if self.current is None:return
+        for _,field in reversed(self.stack):
+            if field:
+                self.current[field].append(data);break
+
+def parse_listing_cards(body):
+    parser=_ListingParser();parser.feed(body);parser.close()
+    if parser.current is not None:parser.finish('unclosed_card')
+    return {'advertised_cards':parser.advertised,'cards':parser.cards,'errors':parser.errors}
+
 def parse_listing(body):
-    found=[]
-    for block in re.findall(r'<a\b[^>]*class="job-ad__item__link"[\s\S]*?</a>',body):
-        title=re.search(r'<h3[^>]*>([\s\S]*?)</h3>',block)
-        if not title or not doctoral(clean(title[1])):continue
-        href=re.search(r'href="([^"]+)"',block)
-        detail=re.search(r'class="job-ad__item__details">([\s\S]*?)</div>',block)
-        company=re.search(r'class="job-ad__item__company">([\s\S]*?)</div>',block)
-        if href:found.append({'titleEn':clean(title[1]),'url':urljoin(BASE,html.unescape(href[1])),'listingDetails':clean(detail[1]) if detail else '', 'listingDepartment':clean(company[1]) if company else ''})
+    found=[row for row in parse_listing_cards(body)['cards'] if doctoral(row['titleEn'])]
     return list({x['url']:x for x in found}.values())
 def sections(body):
     start=body.find('<!-- JOB DESCRIPTION -->')
