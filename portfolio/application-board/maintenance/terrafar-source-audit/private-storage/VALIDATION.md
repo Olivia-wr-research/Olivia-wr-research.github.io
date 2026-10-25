@@ -47,3 +47,7 @@
 以上是离线工程验证：S3 使用版本化内存后端和 API 参数合约；日检命令接线使用模拟源命令。没有真实 S3 写入、没有原所有者密钥、没有新一轮来源采集、没有真实历史解密或用户批准。
 
 生产仍需所有者批准的私有资源、匹配密钥、精确旧包恢复/历史对账、真实容量和运行时长测试，以及两次独立真实运行恢复。示例工作流保持未启用。
+
+## GitHub 代码提交验证
+
+代码提交 `0cc861fa45268ec35a5d5c16fe4f22038ef8f954` 的 [push CI 40159718880](https://github.com/Olivia-wr-research/Olivia-wr-research.github.io/actions/runs/40159718880) 成功，Python 3.11/3.12/3.13 三个矩阵任务均成功。草稿补丁为 [PR #11](https://github.com/Olivia-wr-research/Olivia-wr-research.github.io/pull/11)，目标是 PR #9 的功能分支。远端同样只是离线工程测试，不是实际来源采集或真实私有存储恢复。
