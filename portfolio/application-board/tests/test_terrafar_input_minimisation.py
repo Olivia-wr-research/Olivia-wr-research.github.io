@@ -28,6 +28,24 @@ class InputMinimisationTests(unittest.TestCase):
         self.assertEqual(_clean_public_text('2026-99-99'), '[phone omitted]')
         self.assertEqual(_clean_public_text('9999-1234'), '[phone omitted]')
 
+    def test_day_month_first_official_dates_preserved_without_reordering(self):
+        for text in ('Closing date: 08-11-2026', 'Closing date: 09-11-2026',
+                     'Deadline 31-12-2026', 'Deadline 12-31-2026'):
+            with self.subTest(text=text):
+                self.assertEqual(_clean_public_text(text), text)
+
+    def test_day_month_first_clock_and_contact_label(self):
+        text = 'Closing date: 08-11-2026 17:00 UK time'
+        self.assertEqual(_clean_public_text(text), text)
+        self.assertEqual(_clean_public_text('Tel: 08-11-2026'), 'Tel: [phone omitted]')
+        self.assertIn('[phone omitted]', _clean_public_text('Phone: 08-11-2026 17:00'))
+
+    def test_invalid_day_month_calendar_does_not_escape_redaction(self):
+        for text in ('31-02-2026', '29-02-2025', '08-11-2026 29:00'):
+            with self.subTest(text=text):
+                self.assertIn('[phone omitted]', _clean_public_text(text))
+        self.assertEqual(_clean_public_text('29-02-2028'), '29-02-2028')
+
     def test_minimisation_preserves_unknown_and_length_limit(self):
         self.assertIsNone(_clean_public_text(None))
         self.assertIsNone(_clean_public_text({'private': 'unstructured'}))

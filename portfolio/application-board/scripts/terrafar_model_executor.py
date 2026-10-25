@@ -202,6 +202,20 @@ def _clean_public_text(value: Any, limit: int = 1200) -> Any:
             before = value[max(0, match.start() - 32):match.start()]
             if re.search(r"(?i)(?:phone|telephone|mobile|fax|call|tel\.?|电话)\s*[:：]?\s*$", before):
                 return "[phone omitted]"
+            # Preserve literal day/month-first dates without inferring locale.
+            # Explicit contact labels still take precedence over calendar syntax.
+            numeric_date = re.fullmatch(r"(\d{2}-\d{2}-(?:19|20|21)\d{2})(?: ([0-2]\d))?", token)
+            if numeric_date:
+                clock_ok = numeric_date[2] is None or (
+                    int(numeric_date[2]) < 24 and
+                    re.match(r":[0-5]\d(?:\b|:)", value[match.end():]))
+                if clock_ok:
+                    for date_format in ("%d-%m-%Y", "%m-%d-%Y"):
+                        try:
+                            datetime.strptime(numeric_date[1], date_format)
+                            return token
+                        except ValueError:
+                            pass
             if re.fullmatch(r"(?:19|20|21)\d{2}-\d{2}-\d{2}", token):
                 try:
                     datetime.strptime(token, "%Y-%m-%d")
