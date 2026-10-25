@@ -174,6 +174,12 @@ This does not verify doctoral status from detail content, cover all ETH job
 types, prove application acceptance or establish source-wide completeness.
 Synthetic parser regressions are separate from real network validation.
 
+Candidate import functions own their ledger transaction. Do not call an
+importer from inside another `ledger_lock` for the same ledger. Same-thread
+reentry now raises `candidate_ledger_lock_reentry` before a second `flock`,
+including path aliases; other threads still serialize normally. This guard
+does not terminate an already running process or remove another owner's lock.
+
 ## Activation and unresolved gates
 
 Before private activation, the owner must approve the exact private runner and

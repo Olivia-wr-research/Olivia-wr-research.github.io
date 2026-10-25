@@ -10,6 +10,7 @@ import json
 import os
 import tempfile
 import re
+import threading
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -31,6 +32,7 @@ CURRENT_STATUS_CLAIMS = {
     "open": "official application portal explicitly confirms applications are currently being accepted",
     "closed": "official application portal explicitly confirms applications are no longer being accepted",
 }
+_HELD_LEDGER_LOCKS = threading.local()
 
 
 def canonical_json(value: Any) -> bytes:
@@ -170,13 +172,27 @@ def save_ledger(path: Path, ledger: dict[str, Any]) -> None:
 @contextlib.contextmanager
 def ledger_lock(path: Path):
     """Serialize read-modify-write transactions while allowing atomic readers."""
+    if path.is_symlink():
+        raise ValueError("candidate_ledger_symlink_rejected")
     lock_path = path.with_suffix(path.suffix + ".lock")
+    if lock_path.is_symlink():
+        raise ValueError("candidate_ledger_lock_symlink_rejected")
+    key = (os.getpid(), str(lock_path.resolve()))
+    held = getattr(_HELD_LEDGER_LOCKS, "paths", None)
+    if held is None:
+        held = _HELD_LEDGER_LOCKS.paths = set()
+    if key in held:
+        # flock on a second descriptor can wait on this thread's own lock.
+        # Importers own their transaction; callers must not wrap them in it.
+        raise RuntimeError("candidate_ledger_lock_reentry")
     lock_path.parent.mkdir(parents=True, exist_ok=True)
     with lock_path.open("a+") as lock_file:
         fcntl.flock(lock_file.fileno(), fcntl.LOCK_EX)
+        held.add(key)
         try:
             yield
         finally:
+            held.remove(key)
             fcntl.flock(lock_file.fileno(), fcntl.LOCK_UN)
 
 
