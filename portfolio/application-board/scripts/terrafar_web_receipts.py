@@ -7,12 +7,25 @@ missing display lines and missing job URLs remain explicit downstream work.
 import re
 
 
+def split_response_blocks(response):
+    """Split tool delimiters even when an error omitted its final newline.
+
+    In particular, ``L0 is out of bounds`` may touch the next delimiter.
+    Requiring a leading newline would attach the next page's body to the
+    empty page's URL. Keep each result isolated before interpreting its lines.
+    """
+    if not isinstance(response, str):
+        raise ValueError('web_receipt_response_not_text')
+    return [block.strip('\r\n') for block in re.split(r'(?:\r?\n)?-{20,}\r?\n', response)
+            if block.strip()]
+
+
 def index_receipts(receipts):
     pages = {}
     for receipt in receipts:
         if receipt.get('tool') != 'web.run' or not receipt.get('captured_at'):
             raise ValueError('web_receipt_provenance_missing')
-        for block in re.split(r'\n-{20,}\n', receipt['request_response']):
+        for block in split_response_blocks(receipt['request_response']):
             heading = re.search(r'^(.+?) \((https?://.+)\)\n', block)
             if not heading:
                 continue
