@@ -216,8 +216,10 @@ def generate(state,output,app=APP,pending_manifests=(),route_observations=None):
    parsed=[datetime.strptime(x,'%d %b %Y').date().isoformat() for x in window['quote'].split(' - ')]
    if window['quote'] not in snap['text'] or parsed!=[window['opens'],window['closes']]:raise ValueError('programme_window_evidence_invalid')
   if update['time_quote'] not in snap['text'] or update['entry_quote'] not in snap['text']:raise ValueError('programme_window_context_missing')
-  if set(update['changes'])!={'recordKind','applicationWindows','deadline','deadlineNote','deadlineNoteEn','announcementStatus','sourceReview'}:raise ValueError('programme_update_field_not_allowed')
+  if set(update['changes'])!={'recordKind','applicationWindows','deadline','deadlineNote','deadlineNoteEn','announcementStatus','sourceReview','caution','cautionEn','checkedAt','contentReviewStatus','contentReviewObservedAt','fieldEvidence'}:raise ValueError('programme_update_field_not_allowed')
   if update['changes']['applicationWindows']!=update['applicationWindows'] or update['changes']['recordKind']!='programme_information' or update['changes']['deadline']!='':raise ValueError('programme_update_must_not_be_single_deadline')
+  if update['changes']['checkedAt']!=snap['captured_at'][:10] or update['changes']['contentReviewObservedAt']!=snap['captured_at']:raise ValueError('programme_review_time_not_bound')
+  if any(e.get('url')!=snap['url'] or e.get('quote') not in snap['text'] for e in update['changes']['fieldEvidence']):raise ValueError('programme_field_evidence_invalid')
   overrides.setdefault(target['id'],{}).update(update['changes'])
   route_proofs.append({'catalog_id':target['id'],'programme_window_source_sha256':snap['text_sha256'],'applicationWindows':update['applicationWindows']})
  for p in pending_manifests:
