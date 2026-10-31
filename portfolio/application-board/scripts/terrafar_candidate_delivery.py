@@ -250,7 +250,13 @@ def generate(state,output,app=APP,pending_manifests=(),route_observations=None):
   for k,v in u['changes'].items():
    if (v.get('beforeMissing') and k in target) or (not v.get('beforeMissing') and target.get(k)!=v.get('before')):raise ValueError('pending_overlay_before_changed')
   entries.append(u)
+ updated_ids={u['targetId'] for u in entries}
+ programme_ids={rid for rid,delta in overrides.items() if 'applicationWindows' in delta}
  for r in rows:
+  if r['catalog_id'] in updated_ids and r['catalog_id'] in r['source_ids']:
+   r['preview_disposition']='pending_existing_update';r['remaining_field_gaps']=r['hold_reasons'];r['hold_reasons']=[]
+  elif r['catalog_id'] in programme_ids and r['catalog_id'] in r['source_ids']:
+   r['preview_disposition']='pending_programme_window_update';r['remaining_field_gaps']=r['hold_reasons'];r['hold_reasons']=[]
   if overrides.get(r['catalog_id'],{}).get('applicationActionability')=='can_start_public_application':
    r['application_actionability']='can_start_public_application';r['application_route_proof']=overrides[r['catalog_id']]['applicationRouteEvidence']
   relevant=any(f['field']=='scope_relevance' and f.get('delivery_status')=='supported' and f.get('normalized_value')=='relevant' for f in r['facts'])
