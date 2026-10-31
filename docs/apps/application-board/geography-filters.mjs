@@ -1,5 +1,5 @@
 import {opportunityCategory} from './geography-catalog.mjs';
-import {fundingKind} from './opportunity.mjs';
+import {fundingKind,opportunityState,opportunityDeadlineInfo,isConcreteOpportunity} from './opportunity.mjs';
 export function trackOf(j){return ['programme','intake','study'].includes(opportunityCategory(j))?'study':'work';}
 export function levelOf(j){
  if(j.degreeType==='masters'||/^masters?[-_]/i.test(j.type||''))return 'masters';
@@ -27,14 +27,14 @@ export function disciplineOf(j){
 }
 export function matchesGeo(j,{track='study',level='all',region='all',discipline='all',time='all',kind='all'}={},today=new Date().toISOString().slice(0,10)){
  if(opportunityCategory(j)==='learning')return false;
- if(track!=='all'&&trackOf(j)!==track&&!(track==='work'&&levelOf(j)==='phd'&&fundingKind(j)==='employment'))return false;
+ if(track!=='all'&&trackOf(j)!==track)return false;
  if(level!=='all'&&levelOf(j)!==level)return false;
  if(region!=='all'&&regionOf(j)!==region)return false;
  if(discipline!=='all'&&!disciplineOf(j).includes(discipline))return false;
  if(kind!=='all'&&opportunityCategory(j)!==kind)return false;
- if(time==='open')return j.status==='open'&&(!j.deadline||j.deadline>=today);
- if(time==='rolling')return j.deadlineType==='rolling';
- if(time==='unknown')return !j.deadline&&j.deadlineType!=='rolling';
- if(time==='30'||time==='90'){const d=(Date.parse(j.deadline)-Date.parse(today))/86400000;return Number.isFinite(d)&&d>=0&&d<=Number(time);}
+ if(time==='open')return opportunityState(j,today).eligibleForOpenRecommendation;
+ if(time==='rolling')return isConcreteOpportunity(j)&&j.deadlineType==='rolling'&&!['closed','conflict'].includes(opportunityState(j,today).state);
+ if(time==='unknown')return ['unknown','conflict'].includes(opportunityState(j,today).state);
+ if(time==='30'||time==='90'){const d=opportunityDeadlineInfo(j,today).days;return d!==null&&d>=0&&d<=Number(time)&&opportunityState(j,today).state!=='closed';}
  return true;
 }

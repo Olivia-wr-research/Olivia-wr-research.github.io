@@ -1,3 +1,4 @@
+import {effectiveDeadline,opportunityState} from './opportunity.mjs';
 // A future deadline describes a saved advertisement, never proves a vacancy is open.
 const DAY = 86400000;
 function dayNumber(value) {
@@ -9,7 +10,7 @@ function dayNumber(value) {
 export function classifySnapshot(job, today = new Date().toISOString().slice(0, 10), fallbackCheckedAt = '') {
   const now = dayNumber(today);
   if (now === null) throw new TypeError('today must be a valid YYYY-MM-DD date');
-  const deadline = dayNumber(job?.deadline);
+  const deadline = dayNumber(effectiveDeadline(job));
   const checkedAt = job?.checkedAt || fallbackCheckedAt;
   const checked = dayNumber(checkedAt);
   const ageDays = checked === null || checked > now ? null : now - checked;
@@ -25,7 +26,7 @@ export function classifySnapshot(job, today = new Date().toISOString().slice(0, 
   const freshnessLabel = ageDays === null ? '核验日期待补充' : ageDays === 0 ? '今天核对过来源' : `${ageDays} 天前核对过来源`;
   return {status, label, daysLeft, checkedAt: ageDays === null ? null : checkedAt, ageDays, freshness, freshnessLabel,
     action: status === 'past' ? '查看原帖是否延期或有新一轮招聘' : status === 'today' || status === 'soon' ? '打开原帖确认当地截止时间及是否仍接受申请' : '打开原帖确认最新招聘状态',
-    isVerifiedOpen: false};
+    isVerifiedOpen: opportunityState(job,today).eligibleForOpenRecommendation};
 }
 
 export function canonicalSourceUrl(value) {

@@ -30,4 +30,26 @@ class ServerTests(unittest.TestCase):
     def test_new_modules_with_version_queries(self):
         for name in ['explore.mjs','journey.mjs','positions.mjs','radar.mjs']:
             self.assertEqual(self.request('/'+name+'?v=04')[0],200)
+
+    def test_current_geography_graph_and_pending_preview_modules_are_served(self):
+        for name in ['geography-catalog.mjs','geography-filters.mjs','catalog-review.mjs','reviewed-updates.mjs']:
+            self.assertEqual(self.request('/'+name+'?v=p0')[0],200)
+    def test_private_json_and_dotfiles_are_never_served(self):
+        for path in ['/candidate_ledger.json','/preview-manifest.json','/.env']:
+            self.assertEqual(self.request(path)[0],404)
+
+    def test_static_json_allowlist_contains_only_existing_public_payloads(self):
+        for name in ['mentor-pilot.json','research-pilot.json','vendor/world-110m.geojson']:
+            self.assertEqual(self.request('/'+name)[0],200)
+        self.assertNotIn('/candidate_ledger.json',module.FILES)
+    def test_opt_in_preview_fetch_csp_is_path_limited_and_has_no_write_api(self):
+        self.server.preview_static_fetch=True
+        try:
+            policy=self.request()[1]['Content-Security-Policy']
+            self.assertIn('/mentor-pilot.json',policy)
+            self.assertNotIn("connect-src 'self'",policy)
+            self.assertNotIn('https://',policy)
+            self.assertEqual(self.request(method='POST')[0],405)
+        finally:self.server.preview_static_fetch=False
+
 if __name__=='__main__':unittest.main()

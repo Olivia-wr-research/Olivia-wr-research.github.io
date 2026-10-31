@@ -591,7 +591,7 @@ print(json.dumps({'outcome':result['outcome'],'baseline_available':result['basel
             active_catalog=root/'active.mjs'
             original='export const positions=[{"id":"formal-1","url":"https://jobs.example/job-review","salary":"unknown salary","funding":"unknown funding"}];\n'
             formal.write_text(original,encoding='utf-8')
-            active_catalog.write_text("record({\n    id:'active-1',\n    url:'https://jobs.example/job-review',\n  }),\n",encoding='utf-8')
+            active_catalog.write_text("export const geographyCatalog=[{id:'active-1',url:'https://jobs.example/job-review',salary:'unknown salary',funding:'unknown funding'}];\n",encoding='utf-8')
             ledger=candidate_ledger.empty_ledger()
             observation={'source_id':'s','endpoint_id':'s:list','candidate_key':'job-review','candidate_url':'https://jobs.example/job-review','source_url':'https://jobs.example/list','candidate':{'id':'job-review'},'retrieved_at':'2026-01-01T00:00:00Z'}
             candidate_ledger.merge_observations(ledger,[observation],'source-run')
