@@ -9,7 +9,9 @@ import terrafar_prepare_data_review as prepare
 class ReleaseTests(unittest.TestCase):
  def setUp(self):
   self.temp=tempfile.TemporaryDirectory();self.root=Path(self.temp.name)/'repo';self.app=self.root/'portfolio/application-board';d=self.app/'dist';d.mkdir(parents=True)
-  for name in ['catalog-review.mjs','reviewed-updates.mjs']:shutil.copyfile(release.APP/'dist'/name,d/name)
+  shutil.copyfile(release.APP/'dist/catalog-review.mjs',d/'catalog-review.mjs')
+  # This synthetic catalogue must never inherit real approved release targets.
+  (d/'reviewed-updates.mjs').write_bytes(release.module_bytes([]))
   (d/'geography-catalog.mjs').write_text("import {applyReviewedCatalogUpdates} from './catalog-review.mjs';\nimport {reviewedCatalogUpdates} from './reviewed-updates.mjs';\nexport const geographyCatalog=applyReviewedCatalogUpdates([{id:'fixture-one',url:'https://example.test/one',funding:'Reliable old value'}],reviewedCatalogUpdates);\n")
   (d/'index.html').write_text('<title>Fixture</title>');hosted=self.root/'docs/apps/application-board';shutil.copytree(d,hosted)
   self.root_patch=patch.object(prepare,'REPOSITORY_ROOT',self.root);self.root_patch.start()
