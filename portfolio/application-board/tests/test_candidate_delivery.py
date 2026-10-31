@@ -46,6 +46,15 @@ class CandidateDeliveryTests(unittest.TestCase):
     (p/'input.json').write_text(json.dumps({'entries':[{'review_materials':{'format':'terrafar-pending-route-materials-v1','route_observations':{'label':label,'human_approval':False}}}]}))
    packet,ref=delivery.recovered_route_materials(state)
    self.assertEqual(packet['label'],'latest');self.assertFalse(packet['human_approval']);self.assertIn('101',ref)
+ def test_restored_pending_update_is_held_when_candidate_version_changes(self):
+  with tempfile.TemporaryDirectory() as temp:
+   state=Path(temp);p=state/'existing_reviews/input';p.mkdir(parents=True)
+   update={'targetId':'saved','targetUrl':'https://example.test/1','changes':{}}
+   m={'format':'terrafar-pending-catalog-materials-v1','catalog_input_hashes':[],'existing_update_entries':[update],'existing_update_bindings':{'saved':{'candidate_id':'one','candidate_fingerprint':'old'}}}
+   (p/'input.json').write_text(json.dumps({'entries':[{'review_materials':m}]}));(p/'completed.json').write_text(json.dumps({'origin_run_id':'daily-100'}))
+   ledger={'tasks':{'one':{'status':'verified','candidate_url':update['targetUrl'],'content_fingerprint':'new'}}}
+   updates,ref,issues=delivery.recovered_pending_updates(state,ledger,[]);self.assertEqual(updates,[]);self.assertEqual(len(issues),1)
+   ledger['tasks']['one']['content_fingerprint']='old';updates,ref,issues=delivery.recovered_pending_updates(state,ledger,[]);self.assertEqual(updates,[update]);self.assertEqual(issues,[])
  def test_complete_export_retains_all_tasks_and_holds_ambiguous_same_url(self):
   with tempfile.TemporaryDirectory() as temp:
    base=Path(temp);app=base/'repo/portfolio/application-board';site=app/'dist';site.mkdir(parents=True)
