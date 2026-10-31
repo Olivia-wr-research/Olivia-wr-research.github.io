@@ -28,8 +28,15 @@ class CandidateDeliveryTests(unittest.TestCase):
  def test_cutoff_date_does_not_flatten_review_start_or_conflict(self):
   self.assertEqual(delivery.explicit_cutoff('The application deadline is November 15, 2026.'),'2026-11-15')
   self.assertEqual(delivery.explicit_cutoff('You can apply up to and including 2 November 2026.'),'2026-11-02')
-  for raw in ['Review starts November 1, 2026.','Priority application deadline November 1, 2026 for full consideration.','Closing date January 11, 2026 or January 11, 2027.','Closing date February 31, 2027.']:
+  for raw in ['Review starts November 1, 2026.','Priority application deadline November 1, 2026 for full consideration.','Closing date January 11, 2026 or January 11, 2027.','Closing date February 31, 2027.','Application Deadline: Preferred application deadline is October 28th, 2026, and applications received after this date may be considered on an as-needed basis']:
    self.assertIsNone(delivery.explicit_cutoff(raw))
+ def test_elapsed_cutoff_is_not_a_fabricated_announcement_closure(self):
+  text='Application period closes October 30, 2026';url='https://example.test/1';sha=hashlib.sha256(text.encode()).hexdigest()
+  evidence=[{'field':'deadline','url':url,'page_content_sha256':sha,'quote':text,'claim':text},{'field':'announcement_status','url':url,'page_content_sha256':sha,'quote':text,'claim':'closed_by_stated_deadline'}]
+  fields=[{'field':'deadline','status':'supported','raw_value':text,'normalized_value':{'kind':'fixed_deadline','date':'2026-10-30'}},{'field':'announcement_status','status':'supported','raw_value':text,'normalized_value':'closed_by_stated_deadline'}]
+  task={'source_id':'preserved','candidate_url':url,'candidate':{'title':'Faculty'},'status':'verified','review_history':[{'evidence':evidence,'finding':{'finding':{'model_field_findings':fields}}}]}
+  snap={'url':url,'text':text,'text_sha256':sha,'captured_at':'2026-10-31T00:00:00Z'}
+  row=delivery.candidate_row('stable',task,{(url,sha):snap});self.assertEqual(row['announcement_status'],'unknown');self.assertEqual(row['deadline'],'2026-10-30');self.assertEqual(row['availability_group'],'expired')
  def test_restore_reuses_latest_completed_private_material_not_an_approval(self):
   with tempfile.TemporaryDirectory() as temp:
    state=Path(temp)

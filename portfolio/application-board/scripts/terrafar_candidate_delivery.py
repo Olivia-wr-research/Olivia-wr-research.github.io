@@ -43,8 +43,8 @@ def evidence_rows(review,snapshots):
 
 def explicit_cutoff(raw):
  # Parse only a single literal day with an explicit final-cutoff role.
- if not re.search(r'application deadline|closing date|apply up to and including|apply by|final date|applications? (?:will be |are )?accepted until',raw,re.I):return None
- if re.search(r'first review|begin reviewing|start reviewing|priority|full consideration|until filled',raw,re.I):return None
+ if not re.search(r'application deadline|application period closes|closing date|apply up to and including|apply by|final date|applications? (?:will be |are )?accepted until',raw,re.I):return None
+ if re.search(r'review|preferred|priority|full consideration|as-needed|after this date may be considered|until (?:the position is )?filled',raw,re.I):return None
  month=r'(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)'
  tokens=re.findall(rf'\b(?:{month}\s+\d{{1,2}}(?:st|nd|rd|th)?[,]?\s+20\d{{2}}|\d{{1,2}}(?:st|nd|rd|th)?\s+{month}\s+20\d{{2}}|20\d{{2}}-\d{{2}}-\d{{2}})\b',raw,re.I)
  days=set()
@@ -79,17 +79,18 @@ def candidate_row(cid,t,snapshots):
  for f in supported:
   v=f.get('normalized_value');raw=f.get('raw_value','')
   if f['field']=='announcement_status':
-   if v in ['closed','closed_by_stated_deadline','closed_by_explicit_elapsed_deadline']:announcement='closed'
+   if v in ['closed','explicitly_closed']:announcement='closed'
    elif v in ['open','open_according_to_announcement','announcement_invites_applications']:announcement='open'
+   elif isinstance(v,dict) and v.get('status') in ['open','open_according_to_announcement']:announcement='open'
   if f['field'] in ['deadline','review_start'] and isinstance(v,dict):
    if v.get('kind') in ['until_filled','rolling','preferred_then_rolling']:deadline_kind='rolling'
    if v.get('kind') in ['review_start','first_review']:review_date=v.get('date')
-   d=v.get('fixed_date') or (v.get('date') if v.get('kind')=='fixed' else None)
-   if d:
+   d=v.get('fixed_date') or (v.get('date') if v.get('kind') in {'fixed','fixed_deadline'} else None)
+   if d and any(e['field']=='deadline' and explicit_cutoff(e['quote'])==d for e in evidence):
     try:date.fromisoformat(d);deadline=d;deadline_kind='fixed'
     except (ValueError,TypeError):pass
    if v.get('conflict') or v.get('kind')=='conflict':conflict=True
-  if f['field']=='deadline' and not deadline and not conflict:
+  if f['field']=='deadline' and not deadline and not conflict and not (isinstance(v,dict) and v.get('not_automatically_a_fixed_deadline')):
    cutoff=explicit_cutoff(raw)
    if cutoff:deadline=cutoff;deadline_kind='fixed'
   if f['field']=='deadline' and isinstance(v,str) and re.fullmatch(r'\d{4}-\d{2}-\d{2}',v) and v in raw:
@@ -109,7 +110,7 @@ def candidate_row(cid,t,snapshots):
   a=t['application_followup_history'][-1];d=a['decision'];row['application_followup']=d;row['application_evidence_file']=a['evidence_file'];row['application_actionability']=d['actionability']
   if d['actionability']=='date_conflict':row['conflict']=True
   if d.get('fixed_deadline') and d.get('deadline_kind')=='fixed':row['deadline']=d['fixed_deadline']['date'];row['deadline_kind']='fixed'
-  if d['actionability']=='expired':row['announcement_status']='closed'
+  # An elapsed stated cutoff is expiry, not an observed closure notice.
  if row['conflict']:row['deadline']=None;row['deadline_kind']='conflict'
  row['availability_group']=available_state(row['announcement_status'],row['conflict'],row['deadline'],row['application_actionability'])
  return row
