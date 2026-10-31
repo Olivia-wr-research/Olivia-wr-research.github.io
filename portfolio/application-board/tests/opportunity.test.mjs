@@ -8,7 +8,7 @@ test('past deadlines do not claim current acceptance and share one status label'
  const job={deadline:'2026-10-15',statusLabel:'Applications open',statusLabelEn:'Applications open'};
  assert.equal(opportunityStatusLabel(job,'zh','2026-10-16'),'截止日期已过 · 当前受理状态未知，需复核官网');
  assert.equal(opportunityStatusLabel(job,'en','2026-10-16'),'Past deadline · current acceptance unknown; recheck official source');
- assert.equal(opportunityStatusLabel({...job,deadline:'2026-10-17'},'en','2026-10-16'),'Applications open');
+ assert.equal(opportunityStatusLabel({...job,deadline:'2026-10-17'},'en','2026-10-16'),'Current availability unverified');
 });
 test('source is derived from the actual link',()=>assert.equal(sourceName({url:'https://www.jobs.ethz.ch/job/12'}),'jobs.ethz.ch'));
 test('mentioning contract terms is not confirmation of employment',()=>assert.equal(fundingKind({funding:'全职博士 Fellowship；雇佣及资助条款见官方指南'}),'unspecified'));

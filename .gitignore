@@ -6,3 +6,6 @@
 
 /.quarto/
 **/*.quarto_ipynb
+
+# Local approval transaction lock; never publish it.
+**/.release-write.lock

@@ -1,3 +1,6 @@
+import {applyReviewedCatalogUpdates} from './catalog-review.mjs';
+import {reviewedCatalogUpdates} from './reviewed-updates.mjs';
+import {opportunityState} from './opportunity.mjs';
 import {geographyOpportunities} from './geography-opportunities.mjs';
 import {geographyOctober18} from './geography-oct18.mjs';
 import {geographyProgrammesEurope} from './geography-programmes-europe.mjs';
@@ -16,7 +19,7 @@ export function opportunityCategory(j){
  if(/^(phd|master|studentship|doctoral)/i.test(j.type||'PhD'))return 'study';
  return 'work';
 }
-export function catalogCounts(rows){const c={total:rows.length,programme:0,intake:0,study:0,work:0,learning:0,open:0,uncertain:0,institutions:0};for(const j of rows){c[opportunityCategory(j)]++;if(j.status==='open')c.open++;if(j.status==='listed')c.uncertain++;}c.institutions=new Set(rows.filter(j=>opportunityCategory(j)!=='learning').map(j=>(j.institutionEn||j.institution).trim().toLowerCase())).size;return c;}
+export function catalogCounts(rows,today=new Date().toISOString().slice(0,10)){const c={total:rows.length,programme:0,intake:0,study:0,work:0,learning:0,open:0,uncertain:0,institutions:0};for(const j of rows){c[opportunityCategory(j)]++;const state=opportunityState(j,today);if(state.eligibleForOpenRecommendation)c.open++;if(['unknown','conflict'].includes(state.state))c.uncertain++;}c.institutions=new Set(rows.filter(j=>opportunityCategory(j)!=='learning').map(j=>(j.institutionEn||j.institution).trim().toLowerCase())).size;return c;}
 
 // Field-level review on 2026-10-17. Source access is not a blanket accuracy claim.
 // The full findings and unresolved fields are recorded in audits/2026-10-17-existing-catalog-audit.json.
@@ -885,7 +888,7 @@ const reviewMetadata={
     ]
   }
 };
-export const geographyCatalog=[...originalCatalog,...geographyOctober18].map(original=>{
+const reviewedBaseCatalog=[...originalCatalog,...geographyOctober18].map(original=>{
  const review=reviewMetadata[original.id]||original.sourceReview;
  const updated={...original,...reviewedCorrections[original.id],sourceReview:review};
  if(reviewMetadata[original.id]?.status==='source-reviewed')updated.checkedAt='2026-10-17';
@@ -932,3 +935,5 @@ export const geographyCatalog=[...originalCatalog,...geographyOctober18].map(ori
  }
  return updated;
 });
+
+export const geographyCatalog=applyReviewedCatalogUpdates(reviewedBaseCatalog,reviewedCatalogUpdates);

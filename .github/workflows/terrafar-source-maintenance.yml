@@ -40,6 +40,9 @@ concurrency:
 
 jobs:
   source-maintenance:
+    # This legacy job archives detailed state. Public-repository events must never upload it.
+    # Private collection continues in the separate private-runners repository.
+    if: ${{ github.event.repository.private == true }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:

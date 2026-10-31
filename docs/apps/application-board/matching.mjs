@@ -1,3 +1,4 @@
+import {opportunityDeadlineInfo} from './opportunity.mjs';
 import {daysLeft} from './core.mjs';
 export const PROFILE_KEY='doctoral-compass-profile-v1';
 export function terms(value){return [...new Set(String(value||'').split(/[,，;；\n]/).map(s=>s.trim().toLowerCase()).filter(Boolean))].slice(0,30);}
@@ -11,7 +12,7 @@ export function match(job,input,today){
  const components=[];if(t.length)components.push({label:'研究兴趣',points:Math.round(70*th.length/t.length),max:70,hits:th});if(m.length)components.push({label:'方法与技能',points:Math.round(30*mh.length/m.length),max:30,hits:mh});
  const total=components.reduce((n,c)=>n+c.max,0),score=total?Math.round(100*components.reduce((n,c)=>n+c.points,0)/total):null;
  const checks=[];
- const left=daysLeft(job.deadline,today);checks.push({label:'截止日期',state:left===null?'unknown':left<0?'gap':'review',text:left===null?'未编码，需核实':left<0?'快照日期已过，不按在招推荐':'原帖日期 '+job.deadline+'；当地截止时点需复核'});
+ const left=opportunityDeadlineInfo(job,today).days;checks.push({label:'截止日期',state:left===null?'unknown':left<0?'gap':'review',text:left===null?'未编码，需核实':left<0?'快照日期已过，不按在招推荐':'原帖日期 '+job.deadline+'；当地截止时点需复核'});
  checks.push({label:'学历要求',state:job.degree==='unknown'||p.degree==='unknown'?'unknown':job.degree==='master'&&p.degree==='bachelor'?'gap':'review',text:job.degree==='unknown'?'岗位要求未完整编码':p.degree==='unknown'?'尚未填写你的学历':p.degree==='bachelor'?'须确认硕士取得时间或例外条件':'学历层级接近；专业、学位认可和毕业时间仍需核对'});
  checks.push({label:'英语要求',state:job.language==='unknown'||p.english==='unknown'?'unknown':p.english==='no'?'gap':'review',text:job.language==='unknown'?'岗位语言信息未编码':p.english==='unknown'?'尚未填写英语准备情况':p.english==='no'?'英语准备存在缺口':'自述可用英语；证书与具体等级未核验'});
  const preferred=p.countries.some(c=>canonicalTerm(c)===canonicalTerm(job.country));

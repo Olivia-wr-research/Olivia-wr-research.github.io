@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {applyReviewedCatalogUpdates} from '../dist/catalog-review.mjs';
+const record={id:'one',url:'https://example.test/job/1',funding:'Reliable original'};
+const update={releaseId:'a'.repeat(64),approvalId:'b'.repeat(64),targetId:'one',targetUrl:record.url,changes:{funding:{before:record.funding,after:'Verified correction'}}};
+test('reviewed deltas preserve IDs and original objects',()=>{const rows=applyReviewedCatalogUpdates([record],[update]);assert.equal(rows[0].id,record.id);assert.equal(rows[0].funding,'Verified correction');assert.equal(record.funding,'Reliable original');});
+test('pending, wrong identities and stale values fail closed',()=>{for(const u of [{...update,approvalId:null},{...update,targetId:'two'},{...update,targetUrl:'https://example.test/job/2'},{...update,changes:{funding:{before:'stale',after:'x'}}}])assert.throws(()=>applyReviewedCatalogUpdates([record],[u]));});
+test('only explicit preview mode admits an unapproved delta',()=>{const u={...update,approvalId:null};assert.throws(()=>applyReviewedCatalogUpdates([record],[u]));assert.equal(applyReviewedCatalogUpdates([record],[u],{preview:true})[0].funding,'Verified correction');});
+test('protected identity and private fields cannot be published',()=>{for(const f of ['id','url','candidate_ledger','reviewer','evidence_snapshot'])assert.throws(()=>applyReviewedCatalogUpdates([record],[{...update,changes:{[f]:{before:record[f],after:'secret'}}}]));});
+test('duplicate releases are rejected rather than displayed twice',()=>assert.throws(()=>applyReviewedCatalogUpdates([record],[update,update])));
