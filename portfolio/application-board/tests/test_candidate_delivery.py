@@ -30,6 +30,15 @@ class CandidateDeliveryTests(unittest.TestCase):
   self.assertEqual(delivery.explicit_cutoff('You can apply up to and including 2 November 2026.'),'2026-11-02')
   for raw in ['Review starts November 1, 2026.','Priority application deadline November 1, 2026 for full consideration.','Closing date January 11, 2026 or January 11, 2027.','Closing date February 31, 2027.']:
    self.assertIsNone(delivery.explicit_cutoff(raw))
+ def test_restore_reuses_latest_completed_private_material_not_an_approval(self):
+  with tempfile.TemporaryDirectory() as temp:
+   state=Path(temp)
+   for run,label in [(100,'earlier'),(101,'latest')]:
+    p=state/'existing_reviews'/str(run);p.mkdir(parents=True)
+    (p/'completed.json').write_text(json.dumps({'origin_run_id':'daily-'+str(run)}))
+    (p/'input.json').write_text(json.dumps({'entries':[{'review_materials':{'format':'terrafar-pending-route-materials-v1','route_observations':{'label':label,'human_approval':False}}}]}))
+   packet,ref=delivery.recovered_route_materials(state)
+   self.assertEqual(packet['label'],'latest');self.assertFalse(packet['human_approval']);self.assertIn('101',ref)
  def test_complete_export_retains_all_tasks_and_holds_ambiguous_same_url(self):
   with tempfile.TemporaryDirectory() as temp:
    base=Path(temp);app=base/'repo/portfolio/application-board';site=app/'dist';site.mkdir(parents=True)

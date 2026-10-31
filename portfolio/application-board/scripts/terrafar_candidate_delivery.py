@@ -140,6 +140,19 @@ def route_overrides(packet,catalog):
  return overrides,proofs
 
 
+def recovered_route_materials(state):
+ found=[]
+ for path in (state/'existing_reviews').glob('*/input.json'):
+  payload=read(path);completed=path.with_name('completed.json')
+  if not completed.exists():continue
+  origin=read(completed).get('origin_run_id','').removeprefix('daily-')
+  for entry in payload.get('entries',[]):
+   material=entry.get('review_materials',{})
+   if material.get('format')=='terrafar-pending-route-materials-v1':
+    found.append((int(origin) if origin.isdigit() else 0,material['route_observations'],path.relative_to(state).as_posix()))
+ if not found:return {},None
+ latest=max(found,key=lambda x:x[0]);return latest[1],latest[2]
+
 def generate(state,output,app=APP,pending_manifests=(),route_observations=None):
  os.umask(0o077);state=Path(state).resolve();output=Path(output).resolve();app=Path(app).resolve()
  if output.is_relative_to(app.parents[1]):raise ValueError('private_delivery_must_be_outside_repository')
@@ -182,10 +195,23 @@ def generate(state,output,app=APP,pending_manifests=(),route_observations=None):
   # Preserve each output version; do not overwrite an owner's reviewed preview.
   raise ValueError('delivery_version_already_exists_choose_new_directory')
  shutil.copytree(app/'dist',site);entries=[]
- overrides,route_proofs=route_overrides(route_observations or {},catalog)
- for update in (route_observations or {}).get('programme_updates',[]):
+ material_ref=None
+ if route_observations is None:route_observations,material_ref=recovered_route_materials(state)
+ validated_routes=copy.deepcopy(route_observations or {});route_issues=[]
+ filtered=[]
+ for route in validated_routes.get('entries',[]):
+  task=ledger['tasks'].get(route.get('candidate_id'))
+  if not task or task.get('content_fingerprint')!=route.get('candidate_fingerprint') or task.get('source_content_sha256')!=route['source']['text_sha256']:
+   route_issues.append({'catalog_id':route['catalog_id'],'reason':'candidate_content_changed_or_binding_missing'});continue
+  filtered.append(route)
+ validated_routes['entries']=filtered
+ overrides,route_proofs=route_overrides(validated_routes,catalog)
+ for update in validated_routes.get('programme_updates',[]):
   target=next((x for x in catalog if x['id']==update['catalog_id']),None);snap=update['source']
   if not target or target['url']!=snap['url'] or hashlib.sha256(snap['text'].encode()).hexdigest()!=snap['text_sha256']:raise ValueError('programme_snapshot_identity_invalid')
+  bound=[t for t in ledger['tasks'].values() if t['candidate_url']==snap['url'] and t.get('source_content_sha256')==snap['text_sha256']]
+  if not bound:
+   route_issues.append({'catalog_id':update['catalog_id'],'reason':'programme_content_binding_changed'});continue
   for window in update['applicationWindows']:
    parsed=[datetime.strptime(x,'%d %b %Y').date().isoformat() for x in window['quote'].split(' - ')]
    if window['quote'] not in snap['text'] or parsed!=[window['opens'],window['closes']]:raise ValueError('programme_window_evidence_invalid')
@@ -226,7 +252,7 @@ def generate(state,output,app=APP,pending_manifests=(),route_observations=None):
  preview=prepare.read_active_catalog(p)[0];assert len(preview)==len(catalog)+len(additions)
  assert {x['id'] for x in catalog}<={x['id'] for x in preview}
  write(output/'all_candidates.json',rows);write(output/'candidate_ledger.json',ledger);write(output/'pending_new_records.json',additions);write(output/'identity_aliases.json',aliases)
- write(output/'pending_existing_updates.json',entries);write(output/'route_overrides.json',overrides);write(output/'route_proofs.json',route_proofs)
+ write(output/'pending_existing_updates.json',entries);write(output/'route_overrides.json',overrides);write(output/'route_proofs.json',route_proofs);write(output/'route_material_recovery.json',{'state_material_ref':material_ref,'held_route_bindings':route_issues,'validated_route_count':len(filtered)})
  columns=['candidate_id','catalog_id','title','institution','main_category','content_review_status','availability_group','announcement_status','application_portal_status','application_actionability','deadline','review_start','preview_disposition','hold_reasons','candidate_url','source_ids']
  with (output/'all_candidates.csv').open('w',newline='') as f:
   w=csv.DictWriter(f,fieldnames=columns,extrasaction='ignore');w.writeheader()
