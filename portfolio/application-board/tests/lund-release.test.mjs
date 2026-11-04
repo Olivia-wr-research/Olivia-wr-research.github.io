@@ -9,7 +9,7 @@ test('reviewed Lund doctorate and employment preserve categories without promoti
  const expected=[['geo-tcand-e168187e49c8fa66e0576bcf','work'],['geo-tcand-7832b4c8ecc603c54e9e2148','study'],['geo-tcand-657d1f254d2a1e9113ce7d1c','work'],['geo-tcand-90025f25903467f96cc4e901','work']];
  for(const [id,category] of expected){
   const matches=data.records.filter(r=>r.id===id);assert.equal(matches.length,1);
-  const r=matches[0];assert.equal(opportunityCategory(r),category);assert.equal(r.contentReviewStatus,'verified');assert.equal(r.currentOpenStatus,'unknown');
+  const r=matches[0];assert.equal(opportunityCategory(r),category);assert.equal(r.contentReviewStatus,'verified');assert.equal(r.currentOpenStatus,'unknown');assert.ok(r.materials?.trim());assert.ok(r.applicationProcess?.trim());assert.match(r.checkedAt,/^2026-11-04T/);
   assert.equal(opportunityState(r,data.asOf).eligibleForOpenRecommendation,false);
   assert.equal(opportunityState({...r,deadline:'2099-12-31'},data.asOf).eligibleForOpenRecommendation,false);
  }
