@@ -74,3 +74,10 @@ test('dated official email calls are distinct from portal acceptance and mail de
   assert.equal(opportunityState(row,'2026-11-23').eligibleForOpenRecommendation,false);
  }
 });
+
+ test('observed public start forms reject wrong job, stale evidence and unusable fields',()=>{
+ for(const id of ['geo-tcand-e2cbc0f3f2baefddc02a9697','geo-tcand-fd0d69d1cb66f960f3a5e991','geo-tcand-e995b9bcbf09986ee63761c0']){
+ const r=data.records.find(r=>r.id===id);assert.ok(opportunityState(r,data.asOf).eligibleForOpenRecommendation);
+ for(const alter of [r=>r.fieldEvidence.at(-1).jobReference='OTHER',r=>r.fieldEvidence.at(-1).observedAt='2026-01-01',r=>r.fieldEvidence.at(-1).availableFormFields=[],r=>r.fieldEvidence.at(-1).applicationFormTitle='Different job',r=>r.fieldEvidence.at(-1).quote+=' Applications are closed.']){const c=structuredClone(r);alter(c);assert.equal(opportunityState(c,data.asOf).eligibleForOpenRecommendation,false);}
+ }
+ });

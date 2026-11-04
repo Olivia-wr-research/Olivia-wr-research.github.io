@@ -1,5 +1,5 @@
 import {routeURL,parseRoute,REPORT_VERSION} from './research-core.mjs';
-import {programmeRounds,opportunityStatusLabel,effectiveDeadline,hasCriticalConflict} from './opportunity.mjs?v=open56-20261104';
+import {programmeRounds,opportunityStatusLabel,effectiveDeadline,hasCriticalConflict} from './opportunity.mjs?v=open54-nomap-20261104';
 import {field,language,t,localizedResearch} from './i18n.mjs';
 import {profileStats} from './mentor-core.mjs';
 import {pilotOpportunityEvidence,pilotApplicationLinks} from './research-opportunity-evidence.mjs';
