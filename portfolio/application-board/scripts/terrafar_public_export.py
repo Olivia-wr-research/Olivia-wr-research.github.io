@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.parse import urlsplit,parse_qs
 
 PUBLIC_FIELDS=set('id url source type title titleEn institution institutionEn short country countryEn city field fieldEn summary summaryEn applicationProcess applicationProcessEn applicationUrl requirements requirementsEn funding fundingEn salary salaryEn language languageEn duration durationEn degree degreeType deadline deadlineType deadlineKind reviewDate reviewStart deadlineNote deadlineNoteEn status recordKind contentReviewStatus contentReviewObservedAt announcementStatus currentOpenStatus currentOpenStatusCheckedAt applicationActionability applicationRouteCheckedAt applicationWindows fieldConflicts fieldEvidence topics methods geo caution cautionEn sourceType checkedAt collectedAt materials materialsEn startDate opensAt referenceDeadline mainRoundDeadline clearingDeadline fundingDeadline sourceIds candidateId'.split())
-PUBLIC_FIELDS.update({'sourceReview','officialJobReference'})
+PUBLIC_FIELDS.update({'sourceReview','officialJobReference','applicationInstructionsUrl'})
 PUBLIC_FIELDS.update({'statusLabel','statusLabelEn'})
 def read(p):return json.loads(Path(p).read_text())
 def dump(v):return json.dumps(v,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()
@@ -50,7 +50,7 @@ def public_row(row):
   if re.search(r'postdoc|post-doctoral|博士后',title,re.I):result['type']='postdoc'
   elif re.search(r'professor|professur|lecturer|instructor|教职|讲师',title,re.I):result['type']='faculty'
  # Publish field/source/date references, not private snapshots or full evidence excerpts.
- result['fieldEvidence']=[{k:v for k,v in e.items() if k in ({'field','label','status','url','observedAt','quote','value','pageKind','jobReference','applicationWindow','applicationFormTitle','formStage','availableFormFields'} if e.get('field')=='current_open_status' else {'field','label','status','url','observedAt'})} for e in row.get('fieldEvidence',[]) if safe_url(e.get('url'))]
+ result['fieldEvidence']=[{k:v for k,v in e.items() if k in ({'field','label','status','url','observedAt','quote','value','pageKind','jobReference','applicationWindow','applicationFormTitle','formStage','availableFormFields','applicationMethod','applicationAddress','invitationQuote','referenceQuote','applicationNoticeTitle'} if e.get('field')=='current_open_status' else {'field','label','status','url','observedAt'})} for e in row.get('fieldEvidence',[]) if safe_url(e.get('url'))]
  if 'sourceReview' in result:result['sourceReview']={k:v for k,v in result['sourceReview'].items() if k in {'status','date','observedAt','allFieldsVerified','currentOpenStatus'}}
  for field in ['requirements','requirementsEn','applicationProcess','applicationProcessEn']:
   if isinstance(result.get(field),str) and len(result[field])>1600:result[field]='完整条件与材料要求请阅读官方公告。' if not field.endswith('En') else 'Read the official announcement for the complete conditions and required materials.'

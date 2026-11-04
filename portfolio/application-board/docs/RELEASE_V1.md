@@ -3,7 +3,7 @@
 Production: https://olivia-wr-research.github.io/apps/application-board/
 Public data: https://olivia-wr-research.github.io/apps/application-board/public-dataset.json
 
-This release contains 181 records: 97 concrete-opportunity records and 84 programme/resource records. Of the concrete records, 64 have verified content: eight have explicit portal acceptance verified at review, while 56 still require availability review. Eight historical deadlines have passed and 25 older records need further evidence. These categories must not be added to imply a larger number of open jobs.
+This release contains 181 records: 97 concrete-opportunity records and 84 programme/resource records. Of the concrete records, 64 have verified content: ten have current application evidence at review (eight public portal invitations and two official email calls), while 54 still require availability review. Eight historical deadlines have passed and 25 older records need further evidence. These categories must not be added to imply a larger number of open jobs.
 
 The release adds 59 content-verified records, corrects six existing records and updates two application/programme routes. Fifteen proposed additions remain private because of elapsed deadlines, unresolved conflicts or incomplete identity/scope evidence. Original public IDs, bookmarks and browser-local profiles are preserved.
 
@@ -28,3 +28,7 @@ All 63 previously unconfirmed records were attempted individually. Four ETH reco
 A further review of the 59 unconfirmed records added three job-bound public invitations: the WUR governance postdoc and USC environmental/transportation planning faculty roles. Current open recommendations total eight; 56 remain unconfirmed. Their active public forms, explicit invitations, role/requisition and dated submission windows are jointly bound; login pages and generic forms still do not qualify. No application was submitted or final receipt tested.
 
 WUR states applications up to and including 15 November, equivalent at date level to the summary saying before 16 November. Farm Coordinator job 561701 currently consistently states 25 November 2026, 11:55 pm Pacific Standard Time; its prior date is retained in private audit history. That date correction alone does not promote its acceptance status. Today-due records are not automatically declared closed. Detailed evidence remains private.
+
+## Public-route continuation — 4 November 2026
+
+Of 56 unconfirmed records, 23 known login gates were not retried and 33 public records were attempted, retaining failures explicitly. Two current official email calls (Bonn PALMWORK and Frankfurt evolutionary ecology/environmental toxicology) have the employer mailbox, job reference, explicit application instruction and future fixed deadline verified. Their portal status is not applicable; no email or delivery test was sent. Open recommendations total ten, with the two email records labelled separately; 54 remain unknown. No new closure or expiry was inferred from a failed read.

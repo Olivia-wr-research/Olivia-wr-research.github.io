@@ -62,3 +62,15 @@ test('USC portal invitation needs the advertised requisition, role and submissio
   assert.equal(opportunityState(row,'2026-12-02').eligibleForOpenRecommendation,false);
  }
 });
+
+test('dated official email calls are distinct from portal acceptance and mail delivery',()=>{
+ for(const id of ['geo-tcand-f45ab77d0830ef3a76deb558','geo-tcand-60713b92e5b2321fc874d4a2']){
+  const row=data.records.find(r=>r.id===id),state=opportunityState(row,data.asOf);
+  assert.ok(state.eligibleForOpenRecommendation);assert.equal(state.applicationPortalStatus,'not_applicable');
+  for(const alter of [e=>e.jobReference='wrong-reference',e=>e.applicationNoticeTitle='Other position',e=>e.invitationQuote='Apply now',e=>e.observedAt='2026-01-01',e=>e.applicationWindow.closeDateLiteral='',e=>{e.quote=e.quote.replace(e.applicationAddress,'attacker@gmail.com');e.applicationAddress='attacker@gmail.com';},e=>e.invitationQuote+=' Applications are closed.']){
+   const copy=structuredClone(row);alter(copy.fieldEvidence.find(e=>e.applicationMethod==='email'));
+   assert.equal(opportunityState(copy,data.asOf).eligibleForOpenRecommendation,false);
+  }
+  assert.equal(opportunityState(row,'2026-11-23').eligibleForOpenRecommendation,false);
+ }
+});
