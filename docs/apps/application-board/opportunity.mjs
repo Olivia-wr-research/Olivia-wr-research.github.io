@@ -48,7 +48,12 @@ function currentEvidence(job,status,today){
   // window; a button, future deadline or login page alone still proves nothing.
   const w=e.applicationWindow||{},path=(()=>{try{return new URL(e.url);}catch{return null;}})();
   const continuing=path?.hostname==='aprecruit.berkeley.edu'&&!path.username&&!path.password&&/^\/JPF\d{5}$/.test(path.pathname)&&e.pageKind==='application_portal'&&e.jobReference===path.pathname.slice(1)&&/Applications will continue to be accepted until this date\./.test(e.quote)&&deadlineInfo(w.opens,today).kind!=='unknown'&&deadlineInfo(w.opens,today).days<=0&&deadlineInfo(w.closes,today).kind==='future'&&job.deadline===w.closes;
-  return status==='open'?(positive.test(e.quote)||continuing)&&!negative.test(e.quote):negative.test(e.quote);
+  // ETH's live form gives an explicit receiving invitation. Require the exact
+  // advertised requisition, visible role heading and usable identity fields;
+  // a generic form, login page or application button is still insufficient.
+  const ethReference=(()=>{try{const u=new URL(job.url);return u.hostname==='jobs.ethz.ch'?u.pathname.match(/\/JOPG_ethz_(\w+)$/)?.[1]:null;}catch{return null;}})();
+  const invited=Boolean(ethReference)&&path?.hostname==='emea2.softfactors.com'&&path.pathname===`/job-opening/rgum-${ethReference}`&&!path.username&&!path.password&&e.pageKind==='application_portal'&&e.jobReference===ethReference&&e.applicationFormTitle===`Application for ${job.titleEn||job.title}`&&e.formStage==='public_identity_form'&&['field_firstName','field_lastName','email'].every(k=>e.availableFormFields?.includes(k))&&e.quote==='We look forward to receiving your application.';
+  return status==='open'?(positive.test(e.quote)||continuing||invited)&&!negative.test(e.quote):negative.test(e.quote);
  });
 }
 export function opportunityState(job={},today=new Date().toISOString().slice(0,10)){

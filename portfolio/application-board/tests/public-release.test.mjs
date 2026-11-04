@@ -29,3 +29,15 @@ test('public data excludes private state, local paths and credential material',(
  const text=JSON.stringify(data);
  for(const marker of ['-----BEGIN PRIVATE KEY-----','-----BEGIN RSA PRIVATE KEY-----','/Users/','file://','review_history','content_fingerprint','TERRAFAR_STATE_DECRYPTION_KEY','"events"','"html"'])assert.equal(text.includes(marker),false,marker);
 });
+
+test('ETH receiving invitations require exact advertised role and live form evidence',()=>{
+ const eth=data.records.filter(r=>(r.fieldEvidence||[]).some(e=>e.formStage==='public_identity_form'));
+ assert.ok(eth.length>0);
+ for(const row of eth){
+  assert.ok(opportunityState(row,data.asOf).eligibleForOpenRecommendation);
+  for(const alter of [e=>e.jobReference='different-job',e=>e.applicationFormTitle='Application for a different job',e=>e.availableFormFields=['email'],e=>e.pageKind='announcement',e=>e.quote='Apply now',e=>e.observedAt='2026-01-01',e=>e.url='https://emea2.softfactors.com/job-opening/rgum-wrong#!/?lang=en']){
+   const copy=structuredClone(row);alter(copy.fieldEvidence.find(e=>e.formStage==='public_identity_form'));
+   assert.equal(opportunityState(copy,data.asOf).eligibleForOpenRecommendation,false);
+  }
+ }
+});

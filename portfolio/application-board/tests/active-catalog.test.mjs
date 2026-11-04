@@ -1,8 +1,8 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {geographyCatalog, catalogCounts} from '../dist/geography-catalog.mjs';
+import {originalGeographyCatalog as geographyCatalog, catalogCounts} from '../dist/geography-catalog.mjs';
 
-test('latest ETH atmospheric chemistry review stays out of confirmed-open count',()=>{
+test('historical ETH review without fresh portal evidence stays out of confirmed-open count',()=>{
   const rows=geographyCatalog.filter(row=>row.id==='geo-eth-atmosphere');
   assert.equal(rows.length,1);
   const row=rows[0];
