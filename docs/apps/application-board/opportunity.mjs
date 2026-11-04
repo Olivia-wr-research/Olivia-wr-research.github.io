@@ -36,7 +36,7 @@ export function effectiveDeadline(job={}){
 }
 export function opportunityDeadlineInfo(job,today){return deadlineInfo(effectiveDeadline(job),today);}
 function currentEvidence(job,status,today){
- const expected=new Set([job.applicationUrl,job.url].filter(Boolean));
+ const expected=new Set([job.applicationUrl,job.applicationInstructionsUrl,job.url].filter(Boolean));
  return (job.fieldEvidence||[]).some(e=>{
   if(e.field!=='current_open_status'||e.status!=='supported'||e.value!==status||!expected.has(e.url)||!/^https:\/\//.test(e.url||'')||typeof e.quote!=='string')return false;
   const observed=(e.observedAt||job.currentOpenStatusCheckedAt||'').slice(0,10),age=deadlineInfo(observed,today);
@@ -60,20 +60,25 @@ function currentEvidence(job,status,today){
   const literalDate=Date.parse((w.closeDateLiteral||'')+' 00:00:00 GMT');
   const wur=announced?.hostname==='www.wur.nl'&&path?.href===announced.href&&/^\/en\/vacancy\/[^/]+$/.test(path.pathname)&&e.pageKind==='application_portal'&&e.jobReference===path.pathname.split('/').at(-1)&&e.formStage==='public_identity_form'&&e.applicationFormTitle===`Apply for ${job.titleEn||job.title}`&&fields(['first_name','last_name','email'])&&Number.isFinite(literalDate)&&new Date(literalDate).toISOString().slice(0,10)===job.deadline&&w.closes===job.deadline&&e.quote===`You can apply up to and including ${w.closeDateLiteral}.`;
   const usc=announced?.hostname==='usccareers.usc.edu'&&path?.hostname==='facultypositions.usc.edu'&&!path.username&&!path.password&&['/FAS/application/position','/FAS/application/step1'].includes(path.pathname)&&/^REQ\d+$/.test(job.officialJobReference||'')&&path.searchParams.get(path.pathname.endsWith('/step1')?'requisitionId':'postingId')===job.officialJobReference&&e.jobReference===job.officialJobReference&&e.pageKind==='application_portal'&&e.formStage==='public_identity_form'&&e.applicationFormTitle===(job.titleEn||job.title)&&fields(['nameFirst','nameLast','emailPrimary'])&&Number.isFinite(literalDate)&&new Date(literalDate).toISOString().slice(0,10)===job.deadline&&w.closes===job.deadline&&e.quote==='Please provide the information requested below and in the following pages to submit your application.';
-  return status==='open'?(positive.test(e.quote)||continuing||invited||wur||usc)&&!negative.test(e.quote):negative.test(e.quote);
+  // An employer's dated email call has no application portal to test. Keep
+  // that channel separate: this verifies the official call, not mail delivery.
+  const mailDomain=String(e.applicationAddress||'').split('@');
+  const emailCall=job.applicationActionability==='email_application_instructions_verified'&&e.applicationMethod==='email'&&e.pageKind==='official_application_notice'&&e.jobReference===job.officialJobReference&&Boolean(e.jobReference)&&String(e.referenceQuote||'').includes(e.jobReference)&&e.applicationNoticeTitle===(job.titleEn||job.title)&&e.quote.includes(e.applicationAddress)&&['www.uni-bonn.de','karriere.uni-frankfurt.de'].includes(announced?.hostname)&&path?.hostname===announced.hostname&&!path.username&&!path.password&&mailDomain.length===2&&mailDomain[0].length>0&&(mailDomain[1]===announced.hostname.replace(/^(www|karriere)\./,'')||mailDomain[1].endsWith('.'+announced.hostname.replace(/^(www|karriere)\./,'')))&&/Please send your application|Bewerbungen.*(?:richten|senden)|richten Sie.*Bewerbung|richten Sie bitte bis zum/i.test(e.invitationQuote||'')&&Number.isFinite(literalDate)&&new Date(literalDate).toISOString().slice(0,10)===job.deadline&&w.closes===job.deadline;
+  return status==='open'?(positive.test(e.quote)||continuing||invited||wur||usc||emailCall)&&!negative.test(e.quote)&&!negative.test(e.invitationQuote||''):negative.test(e.quote);
  });
 }
 export function opportunityState(job={},today=new Date().toISOString().slice(0,10)){
  const concrete=isConcreteOpportunity(job),conflict=hasCriticalConflict(job),deadline=opportunityDeadlineInfo(job,today);
  const declared=job.currentOpenStatus||job.current_open_status||'unknown';
- const portal=['open','closed'].includes(declared)&&currentEvidence(job,declared,today)?declared:'unknown';
+ const availability=['open','closed'].includes(declared)&&currentEvidence(job,declared,today)?declared:'unknown';
+ const portal=job.applicationActionability==='email_application_instructions_verified'?'not_applicable':availability;
  let announcement=job.announcementStatus||job.announcement_status||'unknown';
  if(!['open','closed','not_yet_open','unknown'].includes(announcement))announcement=announcement==='open_according_to_announcement'?'open':'unknown';
  if(['closed','expired'].includes(job.status))announcement='closed';
  const notYetOpen=deadlineInfo(job.opensAt,today).kind==='future'||announcement==='not_yet_open';
  const invalidDeadline=Boolean(job.deadline)&&job.deadlineType!=='rolling'&&deadlineInfo(job.deadline,today).kind==='unknown';
- const eligible=!invalidDeadline&&job.contentReviewStatus==='verified'&&concrete&&!conflict&&!notYetOpen&&announcement!=='closed'&&portal==='open'&&!['past','today'].includes(deadline.kind);
- const state=conflict?'conflict':!concrete?'programme':announcement==='closed'||portal==='closed'?'closed':deadline.kind==='past'?'past':notYetOpen?'not_yet_open':eligible?'open':'unknown';
+ const eligible=!invalidDeadline&&job.contentReviewStatus==='verified'&&concrete&&!conflict&&!notYetOpen&&announcement!=='closed'&&availability==='open'&&!['past','today'].includes(deadline.kind);
+ const state=conflict?'conflict':!concrete?'programme':announcement==='closed'||availability==='closed'?'closed':deadline.kind==='past'?'past':notYetOpen?'not_yet_open':eligible?'open':'unknown';
  return {state,contentReviewStatus:job.contentReviewStatus||'unknown',announcementStatus:announcement,applicationPortalStatus:portal,conflict,deadline,eligibleForOpenRecommendation:eligible};
 }
 export function opportunityStatusLabel(job,lang='zh',today=new Date().toISOString().slice(0,10)){
@@ -83,8 +88,8 @@ export function opportunityStatusLabel(job,lang='zh',today=new Date().toISOStrin
  if(s.state==='closed')return en?'Stated closed · historical record retained':'已明确关闭 · 保留历史记录';
  if(s.state==='past')return en?'Past deadline · current acceptance unknown; recheck official source':'截止日期已过 · 当前受理状态未知，需复核官网';
  if(s.state==='not_yet_open')return en?'Not yet open':'尚未开放';
- if(s.state==='open')return en?'Acceptance confirmed at last check · recheck before applying':'核对时确认受理 · 申请前请复核';
- if(s.announcementStatus==='open')return en?'Announcement says open · portal acceptance unverified':'公告显示开放 · 门户受理待核实';
+ if(s.state==='open')return s.applicationPortalStatus==='not_applicable'?(en?'Official email application call · delivery not tested':'官方公告接收邮箱申请 · 未测试投递回执'):(en?'Acceptance confirmed at last check · recheck before applying':'核对时确认受理 · 申请前请复核');
+ if(s.announcementStatus==='open')return s.applicationPortalStatus==='not_applicable'?(en?'Email application notice · current validity needs review':'邮箱申请公告 · 当前有效性需复核'):(en?'Announcement says open · portal acceptance unverified':'公告显示开放 · 门户受理待核实');
  return en?'Current availability unverified':'当前开放状态待核实';
 }
 export function opportunityDeadlineLabel(job,lang='zh',today=new Date().toISOString().slice(0,10)){

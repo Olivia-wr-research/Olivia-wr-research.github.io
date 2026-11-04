@@ -1,12 +1,12 @@
 import {CV_MATCH_ENABLED} from "./features.mjs";
 import {geographyDepartments} from './geography-departments.mjs';
-import {setupCoverage} from './geography-coverage-ui.mjs?v=open59-20261104';
-import {matchesGeo} from './geography-filters.mjs?v=open59-20261104';
+import {setupCoverage} from './geography-coverage-ui.mjs?v=open56-20261104';
+import {matchesGeo} from './geography-filters.mjs?v=open56-20261104';
 import {setupCommunity} from './geography-community.mjs';
 import {setupGeographyMap} from './geography-map.mjs';
-import {opportunityCategory,catalogCounts} from './geography-catalog.mjs?v=open59-20261104';
+import {opportunityCategory,catalogCounts} from './geography-catalog.mjs?v=open56-20261104';
 import {field,language,t} from './i18n.mjs';
-import {opportunityStatusLabel,effectiveDeadline} from './opportunity.mjs?v=open59-20261104';
+import {opportunityStatusLabel,effectiveDeadline} from './opportunity.mjs?v=open56-20261104';
 const node=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 export function typeLabel(type,lang='zh'){
  const labels={'masters-intake':['硕士当期招生','Master’s intake'],'phd-programme':['博士学位项目','Doctoral programme'],'masters-programme':['硕士学位项目','Master’s programme'],'phd-intake':['博士当期招生','Doctoral intake'],'phd-project':['博士研究项目','Doctoral project'],phd:['博士机会','Doctoral opportunity'],PhD:['博士机会','Doctoral opportunity'],postdoc:['博士后','Postdoctoral role'],faculty:['教职','Faculty position'],research:['研究岗位','Research role'],'research-fellow':['研究员','Research fellow'],learning:['学习资源','Learning resource']};
