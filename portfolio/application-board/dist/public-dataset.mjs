@@ -8839,7 +8839,6 @@ export const publicReleaseDataset = {
       "type": "faculty",
       "url": "https://careers.humboldt.edu/hm/en-us/job/562584/tenure-track-faculty-school-of-engineering-mechanical-energy-systems-andor-environmental-resources-engineering",
       "deadlineKind": "priority",
-      "reviewStart": "2026-11-01",
       "officialJobReference": "562584",
       "applicationUrl": "https://secure.dc4.pageuppeople.com/apply/873/hm/applicationForm/initApplication.asp?lJobID=562584&sLanguage=en-us&sSourcePointer=hm&lJobSourceTypeID=857",
       "applicationRouteCheckedAt": "2026-11-04T14:55:41.280Z"
@@ -10892,7 +10891,6 @@ export const publicReleaseDataset = {
       "type": "faculty",
       "url": "https://careers.pageuppeople.com/873/nr/en-us/job/562442/assistant-professor-of-physical-geography-department-of-geography-and-environmental-studies-2712",
       "deadlineKind": "priority",
-      "reviewStart": "2026-10-28",
       "officialJobReference": "562442"
     },
     {
@@ -13396,7 +13394,6 @@ export const publicReleaseDataset = {
       "type": "faculty",
       "url": "https://careers.pageuppeople.com/873/fl/en-us/job/560304/assistant-professor-of-physical-geography",
       "deadlineKind": "priority",
-      "reviewStart": "2026-11-01",
       "officialJobReference": "560304"
     },
     {
@@ -14506,7 +14503,6 @@ export const publicReleaseDataset = {
       "type": "faculty",
       "url": "https://careers.humboldt.edu/hm/en-us/job/563191",
       "deadlineKind": "priority",
-      "reviewStart": "2026-12-01",
       "officialJobReference": "563191"
     },
     {
@@ -16417,7 +16413,7 @@ export const publicReleaseDataset = {
     "resource_only": 84
   },
   "opportunityRecords": 97,
-  "datasetSha256": "9c73c0a73afcd4dc28393ed9b90bf906a8a392d7f8699efbd42b9d33ae9150b4",
+  "datasetSha256": "ccc8a915a9ebd0ecc75a2a3dd6ff2e09875166e98987c8b7baa1ee5691fd27bd",
   "availabilityReview": {
     "planned": 51,
     "new_public_records": 5,
