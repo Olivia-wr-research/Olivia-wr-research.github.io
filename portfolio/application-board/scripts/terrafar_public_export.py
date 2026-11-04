@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.parse import urlsplit,parse_qs
 
 PUBLIC_FIELDS=set('id url source type title titleEn institution institutionEn short country countryEn city field fieldEn summary summaryEn applicationProcess applicationProcessEn applicationUrl requirements requirementsEn funding fundingEn salary salaryEn language languageEn duration durationEn degree degreeType deadline deadlineType deadlineKind reviewDate reviewStart deadlineNote deadlineNoteEn status recordKind contentReviewStatus contentReviewObservedAt announcementStatus currentOpenStatus currentOpenStatusCheckedAt applicationActionability applicationRouteCheckedAt applicationWindows fieldConflicts fieldEvidence topics methods geo caution cautionEn sourceType checkedAt collectedAt materials materialsEn startDate opensAt referenceDeadline mainRoundDeadline clearingDeadline fundingDeadline sourceIds candidateId'.split())
-PUBLIC_FIELDS.add('sourceReview')
+PUBLIC_FIELDS.update({'sourceReview','officialJobReference'})
 PUBLIC_FIELDS.update({'statusLabel','statusLabelEn'})
 def read(p):return json.loads(Path(p).read_text())
 def dump(v):return json.dumps(v,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()

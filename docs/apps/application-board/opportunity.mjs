@@ -53,7 +53,14 @@ function currentEvidence(job,status,today){
   // a generic form, login page or application button is still insufficient.
   const ethReference=(()=>{try{const u=new URL(job.url);return u.hostname==='jobs.ethz.ch'?u.pathname.match(/\/JOPG_ethz_(\w+)$/)?.[1]:null;}catch{return null;}})();
   const invited=Boolean(ethReference)&&path?.hostname==='emea2.softfactors.com'&&path.pathname===`/job-opening/rgum-${ethReference}`&&!path.username&&!path.password&&e.pageKind==='application_portal'&&e.jobReference===ethReference&&e.applicationFormTitle===`Application for ${job.titleEn||job.title}`&&e.formStage==='public_identity_form'&&['field_firstName','field_lastName','email'].every(k=>e.availableFormFields?.includes(k))&&e.quote==='We look forward to receiving your application.';
-  return status==='open'?(positive.test(e.quote)||continuing||invited)&&!negative.test(e.quote):negative.test(e.quote);
+  // Additional observed invitations are valid only with the matching public
+  // form, requisition, usable fields and the same stated submission date.
+  const fields=(names)=>names.every(k=>e.availableFormFields?.includes(k));
+  const announced=(()=>{try{return new URL(job.url);}catch{return null;}})();
+  const literalDate=Date.parse((w.closeDateLiteral||'')+' 00:00:00 GMT');
+  const wur=announced?.hostname==='www.wur.nl'&&path?.href===announced.href&&/^\/en\/vacancy\/[^/]+$/.test(path.pathname)&&e.pageKind==='application_portal'&&e.jobReference===path.pathname.split('/').at(-1)&&e.formStage==='public_identity_form'&&e.applicationFormTitle===`Apply for ${job.titleEn||job.title}`&&fields(['first_name','last_name','email'])&&Number.isFinite(literalDate)&&new Date(literalDate).toISOString().slice(0,10)===job.deadline&&w.closes===job.deadline&&e.quote===`You can apply up to and including ${w.closeDateLiteral}.`;
+  const usc=announced?.hostname==='usccareers.usc.edu'&&path?.hostname==='facultypositions.usc.edu'&&!path.username&&!path.password&&['/FAS/application/position','/FAS/application/step1'].includes(path.pathname)&&/^REQ\d+$/.test(job.officialJobReference||'')&&path.searchParams.get(path.pathname.endsWith('/step1')?'requisitionId':'postingId')===job.officialJobReference&&e.jobReference===job.officialJobReference&&e.pageKind==='application_portal'&&e.formStage==='public_identity_form'&&e.applicationFormTitle===(job.titleEn||job.title)&&fields(['nameFirst','nameLast','emailPrimary'])&&Number.isFinite(literalDate)&&new Date(literalDate).toISOString().slice(0,10)===job.deadline&&w.closes===job.deadline&&e.quote==='Please provide the information requested below and in the following pages to submit your application.';
+  return status==='open'?(positive.test(e.quote)||continuing||invited||wur||usc)&&!negative.test(e.quote):negative.test(e.quote);
  });
 }
 export function opportunityState(job={},today=new Date().toISOString().slice(0,10)){
