@@ -7879,10 +7879,10 @@
       "applicationActionability": "unknown",
       "applicationProcess": "",
       "applicationProcessEn": "",
-      "applicationRouteCheckedAt": "2026-11-04T04:56:54.297Z",
+      "applicationRouteCheckedAt": "2026-11-04T16:04:10.130995+00:00",
       "candidateId": "tcand-068b72cb3f81d2f0a25cf72a",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "公告截止为2026年11月15日；系统关闭栏为空，不据此判断招满即止或仍在受理。",
+      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -7891,7 +7891,7 @@
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T04:56:54.297Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T16:04:10.130995+00:00",
       "deadline": "2026-11-15",
       "deadlineNote": "The application deadline is November 15, 2026.",
       "deadlineNoteEn": "The application deadline is November 15, 2026.",
@@ -7956,6 +7956,12 @@
           "observedAt": "2026-11-04T04:56:54.297Z",
           "status": "supported",
           "url": "https://morehouse.peopleadmin.com/postings/15370/print_preview"
+        },
+        {
+          "field": "application_route",
+          "status": "unknown",
+          "url": "https://morehouse.peopleadmin.com/postings/15370/print_preview",
+          "observedAt": "2026-11-04T16:04:10.130995+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -7996,10 +8002,10 @@
       "applicationActionability": "unknown",
       "applicationProcess": "http://binghamton.interviewexchange.com/jobofferdetails.jsp?JOBID=205082",
       "applicationProcessEn": "http://binghamton.interviewexchange.com/jobofferdetails.jsp?JOBID=205082",
-      "applicationRouteCheckedAt": "2026-11-04T04:58:30.384Z",
+      "applicationRouteCheckedAt": "2026-11-04T16:45:47.585Z",
       "candidateId": "tcand-0909c345e97cc744f5a4b178",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已到达匹配岗位205082的账号设置／登录步骤，未填写邮箱、建立账号或提交；登录后受理仍未核实。",
+      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -8008,11 +8014,11 @@
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:56:43.504Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T16:45:47.585Z",
       "deadline": "",
-      "deadlineNote": "Applications submitted by November 9, 2026 will receive full consideration.",
-      "deadlineNoteEn": "Applications submitted by November 9, 2026 will receive full consideration.",
-      "deadlineType": "unknown",
+      "deadlineNote": "2026年11月9日前提交可获完整审查；之后继续考虑直至招满，不是固定截止。",
+      "deadlineNoteEn": "Full consideration for submissions by 9 November 2026; materials considered until filled, not a fixed closing date.",
+      "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
@@ -8079,6 +8085,12 @@
           "observedAt": "2026-11-04T04:58:30.384Z",
           "status": "missing",
           "url": "https://binghamton.interviewexchange.com/jobofferdetails.jsp?JOBID=205082"
+        },
+        {
+          "field": "application_route",
+          "status": "unknown",
+          "url": "https://binghamton.interviewexchange.com/candapply.jsp?JOBID=205082#pageTop",
+          "observedAt": "2026-11-04T16:45:47.585Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8112,7 +8124,10 @@
       "titleEn": "Assistant or Associate Professor of Environmental Health",
       "topics": [],
       "type": "faculty",
-      "url": "https://binghamton.interviewexchange.com/jobofferdetails.jsp?JOBID=205082"
+      "url": "https://binghamton.interviewexchange.com/jobofferdetails.jsp?JOBID=205082",
+      "applicationUrl": "https://binghamton.interviewexchange.com/candapply.jsp?JOBID=205082#pageTop",
+      "deadlineKind": "priority",
+      "priorityDate": "2026-11-09"
     },
     {
       "announcementStatus": "unknown",
@@ -8207,10 +8222,10 @@
       "applicationActionability": "unknown",
       "applicationProcess": "https://careers.ua.edu/jobs/search/AS",
       "applicationProcessEn": "https://careers.ua.edu/jobs/search/AS",
-      "applicationRouteCheckedAt": "2026-11-04T04:51:21.870Z",
+      "applicationRouteCheckedAt": "2026-11-04T15:41:16.882Z",
       "candidateId": "tcand-1e947437e93504784c48a41e",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "开始审查仅说明2026年11月，不推定为11月1日；系统关闭日期另有含义。推荐／提醒表单不作为岗位受理确认。",
+      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -8219,7 +8234,7 @@
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:56:47.491Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T15:41:16.882Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -8284,6 +8299,12 @@
           "observedAt": "2026-11-04T04:51:21.870Z",
           "status": "missing",
           "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states"
+        },
+        {
+          "field": "application_route",
+          "status": "unknown",
+          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states",
+          "observedAt": "2026-11-04T15:41:16.882Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -10132,8 +10153,8 @@
       "applicationProcess": "",
       "applicationProcessEn": "",
       "candidateId": "tcand-5bce225d62ce093632a59a5d",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "本轮公开页面含推荐他人／提醒用途的表单，尚未核实真正岗位申请入口。",
+      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -10142,7 +10163,7 @@
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:57:29.766Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T15:36:26.958Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -10201,6 +10222,12 @@
           "observedAt": "2026-11-04T04:47:31.784Z",
           "status": "missing",
           "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611"
+        },
+        {
+          "field": "application_route",
+          "status": "unknown",
+          "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611",
+          "observedAt": "2026-11-04T15:36:26.958Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -10234,7 +10261,8 @@
       "titleEn": "Assistant Professor- Tenure Track - Sustainable Biology and Environmental Science",
       "topics": [],
       "type": "faculty",
-      "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611"
+      "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611",
+      "applicationRouteCheckedAt": "2026-11-04T15:36:26.958Z"
     },
     {
       "announcementStatus": "invites_applications",
@@ -11510,11 +11538,11 @@
       "applicationActionability": "unknown",
       "applicationProcess": "University of Helsinki Recruitment System",
       "applicationProcessEn": "University of Helsinki Recruitment System",
-      "applicationRouteCheckedAt": "2026-11-04T05:46:31.369Z",
+      "applicationRouteCheckedAt": "2026-11-04T16:04:10.130995+00:00",
       "applicationUrl": "https://jobs.helsinki.fi/talentcommunity/apply/1374672557/?locale=en_GB",
       "candidateId": "tcand-840e61a1e1ad604074fee5a3",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "官方公告与公开说明已复核；申请受理仍未确认，未重复尝试已知登录入口。",
+      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
       "checkedAt": "2026-11-01",
       "city": "",
       "collectedAt": "2026-11-01",
@@ -11523,7 +11551,7 @@
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:54:14.831Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T16:04:10.130995+00:00",
       "deadline": "2026-11-12",
       "deadlineNote": "12.11.2026 (23.59 Europe/Helsinki time)",
       "deadlineNoteEn": "12.11.2026 (23.59 Europe/Helsinki time)",
@@ -11636,6 +11664,12 @@
           "observedAt": "2026-11-04T04:50:22.399Z",
           "status": "missing",
           "url": "https://jobs.helsinki.fi/talentcommunity/apply/1374672557/?locale=en_GB"
+        },
+        {
+          "field": "application_route",
+          "status": "unknown",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-researcher-in-global-development-studies/1374672557/",
+          "observedAt": "2026-11-04T16:04:10.130995+00:00"
         }
       ],
       "funding": "已核验为带薪博士或教职聘用；薪酬见薪酬字段。额外资助或学费安排未核实。",
@@ -11854,11 +11888,11 @@
       "applicationActionability": "unknown",
       "applicationProcess": "a cover letter (maximum of two A4 pages)",
       "applicationProcessEn": "a cover letter (maximum of two A4 pages)",
-      "applicationRouteCheckedAt": "2026-11-04T05:46:34.797Z",
+      "applicationRouteCheckedAt": "2026-11-04T15:39:29.269227+00:00",
       "applicationUrl": "https://jobs.ncl.ac.uk/talentcommunity/apply/1452441033/?locale=en_GB",
       "candidateId": "tcand-8a6db4ea56f6f92d06be6bb4",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "官方公告与公开说明已复核；申请受理仍未确认，未重复尝试已知登录入口。",
+      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
       "checkedAt": "2026-11-02",
       "city": "",
       "collectedAt": "2026-11-02",
@@ -11867,7 +11901,7 @@
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:54:23.582Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T15:39:29.269227+00:00",
       "deadline": "2026-11-12",
       "deadlineNote": "Closing Date: 12 November 2026",
       "deadlineNoteEn": "Closing Date: 12 November 2026",
@@ -11998,6 +12032,12 @@
           "observedAt": "2026-11-04T04:50:25.399Z",
           "status": "missing",
           "url": "https://jobs.ncl.ac.uk/talentcommunity/apply/1452441033/?locale=en_GB"
+        },
+        {
+          "field": "application_route",
+          "status": "unknown",
+          "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/",
+          "observedAt": "2026-11-04T15:39:29.269227+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -12453,11 +12493,11 @@
       "applicationActionability": "unknown",
       "applicationProcess": "Über unser Jobportal / Bewerben Button",
       "applicationProcessEn": "Über unser Jobportal / Bewerben Button",
-      "applicationRouteCheckedAt": "2026-11-04T05:45:33.629Z",
+      "applicationRouteCheckedAt": "2026-11-04T15:39:40.629440+00:00",
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1445938133/?locale=de_DE",
       "candidateId": "tcand-9f2e85dd4a8adceca7e3d105",
-      "caution": "待审核数据；门户最终受理未核验。 本轮原文证据已保存恢复，资格中优先项与硬性条件须结合所附完整段落阅读；仍待发布审核。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified. Evidence saved and restored; preserve required/preferred qualification distinctions; owner publication review pending.",
+      "caution": "官方公告与公开说明已复核；申请受理仍未确认，未重复尝试已知登录入口。",
+      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -12466,7 +12506,7 @@
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T05:45:33.629Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T15:39:40.629440+00:00",
       "deadline": "2026-11-06",
       "deadlineNote": "Bewerbungsfrist: 06.11.2026",
       "deadlineNoteEn": "Bewerbungsfrist: 06.11.2026",
@@ -12603,6 +12643,12 @@
           "observedAt": "2026-11-04T04:49:55.164Z",
           "status": "missing",
           "url": "https://jobs.univie.ac.at/talentcommunity/apply/1445938133/?locale=de_DE"
+        },
+        {
+          "field": "application_route",
+          "status": "unknown",
+          "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/",
+          "observedAt": "2026-11-04T15:39:40.629440+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -12644,8 +12690,8 @@
       "applicationProcess": "Application packets should include: a. A formal cover letter summarizing qualifications, b. a statement describing Teaching and Research philosophy (2-pg max), c. a statement describing Extension philosophy (2-pg. max). d. a current curriculum vitae, and e. the names and contact information of three professional references who can assess the applicant’s qualifications for this position.",
       "applicationProcessEn": "Application packets should include: a. A formal cover letter summarizing qualifications, b. a statement describing Teaching and Research philosophy (2-pg max), c. a statement describing Extension philosophy (2-pg. max). d. a current curriculum vitae, and e. the names and contact information of three professional references who can assess the applicant’s qualifications for this position.",
       "candidateId": "tcand-9fa8fc34b015de6b38639660",
-      "caution": "待审核数据；门户最终受理未核验。 本轮原文核验已加密保存；门户受理未知，尚无发布批准。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "公开表单混有短信同意、岗位兴趣登记和推荐／提醒功能，尚未确认岗位正式申请受理。",
+      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -12654,7 +12700,7 @@
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:57:48.306Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T16:08:58.527Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -12743,6 +12789,12 @@
           "observedAt": "2026-11-04T04:47:53.126Z",
           "status": "missing",
           "url": "https://jobs.apply.vt.edu/jobs/assistant-associate-professor-of-turfgrass-science-blacksburg-virginia-united-states"
+        },
+        {
+          "field": "application_route",
+          "status": "unknown",
+          "url": "https://jobs.apply.vt.edu/jobs/assistant-associate-professor-of-turfgrass-science-blacksburg-virginia-united-states",
+          "observedAt": "2026-11-04T16:08:58.527Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -12776,7 +12828,8 @@
       "titleEn": "Assistant/Associate Professor of Turfgrass Science",
       "topics": [],
       "type": "faculty",
-      "url": "https://jobs.apply.vt.edu/jobs/assistant-associate-professor-of-turfgrass-science-blacksburg-virginia-united-states"
+      "url": "https://jobs.apply.vt.edu/jobs/assistant-associate-professor-of-turfgrass-science-blacksburg-virginia-united-states",
+      "applicationRouteCheckedAt": "2026-11-04T16:08:58.527Z"
     },
     {
       "announcementStatus": "open",
@@ -12955,11 +13008,11 @@
       "applicationActionability": "unknown",
       "applicationProcess": "With a short letter stating your interest in the position; With your CV including a list of publications; With contact details of two persons who could provide a recommendation upon request; Via our job portal / Apply now - button.",
       "applicationProcessEn": "With a short letter stating your interest in the position; With your CV including a list of publications; With contact details of two persons who could provide a recommendation upon request; Via our job portal / Apply now - button.",
-      "applicationRouteCheckedAt": "2026-11-04T05:46:22.376Z",
+      "applicationRouteCheckedAt": "2026-11-04T15:39:40.629440+00:00",
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1448831533/?locale=en_US",
       "candidateId": "tcand-a671a2724da2f96f77b88f29",
-      "caution": "待审核数据；门户最终受理未核验。 本轮真实原文已核验并加密保存，仍待发布审核。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified. Real evidence-bound result saved privately; owner publication review pending.",
+      "caution": "官方公告与公开说明已复核；申请受理仍未确认，未重复尝试已知登录入口。",
+      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -12968,7 +13021,7 @@
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:53:57.429Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T15:39:40.629440+00:00",
       "deadline": "2026-11-08",
       "deadlineNote": "Application deadline: 11/08/2026",
       "deadlineNoteEn": "Application deadline: 11/08/2026",
@@ -13075,6 +13128,12 @@
           "observedAt": "2026-11-04T04:49:56.626Z",
           "status": "missing",
           "url": "https://jobs.univie.ac.at/talentcommunity/apply/1448831533/?locale=en_US"
+        },
+        {
+          "field": "application_route",
+          "status": "unknown",
+          "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/",
+          "observedAt": "2026-11-04T15:39:40.629440+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13115,11 +13174,11 @@
       "applicationActionability": "unknown",
       "applicationProcess": "Über unser Jobportal / Bewerben Button Bei inhaltlichen Fragen kontaktieren Sie",
       "applicationProcessEn": "Über unser Jobportal / Bewerben Button Bei inhaltlichen Fragen kontaktieren Sie",
-      "applicationRouteCheckedAt": "2026-11-04T05:46:24.174Z",
+      "applicationRouteCheckedAt": "2026-11-04T16:04:10.130995+00:00",
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1453283233/?locale=de_DE",
       "candidateId": "tcand-a6c8f814c9d81333f520ba54",
-      "caution": "待审核数据；门户最终受理未核验。 本轮原文证据已保存恢复，资格中优先项与硬性条件须结合所附完整段落阅读；仍待发布审核。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified. Evidence saved and restored; preserve required/preferred qualification distinctions; owner publication review pending.",
+      "caution": "本轮公开读取失败；保留旧事实与未知状态，不把失败判断为关闭。",
+      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -13128,7 +13187,7 @@
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:54:07.786Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T16:04:10.130995+00:00",
       "deadline": "2026-11-11",
       "deadlineNote": "Bewerbungsfrist: 11.11.2026",
       "deadlineNoteEn": "Bewerbungsfrist: 11.11.2026",
@@ -13211,6 +13270,12 @@
           "observedAt": "2026-11-04T04:50:05.953Z",
           "status": "missing",
           "url": "https://jobs.univie.ac.at/talentcommunity/apply/1453283233/?locale=de_DE"
+        },
+        {
+          "field": "application_route",
+          "status": "unknown",
+          "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
+          "observedAt": "2026-11-04T16:04:10.130995+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14881,8 +14946,8 @@
       "applicationProcess": "Apply online by submitting a cover letter, resume, and a copy of your transcript(s).",
       "applicationProcessEn": "Apply online by submitting a cover letter, resume, and a copy of your transcript(s).",
       "candidateId": "tcand-d6316d31a9abac6640770b9c",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "可见申请区包含推荐他人表单，不能据此确认岗位正式申请受理。",
+      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
       "checkedAt": "2026-11-02",
       "city": "",
       "collectedAt": "2026-11-02",
@@ -14891,7 +14956,7 @@
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:58:17.879Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T16:09:10.241Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -15022,6 +15087,12 @@
           "observedAt": "2026-11-04T04:48:53.539Z",
           "status": "missing",
           "url": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574"
+        },
+        {
+          "field": "application_route",
+          "status": "unknown",
+          "url": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574",
+          "observedAt": "2026-11-04T16:09:10.241Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -15055,7 +15126,8 @@
       "titleEn": "Research Associate I or II",
       "topics": [],
       "type": "research",
-      "url": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574"
+      "url": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574",
+      "applicationRouteCheckedAt": "2026-11-04T16:09:10.241Z"
     },
     {
       "announcementStatus": "unknown",
@@ -16044,11 +16116,11 @@
       "applicationActionability": "unknown",
       "applicationProcess": "Via our job portal / Apply now - button",
       "applicationProcessEn": "Via our job portal / Apply now - button",
-      "applicationRouteCheckedAt": "2026-11-04T04:50:07.559Z",
+      "applicationRouteCheckedAt": "2026-11-04T16:04:10.130995+00:00",
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1453340933/?locale=en_US",
       "candidateId": "tcand-fa1891c47c61fdfef56ccd4a",
-      "caution": "待审核数据；门户最终受理未核验。 本轮原文证据已保存恢复，资格中优先项与硬性条件须结合所附完整段落阅读；仍待发布审核。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified. Evidence saved and restored; preserve required/preferred qualification distinctions; owner publication review pending.",
+      "caution": "官方公告与公开说明已复核；申请受理仍未确认，未重复尝试已知登录入口。",
+      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -16057,7 +16129,7 @@
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:54:10.261Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T16:04:10.130995+00:00",
       "deadline": "2026-11-11",
       "deadlineNote": "Application deadline: 11/11/2026",
       "deadlineNoteEn": "Application deadline: 11/11/2026",
@@ -16158,6 +16230,12 @@
           "observedAt": "2026-11-04T04:50:07.559Z",
           "status": "missing",
           "url": "https://jobs.univie.ac.at/talentcommunity/apply/1453340933/?locale=en_US"
+        },
+        {
+          "field": "application_route",
+          "status": "unknown",
+          "url": "https://jobs.univie.ac.at/job/University-Assistant-postdoctoral/1453340933/",
+          "observedAt": "2026-11-04T16:04:10.130995+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -16368,11 +16446,719 @@
       "type": "postdoc",
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46239",
       "officialJobReference": "SAE-032577"
+    },
+    {
+      "id": "geo-tcand-e168187e49c8fa66e0576bcf",
+      "candidateId": "tcand-e168187e49c8fa66e0576bcf",
+      "sourceIds": [
+        "geo-60b233af225312fc"
+      ],
+      "title": "能源与气候政策研究员",
+      "titleEn": "Researcher in energy and climate policy at IIIEE",
+      "institution": "隆德大学",
+      "institutionEn": "Lund University",
+      "country": "瑞典",
+      "countryEn": "Sweden",
+      "city": "Lund",
+      "short": "Lund",
+      "type": "research",
+      "degree": "phd",
+      "summary": "研究低碳技术扩散与能源政策，参与能源转型研究、政策简报及少量硕士教学。",
+      "summaryEn": "Research low-carbon technology deployment and energy policy; contribute publications and policy briefs.",
+      "field": "人文地理与环境政策",
+      "fieldEn": "Human geography, energy and climate policy",
+      "topics": [
+        "能源转型",
+        "气候政策"
+      ],
+      "methods": [],
+      "requirements": "a PhD in environmental or energy policy, economics, environmental management, sustainability management, or a related field;; a strong and sustained publication record in peer-reviewed journals, demonstrating continuous research activity over time;; experience of empirical analysis of policy, technologies, business or markets;; very good oral and written proficiency in English.",
+      "requirementsEn": "a PhD in environmental or energy policy, economics, environmental management, sustainability management, or a related field;; a strong and sustained publication record in peer-reviewed journals, demonstrating continuous research activity over time;; experience of empirical analysis of policy, technologies, business or markets;; very good oral and written proficiency in English.",
+      "funding": "雇佣制，月薪金额及额外资助未公布",
+      "fundingEn": "Employment with monthly salary; amount and additional funding not stated",
+      "salary": "月薪，金额与税前税后口径未公布",
+      "salaryEn": "Monthly salary; amount and tax basis not stated",
+      "duration": "12个月全职；2027-02-01或协商开始",
+      "durationEn": "12 months full-time; 1 February 2027 or as agreed",
+      "deadline": "2026-11-17",
+      "deadlineType": "fixed",
+      "deadlineNote": "官方日期；具体时刻与时区未公布",
+      "deadlineNoteEn": "Official date; exact time and timezone not stated",
+      "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+      "source": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+      "applicationUrl": "https://lu.varbi.com/en/what:login/jobID:984990/type:job/where:4/apply:1/",
+      "sourceType": "official-employer",
+      "status": "listed",
+      "contentReviewStatus": "verified",
+      "contentReviewObservedAt": "2026-11-04T16:37:09.623010+00:00",
+      "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T16:37:09.623010+00:00",
+      "applicationRouteCheckedAt": "2026-11-04T16:37:09.623010+00:00",
+      "applicationActionability": "login_required_acceptance_unverified",
+      "announcementStatus": "open",
+      "sourceReview": {
+        "status": "source-reviewed"
+      },
+      "fieldEvidence": [
+        {
+          "field": "institution",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.623010+00:00"
+        },
+        {
+          "field": "title",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.623010+00:00"
+        },
+        {
+          "field": "location",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.623010+00:00"
+        },
+        {
+          "field": "other",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.623010+00:00"
+        },
+        {
+          "field": "opportunity_type",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.623010+00:00"
+        },
+        {
+          "field": "scope_relevance",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.623010+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.623010+00:00"
+        },
+        {
+          "field": "other",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.623010+00:00"
+        },
+        {
+          "field": "application_route",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.623010+00:00"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.623010+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.623010+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.623010+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.623010+00:00"
+        },
+        {
+          "field": "salary",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.623010+00:00"
+        },
+        {
+          "field": "application_route",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.623010+00:00"
+        },
+        {
+          "field": "announcement_status",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.623010+00:00"
+        }
+      ],
+      "officialJobReference": "PA2026/3144",
+      "geo": null,
+      "caution": "公告内容已核验；申请需登录，登录后受理状态未核实。未来截止日期不等于门户当前受理。未投递申请。",
+      "cautionEn": "Official content verified; application requires login and acceptance after login is unverified. A future deadline is not proof of portal acceptance. No application submitted.",
+      "language": "英语；具体要求见官方公告",
+      "languageEn": "English; see the official requirements",
+      "releaseStatus": "likely_open / needs_review",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+    },
+    {
+      "id": "geo-tcand-7832b4c8ecc603c54e9e2148",
+      "candidateId": "tcand-7832b4c8ecc603c54e9e2148",
+      "sourceIds": [
+        "geo-60b233af225312fc"
+      ],
+      "title": "地理信息科学博士生",
+      "titleEn": "Doctoral student in Geographic Information Science (GIS) at MGeo",
+      "institution": "隆德大学",
+      "institutionEn": "Lund University",
+      "country": "瑞典",
+      "countryEn": "Sweden",
+      "city": "Lund",
+      "short": "Lund",
+      "type": "phd",
+      "degree": "master",
+      "summary": "围绕自主GIS、GeoAI、空间智能与多智能体开展博士研究；同时具有博士学籍和雇佣身份。",
+      "summaryEn": "Doctoral research in Autonomous GIS, GeoAI and Spatial Intelligence; admitted and employed.",
+      "field": "GIS与空间数据",
+      "fieldEn": "GIS and spatial data",
+      "topics": [
+        "GIS",
+        "GeoAI",
+        "空间智能"
+      ],
+      "methods": [
+        "Python",
+        "AI",
+        "LLM"
+      ],
+      "requirements": "A Master's degree in Geographical Information Science, Geoinformatics, Computer Science, Artificial Intelligence, or a closely related field.; has been awarded a second-cycle qualification, or has satisfied the requirements for courses comprising at least 240 credits of which at least 60 credits were awarded in the second cycle, or has acquired substantially equivalent knowledge in some other way in Sweden or abroad.; the applicant must have completed an independent degree project in a relevant subject comprising at least 30 higher education credits, or have acquired equivalent qualifications.; Good knowledge of artificial intelligence and machine learning, including an understanding of fundamental methods and principles, and familiarity with modern deep learning approaches and large language models (LLMs).; Experience with AI and machine learning frameworks such as PyTorch, TensorFlow, or similar technologies.; Strong programming skills in Python, with the ability to develop, implement, test and evaluate computational methods and algorithms.; Good communication skills in English, both written and spoken.",
+      "requirementsEn": "A Master's degree in Geographical Information Science, Geoinformatics, Computer Science, Artificial Intelligence, or a closely related field.; has been awarded a second-cycle qualification, or has satisfied the requirements for courses comprising at least 240 credits of which at least 60 credits were awarded in the second cycle, or has acquired substantially equivalent knowledge in some other way in Sweden or abroad.; the applicant must have completed an independent degree project in a relevant subject comprising at least 30 higher education credits, or have acquired equivalent qualifications.; Good knowledge of artificial intelligence and machine learning, including an understanding of fundamental methods and principles, and familiarity with modern deep learning approaches and large language models (LLMs).; Experience with AI and machine learning frameworks such as PyTorch, TensorFlow, or similar technologies.; Strong programming skills in Python, with the ability to develop, implement, test and evaluate computational methods and algorithms.; Good communication skills in English, both written and spoken.",
+      "funding": "雇佣制，月薪金额及额外资助未公布",
+      "fundingEn": "Employment with monthly salary; amount and additional funding not stated",
+      "salary": "月薪，金额与税前税后口径未公布",
+      "salaryEn": "Monthly salary; amount and tax basis not stated",
+      "duration": "全日制博士4年；教学等任务相应延长；2027-01-07或协商开始",
+      "durationEn": "Four years full-time doctoral studies, extended for departmental duties; 7 January 2027 or as agreed",
+      "deadline": "2026-11-25",
+      "deadlineType": "fixed",
+      "deadlineNote": "官方日期；具体时刻与时区未公布",
+      "deadlineNoteEn": "Official date; exact time and timezone not stated",
+      "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+      "source": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+      "applicationUrl": "https://lu.varbi.com/en/what:login/jobID:984146/type:job/where:4/apply:1/",
+      "sourceType": "official-employer",
+      "status": "listed",
+      "contentReviewStatus": "verified",
+      "contentReviewObservedAt": "2026-11-04T16:37:09.622861+00:00",
+      "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T16:37:09.622861+00:00",
+      "applicationRouteCheckedAt": "2026-11-04T16:37:09.622861+00:00",
+      "applicationActionability": "login_required_acceptance_unverified",
+      "announcementStatus": "open",
+      "sourceReview": {
+        "status": "source-reviewed"
+      },
+      "fieldEvidence": [
+        {
+          "field": "institution",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "title",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "location",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "other",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "opportunity_type",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "scope_relevance",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "other",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "start_date",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "application_route",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "other",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "salary",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "application_route",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "announcement_status",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        }
+      ],
+      "officialJobReference": "PA2026/3115",
+      "geo": null,
+      "caution": "公告内容已核验；申请需登录，登录后受理状态未核实。未来截止日期不等于门户当前受理。未投递申请。",
+      "cautionEn": "Official content verified; application requires login and acceptance after login is unverified. A future deadline is not proof of portal acceptance. No application submitted.",
+      "language": "英语；具体要求见官方公告",
+      "languageEn": "English; see the official requirements",
+      "releaseStatus": "likely_open / needs_review",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+    },
+    {
+      "id": "geo-tcand-657d1f254d2a1e9113ce7d1c",
+      "candidateId": "tcand-657d1f254d2a1e9113ce7d1c",
+      "sourceIds": [
+        "geo-60b233af225312fc"
+      ],
+      "title": "火山超级喷发与流行病气候模拟博士后",
+      "titleEn": "Post-doctoral fellow in climate modelling of volcanic super-eruptions and epidemics",
+      "institution": "隆德大学",
+      "institutionEn": "Lund University",
+      "country": "瑞典",
+      "countryEn": "Sweden",
+      "city": "Lund",
+      "short": "Lund",
+      "type": "postdoc",
+      "degree": "phd",
+      "summary": "模拟火山超级喷发的气候影响，并与流行病模型结合；属于博士后工作。",
+      "summaryEn": "Postdoctoral climate modelling of volcanic super-eruptions and integration with epidemiology.",
+      "field": "自然地理与气候",
+      "fieldEn": "Physical geography and climate",
+      "topics": [
+        "气候模拟",
+        "火山",
+        "流行病"
+      ],
+      "methods": [
+        "Python",
+        "Fortran",
+        "数值模拟"
+      ],
+      "requirements": "a PhD in meteorology, atmospheric science, climate science, physics, applied mathematics, or an equivalent subject relevant to the position;; The doctoral degree must normally have been completed no more than three years before the date of the employment decision. Under special circumstances, the doctoral degree may have been completed earlier.; documented experience of numerical modelling and scientific computing;; programming experience in a Linux environment, in a commonly used programming language such as Python, C or Fortran;; oral and written proficiency in English.",
+      "requirementsEn": "a PhD in meteorology, atmospheric science, climate science, physics, applied mathematics, or an equivalent subject relevant to the position;; The doctoral degree must normally have been completed no more than three years before the date of the employment decision. Under special circumstances, the doctoral degree may have been completed earlier.; documented experience of numerical modelling and scientific computing;; programming experience in a Linux environment, in a commonly used programming language such as Python, C or Fortran;; oral and written proficiency in English.",
+      "funding": "雇佣制，月薪金额及额外资助未公布",
+      "fundingEn": "Employment with monthly salary; amount and additional funding not stated",
+      "salary": "月薪，金额与税前税后口径未公布",
+      "salaryEn": "Monthly salary; amount and tax basis not stated",
+      "duration": "2年全职；尽快协商，最迟2027-05-01开始",
+      "durationEn": "Two years full-time; as soon as agreed, no later than 1 May 2027",
+      "deadline": "2026-12-01",
+      "deadlineType": "fixed",
+      "deadlineNote": "官方日期；具体时刻与时区未公布",
+      "deadlineNoteEn": "Official date; exact time and timezone not stated",
+      "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+      "source": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+      "applicationUrl": "https://lu.varbi.com/en/what:login/jobID:983398/type:job/where:4/apply:1/",
+      "sourceType": "official-employer",
+      "status": "listed",
+      "contentReviewStatus": "verified",
+      "contentReviewObservedAt": "2026-11-04T16:37:09.622660+00:00",
+      "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T16:37:09.622660+00:00",
+      "applicationRouteCheckedAt": "2026-11-04T16:37:09.622660+00:00",
+      "applicationActionability": "login_required_acceptance_unverified",
+      "announcementStatus": "open",
+      "sourceReview": {
+        "status": "source-reviewed"
+      },
+      "fieldEvidence": [
+        {
+          "field": "institution",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "title",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "location",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "other",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "opportunity_type",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "scope_relevance",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "other",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "start_date",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "other",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "application_route",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "salary",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "application_route",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "announcement_status",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        }
+      ],
+      "officialJobReference": "PA2026/3079",
+      "geo": null,
+      "caution": "公告内容已核验；申请需登录，登录后受理状态未核实。未来截止日期不等于门户当前受理。未投递申请。",
+      "cautionEn": "Official content verified; application requires login and acceptance after login is unverified. A future deadline is not proof of portal acceptance. No application submitted.",
+      "language": "英语；具体要求见官方公告",
+      "languageEn": "English; see the official requirements",
+      "releaseStatus": "likely_open / needs_review",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+    },
+    {
+      "id": "geo-tcand-90025f25903467f96cc4e901",
+      "candidateId": "tcand-90025f25903467f96cc4e901",
+      "sourceIds": [
+        "geo-60b233af225312fc"
+      ],
+      "title": "自然地理研究员",
+      "titleEn": "Researcher in Physical Geography by MGeo",
+      "institution": "隆德大学",
+      "institutionEn": "Lund University",
+      "country": "瑞典",
+      "countryEn": "Sweden",
+      "city": "Lund",
+      "short": "Lund",
+      "type": "research",
+      "degree": "phd",
+      "summary": "利用遥感研究瑞典森林生产力、呼吸和碳汇。永久职位，研究项目三年不等于合同仅三年。",
+      "summaryEn": "Forest remote-sensing research on productivity, respiration and carbon sinks; permanent employment, distinct from the three-year project.",
+      "field": "GIS遥感与自然地理",
+      "fieldEn": "Remote sensing and physical geography",
+      "topics": [
+        "森林遥感",
+        "碳汇",
+        "生产力"
+      ],
+      "methods": [
+        "Python",
+        "遥感"
+      ],
+      "requirements": "Good programming skills in Python or an equivalent programming language.; Research experience in forest remote sensing and estimation of vegetation productivity.; Knowledge of forest ecology.; Excellent spoken and written English.; Experience of publishing research in international scientific journals.",
+      "requirementsEn": "Good programming skills in Python or an equivalent programming language.; Research experience in forest remote sensing and estimation of vegetation productivity.; Knowledge of forest ecology.; Excellent spoken and written English.; Experience of publishing research in international scientific journals.",
+      "funding": "雇佣制，月薪金额及额外资助未公布",
+      "fundingEn": "Employment with monthly salary; amount and additional funding not stated",
+      "salary": "月薪，金额与税前税后口径未公布",
+      "salaryEn": "Monthly salary; amount and tax basis not stated",
+      "duration": "永久全职；2027-02-01或协商开始；可能有试用期",
+      "durationEn": "Permanent full-time; 1 February 2027 or as agreed; probation may apply",
+      "deadline": "2026-11-11",
+      "deadlineType": "fixed",
+      "deadlineNote": "官方日期；具体时刻与时区未公布",
+      "deadlineNoteEn": "Official date; exact time and timezone not stated",
+      "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+      "source": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+      "applicationUrl": "https://lu.varbi.com/en/what:login/jobID:983518/type:job/where:4/apply:1/",
+      "sourceType": "official-employer",
+      "status": "listed",
+      "contentReviewStatus": "verified",
+      "contentReviewObservedAt": "2026-11-04T16:37:09.622939+00:00",
+      "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T16:37:09.622939+00:00",
+      "applicationRouteCheckedAt": "2026-11-04T16:37:09.622939+00:00",
+      "applicationActionability": "login_required_acceptance_unverified",
+      "announcementStatus": "open",
+      "sourceReview": {
+        "status": "source-reviewed"
+      },
+      "fieldEvidence": [
+        {
+          "field": "institution",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622939+00:00"
+        },
+        {
+          "field": "title",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622939+00:00"
+        },
+        {
+          "field": "location",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622939+00:00"
+        },
+        {
+          "field": "other",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622939+00:00"
+        },
+        {
+          "field": "opportunity_type",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622939+00:00"
+        },
+        {
+          "field": "scope_relevance",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622939+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622939+00:00"
+        },
+        {
+          "field": "other",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622939+00:00"
+        },
+        {
+          "field": "application_route",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622939+00:00"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622939+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622939+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622939+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622939+00:00"
+        },
+        {
+          "field": "eligibility",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622939+00:00"
+        },
+        {
+          "field": "salary",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622939+00:00"
+        },
+        {
+          "field": "application_route",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622939+00:00"
+        },
+        {
+          "field": "announcement_status",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:37:09.622939+00:00"
+        }
+      ],
+      "officialJobReference": "PA2026/3081",
+      "geo": null,
+      "caution": "公告内容已核验；申请需登录，登录后受理状态未核实。未来截止日期不等于门户当前受理。未投递申请。",
+      "cautionEn": "Official content verified; application requires login and acceptance after login is unverified. A future deadline is not proof of portal acceptance. No application submitted.",
+      "language": "英语；具体要求见官方公告",
+      "languageEn": "English; see the official requirements",
+      "releaseStatus": "likely_open / needs_review",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified"
     }
   ],
-  "newRecords": 59,
-  "correctedRecords": 6,
-  "routeUpdates": 2,
+  "newRecords": 63,
+  "correctedRecords": 7,
+  "routeUpdates": 3,
   "coverage": {
     "registeredSources": 416,
     "completeRangeSources": 7,
@@ -16387,6 +17173,7 @@
       "geo-20eb6f8ec973e89e",
       "geo-27e90e0bbb614eaa",
       "geo-2ab08a6ffe5558d8",
+      "geo-60b233af225312fc",
       "geo-6101fd740f390c86",
       "geo-61fb5621921e0be0",
       "geo-c7f132ec5fd55540",
@@ -16403,20 +17190,29 @@
   },
   "counts": {
     "verified_open": 18,
-    "likely_open / needs_review": 46,
+    "likely_open / needs_review": 50,
     "closed": 0,
     "expired": 8,
     "insufficient_evidence": 25,
     "blocked": 0,
     "resource_only": 84
   },
-  "opportunityRecords": 97,
-  "datasetSha256": "922659cce436fc39456f80ea1c5a7a54a37d08f2933f3303021602b62c476dde",
+  "opportunityRecords": 101,
+  "datasetSha256": "14cec0e3a562e054e1e8efe9968b4f468db0199f851170bb0b40ed363f80d0fe",
   "availabilityReview": {
-    "planned": 51,
-    "new_public_records": 5,
-    "newlyConfirmed": 5,
-    "remainingUnknown": 46,
+    "planned": 46,
+    "new_public_records": 12,
+    "newlyConfirmed": 0,
+    "remainingUnknown": 50,
+    "newContentVerifiedUnknown": 4,
+    "unexecutedNewChecks": 34,
     "finalSubmissionNotTested": true
+  },
+  "coverage46Update": {
+    "actualNewRecords": 4,
+    "routeObservationsUpdated": 12,
+    "newOpen": 0,
+    "status": "content verified; acceptance unknown",
+    "privateDetailedEvidencePublished": false
   }
 }
