@@ -1,4 +1,4 @@
-import {effectiveDeadline,opportunityState} from './opportunity.mjs';
+import {effectiveDeadline,opportunityState} from './opportunity.mjs?v=release-v1-20261104';
 // A future deadline describes a saved advertisement, never proves a vacancy is open.
 const DAY = 86400000;
 function dayNumber(value) {
