@@ -49,7 +49,7 @@ test('WUR date wording and job-bound form cannot promote a mismatched or stale i
   const copy=structuredClone(row);alter(copy.fieldEvidence.find(e=>e.field==='current_open_status'&&e.value==='open'));
   assert.equal(opportunityState(copy,data.asOf).eligibleForOpenRecommendation,false);
  }
- const farm=data.records.find(r=>r.id==='geo-tcand-e8d4fb8f95d8568da71619ba');assert.equal(farm.deadline,'2026-11-25');assert.equal(opportunityState(farm,data.asOf).eligibleForOpenRecommendation,false);
+ const farm=data.records.find(r=>r.id==='geo-tcand-e8d4fb8f95d8568da71619ba');assert.equal(farm.deadline,'2026-11-25');assert.equal(opportunityState({...farm,fieldEvidence:[]},data.asOf).eligibleForOpenRecommendation,false);
 });
 
 test('USC portal invitation needs the advertised requisition, role and submission date',()=>{
@@ -81,3 +81,7 @@ test('dated official email calls are distinct from portal acceptance and mail de
  for(const alter of [r=>r.fieldEvidence.at(-1).jobReference='OTHER',r=>r.fieldEvidence.at(-1).observedAt='2026-01-01',r=>r.fieldEvidence.at(-1).availableFormFields=[],r=>r.fieldEvidence.at(-1).applicationFormTitle='Different job',r=>r.fieldEvidence.at(-1).quote+=' Applications are closed.']){const c=structuredClone(r);alter(c);assert.equal(opportunityState(c,data.asOf).eligibleForOpenRecommendation,false);}
  }
  });
+
+test('CSU public email-start evidence is bound to advert, campus, job and current window',()=>{
+ for(const id of ['geo-tcand-71630eaa66f09bcb67b0c44c','geo-tcand-3ebbc8fae412ac86b7c25480','geo-tcand-a83ff930023bcc743f5b3930','geo-tcand-be0fb6a040e51800e1af9ab9','geo-tcand-e8d4fb8f95d8568da71619ba']){const r=data.records.find(r=>r.id===id);assert.ok(opportunityState(r,data.asOf).eligibleForOpenRecommendation);for(const alter of [r=>r.fieldEvidence.at(-1).jobReference='OTHER',r=>r.fieldEvidence.at(-1).observedAt='2026-01-01',r=>r.fieldEvidence.at(-1).availableFormFields=[],r=>r.fieldEvidence.at(-1).applicationNoticeTitle='Other role',r=>r.fieldEvidence.at(-1).quote+=' Applications are closed.',r=>r.fieldEvidence.at(-1).url=r.fieldEvidence.at(-1).url.replace('lJobID=','lOtherID=')]){const c=structuredClone(r);alter(c);assert.equal(opportunityState(c,data.asOf).eligibleForOpenRecommendation,false);}}
+});
