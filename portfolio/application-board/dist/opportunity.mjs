@@ -43,7 +43,12 @@ function currentEvidence(job,status,today){
   if(age.days===null||age.days>0||-age.days>CURRENT_STATUS_MAX_AGE_DAYS)return false;
   const positive=/currently accepting applications|applications? (?:are|is) (?:currently )?open|正在接受申请|当前接受申请/i;
   const negative=/no longer accepting|not (?:currently )?accepting|applications? (?:are|is) (?:closed|not (?:currently )?open)|position has been filled|role has been filled|停止受理|不再接受申请|已关闭/i;
-  return status==='open'?positive.test(e.quote)&&!negative.test(e.quote):negative.test(e.quote);
+  // A live AP Recruit portal can explicitly say that applications continue to
+  // be accepted. Bind that statement to this job and its observed open/final
+  // window; a button, future deadline or login page alone still proves nothing.
+  const w=e.applicationWindow||{},path=(()=>{try{return new URL(e.url);}catch{return null;}})();
+  const continuing=path?.hostname==='aprecruit.berkeley.edu'&&!path.username&&!path.password&&/^\/JPF\d{5}$/.test(path.pathname)&&e.pageKind==='application_portal'&&e.jobReference===path.pathname.slice(1)&&/Applications will continue to be accepted until this date\./.test(e.quote)&&deadlineInfo(w.opens,today).kind!=='unknown'&&deadlineInfo(w.opens,today).days<=0&&deadlineInfo(w.closes,today).kind==='future'&&job.deadline===w.closes;
+  return status==='open'?(positive.test(e.quote)||continuing)&&!negative.test(e.quote):negative.test(e.quote);
  });
 }
 export function opportunityState(job={},today=new Date().toISOString().slice(0,10)){

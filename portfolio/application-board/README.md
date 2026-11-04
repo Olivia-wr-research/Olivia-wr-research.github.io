@@ -1,3 +1,9 @@
+# 远境 TERRAFAR
+
+V1 is published from a reviewed public dataset. See [the current release and operating limits](docs/RELEASE_V1.md) and [public data](dist/public-dataset.json). Default results require explicit, recent portal acceptance evidence; other statuses remain separate.
+
+The notes below describe earlier snapshots, not the current record counts.
+
 # NextPosition · 下一站
 
 ## 0.7 decision details
