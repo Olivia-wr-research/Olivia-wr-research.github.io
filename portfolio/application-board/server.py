@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 ROOT=Path(__file__).resolve().parent/'dist'
-PUBLIC_JSON={'mentor-pilot.json','research-pilot.json','geography-sources.json','geography-official-sources.json','vendor/world-110m.geojson'}
+PUBLIC_JSON={'mentor-pilot.json','research-pilot.json','geography-sources.json','geography-official-sources.json','vendor/world-110m.geojson','public-dataset.json'}
 def static_files(root):
     kinds={'.mjs':'text/javascript; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.html':'text/html; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.ico':'image/x-icon','.woff2':'font/woff2'}
     files={}

@@ -1,4 +1,5 @@
 import {applyReviewedCatalogUpdates} from './catalog-review.mjs';
+import {publicReleaseDataset} from './public-dataset.mjs';
 import {reviewedCatalogUpdates} from './reviewed-updates.mjs';
 import {opportunityState} from './opportunity.mjs';
 import {geographyOpportunities} from './geography-opportunities.mjs';
@@ -936,4 +937,5 @@ const reviewedBaseCatalog=[...originalCatalog,...geographyOctober18].map(origina
  return updated;
 });
 
-export const geographyCatalog=applyReviewedCatalogUpdates(reviewedBaseCatalog,reviewedCatalogUpdates);
+export const originalGeographyCatalog=applyReviewedCatalogUpdates(reviewedBaseCatalog,reviewedCatalogUpdates);
+export const geographyCatalog=publicReleaseDataset.records;
