@@ -1,5 +1,5 @@
-import {opportunityCategory} from './geography-catalog.mjs';
-import {fundingKind,opportunityState,opportunityDeadlineInfo,isConcreteOpportunity} from './opportunity.mjs';
+import {opportunityCategory} from './geography-catalog.mjs?v=release-v1-20261104';
+import {fundingKind,opportunityState,opportunityDeadlineInfo,isConcreteOpportunity} from './opportunity.mjs?v=release-v1-20261104';
 export function trackOf(j){return ['programme','intake','study'].includes(opportunityCategory(j))?'study':'work';}
 export function levelOf(j){
  if(j.degreeType==='masters'||/^masters?[-_]/i.test(j.type||''))return 'masters';
