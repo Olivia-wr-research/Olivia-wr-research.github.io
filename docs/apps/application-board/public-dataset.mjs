@@ -16498,7 +16498,9 @@ export const publicReleaseDataset = {
       "applicationActionability": "login_required_acceptance_unverified",
       "announcementStatus": "open",
       "sourceReview": {
-        "status": "source-reviewed"
+        "status": "source-reviewed",
+        "attemptedAt": "2026-11-04T16:32:27Z",
+        "scope": "specific official opportunity detail, not complete institution/source coverage"
       },
       "fieldEvidence": [
         {
@@ -16596,6 +16598,27 @@ export const publicReleaseDataset = {
           "status": "supported",
           "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
           "observedAt": "2026-11-04T16:37:09.623010+00:00"
+        },
+        {
+          "field": "application_route",
+          "label": "materials",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:32:27Z"
+        },
+        {
+          "field": "application_route",
+          "label": "applicationProcess",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:32:27Z"
+        },
+        {
+          "field": "start_date",
+          "label": "startDate",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984990/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:32:27Z"
         }
       ],
       "officialJobReference": "PA2026/3144",
@@ -16606,7 +16629,14 @@ export const publicReleaseDataset = {
       "languageEn": "English; see the official requirements",
       "releaseStatus": "likely_open / needs_review",
       "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
+      "materials": "CV、说明兴趣与匹配资格的个人信、学位证明或同等文件；其他证明可按需附上。",
+      "materialsEn": "CV, personal letter explaining interest and qualifications, degree certificate or equivalent; optional supporting documents.",
+      "applicationProcess": "通过隆德大学Varbi招聘系统提交，需登录。公开公告说明了申请材料；登录后的受理与最终提交未核验。",
+      "applicationProcessEn": "Submit through Lund University’s Varbi recruitment system; login is required. Documents are specified in the notice; acceptance after login and final submission are unverified.",
+      "startDate": "1 February 2027 or as agreed",
+      "checkedAt": "2026-11-04T16:32:27Z",
+      "collectedAt": "2026-11-04"
     },
     {
       "id": "geo-tcand-7832b4c8ecc603c54e9e2148",
@@ -16663,7 +16693,9 @@ export const publicReleaseDataset = {
       "applicationActionability": "login_required_acceptance_unverified",
       "announcementStatus": "open",
       "sourceReview": {
-        "status": "source-reviewed"
+        "status": "source-reviewed",
+        "attemptedAt": "2026-11-04T16:32:19Z",
+        "scope": "specific official opportunity detail, not complete institution/source coverage"
       },
       "fieldEvidence": [
         {
@@ -16791,6 +16823,27 @@ export const publicReleaseDataset = {
           "status": "supported",
           "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
           "observedAt": "2026-11-04T16:37:09.622861+00:00"
+        },
+        {
+          "field": "application_route",
+          "label": "materials",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:32:19Z"
+        },
+        {
+          "field": "application_route",
+          "label": "applicationProcess",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:32:19Z"
+        },
+        {
+          "field": "start_date",
+          "label": "startDate",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:984146/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:32:19Z"
         }
       ],
       "officialJobReference": "PA2026/3115",
@@ -16801,7 +16854,14 @@ export const publicReleaseDataset = {
       "languageEn": "English; see the official requirements",
       "releaseStatus": "likely_open / needs_review",
       "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
+      "materials": "英文申请：CV及个人信，说明对博士课题的兴趣与教育背景；学历证书／文凭及资格证明；其他材料按需提交。",
+      "materialsEn": "English application with CV and personal letter, degree certificates/diplomas proving eligibility, and optional supporting documents.",
+      "applicationProcess": "通过隆德大学Varbi招聘系统提交，需登录。公开公告说明了申请材料；登录后的受理与最终提交未核验。",
+      "applicationProcessEn": "Submit through Lund University’s Varbi recruitment system; login is required. Documents are specified in the notice; acceptance after login and final submission are unverified.",
+      "startDate": "2027-01-07 or due agreement",
+      "checkedAt": "2026-11-04T16:32:19Z",
+      "collectedAt": "2026-11-04"
     },
     {
       "id": "geo-tcand-657d1f254d2a1e9113ce7d1c",
@@ -16858,7 +16918,9 @@ export const publicReleaseDataset = {
       "applicationActionability": "login_required_acceptance_unverified",
       "announcementStatus": "open",
       "sourceReview": {
-        "status": "source-reviewed"
+        "status": "source-reviewed",
+        "attemptedAt": "2026-11-04T16:32:15Z",
+        "scope": "specific official opportunity detail, not complete institution/source coverage"
       },
       "fieldEvidence": [
         {
@@ -16974,6 +17036,27 @@ export const publicReleaseDataset = {
           "status": "supported",
           "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
           "observedAt": "2026-11-04T16:37:09.622660+00:00"
+        },
+        {
+          "field": "application_route",
+          "label": "materials",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:32:15Z"
+        },
+        {
+          "field": "application_route",
+          "label": "applicationProcess",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:32:15Z"
+        },
+        {
+          "field": "start_date",
+          "label": "startDate",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:32:15Z"
         }
       ],
       "officialJobReference": "PA2026/3079",
@@ -16984,7 +17067,14 @@ export const publicReleaseDataset = {
       "languageEn": "English; see the official requirements",
       "releaseStatus": "likely_open / needs_review",
       "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
+      "materials": "英文PDF：CV及发表清单，过去研究与未来兴趣说明（不超过3页），至少两名推荐人联系方式，博士证书及其他拟提交证明。",
+      "materialsEn": "English PDF with CV and publications, past research/future interests (maximum three pages), contact details of at least two referees, and doctoral certificate/supporting certificates.",
+      "applicationProcess": "通过隆德大学Varbi招聘系统提交，需登录。公开公告说明了申请材料；登录后的受理与最终提交未核验。",
+      "applicationProcessEn": "Submit through Lund University’s Varbi recruitment system; login is required. Documents are specified in the notice; acceptance after login and final submission are unverified.",
+      "startDate": "as soon as possible according to agreement, no later than May 1st 2027",
+      "checkedAt": "2026-11-04T16:32:15Z",
+      "collectedAt": "2026-11-04"
     },
     {
       "id": "geo-tcand-90025f25903467f96cc4e901",
@@ -17040,7 +17130,9 @@ export const publicReleaseDataset = {
       "applicationActionability": "login_required_acceptance_unverified",
       "announcementStatus": "open",
       "sourceReview": {
-        "status": "source-reviewed"
+        "status": "source-reviewed",
+        "attemptedAt": "2026-11-04T16:32:23Z",
+        "scope": "specific official opportunity detail, not complete institution/source coverage"
       },
       "fieldEvidence": [
         {
@@ -17144,6 +17236,27 @@ export const publicReleaseDataset = {
           "status": "supported",
           "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
           "observedAt": "2026-11-04T16:37:09.622939+00:00"
+        },
+        {
+          "field": "application_route",
+          "label": "materials",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:32:23Z"
+        },
+        {
+          "field": "application_route",
+          "label": "applicationProcess",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:32:23Z"
+        },
+        {
+          "field": "start_date",
+          "label": "startDate",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T16:32:23Z"
         }
       ],
       "officialJobReference": "PA2026/3081",
@@ -17154,7 +17267,14 @@ export const publicReleaseDataset = {
       "languageEn": "English; see the official requirements",
       "releaseStatus": "likely_open / needs_review",
       "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
+      "materials": "英文PDF：CV及发表清单，过去研究与未来兴趣说明（最多2页），至少两名推荐人联系方式，博士证书及其他证明，并简述申请兴趣。",
+      "materialsEn": "English PDF with CV and publications, past research/future interests (maximum two pages), contact details of at least two referees, doctoral certificate/supporting documents and a short interest statement.",
+      "applicationProcess": "通过隆德大学Varbi招聘系统提交，需登录。公开公告说明了申请材料；登录后的受理与最终提交未核验。",
+      "applicationProcessEn": "Submit through Lund University’s Varbi recruitment system; login is required. Documents are specified in the notice; acceptance after login and final submission are unverified.",
+      "startDate": "2027-02-01 or due agreement",
+      "checkedAt": "2026-11-04T16:32:23Z",
+      "collectedAt": "2026-11-04"
     }
   ],
   "newRecords": 63,
@@ -17199,7 +17319,7 @@ export const publicReleaseDataset = {
     "resource_only": 84
   },
   "opportunityRecords": 101,
-  "datasetSha256": "14cec0e3a562e054e1e8efe9968b4f468db0199f851170bb0b40ed363f80d0fe",
+  "datasetSha256": "5864922f4fef2ec0b70670ceed284b84790d8651d2f2767186694c849462ba55",
   "availabilityReview": {
     "planned": 46,
     "new_public_records": 12,
