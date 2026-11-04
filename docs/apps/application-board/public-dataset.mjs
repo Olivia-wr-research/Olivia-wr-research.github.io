@@ -15056,14 +15056,14 @@ export const publicReleaseDataset = {
       "url": "https://spartantalent.uncg.edu/postings/35916"
     },
     {
-      "announcementStatus": "invites_applications",
-      "applicationActionability": "public_form_accessible_acceptance_unconfirmed",
+      "announcementStatus": "open",
+      "applicationActionability": "public_identity_start_verified",
       "applicationProcess": "Direkt hier online bewerben.",
       "applicationProcessEn": "Direkt hier online bewerben.",
-      "applicationRouteCheckedAt": "2026-11-04T05:51:36.618Z",
+      "applicationRouteCheckedAt": "2026-11-04T14:24:38.332Z",
       "candidateId": "tcand-e2cbc0f3f2baefddc02a9697",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已只读核对官方公告及对应公开申请起始表；未填写、注册、投递或测试最终提交和回执。",
+      "cautionEn": "Official notice and matching public start form checked read-only; no registration, application or final submission/receipt test.",
       "checkedAt": "2026-11-01",
       "city": "",
       "collectedAt": "2026-11-01",
@@ -15071,8 +15071,8 @@ export const publicReleaseDataset = {
       "contentReviewStatus": "verified",
       "country": "未核实",
       "countryEn": "Unknown",
-      "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:55:15.088Z",
+      "currentOpenStatus": "open",
+      "currentOpenStatusCheckedAt": "2026-11-04T14:24:38.332Z",
       "deadline": "2026-11-29",
       "deadlineNote": "Bewerbungsfrist 29.11.2026",
       "deadlineNoteEn": "Bewerbungsfrist 29.11.2026",
@@ -15191,6 +15191,28 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:46:37.335Z",
           "status": "missing",
           "url": "https://karriere.uni-frankfurt.de/gu-frankfurt/job/58660"
+        },
+        {
+          "field": "current_open_status",
+          "status": "supported",
+          "value": "open",
+          "url": "https://karriere.uni-frankfurt.de/gu-frankfurt/apply/58660",
+          "quote": "Bewerbung senden",
+          "observedAt": "2026-11-04T14:24:38.332Z",
+          "pageKind": "application_portal",
+          "jobReference": "G316-2026",
+          "formStage": "public_identity_form",
+          "applicationFormTitle": "Wissenschaftliche*n Mitarbeiter*in (m/w/d) in der Abteilung Evolutionäre Ökologie der Hymenopteren",
+          "availableFormFields": [
+            "email",
+            "first_name",
+            "last_name"
+          ],
+          "applicationWindow": {
+            "closes": "2026-11-29",
+            "closeDateLiteral": "29 November 2026"
+          },
+          "invitationQuote": "Direkt hier online bewerben."
         }
       ],
       "funding": "未公布或尚未核验",
@@ -15203,7 +15225,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
-      "releaseStatus": "likely_open / needs_review",
+      "releaseStatus": "verified_open",
       "requirements": "überdurchschnittlichen Masterabschluss (oder einen vergleichbaren Abschluss) in Biologie, Ökologie, Evolutionsbiologie oder einer verwandten Disziplin\nErfahrung in mindestens zwei der folgenden Bereiche\nbeherrschen Deutsch und Englisch in Wort und Schrift",
       "requirementsEn": "überdurchschnittlichen Masterabschluss (oder einen vergleichbaren Abschluss) in Biologie, Ökologie, Evolutionsbiologie oder einer verwandten Disziplin\nErfahrung in mindestens zwei der folgenden Bereiche\nbeherrschen Deutsch und Englisch in Wort und Schrift",
       "reviewDate": "",
@@ -15216,15 +15238,17 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified",
+      "statusLabel": "核对时确认受理 · 申请前请复核",
+      "statusLabelEn": "Acceptance confirmed at last check · recheck before applying",
       "summary": "Umweltstressoren wie Lebensraumverlust und Agrochemikalien",
       "summaryEn": "Umweltstressoren wie Lebensraumverlust und Agrochemikalien",
       "title": "Wissenschaftliche*n Mitarbeiter*in (m/w/d) in der Abteilung Evolutionäre Ökologie der Hymenopteren",
       "titleEn": "Wissenschaftliche*n Mitarbeiter*in (m/w/d) in der Abteilung Evolutionäre Ökologie der Hymenopteren",
       "topics": [],
       "type": "phd",
-      "url": "https://karriere.uni-frankfurt.de/gu-frankfurt/job/58660"
+      "url": "https://karriere.uni-frankfurt.de/gu-frankfurt/job/58660",
+      "officialJobReference": "G316-2026",
+      "applicationUrl": "https://karriere.uni-frankfurt.de/gu-frankfurt/apply/58660"
     },
     {
       "announcementStatus": "unknown",
@@ -15406,13 +15430,13 @@ export const publicReleaseDataset = {
       "url": "https://careers.humboldt.edu/hm/en-us/job/561701/farm-coordinator"
     },
     {
-      "announcementStatus": "unknown",
-      "applicationActionability": "unknown",
+      "announcementStatus": "open",
+      "applicationActionability": "public_identity_start_verified",
       "applicationProcess": "Application Materials: Resume or curriculum vitae. Cover letter describing relevant experience and interest in the position. Portfolio with at least two examples of maps, geospatial analyses, spatial data visualizations, dashboards, or decision-support products. Contact information for three professional references. Working Conditions: Supervision Received: Receives general supervision from Sr Conservation Ec",
       "applicationProcessEn": "Application Materials: Resume or curriculum vitae. Cover letter describing relevant experience and interest in the position. Portfolio with at least two examples of maps, geospatial analyses, spatial data visualizations, dashboards, or decision-support products. Contact information for three professional references. Working Conditions: Supervision Received: Receives general supervision from Sr Conservation Ec",
       "candidateId": "tcand-e995b9bcbf09986ee63761c0",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已只读核对官方公告及对应公开申请起始表；未填写、注册、投递或测试最终提交和回执。",
+      "cautionEn": "Official notice and matching public start form checked read-only; no registration, application or final submission/receipt test.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -15420,8 +15444,8 @@ export const publicReleaseDataset = {
       "contentReviewStatus": "verified",
       "country": "未核实",
       "countryEn": "Unknown",
-      "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:59:13.939Z",
+      "currentOpenStatus": "open",
+      "currentOpenStatusCheckedAt": "2026-11-04T14:28:35.088Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -15504,6 +15528,23 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:48:59.942Z",
           "status": "missing",
           "url": "https://apply.clearcompany.com/fieldmuseum?noheader=False&jobId=9c2ce01c-faf6-cd4e-0bd0-f0c7ec4ef00a#job"
+        },
+        {
+          "field": "current_open_status",
+          "status": "supported",
+          "value": "open",
+          "url": "https://fieldmuseum.clearcompany.com/careers/jobs/9c2ce01c-faf6-cd4e-0bd0-f0c7ec4ef00a/apply?source=CJB-0",
+          "quote": "Enter your information below to begin the application",
+          "observedAt": "2026-11-04T14:28:35.088Z",
+          "pageKind": "application_portal",
+          "jobReference": "9c2ce01c-faf6-cd4e-0bd0-f0c7ec4ef00a",
+          "formStage": "public_identity_form",
+          "applicationFormTitle": "Manager, Geospatial Scientist",
+          "availableFormFields": [
+            "First Name",
+            "Last Name",
+            "Email"
+          ]
         }
       ],
       "funding": "未公布或尚未核验",
@@ -15516,7 +15557,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
-      "releaseStatus": "likely_open / needs_review",
+      "releaseStatus": "verified_open",
       "requirements": "Advanced degree in geography, GIS/geospatial science, ecology, environmental science, remote sensing, earth system science, conservation science, anthropology, or a related field, or an equivalent combination of education and relevant experience. Minimum seven years of progressively responsible experience in GIS, remote sensing, spatial analysis, applied conservation science, or a closely related field, including t\nMinimum seven years of progressively responsible experience in GIS, remote sensing, spatial analysis, applied conservation science, or a closely related field, including technical leadership. Demonstrated ability to manage projects, includ\nFluency in Spanish or Portuguese, with strong professional proficiency in the other language preferred.\nPreferred Qualifications: PhD in a relevant discipline.",
       "requirementsEn": "Advanced degree in geography, GIS/geospatial science, ecology, environmental science, remote sensing, earth system science, conservation science, anthropology, or a related field, or an equivalent combination of education and relevant experience. Minimum seven years of progressively responsible experience in GIS, remote sensing, spatial analysis, applied conservation science, or a closely related field, including t\nMinimum seven years of progressively responsible experience in GIS, remote sensing, spatial analysis, applied conservation science, or a closely related field, including technical leadership. Demonstrated ability to manage projects, includ\nFluency in Spanish or Portuguese, with strong professional proficiency in the other language preferred.\nPreferred Qualifications: PhD in a relevant discipline.",
       "reviewDate": "",
@@ -15529,15 +15570,18 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified",
+      "statusLabel": "核对时确认受理 · 申请前请复核",
+      "statusLabelEn": "Acceptance confirmed at last check · recheck before applying",
       "summary": "application of geospatial science across KSAC's Andes-Amazon and Chicago Region programs",
       "summaryEn": "application of geospatial science across KSAC's Andes-Amazon and Chicago Region programs",
       "title": "Manager, Geospatial Scientist",
       "titleEn": "Manager, Geospatial Scientist",
       "topics": [],
       "type": "research",
-      "url": "https://apply.clearcompany.com/fieldmuseum?noheader=False&jobId=9c2ce01c-faf6-cd4e-0bd0-f0c7ec4ef00a#job"
+      "url": "https://apply.clearcompany.com/fieldmuseum?noheader=False&jobId=9c2ce01c-faf6-cd4e-0bd0-f0c7ec4ef00a#job",
+      "officialJobReference": "9c2ce01c-faf6-cd4e-0bd0-f0c7ec4ef00a",
+      "applicationUrl": "https://fieldmuseum.clearcompany.com/careers/jobs/9c2ce01c-faf6-cd4e-0bd0-f0c7ec4ef00a/apply?source=CJB-0",
+      "applicationRouteCheckedAt": "2026-11-04T14:28:35.088Z"
     },
     {
       "announcementStatus": "open",
@@ -16030,15 +16074,15 @@ export const publicReleaseDataset = {
       "url": "https://jobs.univie.ac.at/job/University-Assistant-postdoctoral/1453340933/"
     },
     {
-      "announcementStatus": "invites_applications",
-      "applicationActionability": "unknown",
+      "announcementStatus": "open",
+      "applicationActionability": "public_identity_start_verified",
       "applicationProcess": "Apply for job",
       "applicationProcessEn": "Apply for job",
-      "applicationRouteCheckedAt": "2026-11-04T05:45:45.670Z",
-      "applicationUrl": "https://www.jobs.manchester.ac.uk/DecideInternalExternal/DecideInternalExternal?JobId=46239",
+      "applicationRouteCheckedAt": "2026-11-04T14:26:03.736Z",
+      "applicationUrl": "https://www.jobs.manchester.ac.uk/Account/RegisterNoPassword1?JobId=46239",
       "candidateId": "tcand-fd0d69d1cb66f960f3a5e991",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已只读核对官方公告及对应公开申请起始表；未填写、注册、投递或测试最终提交和回执。",
+      "cautionEn": "Official notice and matching public start form checked read-only; no registration, application or final submission/receipt test.",
       "checkedAt": "2026-11-01",
       "city": "",
       "collectedAt": "2026-11-01",
@@ -16046,8 +16090,8 @@ export const publicReleaseDataset = {
       "contentReviewStatus": "verified",
       "country": "未核实",
       "countryEn": "Unknown",
-      "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:54:02.826Z",
+      "currentOpenStatus": "open",
+      "currentOpenStatusCheckedAt": "2026-11-04T14:26:03.736Z",
       "deadline": "2026-11-08",
       "deadlineNote": "Closing date (DD/MM/YYYY): 08/11/2026",
       "deadlineNoteEn": "Closing date (DD/MM/YYYY): 08/11/2026",
@@ -16148,6 +16192,27 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:50:00.609Z",
           "status": "missing",
           "url": "https://www.jobs.manchester.ac.uk/DecideInternalExternal/DecideInternalExternal?JobId=46239"
+        },
+        {
+          "field": "current_open_status",
+          "status": "supported",
+          "value": "open",
+          "url": "https://www.jobs.manchester.ac.uk/Account/RegisterNoPassword1?JobId=46239",
+          "quote": "Hello, let’s start your application.",
+          "observedAt": "2026-11-04T14:26:03.736Z",
+          "pageKind": "application_portal",
+          "jobReference": "SAE-032577",
+          "formStage": "public_identity_form",
+          "applicationFormTitle": "The University of Manchester - A couple more things | Apply for Research Associate (Socially Responsible Earth Observation)",
+          "availableFormFields": [
+            "FirstName",
+            "LastName"
+          ],
+          "applicationWindow": {
+            "closes": "2026-11-08",
+            "closeDateLiteral": "8 November 2026"
+          },
+          "invitationQuote": "Apply for job"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -16160,7 +16225,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
-      "releaseStatus": "likely_open / needs_review",
+      "releaseStatus": "verified_open",
       "requirements": "官方条件尚未完整核验",
       "requirementsEn": "Requirements not fully verified",
       "reviewDate": "",
@@ -16173,15 +16238,16 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified",
+      "statusLabel": "核对时确认受理 · 申请前请复核",
+      "statusLabelEn": "Acceptance confirmed at last check · recheck before applying",
       "summary": "satellite-based irrigation mapping tools",
       "summaryEn": "satellite-based irrigation mapping tools",
       "title": "Research Associate (Socially Responsible Earth Observation)",
       "titleEn": "Research Associate (Socially Responsible Earth Observation)",
       "topics": [],
       "type": "postdoc",
-      "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46239"
+      "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46239",
+      "officialJobReference": "SAE-032577"
     }
   ],
   "newRecords": 59,
@@ -16216,8 +16282,8 @@ export const publicReleaseDataset = {
     "limitation": "Coverage is expanding / 数据覆盖持续扩展"
   },
   "counts": {
-    "verified_open": 10,
-    "likely_open / needs_review": 54,
+    "verified_open": 13,
+    "likely_open / needs_review": 51,
     "closed": 0,
     "expired": 8,
     "insufficient_evidence": 25,
@@ -16225,16 +16291,13 @@ export const publicReleaseDataset = {
     "resource_only": 84
   },
   "opportunityRecords": 97,
-  "datasetSha256": "f8cfc6a8d2cebd344bc6ec39a62a0aafca6eef2f9592a9d0f827b532447be456",
+  "datasetSha256": "89725db052981b21145f2dd48e68f4e136245ff8ab619fe0a6fc599de24e4c76",
   "availabilityReview": {
-    "observedDate": "2026-11-04",
-    "planned": 56,
-    "newlyConfirmed": 2,
-    "remainingUnknown": 54,
-    "knownLoginNotRetried": 23,
-    "publicRecordsAttempted": 33,
-    "newlyConfirmedClosed": 0,
-    "newlyConfirmedExpired": 0,
-    "emailDeliveryNotTested": true
+    "planned": 54,
+    "newlyConfirmed": 3,
+    "remainingUnknown": 51,
+    "actualPublicRecordsThisRound": 9,
+    "notAll54NewlyVisited": true,
+    "finalSubmissionNotTested": true
   }
 };

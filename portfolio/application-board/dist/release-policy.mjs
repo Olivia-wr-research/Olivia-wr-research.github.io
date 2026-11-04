@@ -1,4 +1,4 @@
-import {opportunityState,isConcreteOpportunity,opportunityStatusLabel} from './opportunity.mjs?v=open56-20261104';
+import {opportunityState,isConcreteOpportunity,opportunityStatusLabel} from './opportunity.mjs?v=open54-nomap-20261104';
 export const RELEASE_STATUSES=['verified_open','likely_open / needs_review','closed','expired','insufficient_evidence','blocked','resource_only'];
 export function releaseStatus(record,today=new Date().toISOString().slice(0,10)){
  const s=opportunityState(record,today);
