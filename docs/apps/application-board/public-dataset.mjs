@@ -3628,8 +3628,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T05:55:32.038Z",
       "applicationUrl": "https://lu.varbi.com/en/what:login/jobID:930481/type:job/where:4/apply:1/",
       "candidateId": "tcand-ace8a3b53aed0d0977dd0628",
-      "caution": "录用与申请资格以官方公告为准。",
-      "cautionEn": "The official advertisement governs eligibility and hiring.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-17",
       "city": "Lund",
       "collectedAt": "2026-10-16",
@@ -3638,7 +3638,7 @@ export const publicReleaseDataset = {
       "country": "瑞典",
       "countryEn": "Sweden",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T05:55:32.038Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T18:05:57.177582+00:00",
       "deadline": "2026-11-04",
       "deadlineNote": "04.Nov.2026",
       "deadlineType": "fixed",
@@ -3660,6 +3660,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:45:28.511Z",
           "status": "missing",
           "url": "https://lu.varbi.com/en/what:login/jobID:930481/type:job/where:4/apply:1/"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://lu.varbi.com/en/what:job/jobID:930481/type:job/where:4/apply:1",
+          "observedAt": "2026-11-04T18:05:57.177582+00:00"
         }
       ],
       "funding": "全职长期雇佣岗位",
@@ -3707,7 +3713,8 @@ export const publicReleaseDataset = {
         "3D geodata"
       ],
       "type": "faculty",
-      "url": "https://lu.varbi.com/en/what:job/jobID:930481/type:job/where:4/apply:1"
+      "url": "https://lu.varbi.com/en/what:job/jobID:930481/type:job/where:4/apply:1",
+      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00"
     },
     {
       "applicationUrl": "https://hu-berlin.stellenticket.de/de/offers/207061/",
@@ -3842,8 +3849,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T04:53:04.763Z",
       "applicationUrl": "https://uscjobs.sc.edu/postings/213942/pre_apply",
       "candidateId": "tcand-536021f617341cb0b2a2d2a1",
-      "caution": "2026年11月1日开始评审，招满为止；不是11月1日截止。预计2027年8月16日入职。",
-      "cautionEn": "Review begins 1 November 2026; open until filled, not a fixed November 1 deadline. Expected start: 16 August 2027.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-17",
       "city": "Columbia, South Carolina",
       "collectedAt": "2026-10-16",
@@ -3852,9 +3859,9 @@ export const publicReleaseDataset = {
       "country": "美国",
       "countryEn": "United States",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T04:53:04.763Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:04.678433+00:00",
       "deadline": "",
-      "deadlineNote": "Review of applications will begin November 1, 2026, and will continue until the position is filled.",
+      "deadlineNote": "2026-11-01开始审查，之后直至招满；不是固定申请截止。",
       "deadlineType": "rolling",
       "degree": "phd",
       "duration": "每学年9个月聘期；非9个月短期合同",
@@ -3874,6 +3881,42 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:53:04.763Z",
           "status": "supported",
           "url": "https://uscjobs.sc.edu/postings/213942/pre_apply"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/213942",
+          "observedAt": "2026-11-04T17:59:04.678433+00:00"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/213942",
+          "observedAt": "2026-11-04T17:59:04.678433+00:00"
+        },
+        {
+          "field": "reviewDate",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/213942",
+          "observedAt": "2026-11-04T17:59:04.678433+00:00"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/213942",
+          "observedAt": "2026-11-04T17:59:04.678433+00:00"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/213942",
+          "observedAt": "2026-11-04T17:59:04.678433+00:00"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://uscjobs.sc.edu/postings/213942",
+          "observedAt": "2026-11-04T17:59:04.678433+00:00"
         }
       ],
       "funding": "全职长聘轨道教职",
@@ -3922,7 +3965,9 @@ export const publicReleaseDataset = {
         "数字制图"
       ],
       "type": "faculty",
-      "url": "https://uscjobs.sc.edu/postings/213942"
+      "url": "https://uscjobs.sc.edu/postings/213942",
+      "deadlineNoteEn": "Review begins 2026-11-01 and continues until filled; not a fixed closing date.",
+      "announcementRecheckedAt": "2026-11-04T17:59:04.678433+00:00"
     },
     {
       "announcementStatus": "open",
@@ -7564,8 +7609,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T05:47:48.920Z",
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1452443033/?locale=de_DE",
       "candidateId": "tcand-0531f84d3e45d3557f220ee8",
-      "caution": "待审核数据；门户最终受理未核验。 本轮原文证据已保存恢复，资格中优先项与硬性条件须结合所附完整段落阅读；仍待发布审核。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified. Evidence saved and restored; preserve required/preferred qualification distinctions; owner publication review pending.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -7574,7 +7619,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T05:47:48.920Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T18:05:57.177582+00:00",
       "deadline": "2026-11-30",
       "deadlineNote": "Bewerbungsfrist: 30.11.2026",
       "deadlineNoteEn": "Bewerbungsfrist: 30.11.2026",
@@ -7723,6 +7768,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:50:45.399Z",
           "status": "missing",
           "url": "https://jobs.univie.ac.at/talentcommunity/apply/1452443033/?locale=de_DE"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452443033/",
+          "observedAt": "2026-11-04T18:05:57.177582+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -7756,7 +7807,8 @@ export const publicReleaseDataset = {
       "titleEn": "Universitätsassistent*in Postdoc",
       "topics": [],
       "type": "postdoc",
-      "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452443033/"
+      "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452443033/",
+      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00"
     },
     {
       "announcementStatus": "unknown",
@@ -7765,8 +7817,8 @@ export const publicReleaseDataset = {
       "applicationProcessEn": "The University only accepts and considers applications submitted online for the post above via the CUHK career site.",
       "applicationRouteCheckedAt": "2026-11-04T04:55:14.277Z",
       "candidateId": "tcand-05afd1081e74712769a6be5a",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -7775,10 +7827,10 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T04:55:14.277Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:37.832Z",
       "deadline": "",
-      "deadlineNote": "Closing Date: Until the post is filled.",
-      "deadlineNoteEn": "Closing Date: Until the post is filled.",
+      "deadlineNote": "官网明确招满为止；只接受CUHK招聘网站在线申请，登录后受理未核实。",
+      "deadlineNoteEn": "Officially until filled; CUHK online applications only. Acceptance after login is unverified.",
       "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
@@ -7840,6 +7892,36 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:55:14.277Z",
           "status": "supported",
           "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai",
+          "observedAt": "2026-11-04T17:59:37.832Z"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai",
+          "observedAt": "2026-11-04T17:59:37.832Z"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai",
+          "observedAt": "2026-11-04T17:59:37.832Z"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai",
+          "observedAt": "2026-11-04T17:59:37.832Z"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai",
+          "observedAt": "2026-11-04T17:59:37.832Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -7873,7 +7955,8 @@ export const publicReleaseDataset = {
       "titleEn": "Associate Professor/ Assistant Professor (Urban Studies)",
       "topics": [],
       "type": "faculty",
-      "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai"
+      "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai",
+      "announcementRecheckedAt": "2026-11-04T17:59:37.832Z"
     },
     {
       "announcementStatus": "open",
@@ -8138,8 +8221,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T04:51:20.210Z",
       "applicationUrl": "https://jobs.montana.edu/postings/53185/pre_apply",
       "candidateId": "tcand-1308ee0083aff518f55bd236",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -8148,11 +8231,11 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T04:51:20.210Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T18:05:57.177582+00:00",
       "deadline": "",
-      "deadlineNote": "",
-      "deadlineNoteEn": "",
-      "deadlineType": "unknown",
+      "deadlineNote": "2026年10月29日开始筛选，之后接受至形成足够申请人池；并非固定截止，也不等于无限期开放。",
+      "deadlineNoteEn": "Screening begins 29 October 2026, with applications accepted until an adequate pool is established; not a fixed cutoff or guaranteed indefinite opening.",
+      "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
@@ -8183,6 +8266,42 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:51:20.210Z",
           "status": "supported",
           "url": "https://jobs.montana.edu/postings/53185/pre_apply"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://jobs.montana.edu/postings/52857",
+          "observedAt": "2026-11-04T18:05:57.177582+00:00"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://jobs.montana.edu/postings/52857",
+          "observedAt": "2026-11-04T18:05:57.177582+00:00"
+        },
+        {
+          "field": "reviewDate",
+          "status": "supported",
+          "url": "https://jobs.montana.edu/postings/52857",
+          "observedAt": "2026-11-04T18:05:57.177582+00:00"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://jobs.montana.edu/postings/52857",
+          "observedAt": "2026-11-04T18:05:57.177582+00:00"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://jobs.montana.edu/postings/52857",
+          "observedAt": "2026-11-04T18:05:57.177582+00:00"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://jobs.montana.edu/postings/52857",
+          "observedAt": "2026-11-04T18:05:57.177582+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8198,7 +8317,7 @@ export const publicReleaseDataset = {
       "releaseStatus": "likely_open / needs_review",
       "requirements": "Required Qualifications – Experience, Education, Knowledge & Skills PhD in Earth Sciences, Geography, Environmental Sciences, or related discipline with a research focus on global change, environmental hazards and social vulnerability and related fields by the start date. Demonstrated potential to teach effective lower-division, upper-division, and graduate courses in human-environment geography and related Earth Sciences topics, including large introductory courses, as evidenced by teaching experience, a teaching statement, and/or evaluations or equivalent documentation. Demonstrated research experience as evidenced by a record of peer-reviewed publications approp",
       "requirementsEn": "Required Qualifications – Experience, Education, Knowledge & Skills PhD in Earth Sciences, Geography, Environmental Sciences, or related discipline with a research focus on global change, environmental hazards and social vulnerability and related fields by the start date. Demonstrated potential to teach effective lower-division, upper-division, and graduate courses in human-environment geography and related Earth Sciences topics, including large introductory courses, as evidenced by teaching experience, a teaching statement, and/or evaluations or equivalent documentation. Demonstrated research experience as evidenced by a record of peer-reviewed publications approp",
-      "reviewDate": "",
+      "reviewDate": "2026-10-29",
       "salary": "未公布或尚未核验",
       "salaryEn": "Not stated or not verified",
       "short": "Montana State University",
@@ -8216,7 +8335,8 @@ export const publicReleaseDataset = {
       "titleEn": "Assistant Professor in Earth Sciences Geography",
       "topics": [],
       "type": "faculty",
-      "url": "https://jobs.montana.edu/postings/52857"
+      "url": "https://jobs.montana.edu/postings/52857",
+      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00"
     },
     {
       "announcementStatus": "open",
@@ -8349,8 +8469,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T05:48:09.081Z",
       "applicationUrl": "https://jobs.helsinki.fi/talentcommunity/apply/1374784157/?locale=en_GB",
       "candidateId": "tcand-256dd28e1f4a27848f3198f8",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-11-02",
       "city": "",
       "collectedAt": "2026-11-02",
@@ -8359,7 +8479,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T05:48:09.081Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:05.077032+00:00",
       "deadline": "2026-12-15",
       "deadlineNote": "15 December 2026 at 23:59 (Europe/Helsinki time)",
       "deadlineNoteEn": "15 December 2026 at 23:59 (Europe/Helsinki time)",
@@ -8496,6 +8616,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:51:10.920Z",
           "status": "missing",
           "url": "https://jobs.helsinki.fi/talentcommunity/apply/1374784157/?locale=en_GB"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784157/",
+          "observedAt": "2026-11-04T17:59:05.077032+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8530,7 +8656,8 @@ export const publicReleaseDataset = {
       "titleEn": "Doctoral Researcher (MSCA), Exploiting Migration to Influence and Destabilise Societies",
       "topics": [],
       "type": "phd",
-      "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784157/"
+      "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784157/",
+      "announcementRecheckedAt": "2026-11-04T17:59:05.077032+00:00"
     },
     {
       "announcementStatus": "unknown",
@@ -8540,8 +8667,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T04:51:23.080Z",
       "applicationUrl": "https://academicjobsonline.org/ajo/jobs/33131/apply",
       "candidateId": "tcand-300f95e2f52d600da844b5c7",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -8550,11 +8677,11 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T04:51:23.080Z",
-      "deadline": "",
-      "deadlineNote": "Appl Deadline: 2026/12/15 12:59 PM ChinaTime * (posted 2026/10/19 12:00 PM Chin",
-      "deadlineNoteEn": "Appl Deadline: 2026/12/15 12:59 PM ChinaTime * (posted 2026/10/19 12:00 PM Chin",
-      "deadlineType": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:04.678433+00:00",
+      "deadline": "2026-12-14",
+      "deadlineNote": "AJO表格列2026-12-14 23:59:59*，正文称12月14日前保证考虑；时区未说明，不据此推断逾期受理。",
+      "deadlineNoteEn": "AJO lists 14 December 2026, 23:59:59*, while the text guarantees consideration by that date; timezone not stated and later acceptance not inferred.",
+      "deadlineType": "fixed",
       "degree": "unknown",
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
@@ -8615,6 +8742,36 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:51:23.080Z",
           "status": "supported",
           "url": "https://academicjobsonline.org/ajo/jobs/33131/apply"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://academicjobsonline.org/ajo/jobs/33131",
+          "observedAt": "2026-11-04T17:59:04.678433+00:00"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://academicjobsonline.org/ajo/jobs/33131",
+          "observedAt": "2026-11-04T17:59:04.678433+00:00"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://academicjobsonline.org/ajo/jobs/33131",
+          "observedAt": "2026-11-04T17:59:04.678433+00:00"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://academicjobsonline.org/ajo/jobs/33131",
+          "observedAt": "2026-11-04T17:59:04.678433+00:00"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://academicjobsonline.org/ajo/jobs/33131",
+          "observedAt": "2026-11-04T17:59:04.678433+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8648,7 +8805,8 @@ export const publicReleaseDataset = {
       "titleEn": "Assistant Professor of the Practice",
       "topics": [],
       "type": "faculty",
-      "url": "https://academicjobsonline.org/ajo/jobs/33131"
+      "url": "https://academicjobsonline.org/ajo/jobs/33131",
+      "announcementRecheckedAt": "2026-11-04T17:59:04.678433+00:00"
     },
     {
       "announcementStatus": "open",
@@ -8869,8 +9027,8 @@ export const publicReleaseDataset = {
       "applicationProcess": "",
       "applicationProcessEn": "",
       "candidateId": "tcand-46f0dc6d9c558c52a658fccd",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "公开入口需要登录；未登录、未重复尝试，保留旧事实，当前受理状态未知。",
+      "cautionEn": "Public entry shows email/password login; no login or retry; existing facts retained.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -8879,7 +9037,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:57:00.045Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T18:03:10.478Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -8932,6 +9090,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:47:13.840Z",
           "status": "missing",
           "url": "https://hcm.lonestar.edu/psc/hcmprd/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=43724&PostingSeq=1"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://hcm.lonestar.edu/psc/hcmprd/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=43724&PostingSeq=1",
+          "observedAt": "2026-11-04T18:03:10.478Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8965,7 +9129,8 @@ export const publicReleaseDataset = {
       "titleEn": "Adjunct Faculty, Environmental Science",
       "topics": [],
       "type": "faculty",
-      "url": "https://hcm.lonestar.edu/psc/hcmprd/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=43724&PostingSeq=1"
+      "url": "https://hcm.lonestar.edu/psc/hcmprd/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=43724&PostingSeq=1",
+      "announcementRecheckedAt": "2026-11-04T18:03:10.478Z"
     },
     {
       "announcementStatus": "unknown",
@@ -8975,8 +9140,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T04:50:30.804Z",
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1452586933/?locale=de_DE",
       "candidateId": "tcand-4b25053f7a76a7949b7c689c",
-      "caution": "待审核数据；门户最终受理未核验。 本轮原文证据已保存恢复，资格中优先项与硬性条件须结合所附完整段落阅读；仍待发布审核。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified. Evidence saved and restored; preserve required/preferred qualification distinctions; owner publication review pending.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -8985,7 +9150,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:54:34.832Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:04.872866+00:00",
       "deadline": "2026-11-19",
       "deadlineNote": "Bewerbungsfrist: 19.11.2026",
       "deadlineNoteEn": "Bewerbungsfrist: 19.11.2026",
@@ -9122,6 +9287,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:50:30.804Z",
           "status": "missing",
           "url": "https://jobs.univie.ac.at/talentcommunity/apply/1452586933/?locale=de_DE"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452586933/",
+          "observedAt": "2026-11-04T17:59:04.872866+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -9155,7 +9326,8 @@ export const publicReleaseDataset = {
       "titleEn": "Universitätsassistent*in Postdoc",
       "topics": [],
       "type": "postdoc",
-      "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452586933/"
+      "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452586933/",
+      "announcementRecheckedAt": "2026-11-04T17:59:04.872866+00:00"
     },
     {
       "announcementStatus": "open",
@@ -9164,8 +9336,8 @@ export const publicReleaseDataset = {
       "applicationProcessEn": "This institution is using Interfolio's Faculty Search to conduct this search.",
       "applicationRouteCheckedAt": "2026-11-04T04:56:46.989Z",
       "candidateId": "tcand-50f69fbe806ee01c024c25f8",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -9174,11 +9346,11 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:57:04.799Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:04.746708+00:00",
       "deadline": "",
-      "deadlineNote": "",
-      "deadlineNoteEn": "",
-      "deadlineType": "unknown",
+      "deadlineNote": "2026年11月13日开始审查，之后直至招满；不是固定截止。",
+      "deadlineNoteEn": "Review begins 13 November 2026 and continues until filled; not a fixed closing date.",
+      "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
@@ -9269,6 +9441,42 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:56:46.989Z",
           "status": "missing",
           "url": "https://apply.interfolio.com/195249"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/195249",
+          "observedAt": "2026-11-04T17:56:24.502Z"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/195249",
+          "observedAt": "2026-11-04T17:56:24.502Z"
+        },
+        {
+          "field": "reviewDate",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/195249",
+          "observedAt": "2026-11-04T17:56:24.502Z"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/195249",
+          "observedAt": "2026-11-04T17:56:24.502Z"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/195249",
+          "observedAt": "2026-11-04T17:56:24.502Z"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://apply.interfolio.com/195249",
+          "observedAt": "2026-11-04T17:59:04.746708+00:00"
         }
       ],
       "funding": "Position funding is subject to budget availability.",
@@ -9302,7 +9510,9 @@ export const publicReleaseDataset = {
       "titleEn": "Assistant Professor, Physical Geography",
       "topics": [],
       "type": "faculty",
-      "url": "https://apply.interfolio.com/195249"
+      "url": "https://apply.interfolio.com/195249",
+      "applicationUrl": "https://dossier.interfolio.com/apply/195249",
+      "announcementRecheckedAt": "2026-11-04T17:59:04.746708+00:00"
     },
     {
       "announcementStatus": "open",
@@ -9310,8 +9520,8 @@ export const publicReleaseDataset = {
       "applicationProcess": "Please include a letter of interest and resume with your online application.",
       "applicationProcessEn": "Please include a letter of interest and resume with your online application.",
       "candidateId": "tcand-5174d20615e6d71eceb73678",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -9320,10 +9530,10 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:57:08.118Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T18:02:27.109Z",
       "deadline": "",
-      "deadlineNote": "Application Deadline: Open until filled.",
-      "deadlineNoteEn": "Application Deadline: Open until filled.",
+      "deadlineNote": "官网招满为止；页面发布日期为2024-10-23，不能因旧公告仍存在就确认本轮在受理。",
+      "deadlineNoteEn": "Until filled; page posted 23 October 2024. Persistence of an old notice does not prove present acceptance.",
       "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
@@ -9403,6 +9613,42 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:47:24.748Z",
           "status": "missing",
           "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
+          "observedAt": "2026-11-04T18:02:27.109Z"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
+          "observedAt": "2026-11-04T18:02:27.109Z"
+        },
+        {
+          "field": "sourcePublishedDate",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
+          "observedAt": "2026-11-04T18:02:27.109Z"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
+          "observedAt": "2026-11-04T18:02:27.109Z"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
+          "observedAt": "2026-11-04T18:02:27.109Z"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
+          "observedAt": "2026-11-04T18:02:27.109Z"
         }
       ],
       "funding": "Faculty Hiring is subject to state appropriation funding.",
@@ -9436,7 +9682,9 @@ export const publicReleaseDataset = {
       "titleEn": "Adjunct Faculty Environmental Science and/or Biology",
       "topics": [],
       "type": "faculty",
-      "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass"
+      "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
+      "sourcePublishedDate": "2024-10-23",
+      "announcementRecheckedAt": "2026-11-04T18:02:27.109Z"
     },
     {
       "announcementStatus": "unknown",
@@ -9444,8 +9692,8 @@ export const publicReleaseDataset = {
       "applicationProcess": "",
       "applicationProcessEn": "",
       "candidateId": "tcand-54de2e9edddb2e8e41c939af",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "本轮公开读取失败；不把访问失败认定为关闭，当前受理状态仍未知。",
+      "cautionEn": "Public reading failed. Same-platform login boundary observed on another posting; no repeated browser attempt. Retain old facts; not a closure decision.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -9454,7 +9702,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:57:10.250Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:05.205665+00:00",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -9507,6 +9755,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:47:25.891Z",
           "status": "missing",
           "url": "https://hcm.lonestar.edu/psc/hcmprd/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=43921&PostingSeq=1"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://hcm.lonestar.edu/psc/hcmprd/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=43921&PostingSeq=1",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -9540,7 +9794,8 @@ export const publicReleaseDataset = {
       "titleEn": "Adjunct Faculty, Environmental Science",
       "topics": [],
       "type": "faculty",
-      "url": "https://hcm.lonestar.edu/psc/hcmprd/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=43921&PostingSeq=1"
+      "url": "https://hcm.lonestar.edu/psc/hcmprd/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=43921&PostingSeq=1",
+      "announcementRecheckedAt": "2026-11-04T17:59:05.205665+00:00"
     },
     {
       "announcementStatus": "invites_applications",
@@ -9550,8 +9805,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T05:47:25.388Z",
       "applicationUrl": "https://jobs.helsinki.fi/talentcommunity/apply/1375701157/?locale=en_GB",
       "candidateId": "tcand-55c212afaa9a01eab495c8e3",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-11-01",
       "city": "",
       "collectedAt": "2026-11-01",
@@ -9560,7 +9815,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T05:47:25.388Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:04.872866+00:00",
       "deadline": "2026-11-20",
       "deadlineNote": "20.11.2026 (23.59 Europe/Helsinki time)\n20 November 2026 at 23:59 (Finnish time)",
       "deadlineNoteEn": "20.11.2026 (23.59 Europe/Helsinki time)\n20 November 2026 at 23:59 (Finnish time)",
@@ -9733,6 +9988,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:50:33.526Z",
           "status": "missing",
           "url": "https://jobs.helsinki.fi/talentcommunity/apply/1375701157/?locale=en_GB"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-in-Archaelogy-or-Geoscience/1375701157/",
+          "observedAt": "2026-11-04T17:59:04.872866+00:00"
         }
       ],
       "funding": "已核验为带薪博士或教职聘用；薪酬见薪酬字段。额外资助或学费安排未核实。",
@@ -9767,7 +10028,8 @@ export const publicReleaseDataset = {
       "titleEn": "Doctoral Researcher in Archaelogy or Geoscience",
       "topics": [],
       "type": "phd",
-      "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-in-Archaelogy-or-Geoscience/1375701157/"
+      "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-in-Archaelogy-or-Geoscience/1375701157/",
+      "announcementRecheckedAt": "2026-11-04T17:59:04.872866+00:00"
     },
     {
       "announcementStatus": "unknown",
@@ -9777,8 +10039,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T04:51:30.827Z",
       "applicationUrl": "https://www.gwu.jobs/postings/129287/pre_apply",
       "candidateId": "tcand-5762bcd9f684ac58264f7e7b",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -9787,11 +10049,11 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T04:51:30.827Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:05.205665+00:00",
       "deadline": "",
-      "deadlineNote": "",
-      "deadlineNoteEn": "",
-      "deadlineType": "unknown",
+      "deadlineNote": "2026-11-12开始审查，之后直至招满；不是固定申请截止。",
+      "deadlineNoteEn": "Review begins 2026-11-12 and continues until filled; not a fixed closing date.",
+      "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
@@ -9846,6 +10108,42 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:51:30.827Z",
           "status": "supported",
           "url": "https://www.gwu.jobs/postings/129287/pre_apply"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://www.gwu.jobs/postings/129037",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://www.gwu.jobs/postings/129037",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
+        },
+        {
+          "field": "reviewDate",
+          "status": "supported",
+          "url": "https://www.gwu.jobs/postings/129037",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://www.gwu.jobs/postings/129037",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://www.gwu.jobs/postings/129037",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://www.gwu.jobs/postings/129037",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -9861,7 +10159,7 @@ export const publicReleaseDataset = {
       "releaseStatus": "likely_open / needs_review",
       "requirements": "Minimum Qualifications: Applicants must have a PhD in geography, environmental science, or a closely related field by the time of appointment. Applicants must have demonstrated research or teaching experience using field and quantitative methods or geospatial methods. Advertised Salary: $85,000-$100,000 Other Benefits: The successful applicant will be eligible for GW’s comprehensive benefits package including employee medical insurance. For benefits details please see https://hr.gwu.edu/benefits-programs Other Information: The Department of Geography and Environment brings together geographers and environmental scientists studying relationships between the physica",
       "requirementsEn": "Minimum Qualifications: Applicants must have a PhD in geography, environmental science, or a closely related field by the time of appointment. Applicants must have demonstrated research or teaching experience using field and quantitative methods or geospatial methods. Advertised Salary: $85,000-$100,000 Other Benefits: The successful applicant will be eligible for GW’s comprehensive benefits package including employee medical insurance. For benefits details please see https://hr.gwu.edu/benefits-programs Other Information: The Department of Geography and Environment brings together geographers and environmental scientists studying relationships between the physica",
-      "reviewDate": "",
+      "reviewDate": "2026-11-12",
       "salary": "Advertised Salary: $85,000-$100,000 Other Benefits: The successful applicant will be eligible for GW’s comprehensive benefits package including employee medical insurance. For benefits details please see https://hr.gwu.edu/benefits-programs Other Information: The Department of Geography and Envir",
       "salaryEn": "Advertised Salary: $85,000-$100,000 Other Benefits: The successful applicant will be eligible for GW’s comprehensive benefits package including employee medical insurance. For benefits details please see https://hr.gwu.edu/benefits-programs Other Information: The Department of Geography and Envir",
       "short": "The George Washington University",
@@ -9879,7 +10177,8 @@ export const publicReleaseDataset = {
       "titleEn": "Assistant Professor of Geography",
       "topics": [],
       "type": "faculty",
-      "url": "https://www.gwu.jobs/postings/129037"
+      "url": "https://www.gwu.jobs/postings/129037",
+      "announcementRecheckedAt": "2026-11-04T17:59:05.205665+00:00"
     },
     {
       "announcementStatus": "open",
@@ -10273,8 +10572,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T05:46:39.638Z",
       "applicationUrl": "https://jobs.helsinki.fi/talentcommunity/apply/1375905057/?locale=en_GB",
       "candidateId": "tcand-5dbcff6286c6634216f0a313",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-11-01",
       "city": "",
       "collectedAt": "2026-11-01",
@@ -10283,7 +10582,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:55:02.594Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:04.872866+00:00",
       "deadline": "2026-11-19",
       "deadlineNote": "19.11.2026 (23.59 Europe/Helsinki time)",
       "deadlineNoteEn": "19.11.2026 (23.59 Europe/Helsinki time)",
@@ -10402,6 +10701,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:50:31.994Z",
           "status": "missing",
           "url": "https://jobs.helsinki.fi/talentcommunity/apply/1375905057/?locale=en_GB"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-on-Education-Related-Inequalities/1375905057/",
+          "observedAt": "2026-11-04T17:59:04.872866+00:00"
         }
       ],
       "funding": "已核验为带薪博士或教职聘用；薪酬见薪酬字段。额外资助或学费安排未核实。",
@@ -10435,7 +10740,8 @@ export const publicReleaseDataset = {
       "titleEn": "Doctoral Researcher on Education-Related Inequalities",
       "topics": [],
       "type": "phd",
-      "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-on-Education-Related-Inequalities/1375905057/"
+      "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-on-Education-Related-Inequalities/1375905057/",
+      "announcementRecheckedAt": "2026-11-04T17:59:04.872866+00:00"
     },
     {
       "announcementStatus": "open",
@@ -10444,8 +10750,8 @@ export const publicReleaseDataset = {
       "applicationProcessEn": "Along with the online application, please attach:",
       "applicationRouteCheckedAt": "2026-11-04T04:51:42.084Z",
       "candidateId": "tcand-5e95d133051cecb648af4cb6",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established. Public iframe body read and first job-bound application route redirected to login; no email, credentials or application submitted.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -10454,10 +10760,10 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:57:34.491Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T18:01:29.905Z",
       "deadline": "",
-      "deadlineNote": "The position will remain open until filled, but application by the date above is encouraged for full consideration.",
-      "deadlineNoteEn": "The position will remain open until filled, but application by the date above is encouraged for full consideration.",
+      "deadlineNote": "2026年12月1日开始审查，招满为止，建议此前申请以获完整考虑；不是固定截止。",
+      "deadlineNoteEn": "Review begins 1 December 2026; until filled, with application by that date encouraged for full consideration.",
       "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
@@ -10543,6 +10849,54 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:51:42.084Z",
           "status": "missing",
           "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?in_iframe=1"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?in_iframe=1",
+          "observedAt": "2026-11-04T18:00:39.258Z"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?in_iframe=1",
+          "observedAt": "2026-11-04T18:00:39.258Z"
+        },
+        {
+          "field": "reviewDate",
+          "status": "supported",
+          "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?in_iframe=1",
+          "observedAt": "2026-11-04T18:00:39.258Z"
+        },
+        {
+          "field": "requirements",
+          "status": "supported",
+          "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?in_iframe=1",
+          "observedAt": "2026-11-04T18:00:39.258Z"
+        },
+        {
+          "field": "requirementsEn",
+          "status": "supported",
+          "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?in_iframe=1",
+          "observedAt": "2026-11-04T18:00:39.258Z"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?in_iframe=1",
+          "observedAt": "2026-11-04T18:00:39.258Z"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?in_iframe=1",
+          "observedAt": "2026-11-04T18:00:39.258Z"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/login",
+          "observedAt": "2026-11-04T18:01:29.905Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -10556,7 +10910,7 @@ export const publicReleaseDataset = {
       "methods": [],
       "recordKind": "concrete_opportunity",
       "releaseStatus": "likely_open / needs_review",
-      "requirements": "An earned PhD (or JD with academic experience) at date-of-hire in a field related to environmental or natural resources policy or science.",
+      "requirements": "入职时具备相关领域博士，或具有学术经历的JD；其他优先条件见官网。",
       "requirementsEn": "An earned PhD (or JD with academic experience) at date-of-hire in a field related to environmental or natural resources policy or science.",
       "reviewDate": "2026-12-01",
       "salary": "commensurate with education and experience, plus excellent benefits",
@@ -10576,7 +10930,9 @@ export const publicReleaseDataset = {
       "titleEn": "Assistant Professor - Environmental and Natural Resources Policy",
       "topics": [],
       "type": "faculty",
-      "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?in_iframe=1"
+      "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?in_iframe=1",
+      "applicationUrl": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/login",
+      "announcementRecheckedAt": "2026-11-04T18:01:29.905Z"
     },
     {
       "announcementStatus": "open",
@@ -10928,8 +11284,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T04:50:56.337Z",
       "applicationUrl": "https://web103.reachmee.com/ext/I017/1114/job?site=7&validator=87e4b706891e51f731ed44be28da8352&lang=UK&job_id=16136",
       "candidateId": "tcand-7282379bdd5efb33c4039202",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-11-01",
       "city": "",
       "collectedAt": "2026-11-01",
@@ -10938,7 +11294,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:55:17.856Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:04.872866+00:00",
       "deadline": "2026-11-30",
       "deadlineNote": "30 November 2026",
       "deadlineNoteEn": "30 November 2026",
@@ -11033,6 +11389,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:50:56.337Z",
           "status": "missing",
           "url": "https://web103.reachmee.com/ext/I017/1114/job?site=7&validator=87e4b706891e51f731ed44be28da8352&lang=UK&job_id=16136"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://www.slu.se/en/about-slu/work-at-slu/jobs-and-vacancies/doktorand-i-biologi/",
+          "observedAt": "2026-11-04T17:59:04.872866+00:00"
         }
       ],
       "funding": "Employment as a doctoral student (4-year programme)",
@@ -11066,7 +11428,8 @@ export const publicReleaseDataset = {
       "titleEn": "PhD position in biology, specialisation in aquatic ecology",
       "topics": [],
       "type": "phd",
-      "url": "https://www.slu.se/en/about-slu/work-at-slu/jobs-and-vacancies/doktorand-i-biologi/"
+      "url": "https://www.slu.se/en/about-slu/work-at-slu/jobs-and-vacancies/doktorand-i-biologi/",
+      "announcementRecheckedAt": "2026-11-04T17:59:04.872866+00:00"
     },
     {
       "announcementStatus": "open",
@@ -11076,8 +11439,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T05:48:01.274Z",
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1452415933/?locale=en_US",
       "candidateId": "tcand-73f33969eae17aa7b6318b80",
-      "caution": "待审核数据；门户最终受理未核验。 本轮真实原文已核验并加密保存，仍待发布审核。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified. Real evidence-bound result saved privately; owner publication review pending.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -11086,7 +11449,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:56:38.337Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T18:05:57.177582+00:00",
       "deadline": "2026-12-10",
       "deadlineNote": "Application deadline: 12/10/2026 (MM-DD-YYYY)",
       "deadlineNoteEn": "Application deadline: 12/10/2026 (MM-DD-YYYY)",
@@ -11169,6 +11532,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:51:08.433Z",
           "status": "missing",
           "url": "https://jobs.univie.ac.at/talentcommunity/apply/1452415933/?locale=en_US"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://jobs.univie.ac.at/job/Senior-Scientist-in-Atmospheric-Data-Assimilation/1452415933/",
+          "observedAt": "2026-11-04T18:05:57.177582+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -11202,7 +11571,8 @@ export const publicReleaseDataset = {
       "titleEn": "Senior Scientist in Atmospheric Data Assimilation",
       "topics": [],
       "type": "postdoc",
-      "url": "https://jobs.univie.ac.at/job/Senior-Scientist-in-Atmospheric-Data-Assimilation/1452415933/"
+      "url": "https://jobs.univie.ac.at/job/Senior-Scientist-in-Atmospheric-Data-Assimilation/1452415933/",
+      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00"
     },
     {
       "announcementStatus": "open",
@@ -11714,8 +12084,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T05:47:44.886Z",
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1452526433/?locale=en_US",
       "candidateId": "tcand-8911254734633ddb16a2a066",
-      "caution": "待审核数据；门户最终受理未核验。 本轮原文证据已保存恢复，资格中优先项与硬性条件须结合所附完整段落阅读；仍待发布审核。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified. Evidence saved and restored; preserve required/preferred qualification distinctions; owner publication review pending.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -11724,7 +12094,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T05:47:44.886Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T18:05:57.177582+00:00",
       "deadline": "2026-11-24",
       "deadlineNote": "Application deadline: 11/24/2026",
       "deadlineNoteEn": "Application deadline: 11/24/2026",
@@ -11849,6 +12219,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:50:41.599Z",
           "status": "missing",
           "url": "https://jobs.univie.ac.at/talentcommunity/apply/1452526433/?locale=en_US"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://jobs.univie.ac.at/job/Senior-Lecturer-%28academic-and-instructional-teaching%29/1452526433/",
+          "observedAt": "2026-11-04T18:05:57.177582+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -11882,7 +12258,8 @@ export const publicReleaseDataset = {
       "titleEn": "Senior Lecturer (academic and instructional teaching)",
       "topics": [],
       "type": "faculty",
-      "url": "https://jobs.univie.ac.at/job/Senior-Lecturer-%28academic-and-instructional-teaching%29/1452526433/"
+      "url": "https://jobs.univie.ac.at/job/Senior-Lecturer-%28academic-and-instructional-teaching%29/1452526433/",
+      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00"
     },
     {
       "announcementStatus": "invites_applications",
@@ -12080,8 +12457,8 @@ export const publicReleaseDataset = {
       "applicationProcess": "http://career.cuhk.edu.hk",
       "applicationProcessEn": "http://career.cuhk.edu.hk",
       "candidateId": "tcand-91bbb32c198d9fd76fdd4ba2",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -12090,10 +12467,10 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:57:42.223Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:57.824Z",
       "deadline": "",
-      "deadlineNote": "Closing Date: Until the post is filled",
-      "deadlineNoteEn": "Closing Date: Until the post is filled",
+      "deadlineNote": "官网明确招满为止；只接受CUHK招聘网站在线申请，登录后受理未核实。",
+      "deadlineNoteEn": "Officially until filled; CUHK online applications only. Acceptance after login is unverified.",
       "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
@@ -12173,6 +12550,36 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:47:41.518Z",
           "status": "missing",
           "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en",
+          "observedAt": "2026-11-04T17:59:57.824Z"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en",
+          "observedAt": "2026-11-04T17:59:57.824Z"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en",
+          "observedAt": "2026-11-04T17:59:57.824Z"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en",
+          "observedAt": "2026-11-04T17:59:57.824Z"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en",
+          "observedAt": "2026-11-04T17:59:57.824Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -12206,7 +12613,8 @@ export const publicReleaseDataset = {
       "titleEn": "Professor/ Associate Professor/ Assistant Professor (Urban Finance / Urban Planning / Urban Governance)",
       "topics": [],
       "type": "faculty",
-      "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en"
+      "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en",
+      "announcementRecheckedAt": "2026-11-04T17:59:57.824Z"
     },
     {
       "announcementStatus": "open",
@@ -12215,8 +12623,8 @@ export const publicReleaseDataset = {
       "applicationProcessEn": "This institution is using Interfolio's Faculty Search to conduct this search.",
       "applicationRouteCheckedAt": "2026-11-04T04:56:49.801Z",
       "candidateId": "tcand-93d9dca5de4bfc638ad5488d",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -12225,11 +12633,11 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T04:56:49.801Z",
-      "deadline": "",
-      "deadlineNote": "Dec 11, 2026 at 11:59 PM Eastern Time",
-      "deadlineNoteEn": "Dec 11, 2026 at 11:59 PM Eastern Time",
-      "deadlineType": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:04.746708+00:00",
+      "deadline": "2026-12-11",
+      "deadlineNote": "2026年12月11日23:59，Eastern Time（官网原文）；不自行换算未说明的时区缩写。",
+      "deadlineNoteEn": "11 December 2026 at 11:59 PM Eastern Time, as stated by the official portal.",
+      "deadlineType": "fixed",
       "degree": "unknown",
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
@@ -12296,6 +12704,36 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:56:49.801Z",
           "status": "supported",
           "url": "https://apply.interfolio.com/195462"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/195462",
+          "observedAt": "2026-11-04T17:56:57.597Z"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/195462",
+          "observedAt": "2026-11-04T17:56:57.597Z"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/195462",
+          "observedAt": "2026-11-04T17:56:57.597Z"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/195462",
+          "observedAt": "2026-11-04T17:56:57.597Z"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://apply.interfolio.com/195462",
+          "observedAt": "2026-11-04T17:59:04.746708+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -12329,7 +12767,9 @@ export const publicReleaseDataset = {
       "titleEn": "Assistant Professor of Meteorology- Social/Behavioral Sciences Applied to Weather and Climate Studies",
       "topics": [],
       "type": "faculty",
-      "url": "https://apply.interfolio.com/195462"
+      "url": "https://apply.interfolio.com/195462",
+      "applicationUrl": "https://dossier.interfolio.com/apply/195462",
+      "announcementRecheckedAt": "2026-11-04T17:59:04.746708+00:00"
     },
     {
       "announcementStatus": "open",
@@ -12337,8 +12777,8 @@ export const publicReleaseDataset = {
       "applicationProcess": "When beginning your application, be prepared to answer these questions and upload the following documents: Curriculum Vitae Cover Letter (should highlight some of your recent scholarship and achievements) Philosophy of teaching in Christian higher education Statement of Personal Faith (including your personal testimony or faith journey) Student evaluations (if available) Names and contact information for three professional references Unofficial transcripts for highest degree completed *** At PLNU, we believe in pursuin",
       "applicationProcessEn": "When beginning your application, be prepared to answer these questions and upload the following documents: Curriculum Vitae Cover Letter (should highlight some of your recent scholarship and achievements) Philosophy of teaching in Christian higher education Statement of Personal Faith (including your personal testimony or faith journey) Student evaluations (if available) Names and contact information for three professional references Unofficial transcripts for highest degree completed *** At PLNU, we believe in pursuin",
       "candidateId": "tcand-9e22b074ce35e809a9db00fd",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -12347,10 +12787,10 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:57:45.795Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T18:01:59.001Z",
       "deadline": "",
-      "deadlineNote": "The application portal will remain open until the position is filled.",
-      "deadlineNoteEn": "The application portal will remain open until the position is filled.",
+      "deadlineNote": "2026年12月1日之后开始审查并安排面试；官网称招满为止，未公布固定截止或具体首审日。",
+      "deadlineNoteEn": "Review and interview scheduling begin after 1 December 2026; until filled, with no fixed closing date or exact first-review date.",
       "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
@@ -12454,6 +12894,54 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:47:51.005Z",
           "status": "missing",
           "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
+          "observedAt": "2026-11-04T18:01:59.001Z"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
+          "observedAt": "2026-11-04T18:01:59.001Z"
+        },
+        {
+          "field": "reviewDate",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
+          "observedAt": "2026-11-04T18:01:59.001Z"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
+          "observedAt": "2026-11-04T18:01:59.001Z"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
+          "observedAt": "2026-11-04T18:01:59.001Z"
+        },
+        {
+          "field": "salary",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
+          "observedAt": "2026-11-04T18:01:59.001Z"
+        },
+        {
+          "field": "salaryEn",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
+          "observedAt": "2026-11-04T18:01:59.001Z"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
+          "observedAt": "2026-11-04T18:01:59.001Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -12470,8 +12958,8 @@ export const publicReleaseDataset = {
       "requirements": "Terminal degree (or terminal degree in progress with completion date before August 2027) with an environmental focus OR in another discipline with 4+ years of environmental experience Commitment to Christ and Christian Higher Education Evidence of successful teaching at the co\nCommitment to Christ and Christian Higher Education\nEvidence of Christian commitment and active church involvement. In addition, faculty agree to live in agreement with PLNU’s Community Life Covenant . The job offer is contingent on t",
       "requirementsEn": "Terminal degree (or terminal degree in progress with completion date before August 2027) with an environmental focus OR in another discipline with 4+ years of environmental experience Commitment to Christ and Christian Higher Education Evidence of successful teaching at the co\nCommitment to Christ and Christian Higher Education\nEvidence of Christian commitment and active church involvement. In addition, faculty agree to live in agreement with PLNU’s Community Life Covenant . The job offer is contingent on t",
       "reviewDate": "",
-      "salary": "Faculty salaries using this scale for a 2-semester appointment range from $78,494 - $137,747.",
-      "salaryEn": "Faculty salaries using this scale for a 2-semester appointment range from $78,494 - $137,747.",
+      "salary": "两学期聘期薪资范围78,494–137,747美元，按资历及职级定薪；税前税后未说明。",
+      "salaryEn": "$78,494–$137,747 for a two-semester appointment, depending on experience and academic rank; tax basis not stated.",
       "short": "Point Loma Nazarene University",
       "source": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
       "sourceIds": [
@@ -12487,7 +12975,8 @@ export const publicReleaseDataset = {
       "titleEn": "Full-Time, Tenure-Track Faculty in Environmental Studies or Environmental Humanities for the School of Humanities, Arts, and Public Engagement",
       "topics": [],
       "type": "faculty",
-      "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541"
+      "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
+      "announcementRecheckedAt": "2026-11-04T18:01:59.001Z"
     },
     {
       "announcementStatus": "unknown",
@@ -12840,8 +13329,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T05:47:53.936Z",
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1453458833/?locale=en_US",
       "candidateId": "tcand-a36518c6f10e7487a6fb7579",
-      "caution": "待审核数据；门户最终受理未核验。 本轮原文核验已加密保存；门户受理未知，尚无发布批准。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -12850,7 +13339,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:55:27.499Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:05.012121+00:00",
       "deadline": "2026-11-30",
       "deadlineNote": "Application deadline: 11/30/2026",
       "deadlineNoteEn": "Application deadline: 11/30/2026",
@@ -12969,6 +13458,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:51:00.602Z",
           "status": "missing",
           "url": "https://jobs.univie.ac.at/talentcommunity/apply/1453458833/?locale=en_US"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://jobs.univie.ac.at/job/PhD-Position-Analyzing-Polymer-Degradation-by-Soil-Enzymes/1453458833/",
+          "observedAt": "2026-11-04T17:59:05.012121+00:00"
         }
       ],
       "funding": "A fully funded position (full funding for 3 years) in accordance with the collective bargaining agreement (basic salary of EUR 3776,10 on a full-time basis)",
@@ -13002,7 +13497,8 @@ export const publicReleaseDataset = {
       "titleEn": "PhD Position: Analyzing Polymer Degradation by Soil Enzymes",
       "topics": [],
       "type": "phd",
-      "url": "https://jobs.univie.ac.at/job/PhD-Position-Analyzing-Polymer-Degradation-by-Soil-Enzymes/1453458833/"
+      "url": "https://jobs.univie.ac.at/job/PhD-Position-Analyzing-Polymer-Degradation-by-Soil-Enzymes/1453458833/",
+      "announcementRecheckedAt": "2026-11-04T17:59:05.012121+00:00"
     },
     {
       "announcementStatus": "open",
@@ -13468,8 +13964,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T04:51:57.313Z",
       "applicationUrl": "https://jobs.montana.edu/postings/53487/pre_apply",
       "candidateId": "tcand-abc7536b8b07e29496311f5c",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -13478,11 +13974,11 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T04:51:57.313Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:04.945858+00:00",
       "deadline": "",
-      "deadlineNote": "",
-      "deadlineNoteEn": "",
-      "deadlineType": "unknown",
+      "deadlineNote": "2026年11月19日开始筛选，之后接受至形成足够申请人池；并非固定截止。",
+      "deadlineNoteEn": "Screening begins 19 November 2026, with applications accepted until an adequate pool is established; not a fixed cutoff.",
+      "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
@@ -13555,6 +14051,42 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:51:57.313Z",
           "status": "supported",
           "url": "https://jobs.montana.edu/postings/53487/pre_apply"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://jobs.montana.edu/postings/53036",
+          "observedAt": "2026-11-04T17:59:04.945858+00:00"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://jobs.montana.edu/postings/53036",
+          "observedAt": "2026-11-04T17:59:04.945858+00:00"
+        },
+        {
+          "field": "reviewDate",
+          "status": "supported",
+          "url": "https://jobs.montana.edu/postings/53036",
+          "observedAt": "2026-11-04T17:59:04.945858+00:00"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://jobs.montana.edu/postings/53036",
+          "observedAt": "2026-11-04T17:59:04.945858+00:00"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://jobs.montana.edu/postings/53036",
+          "observedAt": "2026-11-04T17:59:04.945858+00:00"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://jobs.montana.edu/postings/53036",
+          "observedAt": "2026-11-04T17:59:04.945858+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13570,7 +14102,7 @@ export const publicReleaseDataset = {
       "releaseStatus": "likely_open / needs_review",
       "requirements": "Required Qualifications – Experience, Education, Knowledge & Skills Ph.D. in American Studies or a related field by start date. Demonstrated potential for excellence in both teaching and scholarship. Teaching record demonstrating the ability to offer courses in American Studies or a related field at the graduate and undergraduate levels. Preferred Qualifications – Experience, Education, Knowledge & Skills Potential to conduct research and teach in critical theory and research methods. Successful record of fellowships or grants, or experience with externally funded research. Interest and ability to contribute to the College’s programs a\nPreferred Qualifications Research Statement (max 2 pages) Teaching Statement (max 2 pages) Letters of Recommendation and Reference Calls : All applicants will be required to provide a minimum of three references during the application process. Upon submission of the application, references will be contacted automatically by email to request a letter of recommendation, due by the screening date (please notify your references in advance). References for finalist(s) will a\nPreferred Qualifications – Experience, Education, Knowledge & Skills Potential to conduct research and teach in critical theory and research methods. Successful record of fellowships or grants, or experience with externally funded research. Interest and ability to contribute to the College’s programs and expertise in place-based studies, such as environmental humanities, historical geography, western American studies, or related fields. The Successful Candidate Will Be ",
       "requirementsEn": "Required Qualifications – Experience, Education, Knowledge & Skills Ph.D. in American Studies or a related field by start date. Demonstrated potential for excellence in both teaching and scholarship. Teaching record demonstrating the ability to offer courses in American Studies or a related field at the graduate and undergraduate levels. Preferred Qualifications – Experience, Education, Knowledge & Skills Potential to conduct research and teach in critical theory and research methods. Successful record of fellowships or grants, or experience with externally funded research. Interest and ability to contribute to the College’s programs a\nPreferred Qualifications Research Statement (max 2 pages) Teaching Statement (max 2 pages) Letters of Recommendation and Reference Calls : All applicants will be required to provide a minimum of three references during the application process. Upon submission of the application, references will be contacted automatically by email to request a letter of recommendation, due by the screening date (please notify your references in advance). References for finalist(s) will a\nPreferred Qualifications – Experience, Education, Knowledge & Skills Potential to conduct research and teach in critical theory and research methods. Successful record of fellowships or grants, or experience with externally funded research. Interest and ability to contribute to the College’s programs and expertise in place-based studies, such as environmental humanities, historical geography, western American studies, or related fields. The Successful Candidate Will Be ",
-      "reviewDate": "",
+      "reviewDate": "2026-11-19",
       "salary": "未公布或尚未核验",
       "salaryEn": "Not stated or not verified",
       "short": "Montana State University",
@@ -13588,7 +14120,8 @@ export const publicReleaseDataset = {
       "titleEn": "Assistant Professor of American Studies",
       "topics": [],
       "type": "faculty",
-      "url": "https://jobs.montana.edu/postings/53036"
+      "url": "https://jobs.montana.edu/postings/53036",
+      "announcementRecheckedAt": "2026-11-04T17:59:04.945858+00:00"
     },
     {
       "announcementStatus": "unknown",
@@ -13598,8 +14131,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T04:51:59.593Z",
       "applicationUrl": "https://jobs.bridgew.edu/postings/34048/pre_apply",
       "candidateId": "tcand-b3e45e9d5b4db49e89fe4d9c",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -13608,11 +14141,11 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T04:51:59.593Z",
-      "deadline": "",
-      "deadlineNote": "",
-      "deadlineNoteEn": "",
-      "deadlineType": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:05.141703+00:00",
+      "deadline": "2026-12-31",
+      "deadlineNote": "官方表格关闭日期2026-12-31，非招满为止；未公布具体时刻和时区。",
+      "deadlineNoteEn": "Official close date 31 December 2026; not until filled. Exact time and timezone not stated.",
+      "deadlineType": "fixed",
       "degree": "unknown",
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
@@ -13661,6 +14194,36 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:51:59.593Z",
           "status": "supported",
           "url": "https://jobs.bridgew.edu/postings/34048/pre_apply"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://jobs.bridgew.edu/postings/33838",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://jobs.bridgew.edu/postings/33838",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://jobs.bridgew.edu/postings/33838",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://jobs.bridgew.edu/postings/33838",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://jobs.bridgew.edu/postings/33838",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13694,7 +14257,8 @@ export const publicReleaseDataset = {
       "titleEn": "Assistant Professor, Department of Geography",
       "topics": [],
       "type": "faculty",
-      "url": "https://jobs.bridgew.edu/postings/33838"
+      "url": "https://jobs.bridgew.edu/postings/33838",
+      "announcementRecheckedAt": "2026-11-04T17:59:05.141703+00:00"
     },
     {
       "announcementStatus": "open",
@@ -13703,8 +14267,8 @@ export const publicReleaseDataset = {
       "applicationProcessEn": "",
       "applicationRouteCheckedAt": "2026-11-04T04:56:53.025Z",
       "candidateId": "tcand-b3f4060e0159c979020c6a80",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -13713,11 +14277,11 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T04:56:53.025Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:04.746708+00:00",
       "deadline": "",
-      "deadlineNote": "",
-      "deadlineNoteEn": "",
-      "deadlineType": "unknown",
+      "deadlineNote": "2026年11月1日开始初审，之后直至招满；不是11月1日截止。",
+      "deadlineNoteEn": "Initial review begins 1 November 2026 and continues until filled; not a 1 November deadline.",
+      "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
@@ -13784,6 +14348,42 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:56:53.025Z",
           "status": "supported",
           "url": "https://apply.interfolio.com/192961"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/192961",
+          "observedAt": "2026-11-04T17:57:11.686Z"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/192961",
+          "observedAt": "2026-11-04T17:57:11.686Z"
+        },
+        {
+          "field": "reviewDate",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/192961",
+          "observedAt": "2026-11-04T17:57:11.686Z"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/192961",
+          "observedAt": "2026-11-04T17:57:11.686Z"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/192961",
+          "observedAt": "2026-11-04T17:57:11.686Z"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://apply.interfolio.com/192961",
+          "observedAt": "2026-11-04T17:59:04.746708+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13817,7 +14417,9 @@ export const publicReleaseDataset = {
       "titleEn": "Assistant Professor Energy Geography",
       "topics": [],
       "type": "faculty",
-      "url": "https://apply.interfolio.com/192961"
+      "url": "https://apply.interfolio.com/192961",
+      "applicationUrl": "https://dossier.interfolio.com/apply/192961",
+      "announcementRecheckedAt": "2026-11-04T17:59:04.746708+00:00"
     },
     {
       "announcementStatus": "open",
@@ -13827,8 +14429,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T05:53:23.508Z",
       "applicationUrl": "https://aalto.wd3.myworkdayjobs.com/aalto/job/Otaniemi-Espoo-Finland/Doctoral-Researcher--sustainability-of-Power-to-X--PtX--value-chains_R48457/apply",
       "candidateId": "tcand-b4ebd5f45a12d0cccd8ef3cc",
-      "caution": "待审核数据；门户最终受理未核验。 本轮原文核验已加密保存；门户受理未知，尚无发布批准。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -13837,7 +14439,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T05:53:23.508Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:05.077032+00:00",
       "deadline": "2026-11-22",
       "deadlineNote": "please submit your application no later than 22.11.2026",
       "deadlineNoteEn": "please submit your application no later than 22.11.2026",
@@ -13956,6 +14558,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:50:38.566Z",
           "status": "missing",
           "url": "https://aalto.wd3.myworkdayjobs.com/aalto/job/Otaniemi-Espoo-Finland/Doctoral-Researcher--sustainability-of-Power-to-X--PtX--value-chains_R48457/apply"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
+          "observedAt": "2026-11-04T17:59:05.077032+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13989,7 +14597,8 @@ export const publicReleaseDataset = {
       "titleEn": "Doctoral Researcher, sustainability of Power-to-X (PtX) value chains",
       "topics": [],
       "type": "phd",
-      "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains"
+      "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
+      "announcementRecheckedAt": "2026-11-04T17:59:05.077032+00:00"
     },
     {
       "announcementStatus": "unknown",
@@ -13998,8 +14607,8 @@ export const publicReleaseDataset = {
       "applicationProcessEn": "",
       "applicationUrl": "https://academicpositions.harvard.edu/postings/16823/pre_apply",
       "candidateId": "tcand-b6e5706456fd780f7a9096dd",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -14008,11 +14617,11 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T13:58:13.406Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:05.141703+00:00",
       "deadline": "",
-      "deadlineNote": "",
-      "deadlineNoteEn": "",
-      "deadlineType": "unknown",
+      "deadlineNote": "2026-11-01开始审查，之后直至招满；不是固定申请截止。",
+      "deadlineNoteEn": "Review begins 2026-11-01 and continues until filled; not a fixed closing date.",
+      "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
@@ -14067,6 +14676,42 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:48:23.132Z",
           "status": "missing",
           "url": "https://academicpositions.harvard.edu/postings/16823/pre_apply"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://academicpositions.harvard.edu/postings/16742",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://academicpositions.harvard.edu/postings/16742",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "reviewDate",
+          "status": "supported",
+          "url": "https://academicpositions.harvard.edu/postings/16742",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://academicpositions.harvard.edu/postings/16742",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://academicpositions.harvard.edu/postings/16742",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://academicpositions.harvard.edu/postings/16742",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14082,7 +14727,7 @@ export const publicReleaseDataset = {
       "releaseStatus": "likely_open / needs_review",
       "requirements": "Basic Qualifications Candidates are required to have a doctorate in environmental engineering or related field by the time the appointment begins. Additional Qualifications We seek candidates who have a strong research record and a strong commitment to undergraduate and graduate teaching, training, and advising in ESE and EnCE. The successful candidate will teach at both the undergraduate and graduate levels. Special Instructions Please submit the following materials through the ARIeS portal. Review of applications will begin on November 1, 2026; applications will be reviewed until the position is filled. 1. Cover letter 2. Curriculum Vitae 3. Teaching/advising",
       "requirementsEn": "Basic Qualifications Candidates are required to have a doctorate in environmental engineering or related field by the time the appointment begins. Additional Qualifications We seek candidates who have a strong research record and a strong commitment to undergraduate and graduate teaching, training, and advising in ESE and EnCE. The successful candidate will teach at both the undergraduate and graduate levels. Special Instructions Please submit the following materials through the ARIeS portal. Review of applications will begin on November 1, 2026; applications will be reviewed until the position is filled. 1. Cover letter 2. Curriculum Vitae 3. Teaching/advising",
-      "reviewDate": "",
+      "reviewDate": "2026-11-01",
       "salary": "Salary Range $140,700-$174,500 for tenure-track rank. Pay offered to the selected candidate is dependent on factors such as experience, training or qualifications, field of scholarship, and accomplishments in the field. Minimum Number of References Required 3 Maximum Number of References All",
       "salaryEn": "Salary Range $140,700-$174,500 for tenure-track rank. Pay offered to the selected candidate is dependent on factors such as experience, training or qualifications, field of scholarship, and accomplishments in the field. Minimum Number of References Required 3 Maximum Number of References All",
       "short": "Harvard University",
@@ -14100,7 +14745,8 @@ export const publicReleaseDataset = {
       "titleEn": "Tenure-Track Faculty in Environmental Science and Engineering",
       "topics": [],
       "type": "faculty",
-      "url": "https://academicpositions.harvard.edu/postings/16742"
+      "url": "https://academicpositions.harvard.edu/postings/16742",
+      "announcementRecheckedAt": "2026-11-04T17:59:05.141703+00:00"
     },
     {
       "announcementStatus": "open",
@@ -14110,8 +14756,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T05:47:35.501Z",
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1453323233/?locale=en_US",
       "candidateId": "tcand-b8fad45d333c2616c9177d51",
-      "caution": "待审核数据；门户最终受理未核验。 本轮原文核验已加密保存；门户受理未知，尚无发布批准。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -14120,7 +14766,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T05:47:35.501Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:05.077032+00:00",
       "deadline": "2026-11-23",
       "deadlineNote": "Application deadline: 11/23/2026",
       "deadlineNoteEn": "Application deadline: 11/23/2026",
@@ -14239,6 +14885,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:50:39.625Z",
           "status": "missing",
           "url": "https://jobs.univie.ac.at/talentcommunity/apply/1453323233/?locale=en_US"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://jobs.univie.ac.at/job/Scientific-project-assistant-predoctoral/1453323233/",
+          "observedAt": "2026-11-04T17:59:05.077032+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14272,7 +14924,8 @@ export const publicReleaseDataset = {
       "titleEn": "Scientific project assistant predoctoral",
       "topics": [],
       "type": "phd",
-      "url": "https://jobs.univie.ac.at/job/Scientific-project-assistant-predoctoral/1453323233/"
+      "url": "https://jobs.univie.ac.at/job/Scientific-project-assistant-predoctoral/1453323233/",
+      "announcementRecheckedAt": "2026-11-04T17:59:05.077032+00:00"
     },
     {
       "announcementStatus": "open",
@@ -14577,8 +15230,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T04:52:31.627Z",
       "applicationUrl": "https://jobs.charlotte.edu/postings/71052/pre_apply",
       "candidateId": "tcand-c41d0c97633d2c8d07f85758",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -14587,11 +15240,11 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T04:52:31.627Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:04.678433+00:00",
       "deadline": "",
-      "deadlineNote": "",
-      "deadlineNoteEn": "",
-      "deadlineType": "unknown",
+      "deadlineNote": "2026-12-01开始审查，之后直至招满；不是固定申请截止。",
+      "deadlineNoteEn": "Review begins 2026-12-01 and continues until filled; not a fixed closing date.",
+      "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
@@ -14658,6 +15311,42 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:52:31.627Z",
           "status": "supported",
           "url": "https://jobs.charlotte.edu/postings/71052/pre_apply"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://jobs.charlotte.edu/postings/71052",
+          "observedAt": "2026-11-04T17:59:04.678433+00:00"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://jobs.charlotte.edu/postings/71052",
+          "observedAt": "2026-11-04T17:59:04.678433+00:00"
+        },
+        {
+          "field": "reviewDate",
+          "status": "supported",
+          "url": "https://jobs.charlotte.edu/postings/71052",
+          "observedAt": "2026-11-04T17:59:04.678433+00:00"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://jobs.charlotte.edu/postings/71052",
+          "observedAt": "2026-11-04T17:59:04.678433+00:00"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://jobs.charlotte.edu/postings/71052",
+          "observedAt": "2026-11-04T17:59:04.678433+00:00"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://jobs.charlotte.edu/postings/71052",
+          "observedAt": "2026-11-04T17:59:04.678433+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14691,7 +15380,8 @@ export const publicReleaseDataset = {
       "titleEn": "Assistant Professor in Urban Planning and Hazards",
       "topics": [],
       "type": "faculty",
-      "url": "https://jobs.charlotte.edu/postings/71052"
+      "url": "https://jobs.charlotte.edu/postings/71052",
+      "announcementRecheckedAt": "2026-11-04T17:59:04.678433+00:00"
     },
     {
       "announcementStatus": "unknown",
@@ -14701,8 +15391,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T04:52:39.877Z",
       "applicationUrl": "https://uscjobs.sc.edu/postings/215190/pre_apply",
       "candidateId": "tcand-d2b8194a6fdb7d3906b6f039",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -14711,11 +15401,11 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T04:52:39.877Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:05.141703+00:00",
       "deadline": "",
-      "deadlineNote": "",
-      "deadlineNoteEn": "",
-      "deadlineType": "unknown",
+      "deadlineNote": "2026-12-15开始审查，之后直至招满；不是固定申请截止。",
+      "deadlineNoteEn": "Review begins 2026-12-15 and continues until filled; not a fixed closing date.",
+      "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
@@ -14782,6 +15472,42 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:52:39.877Z",
           "status": "supported",
           "url": "https://uscjobs.sc.edu/postings/215190/pre_apply"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214857",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214857",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "reviewDate",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214857",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214857",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214857",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://uscjobs.sc.edu/postings/214857",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14815,7 +15541,8 @@ export const publicReleaseDataset = {
       "titleEn": "Assistant Professor in Migration, Development, & Humanitarianism",
       "topics": [],
       "type": "faculty",
-      "url": "https://uscjobs.sc.edu/postings/214857"
+      "url": "https://uscjobs.sc.edu/postings/214857",
+      "announcementRecheckedAt": "2026-11-04T17:59:05.141703+00:00"
     },
     {
       "announcementStatus": "open",
@@ -14825,8 +15552,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T04:52:48.141Z",
       "applicationUrl": "https://appstate.peopleadmin.com/postings/56483/pre_apply",
       "candidateId": "tcand-d57e401f4c4cf854dfeead4c",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。 官方入职日期及ABD资格表述存在冲突，保留双方，不选择其一。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established. Official start-date and eligibility/ABD statements conflict; preserve both, do not choose a value.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -14835,16 +15562,19 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T04:52:48.141Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:05.141703+00:00",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
-      "deadlineType": "unknown",
+      "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
       "field": "研究方向见原公告",
-      "fieldConflicts": [],
+      "fieldConflicts": [
+        "start_date",
+        "eligibility"
+      ],
       "fieldEn": "See official announcement",
       "fieldEvidence": [
         {
@@ -14906,6 +15636,42 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:52:48.141Z",
           "status": "supported",
           "url": "https://appstate.peopleadmin.com/postings/56483/pre_apply"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://appstate.peopleadmin.com/postings/56189",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://appstate.peopleadmin.com/postings/56189",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "reviewDate",
+          "status": "supported",
+          "url": "https://appstate.peopleadmin.com/postings/56189",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "startDate",
+          "status": "supported",
+          "url": "https://appstate.peopleadmin.com/postings/56189",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "startDateEn",
+          "status": "supported",
+          "url": "https://appstate.peopleadmin.com/postings/56189",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://appstate.peopleadmin.com/postings/56189",
+          "observedAt": "2026-11-04T17:59:05.141703+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14921,7 +15687,7 @@ export const publicReleaseDataset = {
       "releaseStatus": "likely_open / needs_review",
       "requirements": "Minimum Qualifications Ph.D. in Geography, Environmental Science, or a closely related field by the time of appointment (August 2027). Demonstrated expertise in Environmental Remote Sensing and digital image processing. Demonstrated research agenda and technical competency in Remotely Piloted. Aerial Systems ( RPAS ) for spatial data acquisition (including photogrammetry, LiDAR, or multispectral sensors). Evidence of, or strong potential for, excellence in university-level teaching. Areas of Interest and Preferred Qualifications (No Minimum Level Required) An active FAA Part 107 Remote Pilot Certification (or immediate eligibility and\nPreferred Qualifications (No Minimum Level Required) An active FAA Part 107 Remote Pilot Certification (or immediate eligibility and willingness to obtain it). Experience with advanced spatial modeling, Google Earth Engine, and other cloud-based raster processing, or programming languages relevant to spatial data (e.g., Python, R). A track record of, or clear plan for, involving undergraduate and graduate students in field-based research. Experience or interest in inter",
       "requirementsEn": "Minimum Qualifications Ph.D. in Geography, Environmental Science, or a closely related field by the time of appointment (August 2027). Demonstrated expertise in Environmental Remote Sensing and digital image processing. Demonstrated research agenda and technical competency in Remotely Piloted. Aerial Systems ( RPAS ) for spatial data acquisition (including photogrammetry, LiDAR, or multispectral sensors). Evidence of, or strong potential for, excellence in university-level teaching. Areas of Interest and Preferred Qualifications (No Minimum Level Required) An active FAA Part 107 Remote Pilot Certification (or immediate eligibility and\nPreferred Qualifications (No Minimum Level Required) An active FAA Part 107 Remote Pilot Certification (or immediate eligibility and willingness to obtain it). Experience with advanced spatial modeling, Google Earth Engine, and other cloud-based raster processing, or programming languages relevant to spatial data (e.g., Python, R). A track record of, or clear plan for, involving undergraduate and graduate students in field-based research. Experience or interest in inter",
-      "reviewDate": "",
+      "reviewDate": "2026-11-15",
       "salary": "未公布或尚未核验",
       "salaryEn": "Not stated or not verified",
       "short": "Appalachian State University",
@@ -14931,15 +15697,18 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified",
+      "statusLabel": "信息存在冲突 · 请核对官网",
+      "statusLabelEn": "Conflicting information · verify official source",
       "summary": "Environmental Remote Sensing",
       "summaryEn": "Environmental Remote Sensing",
       "title": "Assistant Professor of Geography (Environmental Remote Sensing & Remotely Piloted Aerial Systems)",
       "titleEn": "Assistant Professor of Geography (Environmental Remote Sensing & Remotely Piloted Aerial Systems)",
       "topics": [],
       "type": "faculty",
-      "url": "https://appstate.peopleadmin.com/postings/56189"
+      "url": "https://appstate.peopleadmin.com/postings/56189",
+      "startDate": "官方表格2027-07-01；正文2027年8月，冲突待机构确认",
+      "startDateEn": "Table: 1 July 2027; narrative: August 2027. Conflict awaiting institutional clarification.",
+      "announcementRecheckedAt": "2026-11-04T17:59:05.141703+00:00"
     },
     {
       "announcementStatus": "invites_applications",
@@ -15138,8 +15907,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T04:52:50.178Z",
       "applicationUrl": "https://spartantalent.uncg.edu/postings/35916/pre_apply",
       "candidateId": "tcand-d9639cf9c040c3ba49793b20",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -15148,11 +15917,11 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T04:52:50.178Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:05.205665+00:00",
       "deadline": "",
-      "deadlineNote": "",
-      "deadlineNoteEn": "",
-      "deadlineType": "unknown",
+      "deadlineNote": "2026年10月15日开始审查并为最佳考虑日期，之后直至招满；不是固定截止。",
+      "deadlineNoteEn": "Review and best-consideration date: 15 October 2026; until filled, not a fixed closing date.",
+      "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
@@ -15189,6 +15958,42 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:52:50.178Z",
           "status": "supported",
           "url": "https://spartantalent.uncg.edu/postings/35916/pre_apply"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://spartantalent.uncg.edu/postings/35916",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://spartantalent.uncg.edu/postings/35916",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
+        },
+        {
+          "field": "reviewDate",
+          "status": "supported",
+          "url": "https://spartantalent.uncg.edu/postings/35916",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://spartantalent.uncg.edu/postings/35916",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://spartantalent.uncg.edu/postings/35916",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://spartantalent.uncg.edu/postings/35916",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -15222,7 +16027,8 @@ export const publicReleaseDataset = {
       "titleEn": "Assistant Professor, Urban Economic Geography",
       "topics": [],
       "type": "faculty",
-      "url": "https://spartantalent.uncg.edu/postings/35916"
+      "url": "https://spartantalent.uncg.edu/postings/35916",
+      "announcementRecheckedAt": "2026-11-04T17:59:05.205665+00:00"
     },
     {
       "announcementStatus": "open",
@@ -15996,8 +16802,8 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T04:52:56.916Z",
       "applicationUrl": "https://uscjobs.sc.edu/postings/214650/pre_apply",
       "candidateId": "tcand-f5409773fd25ffaaf26d7f7e",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -16006,11 +16812,11 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T04:52:56.916Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T17:59:05.205665+00:00",
       "deadline": "",
-      "deadlineNote": "",
-      "deadlineNoteEn": "",
-      "deadlineType": "unknown",
+      "deadlineNote": "2026-12-01开始审查，之后直至招满；不是固定申请截止。",
+      "deadlineNoteEn": "Review begins 2026-12-01 and continues until filled; not a fixed closing date.",
+      "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
@@ -16077,6 +16883,42 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-04T04:52:56.916Z",
           "status": "supported",
           "url": "https://uscjobs.sc.edu/postings/214650/pre_apply"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214311",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214311",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
+        },
+        {
+          "field": "reviewDate",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214311",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214311",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214311",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://uscjobs.sc.edu/postings/214311",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -16110,7 +16952,8 @@ export const publicReleaseDataset = {
       "titleEn": "Instructor, Geospatial Data Science",
       "topics": [],
       "type": "faculty",
-      "url": "https://uscjobs.sc.edu/postings/214311"
+      "url": "https://uscjobs.sc.edu/postings/214311",
+      "announcementRecheckedAt": "2026-11-04T17:59:05.205665+00:00"
     },
     {
       "announcementStatus": "unknown",
@@ -17319,21 +18162,30 @@ export const publicReleaseDataset = {
     "resource_only": 84
   },
   "opportunityRecords": 101,
-  "datasetSha256": "5864922f4fef2ec0b70670ceed284b84790d8651d2f2767186694c849462ba55",
+  "datasetSha256": "8ac3f13b435ee04643d6f395fcfd306357de822268d3e081fbf6c131a91703e0",
   "availabilityReview": {
-    "planned": 46,
+    "planned": 34,
     "new_public_records": 12,
     "newlyConfirmed": 0,
     "remainingUnknown": 50,
     "newContentVerifiedUnknown": 4,
-    "unexecutedNewChecks": 34,
-    "finalSubmissionNotTested": true
+    "unexecutedNewChecks": 0,
+    "finalSubmissionNotTested": true,
+    "publicNoticesRead": 32,
+    "loginBoundaryOnly": 1,
+    "readFailed": 1
   },
   "coverage46Update": {
     "actualNewRecords": 4,
     "routeObservationsUpdated": 12,
     "newOpen": 0,
     "status": "content verified; acceptance unknown",
+    "privateDetailedEvidencePublished": false
+  },
+  "remaining34Update": {
+    "observationsSaved": 34,
+    "fieldCorrectedRecords": 20,
+    "newOpen": 0,
     "privateDetailedEvidencePublished": false
   }
 };
