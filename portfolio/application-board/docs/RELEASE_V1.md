@@ -3,11 +3,11 @@
 Production: https://olivia-wr-research.github.io/apps/application-board/
 Public data: https://olivia-wr-research.github.io/apps/application-board/public-dataset.json
 
-This release contains 181 records: 97 concrete-opportunity records and 84 programme/resource records. Of the concrete records, 64 have verified content: one has explicit portal acceptance verified at review, while 63 still require availability review. Eight historical deadlines have passed and 25 older records need further evidence. These categories must not be added to imply a larger number of open jobs.
+This release contains 181 records: 97 concrete-opportunity records and 84 programme/resource records. Of the concrete records, 64 have verified content: five have explicit portal acceptance verified at review, while 59 still require availability review. Eight historical deadlines have passed and 25 older records need further evidence. These categories must not be added to imply a larger number of open jobs.
 
 The release adds 59 content-verified records, corrects six existing records and updates two application/programme routes. Fifteen proposed additions remain private because of elapsed deadlines, unresolved conflicts or incomplete identity/scope evidence. Original public IDs, bookmarks and browser-local profiles are preserved.
 
-The default view shows only records passing the conservative open-state rule. Other statuses can be explored with the timing filter. A readable advertisement, application button or future deadline alone does not prove acceptance. Portal evidence expires from open recommendations after seven days; no scheduled maintenance was enabled by this release.
+The default view shows only records passing the conservative open-state rule. Other statuses can be explored with the timing filter. A readable advertisement, application button or future deadline alone does not prove acceptance. The four ETH follow-up confirmations bind the live receiving invitation, exact advertised role and requisition to usable public identity fields; no application or personal data was submitted, and final submission receipts were not tested. Portal evidence expires from open recommendations after seven days; no scheduled maintenance was enabled by this release.
 
 The existing orthographic globe, colours, typography and assets are reused. The dormant map mount is reconnected; no map or page redesign is included.
 
@@ -18,3 +18,7 @@ Use `scripts/terrafar_public_export.py --help` with a privately stored reviewed 
 Run the existing Node and Python test suites. Merge the reviewed release commit to main; the existing GitHub Pages configuration publishes `/docs`. Keep private evidence, candidate histories and owner records out of the public diff. To roll back, revert the release with an ordinary reviewed commit; do not reset history, keys or browser storage.
 
 Coverage is expanding. The release data identifies 19 registered sources associated with verified published content; it does not claim complete extraction of the source registry. Unfinished adapters, broader collection, maintenance capacity and periodic status checks remain backlog items and do not block use of this reviewed snapshot.
+
+## Availability follow-up — 4 November 2026
+
+All 63 previously unconfirmed records were attempted individually. Four ETH records gained fresh, job-bound portal acceptance evidence; 59 remain unknown. No newly closed or expired record was confirmed in this follow-up. The eight older expired records remain excluded from open recommendations. Two USC portal submission deadlines are recorded separately from announcement review dates. WUR and Farm Coordinator date differences remain explicitly unresolved. Detailed page captures remain private.

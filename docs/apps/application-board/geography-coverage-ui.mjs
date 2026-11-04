@@ -1,5 +1,5 @@
 import {coverageAudit} from './geography-coverage.mjs';
-import {geographyCatalog} from './geography-catalog.mjs?v=release-v1-20261104';
+import {geographyCatalog} from './geography-catalog.mjs?v=open63-20261104';
 import {language} from './i18n.mjs';
 const node=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e;};
 export function setupCoverage(host){

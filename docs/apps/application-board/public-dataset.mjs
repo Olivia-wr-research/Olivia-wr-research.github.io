@@ -34,6 +34,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "通常要求地理或相关领域硕士；其他资格及专业经验可能获个别考虑。",
       "requirementsEn": "Normally a relevant Masters; other qualifications and professional experience may be considered.",
       "salary": "不适用：学位项目",
@@ -57,8 +58,7 @@ export const publicReleaseDataset = {
         "地理学"
       ],
       "type": "phd-programme",
-      "url": "https://www.sussex.ac.uk/study/phd/degrees/geography-phd",
-      "releaseStatus": "resource_only"
+      "url": "https://www.sussex.ac.uk/study/phd/degrees/geography-phd"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -91,6 +91,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "须按官方招生页核对学历及导师要求",
       "requirementsEn": "Check official academic and supervision requirements",
       "salary": "不适用：学位项目",
@@ -115,8 +116,7 @@ export const publicReleaseDataset = {
         "自然地理"
       ],
       "type": "phd-programme",
-      "url": "https://www.kcl.ac.uk/study/postgraduate-research/areas/geography-mphil-phd",
-      "releaseStatus": "resource_only"
+      "url": "https://www.kcl.ac.uk/study/postgraduate-research/areas/geography-mphil-phd"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -149,6 +149,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "相关大学学位；设招生选拔。",
       "requirementsEn": "Relevant university degree; selective admission.",
       "salary": "不适用：学位项目",
@@ -175,8 +176,7 @@ export const publicReleaseDataset = {
         "空间治理"
       ],
       "type": "masters-programme",
-      "url": "https://www.uni-bonn.de/en/studying/degree-programs/degree-programs-a-z/geography-msc",
-      "releaseStatus": "resource_only"
+      "url": "https://www.uni-bonn.de/en/studying/degree-programs/degree-programs-a-z/geography-msc"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -219,6 +219,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "insufficient_evidence",
       "requirements": "相关理学或工程学士至少180学分，含至少15学分GIS。",
       "requirementsEn": "Relevant BSc/engineering degree of 180 credits, including 15 credits in GIS.",
       "salary": "不适用：学位项目",
@@ -243,8 +244,7 @@ export const publicReleaseDataset = {
         "遥感"
       ],
       "type": "masters-intake",
-      "url": "https://www.lunduniversity.lu.se/study/gis-and-remote-sensing-master-programme-NAGIS",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://www.lunduniversity.lu.se/study/gis-and-remote-sensing-master-programme-NAGIS"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -287,6 +287,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "insufficient_evidence",
       "requirements": "已完成180学分学士学位，不接受尚未完成本科的有条件录取；需要Windows电脑。",
       "requirementsEn": "Completed 180-credit bachelor; no conditional admission for unfinished degrees; Windows computer required.",
       "salary": "不适用：学位项目",
@@ -311,8 +312,7 @@ export const publicReleaseDataset = {
         "空间分析"
       ],
       "type": "masters-intake",
-      "url": "https://www.lunduniversity.lu.se/study/geographical-information-science-masters-programme-NAGIV",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://www.lunduniversity.lu.se/study/geographical-information-science-masters-programme-NAGIV"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -355,6 +355,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "insufficient_evidence",
       "requirements": "自然地理、地质、地学、生物／生态、物理、农林或环境等相关理学学士，至少180学分。",
       "requirementsEn": "Relevant BSc in physical geography, geoscience, ecology, physics, agriculture, forestry or environment; 180 credits.",
       "salary": "不适用：学位项目",
@@ -381,8 +382,7 @@ export const publicReleaseDataset = {
         "遥感"
       ],
       "type": "masters-intake",
-      "url": "https://www.lunduniversity.lu.se/study/physical-geography-and-ecosystem-science-general-master-programme-NANEV-INES",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://www.lunduniversity.lu.se/study/physical-geography-and-ecosystem-science-general-master-programme-NANEV-INES"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -415,6 +415,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "须按官方招生页核对学历及导师要求",
       "requirementsEn": "Check official academic and supervision requirements",
       "salary": "不适用：学位项目",
@@ -439,8 +440,7 @@ export const publicReleaseDataset = {
         "人文地理"
       ],
       "type": "masters-programme",
-      "url": "https://www.uva.nl/shared-content/programmas/en/masters/human-geography-urban-geography/urban-geography.html",
-      "releaseStatus": "resource_only"
+      "url": "https://www.uva.nl/shared-content/programmas/en/masters/human-geography-urban-geography/urban-geography.html"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -475,6 +475,7 @@ export const publicReleaseDataset = {
       "materials": "学历及成绩单、动机信、CV、课程描述、两位推荐人信息及英语证明等，以完整官网清单为准。",
       "materialsEn": "Degree/transcript, motivation, CV, course descriptions, two referee details and English evidence; see full official checklist.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "人文地理／规划等相关学术学士；须具备定量和定性研究基础。",
       "requirementsEn": "Relevant academic bachelor and quantitative/qualitative research preparation.",
       "salary": "不适用：学位项目",
@@ -499,8 +500,7 @@ export const publicReleaseDataset = {
         "经济地理"
       ],
       "type": "masters-programme",
-      "url": "https://www.uu.nl/en/masters/urban-and-economic-geography",
-      "releaseStatus": "resource_only"
+      "url": "https://www.uu.nl/en/masters/urban-and-economic-geography"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -535,6 +535,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "人文地理／规划背景或相关课程；较强定量与定性基础，页面列GPA7.5标准。",
       "requirementsEn": "Human geography/planning or related courses; extensive quantitative and qualitative methods; stated GPA threshold 7.5.",
       "salary": "不适用：学位项目",
@@ -559,8 +560,7 @@ export const publicReleaseDataset = {
         "空间规划"
       ],
       "type": "masters-programme",
-      "url": "https://www.uu.nl/en/masters/global-urban-transformations",
-      "releaseStatus": "resource_only"
+      "url": "https://www.uu.nl/en/masters/global-urban-transformations"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -595,6 +595,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "须按官方招生页核对学历及导师要求",
       "requirementsEn": "Check official academic and supervision requirements",
       "salary": "不适用：学位项目",
@@ -619,8 +620,7 @@ export const publicReleaseDataset = {
         "可持续城市"
       ],
       "type": "masters-programme",
-      "url": "https://www.uu.nl/en/masters/spatial-planning",
-      "releaseStatus": "resource_only"
+      "url": "https://www.uu.nl/en/masters/spatial-planning"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -655,6 +655,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "须按官方招生页核对学历及导师要求",
       "requirementsEn": "Check official academic and supervision requirements",
       "salary": "不适用：学位项目",
@@ -680,8 +681,7 @@ export const publicReleaseDataset = {
         "土地治理"
       ],
       "type": "masters-programme",
-      "url": "https://www.uu.nl/en/masters/international-development-studies",
-      "releaseStatus": "resource_only"
+      "url": "https://www.uu.nl/en/masters/international-development-studies"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -714,6 +714,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "须按官方招生页核对学历及导师要求",
       "requirementsEn": "Check official academic and supervision requirements",
       "salary": "不适用：学位项目",
@@ -738,8 +739,7 @@ export const publicReleaseDataset = {
         "空间数据管理"
       ],
       "type": "masters-programme",
-      "url": "https://www.uu.nl/en/masters/geographical-information-management-and-applications-gima",
-      "releaseStatus": "resource_only"
+      "url": "https://www.uu.nl/en/masters/geographical-information-management-and-applications-gima"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -773,6 +773,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "录取需要多位教师支持；申请中说明研究兴趣与教师工作的关联，不要求GRE。",
       "requirementsEn": "Admission requires support from multiple faculty; explain research fit; GRE not required.",
       "salary": "不适用：学位项目",
@@ -798,8 +799,7 @@ export const publicReleaseDataset = {
         "空间数据科学"
       ],
       "type": "masters-programme",
-      "url": "https://geography.washington.edu/graduate-programs",
-      "releaseStatus": "resource_only"
+      "url": "https://geography.washington.edu/graduate-programs"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -835,6 +835,7 @@ export const publicReleaseDataset = {
       "materials": "学业成绩、学术目的陈述、两份学术推荐、CV，以及适用的英语证明。",
       "materialsEn": "Academic results, academic purpose statement, two academic references, CV and English evidence where required.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "相关社会科学英国2:1或同等学位，也考虑专业资格与经验。",
       "requirementsEn": "UK 2:1 or equivalent in relevant social science, or professional qualifications and experience.",
       "salary": "不适用：学位项目",
@@ -860,8 +861,7 @@ export const publicReleaseDataset = {
         "空间规划"
       ],
       "type": "masters-programme",
-      "url": "https://www.lse.ac.uk/study-at-lse/graduate/msc-regional-and-urban-planning-studies",
-      "releaseStatus": "resource_only"
+      "url": "https://www.lse.ac.uk/study-at-lse/graduate/msc-regional-and-urban-planning-studies"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -897,6 +897,7 @@ export const publicReleaseDataset = {
       "materials": "学业成绩、学术目的陈述、两份学术推荐、CV，以及适用的英语证明。",
       "materialsEn": "Academic results, academic purpose statement, two academic references, CV and English evidence where required.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "地理或社会科学英国2:1或同等学位。",
       "requirementsEn": "UK 2:1 or equivalent in geography or social science.",
       "salary": "不适用：学位项目",
@@ -922,8 +923,7 @@ export const publicReleaseDataset = {
         "空间规划"
       ],
       "type": "masters-programme",
-      "url": "https://www.lse.ac.uk/study-at-lse/graduate/msc-human-geography-and-urban-studies-research",
-      "releaseStatus": "resource_only"
+      "url": "https://www.lse.ac.uk/study-at-lse/graduate/msc-human-geography-and-urban-studies-research"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -956,6 +956,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "本科最后两年B+；申请者须在录取前落实导师。",
       "requirementsEn": "B+ in final two bachelor’s years; applicant secures supervisor before admission.",
       "salary": "不适用：学位项目",
@@ -982,8 +983,7 @@ export const publicReleaseDataset = {
         "遥感"
       ],
       "type": "masters-programme",
-      "url": "https://www.sgs.utoronto.ca/programs/geography/",
-      "releaseStatus": "resource_only"
+      "url": "https://www.sgs.utoronto.ca/programs/geography/"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -1016,6 +1016,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "本科最后两年B+；申请者须在录取前落实导师。",
       "requirementsEn": "B+ in final two bachelor’s years; applicant secures supervisor before admission.",
       "salary": "不适用：学位项目",
@@ -1042,8 +1043,7 @@ export const publicReleaseDataset = {
         "遥感"
       ],
       "type": "masters-programme",
-      "url": "https://www.sgs.utoronto.ca/programs/geography/",
-      "releaseStatus": "resource_only"
+      "url": "https://www.sgs.utoronto.ca/programs/geography/"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -1076,6 +1076,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "硕士A-；不提供本科直博；录取前落实导师。",
       "requirementsEn": "Master’s A-; no direct bachelor’s entry; secure a supervisor before admission.",
       "salary": "不适用：学位项目",
@@ -1102,8 +1103,7 @@ export const publicReleaseDataset = {
         "遥感"
       ],
       "type": "phd-programme",
-      "url": "https://www.sgs.utoronto.ca/programs/geography/",
-      "releaseStatus": "resource_only"
+      "url": "https://www.sgs.utoronto.ca/programs/geography/"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -1138,6 +1138,7 @@ export const publicReleaseDataset = {
       "materials": "研究兴趣陈述、CV及官方要求的学历与语言证明",
       "materialsEn": "Research statement, CV and required academic/language evidence",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "荣誉本科或等值，B+；申请前先落实潜在导师。",
       "requirementsEn": "Honours bachelor’s or equivalent, B+; secure a potential supervisor before applying.",
       "salary": "不适用：学位项目",
@@ -1163,8 +1164,7 @@ export const publicReleaseDataset = {
         "GIS"
       ],
       "type": "masters-programme",
-      "url": "https://www.queensu.ca/geographyandplanning/graduate/programs",
-      "releaseStatus": "resource_only"
+      "url": "https://www.queensu.ca/geographyandplanning/graduate/programs"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -1199,6 +1199,7 @@ export const publicReleaseDataset = {
       "materials": "研究兴趣陈述、CV及官方要求的学历与语言证明",
       "materialsEn": "Research statement, CV and required academic/language evidence",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "荣誉本科或等值，B+；申请前先落实潜在导师。",
       "requirementsEn": "Honours bachelor’s or equivalent, B+; secure a potential supervisor before applying.",
       "salary": "不适用：学位项目",
@@ -1224,8 +1225,7 @@ export const publicReleaseDataset = {
         "GIS"
       ],
       "type": "masters-programme",
-      "url": "https://www.queensu.ca/geographyandplanning/graduate/programs",
-      "releaseStatus": "resource_only"
+      "url": "https://www.queensu.ca/geographyandplanning/graduate/programs"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -1260,6 +1260,7 @@ export const publicReleaseDataset = {
       "materials": "研究兴趣陈述、CV及官方要求的学历与语言证明",
       "materialsEn": "Research statement, CV and required academic/language evidence",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "硕士A-；申请前落实潜在导师。",
       "requirementsEn": "Master’s A-; secure a potential supervisor before applying.",
       "salary": "不适用：学位项目",
@@ -1285,8 +1286,7 @@ export const publicReleaseDataset = {
         "GIS"
       ],
       "type": "phd-programme",
-      "url": "https://www.queensu.ca/geographyandplanning/graduate/programs",
-      "releaseStatus": "resource_only"
+      "url": "https://www.queensu.ca/geographyandplanning/graduate/programs"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -1321,6 +1321,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "须按官方招生页核对学历及导师要求",
       "requirementsEn": "Check official academic and supervision requirements",
       "salary": "不适用：学位项目",
@@ -1346,8 +1347,7 @@ export const publicReleaseDataset = {
         "空间分析"
       ],
       "type": "masters-programme",
-      "url": "https://gs.mcmaster.ca/program/geography/",
-      "releaseStatus": "resource_only"
+      "url": "https://gs.mcmaster.ca/program/geography/"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -1382,6 +1382,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "须按官方招生页核对学历及导师要求",
       "requirementsEn": "Check official academic and supervision requirements",
       "salary": "不适用：学位项目",
@@ -1407,8 +1408,7 @@ export const publicReleaseDataset = {
         "空间分析"
       ],
       "type": "masters-programme",
-      "url": "https://gs.mcmaster.ca/program/geography/",
-      "releaseStatus": "resource_only"
+      "url": "https://gs.mcmaster.ca/program/geography/"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -1443,6 +1443,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "须按官方招生页核对学历及导师要求",
       "requirementsEn": "Check official academic and supervision requirements",
       "salary": "不适用：学位项目",
@@ -1468,8 +1469,7 @@ export const publicReleaseDataset = {
         "空间分析"
       ],
       "type": "phd-programme",
-      "url": "https://gs.mcmaster.ca/program/geography/",
-      "releaseStatus": "resource_only"
+      "url": "https://gs.mcmaster.ca/program/geography/"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -1504,6 +1504,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "录取须有教师担任指导者；须联系研究方向相符的教师。",
       "requirementsEn": "Admission requires a faculty sponsor; contact relevant faculty.",
       "salary": "不适用：学位项目",
@@ -1531,8 +1532,7 @@ export const publicReleaseDataset = {
         "地理认知"
       ],
       "type": "masters-programme",
-      "url": "https://www.geog.ucsb.edu/academics/graduate",
-      "releaseStatus": "resource_only"
+      "url": "https://www.geog.ucsb.edu/academics/graduate"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -1567,6 +1567,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "录取须有教师担任指导者；须联系研究方向相符的教师。",
       "requirementsEn": "Admission requires a faculty sponsor; contact relevant faculty.",
       "salary": "不适用：学位项目",
@@ -1594,8 +1595,7 @@ export const publicReleaseDataset = {
         "地理认知"
       ],
       "type": "phd-programme",
-      "url": "https://www.geog.ucsb.edu/academics/graduate",
-      "releaseStatus": "resource_only"
+      "url": "https://www.geog.ucsb.edu/academics/graduate"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -1628,6 +1628,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "研究兴趣须与教师匹配；自然或社会科学基础，不限地理本科。",
       "requirementsEn": "Faculty-compatible interests and natural/social science preparation; geography background not essential.",
       "salary": "不适用：学位项目",
@@ -1652,8 +1653,7 @@ export const publicReleaseDataset = {
         "自然地理"
       ],
       "type": "masters-programme",
-      "url": "https://www.colorado.edu/academics/grad-geography",
-      "releaseStatus": "resource_only"
+      "url": "https://www.colorado.edu/academics/grad-geography"
     },
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -1686,6 +1686,7 @@ export const publicReleaseDataset = {
       "materials": "完整材料清单尚待核实",
       "materialsEn": "Complete document checklist not yet verified",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "研究兴趣须与教师匹配；自然或社会科学基础，不限地理本科。",
       "requirementsEn": "Faculty-compatible interests and natural/social science preparation; geography background not essential.",
       "salary": "不适用：学位项目",
@@ -1710,8 +1711,7 @@ export const publicReleaseDataset = {
         "自然地理"
       ],
       "type": "phd-programme",
-      "url": "https://www.colorado.edu/academics/grad-geography",
-      "releaseStatus": "resource_only"
+      "url": "https://www.colorado.edu/academics/grad-geography"
     },
     {
       "applicationProcess": "通过官方职位页的申请按钮提交；附加表单不能代替正式申请。",
@@ -1744,6 +1744,7 @@ export const publicReleaseDataset = {
       "materials": "CV最多2页＋动机信最多1页；须填写官网附加表单",
       "materialsEn": "CV up to 2 pages and motivation letter up to 1; mandatory additional form on vacancy page",
       "methods": [],
+      "releaseStatus": "expired",
       "requirements": "生态、环境等相关硕士；大型数据分析和R统计能力。",
       "requirementsEn": "Relevant ecology/environment MSc; large-data and R statistics skills.",
       "salary": "税前月薪 €3,204（第1年）至 €4,051（第4年），每周38小时",
@@ -1768,8 +1769,7 @@ export const publicReleaseDataset = {
         "空间生态"
       ],
       "type": "PhD",
-      "url": "https://www.wur.nl/en/vacancy/phd-position-trait-based-drivers-global-plant-distributions",
-      "releaseStatus": "expired"
+      "url": "https://www.wur.nl/en/vacancy/phd-position-trait-based-drivers-global-plant-distributions"
     },
     {
       "applicationProcess": "通过官方职位页的申请按钮提交；附加表单不能代替正式申请。",
@@ -1802,6 +1802,7 @@ export const publicReleaseDataset = {
       "materials": "CV最多2页＋动机信最多1页；须填写官网附加表单",
       "materialsEn": "CV up to 2 pages and motivation letter up to 1; mandatory additional form on vacancy page",
       "methods": [],
+      "releaseStatus": "insufficient_evidence",
       "requirements": "农业/环境经济、环境政策、林业等硕士；统计编程及西班牙田野调查能力。",
       "requirementsEn": "Relevant MSc, statistical programming and capacity for fieldwork in Spain.",
       "salary": "税前月薪 €3,204（第1年）至 €4,051（第4年），每周38小时",
@@ -1827,8 +1828,7 @@ export const publicReleaseDataset = {
         "GIS"
       ],
       "type": "PhD",
-      "url": "https://www.wur.nl/en/vacancy/phd-impact-evaluation-climate-policies-agricultural-and-forest-landscapes",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://www.wur.nl/en/vacancy/phd-impact-evaluation-climate-policies-agricultural-and-forest-landscapes"
     },
     {
       "applicationProcess": "通过官方职位页的申请按钮提交；附加表单不能代替正式申请。",
@@ -1881,6 +1881,7 @@ export const publicReleaseDataset = {
       "materials": "CV与动机信合计最多3页；必填附加表单",
       "materialsEn": "CV and motivation letter: three pages combined; mandatory additional form",
       "methods": [],
+      "releaseStatus": "expired",
       "requirements": "水文、地球系统、环境等相关硕士；水/粮食安全定量论文、大数据及数值模拟经验。",
       "requirementsEn": "Relevant MSc, quantitative water/food-security thesis, large-data and modelling experience.",
       "salary": "税前月薪 €3,204（第1年）至 €4,051（第4年），每周38小时",
@@ -1909,8 +1910,7 @@ export const publicReleaseDataset = {
         "气候变化"
       ],
       "type": "PhD",
-      "url": "https://www.wur.nl/en/vacancy/phd-link-between-mountains-downstream-agriculture-and-ecosystems-globally",
-      "releaseStatus": "expired"
+      "url": "https://www.wur.nl/en/vacancy/phd-link-between-mountains-downstream-agriculture-and-ecosystems-globally"
     },
     {
       "applicationProcess": "通过官方职位页的申请按钮提交；附加表单不能代替正式申请。",
@@ -1943,6 +1943,7 @@ export const publicReleaseDataset = {
       "materials": "CV最多2页＋动机信最多1页；须填写官网附加表单",
       "materialsEn": "CV up to 2 pages and motivation letter up to 1; mandatory additional form on vacancy page",
       "methods": [],
+      "releaseStatus": "expired",
       "requirements": "气象、气候、物理、工程等相关硕士；大数据及Python等编程。",
       "requirementsEn": "Relevant meteorology/climate/physics/engineering MSc; large-data and programming skills.",
       "salary": "税前月薪 €3,204（第1年）至 €4,051（第4年），每周38小时",
@@ -1968,8 +1969,7 @@ export const publicReleaseDataset = {
         "遥感"
       ],
       "type": "PhD",
-      "url": "https://www.wur.nl/en/vacancy/phd-researcher-atmospheric-sciences-emerging-extreme-fire-weather-risks",
-      "releaseStatus": "expired"
+      "url": "https://www.wur.nl/en/vacancy/phd-researcher-atmospheric-sciences-emerging-extreme-fire-weather-risks"
     },
     {
       "applicationProcess": "通过官方职位页的申请按钮提交；附加表单不能代替正式申请。",
@@ -2022,6 +2022,7 @@ export const publicReleaseDataset = {
       "materials": "CV最多2页＋动机信最多1页",
       "materialsEn": "CV up to two pages and motivation letter up to one",
       "methods": [],
+      "releaseStatus": "expired",
       "requirements": "生态、环境、气候等相关硕士；实验设计及野外/实验室经验。",
       "requirementsEn": "Relevant ecology/environment/climate MSc and experimental experience.",
       "salary": "税前月薪 €3,204（第1年）至 €4,051（第4年），每周38小时",
@@ -2050,8 +2051,7 @@ export const publicReleaseDataset = {
         "生态系统"
       ],
       "type": "PhD",
-      "url": "https://www.wur.nl/en/vacancy/phd-moss-traits-and-fire-ignition-high-latitude-peatland-tundra-ecosystems",
-      "releaseStatus": "expired"
+      "url": "https://www.wur.nl/en/vacancy/phd-moss-traits-and-fire-ignition-high-latitude-peatland-tundra-ecosystems"
     },
     {
       "applicationProcess": "通过官方职位页的申请按钮提交；附加表单不能代替正式申请。",
@@ -2084,6 +2084,7 @@ export const publicReleaseDataset = {
       "materials": "CV最多2页＋动机信最多1页；须填写官网附加表单",
       "materialsEn": "CV up to 2 pages and motivation letter up to 1; mandatory additional form on vacancy page",
       "methods": [],
+      "releaseStatus": "expired",
       "requirements": "地球科学、海岸工程、自然地理等相关硕士；水动力/输沙及数值模拟基础。",
       "requirementsEn": "Relevant MSc; hydrodynamics/sediment transport and numerical modelling skills.",
       "salary": "税前月薪 €3,204（第1年）至 €4,051（第4年），每周38小时",
@@ -2109,8 +2110,7 @@ export const publicReleaseDataset = {
         "自然地理"
       ],
       "type": "PhD",
-      "url": "https://www.wur.nl/en/vacancy/phd-position-modelling-formation-and-flooding-coastal-peat-landscapes",
-      "releaseStatus": "expired"
+      "url": "https://www.wur.nl/en/vacancy/phd-position-modelling-formation-and-flooding-coastal-peat-landscapes"
     },
     {
       "applicationProcess": "通过官方职位页的申请按钮提交；附加表单不能代替正式申请。",
@@ -2143,6 +2143,7 @@ export const publicReleaseDataset = {
       "materials": "CV最多2页＋动机信最多1页",
       "materialsEn": "CV up to two pages and motivation letter up to one",
       "methods": [],
+      "releaseStatus": "expired",
       "requirements": "农学、环境等相关硕士；动态/优化模型及R、GAMS或Python经验。",
       "requirementsEn": "Relevant MSc; dynamic/optimisation modelling and R, GAMS or Python.",
       "salary": "税前月薪 €3,204（第1年）至 €4,051（第4年），每周38小时",
@@ -2168,8 +2169,7 @@ export const publicReleaseDataset = {
         "环境"
       ],
       "type": "PhD",
-      "url": "https://www.wur.nl/en/vacancy/phd-exploring-grassland-multifunctionality-through-modelling",
-      "releaseStatus": "expired"
+      "url": "https://www.wur.nl/en/vacancy/phd-exploring-grassland-multifunctionality-through-modelling"
     },
     {
       "applicationProcess": "从官方职位页的申请按钮提交。",
@@ -2202,6 +2202,7 @@ export const publicReleaseDataset = {
       "materials": "招聘正文未列完整清单，按官网申请表核对",
       "materialsEn": "Complete checklist not stated; check the official form",
       "methods": [],
+      "releaseStatus": "expired",
       "requirements": "遥感、数据科学、森林生态等博士；SAR、Python及可复现数据流程。",
       "requirementsEn": "Relevant PhD; SAR, Python and reproducible processing skills.",
       "salary": "税前月薪 €3,706–5,760（每周38小时口径）",
@@ -2227,8 +2228,7 @@ export const publicReleaseDataset = {
         "森林监测"
       ],
       "type": "postdoc",
-      "url": "https://www.wur.nl/en/vacancy/postdoc-operational-radar-based-forest-disturbance-and-regrowth-monitoring",
-      "releaseStatus": "expired"
+      "url": "https://www.wur.nl/en/vacancy/postdoc-operational-radar-based-forest-disturbance-and-regrowth-monitoring"
     },
     {
       "applicationProcess": "从官方职位页申请按钮提交。",
@@ -2244,6 +2244,7 @@ export const publicReleaseDataset = {
       "country": "荷兰",
       "countryEn": "Netherlands",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:46:09.612Z",
       "deadline": "2026-11-15",
       "deadlineNote": "You can apply up to and including 15 November 2026.",
       "deadlineNoteEn": "You can apply up to and including 15 November 2026.",
@@ -2253,6 +2254,16 @@ export const publicReleaseDataset = {
       "duration": "首签2年，续约有条件",
       "durationEn": "Initial two years; conditional extension",
       "field": "地理学",
+      "fieldConflicts": [
+        {
+          "currentlyObserved": "2026-11-16",
+          "field": "deadline",
+          "observedAt": "2026-11-04T04:46:09.612Z",
+          "previous": "2026-11-15",
+          "status": "unresolved",
+          "url": "https://www.wur.nl/en/vacancy/postdoc-governance-and-sustainability-transitions-farming-systems-0"
+        }
+      ],
       "fieldEn": "Geography",
       "fieldEvidence": [
         {
@@ -2282,6 +2293,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-01T03:53:46Z",
           "status": "supported",
           "url": "https://www.wur.nl/en/vacancy/postdoc-governance-and-sustainability-transitions-farming-systems-0"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:46:09.612Z",
+          "status": "missing",
+          "url": "https://www.wur.nl/en/vacancy/postdoc-governance-and-sustainability-transitions-farming-systems-0"
         }
       ],
       "funding": "受薪雇佣岗位",
@@ -2295,6 +2312,7 @@ export const publicReleaseDataset = {
       "materials": "英文动机信和CV",
       "materialsEn": "English motivation letter and CV",
       "methods": [],
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "可持续、农业、政治、环境等相关博士；定性/混合方法；每周至少3天在瓦赫宁根。",
       "requirementsEn": "Relevant PhD; qualitative/mixed methods; at least three days weekly in Wageningen.",
       "salary": "we offer a competitive gross salary of between € 3.706,- and € 5.760,- for a full-time working week of 38 hours, in accordance with the Collective Labour Agreements for Dutch Universities (CAO-NU) (scale 10).",
@@ -2311,8 +2329,8 @@ export const publicReleaseDataset = {
       },
       "sourceType": "official-employer",
       "status": "listed",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified",
+      "statusLabel": "信息存在冲突 · 请核对官网",
+      "statusLabelEn": "Conflicting information · verify official source",
       "summary": "研究农业认证、政策激励与转型中的利益相关者。",
       "summaryEn": "Study agricultural standards, incentives and stakeholders in sustainability transitions.",
       "title": "农业系统治理与可持续转型博士后",
@@ -2323,8 +2341,7 @@ export const publicReleaseDataset = {
         "可持续转型"
       ],
       "type": "postdoc",
-      "url": "https://www.wur.nl/en/vacancy/postdoc-governance-and-sustainability-transitions-farming-systems-0",
-      "releaseStatus": "likely_open / needs_review"
+      "url": "https://www.wur.nl/en/vacancy/postdoc-governance-and-sustainability-transitions-farming-systems-0"
     },
     {
       "applicationUrl": "https://admissions.hku.hk/tpg/programme/master-science-geospatial-data-science",
@@ -2358,6 +2375,7 @@ export const publicReleaseDataset = {
       "materials": "按项目官方申请清单准备",
       "materialsEn": "Follow the official programme document checklist",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "须持有相关学科的学士学位或同等资格。",
       "requirementsEn": "A bachelor’s degree or equivalent in an appropriate subject is required.",
       "salary": "不适用：学习机会",
@@ -2381,8 +2399,7 @@ export const publicReleaseDataset = {
         "Remote sensing"
       ],
       "type": "masters-programme",
-      "url": "https://www.geods.hku.hk/potential-applicants/",
-      "releaseStatus": "resource_only"
+      "url": "https://www.geods.hku.hk/potential-applicants/"
     },
     {
       "applicationUrl": "https://mscgis.grm.cuhk.edu.hk/en/admission.html",
@@ -2416,6 +2433,7 @@ export const publicReleaseDataset = {
       "materials": "按项目官方申请清单准备",
       "materialsEn": "Follow the official programme document checklist",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "认可本科，通常二等荣誉或平均B；等值专业资格亦有申请路径。",
       "requirementsEn": "Recognised bachelor’s, normally second-class honours or B average; equivalent qualifications may be considered.",
       "salary": "不适用：学习机会",
@@ -2438,8 +2456,7 @@ export const publicReleaseDataset = {
         "Smart cities"
       ],
       "type": "masters-programme",
-      "url": "https://mscgis.grm.cuhk.edu.hk/en/admission.html",
-      "releaseStatus": "resource_only"
+      "url": "https://mscgis.grm.cuhk.edu.hk/en/admission.html"
     },
     {
       "applicationUrl": "https://www.mcgill.ca/geography/graduate",
@@ -2471,6 +2488,7 @@ export const publicReleaseDataset = {
       "materials": "按项目官方申请清单准备",
       "materialsEn": "Follow the official programme document checklist",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "地理或相关本科、良好成绩；需要导师明确同意指导与资助安排。",
       "requirementsEn": "Strong relevant bachelor’s record and explicit supervisory/funding agreement.",
       "salary": "不适用：学习机会",
@@ -2494,8 +2512,7 @@ export const publicReleaseDataset = {
         "Environment"
       ],
       "type": "masters-programme",
-      "url": "https://www.mcgill.ca/geography/graduate",
-      "releaseStatus": "resource_only"
+      "url": "https://www.mcgill.ca/geography/graduate"
     },
     {
       "applicationUrl": "https://www.mcgill.ca/gradapplicants/program/geography-phd",
@@ -2527,6 +2544,7 @@ export const publicReleaseDataset = {
       "materials": "按项目官方申请清单准备",
       "materialsEn": "Follow the official programme document checklist",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "现行申请项目页要求硕士；院系说明仍列极少数本科直博例外，需书面确认。",
       "requirementsEn": "The admissions programme page requires a master’s, while departmental guidance mentions rare direct entry; obtain clarification.",
       "salary": "不适用：学习机会",
@@ -2549,8 +2567,7 @@ export const publicReleaseDataset = {
         "Geography"
       ],
       "type": "phd-programme",
-      "url": "https://www.mcgill.ca/gradapplicants/program/geography-phd",
-      "releaseStatus": "resource_only"
+      "url": "https://www.mcgill.ca/gradapplicants/program/geography-phd"
     },
     {
       "applicationUrl": "https://uwaterloo.ca/future-graduate-students/programs/by-faculty/environment/geography-master-arts-ma",
@@ -2584,6 +2601,7 @@ export const publicReleaseDataset = {
       "materials": "CV、最多500词意向陈述、成绩单、三封学术推荐及适用的英语证明。",
       "materialsEn": "CV, up to 500-word statement, transcripts, three academic references and applicable English evidence.",
       "methods": [],
+      "releaseStatus": "insufficient_evidence",
       "requirements": "荣誉本科或等值，平均至少75%；需具备研究方向的相关基础。",
       "requirementsEn": "Honours bachelor’s or equivalent, at least 75%, with suitable subject preparation.",
       "salary": "不适用：学习机会",
@@ -2607,8 +2625,7 @@ export const publicReleaseDataset = {
         "Human geography"
       ],
       "type": "masters-intake",
-      "url": "https://uwaterloo.ca/future-graduate-students/programs/by-faculty/environment/geography-master-arts-ma",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://uwaterloo.ca/future-graduate-students/programs/by-faculty/environment/geography-master-arts-ma"
     },
     {
       "applicationUrl": "https://uwaterloo.ca/future-graduate-students/programs/by-faculty/environment/geography-doctor-philosophy-phd",
@@ -2642,6 +2659,7 @@ export const publicReleaseDataset = {
       "materials": "CV、最多500词意向陈述、成绩单、三封学术推荐及适用的英语证明。",
       "materialsEn": "CV, up to 500-word statement, transcripts, three academic references and applicable English evidence.",
       "methods": [],
+      "releaseStatus": "insufficient_evidence",
       "requirements": "地理或等值硕士，研究生阶段平均至少80%；优秀在读硕士有转博路径。",
       "requirementsEn": "Relevant master’s with at least 80% graduate average; exceptional master’s-transfer routes exist.",
       "salary": "不适用：学习机会",
@@ -2665,8 +2683,7 @@ export const publicReleaseDataset = {
         "Human geography"
       ],
       "type": "phd-intake",
-      "url": "https://uwaterloo.ca/future-graduate-students/programs/by-faculty/environment/geography-doctor-philosophy-phd",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://uwaterloo.ca/future-graduate-students/programs/by-faculty/environment/geography-doctor-philosophy-phd"
     },
     {
       "applicationUrl": "https://www.sfu.ca/geography/prospective-students/prospective-graduate/how-to-apply.html",
@@ -2699,6 +2716,7 @@ export const publicReleaseDataset = {
       "materialsEn": "Up to 500-word research statement, CV, transcripts, three references and applicable English evidence.",
       "methods": [],
       "opensAt": "2026-10-22",
+      "releaseStatus": "insufficient_evidence",
       "requirements": "地理或相关社会科学本科；GPA至少3.25/4.33。",
       "requirementsEn": "Geography/related social-science bachelor’s; GPA at least 3.25/4.33.",
       "salary": "不适用：学习机会",
@@ -2721,8 +2739,7 @@ export const publicReleaseDataset = {
         "Geography"
       ],
       "type": "masters-intake",
-      "url": "https://www.sfu.ca/geography/prospective-students/prospective-graduate/how-to-apply.html",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://www.sfu.ca/geography/prospective-students/prospective-graduate/how-to-apply.html"
     },
     {
       "applicationUrl": "https://www.sfu.ca/geography/prospective-students/prospective-graduate/how-to-apply.html",
@@ -2755,6 +2772,7 @@ export const publicReleaseDataset = {
       "materialsEn": "Up to 500-word research statement, CV, transcripts, three references and applicable English evidence.",
       "methods": [],
       "opensAt": "2026-10-22",
+      "releaseStatus": "insufficient_evidence",
       "requirements": "地理或相关领域MA/MSc；须落实指导教师。",
       "requirementsEn": "MA/MSc in geography or related discipline and confirmed supervision.",
       "salary": "不适用：学习机会",
@@ -2777,8 +2795,7 @@ export const publicReleaseDataset = {
         "Geography"
       ],
       "type": "phd-intake",
-      "url": "https://www.sfu.ca/geography/prospective-students/prospective-graduate/how-to-apply.html",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://www.sfu.ca/geography/prospective-students/prospective-graduate/how-to-apply.html"
     },
     {
       "applicationProcess": "从2027课程目录Apply进入申请，核对学历、英语及拟申请的学分减免；截止日期须另确认。",
@@ -2809,6 +2826,7 @@ export const publicReleaseDataset = {
       "language": "具体语言门槛及豁免须查校方当期要求",
       "languageEn": "Check current university language thresholds and exemptions",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "本科或同等学历，最低GPA 5.0/7.0；达到最低线不保证录取。",
       "requirementsEn": "Bachelor’s or equivalent with GPA at least 5.0/7.0; meeting the minimum does not guarantee admission.",
       "reviewDate": "",
@@ -2834,8 +2852,7 @@ export const publicReleaseDataset = {
         "水资源"
       ],
       "type": "masters-programme",
-      "url": "https://programsandcourses.anu.edu.au/2027/program/MENVI",
-      "releaseStatus": "resource_only"
+      "url": "https://programsandcourses.anu.edu.au/2027/program/MENVI"
     },
     {
       "applicationProcess": "向UQ提交申请（项目代码5610），选择修读长度；2年制可选第1/2学期，1.5年制仅第1学期。",
@@ -2866,6 +2883,7 @@ export const publicReleaseDataset = {
       "language": "IELTS总分6.5，单项至少6.0",
       "languageEn": "IELTS 6.5 overall, each component at least 6.0",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "2年制接受各学科本科，GPA至少4.5/7；1.5年制需相关专业等资格。",
       "requirementsEn": "Two-year route: bachelor’s in any discipline and GPA at least 4.5/7; the shorter route requires relevant preparation.",
       "reviewDate": "",
@@ -2890,8 +2908,7 @@ export const publicReleaseDataset = {
         "地理信息科学"
       ],
       "type": "masters-programme",
-      "url": "https://study.uq.edu.au/study-options/programs/master-geographic-information-science-5610",
-      "releaseStatus": "resource_only"
+      "url": "https://study.uq.edu.au/study-options/programs/master-geographic-information-science-5610"
     },
     {
       "applicationProcess": "通过UNSW Applicant Portal申请，先确认轮次、学制及截止；官网提示2027申请已开放，但具体名额须再查。",
@@ -2922,6 +2939,7 @@ export const publicReleaseDataset = {
       "language": "具体语言门槛及豁免须查校方当期要求",
       "languageEn": "Check current university language thresholds and exemptions",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "2年制接受各学科本科，须相当于65% credit平均；缩短学制有额外背景或经验条件。",
       "requirementsEn": "Two-year route: bachelor’s in any discipline with a 65% credit-equivalent average; shorter routes have additional conditions.",
       "reviewDate": "",
@@ -2947,8 +2965,7 @@ export const publicReleaseDataset = {
         "可持续性"
       ],
       "type": "masters-programme",
-      "url": "https://www.unsw.edu.au/study/postgraduate/master-of-environmental-management?studentType=international",
-      "releaseStatus": "resource_only"
+      "url": "https://www.unsw.edu.au/study/postgraduate/master-of-environmental-management?studentType=international"
     },
     {
       "applicationProcess": "按课程规则核对资格，再前往大学正式课程申请页确认材料、语言及申请轮次。",
@@ -2979,6 +2996,7 @@ export const publicReleaseDataset = {
       "language": "具体语言门槛及豁免须查校方当期要求",
       "languageEn": "Check current university language thresholds and exemptions",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "设计、人文地理或相关本科，平均达到credit；或完成嵌套Graduate Diploma且平均至少70。",
       "requirementsEn": "Relevant design/human-geography bachelor’s with a credit average, or the embedded Graduate Diploma with an average of at least 70.",
       "reviewDate": "",
@@ -3004,8 +3022,7 @@ export const publicReleaseDataset = {
         "人文地理"
       ],
       "type": "masters-programme",
-      "url": "https://www.sydney.edu.au/handbooks/architecture/postgraduate/urban-regional-planning/course-resolutions.html",
-      "releaseStatus": "resource_only"
+      "url": "https://www.sydney.edu.au/handbooks/architecture/postgraduate/urban-regional-planning/course-resolutions.html"
     },
     {
       "applicationProcess": "先讨论导师和研究计划，再提交网申：计划、学历、简历及至少两份学术推荐；英语按ANU要求。",
@@ -3036,6 +3053,7 @@ export const publicReleaseDataset = {
       "language": "具体语言门槛及豁免须查校方当期要求",
       "languageEn": "Check current university language thresholds and exemptions",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "相关荣誉本科至少H2A，或认可的学历、科研与职业经验组合；须导师书面同意。",
       "requirementsEn": "Relevant honours bachelor’s at least H2A, or an accepted equivalent combination of qualifications/research/experience; written supervisor approval is required.",
       "reviewDate": "",
@@ -3060,8 +3078,7 @@ export const publicReleaseDataset = {
         "地理学"
       ],
       "type": "phd-programme",
-      "url": "https://programsandcourses.anu.edu.au/program/9065XPHD",
-      "releaseStatus": "resource_only"
+      "url": "https://programsandcourses.anu.edu.au/program/9065XPHD"
     },
     {
       "applicationProcess": "先查学院导师矩阵，准备成绩单、简历及适用英语材料，通过My.App申请；学位申请可全年提交，奖学金另有轮次。",
@@ -3093,6 +3110,7 @@ export const publicReleaseDataset = {
       "language": "具体语言门槛及豁免须查校方当期要求",
       "languageEn": "Check current university language thresholds and exemptions",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "需证明独立研究能力，并核对研究生院具体学历标准；申请须列至少一位研究匹配导师。",
       "requirementsEn": "Demonstrate independent research ability and check detailed academic entry rules; name at least one aligned prospective supervisor.",
       "reviewDate": "",
@@ -3120,8 +3138,7 @@ export const publicReleaseDataset = {
         "自然地理"
       ],
       "type": "phd-programme",
-      "url": "https://www.monash.edu/study/courses/find-a-course/science-0057",
-      "releaseStatus": "resource_only"
+      "url": "https://www.monash.edu/study/courses/find-a-course/science-0057"
     },
     {
       "caution": "官网推荐信段落仍使用2026/27学年标签，但明确列出2026年12月日期；不据此猜测入学月份。",
@@ -3152,6 +3169,7 @@ export const publicReleaseDataset = {
       "materialsEn": "Transcripts with grading key, at least three references and an approximately 500-word statement; CV optional. English results within 24 months where required.",
       "methods": [],
       "referenceDeadline": "2026-12-31",
+      "releaseStatus": "insufficient_evidence",
       "requirements": "符合UBC研究生院及地理系博士条件；海外学历需核对所在国家的等值要求。",
       "requirementsEn": "Meet UBC graduate and Geography PhD requirements, including country-specific credential equivalencies.",
       "salary": "不适用：博士申请",
@@ -3175,8 +3193,7 @@ export const publicReleaseDataset = {
         "Physical geography"
       ],
       "type": "phd-intake",
-      "url": "https://geog.ubc.ca/graduate/admissions/",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://geog.ubc.ca/graduate/admissions/"
     },
     {
       "applicationUrl": "https://grad.ncsu.edu/apply/",
@@ -3210,6 +3227,7 @@ export const publicReleaseDataset = {
         "Python",
         "GRASS GIS"
       ],
+      "releaseStatus": "insufficient_evidence",
       "requirements": "GIS、数据科学、计算机或相关背景；Python或GRASS GIS经验优先。",
       "requirementsEn": "GIS, data science, computing or related background; Python/GRASS GIS desirable.",
       "salary": "不适用：博士申请",
@@ -3234,8 +3252,7 @@ export const publicReleaseDataset = {
         "Natural hazards"
       ],
       "type": "phd-project",
-      "url": "https://cnr.ncsu.edu/geospatial/academics/phd-in-geospatial-analytics/graduate-assistantships/",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://cnr.ncsu.edu/geospatial/academics/phd-in-geospatial-analytics/graduate-assistantships/"
     },
     {
       "applicationUrl": "https://www.rmit.edu.au/research/research-degrees/how-to-apply",
@@ -3270,6 +3287,7 @@ export const publicReleaseDataset = {
         "空间分析",
         "Mixed methods"
       ],
+      "releaseStatus": "insufficient_evidence",
       "requirements": "相关领域澳洲H1/H2A荣誉学位或等值学历，并有研究能力；国内及国际申请者均可。",
       "requirementsEn": "Relevant Australian H1/H2A honours or equivalent and research capability; domestic and international applicants eligible.",
       "salary": "不适用：博士申请",
@@ -3294,8 +3312,7 @@ export const publicReleaseDataset = {
         "Urban planning"
       ],
       "type": "phd-project",
-      "url": "https://www.rmit.edu.au/scholarships/research/phd-scholarship-in-spatial-health-research-and-urban-design",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://www.rmit.edu.au/scholarships/research/phd-scholarship-in-spatial-health-research-and-urban-design"
     },
     {
       "applicationUrl": "https://www.rmit.edu.au/research/research-degrees/how-to-apply",
@@ -3330,6 +3347,7 @@ export const publicReleaseDataset = {
         "Python",
         "Spatial analysis"
       ],
+      "releaseStatus": "insufficient_evidence",
       "requirements": "植物学、生态、环境或地理空间相关荣誉学位/硕士；具备统计、R或Python及大规模数据处理经验。",
       "requirementsEn": "Relevant honours/master’s background; statistics, R/Python and large-dataset experience.",
       "salary": "不适用：博士申请",
@@ -3355,8 +3373,7 @@ export const publicReleaseDataset = {
         "Remote sensing"
       ],
       "type": "phd-project",
-      "url": "https://www.rmit.edu.au/scholarships/research/phd-scholarship-in-from-herbaria-to-citizen-science-a-continental-scale-assessment-of-plant-phenological-shifts-across-australia",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://www.rmit.edu.au/scholarships/research/phd-scholarship-in-from-herbaria-to-citizen-science-a-continental-scale-assessment-of-plant-phenological-shifts-across-australia"
     },
     {
       "caution": "Workday仍未返回可核对正文；保留旧信息，当前招聘状态未知。",
@@ -3390,6 +3407,7 @@ export const publicReleaseDataset = {
         "HPC",
         "Machine learning"
       ],
+      "releaseStatus": "insufficient_evidence",
       "requirements": "自然地理、遥感或生态相关博士；多源遥感、Python及气候/生态数据分析能力。",
       "requirementsEn": "Relevant PhD; multi-platform remote sensing, Python and climate/ecosystem data skills.",
       "salary": "未公布",
@@ -3416,8 +3434,7 @@ export const publicReleaseDataset = {
         "Ecosystems"
       ],
       "type": "research-fellow",
-      "url": "https://ntu.wd3.myworkdayjobs.com/en-US/Careers/job/NTU-Main-Campus-Singapore/Research-Fellow--Tropical-Ecosystem-Monitoring-and-Simulations-_R00025934",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://ntu.wd3.myworkdayjobs.com/en-US/Careers/job/NTU-Main-Campus-Singapore/Research-Fellow--Tropical-Ecosystem-Monitoring-and-Simulations-_R00025934"
     },
     {
       "caution": "Workday仍未返回可核对正文；保留旧信息，当前招聘状态未知。",
@@ -3451,6 +3468,7 @@ export const publicReleaseDataset = {
         "R",
         "Machine learning"
       ],
+      "releaseStatus": "insufficient_evidence",
       "requirements": "地理、气候、水文、环境、数据科学或相关博士；具备气候风险研究、编程及大规模数据分析经验。",
       "requirementsEn": "Relevant PhD with climate-risk research, programming and large-scale data analysis experience.",
       "salary": "未公布",
@@ -3477,8 +3495,7 @@ export const publicReleaseDataset = {
         "Monsoon"
       ],
       "type": "research-fellow",
-      "url": "https://ntu.wd3.myworkdayjobs.com/Careers/job/NTU-Main-Campus-Singapore/Research-Fellow--Climate-Risk-Assessment-and-Climate-Change-_R00025219",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://ntu.wd3.myworkdayjobs.com/Careers/job/NTU-Main-Campus-Singapore/Research-Fellow--Climate-Risk-Assessment-and-Climate-Change-_R00025219"
     },
     {
       "caution": "课程申请截止2027-03-25；竞争大学资助须留意2026-12-08。Gates美国轮2026-10-14已过，不作为仍开放推荐。导师意向不等于录取或资助。",
@@ -3508,6 +3525,7 @@ export const publicReleaseDataset = {
       "materials": "成绩单、CV、两封推荐信、英语证明（如要求）、研究计划；自然地理指定课题有替代说明要求。",
       "materialsEn": "Transcripts, CV, two references, English evidence when required, and proposal; advertised physical-geography topics have an alternative statement requirement.",
       "methods": [],
+      "releaseStatus": "insufficient_evidence",
       "requirements": "英国高等级2:1本科或相当资格，通常有相关硕士；须满足具体研究方向与语言条件。",
       "requirementsEn": "High UK 2:1 or equivalent; normally a relevant master’s qualification. Subject preparation and language conditions apply.",
       "salary": "非雇佣岗位，不适用薪资",
@@ -3532,8 +3550,7 @@ export const publicReleaseDataset = {
         "Physical geography"
       ],
       "type": "phd-intake",
-      "url": "https://www.postgraduate.study.cam.ac.uk/courses/directory/eaggpdgeo/apply",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://www.postgraduate.study.cam.ac.uk/courses/directory/eaggpdgeo/apply"
     },
     {
       "applicationUrl": "https://www.qmul.ac.uk/geog/study/postgraduate-phd/apply/",
@@ -3564,6 +3581,7 @@ export const publicReleaseDataset = {
       "materials": "以AHRC资助页与博士申请指南要求为准",
       "materialsEn": "Follow the AHRC funding page and doctoral application instructions",
       "methods": [],
+      "releaseStatus": "insufficient_evidence",
       "requirements": "先确认课题符合AHRC范围、博士项目入学条件及该轮资助资格。",
       "requirementsEn": "Confirm the AHRC remit, doctoral admission requirements and eligibility for this funding competition.",
       "salary": "非雇佣岗位，不适用薪资",
@@ -3588,10 +3606,10 @@ export const publicReleaseDataset = {
         "Arts and humanities"
       ],
       "type": "phd-intake",
-      "url": "https://www.qmul.ac.uk/geog/study/postgraduate-phd/phd-opportunities/",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://www.qmul.ac.uk/geog/study/postgraduate-phd/phd-opportunities/"
     },
     {
+      "applicationUrl": "https://lu.varbi.com/en/what:login/jobID:930481/type:job/where:4/apply:1/",
       "candidateId": "tcand-ace8a3b53aed0d0977dd0628",
       "caution": "录用与申请资格以官方公告为准。",
       "cautionEn": "The official advertisement governs eligibility and hiring.",
@@ -3603,6 +3621,7 @@ export const publicReleaseDataset = {
       "country": "瑞典",
       "countryEn": "Sweden",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:45:28.511Z",
       "deadline": "2026-11-04",
       "deadlineNote": "04.Nov.2026",
       "deadlineType": "fixed",
@@ -3618,6 +3637,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T11:14:59.873358Z",
           "status": "supported",
           "url": "https://lu.varbi.com/en/what:job/jobID:930481/type:job/where:4/apply:1"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:45:28.511Z",
+          "status": "missing",
+          "url": "https://lu.varbi.com/en/what:login/jobID:930481/type:job/where:4/apply:1/"
         }
       ],
       "funding": "全职长期雇佣岗位",
@@ -3635,6 +3660,7 @@ export const publicReleaseDataset = {
       "language": "英语熟练；非瑞典语使用者须在入职三年内达到瑞典语 B2",
       "languageEn": "Very good English; non-Swedish speakers must reach Swedish B2 within three years",
       "methods": [],
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "相关博士；GIS 研究、研究经费获取、大学教学及学生指导经历。",
       "requirementsEn": "Relevant PhD; GIS research, external funding, university teaching and supervision experience.",
       "reviewDate": "",
@@ -3664,8 +3690,7 @@ export const publicReleaseDataset = {
         "3D geodata"
       ],
       "type": "faculty",
-      "url": "https://lu.varbi.com/en/what:job/jobID:930481/type:job/where:4/apply:1",
-      "releaseStatus": "likely_open / needs_review"
+      "url": "https://lu.varbi.com/en/what:job/jobID:930481/type:job/where:4/apply:1"
     },
     {
       "applicationUrl": "https://hu-berlin.stellenticket.de/de/offers/207061/",
@@ -3708,6 +3733,7 @@ export const publicReleaseDataset = {
         "MATLAB",
         "统计"
       ],
+      "releaseStatus": "expired",
       "requirements": "神经科学、心理学、计算机、数据科学等相关硕士；EEG、统计和编程经验。",
       "requirementsEn": "Relevant master’s degree; EEG, statistics and programming experience.",
       "reviewDate": "",
@@ -3732,8 +3758,7 @@ export const publicReleaseDataset = {
         "环境感知"
       ],
       "type": "research",
-      "url": "https://hu-berlin.stellenticket.de/de/offers/207061/",
-      "releaseStatus": "expired"
+      "url": "https://hu-berlin.stellenticket.de/de/offers/207061/"
     },
     {
       "caution": "官方公告仍可访问，但未列申请截止日；是否仍受理须向官方核实。计划2026年11月1日或之后尽快开始。",
@@ -3767,6 +3792,7 @@ export const publicReleaseDataset = {
         "双重差分",
         "地理可视化"
       ],
+      "releaseStatus": "insufficient_evidence",
       "requirements": "GIS、复杂网络、经济、计算机、统计、数学等相关博士或同等专业资格与研究经验。",
       "requirementsEn": "Relevant PhD or equivalent professional qualifications and research experience in GIS, networks, economics, computing, statistics or mathematics.",
       "reviewDate": "",
@@ -3793,10 +3819,11 @@ export const publicReleaseDataset = {
         "空间大数据"
       ],
       "type": "postdoc",
-      "url": "https://careers.nus.edu.sg/job/Postdoctoral-Fellow-(Department-of-Geography)/34273-en_GB/",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://careers.nus.edu.sg/job/Postdoctoral-Fellow-(Department-of-Geography)/34273-en_GB/"
     },
     {
+      "applicationRouteCheckedAt": "2026-11-04T04:53:04.763Z",
+      "applicationUrl": "https://uscjobs.sc.edu/postings/213942/pre_apply",
       "candidateId": "tcand-536021f617341cb0b2a2d2a1",
       "caution": "2026年11月1日开始评审，招满为止；不是11月1日截止。预计2027年8月16日入职。",
       "cautionEn": "Review begins 1 November 2026; open until filled, not a fixed November 1 deadline. Expected start: 16 August 2027.",
@@ -3808,6 +3835,7 @@ export const publicReleaseDataset = {
       "country": "美国",
       "countryEn": "United States",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:53:04.763Z",
       "deadline": "",
       "deadlineNote": "Review of applications will begin November 1, 2026, and will continue until the position is filled.",
       "deadlineType": "rolling",
@@ -3823,6 +3851,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T11:08:01.075Z",
           "status": "supported",
           "url": "https://uscjobs.sc.edu/postings/213942"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:53:04.763Z",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/213942/pre_apply"
         }
       ],
       "funding": "全职长聘轨道教职",
@@ -3842,6 +3876,7 @@ export const publicReleaseDataset = {
       "materials": "1页求职信、CV、≤2页研究陈述、≤1页教学陈述、代表作及三位推荐人信息。",
       "materialsEn": "One-page cover letter, CV, research statement ≤2 pages, teaching statement ≤1 page, representative work and three referees.",
       "methods": [],
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "入职前取得地理学、GIScience 或相关博士；即将完成博士者可申请。",
       "requirementsEn": "PhD in Geography, GIScience or a related field by appointment; ABD applicants completing before the start date are eligible.",
       "reviewDate": "2026-11-01",
@@ -3870,12 +3905,15 @@ export const publicReleaseDataset = {
         "数字制图"
       ],
       "type": "faculty",
-      "url": "https://uscjobs.sc.edu/postings/213942",
-      "releaseStatus": "likely_open / needs_review"
+      "url": "https://uscjobs.sc.edu/postings/213942"
     },
     {
-      "caution": "2026年11月15日开始评审，招满为止；理想入职日期2027年3月1日。",
-      "cautionEn": "Review starts 15 November 2026; open until filled. Preferred start: 1 March 2027.",
+      "announcementStatus": "open",
+      "applicationActionability": "public_form_and_explicit_receiving_invitation",
+      "applicationRouteCheckedAt": "2026-11-04T04:57:33.646Z",
+      "applicationUrl": "https://emea2.softfactors.com/job-opening/rgum-1Xb566nCAHVEKPxWxy#!/?lang=en",
+      "caution": "核对时，岗位对应申请门户明确邀请接收申请，身份信息表单可用。未填写个人资料、未接受条款、未提交申请；最终提交回执未验证。",
+      "cautionEn": "The job-bound portal explicitly invited applications and exposed the identity form at review. No personal data, terms acceptance or application was submitted; final submission was not tested.",
       "checkedAt": "2026-10-17",
       "city": "Zurich",
       "collectedAt": "2026-10-16",
@@ -3883,7 +3921,8 @@ export const publicReleaseDataset = {
       "contentReviewStatus": "verified",
       "country": "瑞士",
       "countryEn": "Switzerland",
-      "currentOpenStatus": "unknown",
+      "currentOpenStatus": "open",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:57:33.646Z",
       "deadline": "",
       "deadlineNote": "applications will close once a suitable candidate is found",
       "deadlineType": "rolling",
@@ -3899,6 +3938,29 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-25T09:22:05Z",
           "status": "supported",
           "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1Xb566nCAHVEKPxWxy"
+        },
+        {
+          "applicationFormTitle": "Application for Doctoral Student in Glaciology and Glacial Hazards",
+          "availableFormFields": [
+            "field_firstName",
+            "field_lastName",
+            "email"
+          ],
+          "field": "current_open_status",
+          "formStage": "public_identity_form",
+          "jobReference": "1Xb566nCAHVEKPxWxy",
+          "observedAt": "2026-11-04T04:57:33.646Z",
+          "pageKind": "application_portal",
+          "quote": "We look forward to receiving your application.",
+          "status": "supported",
+          "url": "https://emea2.softfactors.com/job-opening/rgum-1Xb566nCAHVEKPxWxy#!/?lang=en",
+          "value": "open"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:57:33.646Z",
+          "status": "supported",
+          "url": "https://emea2.softfactors.com/job-opening/rgum-1Xb566nCAHVEKPxWxy#!/?lang=en"
         }
       ],
       "funding": "100% 工时博士岗位",
@@ -3922,6 +3984,7 @@ export const publicReleaseDataset = {
         "野外调查",
         "数值模拟"
       ],
+      "releaseStatus": "verified_open",
       "requirements": "地球科学、环境、地球物理、物理或相关硕士；愿意参与高山野外工作。",
       "requirementsEn": "Relevant master’s in earth/environmental sciences, geophysics, physics or related fields; interest in alpine fieldwork.",
       "reviewDate": "2026-11-15",
@@ -3934,8 +3997,8 @@ export const publicReleaseDataset = {
       },
       "sourceType": "official-employer",
       "status": "listed",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified",
+      "statusLabel": "核对时确认受理 · 申请前请复核",
+      "statusLabelEn": "Acceptance confirmed at last check · recheck before applying",
       "summary": "结合冰川编目、高山实测和热力学模拟，评估阿尔卑斯悬冰川的稳定性与灾害。",
       "summaryEn": "Combine glacier mapping, alpine fieldwork and thermomechanical modelling to assess hanging-glacier stability and hazards.",
       "title": "冰川与冰川灾害博士",
@@ -3947,8 +4010,7 @@ export const publicReleaseDataset = {
         "glaciology"
       ],
       "type": "phd",
-      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1Xb566nCAHVEKPxWxy",
-      "releaseStatus": "likely_open / needs_review"
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_1Xb566nCAHVEKPxWxy"
     },
     {
       "caution": "跨学科相关机会。官方未列截止日和合同年限，是否仍受理须核实；拟2027年1月开始。",
@@ -3988,6 +4050,7 @@ export const publicReleaseDataset = {
         "定性研究",
         "统计"
       ],
+      "releaseStatus": "insufficient_evidence",
       "requirements": "心理学、环境科学或社会科学硕士；具有描述和推断统计基础。",
       "requirementsEn": "Master’s in psychology, environmental sciences or social sciences; descriptive and inferential statistics experience.",
       "reviewDate": "",
@@ -4012,18 +4075,18 @@ export const publicReleaseDataset = {
         "环境心理学"
       ],
       "type": "phd",
-      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_L9EB3dSHxoSQSAypSG",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_L9EB3dSHxoSQSAypSG"
     },
     {
-      "applicationActionability": "can_start_public_application",
+      "announcementStatus": "open",
+      "applicationActionability": "public_form_and_explicit_receiving_invitation",
       "applicationProcess": "ETH 官方详情页指向 Softfactors 申请入口；本次入口只返回无法读取表单的小型 JavaScript 页面，当前是否受理未知。",
       "applicationProcessEn": "The ETH detail page links to the Softfactors application portal. It returned only a small JavaScript shell without a readable form, so current acceptance is unknown.",
-      "applicationRouteCheckedAt": "2026-10-31T11:11:00.121Z",
+      "applicationRouteCheckedAt": "2026-11-04T04:57:31.636Z",
       "applicationUrl": "https://emea2.softfactors.com/job-opening/rgum-UtuGzrXTpseTskgjY9#!/?lang=en",
       "candidateId": "tcand-35c5f6fb5d5822fb5175d61f",
-      "caution": "官方详情页未列固定截止；2026-11-15开始评审并持续至招满。申请入口无法读取表单，当前受理状态未知。",
-      "cautionEn": "The official detail page states no fixed deadline; review starts 15 November 2026 and continues until filled. The application portal did not expose a readable form, so current acceptance is unknown.",
+      "caution": "核对时，岗位对应申请门户明确邀请接收申请，身份信息表单可用。未填写个人资料、未接受条款、未提交申请；最终提交回执未验证。",
+      "cautionEn": "The job-bound portal explicitly invited applications and exposed the identity form at review. No personal data, terms acceptance or application was submitted; final submission was not tested.",
       "checkedAt": "2026-10-23",
       "city": "Zurich",
       "collectedAt": "2026-10-16",
@@ -4031,7 +4094,8 @@ export const publicReleaseDataset = {
       "contentReviewStatus": "verified",
       "country": "瑞士",
       "countryEn": "Switzerland",
-      "currentOpenStatus": "unknown",
+      "currentOpenStatus": "open",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:57:31.636Z",
       "deadline": "",
       "deadlineNote": "Evaluation of applicants will start 15 November 2026 and will continue until the position is filled.",
       "deadlineType": "rolling",
@@ -4047,6 +4111,29 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T11:08:53.878Z",
           "status": "supported",
           "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9"
+        },
+        {
+          "applicationFormTitle": "Application for PhD Position in Atmospheric Chemistry",
+          "availableFormFields": [
+            "field_firstName",
+            "field_lastName",
+            "email"
+          ],
+          "field": "current_open_status",
+          "formStage": "public_identity_form",
+          "jobReference": "UtuGzrXTpseTskgjY9",
+          "observedAt": "2026-11-04T04:57:31.636Z",
+          "pageKind": "application_portal",
+          "quote": "We look forward to receiving your application.",
+          "status": "supported",
+          "url": "https://emea2.softfactors.com/job-opening/rgum-UtuGzrXTpseTskgjY9#!/?lang=en",
+          "value": "open"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:57:31.636Z",
+          "status": "supported",
+          "url": "https://emea2.softfactors.com/job-opening/rgum-UtuGzrXTpseTskgjY9#!/?lang=en"
         }
       ],
       "funding": "雇佣制博士；已落实4年资金",
@@ -4070,6 +4157,7 @@ export const publicReleaseDataset = {
         "编程",
         "观测数据分析"
       ],
+      "releaseStatus": "verified_open",
       "requirements": "相关理科硕士、大气化学经验与较强编程能力。",
       "requirementsEn": "Relevant science master’s, atmospheric chemistry experience and strong programming skills.",
       "reviewDate": "2026-11-15",
@@ -4087,8 +4175,8 @@ export const publicReleaseDataset = {
       },
       "sourceType": "official-employer",
       "status": "listed",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified",
+      "statusLabel": "核对时确认受理 · 申请前请复核",
+      "statusLabelEn": "Acceptance confirmed at last check · recheck before applying",
       "summary": "用全球模型与卫星、地面和航空观测研究对流层氮氧化物及空气质量影响。",
       "summaryEn": "Use global models and satellite, surface and airborne observations to study oxidized nitrogen and air-quality impacts.",
       "title": "大气化学与空气质量博士",
@@ -4100,8 +4188,7 @@ export const publicReleaseDataset = {
         "卫星观测"
       ],
       "type": "phd",
-      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9",
-      "releaseStatus": "likely_open / needs_review"
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_UtuGzrXTpseTskgjY9"
     },
     {
       "caution": "雇主原页面未列截止日。EGU转载写11月4日，但未作为雇主确认截止日；拟2027年春开始。",
@@ -4136,6 +4223,7 @@ export const publicReleaseDataset = {
         "统计",
         "风险评估"
       ],
+      "releaseStatus": "insufficient_evidence",
       "requirements": "水文、环境、气候或相关博士；编程、统计及风险评估能力。",
       "requirementsEn": "Relevant hydrology, environmental or climate PhD; programming, statistics and risk assessment skills.",
       "reviewDate": "",
@@ -4160,8 +4248,7 @@ export const publicReleaseDataset = {
         "气候风险"
       ],
       "type": "postdoc",
-      "url": "https://apply.refline.ch/273855/1903/pub/5/index.html",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://apply.refline.ch/273855/1903/pub/5/index.html"
     },
     {
       "applicationProcess": "查看对应入学年度的申请页面，核对学历、研究方向与材料；项目申请和资助申请分别查看截止日期。",
@@ -4196,6 +4283,7 @@ export const publicReleaseDataset = {
       "materials": "成绩单、CV、两份推荐及适用英语证明；人文方向通常提交约2000词研究计划，自然方向按指定课题说明准备。",
       "materialsEn": "Transcripts, CV, two references and required English evidence; human geography normally uses an approximately 2,000-word proposal, physical topics have specific instructions.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "通常要求地理或相关学科背景及相关硕士；须核对独立的要求页面。",
       "requirementsEn": "Normally previous training in geography or a related discipline and a relevant master’s; consult the separate requirements page.",
       "reviewDate": "",
@@ -4220,8 +4308,7 @@ export const publicReleaseDataset = {
         "跨学科"
       ],
       "type": "phd-programme",
-      "url": "https://www.postgraduate.study.cam.ac.uk/courses/directory/eaggpdgeo",
-      "releaseStatus": "resource_only"
+      "url": "https://www.postgraduate.study.cam.ac.uk/courses/directory/eaggpdgeo"
     },
     {
       "applicationProcess": "先核对研究方向是否有合适导师，再查看当期入学要求、申请材料和费用；奖学金须单独核对。",
@@ -4251,6 +4338,7 @@ export const publicReleaseDataset = {
       "language": "大学 Higher level；IELTS总分7.5、单项7.0或其他认可证明",
       "languageEn": "University Higher level; IELTS 7.5 overall and 7.0 components or accepted alternatives",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "相关硕士通常要求优秀等级（至少论文优秀）；本科须一等或较强二等一；研究方向须有适当指导条件。",
       "requirementsEn": "Relevant master’s with distinction, at least in the dissertation; first-class or strong upper-second undergraduate degree; suitable supervision is required.",
       "reviewDate": "",
@@ -4276,8 +4364,7 @@ export const publicReleaseDataset = {
         "生物多样性"
       ],
       "type": "phd-programme",
-      "url": "https://www.ox.ac.uk/admissions/graduate/courses/dphil-geography-and-environment",
-      "releaseStatus": "resource_only"
+      "url": "https://www.ox.ac.uk/admissions/graduate/courses/dphil-geography-and-environment"
     },
     {
       "announcementStatus": "open",
@@ -4363,6 +4450,7 @@ export const publicReleaseDataset = {
       "materialsEn": "Two references; name a supervisor who has agreed to review your application.",
       "methods": [],
       "recordKind": "programme_information",
+      "releaseStatus": "resource_only",
       "requirements": "通常需要相关硕士或同等海外学历；申请须写明同意审阅申请的导师，否则可能不处理。",
       "requirementsEn": "Normally a relevant master’s or overseas equivalent; name a supervisor who has agreed to review the application.",
       "reviewDate": "",
@@ -4388,8 +4476,7 @@ export const publicReleaseDataset = {
         "环境建模"
       ],
       "type": "phd-programme",
-      "url": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/research-degree-geography",
-      "releaseStatus": "resource_only"
+      "url": "https://www.ucl.ac.uk/study/prospective-students/graduate/courses/research-degree-geography"
     },
     {
       "applicationProcess": "已有相关硕士者查看博士申请要求，准备三页研究计划及时间表；1+3资助申请须先查看对应硕士项目。",
@@ -4423,6 +4510,7 @@ export const publicReleaseDataset = {
       "materials": "三页研究计划（含时间表）；其余材料按LSE研究生申请清单提交。",
       "materialsEn": "Three-page proposal including timeline; other documents follow the LSE graduate checklist.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "直接申请博士通常须有相关授课型硕士，平均成绩至少65%、论文70%；提交三页研究计划及研究时间表。",
       "requirementsEn": "Direct PhD route: relevant taught master’s, at least 65% overall and 70% dissertation; a three-page proposal and timetable.",
       "reviewDate": "",
@@ -4447,8 +4535,7 @@ export const publicReleaseDataset = {
         "人文地理"
       ],
       "type": "phd-programme",
-      "url": "https://www.lse.ac.uk/study-at-lse/graduate/mphilphd-human-geography-and-urban-studies",
-      "releaseStatus": "resource_only"
+      "url": "https://www.lse.ac.uk/study-at-lse/graduate/mphilphd-human-geography-and-urban-studies"
     },
     {
       "applicationProcess": "准备研究计划，与研究方向相符的导师讨论课题和经费，再按项目页面提交申请。",
@@ -4482,6 +4569,7 @@ export const publicReleaseDataset = {
       "materials": "1500词研究计划（不含参考文献）、本科及硕士成绩/学位证明、CV、两位学术推荐人、适用英语证明。",
       "materialsEn": "1,500-word proposal excluding references, bachelor’s/master’s records and degrees, CV, two academic referees and required English evidence.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "本科二等一或同等学历；相关硕士平均及论文成绩均至少60%或同等水平。",
       "requirementsEn": "Upper-second undergraduate degree or equivalent; relevant master’s with at least 60% overall and dissertation or equivalent.",
       "reviewDate": "",
@@ -4506,8 +4594,7 @@ export const publicReleaseDataset = {
         "研究方法"
       ],
       "type": "phd-programme",
-      "url": "https://www.manchester.ac.uk/study/postgraduate-research/programmes/list/05220/phd-human-geography/all-content/",
-      "releaseStatus": "resource_only"
+      "url": "https://www.manchester.ac.uk/study/postgraduate-research/programmes/list/05220/phd-human-geography/all-content/"
     },
     {
       "applicationProcess": "从官方课题和导师列表选择研究方向，按入学年度招生说明准备材料；奖学金截止日期另查。",
@@ -4537,6 +4624,7 @@ export const publicReleaseDataset = {
       "language": "IELTS Academic 总分6.5、各单项6.0（Profile E）；其他认可证明见官网。",
       "languageEn": "IELTS Academic 6.5 overall, 6.0 each component (Profile E); official alternatives accepted.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "相关学科二等一荣誉学位或同等学历；按当年招生说明补充材料。",
       "requirementsEn": "Relevant upper-second honours degree or equivalent; follow the entry-year admissions statement.",
       "reviewDate": "",
@@ -4562,8 +4650,7 @@ export const publicReleaseDataset = {
         "地球系统"
       ],
       "type": "phd-programme",
-      "url": "https://www.bristol.ac.uk/study/postgraduate/research/geographical-sciences/",
-      "releaseStatus": "resource_only"
+      "url": "https://www.bristol.ac.uk/study/postgraduate/research/geographical-sciences/"
     },
     {
       "applicationProcess": "查看研究生院Joining页面及理学院入学规则；具体导师名额、经费和合同须另外确认。",
@@ -4593,6 +4680,7 @@ export const publicReleaseDataset = {
       "language": "当前项目概览未列统一语言门槛",
       "languageEn": "No universal language threshold stated in the programme overview",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "相关硕士及导师接收；研究生院本身不代为转交申请，须联系具体研究团队。",
       "requirementsEn": "An appropriate master’s and supervisor acceptance; the graduate school does not forward applications, so contact the relevant research group.",
       "reviewDate": "",
@@ -4617,8 +4705,7 @@ export const publicReleaseDataset = {
         "结构化培养"
       ],
       "type": "phd-programme",
-      "url": "https://www.geo.uzh.ch/en/graduate-school.html",
-      "releaseStatus": "resource_only"
+      "url": "https://www.geo.uzh.ch/en/graduate-school.html"
     },
     {
       "applicationProcess": "有公开博士招聘时按岗位公告申请；已有合适外部奖学金者查看相应条件。没有岗位或合适奖学金时，校方不建议直接向研究生院或教授投递申请。",
@@ -4648,6 +4735,7 @@ export const publicReleaseDataset = {
       "language": "须达到校方“EMI-experienced”英语标准；具体证明及豁免条件见官方要求",
       "languageEn": "EMI-experienced English, with evidence and exemptions under university rules",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "认可硕士或同等学历；扎实的学科理论方法及英语能力；具体路径另有条件。",
       "requirementsEn": "Recognised master’s or equivalent, strong disciplinary theory and methods, and English proficiency; route-specific conditions apply.",
       "reviewDate": "",
@@ -4672,8 +4760,7 @@ export const publicReleaseDataset = {
         "外部资助"
       ],
       "type": "phd-programme",
-      "url": "https://www.uu.nl/en/education/graduate-school-of-geosciences/phds/future-phd-candidates",
-      "releaseStatus": "resource_only"
+      "url": "https://www.uu.nl/en/education/graduate-school-of-geosciences/phds/future-phd-candidates"
     },
     {
       "applicationProcess": "先选择研究方向并完成官方五项资格自评，符合条件后进入研究生注册流程；注册不代表录取，也不代表获得资金。",
@@ -4704,6 +4791,7 @@ export const publicReleaseDataset = {
       "language": "自评页列IELTS至少6.5；该页标注2023年更新，现行语言政策仍须校方确认。",
       "languageEn": "The self-check lists IELTS at least 6.5; the page was updated in 2023, so the current language policy needs confirmation.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "官方自评要求约5年高等教育、MSc或同等及约6个月独立研究论文；具备GIS/地球观测基础、方向匹配及经费计划。",
       "requirementsEn": "The self-check asks for five years of tertiary education, an MSc/equivalent with about six months of independent thesis research, GIS/EO basics, research fit and a funding plan.",
       "reviewDate": "",
@@ -4729,8 +4817,7 @@ export const publicReleaseDataset = {
         "土地系统"
       ],
       "type": "phd-programme",
-      "url": "https://www.utwente.nl/en/itc/research/phd-at-itc/phd-admission/",
-      "releaseStatus": "resource_only"
+      "url": "https://www.utwente.nl/en/itc/research/phd-at-itc/phd-admission/"
     },
     {
       "applicationProcess": "只通过已发布的博士招聘公告申请；按该岗位核对研究方向、材料、语言要求和截止日期。",
@@ -4760,6 +4847,7 @@ export const publicReleaseDataset = {
       "language": "具体招聘公告另列语言条件",
       "languageEn": "Language conditions must be checked in the specific vacancy",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "至少240学分，其中60为高级阶段；相关人文/经济地理高级课程30学分，含至少15学分论文。",
       "requirementsEn": "At least 240 credits, including 60 at advanced level; 30 advanced credits in human/economic geography or related fields, including a thesis of at least 15 credits.",
       "reviewDate": "",
@@ -4784,8 +4872,7 @@ export const publicReleaseDataset = {
         "研究训练"
       ],
       "type": "phd-programme",
-      "url": "https://www.keg.lu.se/en/node/108",
-      "releaseStatus": "resource_only"
+      "url": "https://www.keg.lu.se/en/node/108"
     },
     {
       "applicationProcess": "从项目Admissions页面核对导师、资格和博士入学申请；带薪岗位或资助需另外查找，录取不自动包含工资。",
@@ -4819,6 +4906,7 @@ export const publicReleaseDataset = {
       "materials": "研究计划、经费计划、已签署指导协议及学历/语言资格材料；按所选学院清单提交。",
       "materialsEn": "Research plan, funding plan, signed supervision agreement and academic/language evidence; follow the chosen faculty’s checklist.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "申请前须落实主导师及协调教师，并提交已签署的指导协议；另须符合所选学院的博士学历资格。",
       "requirementsEn": "A main supervisor and coordinating academic must agree and sign a supervision agreement; faculty-specific doctoral eligibility also applies.",
       "reviewDate": "",
@@ -4844,8 +4932,7 @@ export const publicReleaseDataset = {
         "可持续性"
       ],
       "type": "phd-programme",
-      "url": "https://www.helsinki.fi/en/admissions-and-education/apply-doctoral-programmes/doctoral-programmes/doctoral-programme-science",
-      "releaseStatus": "resource_only"
+      "url": "https://www.helsinki.fi/en/admissions-and-education/apply-doctoral-programmes/doctoral-programmes/doctoral-programme-science"
     },
     {
       "applicationProcess": "可申请公开博士岗位，或联系研究匹配的教授；正式申请前必须获得教授明确同意指导，并核对学历、资金与注册条件。",
@@ -4875,6 +4962,7 @@ export const publicReleaseDataset = {
       "language": "目录列荷兰语/英语；具体语言资格另核",
       "languageEn": "Catalogue lists Dutch/English; verify specific proficiency requirements",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "所有博士申请均需要根特教授明确承诺指导；可申请公开岗位，或联系特定教授讨论。",
       "requirementsEn": "Every doctoral application requires an explicit supervisory commitment from a Ghent professor; routes include vacancies or approaching a specific professor.",
       "reviewDate": "",
@@ -4900,8 +4988,7 @@ export const publicReleaseDataset = {
         "景观"
       ],
       "type": "phd-programme",
-      "url": "https://studiekiezer.ugent.be/2026/doctor-of-science-geography/programma",
-      "releaseStatus": "resource_only"
+      "url": "https://studiekiezer.ugent.be/2026/doctor-of-science-geography/programma"
     },
     {
       "applicationProcess": "可先联系潜在导师讨论研究计划；准备一页计划、成绩材料、简历与两份推荐，之后仍须正式网申。",
@@ -4933,6 +5020,7 @@ export const publicReleaseDataset = {
       "materials": "一页研究计划、成绩及学位证明、CV、两份推荐（至少一份学术推荐）及适用英语证明。",
       "materialsEn": "One-page proposal, academic records, CV, two references including at least one academic, and required English evidence.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "二等一荣誉学位或同等；准备一页研究计划、成绩材料、简历与两份推荐。",
       "requirementsEn": "Upper-second honours degree or equivalent; a one-page proposal, transcripts, CV and two references.",
       "reviewDate": "",
@@ -4957,8 +5045,7 @@ export const publicReleaseDataset = {
         "跨学科"
       ],
       "type": "phd-programme",
-      "url": "https://www.gla.ac.uk/postgraduate/research/humangeography/",
-      "releaseStatus": "resource_only"
+      "url": "https://www.gla.ac.uk/postgraduate/research/humangeography/"
     },
     {
       "applicationProcess": "从Find a PhD查找具体课题，再查看Entry requirements和How to apply；学院介绍本身不是带薪岗位公告。",
@@ -4988,6 +5075,7 @@ export const publicReleaseDataset = {
       "language": "需按学院入学要求页确认",
       "languageEn": "Confirm against the School’s admission requirements",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "通常需相关本科二等一，并已取得或在读硕士，最好有较充分研究方法训练；丰富实践经验可个别考虑。",
       "requirementsEn": "Normally a relevant 2:1 plus a completed/in-progress master’s, preferably with substantial research methods; extensive professional experience may be considered.",
       "reviewDate": "",
@@ -5012,8 +5100,7 @@ export const publicReleaseDataset = {
         "环境与社会"
       ],
       "type": "phd-programme",
-      "url": "https://sheffield.ac.uk/geography-planning/phd",
-      "releaseStatus": "resource_only"
+      "url": "https://sheffield.ac.uk/geography-planning/phd"
     },
     {
       "applicationProcess": "选择公开课题，或准备自拟课题与匹配教师讨论；根据全日制、非全日制或分地点学习方式核对要求。",
@@ -5043,6 +5130,7 @@ export const publicReleaseDataset = {
       "language": "普通路径IELTS 6.0、单项5.5；分地点/远程路径要求更高，另核",
       "languageEn": "Standard route IELTS 6.0, components 5.5; split-site/distance routes have higher thresholds",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "通常地理或相关本科二等一或同等；竞争奖学金通常要求更强成绩，硕士有帮助。",
       "requirementsEn": "Normally an upper-second undergraduate degree in geography or related fields or equivalent; scholarships are more competitive and a master’s is advantageous.",
       "reviewDate": "",
@@ -5067,8 +5155,7 @@ export const publicReleaseDataset = {
         "自拟课题"
       ],
       "type": "phd-programme",
-      "url": "https://environment.leeds.ac.uk/geography-research-degrees",
-      "releaseStatus": "resource_only"
+      "url": "https://environment.leeds.ac.uk/geography-research-degrees"
     },
     {
       "applicationProcess": "先打开官方项目页，查找当期招生要求、申请材料及资助说明；本条尚未核实完整申请步骤。",
@@ -5103,6 +5190,7 @@ export const publicReleaseDataset = {
       "materials": "成绩单及评分说明、三封推荐、约500词研究意向；CV可选。",
       "materialsEn": "Transcripts with grading key, three references and an approximately 500-word statement; CV optional.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "项目介绍未说明，请查看当期招生要求",
       "requirementsEn": "Not stated on the official programme page checked",
       "reviewDate": "",
@@ -5127,8 +5215,7 @@ export const publicReleaseDataset = {
         "独立研究"
       ],
       "type": "phd-programme",
-      "url": "https://geog.ubc.ca/graduate/phd-program/",
-      "releaseStatus": "resource_only"
+      "url": "https://geog.ubc.ca/graduate/phd-program/"
     },
     {
       "applicationProcess": "先打开官方项目页，查找当期招生要求、申请材料及资助说明；本条尚未核实完整申请步骤。",
@@ -5162,6 +5249,7 @@ export const publicReleaseDataset = {
       "materials": "目的陈述、三份学术/职业推荐、写作样本及成绩材料；GRE可选。",
       "materialsEn": "Statement of purpose, three academic/professional references, writing sample and academic records; GRE optional.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "通常本科GPA≥3.3；博士通常需硕士GPA≥3.5及实质研究成果，优秀者可例外。录取前须有教师同意指导。",
       "requirementsEn": "Normally undergraduate GPA ≥3.3 and a master’s GPA ≥3.5 with substantial research; exceptional cases may be considered. An adviser must agree before admission.",
       "reviewDate": "",
@@ -5185,8 +5273,7 @@ export const publicReleaseDataset = {
         "Geography"
       ],
       "type": "phd-programme",
-      "url": "https://grad.ucla.edu/programs/social-sciences/geography-department/geography/",
-      "releaseStatus": "resource_only"
+      "url": "https://grad.ucla.edu/programs/social-sciences/geography-department/geography/"
     },
     {
       "applicationProcess": "先查看教师研究方向及招生说明；页面给出每年最接近12月15日的工作日为常规截止规则，当期日期须确认。",
@@ -5220,6 +5307,7 @@ export const publicReleaseDataset = {
       "materials": "≤1000词研究方向陈述、≤600词个人陈述、三份推荐、成绩单、博士写作样本；CV推荐但非必交。",
       "materialsEn": "Research statement ≤1,000 words, personal statement ≤600 words, three references, transcripts and PhD writing sample; CV recommended, not mandatory.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "直接读博通常须地理MA或类似本科后研究训练；须获得多位教师的指导支持。",
       "requirementsEn": "Direct PhD entry normally requires a geography MA or analogous post-baccalaureate work and support from multiple faculty mentors.",
       "reviewDate": "",
@@ -5246,8 +5334,7 @@ export const publicReleaseDataset = {
         "空间数据科学"
       ],
       "type": "phd-programme",
-      "url": "https://geography.washington.edu/graduate-programs",
-      "releaseStatus": "resource_only"
+      "url": "https://geography.washington.edu/graduate-programs"
     },
     {
       "applicationProcess": "研究生院网上申请；准备推荐信、研究目的陈述、成绩单和简历；页面列12月15日年度截止，须复核当期。",
@@ -5279,6 +5366,7 @@ export const publicReleaseDataset = {
       "materials": "三封推荐、1–2页研究目的陈述、成绩单及适用TOEFL/IELTS证明；国际成绩须附正式英文翻译。",
       "materialsEn": "Three references, 1–2-page statement of purpose, transcripts and required TOEFL/IELTS evidence; official English translations for international records.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "直接申请博士须已取得或正在完成硕士；本科申请者应查看硕士再升博士路径。",
       "requirementsEn": "Direct PhD applicants must hold or be completing a master’s; bachelor’s applicants should examine the master’s-to-PhD route.",
       "reviewDate": "",
@@ -5304,8 +5392,7 @@ export const publicReleaseDataset = {
         "GIS"
       ],
       "type": "phd-programme",
-      "url": "https://geography.wisc.edu/research-graduate-programs/phd/",
-      "releaseStatus": "resource_only"
+      "url": "https://geography.wisc.edu/research-graduate-programs/phd/"
     },
     {
       "applicationProcess": "先打开官方项目页，查找当期招生要求、申请材料及资助说明；本条尚未核实完整申请步骤。",
@@ -5335,6 +5422,7 @@ export const publicReleaseDataset = {
       "language": "项目介绍未说明，请查看当期招生要求",
       "languageEn": "Not stated on the official programme page checked",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "本条介绍的4年博士项目面向已从其他研究生项目取得硕士学位者。",
       "requirementsEn": "This four-year route is for students holding a master’s from another graduate programme.",
       "reviewDate": "",
@@ -5358,8 +5446,7 @@ export const publicReleaseDataset = {
         "Geography"
       ],
       "type": "phd-programme",
-      "url": "https://www.geog.psu.edu/graduate/graduate-degree-programs/doctor-philosophy-phd",
-      "releaseStatus": "resource_only"
+      "url": "https://www.geog.psu.edu/graduate/graduate-degree-programs/doctor-philosophy-phd"
     },
     {
       "applicationProcess": "项目页标示2027年秋季申请已启动，年度截止为2月1日；具体助研课题按经费确认后发布，提交前再核对。",
@@ -5393,6 +5480,7 @@ export const publicReleaseDataset = {
       "materials": "CV、成绩单、≤2页个人陈述、三封推荐信；不要求GRE。",
       "materialsEn": "CV, transcripts, personal statement ≤2 pages and three references; GRE not required.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "竞争力重点包括课堂外定量研究、统计/数学、编程或GIS经验；这不是完整最低录取条件清单。",
       "requirementsEn": "Competitive preparation includes quantitative research beyond coursework and statistics, mathematics, programming or GIS; this is not a complete minimum-entry checklist.",
       "reviewDate": "",
@@ -5418,8 +5506,7 @@ export const publicReleaseDataset = {
         "环境"
       ],
       "type": "phd-programme",
-      "url": "https://cnr.ncsu.edu/geospatial/academics/phd/",
-      "releaseStatus": "resource_only"
+      "url": "https://cnr.ncsu.edu/geospatial/academics/phd/"
     },
     {
       "applicationProcess": "建议先联系潜在导师，准备研究计划，再按研究生院要求正式申请。院系页面混有不同年度信息，申请轮次与截止日期须以研究生院当期公告为准。",
@@ -5449,6 +5536,7 @@ export const publicReleaseDataset = {
       "language": "项目介绍未说明，请查看当期招生要求",
       "languageEn": "Not stated on the official programme page checked",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "符合研究生院入学要求；申请须附研究计划，建议提前联系相关导师。",
       "requirementsEn": "Meet Graduate School entry requirements and attach a research proposal; prior discussion with relevant faculty is strongly advised.",
       "reviewDate": "",
@@ -5474,8 +5562,7 @@ export const publicReleaseDataset = {
         "遥感"
       ],
       "type": "phd-programme",
-      "url": "https://geog.hku.hk/mphil-phd",
-      "releaseStatus": "resource_only"
+      "url": "https://geog.hku.hk/mphil-phd"
     },
     {
       "applicationProcess": "通过研究生院在线系统选择地理与资源管理博士，按院系清单提交材料；申请HKPFS者先向RGC取得初步申请编号，再于独立截止前完成CUHK申请。",
@@ -5512,6 +5599,7 @@ export const publicReleaseDataset = {
       "materials": "研究计划≤5页、愿景陈述≤400词、CV、成绩及学位证明、适用英语证明、硕士论文或学术论文；按院系清单补验证材料。",
       "materialsEn": "Proposal ≤5 pages, vision statement ≤400 words, CV, academic credentials, required English evidence and master’s thesis or papers; follow departmental verification instructions.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "地理或相关学科硕士；须提交硕士论文或学术论文，证明研究能力。",
       "requirementsEn": "A master’s in geography or a related field; provide a master’s thesis or academic papers demonstrating research ability.",
       "reviewDate": "",
@@ -5538,8 +5626,7 @@ export const publicReleaseDataset = {
         "GIS"
       ],
       "type": "phd-programme",
-      "url": "https://www.gs.cuhk.edu.hk/programmes/social-science/mphil-phd-geography-and-resource-management",
-      "releaseStatus": "resource_only"
+      "url": "https://www.gs.cuhk.edu.hk/programmes/social-science/mphil-phd-geography-and-resource-management"
     },
     {
       "applicationProcess": "先打开官方项目页，查找当期招生要求、申请材料及资助说明；本条尚未核实完整申请步骤。",
@@ -5569,6 +5656,7 @@ export const publicReleaseDataset = {
       "language": "项目介绍未说明，请查看当期招生要求",
       "languageEn": "Not stated on the official programme page checked",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "项目页邀请相关专业荣誉学士及/或授课型硕士背景者咨询；正式入学标准另查申请页。",
       "requirementsEn": "The page welcomes enquiries from relevant honours and/or taught-master’s backgrounds; formal eligibility is governed by admissions guidance.",
       "reviewDate": "",
@@ -5593,8 +5681,7 @@ export const publicReleaseDataset = {
         "热带环境变化"
       ],
       "type": "phd-programme",
-      "url": "https://fass.nus.edu.sg/geog/graduate-programmes/",
-      "releaseStatus": "resource_only"
+      "url": "https://fass.nus.edu.sg/geog/graduate-programmes/"
     },
     {
       "applicationProcess": "从教师与研究项目目录寻找方向和导师，再通过官方博士申请入口核对材料与条件。",
@@ -5624,6 +5711,7 @@ export const publicReleaseDataset = {
       "language": "项目介绍未说明，请查看当期招生要求",
       "languageEn": "Not stated on the official programme page checked",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "项目介绍未说明，请查看当期招生要求",
       "requirementsEn": "Not stated on the official programme page checked",
       "reviewDate": "",
@@ -5650,8 +5738,7 @@ export const publicReleaseDataset = {
         "城市"
       ],
       "type": "phd-programme",
-      "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/geography/doctoral.html",
-      "releaseStatus": "resource_only"
+      "url": "https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/geography/doctoral.html"
     },
     {
       "applicationProcess": "正式网申前，先与学院讨论研究想法并准备研究计划和学术记录，以评估条件及指导能力。",
@@ -5681,6 +5768,7 @@ export const publicReleaseDataset = {
       "language": "项目介绍未说明，请查看当期招生要求",
       "languageEn": "Not stated on the official programme page checked",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "可接受的荣誉学位、研究生文凭或硕士，且资格须含研究部分。",
       "requirementsEn": "An honours degree, postgraduate diploma or master’s at an acceptable level, including a research component.",
       "reviewDate": "",
@@ -5705,8 +5793,7 @@ export const publicReleaseDataset = {
         "独立研究"
       ],
       "type": "phd-programme",
-      "url": "https://www.otago.ac.nz/geography/studying-geography/postgraduate",
-      "releaseStatus": "resource_only"
+      "url": "https://www.otago.ac.nz/geography/studying-geography/postgraduate"
     },
     {
       "applicationProcess": "联系潜在导师时准备简历、高等教育成绩单、研究方向概述，以及至少两名匹配的潜在导师姓名。",
@@ -5736,6 +5823,7 @@ export const publicReleaseDataset = {
       "language": "项目介绍未说明，请查看当期招生要求",
       "languageEn": "Not stated on the official programme page checked",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "提交正式申请前须获得导师书面支持；另须符合博士课程入学要求。",
       "requirementsEn": "Written supervisor support is required before applying; doctoral course entry requirements also apply.",
       "reviewDate": "",
@@ -5760,8 +5848,7 @@ export const publicReleaseDataset = {
         "大气科学"
       ],
       "type": "phd-programme",
-      "url": "https://sgeas.unimelb.edu.au/study/postgraduate-research",
-      "releaseStatus": "resource_only"
+      "url": "https://sgeas.unimelb.edu.au/study/postgraduate-research"
     },
     {
       "applicationUrl": "https://www.geography.arizona.edu/maphd-program/apply",
@@ -5793,6 +5880,7 @@ export const publicReleaseDataset = {
       "materials": "按所选学位的官方申请清单准备",
       "materialsEn": "Follow the selected degree’s official checklist",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "本科学位；GPA至少3.0。",
       "requirementsEn": "Bachelor’s degree; minimum GPA 3.0.",
       "salary": "不适用：学位项目",
@@ -5817,8 +5905,7 @@ export const publicReleaseDataset = {
         "Physical geography"
       ],
       "type": "masters-programme",
-      "url": "https://geography.arizona.edu/maphd-program",
-      "releaseStatus": "resource_only"
+      "url": "https://geography.arizona.edu/maphd-program"
     },
     {
       "applicationUrl": "https://www.geography.arizona.edu/maphd-program/apply",
@@ -5850,6 +5937,7 @@ export const publicReleaseDataset = {
       "materials": "按所选学位的官方申请清单准备",
       "materialsEn": "Follow the selected degree’s official checklist",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "必须已有硕士；无硕士者应先申请MA。",
       "requirementsEn": "A master’s is required; applicants without one should apply to the MA.",
       "salary": "不适用：学位项目",
@@ -5874,8 +5962,7 @@ export const publicReleaseDataset = {
         "Physical geography"
       ],
       "type": "phd-programme",
-      "url": "https://geography.arizona.edu/maphd-program",
-      "releaseStatus": "resource_only"
+      "url": "https://geography.arizona.edu/maphd-program"
     },
     {
       "applicationUrl": "https://geography.osu.edu/graduate/application-process-checklist",
@@ -5909,6 +5996,7 @@ export const publicReleaseDataset = {
       "materials": "≤3页目的陈述、CV、三封推荐、各校成绩单及适用英语证明；申请前须有导师同意。勿自行追加写作样本或财务材料。",
       "materialsEn": "Statement ≤3 pages, CV, three references, transcripts and required English evidence; obtain adviser agreement first. Do not add writing samples or financial records.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "入学前取得认可本科或等值学位，本科累计GPA至少3.0/4.0；申请前须获得导师同意。",
       "requirementsEn": "Recognised bachelor’s/equivalent by entry, undergraduate GPA ≥3.0/4.0 and adviser agreement before applying.",
       "salary": "不适用：学位项目",
@@ -5930,8 +6018,7 @@ export const publicReleaseDataset = {
         "Geography"
       ],
       "type": "masters-programme",
-      "url": "https://geography.osu.edu/prospective-grad",
-      "releaseStatus": "resource_only"
+      "url": "https://geography.osu.edu/prospective-grad"
     },
     {
       "applicationUrl": "https://geography.osu.edu/graduate/application-process-checklist",
@@ -5965,6 +6052,7 @@ export const publicReleaseDataset = {
       "materials": "≤3页目的陈述、CV、三封推荐、各校成绩单及适用英语证明；申请前须有导师同意。勿自行追加写作样本或财务材料。",
       "materialsEn": "Statement ≤3 pages, CV, three references, transcripts and required English evidence; obtain adviser agreement first. Do not add writing samples or financial records.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "通常需硕士；有研究潜力者可与导师讨论本科直博例外。",
       "requirementsEn": "Normally a master’s; exceptional direct-entry applicants should discuss research readiness with an adviser.",
       "salary": "不适用：学位项目",
@@ -5986,8 +6074,7 @@ export const publicReleaseDataset = {
         "Geography"
       ],
       "type": "phd-programme",
-      "url": "https://geography.osu.edu/prospective-grad",
-      "releaseStatus": "resource_only"
+      "url": "https://geography.osu.edu/prospective-grad"
     },
     {
       "applicationUrl": "https://www.buffalo.edu/cas/geography/graduate/admissions.html",
@@ -6019,6 +6106,7 @@ export const publicReleaseDataset = {
       "materials": "三封推荐、成绩单、个人陈述及CV；申请费75美元。",
       "materialsEn": "Three references, transcripts, personal statement and CV; $75 application fee.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "任意学科本科；本科GPA至少2.9。",
       "requirementsEn": "Bachelor’s in any discipline; undergraduate GPA at least 2.9.",
       "salary": "不适用：学位项目",
@@ -6042,8 +6130,7 @@ export const publicReleaseDataset = {
         "Geography"
       ],
       "type": "masters-programme",
-      "url": "https://www.buffalo.edu/cas/geography/graduate/admissions.html",
-      "releaseStatus": "resource_only"
+      "url": "https://www.buffalo.edu/cas/geography/graduate/admissions.html"
     },
     {
       "applicationUrl": "https://www.buffalo.edu/cas/geography/graduate/admissions.html",
@@ -6075,6 +6162,7 @@ export const publicReleaseDataset = {
       "materials": "三封推荐、成绩单、个人陈述及CV；申请费75美元。",
       "materialsEn": "Three references, transcripts, personal statement and CV; $75 application fee.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "通常相关硕士；优秀本科生偶有直博机会，本科GPA至少3.0。",
       "requirementsEn": "Normally a related master’s; exceptional bachelor’s entrants considered; undergraduate GPA at least 3.0.",
       "salary": "不适用：学位项目",
@@ -6097,8 +6185,7 @@ export const publicReleaseDataset = {
         "Geography"
       ],
       "type": "phd-programme",
-      "url": "https://www.buffalo.edu/cas/geography/graduate/admissions.html",
-      "releaseStatus": "resource_only"
+      "url": "https://www.buffalo.edu/cas/geography/graduate/admissions.html"
     },
     {
       "applicationUrl": "https://socialsciences.uoregon.edu/geography/apply/graduate-admissions",
@@ -6130,6 +6217,7 @@ export const publicReleaseDataset = {
       "materials": "2–3页研究陈述、成绩单、推荐信及适用英语证明；申请费美国70美元、国际90美元。",
       "materialsEn": "2–3-page research statement, transcripts, references and required English evidence; application fee $70 domestic or $90 international.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "需满足研究生院条件；官网欢迎非地理本科背景申请。",
       "requirementsEn": "Graduate admission requirements apply; non-geography undergraduate backgrounds are welcomed.",
       "salary": "不适用：学位项目",
@@ -6154,8 +6242,7 @@ export const publicReleaseDataset = {
         "Physical geography"
       ],
       "type": "masters-programme",
-      "url": "https://socialsciences.uoregon.edu/geography/graduate-programs",
-      "releaseStatus": "resource_only"
+      "url": "https://socialsciences.uoregon.edu/geography/graduate-programs"
     },
     {
       "applicationUrl": "https://socialsciences.uoregon.edu/geography/apply/graduate-admissions",
@@ -6187,6 +6274,7 @@ export const publicReleaseDataset = {
       "materials": "2–3页研究陈述、成绩单、推荐信及适用英语证明；申请费美国70美元、国际90美元。",
       "materialsEn": "2–3-page research statement, transcripts, references and required English evidence; application fee $70 domestic or $90 international.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "不强制已有硕士；继续博士须满足规定的研究进度审核。",
       "requirementsEn": "A master’s is not mandatory; continuation is subject to programme review.",
       "salary": "不适用：学位项目",
@@ -6211,8 +6299,7 @@ export const publicReleaseDataset = {
         "Physical geography"
       ],
       "type": "phd-programme",
-      "url": "https://socialsciences.uoregon.edu/geography/graduate-programs",
-      "releaseStatus": "resource_only"
+      "url": "https://socialsciences.uoregon.edu/geography/graduate-programs"
     },
     {
       "applicationUrl": "https://www.clarku.edu/graduate-admissions/apply/application-requirements-masters-certificate-online/",
@@ -6244,6 +6331,7 @@ export const publicReleaseDataset = {
       "materials": "按所选学位的官方申请清单准备",
       "materialsEn": "Follow the selected degree’s official checklist",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "按普通MS申请要求核对学历及材料，不套用校内加速项目规则。",
       "requirementsEn": "Use the regular MS requirements, not the internal accelerated-degree rules.",
       "salary": "不适用：学位项目",
@@ -6268,8 +6356,7 @@ export const publicReleaseDataset = {
         "Remote sensing"
       ],
       "type": "masters-programme",
-      "url": "https://www.clarku.edu/departments/geography/graduate-programs/masters-program/",
-      "releaseStatus": "resource_only"
+      "url": "https://www.clarku.edu/departments/geography/graduate-programs/masters-program/"
     },
     {
       "caution": "官网津贴金额仍标注2025/26学年，不当作未来年度保证金额。",
@@ -6300,6 +6387,7 @@ export const publicReleaseDataset = {
       "materials": "CV、个人陈述、三封学术推荐、成绩单、写作样本（至少一篇独著）及适用英语证明。",
       "materialsEn": "CV, personal statement, three academic references, transcripts, writing sample including at least one sole-authored piece, and required English evidence.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "不要求GRE；学位等值与材料按博士申请指南核对。",
       "requirementsEn": "No GRE; confirm credential and document requirements in the doctoral admissions guide.",
       "salary": "不适用：学位项目",
@@ -6324,8 +6412,7 @@ export const publicReleaseDataset = {
         "Remote sensing"
       ],
       "type": "phd-programme",
-      "url": "https://www.clarku.edu/departments/geography/graduate-programs/doctoral-programs/",
-      "releaseStatus": "resource_only"
+      "url": "https://www.clarku.edu/departments/geography/graduate-programs/doctoral-programs/"
     },
     {
       "applicationUrl": "https://cla.umn.edu/geography/graduate/apply",
@@ -6357,6 +6444,7 @@ export const publicReleaseDataset = {
       "materials": "≤2页个人陈述、多元经历陈述、三封推荐和成绩单；研究描述与写作样本不要求。",
       "materialsEn": "Personal statement ≤2 pages, diversity statement, three references and transcripts; separate research description and writing samples are not required.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "至少四年制本科或等值资格，非地理背景可能须补课。",
       "requirementsEn": "Four-year bachelor’s or equivalent; non-geography entrants may need additional coursework.",
       "salary": "不适用：学位项目",
@@ -6381,8 +6469,7 @@ export const publicReleaseDataset = {
         "Physical geography"
       ],
       "type": "masters-programme",
-      "url": "https://cla.umn.edu/geography/graduate/degrees/ma-geography",
-      "releaseStatus": "resource_only"
+      "url": "https://cla.umn.edu/geography/graduate/degrees/ma-geography"
     },
     {
       "applicationUrl": "https://cla.umn.edu/geography/graduate/apply",
@@ -6414,6 +6501,7 @@ export const publicReleaseDataset = {
       "materials": "≤2页个人陈述、多元经历陈述、三封推荐和成绩单；研究描述与写作样本不要求。",
       "materialsEn": "Personal statement ≤2 pages, diversity statement, three references and transcripts; separate research description and writing samples are not required.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "至少四年制本科或等值资格，非地理背景可能须补课。",
       "requirementsEn": "Four-year bachelor’s or equivalent; non-geography entrants may need additional coursework.",
       "salary": "不适用：学位项目",
@@ -6438,8 +6526,7 @@ export const publicReleaseDataset = {
         "Physical geography"
       ],
       "type": "phd-programme",
-      "url": "https://cla.umn.edu/geography/graduate/degrees/phd-geography",
-      "releaseStatus": "resource_only"
+      "url": "https://cla.umn.edu/geography/graduate/degrees/phd-geography"
     },
     {
       "applicationUrl": "https://geography.berkeley.edu/academics/graduate-studies/admissions",
@@ -6473,6 +6560,7 @@ export const publicReleaseDataset = {
       "materials": "研究目的陈述、个人经历陈述、成绩单及三封推荐信；CV建议提交。",
       "materialsEn": "Purpose/history statements, transcripts and three references; CV recommended.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "可无硕士直接申请博士；具体学历及语言按研究生院规则。",
       "requirementsEn": "Applicants may enter without a master’s; Graduate Division credential/language rules apply.",
       "salary": "不适用：学位项目",
@@ -6496,8 +6584,7 @@ export const publicReleaseDataset = {
         "Environmental change"
       ],
       "type": "phd-programme",
-      "url": "https://geography.berkeley.edu/academics/graduate-studies/program-overview",
-      "releaseStatus": "resource_only"
+      "url": "https://geography.berkeley.edu/academics/graduate-studies/program-overview"
     },
     {
       "applicationProcess": "先讨论导师和课题，再准备研究计划、成绩材料、两份推荐及个人陈述，通过申请系统提交。",
@@ -6528,6 +6615,7 @@ export const publicReleaseDataset = {
       "language": "具体语言标准及豁免请查当期要求",
       "languageEn": "Check current language thresholds and exemptions",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "通常要求相关本科二等一或同等学历；研究经验有帮助。",
       "requirementsEn": "Normally a relevant upper-second bachelor’s or equivalent; research experience is useful.",
       "reviewDate": "",
@@ -6552,8 +6640,7 @@ export const publicReleaseDataset = {
         "独立研究"
       ],
       "type": "masters-programme",
-      "url": "https://dur.ac.uk/departments/academic/geography/postgraduate-study/research-masters/",
-      "releaseStatus": "resource_only"
+      "url": "https://dur.ac.uk/departments/academic/geography/postgraduate-study/research-masters/"
     },
     {
       "applicationProcess": "从项目页选择2027年9月入学申请，按材料清单提交；此目录未核实统一截止日期。",
@@ -6584,6 +6671,7 @@ export const publicReleaseDataset = {
       "language": "IELTS Academic 总分6.5，各单项5.5（Profile B1）。",
       "languageEn": "IELTS Academic 6.5 overall, minimum 5.5 each component (Profile B1).",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "本科二等二或同等学历；需理解GIS的潜在应用，有工作经验者可个别评估。",
       "requirementsEn": "A 2:2 degree or equivalent and awareness of GIS applications; relevant work experience may be assessed individually.",
       "reviewDate": "",
@@ -6609,8 +6697,7 @@ export const publicReleaseDataset = {
         "制图"
       ],
       "type": "masters-programme",
-      "url": "https://www.exeter.ac.uk/masters-degrees/msc-geographical-information-science/",
-      "releaseStatus": "resource_only"
+      "url": "https://www.exeter.ac.uk/masters-degrees/msc-geographical-information-science/"
     },
     {
       "applicationProcess": "使用课程页申请入口，提交个人陈述、两份推荐、学历和所需语言证明；先确认下一轮入学已开放。",
@@ -6645,6 +6732,7 @@ export const publicReleaseDataset = {
       "materials": "个人陈述、两份推荐、学位与成绩证明，以及适用的英语证明。",
       "materialsEn": "Personal statement, two references, degree/transcript evidence and English evidence where required.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "相关学科本科二等二或同等；地理、环境、物理、测绘、工程等可申请。",
       "requirementsEn": "A relevant 2:2 degree or equivalent, including geography, environment, physics, geomatics or engineering.",
       "reviewDate": "",
@@ -6669,8 +6757,7 @@ export const publicReleaseDataset = {
         "空间数据科学"
       ],
       "type": "masters-programme",
-      "url": "https://www.southampton.ac.uk/courses/geographical-information-systems-remote-sensing-masters-msc",
-      "releaseStatus": "resource_only"
+      "url": "https://www.southampton.ac.uk/courses/geographical-information-systems-remote-sensing-masters-msc"
     },
     {
       "applicationProcess": "先按官网入学要求确认背景，再查看申请入口及材料；奖学金资格和年份须单独核验。",
@@ -6701,6 +6788,7 @@ export const publicReleaseDataset = {
       "language": "IELTS总分6.5，单项不低于5.5",
       "languageEn": "IELTS 6.5 overall, no component below 5.5",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "通常相关本科二等二以上；经济、法律等社会科学或同等经验者可被考虑。",
       "requirementsEn": "Normally a relevant 2:2 degree; social-science backgrounds or equivalent experience may be considered.",
       "reviewDate": "",
@@ -6726,8 +6814,7 @@ export const publicReleaseDataset = {
         "可持续性"
       ],
       "type": "masters-programme",
-      "url": "https://www.reading.ac.uk/ready-to-study/study/Subject-area/geography-and-environmental-science-pg/msc-environmental-management",
-      "releaseStatus": "resource_only"
+      "url": "https://www.reading.ac.uk/ready-to-study/study/Subject-area/geography-and-environmental-science-pg/msc-environmental-management"
     },
     {
       "applicationProcess": "先获得导师支持，提交学历、研究计划和所需英语证明，再按具体资助项目要求申请经费。",
@@ -6758,6 +6845,7 @@ export const publicReleaseDataset = {
       "language": "具体语言标准及豁免请查当期要求",
       "languageEn": "Check current language thresholds and exemptions",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "通常要求硕士或同等学历；须获得至少一位教师同意指导。",
       "requirementsEn": "Normally a master’s or equivalent and agreement from at least one academic supervisor.",
       "reviewDate": "",
@@ -6782,8 +6870,7 @@ export const publicReleaseDataset = {
         "独立研究"
       ],
       "type": "phd-programme",
-      "url": "https://dur.ac.uk/departments/academic/geography/postgraduate-study/doctoral-study/",
-      "releaseStatus": "resource_only"
+      "url": "https://dur.ac.uk/departments/academic/geography/postgraduate-study/doctoral-study/"
     },
     {
       "applicationProcess": "根据研究组寻找导师并准备研究计划，再进入官网网申；入学月份、校区和资助条件分别确认。",
@@ -6814,6 +6901,7 @@ export const publicReleaseDataset = {
       "language": "IELTS Academic 总分6.5，各单项6.0（Profile B2，人文与自然地理）。",
       "languageEn": "IELTS Academic 6.5 overall, minimum 6.0 each component (Profile B2 for human and physical geography).",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "通常相关本科二等一或同等；部分情况要求硕士，需展示研究能力和计划。",
       "requirementsEn": "Normally a relevant 2:1 degree or equivalent; a master’s may be required, alongside research preparation and a proposal.",
       "reviewDate": "",
@@ -6839,8 +6927,7 @@ export const publicReleaseDataset = {
         "政治地理"
       ],
       "type": "phd-programme",
-      "url": "https://www.exeter.ac.uk/study/pg-research/degrees/geography/",
-      "releaseStatus": "resource_only"
+      "url": "https://www.exeter.ac.uk/study/pg-research/degrees/geography/"
     },
     {
       "applicationProcess": "通过官网提交材料；自拟课题全年可申，9月入学建议6月1日前申请；招聘课题按各自公告。",
@@ -6871,6 +6958,7 @@ export const publicReleaseDataset = {
       "language": "具体语言标准及豁免请查当期要求",
       "languageEn": "Check current language thresholds and exemptions",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "相关本科二等一及硕士；自拟课题须提交研究计划。",
       "requirementsEn": "A relevant 2:1 honours degree and master’s; a proposal is required for a self-designed project.",
       "reviewDate": "",
@@ -6896,8 +6984,7 @@ export const publicReleaseDataset = {
         "可持续性"
       ],
       "type": "phd-programme",
-      "url": "https://www.birmingham.ac.uk/study/postgraduate/subjects/geography-earth-and-environmental-sciences-courses/geography-and-environmental-sciences-phd-non-lab",
-      "releaseStatus": "resource_only"
+      "url": "https://www.birmingham.ac.uk/study/postgraduate/subjects/geography-earth-and-environmental-sciences-courses/geography-and-environmental-sciences-phd-non-lab"
     },
     {
       "applicationProcess": "先查找潜在导师，准备计划、学历、个人陈述、简历与推荐人信息后网申；官网说明全年可申。",
@@ -6930,6 +7017,7 @@ export const publicReleaseDataset = {
       "materials": "研究计划、成绩及学位证明、个人陈述、CV、两名潜在导师及两位推荐人；按要求补身份与英语证明。",
       "materialsEn": "Proposal, academic records, personal statement, CV, two proposed supervisors and two referees; identity/English evidence as required.",
       "methods": [],
+      "releaseStatus": "resource_only",
       "requirements": "通常相关本科二等一或同等；相关专业经验可个别考虑。",
       "requirementsEn": "Normally a relevant 2:1 honours degree or equivalent; relevant professional experience may be considered individually.",
       "reviewDate": "",
@@ -6955,8 +7043,7 @@ export const publicReleaseDataset = {
         "气候"
       ],
       "type": "phd-programme",
-      "url": "https://www.liverpool.ac.uk/courses/geography-phd",
-      "releaseStatus": "resource_only"
+      "url": "https://www.liverpool.ac.uk/courses/geography-phd"
     },
     {
       "applicationUrl": "https://www.du.edu/academics/admission-steps/geography-phd-2027-2028",
@@ -7004,6 +7091,7 @@ export const publicReleaseDataset = {
       "methods": [],
       "opensAt": "",
       "referenceDeadline": "",
+      "releaseStatus": "insufficient_evidence",
       "requirements": "须有学士和硕士学位；成绩及国际学历评估规则见原文。",
       "requirementsEn": "Bachelor's and master's degrees required; academic and overseas-credential rules apply.",
       "salary": "",
@@ -7026,8 +7114,7 @@ export const publicReleaseDataset = {
         "Geography and spatial research"
       ],
       "type": "phd-intake",
-      "url": "https://www.du.edu/academics/admission-steps/geography-phd-2027-2028",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://www.du.edu/academics/admission-steps/geography-phd-2027-2028"
     },
     {
       "applicationUrl": "https://architectureandplanning.ucdenver.edu/admissions/phd",
@@ -7074,6 +7161,7 @@ export const publicReleaseDataset = {
       "methods": [],
       "opensAt": "",
       "referenceDeadline": "",
+      "releaseStatus": "insufficient_evidence",
       "requirements": "入学前完成相关硕士；不要求GRE。",
       "requirementsEn": "Relevant master's degree before entry; GRE not required.",
       "salary": "",
@@ -7096,8 +7184,7 @@ export const publicReleaseDataset = {
         "Geography and spatial research"
       ],
       "type": "phd-intake",
-      "url": "https://architectureandplanning.ucdenver.edu/admissions/phd",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://architectureandplanning.ucdenver.edu/admissions/phd"
     },
     {
       "applicationUrl": "https://gs.hkbu.edu.hk/programmes/doctor-of-philosophy-master-of-philosophy-department-of-geography",
@@ -7152,6 +7239,7 @@ export const publicReleaseDataset = {
       "methods": [],
       "opensAt": "2026-09-01",
       "referenceDeadline": "",
+      "releaseStatus": "insufficient_evidence",
       "requirements": "具体学位资格须另核研究生院通则。",
       "requirementsEn": "Detailed degree eligibility requires Graduate School rules.",
       "salary": "",
@@ -7174,8 +7262,7 @@ export const publicReleaseDataset = {
         "Geography and spatial research"
       ],
       "type": "phd-intake",
-      "url": "https://gs.hkbu.edu.hk/programmes/doctor-of-philosophy-master-of-philosophy-department-of-geography",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://gs.hkbu.edu.hk/programmes/doctor-of-philosophy-master-of-philosophy-department-of-geography"
     },
     {
       "applicationUrl": "https://www.bristol.ac.uk/study/postgraduate/taught/msc-society-and-space/",
@@ -7222,6 +7309,7 @@ export const publicReleaseDataset = {
       "methods": [],
       "opensAt": "",
       "referenceDeadline": "",
+      "releaseStatus": "insufficient_evidence",
       "requirements": "通常要求2:1学位；其他背景或相关经验按个案考虑。",
       "requirementsEn": "Normally a 2:1; alternative backgrounds/experience considered individually.",
       "salary": "",
@@ -7244,8 +7332,7 @@ export const publicReleaseDataset = {
         "Geography and spatial research"
       ],
       "type": "masters-intake",
-      "url": "https://www.bristol.ac.uk/study/postgraduate/taught/msc-society-and-space/",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://www.bristol.ac.uk/study/postgraduate/taught/msc-society-and-space/"
     },
     {
       "applicationUrl": "https://scarp.ubc.ca/research-masters",
@@ -7292,6 +7379,7 @@ export const publicReleaseDataset = {
       "methods": [],
       "opensAt": "2026-10-05",
       "referenceDeadline": "2027-01-11",
+      "releaseStatus": "insufficient_evidence",
       "requirements": "本科背景与研究主题、导师匹配；具体最低成绩须核研究生院。",
       "requirementsEn": "Bachelor's background and research/supervisor fit; graduate minimum grades require checking.",
       "salary": "",
@@ -7314,8 +7402,7 @@ export const publicReleaseDataset = {
         "Geography and spatial research"
       ],
       "type": "masters-intake",
-      "url": "https://scarp.ubc.ca/research-masters",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://scarp.ubc.ca/research-masters"
     },
     {
       "applicationUrl": "https://www.manchester.ac.uk/study/postgraduate-research/programmes/list/05222/phd-physical-geography/",
@@ -7363,6 +7450,7 @@ export const publicReleaseDataset = {
       "methods": [],
       "opensAt": "",
       "referenceDeadline": "",
+      "releaseStatus": "insufficient_evidence",
       "requirements": "本科2:1或同等；相关硕士平均及论文至少60%。",
       "requirementsEn": "2:1 bachelor's equivalent plus relevant master's, average and dissertation at least 60%.",
       "salary": "",
@@ -7385,8 +7473,7 @@ export const publicReleaseDataset = {
         "Geography and spatial research"
       ],
       "type": "phd-intake",
-      "url": "https://www.manchester.ac.uk/study/postgraduate-research/programmes/list/05222/phd-physical-geography/",
-      "releaseStatus": "insufficient_evidence"
+      "url": "https://www.manchester.ac.uk/study/postgraduate-research/programmes/list/05222/phd-physical-geography/"
     },
     {
       "applicationUrl": "https://www.rmit.edu.au/study-with-us/levels-of-study/research-programs/phd/phd-geospatial-sciences-dr223",
@@ -7427,6 +7514,7 @@ export const publicReleaseDataset = {
       "methods": [],
       "opensAt": "",
       "referenceDeadline": "",
+      "releaseStatus": "resource_only",
       "requirements": "研究资格与导师项目匹配须按招生规则另核。",
       "requirementsEn": "Research eligibility and supervisor/project fit require admissions checks.",
       "salary": "",
@@ -7449,14 +7537,15 @@ export const publicReleaseDataset = {
         "Geography and spatial research"
       ],
       "type": "phd-programme",
-      "url": "https://www.rmit.edu.au/study-with-us/levels-of-study/research-programs/phd/phd-geospatial-sciences-dr223",
-      "releaseStatus": "resource_only"
+      "url": "https://www.rmit.edu.au/study-with-us/levels-of-study/research-programs/phd/phd-geospatial-sciences-dr223"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "Über unser Jobportal / Jetzt Bewerben - Button",
       "applicationProcessEn": "Über unser Jobportal / Jetzt Bewerben - Button",
+      "applicationRouteCheckedAt": "2026-11-04T04:50:45.399Z",
+      "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1452443033/?locale=de_DE",
       "candidateId": "tcand-0531f84d3e45d3557f220ee8",
       "caution": "待审核数据；门户最终受理未核验。 本轮原文证据已保存恢复，资格中优先项与硬性条件须结合所附完整段落阅读；仍待发布审核。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified. Evidence saved and restored; preserve required/preferred qualification distinctions; owner publication review pending.",
@@ -7468,6 +7557,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:50:45.399Z",
       "deadline": "2026-11-30",
       "deadlineNote": "Bewerbungsfrist: 30.11.2026",
       "deadlineNoteEn": "Bewerbungsfrist: 30.11.2026",
@@ -7610,6 +7700,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-03T05:50:07Z",
           "status": "supported",
           "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452443033/"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:50:45.399Z",
+          "status": "missing",
+          "url": "https://jobs.univie.ac.at/talentcommunity/apply/1452443033/?locale=de_DE"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -7622,6 +7718,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Abgeschlossenes Doktorats-/PhD-Studium der Fachrichtung Allgemeine und Vergleichende Literaturwissenschaft, Philologie oder Kulturwissenschaft\nHervorragende Dissertation mit ausgewiesener literaturwissenschaftlicher oder -theoretischer Expertise\nDurch internationale Publikationen in peer relevanten Medien ausgewiesene Forschungskompetenz & -initiative\nErfahrung im Forschungsmanagement\nDidaktische Kompetenzen / Erfahrung im e-learning\nIT-Kenntnisse (z.B. Webseitenerstellung, Datenbankpflege)\nAusgezeichnete Englischkenntnisse (C1) / Kenntnis mindestens einer weiteren Fremdsprache\nTeamplayer*in mit hoher sozialer/kommunikativer Kompetenz\nWünschenswert sind\nKenntnisse und Erfahrung im Bereich der Wissenschaftskommunikation\nAuslandserfahrung\nErfahrung in der Betreuung von Studierenden",
       "requirementsEn": "Abgeschlossenes Doktorats-/PhD-Studium der Fachrichtung Allgemeine und Vergleichende Literaturwissenschaft, Philologie oder Kulturwissenschaft\nHervorragende Dissertation mit ausgewiesener literaturwissenschaftlicher oder -theoretischer Expertise\nDurch internationale Publikationen in peer relevanten Medien ausgewiesene Forschungskompetenz & -initiative\nErfahrung im Forschungsmanagement\nDidaktische Kompetenzen / Erfahrung im e-learning\nIT-Kenntnisse (z.B. Webseitenerstellung, Datenbankpflege)\nAusgezeichnete Englischkenntnisse (C1) / Kenntnis mindestens einer weiteren Fremdsprache\nTeamplayer*in mit hoher sozialer/kommunikativer Kompetenz\nWünschenswert sind\nKenntnisse und Erfahrung im Bereich der Wissenschaftskommunikation\nAuslandserfahrung\nErfahrung in der Betreuung von Studierenden",
       "reviewDate": "",
@@ -7634,22 +7731,22 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "kulturwissenschaftlichen Komparatistik mit Schwerpunkten in den Environmental Humanities oder dem Bereich Literatur und Wissen auf. Sie wirken in Forschu",
       "summaryEn": "kulturwissenschaftlichen Komparatistik mit Schwerpunkten in den Environmental Humanities oder dem Bereich Literatur und Wissen auf. Sie wirken in Forschu",
       "title": "Universitätsassistent*in Postdoc",
       "titleEn": "Universitätsassistent*in Postdoc",
       "topics": [],
       "type": "postdoc",
-      "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452443033/",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452443033/"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "The University only accepts and considers applications submitted online for the post above via the CUHK career site.",
       "applicationProcessEn": "The University only accepts and considers applications submitted online for the post above via the CUHK career site.",
+      "applicationRouteCheckedAt": "2026-11-04T04:55:14.277Z",
       "candidateId": "tcand-05afd1081e74712769a6be5a",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -7661,6 +7758,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:55:14.277Z",
       "deadline": "",
       "deadlineNote": "Closing Date: Until the post is filled.",
       "deadlineNoteEn": "Closing Date: Until the post is filled.",
@@ -7719,6 +7817,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T02:13:12.335Z",
           "status": "supported",
           "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:55:14.277Z",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -7731,6 +7835,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Applicants should possess (i) a doctoral degree;\nRelevant professional qualifications and/or professional standing (e.g. membership of the Royal Town Planning Institute (RTPI), the Royal Institution of Chartered Surveyors (RICS), or equivalent professional bodies), teaching experience in relevant fields, and/or expertise in artificial intelligence will be considered advantageous.",
       "requirementsEn": "Applicants should possess (i) a doctoral degree;\nRelevant professional qualifications and/or professional standing (e.g. membership of the Royal Town Planning Institute (RTPI), the Royal Institution of Chartered Surveyors (RICS), or equivalent professional bodies), teaching experience in relevant fields, and/or expertise in artificial intelligence will be considered advantageous.",
       "reviewDate": "",
@@ -7743,22 +7848,22 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "urban studies, urban planning, human geography, and related fields",
       "summaryEn": "urban studies, urban planning, human geography, and related fields",
       "title": "Associate Professor/ Assistant Professor (Urban Studies)",
       "titleEn": "Associate Professor/ Assistant Professor (Urban Studies)",
       "topics": [],
       "type": "faculty",
-      "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai"
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
       "applicationProcess": "",
       "applicationProcessEn": "",
+      "applicationRouteCheckedAt": "2026-11-04T04:56:54.297Z",
       "candidateId": "tcand-068b72cb3f81d2f0a25cf72a",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -7770,6 +7875,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:56:54.297Z",
       "deadline": "2026-11-15",
       "deadlineNote": "The application deadline is November 15, 2026.",
       "deadlineNoteEn": "The application deadline is November 15, 2026.",
@@ -7828,6 +7934,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T06:13:54.974Z",
           "status": "supported",
           "url": "https://morehouse.peopleadmin.com/postings/15370/print_preview"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:56:54.297Z",
+          "status": "supported",
+          "url": "https://morehouse.peopleadmin.com/postings/15370/print_preview"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -7840,6 +7952,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Required Qualifications PhD or terminal degree from an accredited institution in an academic field of study. Preferred Qualifications Preference will be given to candidates who hold the rank of Assistant or Associate Professor. However, all talented candidates who can fulfill the job responsibilities and fit the criteria will be considered regardless of faculty rank. Preference will be given to candidates who provide evidence of leadership experience. Preferred Education/Experience Required Knowledge, Skills, and Abilities Successful candidates should have an established research portfolio in urban health and be prepared to engage with\nPreferred Qualifications Preference will be given to candidates who hold the rank of Assistant or Associate Professor. However, all talented candidates who can fulfill the job responsibilities and fit the criteria will be considered regardless of faculty rank. Preference will be given to candidates who provide evidence of leadership experience. Preferred Education/Experience Required Knowledge, Skills, and Abilities Successful candidates should have an established resea",
       "requirementsEn": "Required Qualifications PhD or terminal degree from an accredited institution in an academic field of study. Preferred Qualifications Preference will be given to candidates who hold the rank of Assistant or Associate Professor. However, all talented candidates who can fulfill the job responsibilities and fit the criteria will be considered regardless of faculty rank. Preference will be given to candidates who provide evidence of leadership experience. Preferred Education/Experience Required Knowledge, Skills, and Abilities Successful candidates should have an established research portfolio in urban health and be prepared to engage with\nPreferred Qualifications Preference will be given to candidates who hold the rank of Assistant or Associate Professor. However, all talented candidates who can fulfill the job responsibilities and fit the criteria will be considered regardless of faculty rank. Preference will be given to candidates who provide evidence of leadership experience. Preferred Education/Experience Required Knowledge, Skills, and Abilities Successful candidates should have an established resea",
       "reviewDate": "",
@@ -7852,22 +7965,22 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "Urban Health",
       "summaryEn": "Urban Health",
       "title": "Endowed Professor in Urban Health Equity, TT",
       "titleEn": "Endowed Professor in Urban Health Equity, TT",
       "topics": [],
       "type": "faculty",
-      "url": "https://morehouse.peopleadmin.com/postings/15370/print_preview",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://morehouse.peopleadmin.com/postings/15370/print_preview"
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
       "applicationProcess": "http://binghamton.interviewexchange.com/jobofferdetails.jsp?JOBID=205082",
       "applicationProcessEn": "http://binghamton.interviewexchange.com/jobofferdetails.jsp?JOBID=205082",
+      "applicationRouteCheckedAt": "2026-11-04T04:58:30.384Z",
       "candidateId": "tcand-0909c345e97cc744f5a4b178",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -7879,6 +7992,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:58:30.384Z",
       "deadline": "",
       "deadlineNote": "Applications submitted by November 9, 2026 will receive full consideration.",
       "deadlineNoteEn": "Applications submitted by November 9, 2026 will receive full consideration.",
@@ -7943,6 +8057,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T06:19:53.030Z",
           "status": "supported",
           "url": "https://binghamton.interviewexchange.com/jobofferdetails.jsp?JOBID=205082"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:58:30.384Z",
+          "status": "missing",
+          "url": "https://binghamton.interviewexchange.com/jobofferdetails.jsp?JOBID=205082"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -7955,6 +8075,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Required qualifications: PhD by August 16, 2027 in Environmental Health or a related field, such as Public Health, Environmental Science, Geography, etc. Preferred qualifications: Master's in global public health or health education, or public health Experience securing external research funding Experience teaching at the university level Experience engaging students in research Experience with community-based collaborative research with diverse communities. Please be advised that H1B visa sponsorship may not be available for this position. Additional Information: Binghamton University is committed to providing access, equal opportunit\nPreferred qualifications: Master's in global public health or health education, or public health Experience securing external research funding Experience teaching at the university level Experience engaging students in research Experience with community-based collaborative research with diverse communities. Please be advised that H1B visa sponsorship may not be available for this position. Additional Information: Binghamton University is committed to providing access, e",
       "requirementsEn": "Required qualifications: PhD by August 16, 2027 in Environmental Health or a related field, such as Public Health, Environmental Science, Geography, etc. Preferred qualifications: Master's in global public health or health education, or public health Experience securing external research funding Experience teaching at the university level Experience engaging students in research Experience with community-based collaborative research with diverse communities. Please be advised that H1B visa sponsorship may not be available for this position. Additional Information: Binghamton University is committed to providing access, equal opportunit\nPreferred qualifications: Master's in global public health or health education, or public health Experience securing external research funding Experience teaching at the university level Experience engaging students in research Experience with community-based collaborative research with diverse communities. Please be advised that H1B visa sponsorship may not be available for this position. Additional Information: Binghamton University is committed to providing access, e",
       "reviewDate": "",
@@ -7967,22 +8088,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "Environmental Health",
       "summaryEn": "Environmental Health",
       "title": "Assistant or Associate Professor of Environmental Health",
       "titleEn": "Assistant or Associate Professor of Environmental Health",
       "topics": [],
       "type": "faculty",
-      "url": "https://binghamton.interviewexchange.com/jobofferdetails.jsp?JOBID=205082",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://binghamton.interviewexchange.com/jobofferdetails.jsp?JOBID=205082"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "",
       "applicationProcessEn": "",
+      "applicationRouteCheckedAt": "2026-11-04T04:51:20.210Z",
+      "applicationUrl": "https://jobs.montana.edu/postings/53185/pre_apply",
       "candidateId": "tcand-1308ee0083aff518f55bd236",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -7994,6 +8116,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:51:20.210Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -8022,6 +8145,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T03:50:48.014Z",
           "status": "supported",
           "url": "https://jobs.montana.edu/postings/52857"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:51:20.210Z",
+          "status": "supported",
+          "url": "https://jobs.montana.edu/postings/53185/pre_apply"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8034,6 +8163,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Required Qualifications – Experience, Education, Knowledge & Skills PhD in Earth Sciences, Geography, Environmental Sciences, or related discipline with a research focus on global change, environmental hazards and social vulnerability and related fields by the start date. Demonstrated potential to teach effective lower-division, upper-division, and graduate courses in human-environment geography and related Earth Sciences topics, including large introductory courses, as evidenced by teaching experience, a teaching statement, and/or evaluations or equivalent documentation. Demonstrated research experience as evidenced by a record of peer-reviewed publications approp",
       "requirementsEn": "Required Qualifications – Experience, Education, Knowledge & Skills PhD in Earth Sciences, Geography, Environmental Sciences, or related discipline with a research focus on global change, environmental hazards and social vulnerability and related fields by the start date. Demonstrated potential to teach effective lower-division, upper-division, and graduate courses in human-environment geography and related Earth Sciences topics, including large introductory courses, as evidenced by teaching experience, a teaching statement, and/or evaluations or equivalent documentation. Demonstrated research experience as evidenced by a record of peer-reviewed publications approp",
       "reviewDate": "",
@@ -8046,22 +8176,22 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "global change, risk, and resilience",
       "summaryEn": "global change, risk, and resilience",
       "title": "Assistant Professor in Earth Sciences Geography",
       "titleEn": "Assistant Professor in Earth Sciences Geography",
       "topics": [],
       "type": "faculty",
-      "url": "https://jobs.montana.edu/postings/52857",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://jobs.montana.edu/postings/52857"
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
       "applicationProcess": "https://careers.ua.edu/jobs/search/AS",
       "applicationProcessEn": "https://careers.ua.edu/jobs/search/AS",
+      "applicationRouteCheckedAt": "2026-11-04T04:51:21.870Z",
       "candidateId": "tcand-1e947437e93504784c48a41e",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -8073,6 +8203,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:51:21.870Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -8131,6 +8262,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T03:55:44.763Z",
           "status": "supported",
           "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:51:21.870Z",
+          "status": "missing",
+          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8143,6 +8280,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Minimum Qualifications A Ph.D. in Environmental Science, Earth Science, Physical Geography, or a closely related field is required at the time of appointment. Preferred Qualifications Instructions and Required Materials for Application Applicants should complete the online application at https://careers.ua.edu/jobs/search/AS . The application must include: 1. A letter of application outlining your qualifications and interest in the position. 2. A current curriculum vita. 3. A research statement. 4. A teaching statement. 5. Contact information for three professional references. Review of applications will begin November 2026, and the search will continue until the",
       "requirementsEn": "Minimum Qualifications A Ph.D. in Environmental Science, Earth Science, Physical Geography, or a closely related field is required at the time of appointment. Preferred Qualifications Instructions and Required Materials for Application Applicants should complete the online application at https://careers.ua.edu/jobs/search/AS . The application must include: 1. A letter of application outlining your qualifications and interest in the position. 2. A current curriculum vita. 3. A research statement. 4. A teaching statement. 5. Contact information for three professional references. Review of applications will begin November 2026, and the search will continue until the",
       "reviewDate": "",
@@ -8155,22 +8293,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "Environmental Science",
       "summaryEn": "Environmental Science",
       "title": "Assistant Professor of Geography, in Geography and the Environment",
       "titleEn": "Assistant Professor of Geography, in Geography and the Environment",
       "topics": [],
       "type": "faculty",
-      "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states"
     },
     {
       "announcementStatus": "invites_applications",
       "applicationActionability": "unknown",
       "applicationProcess": "Please submit your application to the University of Helsinki Recruitment System via the Apply Now button",
       "applicationProcessEn": "Please submit your application to the University of Helsinki Recruitment System via the Apply Now button",
+      "applicationRouteCheckedAt": "2026-11-04T04:51:10.920Z",
+      "applicationUrl": "https://jobs.helsinki.fi/talentcommunity/apply/1374784157/?locale=en_GB",
       "candidateId": "tcand-256dd28e1f4a27848f3198f8",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -8182,6 +8321,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:51:10.920Z",
       "deadline": "2026-12-15",
       "deadlineNote": "15 December 2026 at 23:59 (Europe/Helsinki time)",
       "deadlineNoteEn": "15 December 2026 at 23:59 (Europe/Helsinki time)",
@@ -8312,6 +8452,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-01T23:27:53.918Z",
           "status": "supported",
           "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784157/"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:51:10.920Z",
+          "status": "missing",
+          "url": "https://jobs.helsinki.fi/talentcommunity/apply/1374784157/?locale=en_GB"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8324,6 +8470,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Applicants cannot have been awarded a doctoral degree.\nmust not have resided or carried out their main activity (work, studies, etc.) in the country of the recruiting organisation for more than 12 months in the 36 months immediately before their recruitment date.",
       "requirementsEn": "Applicants cannot have been awarded a doctoral degree.\nmust not have resided or carried out their main activity (work, studies, etc.) in the country of the recruiting organisation for more than 12 months in the 36 months immediately before their recruitment date.",
       "reviewDate": "",
@@ -8337,22 +8484,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "societal divisions over migration",
       "summaryEn": "societal divisions over migration",
       "title": "Doctoral Researcher (MSCA), Exploiting Migration to Influence and Destabilise Societies",
       "titleEn": "Doctoral Researcher (MSCA), Exploiting Migration to Influence and Destabilise Societies",
       "topics": [],
       "type": "phd",
-      "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784157/",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784157/"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "All material should be submitted electronically through the following link: https://academicjobsonline.org/ajo/jobs/33131 .",
       "applicationProcessEn": "All material should be submitted electronically through the following link: https://academicjobsonline.org/ajo/jobs/33131 .",
+      "applicationRouteCheckedAt": "2026-11-04T04:51:23.080Z",
+      "applicationUrl": "https://academicjobsonline.org/ajo/jobs/33131/apply",
       "candidateId": "tcand-300f95e2f52d600da844b5c7",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -8364,6 +8512,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:51:23.080Z",
       "deadline": "",
       "deadlineNote": "Appl Deadline: 2026/12/15 12:59 PM ChinaTime * (posted 2026/10/19 12:00 PM Chin",
       "deadlineNoteEn": "Appl Deadline: 2026/12/15 12:59 PM ChinaTime * (posted 2026/10/19 12:00 PM Chin",
@@ -8422,6 +8571,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T04:44:54.288Z",
           "status": "supported",
           "url": "https://academicjobsonline.org/ajo/jobs/33131"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:51:23.080Z",
+          "status": "supported",
+          "url": "https://academicjobsonline.org/ajo/jobs/33131/apply"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8434,6 +8589,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "The successful candidate will have completed a Ph.D. in the humanities and/or social sciences prior to appointment, be engaged in research and teaching that explores transregional institutions, discourses, and relationships, and be interested in pursuing interdisciplinary and cross-regional collaborations. The selected candidate will demonstrate interest in teaching core ICS courses as well as courses that incorporate digital research methods, and will supervise senior theses, work effectively with students and colleagues, and contribute appropriate service in the program, including undergraduate advising and mentoring and active participation in curriculum-building. Possible disciplines inclu\nThe successful candidate will have completed a Ph.D. in the humanities and/or social sciences prior to appointment, be engaged in research and teaching that explores transregional institutions, discourses, and relationships, and be interested in pursuing interdisciplinary and cross-regional collaborations. The selected candidate will demonstrate inte",
       "requirementsEn": "The successful candidate will have completed a Ph.D. in the humanities and/or social sciences prior to appointment, be engaged in research and teaching that explores transregional institutions, discourses, and relationships, and be interested in pursuing interdisciplinary and cross-regional collaborations. The selected candidate will demonstrate interest in teaching core ICS courses as well as courses that incorporate digital research methods, and will supervise senior theses, work effectively with students and colleagues, and contribute appropriate service in the program, including undergraduate advising and mentoring and active participation in curriculum-building. Possible disciplines inclu\nThe successful candidate will have completed a Ph.D. in the humanities and/or social sciences prior to appointment, be engaged in research and teaching that explores transregional institutions, discourses, and relationships, and be interested in pursuing interdisciplinary and cross-regional collaborations. The selected candidate will demonstrate inte",
       "reviewDate": "",
@@ -8446,16 +8602,15 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "Possible disciplines include human geography, socio-cultural anthropology, transnational or global history, environmental studies, women and gender studies, cultural studies, and global media studies.",
       "summaryEn": "Possible disciplines include human geography, socio-cultural anthropology, transnational or global history, environmental studies, women and gender studies, cultural studies, and global media studies.",
       "title": "Assistant Professor of the Practice",
       "titleEn": "Assistant Professor of the Practice",
       "topics": [],
       "type": "faculty",
-      "url": "https://academicjobsonline.org/ajo/jobs/33131",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://academicjobsonline.org/ajo/jobs/33131"
     },
     {
       "announcementStatus": "unknown",
@@ -8473,6 +8628,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:47:08.945Z",
       "deadline": "",
       "deadlineNote": "This position is open until filled.",
       "deadlineNoteEn": "This position is open until filled.",
@@ -8603,6 +8759,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-02T11:32:47Z",
           "status": "supported",
           "url": "https://careers.humboldt.edu/hm/en-us/job/562584/tenure-track-faculty-school-of-engineering-mechanical-energy-systems-andor-environmental-resources-engineering"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:47:08.945Z",
+          "status": "missing",
+          "url": "https://careers.humboldt.edu/hm/en-us/job/562584/tenure-track-faculty-school-of-engineering-mechanical-energy-systems-andor-environmental-resources-engineering"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8615,6 +8777,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "required: An earned Ph.D. or equivalent in Engineering or a related field from an accredited college or university is required at the time of appointment.\nrequired_timing: If ABD, degree requirements must be completed by date of appointment.\nrequired: Record of training or experience in the field of Engineering or other related area, relevant to the three (3) core undergraduate programs (Energy Systems, Environmental, or Mechanical Engineering);\npreferred: Licensure as a professional engineer.\nwork_location: Working in the state of California is a condition of employment for this position.\nAn earned Ph.D. or equivalent in Engineering or a related field from an accredited college or university is required at the time of appointment. If ABD, degree requirements must be completed by date of appointment.\nPreferred qualifications for this position include: Record of training, teaching, research, and/or professional experience in one or more areas of current instructional need, including mechatronics, robotics and automation, mechanical design, energy systems integration, or advanced thermal systems; Documented experience within the private and/or public sector working with clients, stakeholders, and communities to develop engineering projects and/or analysis; and Licensure as a professional engineer.\nAt the time of appointment, the successful candidate, if not a U.S. citizen, must have authorization from the Bureau of Citizenship and Immigration Services to work in the United States.",
       "requirementsEn": "required: An earned Ph.D. or equivalent in Engineering or a related field from an accredited college or university is required at the time of appointment.\nrequired_timing: If ABD, degree requirements must be completed by date of appointment.\nrequired: Record of training or experience in the field of Engineering or other related area, relevant to the three (3) core undergraduate programs (Energy Systems, Environmental, or Mechanical Engineering);\npreferred: Licensure as a professional engineer.\nwork_location: Working in the state of California is a condition of employment for this position.\nAn earned Ph.D. or equivalent in Engineering or a related field from an accredited college or university is required at the time of appointment. If ABD, degree requirements must be completed by date of appointment.\nPreferred qualifications for this position include: Record of training, teaching, research, and/or professional experience in one or more areas of current instructional need, including mechatronics, robotics and automation, mechanical design, energy systems integration, or advanced thermal systems; Documented experience within the private and/or public sector working with clients, stakeholders, and communities to develop engineering projects and/or analysis; and Licensure as a professional engineer.\nAt the time of appointment, the successful candidate, if not a U.S. citizen, must have authorization from the Bureau of Citizenship and Immigration Services to work in the United States.",
       "reviewDate": "2026-11-01",
@@ -8627,16 +8790,15 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "Environmental Resources Engineering",
       "summaryEn": "Environmental Resources Engineering",
       "title": "Tenure Track Faculty - School of Engineering (Mechanical, Energy Systems, and/or Environmental Resources Engineering)",
       "titleEn": "Tenure Track Faculty - School of Engineering (Mechanical, Energy Systems, and/or Environmental Resources Engineering)",
       "topics": [],
       "type": "faculty",
-      "url": "https://careers.humboldt.edu/hm/en-us/job/562584/tenure-track-faculty-school-of-engineering-mechanical-energy-systems-andor-environmental-resources-engineering",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://careers.humboldt.edu/hm/en-us/job/562584/tenure-track-faculty-school-of-engineering-mechanical-energy-systems-andor-environmental-resources-engineering"
     },
     {
       "announcementStatus": "unknown",
@@ -8654,6 +8816,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:47:13.840Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -8700,6 +8863,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T06:15:11.938Z",
           "status": "supported",
           "url": "https://hcm.lonestar.edu/psc/hcmprd/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=43724&PostingSeq=1"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:47:13.840Z",
+          "status": "missing",
+          "url": "https://hcm.lonestar.edu/psc/hcmprd/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=43724&PostingSeq=1"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8712,6 +8881,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "REQUIRED QUALIFICATIONS: Master's degree with 18 graduate hours in environmental science, biology, environmental geology, and/or ecology. Salary $56.55 per contact hour. Benefits Marketing Statement By joining our top-notch institution, you will enjoy being a part of an organization that offers a supportive, collegial work environment, excellent work/life balance, tuition waiver, participation in a tax deferred retirement plan, professional development opportunities and more. Special Instructions Go to the Job Search page, click on ‘My Activities’ at the top of the page. Under My Cover Letters and Attachments you will click on ‘Add Att",
       "requirementsEn": "REQUIRED QUALIFICATIONS: Master's degree with 18 graduate hours in environmental science, biology, environmental geology, and/or ecology. Salary $56.55 per contact hour. Benefits Marketing Statement By joining our top-notch institution, you will enjoy being a part of an organization that offers a supportive, collegial work environment, excellent work/life balance, tuition waiver, participation in a tax deferred retirement plan, professional development opportunities and more. Special Instructions Go to the Job Search page, click on ‘My Activities’ at the top of the page. Under My Cover Letters and Attachments you will click on ‘Add Att",
       "reviewDate": "",
@@ -8724,22 +8894,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "Environmental Science",
       "summaryEn": "Environmental Science",
       "title": "Adjunct Faculty, Environmental Science",
       "titleEn": "Adjunct Faculty, Environmental Science",
       "topics": [],
       "type": "faculty",
-      "url": "https://hcm.lonestar.edu/psc/hcmprd/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=43724&PostingSeq=1",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://hcm.lonestar.edu/psc/hcmprd/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=43724&PostingSeq=1"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "Über unser Jobportal / Jetzt Bewerben - Button",
       "applicationProcessEn": "Über unser Jobportal / Jetzt Bewerben - Button",
+      "applicationRouteCheckedAt": "2026-11-04T04:50:30.804Z",
+      "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1452586933/?locale=de_DE",
       "candidateId": "tcand-4b25053f7a76a7949b7c689c",
       "caution": "待审核数据；门户最终受理未核验。 本轮原文证据已保存恢复，资格中优先项与硬性条件须结合所附完整段落阅读；仍待发布审核。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified. Evidence saved and restored; preserve required/preferred qualification distinctions; owner publication review pending.",
@@ -8751,6 +8922,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:50:30.804Z",
       "deadline": "2026-11-19",
       "deadlineNote": "Bewerbungsfrist: 19.11.2026",
       "deadlineNoteEn": "Bewerbungsfrist: 19.11.2026",
@@ -8881,6 +9053,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-03T12:35:02Z",
           "status": "supported",
           "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452586933/"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:50:30.804Z",
+          "status": "missing",
+          "url": "https://jobs.univie.ac.at/talentcommunity/apply/1452586933/?locale=de_DE"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8893,6 +9071,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Abgeschlossene Promotion in einem rechtswissenschaftlichen Fach\nKenntnisse im Österreichischen öffentlichen Recht\nInteresse an der Zusammenarbeit mit Studierenden und internationalen Forscher*innen\nEigeninitiative, Teamfähigkeit und gute kommunikative Fähigkeiten\nInteresse an der wissenschaftlichen Arbeit, insbesondere im Bereich Verfassungsrecht und Grund- und Menschenrechte\nInteresse an interdisziplinärer Arbeit\nInteresse an der eigenständigen wissenschaftlichen Qualifikation\nAusgezeichnete Englischkenntnisse in Wort und Schrift (mind. C1)\nAusgezeichnete Deutschkenntnisse in Wort und Schrift (mind. C1)",
       "requirementsEn": "Abgeschlossene Promotion in einem rechtswissenschaftlichen Fach\nKenntnisse im Österreichischen öffentlichen Recht\nInteresse an der Zusammenarbeit mit Studierenden und internationalen Forscher*innen\nEigeninitiative, Teamfähigkeit und gute kommunikative Fähigkeiten\nInteresse an der wissenschaftlichen Arbeit, insbesondere im Bereich Verfassungsrecht und Grund- und Menschenrechte\nInteresse an interdisziplinärer Arbeit\nInteresse an der eigenständigen wissenschaftlichen Qualifikation\nAusgezeichnete Englischkenntnisse in Wort und Schrift (mind. C1)\nAusgezeichnete Deutschkenntnisse in Wort und Schrift (mind. C1)",
       "reviewDate": "",
@@ -8905,22 +9084,22 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "päischen Kontext mit einem besonderen Schwerpunkt auf Fragen des Migrationsrechts und der Menschenrechte. Für die Mitarbeit im Rahmen der Profess",
       "summaryEn": "päischen Kontext mit einem besonderen Schwerpunkt auf Fragen des Migrationsrechts und der Menschenrechte. Für die Mitarbeit im Rahmen der Profess",
       "title": "Universitätsassistent*in Postdoc",
       "titleEn": "Universitätsassistent*in Postdoc",
       "topics": [],
       "type": "postdoc",
-      "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452586933/",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452586933/"
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
       "applicationProcess": "This institution is using Interfolio's Faculty Search to conduct this search.",
       "applicationProcessEn": "This institution is using Interfolio's Faculty Search to conduct this search.",
+      "applicationRouteCheckedAt": "2026-11-04T04:56:46.989Z",
       "candidateId": "tcand-50f69fbe806ee01c024c25f8",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -8932,6 +9111,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:56:46.989Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -9020,6 +9200,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T08:54:14.024Z",
           "status": "supported",
           "url": "https://apply.interfolio.com/195249"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:56:46.989Z",
+          "status": "missing",
+          "url": "https://apply.interfolio.com/195249"
         }
       ],
       "funding": "Position funding is subject to budget availability.",
@@ -9032,6 +9218,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Applicants must have completed all the requirements for a Ph.D. in Geography or a closely related discipline by time of appointment, or expect to obtain the Ph.D. within a year of joining the faculty as Instructor. Preferred qualifications include a scholarly agenda integrating a rigorous field-based observation research \nPreferred qualifications include a scholarly agenda integrating a rigorous field-based observation research approach with cutting-edge analytical frameworks leveraging AI/Machine Learning, multi-platform Remote Sensing, and/or advanced biogeochemical toolkits. Application Instructions Interested applicants should submit the following materials: (1) a letter of interest, (2) a current CV, (",
       "requirementsEn": "Applicants must have completed all the requirements for a Ph.D. in Geography or a closely related discipline by time of appointment, or expect to obtain the Ph.D. within a year of joining the faculty as Instructor. Preferred qualifications include a scholarly agenda integrating a rigorous field-based observation research \nPreferred qualifications include a scholarly agenda integrating a rigorous field-based observation research approach with cutting-edge analytical frameworks leveraging AI/Machine Learning, multi-platform Remote Sensing, and/or advanced biogeochemical toolkits. Application Instructions Interested applicants should submit the following materials: (1) a letter of interest, (2) a current CV, (",
       "reviewDate": "2026-11-13",
@@ -9044,16 +9231,15 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "Physical Geographer, specializing in Biogeography",
       "summaryEn": "Physical Geographer, specializing in Biogeography",
       "title": "Assistant Professor, Physical Geography",
       "titleEn": "Assistant Professor, Physical Geography",
       "topics": [],
       "type": "faculty",
-      "url": "https://apply.interfolio.com/195249",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://apply.interfolio.com/195249"
     },
     {
       "announcementStatus": "open",
@@ -9071,6 +9257,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:47:24.748Z",
       "deadline": "",
       "deadlineNote": "Application Deadline: Open until filled.",
       "deadlineNoteEn": "Application Deadline: Open until filled.",
@@ -9147,6 +9334,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T08:55:12.724Z",
           "status": "supported",
           "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:47:24.748Z",
+          "status": "missing",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass"
         }
       ],
       "funding": "Faculty Hiring is subject to state appropriation funding.",
@@ -9159,6 +9352,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Master’s degree in Biology, Microbiology, Botany, Ecology, Environmental Science, or a closely related field; and Significant first-hand experience in a laboratory setting in one of these fields. Preferred Qualifications: Sensitivity and commitment to the goals of Equal Oppor",
       "requirementsEn": "Master’s degree in Biology, Microbiology, Botany, Ecology, Environmental Science, or a closely related field; and Significant first-hand experience in a laboratory setting in one of these fields. Preferred Qualifications: Sensitivity and commitment to the goals of Equal Oppor",
       "reviewDate": "",
@@ -9171,16 +9365,15 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "adjunct faculty position in environmental science and/or biology",
       "summaryEn": "adjunct faculty position in environmental science and/or biology",
       "title": "Adjunct Faculty Environmental Science and/or Biology",
       "titleEn": "Adjunct Faculty Environmental Science and/or Biology",
       "topics": [],
       "type": "faculty",
-      "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass"
     },
     {
       "announcementStatus": "unknown",
@@ -9198,6 +9391,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:47:25.891Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -9244,6 +9438,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T06:15:04.483Z",
           "status": "supported",
           "url": "https://hcm.lonestar.edu/psc/hcmprd/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=43921&PostingSeq=1"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:47:25.891Z",
+          "status": "missing",
+          "url": "https://hcm.lonestar.edu/psc/hcmprd/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=43921&PostingSeq=1"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -9256,6 +9456,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "REQUIRED QUALIFICATIONS: Master's degree with 18 graduate hours in environmental science, biology, environmental geology, and/or ecology. Salary $56.55 per contact hour. Benefits Marketing Statement By joining our top-notch institution, you will enjoy being a part of an organization that offers a supportive, collegial work environment, excellent work/life balance, tuition waiver, participation in a tax deferred retirement plan, professional development opportunities and more. Special Instructions Go to the Job Search page, click on ‘My Activities’ at the top of the page. Under My Cover Letters and Attachments you will click on ‘Add Att",
       "requirementsEn": "REQUIRED QUALIFICATIONS: Master's degree with 18 graduate hours in environmental science, biology, environmental geology, and/or ecology. Salary $56.55 per contact hour. Benefits Marketing Statement By joining our top-notch institution, you will enjoy being a part of an organization that offers a supportive, collegial work environment, excellent work/life balance, tuition waiver, participation in a tax deferred retirement plan, professional development opportunities and more. Special Instructions Go to the Job Search page, click on ‘My Activities’ at the top of the page. Under My Cover Letters and Attachments you will click on ‘Add Att",
       "reviewDate": "",
@@ -9268,22 +9469,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "Environmental Science",
       "summaryEn": "Environmental Science",
       "title": "Adjunct Faculty, Environmental Science",
       "titleEn": "Adjunct Faculty, Environmental Science",
       "topics": [],
       "type": "faculty",
-      "url": "https://hcm.lonestar.edu/psc/hcmprd/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=43921&PostingSeq=1",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://hcm.lonestar.edu/psc/hcmprd/EMPLOYEE/HRMS/c/HRS_HRAM_FL.HRS_CG_SEARCH_FL.GBL?Page=HRS_APP_JBPST_FL&Action=U&FOCUS=Applicant&SiteId=1&JobOpeningId=43921&PostingSeq=1"
     },
     {
       "announcementStatus": "invites_applications",
       "applicationActionability": "unknown",
       "applicationProcess": "Applications must be submitted through the University of Helsinki's online recruitment system\nApplicants currently employed by the University of Helsinki should submit their application through the SAP Fiori portal.",
       "applicationProcessEn": "Applications must be submitted through the University of Helsinki's online recruitment system\nApplicants currently employed by the University of Helsinki should submit their application through the SAP Fiori portal.",
+      "applicationRouteCheckedAt": "2026-11-04T04:50:33.526Z",
+      "applicationUrl": "https://jobs.helsinki.fi/talentcommunity/apply/1375701157/?locale=en_GB",
       "candidateId": "tcand-55c212afaa9a01eab495c8e3",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -9295,6 +9497,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:50:33.526Z",
       "deadline": "2026-11-20",
       "deadlineNote": "20.11.2026 (23.59 Europe/Helsinki time)\n20 November 2026 at 23:59 (Finnish time)",
       "deadlineNoteEn": "20.11.2026 (23.59 Europe/Helsinki time)\n20 November 2026 at 23:59 (Finnish time)",
@@ -9461,6 +9664,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-01T23:27:50.135Z",
           "status": "supported",
           "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-in-Archaelogy-or-Geoscience/1375701157/"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:50:33.526Z",
+          "status": "missing",
+          "url": "https://jobs.helsinki.fi/talentcommunity/apply/1375701157/?locale=en_GB"
         }
       ],
       "funding": "已核验为带薪博士或教职聘用；薪酬见薪酬字段。额外资助或学费安排未核实。",
@@ -9473,6 +9682,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Hold a Master's degree or equivalent in a field relevant to the proposed doctoral research. Applicants who are close to completing their Master's degree are also encouraged to apply.\nFor this position, excellent written and spoken English is required.",
       "requirementsEn": "Hold a Master's degree or equivalent in a field relevant to the proposed doctoral research. Applicants who are close to completing their Master's degree are also encouraged to apply.\nFor this position, excellent written and spoken English is required.",
       "reviewDate": "",
@@ -9486,22 +9696,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "Strontium Isotope Analysis",
       "summaryEn": "Strontium Isotope Analysis",
       "title": "Doctoral Researcher in Archaelogy or Geoscience",
       "titleEn": "Doctoral Researcher in Archaelogy or Geoscience",
       "topics": [],
       "type": "phd",
-      "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-in-Archaelogy-or-Geoscience/1375701157/",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-in-Archaelogy-or-Geoscience/1375701157/"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "https://www.gwu.jobs/postings/129037",
       "applicationProcessEn": "https://www.gwu.jobs/postings/129037",
+      "applicationRouteCheckedAt": "2026-11-04T04:51:30.827Z",
+      "applicationUrl": "https://www.gwu.jobs/postings/129287/pre_apply",
       "candidateId": "tcand-5762bcd9f684ac58264f7e7b",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -9513,6 +9724,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:51:30.827Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -9565,6 +9777,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T03:49:19.761Z",
           "status": "supported",
           "url": "https://www.gwu.jobs/postings/129037"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:51:30.827Z",
+          "status": "supported",
+          "url": "https://www.gwu.jobs/postings/129287/pre_apply"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -9577,6 +9795,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Minimum Qualifications: Applicants must have a PhD in geography, environmental science, or a closely related field by the time of appointment. Applicants must have demonstrated research or teaching experience using field and quantitative methods or geospatial methods. Advertised Salary: $85,000-$100,000 Other Benefits: The successful applicant will be eligible for GW’s comprehensive benefits package including employee medical insurance. For benefits details please see https://hr.gwu.edu/benefits-programs Other Information: The Department of Geography and Environment brings together geographers and environmental scientists studying relationships between the physica",
       "requirementsEn": "Minimum Qualifications: Applicants must have a PhD in geography, environmental science, or a closely related field by the time of appointment. Applicants must have demonstrated research or teaching experience using field and quantitative methods or geospatial methods. Advertised Salary: $85,000-$100,000 Other Benefits: The successful applicant will be eligible for GW’s comprehensive benefits package including employee medical insurance. For benefits details please see https://hr.gwu.edu/benefits-programs Other Information: The Department of Geography and Environment brings together geographers and environmental scientists studying relationships between the physica",
       "reviewDate": "",
@@ -9589,16 +9808,15 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "climate and environmental change and human interactions with the Earth system",
       "summaryEn": "climate and environmental change and human interactions with the Earth system",
       "title": "Assistant Professor of Geography",
       "titleEn": "Assistant Professor of Geography",
       "topics": [],
       "type": "faculty",
-      "url": "https://www.gwu.jobs/postings/129037",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://www.gwu.jobs/postings/129037"
     },
     {
       "announcementStatus": "open",
@@ -9703,6 +9921,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "verified_open",
       "requirements": "申请时须已获博士或在读；到岗前取得博士，到岗时博士后研究经历不超过3年。主要以统计或计量经济为目的的方案不符合条件；具体研究计划与材料要求见官网。",
       "requirementsEn": "A PhD or current doctoral enrolment is required when applying. The doctorate must be complete by appointment, with no more than three years of subsequent research. Proposals mainly pursuing statistical/econometric purposes are ineligible.",
       "reviewDate": "",
@@ -9715,22 +9934,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "核对时确认受理 · 申请前请复核",
+      "statusLabelEn": "Acceptance confirmed at last check · recheck before applying",
       "summary": "Natural Resource Economics and Political Economy",
       "summaryEn": "Natural Resource Economics and Political Economy",
       "title": "Postdoctoral Fellowship S.V. Ciriacy Wantrup Natural Resource Economics and Political Economy Rausser College of Natural Resources",
       "titleEn": "Postdoctoral Fellowship S.V. Ciriacy Wantrup Natural Resource Economics and Political Economy Rausser College of Natural Resources",
       "topics": [],
       "type": "postdoc",
-      "url": "https://aprecruit.berkeley.edu/JPF05508",
-      "releaseStatus": "verified_open",
-      "statusLabel": "核对时确认受理 · 申请前请复核",
-      "statusLabelEn": "Acceptance confirmed at last check · recheck before applying"
+      "url": "https://aprecruit.berkeley.edu/JPF05508"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "all applicants must apply via the USC Careers site and submit a letter of interest, curriculum vitae, and a statement that outlines their research agenda and teaching philosophy and approach. Please also arrange for three letters of reference.",
       "applicationProcessEn": "all applicants must apply via the USC Careers site and submit a letter of interest, curriculum vitae, and a statement that outlines their research agenda and teaching philosophy and approach. Please also arrange for three letters of reference.",
+      "applicationRouteCheckedAt": "2026-11-04T04:51:38.727Z",
+      "applicationUrl": "https://facultypositions.usc.edu/FAS/application/position?postingId=REQ20182024",
       "candidateId": "tcand-596dd12447da195b7d3d3896",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -9742,10 +9962,12 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "deadline": "",
-      "deadlineNote": "",
-      "deadlineNoteEn": "",
-      "deadlineType": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:51:38.727Z",
+      "deadline": "2026-12-01",
+      "deadlineKind": "fixed",
+      "deadlineNote": "申请门户列 Submission Deadline: 12/01/2026；公告另列12月1日开始评审。两种日期分别记录，门户截止时区未注明。",
+      "deadlineNoteEn": "Portal submission deadline: 1 December 2026; announcement separately gives review from that date. Portal cutoff time zone not stated.",
+      "deadlineType": "fixed",
       "degree": "unknown",
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
@@ -9794,6 +10016,18 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T02:12:01.044Z",
           "status": "supported",
           "url": "https://usccareers.usc.edu/job/los-angeles/assistant-professor-of-transportation-planning/1209/102254578592"
+        },
+        {
+          "field": "deadline",
+          "observedAt": "2026-11-04T04:51:38.727Z",
+          "status": "supported",
+          "url": "https://facultypositions.usc.edu/FAS/application/step1?requisitionId=REQ20182024"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:51:38.727Z",
+          "status": "supported",
+          "url": "https://facultypositions.usc.edu/FAS/application/position?postingId=REQ20182024"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -9806,6 +10040,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "PhD in urban planning or a related field by the appointment start date",
       "requirementsEn": "PhD in urban planning or a related field by the appointment start date",
       "reviewDate": "2026-12-01",
@@ -9818,16 +10053,15 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "automation, sustainability, and equity",
       "summaryEn": "automation, sustainability, and equity",
       "title": "Assistant Professor of Transportation Planning",
       "titleEn": "Assistant Professor of Transportation Planning",
       "topics": [],
       "type": "faculty",
-      "url": "https://usccareers.usc.edu/job/los-angeles/assistant-professor-of-transportation-planning/1209/102254578592",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://usccareers.usc.edu/job/los-angeles/assistant-professor-of-transportation-planning/1209/102254578592"
     },
     {
       "announcementStatus": "unknown",
@@ -9845,6 +10079,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:47:31.784Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -9897,6 +10132,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T06:17:06.223Z",
           "status": "supported",
           "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:47:31.784Z",
+          "status": "missing",
+          "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -9909,6 +10150,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Required Qualifications: Applicants must have a Ph.D. or equivalent degree in Environmental Sciences or related fields (Ecology, Marine Biology, Environmental Science, Plant Biology, Botany, Geology, Earth Science). Preferred candidates would have 2yrs of relevant postdoctoral training, a strong publication record, and previous teaching experience at the college level. (ABDs will be considered) Desired Qualifications: Applicants will be expected to establish and sustain an energetic, externally funded research program. The successful candidate will mentor graduate student research/projects and offer experiential research opportunities ",
       "requirementsEn": "Required Qualifications: Applicants must have a Ph.D. or equivalent degree in Environmental Sciences or related fields (Ecology, Marine Biology, Environmental Science, Plant Biology, Botany, Geology, Earth Science). Preferred candidates would have 2yrs of relevant postdoctoral training, a strong publication record, and previous teaching experience at the college level. (ABDs will be considered) Desired Qualifications: Applicants will be expected to establish and sustain an energetic, externally funded research program. The successful candidate will mentor graduate student research/projects and offer experiential research opportunities ",
       "reviewDate": "",
@@ -9921,22 +10163,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "Environmental Science",
       "summaryEn": "Environmental Science",
       "title": "Assistant Professor- Tenure Track - Sustainable Biology and Environmental Science",
       "titleEn": "Assistant Professor- Tenure Track - Sustainable Biology and Environmental Science",
       "topics": [],
       "type": "faculty",
-      "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611"
     },
     {
       "announcementStatus": "invites_applications",
       "applicationActionability": "unknown",
       "applicationProcess": "University of Helsinki Recruitment System",
       "applicationProcessEn": "University of Helsinki Recruitment System",
+      "applicationRouteCheckedAt": "2026-11-04T04:50:31.994Z",
+      "applicationUrl": "https://jobs.helsinki.fi/talentcommunity/apply/1375905057/?locale=en_GB",
       "candidateId": "tcand-5dbcff6286c6634216f0a313",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -9948,6 +10191,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:50:31.994Z",
       "deadline": "2026-11-19",
       "deadlineNote": "19.11.2026 (23.59 Europe/Helsinki time)",
       "deadlineNoteEn": "19.11.2026 (23.59 Europe/Helsinki time)",
@@ -10060,6 +10304,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-01T10:57:00.430641+00:00",
           "status": "supported",
           "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-on-Education-Related-Inequalities/1375905057/"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:50:31.994Z",
+          "status": "missing",
+          "url": "https://jobs.helsinki.fi/talentcommunity/apply/1375905057/?locale=en_GB"
         }
       ],
       "funding": "已核验为带薪博士或教职聘用；薪酬见薪酬字段。额外资助或学费安排未核实。",
@@ -10072,6 +10322,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "The appointee to the position must hold a master’s degree in demography, public health/epidemiology, quantitative sociology or political science, philosophy, statistics, population genetics or another relevant field by the beginning of the employment.\nFor a successful applicant, strong quantitative methods skills are required.\nThe appointee needs to have a strong command of written English.",
       "requirementsEn": "The appointee to the position must hold a master’s degree in demography, public health/epidemiology, quantitative sociology or political science, philosophy, statistics, population genetics or another relevant field by the beginning of the employment.\nFor a successful applicant, strong quantitative methods skills are required.\nThe appointee needs to have a strong command of written English.",
       "reviewDate": "",
@@ -10084,22 +10335,22 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "population health",
       "summaryEn": "population health",
       "title": "Doctoral Researcher on Education-Related Inequalities",
       "titleEn": "Doctoral Researcher on Education-Related Inequalities",
       "topics": [],
       "type": "phd",
-      "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-on-Education-Related-Inequalities/1375905057/",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-on-Education-Related-Inequalities/1375905057/"
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
       "applicationProcess": "Along with the online application, please attach:",
       "applicationProcessEn": "Along with the online application, please attach:",
+      "applicationRouteCheckedAt": "2026-11-04T04:51:42.084Z",
       "candidateId": "tcand-5e95d133051cecb648af4cb6",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -10111,6 +10362,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:51:42.084Z",
       "deadline": "",
       "deadlineNote": "The position will remain open until filled, but application by the date above is encouraged for full consideration.",
       "deadlineNoteEn": "The position will remain open until filled, but application by the date above is encouraged for full consideration.",
@@ -10193,6 +10445,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T08:53:21.372Z",
           "status": "supported",
           "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?in_iframe=1"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:51:42.084Z",
+          "status": "missing",
+          "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?in_iframe=1"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -10205,6 +10463,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "An earned PhD (or JD with academic experience) at date-of-hire in a field related to environmental or natural resources policy or science.",
       "requirementsEn": "An earned PhD (or JD with academic experience) at date-of-hire in a field related to environmental or natural resources policy or science.",
       "reviewDate": "2026-12-01",
@@ -10217,16 +10476,15 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "expertise in environmental and natural resources policy",
       "summaryEn": "expertise in environmental and natural resources policy",
       "title": "Assistant Professor - Environmental and Natural Resources Policy",
       "titleEn": "Assistant Professor - Environmental and Natural Resources Policy",
       "topics": [],
       "type": "faculty",
-      "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?in_iframe=1",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?in_iframe=1"
     },
     {
       "announcementStatus": "invites_applications",
@@ -10244,6 +10502,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:46:16.654Z",
       "deadline": "2026-11-16",
       "deadlineNote": "bis zum 16.11.2026",
       "deadlineNoteEn": "bis zum 16.11.2026",
@@ -10356,6 +10615,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-01T13:53:30.258147+00:00",
           "status": "supported",
           "url": "https://karriere.uni-frankfurt.de/gu-frankfurt/job/58250"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:46:16.654Z",
+          "status": "missing",
+          "url": "https://karriere.uni-frankfurt.de/gu-frankfurt/job/58250"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -10368,6 +10633,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "wissenschaftlichen Hochschulabschluss (Master oder Diplom) sowie eine Promotion in Biologie, möglichst mit ökotoxikologischem Schwerpunkt\nbeherrschen die deutsche und englische Sprache verhandlungssicher in Wort und Schrift\neine bereits abgeschlossene Projektleiterschulung für S1-Anlagen oder die Bereitschaft, diese Schulung zu absolvieren",
       "requirementsEn": "wissenschaftlichen Hochschulabschluss (Master oder Diplom) sowie eine Promotion in Biologie, möglichst mit ökotoxikologischem Schwerpunkt\nbeherrschen die deutsche und englische Sprache verhandlungssicher in Wort und Schrift\neine bereits abgeschlossene Projektleiterschulung für S1-Anlagen oder die Bereitschaft, diese Schulung zu absolvieren",
       "reviewDate": "",
@@ -10380,22 +10646,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "aquatischen Ökologie und Ökotoxikologie, der Hochwasserfolgenforschung",
       "summaryEn": "aquatischen Ökologie und Ökotoxikologie, der Hochwasserfolgenforschung",
       "title": "Wissenschaftliche*r Mitarbeiter*in in der Abteilung Evolutionsökologie und Umwelttoxikologie",
       "titleEn": "Wissenschaftliche*r Mitarbeiter*in in der Abteilung Evolutionsökologie und Umwelttoxikologie",
       "topics": [],
       "type": "research",
-      "url": "https://karriere.uni-frankfurt.de/gu-frankfurt/job/58250",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://karriere.uni-frankfurt.de/gu-frankfurt/job/58250"
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
       "applicationProcess": "",
       "applicationProcessEn": "",
+      "applicationRouteCheckedAt": "2026-11-04T04:51:45.639Z",
+      "applicationUrl": "https://secure.dc4.pageuppeople.com/apply/873/gateway/default.aspx?c=apply&lJobID=562442&lJobSourceTypeID=838&sLanguage=en-us",
       "candidateId": "tcand-71630eaa66f09bcb67b0c44c",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -10407,6 +10674,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:51:45.639Z",
       "deadline": "",
       "deadlineNote": "Application Deadline: Preferred application deadline is October 28th, 2026, and applications received after this date may be considered on an as-needed basis",
       "deadlineNoteEn": "Application Deadline: Preferred application deadline is October 28th, 2026, and applications received after this date may be considered on an as-needed basis",
@@ -10471,6 +10739,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T03:48:49.652Z",
           "status": "supported",
           "url": "https://careers.pageuppeople.com/873/nr/en-us/job/562442/assistant-professor-of-physical-geography-department-of-geography-and-environmental-studies-2712"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:51:45.639Z",
+          "status": "supported",
+          "url": "https://secure.dc4.pageuppeople.com/apply/873/gateway/default.aspx?c=apply&lJobID=562442&lJobSourceTypeID=838&sLanguage=en-us"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -10483,6 +10757,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "qualifications) CSUN’s Commitment to You: CSUN is committed to achieving excellence through teaching, scholarship, learning and inclusion. Our values include a respect for all people, building partnerships with the community and the encouragement of innovation, experimentation, and creativity. CSUN strives to cultivate a community in which a diverse population can learn and work in an atmosphere of civility and respect. CSUN is especially interested in candidates who make contributions to equity and inclusion in the pursuit of excellence for all members of the university community. As a Hispanic-serving Institution (HSI), inclusiveness and diversity are in\nApplicants must be authorized to work for any employer in the United States. Please note: California State University, Northridge (CSUN) is currently not sponsoring applicants for H-1B employment that are subject to the $100,000 fee established by the “Presidential Proclamation: Restriction on Entry of Certain Nonimmigrant Workers” issued on September 19, 2025. Applicants are responsible for determining the applicability of the fee. Education Code 89521 Requirements: Applicants will be requi",
       "requirementsEn": "qualifications) CSUN’s Commitment to You: CSUN is committed to achieving excellence through teaching, scholarship, learning and inclusion. Our values include a respect for all people, building partnerships with the community and the encouragement of innovation, experimentation, and creativity. CSUN strives to cultivate a community in which a diverse population can learn and work in an atmosphere of civility and respect. CSUN is especially interested in candidates who make contributions to equity and inclusion in the pursuit of excellence for all members of the university community. As a Hispanic-serving Institution (HSI), inclusiveness and diversity are in\nApplicants must be authorized to work for any employer in the United States. Please note: California State University, Northridge (CSUN) is currently not sponsoring applicants for H-1B employment that are subject to the $100,000 fee established by the “Presidential Proclamation: Restriction on Entry of Certain Nonimmigrant Workers” issued on September 19, 2025. Applicants are responsible for determining the applicability of the fee. Education Code 89521 Requirements: Applicants will be requi",
       "reviewDate": "",
@@ -10495,22 +10770,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "physical geography",
       "summaryEn": "physical geography",
       "title": "Assistant Professor of Physical Geography - Department of Geography and Environmental Studies # 27-12",
       "titleEn": "Assistant Professor of Physical Geography - Department of Geography and Environmental Studies # 27-12",
       "topics": [],
       "type": "faculty",
-      "url": "https://careers.pageuppeople.com/873/nr/en-us/job/562442/assistant-professor-of-physical-geography-department-of-geography-and-environmental-studies-2712",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://careers.pageuppeople.com/873/nr/en-us/job/562442/assistant-professor-of-physical-geography-department-of-geography-and-environmental-studies-2712"
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
       "applicationProcess": "log in or register",
       "applicationProcessEn": "log in or register",
+      "applicationRouteCheckedAt": "2026-11-04T04:50:56.337Z",
+      "applicationUrl": "https://web103.reachmee.com/ext/I017/1114/job?site=7&validator=87e4b706891e51f731ed44be28da8352&lang=UK&job_id=16136",
       "candidateId": "tcand-7282379bdd5efb33c4039202",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -10522,6 +10798,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:50:56.337Z",
       "deadline": "2026-11-30",
       "deadlineNote": "30 November 2026",
       "deadlineNoteEn": "30 November 2026",
@@ -10610,6 +10887,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-01T02:57:56Z",
           "status": "supported",
           "url": "https://www.slu.se/en/about-slu/work-at-slu/jobs-and-vacancies/doktorand-i-biologi/"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:50:56.337Z",
+          "status": "missing",
+          "url": "https://web103.reachmee.com/ext/I017/1114/job?site=7&validator=87e4b706891e51f731ed44be28da8352&lang=UK&job_id=16136"
         }
       ],
       "funding": "Employment as a doctoral student (4-year programme)",
@@ -10622,6 +10905,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "second-cycle (Master’s) qualification",
       "requirementsEn": "second-cycle (Master’s) qualification",
       "reviewDate": "",
@@ -10634,22 +10918,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "Swedish watersheds",
       "summaryEn": "Swedish watersheds",
       "title": "PhD position in biology, specialisation in aquatic ecology",
       "titleEn": "PhD position in biology, specialisation in aquatic ecology",
       "topics": [],
       "type": "phd",
-      "url": "https://www.slu.se/en/about-slu/work-at-slu/jobs-and-vacancies/doktorand-i-biologi/",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://www.slu.se/en/about-slu/work-at-slu/jobs-and-vacancies/doktorand-i-biologi/"
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
       "applicationProcess": "Letter of motivation; Research plan; Curriculum vitae including a list of publications Names and contact details of two persons serving as references Via our job portal / Apply now - button.",
       "applicationProcessEn": "Letter of motivation; Research plan; Curriculum vitae including a list of publications Names and contact details of two persons serving as references Via our job portal / Apply now - button.",
+      "applicationRouteCheckedAt": "2026-11-04T04:51:08.433Z",
+      "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1452415933/?locale=en_US",
       "candidateId": "tcand-73f33969eae17aa7b6318b80",
       "caution": "待审核数据；门户最终受理未核验。 本轮真实原文已核验并加密保存，仍待发布审核。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified. Real evidence-bound result saved privately; owner publication review pending.",
@@ -10661,6 +10946,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:51:08.433Z",
       "deadline": "2026-12-10",
       "deadlineNote": "Application deadline: 12/10/2026 (MM-DD-YYYY)",
       "deadlineNoteEn": "Application deadline: 12/10/2026 (MM-DD-YYYY)",
@@ -10737,6 +11023,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-03T00:53:47Z",
           "status": "supported",
           "url": "https://jobs.univie.ac.at/job/Senior-Scientist-in-Atmospheric-Data-Assimilation/1452415933/"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:51:08.433Z",
+          "status": "missing",
+          "url": "https://jobs.univie.ac.at/talentcommunity/apply/1452415933/?locale=en_US"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -10749,6 +11041,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "PhD / Doctoral degree in meteorology, physics, mathematics or a related subject; Good communication skills and ability to work in a team; Profound programming skills; Experience in numerical modelling; Expertise in data assimilation; Excellent command of written and spoken English.",
       "requirementsEn": "PhD / Doctoral degree in meteorology, physics, mathematics or a related subject; Good communication skills and ability to work in a team; Profound programming skills; Experience in numerical modelling; Expertise in data assimilation; Excellent command of written and spoken English.",
       "reviewDate": "",
@@ -10761,25 +11054,26 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "Numerical Weather Prediction (NWP) and Data Assimilation",
       "summaryEn": "Numerical Weather Prediction (NWP) and Data Assimilation",
       "title": "Senior Scientist in Atmospheric Data Assimilation",
       "titleEn": "Senior Scientist in Atmospheric Data Assimilation",
       "topics": [],
       "type": "postdoc",
-      "url": "https://jobs.univie.ac.at/job/Senior-Scientist-in-Atmospheric-Data-Assimilation/1452415933/",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://jobs.univie.ac.at/job/Senior-Scientist-in-Atmospheric-Data-Assimilation/1452415933/"
     },
     {
-      "announcementStatus": "unknown",
-      "applicationActionability": "can_start_public_application",
+      "announcementStatus": "open",
+      "applicationActionability": "public_form_and_explicit_receiving_invitation",
       "applicationProcess": "We look forward to receiving your online application with the following documents: Cover letter CV including publication list Diploma and Transcript of Records Contact details of two references\nPlease note that we exclusively accept applications submitted through our online application portal. Applications via email or postal services will not be considered.",
       "applicationProcessEn": "We look forward to receiving your online application with the following documents: Cover letter CV including publication list Diploma and Transcript of Records Contact details of two references\nPlease note that we exclusively accept applications submitted through our online application portal. Applications via email or postal services will not be considered.",
+      "applicationRouteCheckedAt": "2026-11-04T04:57:35.962Z",
+      "applicationUrl": "https://emea2.softfactors.com/job-opening/rgum-SZB4DUUjP3DKNXqXfX#!/?lang=en",
       "candidateId": "tcand-776d645a9fea16ae24027642",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "核对时，岗位对应申请门户明确邀请接收申请，身份信息表单可用。未填写个人资料、未接受条款、未提交申请；最终提交回执未验证。",
+      "cautionEn": "The job-bound portal explicitly invited applications and exposed the identity form at review. No personal data, terms acceptance or application was submitted; final submission was not tested.",
       "checkedAt": "2026-10-30",
       "city": "",
       "collectedAt": "2026-10-30",
@@ -10787,7 +11081,8 @@ export const publicReleaseDataset = {
       "contentReviewStatus": "verified",
       "country": "未核实",
       "countryEn": "Unknown",
-      "currentOpenStatus": "unknown",
+      "currentOpenStatus": "open",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:57:35.962Z",
       "deadline": "2026-12-01",
       "deadlineNote": "The deadline for applications is 1 December 2026.",
       "deadlineNoteEn": "The deadline for applications is 1 December 2026.",
@@ -10876,6 +11171,29 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-29T03:32:49Z",
           "status": "supported",
           "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_SZB4DUUjP3DKNXqXfX"
+        },
+        {
+          "applicationFormTitle": "Application for Doctoral Position in Environmental Microbiology",
+          "availableFormFields": [
+            "field_firstName",
+            "field_lastName",
+            "email"
+          ],
+          "field": "current_open_status",
+          "formStage": "public_identity_form",
+          "jobReference": "SZB4DUUjP3DKNXqXfX",
+          "observedAt": "2026-11-04T04:57:35.962Z",
+          "pageKind": "application_portal",
+          "quote": "We look forward to receiving your application.",
+          "status": "supported",
+          "url": "https://emea2.softfactors.com/job-opening/rgum-SZB4DUUjP3DKNXqXfX#!/?lang=en",
+          "value": "open"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:57:35.962Z",
+          "status": "supported",
+          "url": "https://emea2.softfactors.com/job-opening/rgum-SZB4DUUjP3DKNXqXfX#!/?lang=en"
         }
       ],
       "funding": "invites applications for a fully funded 4 year Doctoral Position.",
@@ -10888,6 +11206,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "verified_open",
       "requirements": "MSc (or equivalent) in microbiology, environmental sciences or a related field\nExperience in anaerobic cultivation and/or protein biochemistry is an advantage\nCuriosity about fundamental questions and enthusiasm for experimental work and excellent communication skills in English",
       "requirementsEn": "MSc (or equivalent) in microbiology, environmental sciences or a related field\nExperience in anaerobic cultivation and/or protein biochemistry is an advantage\nCuriosity about fundamental questions and enthusiasm for experimental work and excellent communication skills in English",
       "reviewDate": "",
@@ -10900,25 +11219,26 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "核对时确认受理 · 申请前请复核",
+      "statusLabelEn": "Acceptance confirmed at last check · recheck before applying",
       "summary": "A fundamental research question with direct relevance to astrobiology and the methane cycle",
       "summaryEn": "A fundamental research question with direct relevance to astrobiology and the methane cycle",
       "title": "Doctoral Position in Environmental Microbiology",
       "titleEn": "Doctoral Position in Environmental Microbiology",
       "topics": [],
       "type": "phd",
-      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_SZB4DUUjP3DKNXqXfX",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_SZB4DUUjP3DKNXqXfX"
     },
     {
-      "announcementStatus": "unknown",
-      "applicationActionability": "can_start_public_application",
+      "announcementStatus": "open",
+      "applicationActionability": "public_form_and_explicit_receiving_invitation",
       "applicationProcess": "We look forward to receiving your online application with the following documents: Cover letter CV degree certificates and transcripts Up to two writing samples (if available)\nPlease note that we exclusively accept applications submitted through our online application portal. Applications via email or postal services will not be considered.",
       "applicationProcessEn": "We look forward to receiving your online application with the following documents: Cover letter CV degree certificates and transcripts Up to two writing samples (if available)\nPlease note that we exclusively accept applications submitted through our online application portal. Applications via email or postal services will not be considered.",
+      "applicationRouteCheckedAt": "2026-11-04T04:57:37.691Z",
+      "applicationUrl": "https://emea2.softfactors.com/job-opening/rgum-JGkTxzSSshnLQNNlbX#!/?lang=en",
       "candidateId": "tcand-7ab0df62a033c7fffba2c58f",
-      "caution": "待审核数据；门户最终受理未核验。",
-      "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
+      "caution": "核对时，岗位对应申请门户明确邀请接收申请，身份信息表单可用。未填写个人资料、未接受条款、未提交申请；最终提交回执未验证。",
+      "cautionEn": "The job-bound portal explicitly invited applications and exposed the identity form at review. No personal data, terms acceptance or application was submitted; final submission was not tested.",
       "checkedAt": "2026-10-30",
       "city": "",
       "collectedAt": "2026-10-30",
@@ -10926,7 +11246,8 @@ export const publicReleaseDataset = {
       "contentReviewStatus": "verified",
       "country": "未核实",
       "countryEn": "Unknown",
-      "currentOpenStatus": "unknown",
+      "currentOpenStatus": "open",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:57:37.691Z",
       "deadline": "2026-11-15",
       "deadlineNote": "The application deadline is 15th November 2026",
       "deadlineNoteEn": "The application deadline is 15th November 2026",
@@ -11015,6 +11336,29 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-29T03:50:41Z",
           "status": "supported",
           "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_JGkTxzSSshnLQNNlbX"
+        },
+        {
+          "applicationFormTitle": "Application for Research and Teaching Assistant",
+          "availableFormFields": [
+            "field_firstName",
+            "field_lastName",
+            "email"
+          ],
+          "field": "current_open_status",
+          "formStage": "public_identity_form",
+          "jobReference": "JGkTxzSSshnLQNNlbX",
+          "observedAt": "2026-11-04T04:57:37.691Z",
+          "pageKind": "application_portal",
+          "quote": "We look forward to receiving your application.",
+          "status": "supported",
+          "url": "https://emea2.softfactors.com/job-opening/rgum-JGkTxzSSshnLQNNlbX#!/?lang=en",
+          "value": "open"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:57:37.691Z",
+          "status": "supported",
+          "url": "https://emea2.softfactors.com/job-opening/rgum-JGkTxzSSshnLQNNlbX#!/?lang=en"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -11027,6 +11371,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "verified_open",
       "requirements": "You hold a Master’s degree in Political Science, International Relations or a related discipline, with specialist knowledge of international politics and global security, and are familiar with the relevant research institutes and publication outlets.\nYou have an excellent command of written and spoken English; knowledge of German is an advantage.\nExperience with qualitative and/or quantitative research methods, a high degree of independence and very good IT skills round off your profile.",
       "requirementsEn": "You hold a Master’s degree in Political Science, International Relations or a related discipline, with specialist knowledge of international politics and global security, and are familiar with the relevant research institutes and publication outlets.\nYou have an excellent command of written and spoken English; knowledge of German is an advantage.\nExperience with qualitative and/or quantitative research methods, a high degree of independence and very good IT skills round off your profile.",
       "reviewDate": "",
@@ -11039,22 +11384,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "核对时确认受理 · 申请前请复核",
+      "statusLabelEn": "Acceptance confirmed at last check · recheck before applying",
       "summary": "The Chair examines global security, especially in relation to armed conflicts, the global illicit economy, transitions from war to peace, and the interconnections between local conflict dynamics and global shifts in order and power.",
       "summaryEn": "The Chair examines global security, especially in relation to armed conflicts, the global illicit economy, transitions from war to peace, and the interconnections between local conflict dynamics and global shifts in order and power.",
       "title": "Research and Teaching Assistant",
       "titleEn": "Research and Teaching Assistant",
       "topics": [],
       "type": "research",
-      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_JGkTxzSSshnLQNNlbX",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://jobs.ethz.ch/job/view/JOPG_ethz_JGkTxzSSshnLQNNlbX"
     },
     {
       "announcementStatus": "invites_applications",
       "applicationActionability": "unknown",
       "applicationProcess": "University of Helsinki Recruitment System",
       "applicationProcessEn": "University of Helsinki Recruitment System",
+      "applicationRouteCheckedAt": "2026-11-04T04:50:22.399Z",
+      "applicationUrl": "https://jobs.helsinki.fi/talentcommunity/apply/1374672557/?locale=en_GB",
       "candidateId": "tcand-840e61a1e1ad604074fee5a3",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -11066,6 +11412,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:50:22.399Z",
       "deadline": "2026-11-12",
       "deadlineNote": "12.11.2026 (23.59 Europe/Helsinki time)",
       "deadlineNoteEn": "12.11.2026 (23.59 Europe/Helsinki time)",
@@ -11172,6 +11519,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-01T10:57:00.430641+00:00",
           "status": "supported",
           "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-researcher-in-global-development-studies/1374672557/"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:50:22.399Z",
+          "status": "missing",
+          "url": "https://jobs.helsinki.fi/talentcommunity/apply/1374672557/?locale=en_GB"
         }
       ],
       "funding": "已核验为带薪博士或教职聘用；薪酬见薪酬字段。额外资助或学费安排未核实。",
@@ -11184,6 +11537,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Applicants must hold a master’s degree and thesis with excellent grades in global development studies, social sciences, human geography, or another field relevant to the research topic.\nPrior expertise in conducting research, working or other major exposure in the context of the Brazilian Amazon forest communities and politics.\nspeaking Portuguese is a requirement of the position. English is our working language and the appointed person is expected to have advanced skills in spoken and written English.",
       "requirementsEn": "Applicants must hold a master’s degree and thesis with excellent grades in global development studies, social sciences, human geography, or another field relevant to the research topic.\nPrior expertise in conducting research, working or other major exposure in the context of the Brazilian Amazon forest communities and politics.\nspeaking Portuguese is a requirement of the position. English is our working language and the appointed person is expected to have advanced skills in spoken and written English.",
       "reviewDate": "",
@@ -11196,22 +11550,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "deforestation and clearcutting",
       "summaryEn": "deforestation and clearcutting",
       "title": "Doctoral researcher in global development studies",
       "titleEn": "Doctoral researcher in global development studies",
       "topics": [],
       "type": "phd",
-      "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-researcher-in-global-development-studies/1374672557/",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-researcher-in-global-development-studies/1374672557/"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "Via our job portal / “Apply Now” button",
       "applicationProcessEn": "Via our job portal / “Apply Now” button",
+      "applicationRouteCheckedAt": "2026-11-04T04:50:41.599Z",
+      "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1452526433/?locale=en_US",
       "candidateId": "tcand-8911254734633ddb16a2a066",
       "caution": "待审核数据；门户最终受理未核验。 本轮原文证据已保存恢复，资格中优先项与硬性条件须结合所附完整段落阅读；仍待发布审核。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified. Evidence saved and restored; preserve required/preferred qualification distinctions; owner publication review pending.",
@@ -11223,6 +11578,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:50:41.599Z",
       "deadline": "2026-11-24",
       "deadlineNote": "Application deadline: 11/24/2026",
       "deadlineNoteEn": "Application deadline: 11/24/2026",
@@ -11341,6 +11697,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-03T05:50:17Z",
           "status": "supported",
           "url": "https://jobs.univie.ac.at/job/Senior-Lecturer-%28academic-and-instructional-teaching%29/1452526433/"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:50:41.599Z",
+          "status": "missing",
+          "url": "https://jobs.univie.ac.at/talentcommunity/apply/1452526433/?locale=en_US"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -11353,6 +11715,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Completed doctoral degree in Earth Sciences/Geology\nExcellent command of German and English\nCertificate of a completed doctoral program in Earth Sciences\nWe are looking for individuals who see university teaching as an interesting and challenging career path. Preconditions for an application resp. terms of admission:\nSeveral years of independent teaching experience at a postsecondary educational institution\nExcellent didactic skills and passion for sharing knowledge and for university teaching\nIn-depth knowledge of geological methods, particularly quantitative methods and practical field-based and applied geology\nYou are a team player with strong interpersonal and communication skills.",
       "requirementsEn": "Completed doctoral degree in Earth Sciences/Geology\nExcellent command of German and English\nCertificate of a completed doctoral program in Earth Sciences\nWe are looking for individuals who see university teaching as an interesting and challenging career path. Preconditions for an application resp. terms of admission:\nSeveral years of independent teaching experience at a postsecondary educational institution\nExcellent didactic skills and passion for sharing knowledge and for university teaching\nIn-depth knowledge of geological methods, particularly quantitative methods and practical field-based and applied geology\nYou are a team player with strong interpersonal and communication skills.",
       "reviewDate": "",
@@ -11365,22 +11728,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "uch as modeling and their practical applications particularly in quantitative structural geology, tectonics, geo-energy, and mineral resources geology, as well as conducting field instruction, especially in mountain",
       "summaryEn": "uch as modeling and their practical applications particularly in quantitative structural geology, tectonics, geo-energy, and mineral resources geology, as well as conducting field instruction, especially in mountain",
       "title": "Senior Lecturer (academic and instructional teaching)",
       "titleEn": "Senior Lecturer (academic and instructional teaching)",
       "topics": [],
       "type": "faculty",
-      "url": "https://jobs.univie.ac.at/job/Senior-Lecturer-%28academic-and-instructional-teaching%29/1452526433/",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://jobs.univie.ac.at/job/Senior-Lecturer-%28academic-and-instructional-teaching%29/1452526433/"
     },
     {
       "announcementStatus": "invites_applications",
       "applicationActionability": "unknown",
       "applicationProcess": "a cover letter (maximum of two A4 pages)",
       "applicationProcessEn": "a cover letter (maximum of two A4 pages)",
+      "applicationRouteCheckedAt": "2026-11-04T04:50:25.399Z",
+      "applicationUrl": "https://jobs.ncl.ac.uk/talentcommunity/apply/1452441033/?locale=en_GB",
       "candidateId": "tcand-8a6db4ea56f6f92d06be6bb4",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -11392,6 +11756,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:50:25.399Z",
       "deadline": "2026-11-12",
       "deadlineNote": "Closing Date: 12 November 2026",
       "deadlineNoteEn": "Closing Date: 12 November 2026",
@@ -11516,6 +11881,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-01T23:28:21.947Z",
           "status": "supported",
           "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:50:25.399Z",
+          "status": "missing",
+          "url": "https://jobs.ncl.ac.uk/talentcommunity/apply/1452441033/?locale=en_GB"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -11528,6 +11899,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "PhD near to completion in Chemical Engineering, Materials Science, Electrochemistry or a closely related discipline",
       "requirementsEn": "PhD near to completion in Chemical Engineering, Materials Science, Electrochemistry or a closely related discipline",
       "reviewDate": "",
@@ -11540,16 +11912,15 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "waste-derived carbon materials",
       "summaryEn": "waste-derived carbon materials",
       "title": "Research Assistant/Associate in Sustainable Carbon-Based Electrodes for Flow Batteries",
       "titleEn": "Research Assistant/Associate in Sustainable Carbon-Based Electrodes for Flow Batteries",
       "topics": [],
       "type": "research",
-      "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/"
     },
     {
       "announcementStatus": "open",
@@ -11567,6 +11938,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:47:41.518Z",
       "deadline": "",
       "deadlineNote": "Closing Date: Until the post is filled",
       "deadlineNoteEn": "Closing Date: Until the post is filled",
@@ -11643,6 +12015,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T06:15:36.967Z",
           "status": "supported",
           "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:47:41.518Z",
+          "status": "missing",
+          "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -11655,6 +12033,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": " Applicants should possess (i) a doctoral degree; (ii) a strong academic background in one or more of the following fields: urban finance, urban planning, or urban governance; (iii) an outstanding record of research and scholarly achievement commensurate with their career stage, demonstrating research excellence and strong potential for international impact\n or equivalent professional bodies), and teaching experience in relevant fields, will be advantageous\nApplicants should possess (i) a doctoral degree; (ii) a strong academic background in one or more of the following fields: urban finance, urban planning, or urban governance; (iii) an outstanding record of research and scholarly achievement commensurate with their career stage, demonstrating research excellence and strong potential for international impact. Relevant professional qualifications and/or professional standing (e.g. membership of the Royal Town Planning Institute (RTPI), the Royal Institution of Chartered Surveyors (RICS), or equivalent professional bodies), and teaching experience in relevant fields, will be advantageous. Th",
       "requirementsEn": " Applicants should possess (i) a doctoral degree; (ii) a strong academic background in one or more of the following fields: urban finance, urban planning, or urban governance; (iii) an outstanding record of research and scholarly achievement commensurate with their career stage, demonstrating research excellence and strong potential for international impact\n or equivalent professional bodies), and teaching experience in relevant fields, will be advantageous\nApplicants should possess (i) a doctoral degree; (ii) a strong academic background in one or more of the following fields: urban finance, urban planning, or urban governance; (iii) an outstanding record of research and scholarly achievement commensurate with their career stage, demonstrating research excellence and strong potential for international impact. Relevant professional qualifications and/or professional standing (e.g. membership of the Royal Town Planning Institute (RTPI), the Royal Institution of Chartered Surveyors (RICS), or equivalent professional bodies), and teaching experience in relevant fields, will be advantageous. Th",
       "reviewDate": "",
@@ -11667,22 +12046,22 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "Urban Planning",
       "summaryEn": "Urban Planning",
       "title": "Professor/ Associate Professor/ Assistant Professor (Urban Finance / Urban Planning / Urban Governance)",
       "titleEn": "Professor/ Associate Professor/ Assistant Professor (Urban Finance / Urban Planning / Urban Governance)",
       "topics": [],
       "type": "faculty",
-      "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en"
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
       "applicationProcess": "This institution is using Interfolio's Faculty Search to conduct this search.",
       "applicationProcessEn": "This institution is using Interfolio's Faculty Search to conduct this search.",
+      "applicationRouteCheckedAt": "2026-11-04T04:56:49.801Z",
       "candidateId": "tcand-93d9dca5de4bfc638ad5488d",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -11694,6 +12073,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:56:49.801Z",
       "deadline": "",
       "deadlineNote": "Dec 11, 2026 at 11:59 PM Eastern Time",
       "deadlineNoteEn": "Dec 11, 2026 at 11:59 PM Eastern Time",
@@ -11758,6 +12138,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T08:52:50.489Z",
           "status": "supported",
           "url": "https://apply.interfolio.com/195462"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:56:49.801Z",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/195462"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -11770,6 +12156,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Applicants must possess a PhD in Meteorology, Atmospheric Science, Social or Behavioral Sciences, or a related discipline at the time of appointment. The candidate will be expected to establish a vigorous, independent research program; to develop and teach courses; and to contribute to mentorship and advisement of students in t",
       "requirementsEn": "Applicants must possess a PhD in Meteorology, Atmospheric Science, Social or Behavioral Sciences, or a related discipline at the time of appointment. The candidate will be expected to establish a vigorous, independent research program; to develop and teach courses; and to contribute to mentorship and advisement of students in t",
       "reviewDate": "",
@@ -11782,16 +12169,15 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "tenure-track Assistant Professor position focused on social and/or behavioral sciences applied to weather and climate studies",
       "summaryEn": "tenure-track Assistant Professor position focused on social and/or behavioral sciences applied to weather and climate studies",
       "title": "Assistant Professor of Meteorology- Social/Behavioral Sciences Applied to Weather and Climate Studies",
       "titleEn": "Assistant Professor of Meteorology- Social/Behavioral Sciences Applied to Weather and Climate Studies",
       "topics": [],
       "type": "faculty",
-      "url": "https://apply.interfolio.com/195462",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://apply.interfolio.com/195462"
     },
     {
       "announcementStatus": "open",
@@ -11809,6 +12195,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:47:51.005Z",
       "deadline": "",
       "deadlineNote": "The application portal will remain open until the position is filled.",
       "deadlineNoteEn": "The application portal will remain open until the position is filled.",
@@ -11909,6 +12296,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T08:55:49.275Z",
           "status": "supported",
           "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:47:51.005Z",
+          "status": "missing",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -11921,6 +12314,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Terminal degree (or terminal degree in progress with completion date before August 2027) with an environmental focus OR in another discipline with 4+ years of environmental experience Commitment to Christ and Christian Higher Education Evidence of successful teaching at the co\nCommitment to Christ and Christian Higher Education\nEvidence of Christian commitment and active church involvement. In addition, faculty agree to live in agreement with PLNU’s Community Life Covenant . The job offer is contingent on t",
       "requirementsEn": "Terminal degree (or terminal degree in progress with completion date before August 2027) with an environmental focus OR in another discipline with 4+ years of environmental experience Commitment to Christ and Christian Higher Education Evidence of successful teaching at the co\nCommitment to Christ and Christian Higher Education\nEvidence of Christian commitment and active church involvement. In addition, faculty agree to live in agreement with PLNU’s Community Life Covenant . The job offer is contingent on t",
       "reviewDate": "",
@@ -11933,22 +12327,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "interdisciplinary environmental studies and geographic information systems",
       "summaryEn": "interdisciplinary environmental studies and geographic information systems",
       "title": "Full-Time, Tenure-Track Faculty in Environmental Studies or Environmental Humanities for the School of Humanities, Arts, and Public Engagement",
       "titleEn": "Full-Time, Tenure-Track Faculty in Environmental Studies or Environmental Humanities for the School of Humanities, Arts, and Public Engagement",
       "topics": [],
       "type": "faculty",
-      "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "Über unser Jobportal / Bewerben Button",
       "applicationProcessEn": "Über unser Jobportal / Bewerben Button",
+      "applicationRouteCheckedAt": "2026-11-04T04:49:55.164Z",
+      "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1445938133/?locale=de_DE",
       "candidateId": "tcand-9f2e85dd4a8adceca7e3d105",
       "caution": "待审核数据；门户最终受理未核验。 本轮原文证据已保存恢复，资格中优先项与硬性条件须结合所附完整段落阅读；仍待发布审核。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified. Evidence saved and restored; preserve required/preferred qualification distinctions; owner publication review pending.",
@@ -11960,6 +12355,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:49:55.164Z",
       "deadline": "2026-11-06",
       "deadlineNote": "Bewerbungsfrist: 06.11.2026",
       "deadlineNoteEn": "Bewerbungsfrist: 06.11.2026",
@@ -12090,6 +12486,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-03T05:50:20Z",
           "status": "supported",
           "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:49:55.164Z",
+          "status": "missing",
+          "url": "https://jobs.univie.ac.at/talentcommunity/apply/1445938133/?locale=de_DE"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -12102,6 +12504,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Master- oder Diplomingenieur- oder Diplomabschluss in Elektrotechnik oder Physik mit nachweislichen Erfahrungen im Experimentalbereich bzw. in der Anwendung von Mess- und Regeltechnik.\nGute Deutsch- und Englischkenntnisse.\nBenötigte Qualifikationen:\nIhr besonderer Arbeitsstil: Sie arbeiten gerne eigenverantwortlich und strukturiert, üben Tätigkeiten zuverlässlich und genau aus, sind serviceorientiert und finden gerne Lösungen.\nSie sind ein*e Teamplayer*in und haben eine hohe soziale und kommunikative Kompetenz.\nWünschenswerte Qualifikationen:\nMehrjährige einschlägige Berufserfahrung, besonders auch Personalführung, ist von Vorteil.\nErfahrungen und Kenntnisse zu Hochspannungstechnologien, im Umgang mit Röntgenstrahlungsquellen bzw. mit optischen Lasern sind ein großes Plus.\nChemische Grundkenntnisse oder eine Zusatzausbildung zu Labortechnik sind / ist von Vorteil.\nAffinität zur handwerklichen praktischen Nutzung von mechanischen und elektrotechnischen Werkzeugen, konventionellen Werkzeugmaschinen sowie 3D-Drucktechniken sollte bestehen.",
       "requirementsEn": "Master- oder Diplomingenieur- oder Diplomabschluss in Elektrotechnik oder Physik mit nachweislichen Erfahrungen im Experimentalbereich bzw. in der Anwendung von Mess- und Regeltechnik.\nGute Deutsch- und Englischkenntnisse.\nBenötigte Qualifikationen:\nIhr besonderer Arbeitsstil: Sie arbeiten gerne eigenverantwortlich und strukturiert, üben Tätigkeiten zuverlässlich und genau aus, sind serviceorientiert und finden gerne Lösungen.\nSie sind ein*e Teamplayer*in und haben eine hohe soziale und kommunikative Kompetenz.\nWünschenswerte Qualifikationen:\nMehrjährige einschlägige Berufserfahrung, besonders auch Personalführung, ist von Vorteil.\nErfahrungen und Kenntnisse zu Hochspannungstechnologien, im Umgang mit Röntgenstrahlungsquellen bzw. mit optischen Lasern sind ein großes Plus.\nChemische Grundkenntnisse oder eine Zusatzausbildung zu Labortechnik sind / ist von Vorteil.\nAffinität zur handwerklichen praktischen Nutzung von mechanischen und elektrotechnischen Werkzeugen, konventionellen Werkzeugmaschinen sowie 3D-Drucktechniken sollte bestehen.",
       "reviewDate": "",
@@ -12114,16 +12517,15 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "(Kristallographie, Mineralspektroskopie, Angewandte Mineralogie, Umweltmineralogie), und im Besonderen die am Institut verankerten GeoX Röntgenlabo",
       "summaryEn": "(Kristallographie, Mineralspektroskopie, Angewandte Mineralogie, Umweltmineralogie), und im Besonderen die am Institut verankerten GeoX Röntgenlabo",
       "title": "Leiter*in Laborgerätetechnik",
       "titleEn": "Leiter*in Laborgerätetechnik",
       "topics": [],
       "type": "research",
-      "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/"
     },
     {
       "announcementStatus": "open",
@@ -12141,6 +12543,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:47:53.126Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -12223,6 +12626,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-03T00:14:27Z",
           "status": "supported",
           "url": "https://jobs.apply.vt.edu/jobs/assistant-associate-professor-of-turfgrass-science-blacksburg-virginia-united-states"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:47:53.126Z",
+          "status": "missing",
+          "url": "https://jobs.apply.vt.edu/jobs/assistant-associate-professor-of-turfgrass-science-blacksburg-virginia-united-states"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -12235,6 +12644,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "The successful candidate must hold a Ph.D. in Turfgrass Science, Agronomy, Horticulture, Plant Sciences, Environmental Science, Entomology, or a closely related field.\nCandidates should demonstrate strong potential for impactful, externally funded research and Extension programming; a developing publication record (peer-reviewed journal articles and Extension materials); effective communication skills; and the ability to engage diverse stakeholder groups.",
       "requirementsEn": "The successful candidate must hold a Ph.D. in Turfgrass Science, Agronomy, Horticulture, Plant Sciences, Environmental Science, Entomology, or a closely related field.\nCandidates should demonstrate strong potential for impactful, externally funded research and Extension programming; a developing publication record (peer-reviewed journal articles and Extension materials); effective communication skills; and the ability to engage diverse stakeholder groups.",
       "reviewDate": "12/04/2026 — numeric date format unconfirmed",
@@ -12247,22 +12657,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "Water-use efficiency and irrigation scheduling, water quality",
       "summaryEn": "Water-use efficiency and irrigation scheduling, water quality",
       "title": "Assistant/Associate Professor of Turfgrass Science",
       "titleEn": "Assistant/Associate Professor of Turfgrass Science",
       "topics": [],
       "type": "faculty",
-      "url": "https://jobs.apply.vt.edu/jobs/assistant-associate-professor-of-turfgrass-science-blacksburg-virginia-united-states",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://jobs.apply.vt.edu/jobs/assistant-associate-professor-of-turfgrass-science-blacksburg-virginia-united-states"
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
       "applicationProcess": "your CV, including contact details of at least two referees, your BSc and MSc transcripts, and your letter of motivation that specifies your fit to the position.\nOnly application submitted via our job portal jobs.univie.ac.at (Apply now-button) will be considered.",
       "applicationProcessEn": "your CV, including contact details of at least two referees, your BSc and MSc transcripts, and your letter of motivation that specifies your fit to the position.\nOnly application submitted via our job portal jobs.univie.ac.at (Apply now-button) will be considered.",
+      "applicationRouteCheckedAt": "2026-11-04T04:51:00.602Z",
+      "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1453458833/?locale=en_US",
       "candidateId": "tcand-a36518c6f10e7487a6fb7579",
       "caution": "待审核数据；门户最终受理未核验。 本轮原文核验已加密保存；门户受理未知，尚无发布批准。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -12274,6 +12685,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:51:00.602Z",
       "deadline": "2026-11-30",
       "deadlineNote": "Application deadline: 11/30/2026",
       "deadlineNoteEn": "Application deadline: 11/30/2026",
@@ -12386,6 +12798,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-03T00:14:15Z",
           "status": "supported",
           "url": "https://jobs.univie.ac.at/job/PhD-Position-Analyzing-Polymer-Degradation-by-Soil-Enzymes/1453458833/"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:51:00.602Z",
+          "status": "missing",
+          "url": "https://jobs.univie.ac.at/talentcommunity/apply/1453458833/?locale=en_US"
         }
       ],
       "funding": "A fully funded position (full funding for 3 years) in accordance with the collective bargaining agreement (basic salary of EUR 3776,10 on a full-time basis)",
@@ -12398,6 +12816,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "A master’s degree in analytical chemistry, polymer chemistry, biochemistry, environmental chemistry, food chemistry, microbiology, or a closely related field.\nLaboratory experience in one or several of the above research fields is a strong asset.\nFluent in spoken and written English (level C1).",
       "requirementsEn": "A master’s degree in analytical chemistry, polymer chemistry, biochemistry, environmental chemistry, food chemistry, microbiology, or a closely related field.\nLaboratory experience in one or several of the above research fields is a strong asset.\nFluent in spoken and written English (level C1).",
       "reviewDate": "",
@@ -12410,22 +12829,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "apply environmental analytical chemistry to investigate the enzymatic degradation of polymers in agricultural soils.",
       "summaryEn": "apply environmental analytical chemistry to investigate the enzymatic degradation of polymers in agricultural soils.",
       "title": "PhD Position: Analyzing Polymer Degradation by Soil Enzymes",
       "titleEn": "PhD Position: Analyzing Polymer Degradation by Soil Enzymes",
       "topics": [],
       "type": "phd",
-      "url": "https://jobs.univie.ac.at/job/PhD-Position-Analyzing-Polymer-Degradation-by-Soil-Enzymes/1453458833/",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://jobs.univie.ac.at/job/PhD-Position-Analyzing-Polymer-Degradation-by-Soil-Enzymes/1453458833/"
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
       "applicationProcess": "With a short letter stating your interest in the position; With your CV including a list of publications; With contact details of two persons who could provide a recommendation upon request; Via our job portal / Apply now - button.",
       "applicationProcessEn": "With a short letter stating your interest in the position; With your CV including a list of publications; With contact details of two persons who could provide a recommendation upon request; Via our job portal / Apply now - button.",
+      "applicationRouteCheckedAt": "2026-11-04T04:49:56.626Z",
+      "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1448831533/?locale=en_US",
       "candidateId": "tcand-a671a2724da2f96f77b88f29",
       "caution": "待审核数据；门户最终受理未核验。 本轮真实原文已核验并加密保存，仍待发布审核。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified. Real evidence-bound result saved privately; owner publication review pending.",
@@ -12437,6 +12857,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:49:56.626Z",
       "deadline": "2026-11-08",
       "deadlineNote": "Application deadline: 11/08/2026",
       "deadlineNoteEn": "Application deadline: 11/08/2026",
@@ -12537,6 +12958,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-03T00:53:53Z",
           "status": "supported",
           "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:49:56.626Z",
+          "status": "missing",
+          "url": "https://jobs.univie.ac.at/talentcommunity/apply/1448831533/?locale=en_US"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -12549,6 +12976,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Completed master or diploma in the atmospheric sciences (e.g., meteorology, climatology), or a related field; Strong programming skills; Data analysis and interpretation experience; A good team spirit and willingness to collaborate; Very good command of the English language.\nThese skills would be an advantage: Experience with Lagrangian transport models; Expert knowledge of programming, preferably in Python and/or Fortran; Experience with space-industry based emissions and their impact on the atmosphere.",
       "requirementsEn": "Completed master or diploma in the atmospheric sciences (e.g., meteorology, climatology), or a related field; Strong programming skills; Data analysis and interpretation experience; A good team spirit and willingness to collaborate; Very good command of the English language.\nThese skills would be an advantage: Experience with Lagrangian transport models; Expert knowledge of programming, preferably in Python and/or Fortran; Experience with space-industry based emissions and their impact on the atmosphere.",
       "reviewDate": "2026-11-01",
@@ -12561,22 +12989,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "determine the emissions of greenhouse gases and/or radionuclides into the atmosphere",
       "summaryEn": "determine the emissions of greenhouse gases and/or radionuclides into the atmosphere",
       "title": "PhD position in inverse modelling of greenhouse gases and radioactivity in the atmosphere (4 years)",
       "titleEn": "PhD position in inverse modelling of greenhouse gases and radioactivity in the atmosphere (4 years)",
       "topics": [],
       "type": "phd",
-      "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "Über unser Jobportal / Bewerben Button Bei inhaltlichen Fragen kontaktieren Sie",
       "applicationProcessEn": "Über unser Jobportal / Bewerben Button Bei inhaltlichen Fragen kontaktieren Sie",
+      "applicationRouteCheckedAt": "2026-11-04T04:50:05.953Z",
+      "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1453283233/?locale=de_DE",
       "candidateId": "tcand-a6c8f814c9d81333f520ba54",
       "caution": "待审核数据；门户最终受理未核验。 本轮原文证据已保存恢复，资格中优先项与硬性条件须结合所附完整段落阅读；仍待发布审核。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified. Evidence saved and restored; preserve required/preferred qualification distinctions; owner publication review pending.",
@@ -12588,6 +13017,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:50:05.953Z",
       "deadline": "2026-11-11",
       "deadlineNote": "Bewerbungsfrist: 11.11.2026",
       "deadlineNoteEn": "Bewerbungsfrist: 11.11.2026",
@@ -12664,6 +13094,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-03T12:42:57Z",
           "status": "supported",
           "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:50:05.953Z",
+          "status": "missing",
+          "url": "https://jobs.univie.ac.at/talentcommunity/apply/1453283233/?locale=de_DE"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -12676,6 +13112,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Sie haben eine universitäre Ausbildung in den Natur- oder Lebenswissenschaften (mindestens BA/BSc oder gleichwertig). Sie bringen gutes technisches und chemisches Verständnis mit. Sie haben gute Englischkenntnisse (Gru",
       "requirementsEn": "Sie haben eine universitäre Ausbildung in den Natur- oder Lebenswissenschaften (mindestens BA/BSc oder gleichwertig). Sie bringen gutes technisches und chemisches Verständnis mit. Sie haben gute Englischkenntnisse (Gru",
       "reviewDate": "",
@@ -12688,22 +13125,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "11.2027 Stellen ID: 6409 Ausführliche Beschreibung Das Labor für Umweltgeochemie des Zentrums für Mikrobiologie und Umweltsystemwissenschaft such",
       "summaryEn": "11.2027 Stellen ID: 6409 Ausführliche Beschreibung Das Labor für Umweltgeochemie des Zentrums für Mikrobiologie und Umweltsystemwissenschaft such",
       "title": "Technische*r Laborassistent*in Großgerät",
       "titleEn": "Technische*r Laborassistent*in Großgerät",
       "topics": [],
       "type": "research",
-      "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/"
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
       "applicationProcess": "https://hr.fullerton.edu/workforce/careers.html",
       "applicationProcessEn": "https://hr.fullerton.edu/workforce/careers.html",
+      "applicationRouteCheckedAt": "2026-11-04T04:51:48.030Z",
+      "applicationUrl": "https://secure.dc4.pageuppeople.com/apply/873/gateway/default.aspx?c=apply&lJobID=560304&lJobSourceTypeID=804&sLanguage=en-us",
       "candidateId": "tcand-a83ff930023bcc743f5b3930",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -12715,6 +13153,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:51:48.030Z",
       "deadline": "",
       "deadlineNote": "Application Deadline To be assured full consideration, all application materials must be received by November 1, 2026",
       "deadlineNoteEn": "Application Deadline To be assured full consideration, all application materials must be received by November 1, 2026",
@@ -12779,6 +13218,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T03:55:36.455Z",
           "status": "supported",
           "url": "https://careers.pageuppeople.com/873/fl/en-us/job/560304/assistant-professor-of-physical-geography"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:51:48.030Z",
+          "status": "supported",
+          "url": "https://secure.dc4.pageuppeople.com/apply/873/gateway/default.aspx?c=apply&lJobID=560304&lJobSourceTypeID=804&sLanguage=en-us"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -12791,6 +13236,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Required Qualifications Ph.D. in Geography, with a specialization in Physical Geography. ABDs are welcome to apply, but must show evidence that the degree will be completed by the time of appointment. Preferred Qualifications A proven record of teaching. Research experience in physical and/or environmental geography supported by a record of scholarly accomplishments [publications, conference presentations, etc.] Field experience and an interest in leading students in the field. Proficiency in GIS technologies for teaching and research. Excellent written and oral communication skills. Application A complete online application must be received by electronic submissio",
       "requirementsEn": "Required Qualifications Ph.D. in Geography, with a specialization in Physical Geography. ABDs are welcome to apply, but must show evidence that the degree will be completed by the time of appointment. Preferred Qualifications A proven record of teaching. Research experience in physical and/or environmental geography supported by a record of scholarly accomplishments [publications, conference presentations, etc.] Field experience and an interest in leading students in the field. Proficiency in GIS technologies for teaching and research. Excellent written and oral communication skills. Application A complete online application must be received by electronic submissio",
       "reviewDate": "",
@@ -12803,22 +13249,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "Physical Geography",
       "summaryEn": "Physical Geography",
       "title": "Assistant Professor of Physical Geography",
       "titleEn": "Assistant Professor of Physical Geography",
       "topics": [],
       "type": "faculty",
-      "url": "https://careers.pageuppeople.com/873/fl/en-us/job/560304/assistant-professor-of-physical-geography",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://careers.pageuppeople.com/873/fl/en-us/job/560304/assistant-professor-of-physical-geography"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "",
       "applicationProcessEn": "",
+      "applicationRouteCheckedAt": "2026-11-04T04:51:57.313Z",
+      "applicationUrl": "https://jobs.montana.edu/postings/53487/pre_apply",
       "candidateId": "tcand-abc7536b8b07e29496311f5c",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -12830,6 +13277,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:51:57.313Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -12900,6 +13348,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T06:14:41.466Z",
           "status": "supported",
           "url": "https://jobs.montana.edu/postings/53036"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:51:57.313Z",
+          "status": "supported",
+          "url": "https://jobs.montana.edu/postings/53487/pre_apply"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -12912,6 +13366,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Required Qualifications – Experience, Education, Knowledge & Skills Ph.D. in American Studies or a related field by start date. Demonstrated potential for excellence in both teaching and scholarship. Teaching record demonstrating the ability to offer courses in American Studies or a related field at the graduate and undergraduate levels. Preferred Qualifications – Experience, Education, Knowledge & Skills Potential to conduct research and teach in critical theory and research methods. Successful record of fellowships or grants, or experience with externally funded research. Interest and ability to contribute to the College’s programs a\nPreferred Qualifications Research Statement (max 2 pages) Teaching Statement (max 2 pages) Letters of Recommendation and Reference Calls : All applicants will be required to provide a minimum of three references during the application process. Upon submission of the application, references will be contacted automatically by email to request a letter of recommendation, due by the screening date (please notify your references in advance). References for finalist(s) will a\nPreferred Qualifications – Experience, Education, Knowledge & Skills Potential to conduct research and teach in critical theory and research methods. Successful record of fellowships or grants, or experience with externally funded research. Interest and ability to contribute to the College’s programs and expertise in place-based studies, such as environmental humanities, historical geography, western American studies, or related fields. The Successful Candidate Will Be ",
       "requirementsEn": "Required Qualifications – Experience, Education, Knowledge & Skills Ph.D. in American Studies or a related field by start date. Demonstrated potential for excellence in both teaching and scholarship. Teaching record demonstrating the ability to offer courses in American Studies or a related field at the graduate and undergraduate levels. Preferred Qualifications – Experience, Education, Knowledge & Skills Potential to conduct research and teach in critical theory and research methods. Successful record of fellowships or grants, or experience with externally funded research. Interest and ability to contribute to the College’s programs a\nPreferred Qualifications Research Statement (max 2 pages) Teaching Statement (max 2 pages) Letters of Recommendation and Reference Calls : All applicants will be required to provide a minimum of three references during the application process. Upon submission of the application, references will be contacted automatically by email to request a letter of recommendation, due by the screening date (please notify your references in advance). References for finalist(s) will a\nPreferred Qualifications – Experience, Education, Knowledge & Skills Potential to conduct research and teach in critical theory and research methods. Successful record of fellowships or grants, or experience with externally funded research. Interest and ability to contribute to the College’s programs and expertise in place-based studies, such as environmental humanities, historical geography, western American studies, or related fields. The Successful Candidate Will Be ",
       "reviewDate": "",
@@ -12924,22 +13379,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "historical geography",
       "summaryEn": "historical geography",
       "title": "Assistant Professor of American Studies",
       "titleEn": "Assistant Professor of American Studies",
       "topics": [],
       "type": "faculty",
-      "url": "https://jobs.montana.edu/postings/53036",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://jobs.montana.edu/postings/53036"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "",
       "applicationProcessEn": "",
+      "applicationRouteCheckedAt": "2026-11-04T04:51:59.593Z",
+      "applicationUrl": "https://jobs.bridgew.edu/postings/34048/pre_apply",
       "candidateId": "tcand-b3e45e9d5b4db49e89fe4d9c",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -12951,6 +13407,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:51:59.593Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -12997,6 +13454,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T03:51:09.205Z",
           "status": "supported",
           "url": "https://jobs.bridgew.edu/postings/33838"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:51:59.593Z",
+          "status": "supported",
+          "url": "https://jobs.bridgew.edu/postings/34048/pre_apply"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13009,6 +13472,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Required Qualifications A PhD in Geography or a related field. ABD candidates will be considered provided that they will have their PhD in hand by September 1, 2027. Experience teaching undergraduate and/or graduate courses. Demonstrate the ability to teach lecture and laboratory sections. Demonstrate a well-developed research plan incorporating undergraduate students into a research program. Applicants must also demonstrate a strong commitment to excellence in teaching, advising, and undergraduate research mentoring that enhances an environment of equity, diversity and inclusion. Preferred Qualifications Teaching and technology expertise. Expertise in physical geo\nAt present, the university can only sponsor employment-based visas, including H1-B petitions, that are not subject to the current $100,000 fee or any other similar or related fees imposed through U.S. immigration regulations, laws, executive orders, etc. The university will continue to monitor the ongoing changes in U.S. immigration regulations and it reserves the right to modify this policy as the regulatory and legal landscapes change. S",
       "requirementsEn": "Required Qualifications A PhD in Geography or a related field. ABD candidates will be considered provided that they will have their PhD in hand by September 1, 2027. Experience teaching undergraduate and/or graduate courses. Demonstrate the ability to teach lecture and laboratory sections. Demonstrate a well-developed research plan incorporating undergraduate students into a research program. Applicants must also demonstrate a strong commitment to excellence in teaching, advising, and undergraduate research mentoring that enhances an environment of equity, diversity and inclusion. Preferred Qualifications Teaching and technology expertise. Expertise in physical geo\nAt present, the university can only sponsor employment-based visas, including H1-B petitions, that are not subject to the current $100,000 fee or any other similar or related fees imposed through U.S. immigration regulations, laws, executive orders, etc. The university will continue to monitor the ongoing changes in U.S. immigration regulations and it reserves the right to modify this policy as the regulatory and legal landscapes change. S",
       "reviewDate": "",
@@ -13021,22 +13485,22 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "physical geography",
       "summaryEn": "physical geography",
       "title": "Assistant Professor, Department of Geography",
       "titleEn": "Assistant Professor, Department of Geography",
       "topics": [],
       "type": "faculty",
-      "url": "https://jobs.bridgew.edu/postings/33838",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://jobs.bridgew.edu/postings/33838"
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
       "applicationProcess": "",
       "applicationProcessEn": "",
+      "applicationRouteCheckedAt": "2026-11-04T04:56:53.025Z",
       "candidateId": "tcand-b3f4060e0159c979020c6a80",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -13048,6 +13512,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:56:53.025Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -13112,6 +13577,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T08:53:04.707Z",
           "status": "supported",
           "url": "https://apply.interfolio.com/192961"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:56:53.025Z",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/192961"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13124,6 +13595,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Candidates must have a Ph.D. in Geography or related field at the time of appointment.",
       "requirementsEn": "Candidates must have a Ph.D. in Geography or related field at the time of appointment.",
       "reviewDate": "2026-11-01",
@@ -13136,22 +13608,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "energy and human-environmental geography",
       "summaryEn": "energy and human-environmental geography",
       "title": "Assistant Professor Energy Geography",
       "titleEn": "Assistant Professor Energy Geography",
       "topics": [],
       "type": "faculty",
-      "url": "https://apply.interfolio.com/192961",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://apply.interfolio.com/192961"
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
       "applicationProcess": "Please note that we only accept applications via Workday.\nA cover letter describing your motivation for pursuing this PhD position A CV, including your academic achievements, possible list of publications, and any relevant work or research experience Contact details of at least two references Copies of your academic transcripts and degrees",
       "applicationProcessEn": "Please note that we only accept applications via Workday.\nA cover letter describing your motivation for pursuing this PhD position A CV, including your academic achievements, possible list of publications, and any relevant work or research experience Contact details of at least two references Copies of your academic transcripts and degrees",
+      "applicationRouteCheckedAt": "2026-11-04T04:50:38.566Z",
+      "applicationUrl": "https://aalto.wd3.myworkdayjobs.com/aalto/job/Otaniemi-Espoo-Finland/Doctoral-Researcher--sustainability-of-Power-to-X--PtX--value-chains_R48457/apply",
       "candidateId": "tcand-b4ebd5f45a12d0cccd8ef3cc",
       "caution": "待审核数据；门户最终受理未核验。 本轮原文核验已加密保存；门户受理未知，尚无发布批准。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -13163,6 +13636,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:50:38.566Z",
       "deadline": "2026-11-22",
       "deadlineNote": "please submit your application no later than 22.11.2026",
       "deadlineNoteEn": "please submit your application no later than 22.11.2026",
@@ -13275,6 +13749,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-03T00:14:25Z",
           "status": "supported",
           "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:50:38.566Z",
+          "status": "missing",
+          "url": "https://aalto.wd3.myworkdayjobs.com/aalto/job/Otaniemi-Espoo-Finland/Doctoral-Researcher--sustainability-of-Power-to-X--PtX--value-chains_R48457/apply"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13287,6 +13767,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Master’s Degree: In Chemical Engineering, Electrical Engineering, Energy Systems Engineering, or a closely related field.\nOptimization background: Solid experience applying mathematical programming (e.g., MILP, MINLP) to energy or process systems.\nProgramming proficiency: Demonstrated skills in optimization or modeling environments (e.g., GAMS, Python, Julia, or MATLAB).\nDesirable (Considered an Advantage): Assessment Methodologies: Knowledge of TEA and LCA methodologies.",
       "requirementsEn": "Master’s Degree: In Chemical Engineering, Electrical Engineering, Energy Systems Engineering, or a closely related field.\nOptimization background: Solid experience applying mathematical programming (e.g., MILP, MINLP) to energy or process systems.\nProgramming proficiency: Demonstrated skills in optimization or modeling environments (e.g., GAMS, Python, Julia, or MATLAB).\nDesirable (Considered an Advantage): Assessment Methodologies: Knowledge of TEA and LCA methodologies.",
       "reviewDate": "",
@@ -13299,22 +13780,22 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "This PhD project aims to develop decision-making models and optimization strategies for the cross-sector integration and operation of PtX technologies.",
       "summaryEn": "This PhD project aims to develop decision-making models and optimization strategies for the cross-sector integration and operation of PtX technologies.",
       "title": "Doctoral Researcher, sustainability of Power-to-X (PtX) value chains",
       "titleEn": "Doctoral Researcher, sustainability of Power-to-X (PtX) value chains",
       "topics": [],
       "type": "phd",
-      "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "",
       "applicationProcessEn": "",
+      "applicationUrl": "https://academicpositions.harvard.edu/postings/16823/pre_apply",
       "candidateId": "tcand-b6e5706456fd780f7a9096dd",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -13326,6 +13807,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:48:23.132Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -13378,6 +13860,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T03:48:35.874Z",
           "status": "supported",
           "url": "https://academicpositions.harvard.edu/postings/16742"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:48:23.132Z",
+          "status": "missing",
+          "url": "https://academicpositions.harvard.edu/postings/16823/pre_apply"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13390,6 +13878,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Basic Qualifications Candidates are required to have a doctorate in environmental engineering or related field by the time the appointment begins. Additional Qualifications We seek candidates who have a strong research record and a strong commitment to undergraduate and graduate teaching, training, and advising in ESE and EnCE. The successful candidate will teach at both the undergraduate and graduate levels. Special Instructions Please submit the following materials through the ARIeS portal. Review of applications will begin on November 1, 2026; applications will be reviewed until the position is filled. 1. Cover letter 2. Curriculum Vitae 3. Teaching/advising",
       "requirementsEn": "Basic Qualifications Candidates are required to have a doctorate in environmental engineering or related field by the time the appointment begins. Additional Qualifications We seek candidates who have a strong research record and a strong commitment to undergraduate and graduate teaching, training, and advising in ESE and EnCE. The successful candidate will teach at both the undergraduate and graduate levels. Special Instructions Please submit the following materials through the ARIeS portal. Review of applications will begin on November 1, 2026; applications will be reviewed until the position is filled. 1. Cover letter 2. Curriculum Vitae 3. Teaching/advising",
       "reviewDate": "",
@@ -13402,22 +13891,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "water technology and/or water resources",
       "summaryEn": "water technology and/or water resources",
       "title": "Tenure-Track Faculty in Environmental Science and Engineering",
       "titleEn": "Tenure-Track Faculty in Environmental Science and Engineering",
       "topics": [],
       "type": "faculty",
-      "url": "https://academicpositions.harvard.edu/postings/16742",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://academicpositions.harvard.edu/postings/16742"
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
       "applicationProcess": "Motivation video (maximum length: 3 minutes) illustrating your passion for innovative spatial planning. Use any common video format; please share the link to your video file in your scientific CV.\nScientific curriculum vitae. • Two-page concept note outlining your ideas for the doctoral project. • Degree certificates. • Your master’s or diploma studies in pdf format. • Via our job portal/ Apply now - button",
       "applicationProcessEn": "Motivation video (maximum length: 3 minutes) illustrating your passion for innovative spatial planning. Use any common video format; please share the link to your video file in your scientific CV.\nScientific curriculum vitae. • Two-page concept note outlining your ideas for the doctoral project. • Degree certificates. • Your master’s or diploma studies in pdf format. • Via our job portal/ Apply now - button",
+      "applicationRouteCheckedAt": "2026-11-04T04:50:39.625Z",
+      "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1453323233/?locale=en_US",
       "candidateId": "tcand-b8fad45d333c2616c9177d51",
       "caution": "待审核数据；门户最终受理未核验。 本轮原文核验已加密保存；门户受理未知，尚无发布批准。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -13429,6 +13919,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:50:39.625Z",
       "deadline": "2026-11-23",
       "deadlineNote": "Application deadline: 11/23/2026",
       "deadlineNoteEn": "Application deadline: 11/23/2026",
@@ -13541,6 +14032,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-03T00:14:18Z",
           "status": "supported",
           "url": "https://jobs.univie.ac.at/job/Scientific-project-assistant-predoctoral/1453323233/"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:50:39.625Z",
+          "status": "missing",
+          "url": "https://jobs.univie.ac.at/talentcommunity/apply/1453323233/?locale=en_US"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13553,6 +14050,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "A master’s degree, awarded with distinction, in Spatial Planning or a related and relevant discipline.\nExcellent knowledge of qualitative and/or quantitative social science research methods. Experience conducting research on Vienna is an asset.\nExcellent written and spoken English and German.",
       "requirementsEn": "A master’s degree, awarded with distinction, in Spatial Planning or a related and relevant discipline.\nExcellent knowledge of qualitative and/or quantitative social science research methods. Experience conducting research on Vienna is an asset.\nExcellent written and spoken English and German.",
       "reviewDate": "",
@@ -13565,22 +14063,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "Development and completion of a dissertation on climate adaptation and just transitions from a planning perspective.",
       "summaryEn": "Development and completion of a dissertation on climate adaptation and just transitions from a planning perspective.",
       "title": "Scientific project assistant predoctoral",
       "titleEn": "Scientific project assistant predoctoral",
       "topics": [],
       "type": "phd",
-      "url": "https://jobs.univie.ac.at/job/Scientific-project-assistant-predoctoral/1453323233/",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://jobs.univie.ac.at/job/Scientific-project-assistant-predoctoral/1453323233/"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "all applicants must apply via the USC Careers site and submit a letter of interest, curriculum vitae, and a statement that outlines their research agenda and teaching philosophy and approach. Please also arrange for three letters of reference.",
       "applicationProcessEn": "all applicants must apply via the USC Careers site and submit a letter of interest, curriculum vitae, and a statement that outlines their research agenda and teaching philosophy and approach. Please also arrange for three letters of reference.",
+      "applicationRouteCheckedAt": "2026-11-04T04:52:16.567Z",
+      "applicationUrl": "https://facultypositions.usc.edu/FAS/application/position?postingId=REQ20182023",
       "candidateId": "tcand-bad85817b63bf1c6f0982338",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -13592,10 +14091,12 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "deadline": "",
-      "deadlineNote": "",
-      "deadlineNoteEn": "",
-      "deadlineType": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:52:16.567Z",
+      "deadline": "2026-12-01",
+      "deadlineKind": "fixed",
+      "deadlineNote": "申请门户列 Submission Deadline: 12/01/2026；公告另列12月1日开始评审。两种日期分别记录，门户截止时区未注明。",
+      "deadlineNoteEn": "Portal submission deadline: 1 December 2026; announcement separately gives review from that date. Portal cutoff time zone not stated.",
+      "deadlineType": "fixed",
       "degree": "unknown",
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
@@ -13644,6 +14145,18 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T02:12:02.452Z",
           "status": "supported",
           "url": "https://usccareers.usc.edu/job/los-angeles/assistant-professor-of-environmental-planning/1209/102254578544"
+        },
+        {
+          "field": "deadline",
+          "observedAt": "2026-11-04T04:52:16.567Z",
+          "status": "supported",
+          "url": "https://facultypositions.usc.edu/FAS/application/step1?requisitionId=REQ20182023"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:52:16.567Z",
+          "status": "supported",
+          "url": "https://facultypositions.usc.edu/FAS/application/position?postingId=REQ20182023"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13656,6 +14169,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "PhD in urban planning or a related field by the appointment start date",
       "requirementsEn": "PhD in urban planning or a related field by the appointment start date",
       "reviewDate": "2026-12-01",
@@ -13668,22 +14182,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "planning and the environment, sustainability, and climate",
       "summaryEn": "planning and the environment, sustainability, and climate",
       "title": "Assistant Professor of Environmental Planning",
       "titleEn": "Assistant Professor of Environmental Planning",
       "topics": [],
       "type": "faculty",
-      "url": "https://usccareers.usc.edu/job/los-angeles/assistant-professor-of-environmental-planning/1209/102254578544",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://usccareers.usc.edu/job/los-angeles/assistant-professor-of-environmental-planning/1209/102254578544"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "Qualified candidates should submit the following materials through PageUp:",
       "applicationProcessEn": "Qualified candidates should submit the following materials through PageUp:",
+      "applicationRouteCheckedAt": "2026-11-04T04:52:18.708Z",
+      "applicationUrl": "https://secure.dc4.pageuppeople.com/apply/873/gateway/default.aspx?c=apply&lJobID=563191&lJobSourceTypeID=857&sLanguage=en-us",
       "candidateId": "tcand-be0fb6a040e51800e1af9ab9",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -13695,6 +14210,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:52:18.708Z",
       "deadline": "",
       "deadlineNote": "This position is open until filled.",
       "deadlineNoteEn": "This position is open until filled.",
@@ -13765,6 +14281,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T02:12:17.116Z",
           "status": "supported",
           "url": "https://careers.humboldt.edu/hm/en-us/job/563191"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:52:18.708Z",
+          "status": "supported",
+          "url": "https://secure.dc4.pageuppeople.com/apply/873/gateway/default.aspx?c=apply&lJobID=563191&lJobSourceTypeID=857&sLanguage=en-us"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13777,6 +14299,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "An earned PhD, JD, or equivalent in environmental planning, environmental policy, urban and/or regional planning, public policy, environmental science, environmental management, environmental studies, public affairs, natural resources, geography, forestry, sustainability or a related field from an accredited college or university is required at the time of appointment.\nIf ABD, degree requirements must be completed by date of appointment.",
       "requirementsEn": "An earned PhD, JD, or equivalent in environmental planning, environmental policy, urban and/or regional planning, public policy, environmental science, environmental management, environmental studies, public affairs, natural resources, geography, forestry, sustainability or a related field from an accredited college or university is required at the time of appointment.\nIf ABD, degree requirements must be completed by date of appointment.",
       "reviewDate": "",
@@ -13789,22 +14312,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "Environmental Planning and Policy",
       "summaryEn": "Environmental Planning and Policy",
       "title": "Tenure Track Faculty - Department of Environmental Science and Management",
       "titleEn": "Tenure Track Faculty - Department of Environmental Science and Management",
       "topics": [],
       "type": "faculty",
-      "url": "https://careers.humboldt.edu/hm/en-us/job/563191",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://careers.humboldt.edu/hm/en-us/job/563191"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "",
       "applicationProcessEn": "",
+      "applicationRouteCheckedAt": "2026-11-04T04:52:31.627Z",
+      "applicationUrl": "https://jobs.charlotte.edu/postings/71052/pre_apply",
       "candidateId": "tcand-c41d0c97633d2c8d07f85758",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -13816,6 +14340,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:52:31.627Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -13880,6 +14405,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T06:14:27.600Z",
           "status": "supported",
           "url": "https://jobs.charlotte.edu/postings/71052"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:52:31.627Z",
+          "status": "supported",
+          "url": "https://jobs.charlotte.edu/postings/71052/pre_apply"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13892,6 +14423,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Qualifications: Candidates must hold a Ph.D. in Geography, Urban, Regional or Environmental Planning, or a closely related field by the date of appointment. The successful candidate will demonstrate: (1) evidence of, or strong potential for, excellence in teaching and mentoring undergraduate and graduate students in urban planning, geography, and their area of specialization; and (2) an active record of, or clear promise for, establishing a high-impact, externally funded research program that is theoretically grounded and translates innovative qualitative, quantitative and/or mixed-methods approaches into real-world planning pr\nCandidates must hold a Ph.D. in Geography, Urban, Regional or Environmental Planning, or a closely related field by the date of appointment.",
       "requirementsEn": "Qualifications: Candidates must hold a Ph.D. in Geography, Urban, Regional or Environmental Planning, or a closely related field by the date of appointment. The successful candidate will demonstrate: (1) evidence of, or strong potential for, excellence in teaching and mentoring undergraduate and graduate students in urban planning, geography, and their area of specialization; and (2) an active record of, or clear promise for, establishing a high-impact, externally funded research program that is theoretically grounded and translates innovative qualitative, quantitative and/or mixed-methods approaches into real-world planning pr\nCandidates must hold a Ph.D. in Geography, Urban, Regional or Environmental Planning, or a closely related field by the date of appointment.",
       "reviewDate": "2026-12-01",
@@ -13904,22 +14436,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "Urban Planning and Hazards",
       "summaryEn": "Urban Planning and Hazards",
       "title": "Assistant Professor in Urban Planning and Hazards",
       "titleEn": "Assistant Professor in Urban Planning and Hazards",
       "topics": [],
       "type": "faculty",
-      "url": "https://jobs.charlotte.edu/postings/71052",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://jobs.charlotte.edu/postings/71052"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "Applications must include: (1) a cover letter describing the candidate’s interest in the position and how they meet the required qualifications; (2) a statement of the candidate’s research program; (3) a summary of teaching and mentoring philosophy and experience; (4) a curriculum vitae; and (5) the names and email addresses of three professional references.",
       "applicationProcessEn": "Applications must include: (1) a cover letter describing the candidate’s interest in the position and how they meet the required qualifications; (2) a statement of the candidate’s research program; (3) a summary of teaching and mentoring philosophy and experience; (4) a curriculum vitae; and (5) the names and email addresses of three professional references.",
+      "applicationRouteCheckedAt": "2026-11-04T04:52:39.877Z",
+      "applicationUrl": "https://uscjobs.sc.edu/postings/215190/pre_apply",
       "candidateId": "tcand-d2b8194a6fdb7d3906b6f039",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -13931,6 +14464,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:52:39.877Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -13995,6 +14529,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T02:11:58.981Z",
           "status": "supported",
           "url": "https://uscjobs.sc.edu/postings/214857"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:52:39.877Z",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/215190/pre_apply"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14007,6 +14547,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "PhD in Geography by the employment start date.\nwhose established publication records draw from fieldwork experience.",
       "requirementsEn": "PhD in Geography by the employment start date.\nwhose established publication records draw from fieldwork experience.",
       "reviewDate": "2026-12-15",
@@ -14019,22 +14560,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "intersection of migration crises, human development, and humanitarian responses to migration",
       "summaryEn": "intersection of migration crises, human development, and humanitarian responses to migration",
       "title": "Assistant Professor in Migration, Development, & Humanitarianism",
       "titleEn": "Assistant Professor in Migration, Development, & Humanitarianism",
       "topics": [],
       "type": "faculty",
-      "url": "https://uscjobs.sc.edu/postings/214857",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://uscjobs.sc.edu/postings/214857"
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
       "applicationProcess": "https://appstate.peopleadmin.com/postings/56189",
       "applicationProcessEn": "https://appstate.peopleadmin.com/postings/56189",
+      "applicationRouteCheckedAt": "2026-11-04T04:52:48.141Z",
+      "applicationUrl": "https://appstate.peopleadmin.com/postings/56483/pre_apply",
       "candidateId": "tcand-d57e401f4c4cf854dfeead4c",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -14046,6 +14588,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:52:48.141Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -14110,6 +14653,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T06:15:47.543Z",
           "status": "supported",
           "url": "https://appstate.peopleadmin.com/postings/56189"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:52:48.141Z",
+          "status": "supported",
+          "url": "https://appstate.peopleadmin.com/postings/56483/pre_apply"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14122,6 +14671,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Minimum Qualifications Ph.D. in Geography, Environmental Science, or a closely related field by the time of appointment (August 2027). Demonstrated expertise in Environmental Remote Sensing and digital image processing. Demonstrated research agenda and technical competency in Remotely Piloted. Aerial Systems ( RPAS ) for spatial data acquisition (including photogrammetry, LiDAR, or multispectral sensors). Evidence of, or strong potential for, excellence in university-level teaching. Areas of Interest and Preferred Qualifications (No Minimum Level Required) An active FAA Part 107 Remote Pilot Certification (or immediate eligibility and\nPreferred Qualifications (No Minimum Level Required) An active FAA Part 107 Remote Pilot Certification (or immediate eligibility and willingness to obtain it). Experience with advanced spatial modeling, Google Earth Engine, and other cloud-based raster processing, or programming languages relevant to spatial data (e.g., Python, R). A track record of, or clear plan for, involving undergraduate and graduate students in field-based research. Experience or interest in inter",
       "requirementsEn": "Minimum Qualifications Ph.D. in Geography, Environmental Science, or a closely related field by the time of appointment (August 2027). Demonstrated expertise in Environmental Remote Sensing and digital image processing. Demonstrated research agenda and technical competency in Remotely Piloted. Aerial Systems ( RPAS ) for spatial data acquisition (including photogrammetry, LiDAR, or multispectral sensors). Evidence of, or strong potential for, excellence in university-level teaching. Areas of Interest and Preferred Qualifications (No Minimum Level Required) An active FAA Part 107 Remote Pilot Certification (or immediate eligibility and\nPreferred Qualifications (No Minimum Level Required) An active FAA Part 107 Remote Pilot Certification (or immediate eligibility and willingness to obtain it). Experience with advanced spatial modeling, Google Earth Engine, and other cloud-based raster processing, or programming languages relevant to spatial data (e.g., Python, R). A track record of, or clear plan for, involving undergraduate and graduate students in field-based research. Experience or interest in inter",
       "reviewDate": "",
@@ -14134,16 +14684,15 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "Environmental Remote Sensing",
       "summaryEn": "Environmental Remote Sensing",
       "title": "Assistant Professor of Geography (Environmental Remote Sensing & Remotely Piloted Aerial Systems)",
       "titleEn": "Assistant Professor of Geography (Environmental Remote Sensing & Remotely Piloted Aerial Systems)",
       "topics": [],
       "type": "faculty",
-      "url": "https://appstate.peopleadmin.com/postings/56189",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://appstate.peopleadmin.com/postings/56189"
     },
     {
       "announcementStatus": "invites_applications",
@@ -14161,6 +14710,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:48:53.539Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -14285,6 +14835,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-02T05:23:55.619287+00:00",
           "status": "supported",
           "url": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:48:53.539Z",
+          "status": "missing",
+          "url": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14297,6 +14853,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Bachelor's degree in Statistics, Data Science, Geography, Geographic Information Systems, Hydrology, Water Resources, Meteorology, Climatology, Earth Science, Environmental Science, Computer Science, Applied Mathematics, or a closely related field.\nResearch Associate I: A professional employee with a bachelor's degree in a relevant discipline and demonstrated competence can begin work at the Research Associate I level.\nResearch Associate II: To begin at the Research Associate II level, applicant must meet one of the following: • Master's degree in a relevant discipline, a minimum of one year of relevant experience, and demonstrated competence; or • Bachelor's degree in a relevant discipline and a minimum of three years of relevant experience with qualifications equivalent to the master's-degree level.\nProficiency with Python, R, or another scientific programming or scripting language.\nExperience in at least one of the following areas: o statistical analysis, time-series analysis, quantitative modeling, or data science; or o GIS, spatial analysis, geospatial data processing, or management of large environmental datasets.\nPreferred Qualifications: • Master's degree in Statistics, Data Science, Geography/GIS, Hydrology, Water Resources, Meteorology, Climatology, Earth or Environmental Science, Computer Science, Applied Mathematics, or a closely related discipline. • Experience with both statistical analysis and geospatial analysis.\nApplicants must be authorized to work in US, no visa sponsorship is available.",
       "requirementsEn": "Bachelor's degree in Statistics, Data Science, Geography, Geographic Information Systems, Hydrology, Water Resources, Meteorology, Climatology, Earth Science, Environmental Science, Computer Science, Applied Mathematics, or a closely related field.\nResearch Associate I: A professional employee with a bachelor's degree in a relevant discipline and demonstrated competence can begin work at the Research Associate I level.\nResearch Associate II: To begin at the Research Associate II level, applicant must meet one of the following: • Master's degree in a relevant discipline, a minimum of one year of relevant experience, and demonstrated competence; or • Bachelor's degree in a relevant discipline and a minimum of three years of relevant experience with qualifications equivalent to the master's-degree level.\nProficiency with Python, R, or another scientific programming or scripting language.\nExperience in at least one of the following areas: o statistical analysis, time-series analysis, quantitative modeling, or data science; or o GIS, spatial analysis, geospatial data processing, or management of large environmental datasets.\nPreferred Qualifications: • Master's degree in Statistics, Data Science, Geography/GIS, Hydrology, Water Resources, Meteorology, Climatology, Earth or Environmental Science, Computer Science, Applied Mathematics, or a closely related discipline. • Experience with both statistical analysis and geospatial analysis.\nApplicants must be authorized to work in US, no visa sponsorship is available.",
       "reviewDate": "",
@@ -14309,22 +14866,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "hydrologic, meteorological, statistical, and geospatial analyses",
       "summaryEn": "hydrologic, meteorological, statistical, and geospatial analyses",
       "title": "Research Associate I or II",
       "titleEn": "Research Associate I or II",
       "topics": [],
       "type": "research",
-      "url": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "",
       "applicationProcessEn": "",
+      "applicationRouteCheckedAt": "2026-11-04T04:52:50.178Z",
+      "applicationUrl": "https://spartantalent.uncg.edu/postings/35916/pre_apply",
       "candidateId": "tcand-d9639cf9c040c3ba49793b20",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -14336,6 +14894,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:52:50.178Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -14370,6 +14929,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T03:49:43.733Z",
           "status": "supported",
           "url": "https://spartantalent.uncg.edu/postings/35916"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:52:50.178Z",
+          "status": "supported",
+          "url": "https://spartantalent.uncg.edu/postings/35916/pre_apply"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14382,6 +14947,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Minimum Qualifications Candidates must hold or anticipate a Ph.D. in Geography or a closely related field by the time of appointment. Preferred Qualifications We prefer candidates with interests in urban planning and economic development. We are interested in candidates with high potential to develop an externally funded research program and mentor undergraduate and graduate students in research. Areas of preferred focus include economic aspects of energy, smart cities, regional economic development, transportation, and other infrastructural elements of modern urban life. Strong skills and experience using geographic information systems ( GIS ) are desirable. The ",
       "requirementsEn": "Minimum Qualifications Candidates must hold or anticipate a Ph.D. in Geography or a closely related field by the time of appointment. Preferred Qualifications We prefer candidates with interests in urban planning and economic development. We are interested in candidates with high potential to develop an externally funded research program and mentor undergraduate and graduate students in research. Areas of preferred focus include economic aspects of energy, smart cities, regional economic development, transportation, and other infrastructural elements of modern urban life. Strong skills and experience using geographic information systems ( GIS ) are desirable. The ",
       "reviewDate": "2026-10-15",
@@ -14394,16 +14960,15 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "urban economic geography",
       "summaryEn": "urban economic geography",
       "title": "Assistant Professor, Urban Economic Geography",
       "titleEn": "Assistant Professor, Urban Economic Geography",
       "topics": [],
       "type": "faculty",
-      "url": "https://spartantalent.uncg.edu/postings/35916",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://spartantalent.uncg.edu/postings/35916"
     },
     {
       "announcementStatus": "invites_applications",
@@ -14421,6 +14986,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:46:37.335Z",
       "deadline": "2026-11-29",
       "deadlineNote": "Bewerbungsfrist 29.11.2026",
       "deadlineNoteEn": "Bewerbungsfrist 29.11.2026",
@@ -14533,6 +15099,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-01T13:53:30.258147+00:00",
           "status": "supported",
           "url": "https://karriere.uni-frankfurt.de/gu-frankfurt/job/58660"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:46:37.335Z",
+          "status": "missing",
+          "url": "https://karriere.uni-frankfurt.de/gu-frankfurt/job/58660"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14545,6 +15117,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "überdurchschnittlichen Masterabschluss (oder einen vergleichbaren Abschluss) in Biologie, Ökologie, Evolutionsbiologie oder einer verwandten Disziplin\nErfahrung in mindestens zwei der folgenden Bereiche\nbeherrschen Deutsch und Englisch in Wort und Schrift",
       "requirementsEn": "überdurchschnittlichen Masterabschluss (oder einen vergleichbaren Abschluss) in Biologie, Ökologie, Evolutionsbiologie oder einer verwandten Disziplin\nErfahrung in mindestens zwei der folgenden Bereiche\nbeherrschen Deutsch und Englisch in Wort und Schrift",
       "reviewDate": "",
@@ -14557,22 +15130,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "Umweltstressoren wie Lebensraumverlust und Agrochemikalien",
       "summaryEn": "Umweltstressoren wie Lebensraumverlust und Agrochemikalien",
       "title": "Wissenschaftliche*n Mitarbeiter*in (m/w/d) in der Abteilung Evolutionäre Ökologie der Hymenopteren",
       "titleEn": "Wissenschaftliche*n Mitarbeiter*in (m/w/d) in der Abteilung Evolutionäre Ökologie der Hymenopteren",
       "topics": [],
       "type": "phd",
-      "url": "https://karriere.uni-frankfurt.de/gu-frankfurt/job/58660",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://karriere.uni-frankfurt.de/gu-frankfurt/job/58660"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "qualified candidates must electronically submit the following materials by clicking the Apply Now button",
       "applicationProcessEn": "qualified candidates must electronically submit the following materials by clicking the Apply Now button",
+      "applicationRouteCheckedAt": "2026-11-04T04:50:04.670Z",
+      "applicationUrl": "https://secure.dc4.pageuppeople.com/apply/873/gateway/default.aspx?c=apply&lJobID=561701&lJobSourceTypeID=857&sLanguage=en-us",
       "candidateId": "tcand-e8d4fb8f95d8568da71619ba",
       "caution": "待审核数据；门户最终受理未核验。 资格条款已按同一官方快照补充完整句，待所有者审核；没有重写旧核验事件。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified. Qualification clauses expanded from the same retained official snapshot; pending owner review, without rewriting completed review events.",
@@ -14584,6 +15158,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:50:04.670Z",
       "deadline": "2026-11-10",
       "deadlineNote": "The deadline to submit application materials is 11:55 p.m. on 11/10/2026\nClose Date: November 10 th , 2026",
       "deadlineNoteEn": "The deadline to submit application materials is 11:55 p.m. on 11/10/2026\nClose Date: November 10 th , 2026",
@@ -14592,7 +15167,16 @@ export const publicReleaseDataset = {
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
       "field": "研究方向见原公告",
-      "fieldConflicts": [],
+      "fieldConflicts": [
+        {
+          "currentlyObserved": "2026-11-25",
+          "field": "deadline",
+          "observedAt": "2026-11-04T04:45:52.417Z",
+          "previous": "2026-11-10",
+          "status": "unresolved",
+          "url": "https://careers.humboldt.edu/hm/en-us/job/561701/farm-coordinator"
+        }
+      ],
       "fieldEn": "See official announcement",
       "fieldEvidence": [
         {
@@ -14696,6 +15280,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-02T15:01:12Z",
           "status": "supported",
           "url": "https://careers.humboldt.edu/hm/en-us/job/561701/farm-coordinator"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:50:04.670Z",
+          "status": "supported",
+          "url": "https://secure.dc4.pageuppeople.com/apply/873/gateway/default.aspx?c=apply&lJobID=561701&lJobSourceTypeID=857&sLanguage=en-us"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14708,6 +15298,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "required: Equivalent to 60 semester or 90 quarter units of academic work at a recognized college or university, including agriculture and science courses applicable to the production of general field and specialty crops.\nalternative: Additional specialized experience which has demonstrated that the applicant has acquired and successfully applied the knowledge and abilities may be substituted for the required education on the basis of one year of experience for each 30 semester or 45 quarter units of accredited college work.\nrequired: Three years of progressively responsible experience in the production of field, garden, vegetable or specialty crops (orchards, vineyards, feed crops, etc.).\npreferred: Background in traditional ecological knowledge, indigenous science, community-based farm organizing and related areas.\nsponsorship: CAL POLY HUMBOLDT IS NOT A SPONSORING AGENCY FOR STAFF OR MANAGEMENT POSITIONS (e.g. H1-B VISAS)",
       "requirementsEn": "required: Equivalent to 60 semester or 90 quarter units of academic work at a recognized college or university, including agriculture and science courses applicable to the production of general field and specialty crops.\nalternative: Additional specialized experience which has demonstrated that the applicant has acquired and successfully applied the knowledge and abilities may be substituted for the required education on the basis of one year of experience for each 30 semester or 45 quarter units of accredited college work.\nrequired: Three years of progressively responsible experience in the production of field, garden, vegetable or specialty crops (orchards, vineyards, feed crops, etc.).\npreferred: Background in traditional ecological knowledge, indigenous science, community-based farm organizing and related areas.\nsponsorship: CAL POLY HUMBOLDT IS NOT A SPONSORING AGENCY FOR STAFF OR MANAGEMENT POSITIONS (e.g. H1-B VISAS)",
       "reviewDate": "",
@@ -14720,16 +15311,15 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "信息存在冲突 · 请核对官网",
+      "statusLabelEn": "Conflicting information · verify official source",
       "summary": "Critical Agriculture and Agroecology Studies program",
       "summaryEn": "Critical Agriculture and Agroecology Studies program",
       "title": "Farm Coordinator",
       "titleEn": "Farm Coordinator",
       "topics": [],
       "type": "research",
-      "url": "https://careers.humboldt.edu/hm/en-us/job/561701/farm-coordinator",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://careers.humboldt.edu/hm/en-us/job/561701/farm-coordinator"
     },
     {
       "announcementStatus": "unknown",
@@ -14747,6 +15337,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:48:59.942Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -14823,6 +15414,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T08:54:38.060Z",
           "status": "supported",
           "url": "https://apply.clearcompany.com/fieldmuseum?noheader=False&jobId=9c2ce01c-faf6-cd4e-0bd0-f0c7ec4ef00a#job"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:48:59.942Z",
+          "status": "missing",
+          "url": "https://apply.clearcompany.com/fieldmuseum?noheader=False&jobId=9c2ce01c-faf6-cd4e-0bd0-f0c7ec4ef00a#job"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14835,6 +15432,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Advanced degree in geography, GIS/geospatial science, ecology, environmental science, remote sensing, earth system science, conservation science, anthropology, or a related field, or an equivalent combination of education and relevant experience. Minimum seven years of progressively responsible experience in GIS, remote sensing, spatial analysis, applied conservation science, or a closely related field, including t\nMinimum seven years of progressively responsible experience in GIS, remote sensing, spatial analysis, applied conservation science, or a closely related field, including technical leadership. Demonstrated ability to manage projects, includ\nFluency in Spanish or Portuguese, with strong professional proficiency in the other language preferred.\nPreferred Qualifications: PhD in a relevant discipline.",
       "requirementsEn": "Advanced degree in geography, GIS/geospatial science, ecology, environmental science, remote sensing, earth system science, conservation science, anthropology, or a related field, or an equivalent combination of education and relevant experience. Minimum seven years of progressively responsible experience in GIS, remote sensing, spatial analysis, applied conservation science, or a closely related field, including t\nMinimum seven years of progressively responsible experience in GIS, remote sensing, spatial analysis, applied conservation science, or a closely related field, including technical leadership. Demonstrated ability to manage projects, includ\nFluency in Spanish or Portuguese, with strong professional proficiency in the other language preferred.\nPreferred Qualifications: PhD in a relevant discipline.",
       "reviewDate": "",
@@ -14847,16 +15445,15 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "application of geospatial science across KSAC's Andes-Amazon and Chicago Region programs",
       "summaryEn": "application of geospatial science across KSAC's Andes-Amazon and Chicago Region programs",
       "title": "Manager, Geospatial Scientist",
       "titleEn": "Manager, Geospatial Scientist",
       "topics": [],
       "type": "research",
-      "url": "https://apply.clearcompany.com/fieldmuseum?noheader=False&jobId=9c2ce01c-faf6-cd4e-0bd0-f0c7ec4ef00a#job",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://apply.clearcompany.com/fieldmuseum?noheader=False&jobId=9c2ce01c-faf6-cd4e-0bd0-f0c7ec4ef00a#job"
     },
     {
       "announcementStatus": "invites_applications",
@@ -14874,6 +15471,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:46:33.180Z",
       "deadline": "2026-11-22",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -15004,6 +15602,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-02T05:37:56.574249+00:00",
           "status": "supported",
           "url": "https://www.uni-bonn.de/de/universitaet/arbeiten-an-der-uni/stellenangebote/stellenausschreibungen/research-associate-phd-position-for-the-dfg-project-65"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:46:33.180Z",
+          "status": "missing",
+          "url": "https://www.uni-bonn.de/de/universitaet/arbeiten-an-der-uni/stellenangebote/stellenausschreibungen/research-associate-phd-position-for-the-dfg-project-65"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -15016,6 +15620,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "A completed academic degree (Master’s) in the social sciences or earth sciences (political science, human geography, regional studies, sociology or equivalent)\nWillingness to conduct independent field research in Northeast India\nVery good spoken and written English\nGood communication and teamwork skills Intercultural and diversity competence\nDesirable: Experience of conducting independent research in India Good knowledge of qualitative research methods Experience with working and researching with (palm oil) workers Good command of a language spoken in Northeast India (e.g. Assamese, Bengali, Nepali) Good knowledge of the project’s research area (political ecology, political economy, analysis of labour regimes, environmental labour studies, labour geography)",
       "requirementsEn": "A completed academic degree (Master’s) in the social sciences or earth sciences (political science, human geography, regional studies, sociology or equivalent)\nWillingness to conduct independent field research in Northeast India\nVery good spoken and written English\nGood communication and teamwork skills Intercultural and diversity competence\nDesirable: Experience of conducting independent research in India Good knowledge of qualitative research methods Experience with working and researching with (palm oil) workers Good command of a language spoken in Northeast India (e.g. Assamese, Bengali, Nepali) Good knowledge of the project’s research area (political ecology, political economy, analysis of labour regimes, environmental labour studies, labour geography)",
       "reviewDate": "",
@@ -15028,22 +15633,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "(feminist) labour geography, environmental labour studies and political ecology",
       "summaryEn": "(feminist) labour geography, environmental labour studies and political ecology",
       "title": "Research Associate (65%, PhD) for the DFG Project Working the Plantationocene. Ecological Labour Regimes of the Palm Oil Value Chain (PALMWORK)",
       "titleEn": "Research Associate (65%, PhD) for the DFG Project Working the Plantationocene. Ecological Labour Regimes of the Palm Oil Value Chain (PALMWORK)",
       "topics": [],
       "type": "phd",
-      "url": "https://www.uni-bonn.de/de/universitaet/arbeiten-an-der-uni/stellenangebote/stellenausschreibungen/research-associate-phd-position-for-the-dfg-project-65",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://www.uni-bonn.de/de/universitaet/arbeiten-an-der-uni/stellenangebote/stellenausschreibungen/research-associate-phd-position-for-the-dfg-project-65"
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
       "applicationProcess": "",
       "applicationProcessEn": "",
+      "applicationRouteCheckedAt": "2026-11-04T04:52:56.916Z",
+      "applicationUrl": "https://uscjobs.sc.edu/postings/214650/pre_apply",
       "candidateId": "tcand-f5409773fd25ffaaf26d7f7e",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -15055,6 +15661,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:52:56.916Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -15119,6 +15726,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-10-31T06:16:51.304Z",
           "status": "supported",
           "url": "https://uscjobs.sc.edu/postings/214311"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:52:56.916Z",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214650/pre_apply"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -15131,6 +15744,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Required Education and Experience Master’s degree in Geography, GIScience, Geospatial Analytics, Geo-Informatics, or a related field by the time of appointment. Candidates must demonstrate the ability to teach undergraduate courses in GIScience and related areas. This position is not eligible for visa sponsorship. Applicants must be authorized to work in the United States at the time of hire. Preferred Qualifications Master’s degree in Geography, GIScience, Geospatial Analytics, Geo-Informatics, or a related field by the time of appointment. Candidates must demonstrate the ability to teach undergraduate courses in GIScience and related areas. Th\nPreferred Qualifications Master’s degree in Geography, GIScience, Geospatial Analytics, Geo-Informatics, or a related field by the time of appointment. Candidates must demonstrate the ability to teach undergraduate courses in GIScience and related areas. The department is particularly interested in candidates with experience teaching geospatial data science or related topics, curriculum development experience, professional engagement related to teaching and learning, an",
       "requirementsEn": "Required Education and Experience Master’s degree in Geography, GIScience, Geospatial Analytics, Geo-Informatics, or a related field by the time of appointment. Candidates must demonstrate the ability to teach undergraduate courses in GIScience and related areas. This position is not eligible for visa sponsorship. Applicants must be authorized to work in the United States at the time of hire. Preferred Qualifications Master’s degree in Geography, GIScience, Geospatial Analytics, Geo-Informatics, or a related field by the time of appointment. Candidates must demonstrate the ability to teach undergraduate courses in GIScience and related areas. Th\nPreferred Qualifications Master’s degree in Geography, GIScience, Geospatial Analytics, Geo-Informatics, or a related field by the time of appointment. Candidates must demonstrate the ability to teach undergraduate courses in GIScience and related areas. The department is particularly interested in candidates with experience teaching geospatial data science or related topics, curriculum development experience, professional engagement related to teaching and learning, an",
       "reviewDate": "2026-12-01",
@@ -15143,22 +15757,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "Geospatial Data Science",
       "summaryEn": "Geospatial Data Science",
       "title": "Instructor, Geospatial Data Science",
       "titleEn": "Instructor, Geospatial Data Science",
       "topics": [],
       "type": "faculty",
-      "url": "https://uscjobs.sc.edu/postings/214311",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified"
+      "url": "https://uscjobs.sc.edu/postings/214311"
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
       "applicationProcess": "Via our job portal / Apply now - button",
       "applicationProcessEn": "Via our job portal / Apply now - button",
+      "applicationRouteCheckedAt": "2026-11-04T04:50:07.559Z",
+      "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1453340933/?locale=en_US",
       "candidateId": "tcand-fa1891c47c61fdfef56ccd4a",
       "caution": "待审核数据；门户最终受理未核验。 本轮原文证据已保存恢复，资格中优先项与硬性条件须结合所附完整段落阅读；仍待发布审核。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified. Evidence saved and restored; preserve required/preferred qualification distinctions; owner publication review pending.",
@@ -15170,6 +15785,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:50:07.559Z",
       "deadline": "2026-11-11",
       "deadlineNote": "Application deadline: 11/11/2026",
       "deadlineNoteEn": "Application deadline: 11/11/2026",
@@ -15264,6 +15880,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-03T05:50:31Z",
           "status": "supported",
           "url": "https://jobs.univie.ac.at/job/University-Assistant-postdoctoral/1453340933/"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:50:07.559Z",
+          "status": "missing",
+          "url": "https://jobs.univie.ac.at/talentcommunity/apply/1453340933/?locale=en_US"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -15276,6 +15898,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "Phd in a relevant field\nExperience in population and co-occurrence analyses as well comparative genomic analyses for metabolic reconstruction.\nExperience in using a range of bioinformatical tools but also lab-based methods to study microbial interactions.\nIn-depth understanding of Patescibacteria and knowledge of microbial processes in wastewater treatment systems, including phosphorus removal and polyphosphate-accumulating organisms.\nExperience in molecular techniques like fluorescence in situ hybridization and PCR-based methods.",
       "requirementsEn": "Phd in a relevant field\nExperience in population and co-occurrence analyses as well comparative genomic analyses for metabolic reconstruction.\nExperience in using a range of bioinformatical tools but also lab-based methods to study microbial interactions.\nIn-depth understanding of Patescibacteria and knowledge of microbial processes in wastewater treatment systems, including phosphorus removal and polyphosphate-accumulating organisms.\nExperience in molecular techniques like fluorescence in situ hybridization and PCR-based methods.",
       "reviewDate": "",
@@ -15288,22 +15911,23 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "rocesses. Our group is dedicated to exploring various aspects of microbial ecology in both natural and engineered systems, including wastewater treatment. Your future tasks: The postdoctoral researcher will investigate",
       "summaryEn": "rocesses. Our group is dedicated to exploring various aspects of microbial ecology in both natural and engineered systems, including wastewater treatment. Your future tasks: The postdoctoral researcher will investigate",
       "title": "University Assistant postdoctoral",
       "titleEn": "University Assistant postdoctoral",
       "topics": [],
       "type": "postdoc",
-      "url": "https://jobs.univie.ac.at/job/University-Assistant-postdoctoral/1453340933/",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://jobs.univie.ac.at/job/University-Assistant-postdoctoral/1453340933/"
     },
     {
       "announcementStatus": "invites_applications",
       "applicationActionability": "unknown",
       "applicationProcess": "Apply for job",
       "applicationProcessEn": "Apply for job",
+      "applicationRouteCheckedAt": "2026-11-04T04:50:00.609Z",
+      "applicationUrl": "https://www.jobs.manchester.ac.uk/DecideInternalExternal/DecideInternalExternal?JobId=46239",
       "candidateId": "tcand-fd0d69d1cb66f960f3a5e991",
       "caution": "待审核数据；门户最终受理未核验。",
       "cautionEn": "Pending owner review. Final portal submission acceptance unverified.",
@@ -15315,6 +15939,7 @@ export const publicReleaseDataset = {
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
+      "currentOpenStatusCheckedAt": "2026-11-04T04:50:00.609Z",
       "deadline": "2026-11-08",
       "deadlineNote": "Closing date (DD/MM/YYYY): 08/11/2026",
       "deadlineNoteEn": "Closing date (DD/MM/YYYY): 08/11/2026",
@@ -15409,6 +16034,12 @@ export const publicReleaseDataset = {
           "observedAt": "2026-11-01T13:53:30.258147+00:00",
           "status": "supported",
           "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46239"
+        },
+        {
+          "field": "application_route",
+          "observedAt": "2026-11-04T04:50:00.609Z",
+          "status": "missing",
+          "url": "https://www.jobs.manchester.ac.uk/DecideInternalExternal/DecideInternalExternal?JobId=46239"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -15421,6 +16052,7 @@ export const publicReleaseDataset = {
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
+      "releaseStatus": "likely_open / needs_review",
       "requirements": "官方条件尚未完整核验",
       "requirementsEn": "Requirements not fully verified",
       "reviewDate": "",
@@ -15433,16 +16065,15 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
+      "statusLabel": "当前开放状态待核实",
+      "statusLabelEn": "Current availability unverified",
       "summary": "satellite-based irrigation mapping tools",
       "summaryEn": "satellite-based irrigation mapping tools",
       "title": "Research Associate (Socially Responsible Earth Observation)",
       "titleEn": "Research Associate (Socially Responsible Earth Observation)",
       "topics": [],
       "type": "postdoc",
-      "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46239",
-      "releaseStatus": "likely_open / needs_review",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified"
+      "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46239"
     }
   ],
   "newRecords": 59,
@@ -15477,8 +16108,8 @@ export const publicReleaseDataset = {
     "limitation": "Coverage is expanding / 数据覆盖持续扩展"
   },
   "counts": {
-    "verified_open": 1,
-    "likely_open / needs_review": 63,
+    "verified_open": 5,
+    "likely_open / needs_review": 59,
     "closed": 0,
     "expired": 8,
     "insufficient_evidence": 25,
@@ -15486,5 +16117,14 @@ export const publicReleaseDataset = {
     "resource_only": 84
   },
   "opportunityRecords": 97,
-  "datasetSha256": "e464ee27f0a8ec66289646a2b096babd3b640d12cf02bcb21e808a5ae29f1dc1"
+  "datasetSha256": "94266504b2ee511d4bd86163d432a433ea8d91b573b9ebae25640d6bf61ec733",
+  "availabilityReview": {
+    "observedDate": "2026-11-04",
+    "planned": 63,
+    "newlyConfirmed": 4,
+    "remainingUnknown": 59,
+    "newlyConfirmedClosed": 0,
+    "newlyConfirmedExpired": 0,
+    "finalSubmissionNotTested": true
+  }
 };
