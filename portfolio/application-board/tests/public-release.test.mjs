@@ -31,7 +31,7 @@ test('public data excludes private state, local paths and credential material',(
 });
 
 test('ETH receiving invitations require exact advertised role and live form evidence',()=>{
- const eth=data.records.filter(r=>(r.fieldEvidence||[]).some(e=>e.formStage==='public_identity_form'));
+ const eth=data.records.filter(r=>r.url.startsWith('https://jobs.ethz.ch/')&&(r.fieldEvidence||[]).some(e=>e.formStage==='public_identity_form'));
  assert.ok(eth.length>0);
  for(const row of eth){
   assert.ok(opportunityState(row,data.asOf).eligibleForOpenRecommendation);
@@ -39,5 +39,26 @@ test('ETH receiving invitations require exact advertised role and live form evid
    const copy=structuredClone(row);alter(copy.fieldEvidence.find(e=>e.formStage==='public_identity_form'));
    assert.equal(opportunityState(copy,data.asOf).eligibleForOpenRecommendation,false);
   }
+ }
+});
+
+test('WUR date wording and job-bound form cannot promote a mismatched or stale invitation',()=>{
+ const row=data.records.find(r=>r.id==='geo-oct17-wur-governance-postdoc');
+ assert.equal(row.deadline,'2026-11-15');assert.ok(opportunityState(row,data.asOf).eligibleForOpenRecommendation);
+ for(const alter of [e=>e.applicationWindow.closeDateLiteral='16 November 2026',e=>e.applicationFormTitle='Apply for another role',e=>e.availableFormFields=[],e=>e.pageKind='announcement',e=>e.observedAt='2026-01-01']){
+  const copy=structuredClone(row);alter(copy.fieldEvidence.find(e=>e.field==='current_open_status'&&e.value==='open'));
+  assert.equal(opportunityState(copy,data.asOf).eligibleForOpenRecommendation,false);
+ }
+ const farm=data.records.find(r=>r.id==='geo-tcand-e8d4fb8f95d8568da71619ba');assert.equal(farm.deadline,'2026-11-25');assert.equal(opportunityState(farm,data.asOf).eligibleForOpenRecommendation,false);
+});
+
+test('USC portal invitation needs the advertised requisition, role and submission date',()=>{
+ for(const id of ['geo-tcand-596dd12447da195b7d3d3896','geo-tcand-bad85817b63bf1c6f0982338']){
+  const row=data.records.find(r=>r.id===id);assert.ok(opportunityState(row,data.asOf).eligibleForOpenRecommendation);
+  for(const alter of [e=>e.jobReference='REQ99999',e=>e.applicationFormTitle='Other role',e=>e.applicationWindow.closeDateLiteral='12/02/2026',e=>e.availableFormFields=['nameFirst'],e=>e.pageKind='announcement']){
+   const copy=structuredClone(row);alter(copy.fieldEvidence.find(e=>e.field==='current_open_status'&&e.value==='open'));
+   assert.equal(opportunityState(copy,data.asOf).eligibleForOpenRecommendation,false);
+  }
+  assert.equal(opportunityState(row,'2026-12-02').eligibleForOpenRecommendation,false);
  }
 });
