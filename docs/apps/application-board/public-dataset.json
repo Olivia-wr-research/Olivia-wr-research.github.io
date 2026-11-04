@@ -8340,12 +8340,12 @@
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
-      "applicationProcess": "https://careers.ua.edu/jobs/search/AS",
+      "applicationProcess": "通过学校在线系统申请，提交求职信、CV、研究陈述、教学陈述及3位推荐人联系方式。公开Apply起始表单需姓名和邮箱；未填写或提交，后续受理未知。",
       "applicationProcessEn": "https://careers.ua.edu/jobs/search/AS",
-      "applicationRouteCheckedAt": "2026-11-04T15:41:16.882Z",
+      "applicationRouteCheckedAt": "2026-11-04T18:56:55.252Z",
       "candidateId": "tcand-1e947437e93504784c48a41e",
-      "caution": "开始审查仅说明2026年11月，不推定为11月1日；系统关闭日期另有含义。推荐／提醒表单不作为岗位受理确认。",
-      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
+      "caution": "已区分Apply起始表单、职位提醒和推荐他人表单；后续系统受理未核实。仅说明2026年11月开始审查，不推定为11月1日；系统关闭栏不等同于招满或受理确认。",
+      "cautionEn": "Actual public Apply starter form distinguished from alerts/referral. No personal data entered or submission; downstream ATS acceptance not established. Review begins in November 2026; do not infer a first-day date.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -8354,7 +8354,7 @@
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T15:41:16.882Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T18:56:55.252Z",
       "deadline": "",
       "deadlineNote": "",
       "deadlineNoteEn": "",
@@ -8425,6 +8425,30 @@
           "status": "unknown",
           "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states",
           "observedAt": "2026-11-04T15:41:16.882Z"
+        },
+        {
+          "field": "applicationUrl",
+          "status": "supported",
+          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states",
+          "observedAt": "2026-11-04T18:56:55.252Z"
+        },
+        {
+          "field": "applicationProcess",
+          "status": "supported",
+          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states",
+          "observedAt": "2026-11-04T18:56:55.252Z"
+        },
+        {
+          "field": "caution",
+          "status": "supported",
+          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states",
+          "observedAt": "2026-11-04T18:56:55.252Z"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states",
+          "observedAt": "2026-11-04T18:56:55.252Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8458,7 +8482,12 @@
       "titleEn": "Assistant Professor of Geography, in Geography and the Environment",
       "topics": [],
       "type": "faculty",
-      "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states"
+      "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states",
+      "applicationUrl": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states#apply",
+      "sourceReview": {
+        "attemptedAt": "2026-11-04T18:56:55.252Z",
+        "scope": "specific public notice and Apply starter only; downstream acceptance unverified"
+      }
     },
     {
       "announcementStatus": "invites_applications",
@@ -10449,11 +10478,11 @@
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
-      "applicationProcess": "",
+      "applicationProcess": "官方岗位页面提供姓名、邮箱的Apply起始表单；未填写或提交，尚未验证后续招聘系统受理。",
       "applicationProcessEn": "",
       "candidateId": "tcand-5bce225d62ce093632a59a5d",
-      "caution": "本轮公开页面含推荐他人／提醒用途的表单，尚未核实真正岗位申请入口。",
-      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
+      "caution": "岗位待最终预算批准；公开Apply起始表单与提醒／推荐功能分开，但不能据此确认后续系统受理。",
+      "cautionEn": "Actual public Apply starter form distinguished from alerts/referral. No personal data entered or submission; downstream ATS acceptance not established. Appointment remains pending final budgetary approval; priority review before 1 December 2026.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -10462,11 +10491,11 @@
       "country": "未核实",
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T15:36:26.958Z",
+      "currentOpenStatusCheckedAt": "2026-11-04T18:56:23.098Z",
       "deadline": "",
-      "deadlineNote": "",
-      "deadlineNoteEn": "",
-      "deadlineType": "unknown",
+      "deadlineNote": "即时开始评审，招满为止；2026年12月1日前申请优先考虑，并非固定截止。岗位仍待最终预算批准。",
+      "deadlineNoteEn": "Review starts immediately and continues until filled; applications before 1 December 2026 receive priority. Appointment remains pending final budgetary approval.",
+      "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
       "durationEn": "See official announcement",
@@ -10527,6 +10556,54 @@
           "status": "unknown",
           "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611",
           "observedAt": "2026-11-04T15:36:26.958Z"
+        },
+        {
+          "field": "deadlineType",
+          "status": "supported",
+          "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611",
+          "observedAt": "2026-11-04T18:56:23.098Z"
+        },
+        {
+          "field": "priorityDate",
+          "status": "supported",
+          "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611",
+          "observedAt": "2026-11-04T18:56:23.098Z"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611",
+          "observedAt": "2026-11-04T18:56:23.098Z"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611",
+          "observedAt": "2026-11-04T18:56:23.098Z"
+        },
+        {
+          "field": "applicationUrl",
+          "status": "supported",
+          "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611",
+          "observedAt": "2026-11-04T18:56:23.098Z"
+        },
+        {
+          "field": "applicationProcess",
+          "status": "supported",
+          "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611",
+          "observedAt": "2026-11-04T18:56:23.098Z"
+        },
+        {
+          "field": "caution",
+          "status": "supported",
+          "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611",
+          "observedAt": "2026-11-04T18:56:23.098Z"
+        },
+        {
+          "field": "current_open_status",
+          "status": "unknown",
+          "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611",
+          "observedAt": "2026-11-04T18:56:23.098Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -10561,7 +10638,13 @@
       "topics": [],
       "type": "faculty",
       "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611",
-      "applicationRouteCheckedAt": "2026-11-04T15:36:26.958Z"
+      "applicationRouteCheckedAt": "2026-11-04T18:56:23.098Z",
+      "priorityDate": "2026-12-01",
+      "applicationUrl": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611",
+      "sourceReview": {
+        "attemptedAt": "2026-11-04T18:56:23.098Z",
+        "scope": "specific public notice and Apply starter only; downstream acceptance unverified"
+      }
     },
     {
       "announcementStatus": "invites_applications",
@@ -18161,7 +18244,7 @@
     "resource_only": 84
   },
   "opportunityRecords": 101,
-  "datasetSha256": "8ac3f13b435ee04643d6f395fcfd306357de822268d3e081fbf6c131a91703e0",
+  "datasetSha256": "2a35383334dd799d156dfe8ab10f5eb4ffcd5e3dcaf1c72748445cd36c85c3a1",
   "availabilityReview": {
     "planned": 34,
     "new_public_records": 12,
@@ -18186,5 +18269,11 @@
     "fieldCorrectedRecords": 20,
     "newOpen": 0,
     "privateDetailedEvidencePublished": false
+  },
+  "applicationStarterFollowup": {
+    "actualRechecks": 2,
+    "newOpen": 0,
+    "unknownRetained": 2,
+    "privateEvidencePublished": false
   }
 }
