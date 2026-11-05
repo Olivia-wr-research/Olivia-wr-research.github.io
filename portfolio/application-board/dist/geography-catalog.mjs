@@ -1,7 +1,8 @@
+import {calendarDate} from './calendar-date.mjs?v=product-ready-20261106';
 import {applyReviewedCatalogUpdates} from './catalog-review.mjs';
 import {publicReleaseDataset} from './public-data.mjs';
 import {reviewedCatalogUpdates} from './reviewed-updates.mjs';
-import {opportunityState} from './opportunity.mjs?v=product-audit-20261105';
+import {opportunityState} from './opportunity.mjs?v=product-ready-20261106';
 import {geographyOpportunities} from './geography-opportunities.mjs';
 import {geographyOctober18} from './geography-oct18.mjs';
 import {geographyProgrammesEurope} from './geography-programmes-europe.mjs';
@@ -20,7 +21,7 @@ export function opportunityCategory(j){
  if(/^(phd|master|studentship|doctoral)/i.test(j.type||'PhD'))return 'study';
  return 'work';
 }
-export function catalogCounts(rows,today=new Date().toISOString().slice(0,10)){const c={total:rows.length,programme:0,intake:0,study:0,work:0,learning:0,open:0,uncertain:0,institutions:0};for(const j of rows){c[opportunityCategory(j)]++;const state=opportunityState(j,today);if(state.eligibleForOpenRecommendation)c.open++;if(['unknown','conflict'].includes(state.state))c.uncertain++;}c.institutions=new Set(rows.filter(j=>opportunityCategory(j)!=='learning').map(j=>(j.institutionEn||j.institution).trim().toLowerCase())).size;return c;}
+export function catalogCounts(rows,today=calendarDate()){const c={total:rows.length,programme:0,intake:0,study:0,work:0,learning:0,open:0,uncertain:0,institutions:0};for(const j of rows){c[opportunityCategory(j)]++;const state=opportunityState(j,today);if(state.eligibleForOpenRecommendation)c.open++;if(['unknown','conflict'].includes(state.state))c.uncertain++;}c.institutions=new Set(rows.filter(j=>opportunityCategory(j)!=='learning').map(j=>(j.institutionEn||j.institution).trim().toLowerCase())).size;return c;}
 
 // Field-level review on 2026-10-17. Source access is not a blanket accuracy claim.
 // The full findings and unresolved fields are recorded in audits/2026-10-17-existing-catalog-audit.json.

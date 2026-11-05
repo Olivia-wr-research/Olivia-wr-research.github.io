@@ -1,12 +1,13 @@
+import {calendarDate} from './calendar-date.mjs?v=product-ready-20261106';
 import {coverageAudit} from './geography-coverage.mjs';
-import {geographyCatalog} from './geography-catalog.mjs?v=product-audit-20261105';
-import {language} from './i18n.mjs?v=product-audit-20261105';
+import {geographyCatalog} from './geography-catalog.mjs?v=product-ready-20261106';
+import {language} from './i18n.mjs?v=product-ready-20261106';
 const node=(tag,text)=>{const e=document.createElement(tag);if(text!==undefined)e.textContent=text;return e;};
 export function setupCoverage(host){
  const button=node('button');host.append(button);const dialog=node('dialog');dialog.id='geo-coverage';document.body.append(dialog);
  function label(){button.textContent=language==='en'?'Coverage & data quality':'覆盖范围与数据质量';}label();window.addEventListener('languagechange',label);
  button.onclick=()=>{
- const en=language==='en',audit=coverageAudit(geographyCatalog,{today:new Date().toISOString().slice(0,10)});dialog.replaceChildren();
+ const en=language==='en',audit=coverageAudit(geographyCatalog,{today:calendarDate()});dialog.replaceChildren();
  const close=node('button','×');close.setAttribute('aria-label','Close / 关闭');close.onclick=()=>dialog.close();
  dialog.append(close,node('h2',en?'What is actually in this catalogue?':'我们收录了什么，还缺什么？'),node('p',en?'Counts describe the current catalogue, not all universities or all vacancies. Open means open at the recorded check, not a live availability guarantee.':'这些数字只描述当前目录，不代表全部高校或全部岗位。“开放”指记录公告在招（有证据），不是实时名额保证。'));
  const wrap=node('div');wrap.style.overflowX='auto';const table=node('table');table.style.width='100%';table.style.textAlign='left';const head=node('tr');for(const s of en?['Region','Records','Programmes','Open at check','To verify']:['地区','记录','常设项目','公告在招（有证据）','待核实'])head.append(node('th',s));table.append(head);

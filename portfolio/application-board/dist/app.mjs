@@ -1,4 +1,4 @@
-import {STAGES,MATERIAL_STATES,KEY,parseBackup,backup,mergeRecords,daysLeft,filtered,csv,updateStage,demoRecords,validateRecord} from './core.mjs';
+import {STAGES,MATERIAL_STATES,KEY,parseBackup,backup,mergeRecords,daysLeft,filtered,csv,updateStage,demoRecords,validateRecord} from './core.mjs?v=product-ready-20261106';
 const $=s=>document.querySelector(s),el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 let storageVersion=null;
 let records=[],dueOnly=false,selected=null,storageProblem=false;
@@ -16,7 +16,7 @@ function render(){
  $('#filter-mode').textContent=dueOnly?'Due within 14 days':'';$('#board').replaceChildren();$('#demo').disabled=records.length>0||storageProblem;
  if(!rows.length){const box=el('div',undefined,'empty');box.append(el('h3',records.length?'No opportunities match these filters.':'A little structure for a big next step.'),el('p',records.length?'Change the search or stage to see your other records.':'Add your first opportunity, or try clearly fictional examples.'));$('#board').append(box);}
  for(const r of rows){const card=el('article',undefined,'card'),badge=el('span',r.stage,'badge');badge.dataset.stage=r.stage;card.append(badge,el('h3',r.title),el('div',r.institution,'institution'),roleMeta(r));
- const d=daysLeft(r.deadline);card.append(el('div',d===null?'No deadline recorded':`${r.deadline} · ${d<0?'past date — recheck source':d===0?'today (UTC date)':d+' days left'}`,'deadline '+(d<0?'expired':d!==null&&d<=14?'urgent':'')));
+ const d=daysLeft(r.deadline);card.append(el('div',d===null?'No deadline recorded':`${r.deadline} · ${d<0?'past date — recheck source':d===0?'today (Beijing calendar date)':d+' days left'}`,'deadline '+(d<0?'expired':d!==null&&d<=14?'urgent':'')));
  const done=r.materials.filter(m=>m.status==='ready').length;card.append(el('div',`${done} / ${r.materials.length} materials ready`,'meta'));const progress=el('div',undefined,'progress'),fill=el('i');fill.style.width=(r.materials.length?done/r.materials.length*100:0)+'%';progress.append(fill);card.append(progress,el('div',r.verified?'Source checked by you':'Source not marked checked','meta'));
  if(r.url){const a=el('a','Open source ↗');a.href=r.url;a.target='_blank';a.rel='noopener noreferrer';card.append(a);}
  const actions=el('div',undefined,'actions');for(const [label,fn] of [['Checklist & notes',()=>showDetails(r.id)],['Edit',()=>edit(r)]]){const b=el('button',label);b.addEventListener('click',fn);actions.append(b);}card.append(actions);$('#board').append(card);}

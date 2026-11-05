@@ -1,5 +1,5 @@
 // Collection dates are not source publication dates or verification dates.
-import {language} from './i18n.mjs?v=product-audit-20261105';
+import {language} from './i18n.mjs?v=product-ready-20261106';
 export function collectionDate(record){
  const value=record.collectedAt;
  if(typeof value!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(value))return '';

@@ -36,6 +36,6 @@ test('counts use the same eligibility predicate as filters',()=>{
 });
 
 test('comparison uses the same localized status and conservative deadline as detail and export',()=>{
- const j=job({currentOpenStatus:'unknown',deadlineType:'rolling',reviewDate:'2026-11-15'}),v=comparisonStatusFields(j,'en',today);assert.equal(v.status,opportunityStatusLabel(j,'en',today));assert.match(v.deadline,/Until filled as stated/);assert.doesNotMatch(v.deadline,/days to/);
+ const j=job({currentOpenStatus:'unknown',deadlineType:'rolling',reviewDate:'2026-11-15'}),v=comparisonStatusFields(j,'en',today);assert.equal(v.status,opportunityStatusLabel(j,'en',today));assert.match(v.deadline,/Until filled/);assert.match(v.deadline,/no fixed deadline/);assert.doesNotMatch(v.deadline,/days to/);
  const c=comparisonStatusFields(job({deadlineConflict:true}),'en',today);assert.match(c.deadline,/Conflicting/);assert.match(c.status,/Conflicting/);
 });

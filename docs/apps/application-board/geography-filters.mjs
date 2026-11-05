@@ -1,5 +1,6 @@
-import {opportunityCategory} from './geography-catalog.mjs?v=product-audit-20261105';
-import {fundingKind,opportunityState,opportunityDeadlineInfo,isConcreteOpportunity} from './opportunity.mjs?v=product-audit-20261105';
+import {calendarDate} from './calendar-date.mjs?v=product-ready-20261106';
+import {opportunityCategory} from './geography-catalog.mjs?v=product-ready-20261106';
+import {fundingKind,opportunityState,opportunityDeadlineInfo,isConcreteOpportunity} from './opportunity.mjs?v=product-ready-20261106';
 export function trackOf(j){return ['programme','intake','study'].includes(opportunityCategory(j))?'study':'work';}
 export function levelOf(j){
  if(j.degreeType==='masters'||/^masters?[-_]/i.test(j.type||''))return 'masters';
@@ -25,7 +26,7 @@ export function disciplineOf(j){
  if(/physical|climate|environment|hydro|glaci|自然|气候|环境|水文|冰川|地球系统/i.test(s))tags.push('physical');
  return tags.length?tags:['general'];
 }
-export function matchesGeo(j,{track='study',level='all',region='all',discipline='all',time='all',kind='all'}={},today=new Date().toISOString().slice(0,10)){
+export function matchesGeo(j,{track='study',level='all',region='all',discipline='all',time='all',kind='all'}={},today=calendarDate()){
  if(opportunityCategory(j)==='learning')return false;
  if(track!=='all'&&trackOf(j)!==track)return false;
  if(level!=='all'&&levelOf(j)!==level)return false;
@@ -35,6 +36,6 @@ export function matchesGeo(j,{track='study',level='all',region='all',discipline=
  if(time==='open')return opportunityState(j,today).eligibleForOpenRecommendation;
  if(time==='rolling')return isConcreteOpportunity(j)&&j.deadlineType==='rolling'&&!['closed','conflict'].includes(opportunityState(j,today).state);
  if(time==='unknown')return ['unknown','conflict'].includes(opportunityState(j,today).state);
- if(time==='30'||time==='90'){const d=opportunityDeadlineInfo(j,today).days;return d!==null&&d>=0&&d<=Number(time)&&opportunityState(j,today).state!=='closed';}
+ if(time==='14'||time==='30'||time==='90'){const d=opportunityDeadlineInfo(j,today).days;return d!==null&&d>=0&&d<=Number(time)&&opportunityState(j,today).state!=='closed';}
  return true;
 }

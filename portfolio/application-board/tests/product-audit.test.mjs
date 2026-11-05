@@ -12,7 +12,7 @@ test('all public titles and institutions have explicit Chinese presentation with
  for(const job of records){const before=JSON.stringify(job);assert.match(field(job,'title'),/[\u4e00-\u9fff]/,job.id);assert.match(field(job,'institution'),/[\u4e00-\u9fff]/,job.id);assert.equal(JSON.stringify(job),before);}
 });
 test('reference code does not clutter CSUN display title and original is retained',()=>{
- const job=records.find(j=>j.id==='geo-tcand-71630eaa66f09bcb67b0c44c');assert.equal(field(job,'title'),'自然地理学助理教授');assert.match(job.title,/# 27-12/);assert.match(field(job,'summary'),/27-12/);assert.match(field(job,'requirements'),/不能据此判断/);
+ const job=records.find(j=>j.id==='geo-tcand-71630eaa66f09bcb67b0c44c');assert.equal(field(job,'title'),'自然地理学助理教授');assert.match(job.title,/# 27-12/);assert.match(field(job,'summary'),/27-12/);assert.match(field(job,'requirements'),/到任时取得地理或密切相关博士/);
 });
 test('entry start, login and email evidence never claim a completed submission',()=>{
  assert.match(applicationEntryLabel({applicationActionability:'public_email_start_verified'}),/后续步骤与提交未核验/);
@@ -27,7 +27,7 @@ test('remaining untranslated requirements are explicitly identified as source ex
  assert.match(field({id:'unknown',requirements:'An advanced degree is required'},'requirements'),/^官方原文摘录（中文整理待补）/);
 });
 test('tracker initial markup is Chinese and remains visible when scripts fail',()=>{
- const html=read('tracker.html');assert.match(html,/<html lang="zh-CN"/);assert.match(html,/让下一站，有条不紊/);assert(!html.includes('visibility:hidden'));assert.match(html,/terrafar.css\?v=product-audit/);
+ const html=read('tracker.html');assert.match(html,/<html lang="zh-CN"/);assert.match(html,/让下一站，有条不紊/);assert(!html.includes('visibility:hidden'));assert.match(html,/terrafar.css\?v=[^" ]+/);
 });
 test('salary units retain per-credit and nine-month boundaries',()=>{
  assert.match(field(records.find(j=>j.id==='geo-tcand-5174d20615e6d71eceb73678'),'salary'),/每 DCE 学分/);

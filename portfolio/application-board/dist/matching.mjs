@@ -1,5 +1,5 @@
-import {opportunityDeadlineInfo} from './opportunity.mjs?v=product-audit-20261105';
-import {daysLeft} from './core.mjs';
+import {opportunityDeadlineInfo} from './opportunity.mjs?v=product-ready-20261106';
+import {daysLeft} from './core.mjs?v=product-ready-20261106';
 export const PROFILE_KEY='doctoral-compass-profile-v1';
 export function terms(value){return [...new Set(String(value||'').split(/[,，;；\n]/).map(s=>s.trim().toLowerCase()).filter(Boolean))].slice(0,30);}
 export function profile(input){const out={topics:String(input.topics||'').slice(0,1500),methods:String(input.methods||'').slice(0,1500),countries:Array.isArray(input.countries)?input.countries.filter(v=>typeof v==='string').slice(0,30):[],degree:input.degree||'unknown',english:input.english||'unknown'};if(!['unknown','bachelor','master','doctorate'].includes(out.degree)||!['unknown','yes','no'].includes(out.english))throw Error('Invalid profile');return out;}

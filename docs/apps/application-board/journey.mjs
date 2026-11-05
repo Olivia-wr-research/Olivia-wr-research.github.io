@@ -1,11 +1,11 @@
 import {CV_MATCH_ENABLED} from "./features.mjs";
-import {field,language,t} from './i18n.mjs?v=product-audit-20261105';
-import {opportunityStatusLabel,opportunityDeadlineLabel,effectiveDeadline} from './opportunity.mjs?v=product-audit-20261105';
+import {field,language,t} from './i18n.mjs?v=product-ready-20261106';
+import {opportunityStatusLabel,applicationTimingLabel,opportunityDeadlineLabel,effectiveDeadline} from './opportunity.mjs?v=product-ready-20261106';
 import {researchUnits,sourcePortals,topicChoices,methodChoices,suggestFromText,cvFileText} from './explore.mjs?v=06';
 const $=s=>document.querySelector(s),node=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 const button=(text,fn,cls)=>{const n=node('button',text,cls);n.type='button';n.onclick=fn;return n;};
 const link=(text,url)=>{const n=node('a',text,'external-link');n.href=url;n.target='_blank';n.rel='noopener noreferrer';return n;};
-export function comparisonStatusFields(job,lang='zh',today){return {deadline:(effectiveDeadline(job)?effectiveDeadline(job)+' · ':'')+opportunityDeadlineLabel(job,lang,today),status:opportunityStatusLabel(job,lang,today)};}
+export function comparisonStatusFields(job,lang='zh',today){return {deadline:applicationTimingLabel(job,lang,today),status:opportunityStatusLabel(job,lang,today)};}
 export function setupJourney({getJobs,getOfficialJobs,applyProfile,showJob,matchJob}){
  let mode='jobs',readSerial=0;const compare=new Set(),extra=$('#extra-view'),layout=$('.layout');
  function leave(){mode='jobs';extra.hidden=true;layout.hidden=false;for(const id of ['groups-tab','sources-tab'])$('#'+id).classList.remove('current');}
