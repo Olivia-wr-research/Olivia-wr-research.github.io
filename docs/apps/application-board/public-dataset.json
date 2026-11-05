@@ -9684,21 +9684,21 @@
     },
     {
       "announcementStatus": "open",
-      "applicationActionability": "unknown",
-      "applicationProcess": "在线申请附兴趣信及简历；岗位招聘受州拨款经费约束。最终候选人需提供密封成绩单／证明，并通过CORI审查。",
-      "applicationProcessEn": "Please include a letter of interest and resume with your online application.",
+      "applicationActionability": "public_application_start_verified",
+      "applicationProcess": "已进入req601同岗位公开申请第1/4步，提供姓名、邮箱及简历上传字段；本次未填写、上传或提交，未验证后续步骤或最终回执。",
+      "applicationProcessEn": "Matching req601 public application step 1 of 4 observed. No personal information, resume upload or submission; subsequent steps and final receipt untested.",
       "candidateId": "tcand-5174d20615e6d71eceb73678",
-      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
+      "caution": "核对时可进入同岗位公开申请起始表；未提交申请，不保证后续审核、最终受理或回执。招聘仍受州拨款等公告条件约束。",
+      "cautionEn": "Matching public first application step observed; no application or receipt test. Appointment remains subject to stated funding and other conditions.",
       "checkedAt": "2026-10-31",
-      "city": "",
+      "city": "Wellesley Hills, MA",
       "collectedAt": "2026-10-31",
       "contentReviewObservedAt": "2026-10-31T09:14:12Z",
       "contentReviewStatus": "verified",
-      "country": "未核实",
-      "countryEn": "Unknown",
-      "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T18:02:27.109Z",
+      "country": "美国",
+      "countryEn": "United States",
+      "currentOpenStatus": "open",
+      "currentOpenStatusCheckedAt": "2026-11-05T05:49:12.320Z",
       "deadline": "",
       "deadlineNote": "官网招满为止；页面发布日期为2024-10-23，不能因旧公告仍存在就确认本轮在受理。",
       "deadlineNoteEn": "Until filled; page posted 23 October 2024. Persistence of an old notice does not prove present acceptance.",
@@ -9784,51 +9784,167 @@
         },
         {
           "field": "deadline",
+          "observedAt": "2026-11-04T18:02:27.109Z",
           "status": "supported",
-          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
-          "observedAt": "2026-11-04T18:02:27.109Z"
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass"
         },
         {
           "field": "deadlineType",
+          "observedAt": "2026-11-04T18:02:27.109Z",
           "status": "supported",
-          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
-          "observedAt": "2026-11-04T18:02:27.109Z"
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass"
         },
         {
           "field": "sourcePublishedDate",
+          "observedAt": "2026-11-04T18:02:27.109Z",
           "status": "supported",
-          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
-          "observedAt": "2026-11-04T18:02:27.109Z"
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass"
         },
         {
           "field": "deadlineNote",
+          "observedAt": "2026-11-04T18:02:27.109Z",
           "status": "supported",
-          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
-          "observedAt": "2026-11-04T18:02:27.109Z"
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass"
         },
         {
           "field": "deadlineNoteEn",
+          "observedAt": "2026-11-04T18:02:27.109Z",
           "status": "supported",
-          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
-          "observedAt": "2026-11-04T18:02:27.109Z"
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass"
         },
         {
           "field": "current_open_status",
+          "observedAt": "2026-11-04T18:02:27.109Z",
           "status": "unknown",
-          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
-          "observedAt": "2026-11-04T18:02:27.109Z"
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass"
+        },
+        {
+          "field": "applicationProcess",
+          "observedAt": "2026-11-05T00:35:21.811Z",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass"
+        },
+        {
+          "field": "fundingCondition",
+          "observedAt": "2026-11-05T00:35:21.811Z",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass"
+        },
+        {
+          "applicationFormTitle": "Adjunct Faculty Environmental Science and/or Biology",
+          "applicationWindow": {
+            "deadlineKind": "until_filled",
+            "deadlineQuote": "Open until filled."
+          },
+          "availableFormFields": [
+            "First Name",
+            "Last Name",
+            "Email",
+            "Upload Resume/CV"
+          ],
+          "field": "current_open_status",
+          "formStage": "public_identity_form",
+          "formStep": "Step 1 of 4",
+          "invitationQuote": "Ready to apply?",
+          "jobReference": "req601",
+          "observedAt": "2026-11-05T05:49:12.320Z",
+          "officialNoticeUrl": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
+          "pageKind": "application_portal",
+          "quote": "Before continuing with this application, please have your current resume available in either .doc or .pdf format.",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/requisition/601/application?c=mbcc-mass&jobboardid=0#1",
+          "value": "open",
+          "verified_scope": "public job-bound first application step only; no upload, personal fields, submission or receipt test"
+        },
+        {
+          "field": "applicationActionability",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/requisition/601/application?c=mbcc-mass&jobboardid=0#1",
+          "observedAt": "2026-11-05T05:49:12.320Z"
+        },
+        {
+          "field": "applicationPortalStatus",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/requisition/601/application?c=mbcc-mass&jobboardid=0#1",
+          "observedAt": "2026-11-05T05:49:12.320Z"
         },
         {
           "field": "applicationProcess",
           "status": "supported",
-          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
-          "observedAt": "2026-11-05T00:35:21.811Z"
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/requisition/601/application?c=mbcc-mass&jobboardid=0#1",
+          "observedAt": "2026-11-05T05:49:12.320Z"
         },
         {
-          "field": "fundingCondition",
+          "field": "applicationProcessEn",
           "status": "supported",
-          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
-          "observedAt": "2026-11-05T00:35:21.811Z"
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/requisition/601/application?c=mbcc-mass&jobboardid=0#1",
+          "observedAt": "2026-11-05T05:49:12.320Z"
+        },
+        {
+          "field": "applicationRouteCheckedAt",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/requisition/601/application?c=mbcc-mass&jobboardid=0#1",
+          "observedAt": "2026-11-05T05:49:12.320Z"
+        },
+        {
+          "field": "applicationUrl",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/requisition/601/application?c=mbcc-mass&jobboardid=0#1",
+          "observedAt": "2026-11-05T05:49:12.320Z"
+        },
+        {
+          "field": "caution",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/requisition/601/application?c=mbcc-mass&jobboardid=0#1",
+          "observedAt": "2026-11-05T05:49:12.320Z"
+        },
+        {
+          "field": "cautionEn",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/requisition/601/application?c=mbcc-mass&jobboardid=0#1",
+          "observedAt": "2026-11-05T05:49:12.320Z"
+        },
+        {
+          "field": "city",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/requisition/601/application?c=mbcc-mass&jobboardid=0#1",
+          "observedAt": "2026-11-05T05:49:12.320Z"
+        },
+        {
+          "field": "country",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/requisition/601/application?c=mbcc-mass&jobboardid=0#1",
+          "observedAt": "2026-11-05T05:49:12.320Z"
+        },
+        {
+          "field": "countryEn",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/requisition/601/application?c=mbcc-mass&jobboardid=0#1",
+          "observedAt": "2026-11-05T05:49:12.320Z"
+        },
+        {
+          "field": "currentOpenStatus",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/requisition/601/application?c=mbcc-mass&jobboardid=0#1",
+          "observedAt": "2026-11-05T05:49:12.320Z"
+        },
+        {
+          "field": "currentOpenStatusCheckedAt",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/requisition/601/application?c=mbcc-mass&jobboardid=0#1",
+          "observedAt": "2026-11-05T05:49:12.320Z"
+        },
+        {
+          "field": "locationNote",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/requisition/601/application?c=mbcc-mass&jobboardid=0#1",
+          "observedAt": "2026-11-05T05:49:12.320Z"
+        },
+        {
+          "field": "officialJobReference",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/requisition/601/application?c=mbcc-mass&jobboardid=0#1",
+          "observedAt": "2026-11-05T05:49:12.320Z"
         }
       ],
       "funding": "Faculty Hiring is subject to state appropriation funding.",
@@ -9841,7 +9957,7 @@
       "languageEn": "Not separately verified",
       "methods": [],
       "recordKind": "concrete_opportunity",
-      "releaseStatus": "likely_open / needs_review",
+      "releaseStatus": "verified_open",
       "requirements": "Master’s degree in Biology, Microbiology, Botany, Ecology, Environmental Science, or a closely related field; and Significant first-hand experience in a laboratory setting in one of these fields. Preferred Qualifications: Sensitivity and commitment to the goals of Equal Oppor",
       "requirementsEn": "Master’s degree in Biology, Microbiology, Botany, Ecology, Environmental Science, or a closely related field; and Significant first-hand experience in a laboratory setting in one of these fields. Preferred Qualifications: Sensitivity and commitment to the goals of Equal Oppor",
       "reviewDate": "",
@@ -9854,8 +9970,8 @@
       ],
       "sourceType": "official-employer",
       "status": "listed",
-      "statusLabel": "公告显示开放 · 门户受理待核实",
-      "statusLabelEn": "Announcement says open · portal acceptance unverified",
+      "statusLabel": "核对时确认受理 · 申请前请复核",
+      "statusLabelEn": "Acceptance confirmed at last check · recheck before applying",
       "summary": "adjunct faculty position in environmental science and/or biology",
       "summaryEn": "adjunct faculty position in environmental science and/or biology",
       "title": "Adjunct Faculty Environmental Science and/or Biology",
@@ -9867,10 +9983,15 @@
       "announcementRecheckedAt": "2026-11-04T18:02:27.109Z",
       "fundingCondition": "Faculty hiring is subject to state appropriation funding; not guaranteed by the persistent listing.",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:35:21.811Z",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "native_browser_DOM"
-      }
+        "attemptedAt": "2026-11-05T05:49:12.320Z",
+        "scope": "specific official role and observed first application route only; no login, submission or whole-source completeness claim",
+        "method": "actual_native_browser_visible_DOM"
+      },
+      "applicationPortalStatus": "open",
+      "applicationRouteCheckedAt": "2026-11-05T05:49:12.320Z",
+      "applicationUrl": "https://mbcc-mass.csod.com/ux/ats/careersite/1/requisition/601/application?c=mbcc-mass&jobboardid=0#1",
+      "locationNote": "公告地点Wellesley Hills；正文说明可能安排至Framingham、Ashland及其他教学点。",
+      "officialJobReference": "req601"
     },
     {
       "announcementStatus": "unknown",
@@ -12825,12 +12946,12 @@
     },
     {
       "announcementStatus": "open",
-      "applicationActionability": "unknown",
-      "applicationProcess": "仅接受CUHK career site在线提交；咨询邮箱不作为申请渠道。",
+      "applicationActionability": "login_required_acceptance_unverified",
+      "applicationProcess": "在官方260001QC职位页点击Apply Online后进入Taleo登录；不接受咨询邮箱申请，本次未登录或注册，登录后的受理仍未知。",
       "applicationProcessEn": "http://career.cuhk.edu.hk",
       "candidateId": "tcand-91bbb32c198d9fd76fdd4ba2",
-      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
+      "caution": "已核对同一职位的实际申请路线，当前先要求注册／登录；本次未登录或注册，账户内受理状态仍未知。",
+      "cautionEn": "Actual Apply Online navigation for260001QC requires a Taleo account. No authentication or submission attempted. Public role URL retained as stable application entry, observed redirect retained privately.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -12964,6 +13085,36 @@
           "status": "supported",
           "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en",
           "observedAt": "2026-11-05T00:36:25.081Z"
+        },
+        {
+          "field": "applicationActionability",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/iam/accessmanagement/login.jsf?lang=en&redirectionURI=https%3A%2F%2Fcuhk.taleo.net%2Fcareersection%2Fapplication.jss%3Flang%3Den%26type%3D1%26csNo%3D10080%26portal%3D10115020119%26reqNo%3D125923%26isOnLogoutPage%3Dtrue&TARGET=https%3A%2F%2Fcuhk.taleo.net%2Fcareersection%2Fapplication.jss%3Flang%3Den%26type%3D1%26csNo%3D10080%26portal%3D10115020119%26reqNo%3D125923%26isOnLogoutPage%3Dtrue",
+          "observedAt": "2026-11-05T05:51:57.598Z"
+        },
+        {
+          "field": "applicationPortalStatus",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/iam/accessmanagement/login.jsf?lang=en&redirectionURI=https%3A%2F%2Fcuhk.taleo.net%2Fcareersection%2Fapplication.jss%3Flang%3Den%26type%3D1%26csNo%3D10080%26portal%3D10115020119%26reqNo%3D125923%26isOnLogoutPage%3Dtrue&TARGET=https%3A%2F%2Fcuhk.taleo.net%2Fcareersection%2Fapplication.jss%3Flang%3Den%26type%3D1%26csNo%3D10080%26portal%3D10115020119%26reqNo%3D125923%26isOnLogoutPage%3Dtrue",
+          "observedAt": "2026-11-05T05:51:57.598Z"
+        },
+        {
+          "field": "applicationProcess",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/iam/accessmanagement/login.jsf?lang=en&redirectionURI=https%3A%2F%2Fcuhk.taleo.net%2Fcareersection%2Fapplication.jss%3Flang%3Den%26type%3D1%26csNo%3D10080%26portal%3D10115020119%26reqNo%3D125923%26isOnLogoutPage%3Dtrue&TARGET=https%3A%2F%2Fcuhk.taleo.net%2Fcareersection%2Fapplication.jss%3Flang%3Den%26type%3D1%26csNo%3D10080%26portal%3D10115020119%26reqNo%3D125923%26isOnLogoutPage%3Dtrue",
+          "observedAt": "2026-11-05T05:51:57.598Z"
+        },
+        {
+          "field": "applicationRouteCheckedAt",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/iam/accessmanagement/login.jsf?lang=en&redirectionURI=https%3A%2F%2Fcuhk.taleo.net%2Fcareersection%2Fapplication.jss%3Flang%3Den%26type%3D1%26csNo%3D10080%26portal%3D10115020119%26reqNo%3D125923%26isOnLogoutPage%3Dtrue&TARGET=https%3A%2F%2Fcuhk.taleo.net%2Fcareersection%2Fapplication.jss%3Flang%3Den%26type%3D1%26csNo%3D10080%26portal%3D10115020119%26reqNo%3D125923%26isOnLogoutPage%3Dtrue",
+          "observedAt": "2026-11-05T05:51:57.598Z"
+        },
+        {
+          "field": "applicationUrl",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/iam/accessmanagement/login.jsf?lang=en&redirectionURI=https%3A%2F%2Fcuhk.taleo.net%2Fcareersection%2Fapplication.jss%3Flang%3Den%26type%3D1%26csNo%3D10080%26portal%3D10115020119%26reqNo%3D125923%26isOnLogoutPage%3Dtrue&TARGET=https%3A%2F%2Fcuhk.taleo.net%2Fcareersection%2Fapplication.jss%3Flang%3Den%26type%3D1%26csNo%3D10080%26portal%3D10115020119%26reqNo%3D125923%26isOnLogoutPage%3Dtrue",
+          "observedAt": "2026-11-05T05:51:57.598Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13000,10 +13151,13 @@
       "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en",
       "announcementRecheckedAt": "2026-11-04T17:59:57.824Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:36:25.081Z",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "native_browser_DOM"
-      }
+        "attemptedAt": "2026-11-05T05:51:57.598Z",
+        "scope": "specific official role and observed first application route only; no login, submission or whole-source completeness claim",
+        "method": "actual_native_browser_visible_DOM"
+      },
+      "applicationPortalStatus": "login_required",
+      "applicationRouteCheckedAt": "2026-11-05T05:51:57.598Z",
+      "applicationUrl": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en"
     },
     {
       "announcementStatus": "open",
@@ -13174,12 +13328,12 @@
     },
     {
       "announcementStatus": "open",
-      "applicationActionability": "unknown",
-      "applicationProcess": "When beginning your application, be prepared to answer these questions and upload the following documents: Curriculum Vitae Cover Letter (should highlight some of your recent scholarship and achievements) Philosophy of teaching in Christian higher education Statement of Personal Faith (including your personal testimony or faith journey) Student evaluations (if available) Names and contact information for three professional references Unofficial transcripts for highest degree completed *** At PLNU, we believe in pursuin",
+      "applicationActionability": "login_required_acceptance_unverified",
+      "applicationProcess": "通过官方Workday岗位Apply → Apply Manually，进入同一R0004541的注册／登录第1/6步；未注册、登录或提交。",
       "applicationProcessEn": "When beginning your application, be prepared to answer these questions and upload the following documents: Curriculum Vitae Cover Letter (should highlight some of your recent scholarship and achievements) Philosophy of teaching in Christian higher education Statement of Personal Faith (including your personal testimony or faith journey) Student evaluations (if available) Names and contact information for three professional references Unofficial transcripts for highest degree completed *** At PLNU, we believe in pursuin",
       "candidateId": "tcand-9e22b074ce35e809a9db00fd",
-      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
+      "caution": "已核对同一职位的实际申请路线，当前先要求注册／登录；本次未登录或注册，账户内受理状态仍未知。",
+      "cautionEn": "First job-specific route actually resolved to Create Account/Sign In. Public notice says after December1, not an exact December1 start. Authentication boundary retained; not promoted.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -13190,8 +13344,8 @@
       "currentOpenStatus": "unknown",
       "currentOpenStatusCheckedAt": "2026-11-04T18:01:59.001Z",
       "deadline": "",
-      "deadlineNote": "2026年12月1日之后开始审查并安排面试；官网称招满为止，未公布固定截止或具体首审日。",
-      "deadlineNoteEn": "Review and interview scheduling begin after 1 December 2026; until filled, with no fixed closing date or exact first-review date.",
+      "deadlineNote": "2026年12月1日之后开始审查并安排面试，公告称门户开放至招满；实际手动申请第1/6步为注册／登录，登录后受理未知。不是固定截止。",
+      "deadlineNoteEn": "Review and interview scheduling begin after 1 December 2026; the notice says the portal remains open until filled. The actual route begins with Create Account/Sign In; acceptance after login is unverified. Not a fixed deadline.",
       "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
@@ -13349,6 +13503,54 @@
           "status": "supported",
           "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
           "observedAt": "2026-11-05T00:37:18.821Z"
+        },
+        {
+          "field": "applicationActionability",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego%2C-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541/apply/applyManually",
+          "observedAt": "2026-11-05T05:51:07.305Z"
+        },
+        {
+          "field": "applicationPortalStatus",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego%2C-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541/apply/applyManually",
+          "observedAt": "2026-11-05T05:51:07.305Z"
+        },
+        {
+          "field": "applicationProcess",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego%2C-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541/apply/applyManually",
+          "observedAt": "2026-11-05T05:51:07.305Z"
+        },
+        {
+          "field": "applicationRouteCheckedAt",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego%2C-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541/apply/applyManually",
+          "observedAt": "2026-11-05T05:51:07.305Z"
+        },
+        {
+          "field": "applicationUrl",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego%2C-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541/apply/applyManually",
+          "observedAt": "2026-11-05T05:51:07.305Z"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego%2C-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541/apply/applyManually",
+          "observedAt": "2026-11-05T05:51:07.305Z"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego%2C-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541/apply/applyManually",
+          "observedAt": "2026-11-05T05:51:07.305Z"
+        },
+        {
+          "field": "reviewDateRaw",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego%2C-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541/apply/applyManually",
+          "observedAt": "2026-11-05T05:51:07.305Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13386,10 +13588,14 @@
       "announcementRecheckedAt": "2026-11-04T18:01:59.001Z",
       "materials": "CV、求职信、基督教高等教育教学理念、个人信仰声明、3位专业推荐人联系方式、已完成最高学位的非官方成绩单；学生评教如有则提供，另按公告链接回答问题。",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:37:18.821Z",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "native_browser_DOM"
-      }
+        "attemptedAt": "2026-11-05T05:51:07.305Z",
+        "scope": "specific official role and observed first application route only; no login, submission or whole-source completeness claim",
+        "method": "actual_native_browser_visible_DOM"
+      },
+      "applicationPortalStatus": "login_required",
+      "applicationRouteCheckedAt": "2026-11-05T05:51:07.305Z",
+      "applicationUrl": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego%2C-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541/apply/applyManually",
+      "reviewDateRaw": "after December 1, 2026"
     },
     {
       "announcementStatus": "unknown",
@@ -18878,8 +19084,8 @@
     "limitation": "Coverage is expanding / 数据覆盖持续扩展"
   },
   "counts": {
-    "verified_open": 18,
-    "likely_open / needs_review": 49,
+    "verified_open": 19,
+    "likely_open / needs_review": 48,
     "closed": 1,
     "expired": 9,
     "insufficient_evidence": 24,
@@ -18887,7 +19093,7 @@
     "resource_only": 84
   },
   "opportunityRecords": 101,
-  "datasetSha256": "85a7156eee57c68f8d063c295ec496afc91fa9ca0a17fb9a7400b4874bd690dc",
+  "datasetSha256": "65edebf4bb34ee75f9b934ef864f21aba55b6a88d725e8a22ed8f6b3312885a4",
   "availabilityReview": {
     "planned": 34,
     "new_public_records": 12,
@@ -18928,5 +19134,14 @@
     "newExplicitClosure": 1,
     "recordsWithFieldCorrections": 23,
     "privateEvidencePublished": false
+  },
+  "publicRouteFollowup49": {
+    "planned": 49,
+    "newSpecificRoutes": 3,
+    "recentEvidenceReusedWithoutRepeatingGates": 46,
+    "newVerifiedPublicApplicationStart": 1,
+    "remainingAcceptanceUnknown": 48,
+    "privateEvidencePublished": false,
+    "finalSubmissionTested": false
   }
 }
