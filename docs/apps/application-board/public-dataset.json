@@ -3627,7 +3627,7 @@
       "applicationRouteCheckedAt": "2026-11-04T05:55:32.038Z",
       "applicationUrl": "https://lu.varbi.com/en/what:login/jobID:930481/type:job/where:4/apply:1/",
       "candidateId": "tcand-ace8a3b53aed0d0977dd0628",
-      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
+      "caution": "同一官方公告明确写明Hiring in process/Finished, not possible to apply及This advert is not available；仅确认停止接受申请，不推断已招满。",
       "cautionEn": "Official notice explicitly says applications are not possible; this does not establish that the position was filled.",
       "checkedAt": "2026-10-17",
       "city": "Lund",
@@ -18887,7 +18887,7 @@
     "resource_only": 84
   },
   "opportunityRecords": 101,
-  "datasetSha256": "ba48786bb9215aa5285f2fa134693c8fbc2d34bb2690cde3f251ca12cf8a80c5",
+  "datasetSha256": "85a7156eee57c68f8d063c295ec496afc91fa9ca0a17fb9a7400b4874bd690dc",
   "availabilityReview": {
     "planned": 34,
     "new_public_records": 12,
