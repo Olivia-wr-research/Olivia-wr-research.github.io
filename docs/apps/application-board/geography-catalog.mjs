@@ -1,5 +1,5 @@
 import {applyReviewedCatalogUpdates} from './catalog-review.mjs';
-import {publicReleaseDataset} from './public-dataset.mjs';
+import {publicReleaseDataset} from './public-data.mjs';
 import {reviewedCatalogUpdates} from './reviewed-updates.mjs';
 import {opportunityState} from './opportunity.mjs?v=open51-csu-20261104';
 import {geographyOpportunities} from './geography-opportunities.mjs';
