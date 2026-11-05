@@ -8449,22 +8449,22 @@ export const publicReleaseDataset = {
       "applicationActionability": "unknown",
       "applicationProcess": "通过学校在线系统申请，提交求职信、CV、研究陈述、教学陈述及3位推荐人联系方式。公开Apply起始表单需姓名和邮箱；未填写或提交，后续受理未知。",
       "applicationProcessEn": "https://careers.ua.edu/jobs/search/AS",
-      "applicationRouteCheckedAt": "2026-11-04T18:56:55.252Z",
+      "applicationRouteCheckedAt": "2026-11-05T13:44:29.537359+00:00",
       "candidateId": "tcand-1e947437e93504784c48a41e",
       "caution": "已区分Apply起始表单、职位提醒和推荐他人表单；后续系统受理未核实。仅说明2026年11月开始审查，不推定为11月1日；系统关闭栏不等同于招满或受理确认。",
       "cautionEn": "Actual public Apply starter form distinguished from alerts/referral. No personal data entered or submission; downstream ATS acceptance not established. Review begins in November 2026; do not infer a first-day date.",
       "checkedAt": "2026-10-31",
-      "city": "",
+      "city": "Tuscaloosa, Alabama",
       "collectedAt": "2026-10-31",
       "contentReviewObservedAt": "2026-10-31T04:14:02Z",
       "contentReviewStatus": "verified",
-      "country": "未核实",
-      "countryEn": "Unknown",
+      "country": "美国",
+      "countryEn": "United States",
       "currentOpenStatus": "unknown",
       "currentOpenStatusCheckedAt": "2026-11-04T18:56:55.252Z",
       "deadline": "",
-      "deadlineNote": "",
-      "deadlineNoteEn": "",
+      "deadlineNote": "正文：2026年11月开始评审，招满为止；系统另显示Closing at: Aug 1 2027 - 22:55 CDT，两类日期分开保留，不把系统关闭栏或姓名邮箱起始表单当作受理证明。",
+      "deadlineNoteEn": "Body: review begins November 2026 and search continues until filled. System separately displays Closing at: Aug 1 2027 - 22:55 CDT. Neither the close-date metadata nor identity starter alone verifies acceptance.",
       "deadlineType": "unknown",
       "degree": "unknown",
       "duration": "以官方公告为准",
@@ -8529,33 +8529,61 @@ export const publicReleaseDataset = {
         },
         {
           "field": "application_route",
+          "observedAt": "2026-11-04T15:41:16.882Z",
           "status": "unknown",
-          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states",
-          "observedAt": "2026-11-04T15:41:16.882Z"
+          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states"
         },
         {
           "field": "applicationUrl",
+          "observedAt": "2026-11-04T18:56:55.252Z",
           "status": "supported",
-          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states",
-          "observedAt": "2026-11-04T18:56:55.252Z"
+          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states"
         },
         {
           "field": "applicationProcess",
+          "observedAt": "2026-11-04T18:56:55.252Z",
           "status": "supported",
-          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states",
-          "observedAt": "2026-11-04T18:56:55.252Z"
+          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states"
         },
         {
           "field": "caution",
+          "observedAt": "2026-11-04T18:56:55.252Z",
           "status": "supported",
-          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states",
-          "observedAt": "2026-11-04T18:56:55.252Z"
+          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states"
         },
         {
           "field": "current_open_status",
+          "observedAt": "2026-11-04T18:56:55.252Z",
           "status": "unknown",
+          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states"
+        },
+        {
+          "field": "officialJobReference",
+          "observedAt": "2026-11-05T13:44:29.537359+00:00",
+          "quote": "20 text BCAS - Assistant Professor of Geography, in Geography and the Environment - 530827",
+          "status": "supported",
+          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states"
+        },
+        {
+          "field": "location",
+          "observedAt": "2026-11-05T13:44:29.537359+00:00",
+          "quote": "22 text Tuscaloosa, Alabama, United States",
+          "status": "supported",
+          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states"
+        },
+        {
+          "field": "reviewDateRaw",
+          "status": "supported",
           "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states",
-          "observedAt": "2026-11-04T18:56:55.252Z"
+          "observedAt": "2026-11-05T13:44:29.537359+00:00",
+          "quote": "Review of applications will begin November 2026"
+        },
+        {
+          "field": "system_closing_date_raw",
+          "status": "supported",
+          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states",
+          "observedAt": "2026-11-05T13:44:29.537359+00:00",
+          "quote": "Closing at: Aug 1 2027 - 22:55 CDT"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8592,9 +8620,12 @@ export const publicReleaseDataset = {
       "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states",
       "applicationUrl": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states#apply",
       "sourceReview": {
-        "attemptedAt": "2026-11-04T18:56:55.252Z",
-        "scope": "specific public notice and Apply starter only; downstream acceptance unverified"
-      }
+        "attemptedAt": "2026-11-05T13:44:29.537359+00:00",
+        "scope": "specific public notice and starter only; no identity fields, consent, login or submission",
+        "method": "actual_native_browser_visible_AX"
+      },
+      "officialJobReference": "530827",
+      "reviewDateRaw": "Review of applications will begin November 2026"
     },
     {
       "announcementStatus": "invites_applications",
@@ -13869,17 +13900,17 @@ export const publicReleaseDataset = {
       "caution": "公开表单混有短信同意、岗位兴趣登记和推荐／提醒功能，尚未确认岗位正式申请受理。",
       "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-03",
-      "city": "",
+      "city": "Blacksburg, Virginia",
       "collectedAt": "2026-11-03",
       "contentReviewObservedAt": "2026-11-03T00:17:32.127121+00:00",
       "contentReviewStatus": "verified",
-      "country": "未核实",
-      "countryEn": "Unknown",
+      "country": "美国",
+      "countryEn": "United States",
       "currentOpenStatus": "unknown",
       "currentOpenStatusCheckedAt": "2026-11-04T16:08:58.527Z",
       "deadline": "",
-      "deadlineNote": "",
-      "deadlineNoteEn": "",
+      "deadlineNote": "官网Review Date原文为12/04/2026（招满为止）；保留原数字格式，不将开始评审当作固定截止。公开Apply表单附短信同意，未填写、同意或提交，后续受理未知。",
+      "deadlineNoteEn": "Review Date is shown as 12/04/2026 (Open until filled). Raw numeric format retained; review is not a fixed closing date. The starter includes SMS consent; no fields, consent or submission; downstream acceptance unknown.",
       "deadlineType": "until_filled",
       "degree": "unknown",
       "duration": "以官方公告为准",
@@ -13968,9 +13999,30 @@ export const publicReleaseDataset = {
         },
         {
           "field": "application_route",
+          "observedAt": "2026-11-04T16:08:58.527Z",
           "status": "unknown",
+          "url": "https://jobs.apply.vt.edu/jobs/assistant-associate-professor-of-turfgrass-science-blacksburg-virginia-united-states"
+        },
+        {
+          "field": "officialJobReference",
+          "observedAt": "2026-11-05T13:43:13.004481+00:00",
+          "quote": "31 text 538297",
+          "status": "supported",
+          "url": "https://jobs.apply.vt.edu/jobs/assistant-associate-professor-of-turfgrass-science-blacksburg-virginia-united-states"
+        },
+        {
+          "field": "location",
+          "observedAt": "2026-11-05T13:43:13.004481+00:00",
+          "quote": "33 text Blacksburg, Virginia",
+          "status": "supported",
+          "url": "https://jobs.apply.vt.edu/jobs/assistant-associate-professor-of-turfgrass-science-blacksburg-virginia-united-states"
+        },
+        {
+          "field": "reviewDateRaw",
+          "status": "supported",
           "url": "https://jobs.apply.vt.edu/jobs/assistant-associate-professor-of-turfgrass-science-blacksburg-virginia-united-states",
-          "observedAt": "2026-11-04T16:08:58.527Z"
+          "observedAt": "2026-11-05T13:43:13.004481+00:00",
+          "quote": "12/04/2026 (Open until filled)"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14005,12 +14057,14 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "faculty",
       "url": "https://jobs.apply.vt.edu/jobs/assistant-associate-professor-of-turfgrass-science-blacksburg-virginia-united-states",
-      "applicationRouteCheckedAt": "2026-11-04T16:08:58.527Z",
+      "applicationRouteCheckedAt": "2026-11-05T13:43:13.004481+00:00",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:37:47.348Z",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "native_browser_DOM"
-      }
+        "attemptedAt": "2026-11-05T13:43:13.004481+00:00",
+        "scope": "specific public notice and starter only; no identity fields, consent, login or submission",
+        "method": "actual_native_browser_visible_AX"
+      },
+      "officialJobReference": "538297",
+      "reviewDateRaw": "12/04/2026 (Open until filled)"
     },
     {
       "announcementStatus": "open",
@@ -14403,11 +14457,11 @@ export const publicReleaseDataset = {
       "applicationActionability": "unknown",
       "applicationProcess": "Über unser Jobportal / Bewerben Button Bei inhaltlichen Fragen kontaktieren Sie",
       "applicationProcessEn": "Über unser Jobportal / Bewerben Button Bei inhaltlichen Fragen kontaktieren Sie",
-      "applicationRouteCheckedAt": "2026-11-04T16:04:10.130995+00:00",
+      "applicationRouteCheckedAt": "2026-11-05T13:51:10.866149+00:00",
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1453283233/?locale=de_DE",
       "candidateId": "tcand-a6c8f814c9d81333f520ba54",
-      "caution": "本轮公开读取失败；保留旧事实与未知状态，不把失败判断为关闭。",
-      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
+      "caution": "本次公开浏览器成功补读此前网页工具失败的正文。岗位ID6409，2026年11月11日截止；10小时／周的定期替补技术岗，非博士招生。EUR 3.131,30为40小时口径，不当作该10小时岗位实领金额；已知登录入口未重复尝试，受理未知。",
+      "cautionEn": "Public native browser reading succeeded after the earlier web-reader failure. Job6409 closes11 November2026; fixed-term replacement technical role10 hours/week, not doctoral admission. EUR3.131,30 is on a40-hour basis, not confirmed actual pay for10 hours. Known login route not retried; acceptance unknown.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -14420,7 +14474,7 @@ export const publicReleaseDataset = {
       "deadline": "2026-11-11",
       "deadlineNote": "Bewerbungsfrist: 11.11.2026",
       "deadlineNoteEn": "Bewerbungsfrist: 11.11.2026",
-      "deadlineType": "fixed_official_date_with_locale_evidence_retained",
+      "deadlineType": "fixed",
       "degree": "unknown",
       "duration": "替补岗位：2026年12月1日至2027年11月30日，10小时／周；可能延长，但不作保证。",
       "durationEn": "See official announcement",
@@ -14502,27 +14556,76 @@ export const publicReleaseDataset = {
         },
         {
           "field": "application_route",
+          "observedAt": "2026-11-04T16:04:10.130995+00:00",
           "status": "unknown",
-          "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
-          "observedAt": "2026-11-04T16:04:10.130995+00:00"
+          "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/"
         },
         {
           "field": "duration",
+          "observedAt": "2026-11-05T00:34:29.491Z",
           "status": "supported",
-          "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
-          "observedAt": "2026-11-05T00:34:29.491Z"
+          "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/"
+        },
+        {
+          "field": "salary",
+          "observedAt": "2026-11-05T00:34:29.491Z",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/"
+        },
+        {
+          "field": "salaryEn",
+          "observedAt": "2026-11-05T00:34:29.491Z",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/"
+        },
+        {
+          "field": "officialJobReference",
+          "observedAt": "2026-11-05T13:51:10.866149+00:00",
+          "quote": "49 text Stellen ID:  6409",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/"
+        },
+        {
+          "field": "location",
+          "observedAt": "2026-11-05T13:51:10.866149+00:00",
+          "quote": "45 text 91 Zentrum für Mikrobiologie und Umweltsystemwissenschaft",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/"
         },
         {
           "field": "salary",
           "status": "supported",
           "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
-          "observedAt": "2026-11-05T00:34:29.491Z"
+          "observedAt": "2026-11-05T13:51:10.866149+00:00",
+          "quote": "Das Grundgehalt von EUR 3.131,30 (für 40h)"
         },
         {
-          "field": "salaryEn",
+          "field": "workHoursRaw",
           "status": "supported",
           "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
-          "observedAt": "2026-11-05T00:34:29.491Z"
+          "observedAt": "2026-11-05T13:51:10.866149+00:00",
+          "quote": "10 h/Woche"
+        },
+        {
+          "field": "startDateRaw",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
+          "observedAt": "2026-11-05T13:51:10.866149+00:00",
+          "quote": "01.12.2026"
+        },
+        {
+          "field": "contractEndDateRaw",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
+          "observedAt": "2026-11-05T13:51:10.866149+00:00",
+          "quote": "30.11.2027"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
+          "observedAt": "2026-11-05T13:51:10.866149+00:00",
+          "quote": "11.11.2026"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14539,8 +14642,8 @@ export const publicReleaseDataset = {
       "requirements": "Sie haben eine universitäre Ausbildung in den Natur- oder Lebenswissenschaften (mindestens BA/BSc oder gleichwertig). Sie bringen gutes technisches und chemisches Verständnis mit. Sie haben gute Englischkenntnisse (Gru",
       "requirementsEn": "Sie haben eine universitäre Ausbildung in den Natur- oder Lebenswissenschaften (mindestens BA/BSc oder gleichwertig). Sie bringen gutes technisches und chemisches Verständnis mit. Sie haben gute Englischkenntnisse (Gru",
       "reviewDate": "",
-      "salary": "公告€3,131.30是40小时全职基本薪酬基准；本岗位为10小时／周，实际金额及该段支付周期未明确，不能直接按全职数额展示为本岗位所得。",
-      "salaryEn": "EUR 3,131.30 is the 40-hour base; this position is 10 hours/week. Actual part-time amount and payment frequency are not specified in this passage.",
+      "salary": "公告基本薪资EUR 3.131,30以每周40小时为口径，可因认可工作经验提高；本职位每周10小时，未推算实际金额或税前税后。",
+      "salaryEn": "Advertised base salary EUR 3.131,30 on a 40-hour basis, increasing with credited experience. This vacancy is 10 hours/week; actual amount and tax basis not inferred.",
       "short": "Universität Wien",
       "source": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
       "sourceIds": [
@@ -14558,10 +14661,14 @@ export const publicReleaseDataset = {
       "type": "research",
       "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:34:29.491Z",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "native_browser_DOM"
-      }
+        "attemptedAt": "2026-11-05T13:51:10.866149+00:00",
+        "scope": "specific public notice and starter only; no identity fields, consent, login or submission",
+        "method": "actual_native_browser_visible_AX"
+      },
+      "contractEndDateRaw": "30.11.2027",
+      "officialJobReference": "6409",
+      "startDateRaw": "01.12.2026",
+      "workHoursRaw": "10,00 h/week"
     },
     {
       "announcementStatus": "open",
@@ -16577,18 +16684,18 @@ export const publicReleaseDataset = {
     {
       "announcementStatus": "invites_applications",
       "applicationActionability": "unknown",
-      "applicationProcess": "Apply online by submitting a cover letter, resume, and a copy of your transcript(s).",
-      "applicationProcessEn": "Apply online by submitting a cover letter, resume, and a copy of your transcript(s).",
+      "applicationProcess": "官方511197岗位页有独立Apply起始区（姓名、邮箱）和另列的推荐链接；本次未填写或提交，后续申请表及当前受理仍未核验。",
+      "applicationProcessEn": "The official 511197 page has a separate Apply starter with name/email fields and a distinct referral link. No fields filled or submission; downstream application and acceptance unverified.",
       "candidateId": "tcand-d6316d31a9abac6640770b9c",
-      "caution": "可见申请区包含推荐他人表单，不能据此确认岗位正式申请受理。",
-      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
+      "caution": "更正：Apply起始区并非推荐他人表单；仍只有起始字段可见，未验证后续受理。公告明确要求已有美国工作授权、不提供签证支持，岗位依赖持续经费。",
+      "cautionEn": "Correction: the Apply starter is separate from referral. Starter fields alone do not verify downstream acceptance. Existing US work authorization is required; no visa sponsorship; continued funding condition applies.",
       "checkedAt": "2026-11-02",
-      "city": "",
+      "city": "Starkville, MS",
       "collectedAt": "2026-11-02",
       "contentReviewObservedAt": "2026-11-02T07:05:01.602956+00:00",
       "contentReviewStatus": "verified",
-      "country": "未核实",
-      "countryEn": "Unknown",
+      "country": "美国",
+      "countryEn": "United States",
       "currentOpenStatus": "unknown",
       "currentOpenStatusCheckedAt": "2026-11-04T16:09:10.241Z",
       "deadline": "",
@@ -16724,9 +16831,37 @@ export const publicReleaseDataset = {
         },
         {
           "field": "application_route",
+          "observedAt": "2026-11-04T16:09:10.241Z",
           "status": "unknown",
+          "url": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574"
+        },
+        {
+          "field": "officialJobReference",
+          "observedAt": "2026-11-05T13:42:36.313123+00:00",
+          "quote": "17 text 511197",
+          "status": "supported",
+          "url": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574"
+        },
+        {
+          "field": "location",
+          "observedAt": "2026-11-05T13:42:36.313123+00:00",
+          "quote": "19 text Main Campus - Starkville, MS",
+          "status": "supported",
+          "url": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574"
+        },
+        {
+          "field": "applicationProcess",
+          "status": "supported",
           "url": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574",
-          "observedAt": "2026-11-04T16:09:10.241Z"
+          "observedAt": "2026-11-05T13:42:36.313123+00:00",
+          "locator": "Apply Now section: separate Apply button and referral link"
+        },
+        {
+          "field": "work_authorization",
+          "status": "supported",
+          "url": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574",
+          "observedAt": "2026-11-05T13:42:36.313123+00:00",
+          "quote": "Applicants must be authorized to work in US, no visa sponsorship is available."
         }
       ],
       "funding": "未公布或尚未核验",
@@ -16761,12 +16896,14 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "research",
       "url": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574",
-      "applicationRouteCheckedAt": "2026-11-04T16:09:10.241Z",
+      "applicationRouteCheckedAt": "2026-11-05T13:42:36.313123+00:00",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:32:50.766189+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-05T13:42:36.313123+00:00",
+        "scope": "specific public notice and starter only; no identity fields, consent, login or submission",
+        "method": "actual_native_browser_visible_AX"
+      },
+      "applicationUrl": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574",
+      "officialJobReference": "511197"
     },
     {
       "announcementStatus": "unknown",
@@ -19094,7 +19231,7 @@ export const publicReleaseDataset = {
     "resource_only": 84
   },
   "opportunityRecords": 101,
-  "datasetSha256": "65edebf4bb34ee75f9b934ef864f21aba55b6a88d725e8a22ed8f6b3312885a4",
+  "datasetSha256": "344addce3dcd1fef2512fe4027ed8eba28c2f119dc1e2064b591d59c7cb53c48",
   "availabilityReview": {
     "planned": 34,
     "new_public_records": 12,
@@ -19144,5 +19281,11 @@ export const publicReleaseDataset = {
     "remainingAcceptanceUnknown": 48,
     "privateEvidencePublished": false,
     "finalSubmissionTested": false
+  },
+  "publicStarterFollowup48": {
+    "newNativeReads": 4,
+    "promotedOpen": 0,
+    "remainingUnknown": 48,
+    "privateEvidencePublished": false
   }
 };
