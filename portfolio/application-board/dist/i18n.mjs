@@ -1,3 +1,4 @@
+import {presentationBasis} from './presentation-basis.mjs?v=product-ready-20261106';
 import {presentationEn} from './presentation-en.mjs?v=product-ready-20261106';
 import {presentationZh} from './presentation-zh.mjs?v=product-ready-20261106';
 import {researchEnglish} from './research-english.mjs';
@@ -12,8 +13,9 @@ const pairs={
 };
 export function t(text){if(text===undefined||text===null)return '';if(language==='zh')return text;const s=String(text),trim=s.trim();if(pairs[trim])return s.replace(trim,pairs[trim]);let m;if((m=trim.match(/^对比已选（(\d+)\/3）$/)))return `Compare (${m[1]}/3)`;if((m=trim.match(/^(\d+) 个关键词交集$/)))return `${m[1]} shared interests`;if((m=trim.match(/^识别到 (\d+) 个主题、(\d+) 个方法。/)))return `Found ${m[1]} topics and ${m[2]} methods. Highlighted ideas are suggestions; choose the ones you want to explore.`;if(trim.startsWith('命中：'))return 'Shared: '+trim.slice(3).split('、').map(x=>pairs[x]||x).join(', ');if(trim.startsWith('本库关联 '))return trim.replace(/本库关联 (\d+) 条未过期快照/,'$1 linked opportunities');return s;}
 export function fieldForLanguage(job,key,lang='zh'){
- if(lang==='en')return presentationEn[job.id]?.[key]??(job[key+'En']||pairs[job[key]]||job[key]);
- const value=presentationZh[job.id]?.[key]??job[key];
+ if(lang==='en'){const source=job[key+'En']||job[key];const basis=presentationBasis.en[job.id];if(basis&&Object.hasOwn(basis,key)&&basis[key]===(source??null)&&presentationEn[job.id]?.[key]!==undefined)return presentationEn[job.id][key];return job[key+'En']||pairs[job[key]]||job[key];}
+ const basis=presentationBasis.zh[job.id];const localized=basis&&Object.hasOwn(basis,key)&&basis[key]===(job[key]??null)?presentationZh[job.id]?.[key]:undefined;
+ const value=localized??job[key];
  if(typeof value==='string'&&['requirements','funding','salary','applicationProcess','deadlineNote','summary'].includes(key)&&/[A-Za-zÄÖÜäöüß]{4}/.test(value)&&!/[\u4e00-\u9fff]/.test(value)&&!/^https?:/.test(value))return '官方原文摘录（中文整理待补）：'+value;
  return value;
 }

@@ -48,3 +48,12 @@ test('missing-field labels follow the explicitly requested export language',asyn
  assert.equal(fieldForLanguage({country:'未核实'},'country','en'),'Unverified');
  assert.equal(fieldForLanguage({country:'未核实'},'country','zh'),'未核实');
 });
+test('updated source facts invalidate old translations without overwriting the new fact',async()=>{
+ const {fieldForLanguage}=await import('../dist/i18n.mjs');
+ const original=rows.find(x=>x.id==='geo-tcand-71630eaa66f09bcb67b0c44c');
+ assert.match(fieldForLanguage(original,'requirements','zh'),/到任时取得/);
+ const revised={...original,requirements:'新公告资格正在复核',requirementsEn:'Revised official requirements pending review'};
+ assert.equal(fieldForLanguage(revised,'requirements','zh'),'新公告资格正在复核');
+ assert.equal(fieldForLanguage(revised,'requirements','en'),'Revised official requirements pending review');
+ assert.equal(fieldForLanguage({...original,checkedAt:'2026-11-06'},'title','zh'),'自然地理学助理教授');
+});
