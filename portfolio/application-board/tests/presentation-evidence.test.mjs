@@ -43,3 +43,8 @@ test('export uses the same reviewed presentation as cards in either requested la
  const original=rows.find(x=>x.id==='geo-tcand-93d9dca5de4bfc638ad5488d');
  assert.match(sheetRow(original,0,'en')[20],/not stated as a limit for the combined PDF/);
 });
+test('missing-field labels follow the explicitly requested export language',async()=>{
+ const {fieldForLanguage}=await import('../dist/i18n.mjs');
+ assert.equal(fieldForLanguage({country:'未核实'},'country','en'),'Unverified');
+ assert.equal(fieldForLanguage({country:'未核实'},'country','zh'),'未核实');
+});
