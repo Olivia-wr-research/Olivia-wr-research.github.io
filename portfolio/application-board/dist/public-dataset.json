@@ -8559,14 +8559,14 @@
         {
           "field": "officialJobReference",
           "observedAt": "2026-11-05T13:44:29.537359+00:00",
-          "quote": "20 text BCAS - Assistant Professor of Geography, in Geography and the Environment - 530827",
+          "quote": "BCAS - Assistant Professor of Geography, in Geography and the Environment - 530827",
           "status": "supported",
           "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states"
         },
         {
           "field": "location",
           "observedAt": "2026-11-05T13:44:29.537359+00:00",
-          "quote": "22 text Tuscaloosa, Alabama, United States",
+          "quote": "Tuscaloosa, Alabama, United States",
           "status": "supported",
           "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states"
         },
@@ -14005,14 +14005,14 @@
         {
           "field": "officialJobReference",
           "observedAt": "2026-11-05T13:43:13.004481+00:00",
-          "quote": "31 text 538297",
+          "quote": "538297",
           "status": "supported",
           "url": "https://jobs.apply.vt.edu/jobs/assistant-associate-professor-of-turfgrass-science-blacksburg-virginia-united-states"
         },
         {
           "field": "location",
           "observedAt": "2026-11-05T13:43:13.004481+00:00",
-          "quote": "33 text Blacksburg, Virginia",
+          "quote": "Blacksburg, Virginia",
           "status": "supported",
           "url": "https://jobs.apply.vt.edu/jobs/assistant-associate-professor-of-turfgrass-science-blacksburg-virginia-united-states"
         },
@@ -14580,14 +14580,14 @@
         {
           "field": "officialJobReference",
           "observedAt": "2026-11-05T13:51:10.866149+00:00",
-          "quote": "49 text Stellen ID:  6409",
+          "quote": "Stellen ID:  6409",
           "status": "supported",
           "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/"
         },
         {
-          "field": "location",
+          "field": "department",
           "observedAt": "2026-11-05T13:51:10.866149+00:00",
-          "quote": "45 text 91 Zentrum für Mikrobiologie und Umweltsystemwissenschaft",
+          "quote": "91 Zentrum für Mikrobiologie und Umweltsystemwissenschaft",
           "status": "supported",
           "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/"
         },
@@ -16837,14 +16837,14 @@
         {
           "field": "officialJobReference",
           "observedAt": "2026-11-05T13:42:36.313123+00:00",
-          "quote": "17 text 511197",
+          "quote": "511197",
           "status": "supported",
           "url": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574"
         },
         {
           "field": "location",
           "observedAt": "2026-11-05T13:42:36.313123+00:00",
-          "quote": "19 text Main Campus - Starkville, MS",
+          "quote": "Main Campus - Starkville, MS",
           "status": "supported",
           "url": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574"
         },
@@ -19230,7 +19230,7 @@
     "resource_only": 84
   },
   "opportunityRecords": 101,
-  "datasetSha256": "344addce3dcd1fef2512fe4027ed8eba28c2f119dc1e2064b591d59c7cb53c48",
+  "datasetSha256": "002722d2e0c0b0d22363043d5342373176a44c369ec8e60d5ff89032bfedd332",
   "availabilityReview": {
     "planned": 34,
     "new_public_records": 12,
