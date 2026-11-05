@@ -102,7 +102,7 @@ export function opportunityStatusLabel(job,lang='zh',today=new Date().toISOStrin
  if(s.state==='closed')return en?'Stated closed · historical record retained':'已明确关闭 · 保留历史记录';
  if(s.state==='past')return en?'Past deadline · current acceptance unknown; recheck official source':'截止日期已过 · 当前受理状态未知，需复核官网';
  if(s.state==='not_yet_open')return en?'Not yet open':'尚未开放';
- if(s.state==='open')return s.applicationPortalStatus==='not_applicable'?(en?'Official email application call · delivery not tested':'官方公告接收邮箱申请 · 未测试投递回执'):(en?'Acceptance confirmed at last check · recheck before applying':'核对时确认受理 · 申请前请复核');
+ if(s.state==='open')return s.applicationPortalStatus==='not_applicable'?(en?'Official email application call · delivery not tested':'官方公告接收邮箱申请 · 未测试投递回执'):(en?'Official notice open · check application requirements':'官方公告在招 · 请核对申请要求');
  if(s.announcementStatus==='open')return s.applicationPortalStatus==='not_applicable'?(en?'Email application notice · current validity needs review':'邮箱申请公告 · 当前有效性需复核'):(en?'Announcement says open · portal acceptance unverified':'公告显示开放 · 门户受理待核实');
  return en?'Current availability unverified':'当前开放状态待核实';
 }
@@ -110,9 +110,21 @@ export function opportunityDeadlineLabel(job,lang='zh',today=new Date().toISOStr
  const en=lang==='en';
  if(hasCriticalConflict(job))return en?'Conflicting dates or conditions · verify source':'日期或条件存在冲突 · 请核对原文';
  if(!isConcreteOpportunity(job))return en?'Standing programme · check current intake':'常设项目 · 请核对当期招生';
+ if(job.deadlineType==='rolling'&&!job.reviewDate&&job.deadlineNote)return job.deadlineNote;
  if(job.deadlineType==='rolling')return (en?'Until filled as stated · review starts ':'公告称招满为止 · 开始评审 ')+(job.reviewDate||'—');
  const d=opportunityDeadlineInfo(job,today);
  return d.kind==='unknown'?(en?'Deadline not verified':'截止日期待核实'):d.kind==='past'?(en?'Past deadline':'日期已过'):d.kind==='today'?(en?'Due date today · verify local time':'截止日期为今日 · 请核对当地时间'):(en?d.days+' calendar days to stated date': '距公告日期 '+d.days+' 个日历日');
 }
 export function confirmedBachelor(job){return job.bachelorEligible===true&&typeof job.bachelorEvidence==='string'&&job.bachelorEvidence.trim().length>0;}
 export function confirmedEnglishOnly(job){return job.englishOnly===true&&typeof job.englishOnlyEvidence==='string'&&job.englishOnlyEvidence.trim().length>0;}
+
+export function applicationEntryLabel(job,lang='zh'){
+ const en=lang==='en',mode=job.applicationActionability||'',portal=job.applicationPortalStatus||'';
+ if(portal==='closed')return en?'Application portal explicitly closed':'申请系统明确停止受理';
+ if(portal==='login_required')return en?'Login required; post-login acceptance unverified':'需要登录；登录后的受理状态未核验';
+ if(mode==='email_application_instructions_verified'||portal==='not_applicable')return en?'Official email instructions available; delivery not tested':'官网提供邮箱申请说明；未测试投递或回执';
+ if(mode==='public_email_start_verified')return en?'Public email entry step accessible; later steps unverified':'已进入公开邮箱起始页；后续步骤与提交未核验';
+ if(mode==='public_identity_start_verified'||mode==='public_application_start_verified')return en?'Public application start accessible; final submission unverified':'公开申请起始页可访问；未验证完整提交';
+ if(mode.startsWith('public_form_'))return en?'Public application form observed; no application submitted':'已查看公开申请表；未实际提交申请';
+ return en?'Current application acceptance unverified':'当前申请受理情况未核验';
+}

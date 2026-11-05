@@ -1,4 +1,4 @@
-import {language} from './i18n.mjs';
+import {language} from './i18n.mjs?v=product-audit-20261105';
 const node=(tag,text)=>{const e=document.createElement(tag);if(text)e.textContent=text;return e;};
 export function setupCommunity(host){
  const button=node('button');host.append(button);const dialog=node('dialog');dialog.id='geo-community';

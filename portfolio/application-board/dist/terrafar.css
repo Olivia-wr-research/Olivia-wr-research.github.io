@@ -25,3 +25,10 @@
  .top nav button,.top nav a{min-width:0;max-width:100%;white-space:normal!important;overflow-wrap:anywhere;text-align:center;line-height:1.35;min-height:44px;padding:8px 4px!important;display:flex;align-items:center;justify-content:center}
  .top{max-width:100%;box-sizing:border-box}.top .brand{min-width:0}.page-route{overflow-wrap:anywhere}
 }
+
+/* Product audit: keep the existing ocean theme throughout the application workspace. */
+.tracker{--bg:#eef5f9;--accent:#195da6;--green:#195da6;--muted:#597285;--line:#c6d7e5}
+.tracker .workspace{background:transparent}.tracker textarea{background:#f6faff;color:#204664;border-color:#c6d7e5}
+.tracker .card .badge{background:#dbe9f5;color:#244f78}.tracker .card .progress{background:#dce7f1}.tracker .progress i{background:#3976a6}
+.tracker .detail-notes{background:#e5eef6;color:#24465d}.tracker .side-bottom{color:#597285}.tracker .empty h3{color:#24465d}
+.tracker .card .urgent{color:#8b3b31}.tracker .card a{color:#195da6}.tracker #status{background:#153d60}
