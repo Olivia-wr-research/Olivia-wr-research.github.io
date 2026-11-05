@@ -1,7 +1,7 @@
 /* Public allowlisted release data only. Detailed evidence stays private. */
 export const publicReleaseDataset = {
   "format": "terrafar-public-dataset-v1",
-  "asOf": "2026-11-04",
+  "asOf": "2026-11-05",
   "records": [
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -1802,7 +1802,7 @@ export const publicReleaseDataset = {
       "materials": "CV最多2页＋动机信最多1页；须填写官网附加表单",
       "materialsEn": "CV up to 2 pages and motivation letter up to 1; mandatory additional form on vacancy page",
       "methods": [],
-      "releaseStatus": "insufficient_evidence",
+      "releaseStatus": "expired",
       "requirements": "农业/环境经济、环境政策、林业等硕士；统计编程及西班牙田野调查能力。",
       "requirementsEn": "Relevant MSc, statistical programming and capacity for fieldwork in Spain.",
       "salary": "税前月薪 €3,204（第1年）至 €4,051（第4年），每周38小时",
@@ -1816,8 +1816,8 @@ export const publicReleaseDataset = {
       },
       "sourceType": "official-employer",
       "status": "listed",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified",
+      "statusLabel": "截止日期已过 · 当前受理状态未知，需复核官网",
+      "statusLabelEn": "Past deadline · current acceptance unknown; recheck official source",
       "summary": "用计量与参与式方法研究气候政策对土地、碳和生物多样性的影响。",
       "summaryEn": "Evaluate climate-policy effects on land, carbon and biodiversity using mixed methods.",
       "title": "农业与森林景观气候政策评估博士",
@@ -3629,7 +3629,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://lu.varbi.com/en/what:login/jobID:930481/type:job/where:4/apply:1/",
       "candidateId": "tcand-ace8a3b53aed0d0977dd0628",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Official notice explicitly says applications are not possible; this does not establish that the position was filled.",
       "checkedAt": "2026-10-17",
       "city": "Lund",
       "collectedAt": "2026-10-16",
@@ -3637,8 +3637,8 @@ export const publicReleaseDataset = {
       "contentReviewStatus": "verified",
       "country": "瑞典",
       "countryEn": "Sweden",
-      "currentOpenStatus": "unknown",
-      "currentOpenStatusCheckedAt": "2026-11-04T18:05:57.177582+00:00",
+      "currentOpenStatus": "closed",
+      "currentOpenStatusCheckedAt": "2026-11-05T00:48:15.017Z",
       "deadline": "2026-11-04",
       "deadlineNote": "04.Nov.2026",
       "deadlineType": "fixed",
@@ -3666,6 +3666,30 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://lu.varbi.com/en/what:job/jobID:930481/type:job/where:4/apply:1",
           "observedAt": "2026-11-04T18:05:57.177582+00:00"
+        },
+        {
+          "field": "announcementStatus",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:930481/type:job/where:4/apply:1",
+          "observedAt": "2026-11-05T00:48:15.017Z"
+        },
+        {
+          "field": "applicationActionability",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:930481/type:job/where:4/apply:1",
+          "observedAt": "2026-11-05T00:48:15.017Z"
+        },
+        {
+          "field": "currentOpenStatus",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:930481/type:job/where:4/apply:1",
+          "observedAt": "2026-11-05T00:48:15.017Z"
+        },
+        {
+          "field": "currentStatusReason",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:930481/type:job/where:4/apply:1",
+          "observedAt": "2026-11-05T00:48:15.017Z"
         }
       ],
       "funding": "全职长期雇佣岗位",
@@ -3683,7 +3707,7 @@ export const publicReleaseDataset = {
       "language": "英语熟练；非瑞典语使用者须在入职三年内达到瑞典语 B2",
       "languageEn": "Very good English; non-Swedish speakers must reach Swedish B2 within three years",
       "methods": [],
-      "releaseStatus": "likely_open / needs_review",
+      "releaseStatus": "closed",
       "requirements": "相关博士；GIS 研究、研究经费获取、大学教学及学生指导经历。",
       "requirementsEn": "Relevant PhD; GIS research, external funding, university teaching and supervision experience.",
       "reviewDate": "",
@@ -3695,12 +3719,15 @@ export const publicReleaseDataset = {
         "geo-lund-930481"
       ],
       "sourceReview": {
-        "status": "source-reviewed"
+        "status": "source-reviewed",
+        "attemptedAt": "2026-11-05T00:48:15.017Z",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
       },
       "sourceType": "official-employer",
       "status": "listed",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified",
+      "statusLabel": "已明确关闭 · 保留历史记录",
+      "statusLabelEn": "Stated closed · historical record retained",
       "summary": "开展技术 GIS 研究与教学，方向包括空间数据库、Web GIS、GeoAI 和三维地理数据。",
       "summaryEn": "Research and teach technical GIS, including spatial databases, Web GIS, GeoAI and 3D geodata.",
       "title": "技术地理信息科学高级讲师",
@@ -3714,7 +3741,20 @@ export const publicReleaseDataset = {
       ],
       "type": "faculty",
       "url": "https://lu.varbi.com/en/what:job/jobID:930481/type:job/where:4/apply:1",
-      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00"
+      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00",
+      "announcementStatus": "closed",
+      "applicationActionability": "stopped_accepting",
+      "currentStatusReason": "同一官方公告明确写明Hiring in process/Finished, not possible to apply及This advert is not available；仅确认停止接受申请，不推断已招满。",
+      "applicationPortalStatus": "closed",
+      "currentStatusEvidence": [
+        {
+          "url": "https://lu.varbi.com/en/what:job/jobID:930481/type:job/where:4/apply:1",
+          "quote": "Hiring in process/Finished, not possible to apply",
+          "observedAt": "2026-11-05T00:48:15.017Z",
+          "claim": "closed",
+          "scope": "application_portal"
+        }
+      ]
     },
     {
       "applicationUrl": "https://hu-berlin.stellenticket.de/de/offers/207061/",
@@ -3850,7 +3890,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://uscjobs.sc.edu/postings/213942/pre_apply",
       "candidateId": "tcand-536021f617341cb0b2a2d2a1",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-17",
       "city": "Columbia, South Carolina",
       "collectedAt": "2026-10-16",
@@ -3948,7 +3988,10 @@ export const publicReleaseDataset = {
         "geo-e094084c954ea7f4"
       ],
       "sourceReview": {
-        "status": "source-reviewed"
+        "status": "source-reviewed",
+        "attemptedAt": "2026-11-05T00:31:49.905495+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
       },
       "sourceType": "official-employer",
       "status": "listed",
@@ -7610,7 +7653,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1452443033/?locale=de_DE",
       "candidateId": "tcand-0531f84d3e45d3557f220ee8",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -7808,17 +7851,22 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "postdoc",
       "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452443033/",
-      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00"
+      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:31:06.319548+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
-      "applicationProcess": "The University only accepts and considers applications submitted online for the post above via the CUHK career site.",
+      "applicationProcess": "仅接受CUHK career site在线提交；geography咨询邮箱不是申请渠道。",
       "applicationProcessEn": "The University only accepts and considers applications submitted online for the post above via the CUHK career site.",
       "applicationRouteCheckedAt": "2026-11-04T04:55:14.277Z",
       "candidateId": "tcand-05afd1081e74712769a6be5a",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -7833,7 +7881,7 @@ export const publicReleaseDataset = {
       "deadlineNoteEn": "Officially until filled; CUHK online applications only. Acceptance after login is unverified.",
       "deadlineType": "rolling",
       "degree": "unknown",
-      "duration": "以官方公告为准",
+      "duration": "通常初聘合同最长3年，拟2027年8月或随后尽快开始；更长期聘任／实任取决于表现、经费及双方意愿。",
       "durationEn": "See official announcement",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
@@ -7922,6 +7970,18 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai",
           "observedAt": "2026-11-04T17:59:37.832Z"
+        },
+        {
+          "field": "applicationProcess",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai",
+          "observedAt": "2026-11-05T00:36:24.660Z"
+        },
+        {
+          "field": "duration",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai",
+          "observedAt": "2026-11-05T00:36:24.660Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -7956,17 +8016,22 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "faculty",
       "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai",
-      "announcementRecheckedAt": "2026-11-04T17:59:37.832Z"
+      "announcementRecheckedAt": "2026-11-04T17:59:37.832Z",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:36:24.660Z",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
+      }
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
-      "applicationProcess": "",
+      "applicationProcess": "校方岗位预申请链接转至账户登录；未登录、未提交，登录后当前受理状态未知。",
       "applicationProcessEn": "",
-      "applicationRouteCheckedAt": "2026-11-04T16:04:10.130995+00:00",
+      "applicationRouteCheckedAt": "2026-11-05T00:30:04.871Z",
       "candidateId": "tcand-068b72cb3f81d2f0a25cf72a",
       "caution": "公告截止为2026年11月15日；系统关闭栏为空，不据此判断招满即止或仍在受理。",
-      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -7977,7 +8042,7 @@ export const publicReleaseDataset = {
       "currentOpenStatus": "unknown",
       "currentOpenStatusCheckedAt": "2026-11-04T16:04:10.130995+00:00",
       "deadline": "2026-11-15",
-      "deadlineNote": "The application deadline is November 15, 2026.",
+      "deadlineNote": "正文固定截止为2026年11月15日，表格Open Until Filled明确为No；Job Close Date空白不推翻正文。具体时刻与时区未说明。",
       "deadlineNoteEn": "The application deadline is November 15, 2026.",
       "deadlineType": "fixed",
       "degree": "unknown",
@@ -8046,6 +8111,24 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://morehouse.peopleadmin.com/postings/15370/print_preview",
           "observedAt": "2026-11-04T16:04:10.130995+00:00"
+        },
+        {
+          "field": "applicationProcess",
+          "status": "supported",
+          "url": "https://morehouse.peopleadmin.com/postings/15370/print_preview",
+          "observedAt": "2026-11-05T00:30:14.966620+00:00"
+        },
+        {
+          "field": "applicationUrl",
+          "status": "supported",
+          "url": "https://morehouse.peopleadmin.com/postings/15370/print_preview",
+          "observedAt": "2026-11-05T00:30:14.966620+00:00"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://morehouse.peopleadmin.com/postings/15370/print_preview",
+          "observedAt": "2026-11-05T00:30:14.966620+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8079,7 +8162,14 @@ export const publicReleaseDataset = {
       "titleEn": "Endowed Professor in Urban Health Equity, TT",
       "topics": [],
       "type": "faculty",
-      "url": "https://morehouse.peopleadmin.com/postings/15370/print_preview"
+      "url": "https://morehouse.peopleadmin.com/postings/15370/print_preview",
+      "applicationUrl": "https://morehouse.peopleadmin.com/postings/15370/pre_apply",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:30:14.966620+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
+      },
+      "applicationPortalStatus": "login_required"
     },
     {
       "announcementStatus": "open",
@@ -8089,7 +8179,7 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T16:45:47.585Z",
       "candidateId": "tcand-0909c345e97cc744f5a4b178",
       "caution": "已到达匹配岗位205082的账号设置／登录步骤，未填写邮箱、建立账号或提交；登录后受理仍未核实。",
-      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -8211,18 +8301,23 @@ export const publicReleaseDataset = {
       "url": "https://binghamton.interviewexchange.com/jobofferdetails.jsp?JOBID=205082",
       "applicationUrl": "https://binghamton.interviewexchange.com/candapply.jsp?JOBID=205082#pageTop",
       "deadlineKind": "priority",
-      "priorityDate": "2026-11-09"
+      "priorityDate": "2026-11-09",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:37:28.531Z",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
+      }
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
-      "applicationProcess": "",
+      "applicationProcess": "在线提交CV、求职信、科研与教学陈述（两份陈述各≤3页），填写至少3位推荐人；进入终面者在初面后由系统索取推荐信，通知后1周内提交。",
       "applicationProcessEn": "",
       "applicationRouteCheckedAt": "2026-11-04T04:51:20.210Z",
       "applicationUrl": "https://jobs.montana.edu/postings/53185/pre_apply",
       "candidateId": "tcand-1308ee0083aff518f55bd236",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -8302,6 +8397,12 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://jobs.montana.edu/postings/52857",
           "observedAt": "2026-11-04T18:05:57.177582+00:00"
+        },
+        {
+          "field": "applicationProcess",
+          "status": "supported",
+          "url": "https://jobs.montana.edu/postings/52857",
+          "observedAt": "2026-11-05T00:31:49.905495+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8336,7 +8437,12 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "faculty",
       "url": "https://jobs.montana.edu/postings/52857",
-      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00"
+      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:31:49.905495+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "open",
@@ -8499,7 +8605,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://jobs.helsinki.fi/talentcommunity/apply/1374784157/?locale=en_GB",
       "candidateId": "tcand-256dd28e1f4a27848f3198f8",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-02",
       "city": "",
       "collectedAt": "2026-11-02",
@@ -8686,7 +8792,12 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "phd",
       "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784157/",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.077032+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:05.077032+00:00",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:31:17.675135+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "unknown",
@@ -8697,7 +8808,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://academicjobsonline.org/ajo/jobs/33131/apply",
       "candidateId": "tcand-300f95e2f52d600da844b5c7",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -8835,7 +8946,12 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "faculty",
       "url": "https://academicjobsonline.org/ajo/jobs/33131",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.678433+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:04.678433+00:00",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:31:17.675135+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "open",
@@ -9170,7 +9286,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1452586933/?locale=de_DE",
       "candidateId": "tcand-4b25053f7a76a7949b7c689c",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -9356,7 +9472,12 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "postdoc",
       "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452586933/",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.872866+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:04.872866+00:00",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:30:48.312469+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "open",
@@ -9366,7 +9487,7 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T04:56:46.989Z",
       "candidateId": "tcand-50f69fbe806ee01c024c25f8",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -9506,6 +9627,18 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://apply.interfolio.com/195249",
           "observedAt": "2026-11-04T17:59:04.746708+00:00"
+        },
+        {
+          "field": "fundingCondition",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/195249",
+          "observedAt": "2026-11-05T00:35:49.686Z"
+        },
+        {
+          "field": "materials",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/195249",
+          "observedAt": "2026-11-05T00:35:49.686Z"
         }
       ],
       "funding": "Position funding is subject to budget availability.",
@@ -9541,16 +9674,23 @@ export const publicReleaseDataset = {
       "type": "faculty",
       "url": "https://apply.interfolio.com/195249",
       "applicationUrl": "https://dossier.interfolio.com/apply/195249",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.746708+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:04.746708+00:00",
+      "fundingCondition": "岗位经费以可用预算为前提；未公布保证资助。",
+      "materials": "兴趣信、CV、覆盖未来3–5年方向的研究陈述、教学陈述、至多3篇同行评审代表作；保密推荐信在初审后向部分候选人索取。",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:35:49.686Z",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
+      }
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
-      "applicationProcess": "Please include a letter of interest and resume with your online application.",
+      "applicationProcess": "在线申请附兴趣信及简历；岗位招聘受州拨款经费约束。最终候选人需提供密封成绩单／证明，并通过CORI审查。",
       "applicationProcessEn": "Please include a letter of interest and resume with your online application.",
       "candidateId": "tcand-5174d20615e6d71eceb73678",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -9678,6 +9818,18 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
           "observedAt": "2026-11-04T18:02:27.109Z"
+        },
+        {
+          "field": "applicationProcess",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
+          "observedAt": "2026-11-05T00:35:21.811Z"
+        },
+        {
+          "field": "fundingCondition",
+          "status": "supported",
+          "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
+          "observedAt": "2026-11-05T00:35:21.811Z"
         }
       ],
       "funding": "Faculty Hiring is subject to state appropriation funding.",
@@ -9713,7 +9865,13 @@ export const publicReleaseDataset = {
       "type": "faculty",
       "url": "https://mbcc-mass.csod.com/ux/ats/careersite/1/home/requisition/601?c=mbcc-mass",
       "sourcePublishedDate": "2024-10-23",
-      "announcementRecheckedAt": "2026-11-04T18:02:27.109Z"
+      "announcementRecheckedAt": "2026-11-04T18:02:27.109Z",
+      "fundingCondition": "Faculty hiring is subject to state appropriation funding; not guaranteed by the persistent listing.",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:35:21.811Z",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
+      }
     },
     {
       "announcementStatus": "unknown",
@@ -9835,7 +9993,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://jobs.helsinki.fi/talentcommunity/apply/1375701157/?locale=en_GB",
       "candidateId": "tcand-55c212afaa9a01eab495c8e3",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-01",
       "city": "",
       "collectedAt": "2026-11-01",
@@ -10058,7 +10216,12 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "phd",
       "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-in-Archaelogy-or-Geoscience/1375701157/",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.872866+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:04.872866+00:00",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:30:48.312469+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "unknown",
@@ -10069,7 +10232,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://www.gwu.jobs/postings/129287/pre_apply",
       "candidateId": "tcand-5762bcd9f684ac58264f7e7b",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -10207,7 +10370,12 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "faculty",
       "url": "https://www.gwu.jobs/postings/129037",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.205665+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:05.205665+00:00",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:32:07.527223+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "open",
@@ -10650,13 +10818,13 @@ export const publicReleaseDataset = {
     {
       "announcementStatus": "invites_applications",
       "applicationActionability": "unknown",
-      "applicationProcess": "University of Helsinki Recruitment System",
+      "applicationProcess": "通过赫尔辛基招聘系统Apply now提交，外部申请者需注册；在职人员用Employee login。咨询／技术支持邮箱不是申请渠道。",
       "applicationProcessEn": "University of Helsinki Recruitment System",
       "applicationRouteCheckedAt": "2026-11-04T05:46:39.638Z",
       "applicationUrl": "https://jobs.helsinki.fi/talentcommunity/apply/1375905057/?locale=en_GB",
       "candidateId": "tcand-5dbcff6286c6634216f0a313",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-01",
       "city": "",
       "collectedAt": "2026-11-01",
@@ -10790,6 +10958,18 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-on-Education-Related-Inequalities/1375905057/",
           "observedAt": "2026-11-04T17:59:04.872866+00:00"
+        },
+        {
+          "field": "applicationProcess",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-on-Education-Related-Inequalities/1375905057/",
+          "observedAt": "2026-11-05T00:43:41.953456+00:00"
+        },
+        {
+          "field": "materials",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-on-Education-Related-Inequalities/1375905057/",
+          "observedAt": "2026-11-05T00:43:41.953456+00:00"
         }
       ],
       "funding": "已核验为带薪博士或教职聘用；薪酬见薪酬字段。额外资助或学费安排未核实。",
@@ -10824,7 +11004,13 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "phd",
       "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-on-Education-Related-Inequalities/1375905057/",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.872866+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:04.872866+00:00",
+      "materials": "英文CV、编号发表清单（如有）、1–2页兴趣陈述，说明技能／研究经历及拟对项目的贡献。",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:43:41.953456+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "open",
@@ -10834,7 +11020,7 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T04:51:42.084Z",
       "candidateId": "tcand-5e95d133051cecb648af4cb6",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established. Public iframe body read and first job-bound application route redirected to login; no email, credentials or application submitted.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -11015,7 +11201,12 @@ export const publicReleaseDataset = {
       "type": "faculty",
       "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?in_iframe=1",
       "applicationUrl": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/login",
-      "announcementRecheckedAt": "2026-11-04T18:01:29.905Z"
+      "announcementRecheckedAt": "2026-11-04T18:01:29.905Z",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:38:28.770Z",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
+      }
     },
     {
       "announcementStatus": "open",
@@ -11368,7 +11559,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://web103.reachmee.com/ext/I017/1114/job?site=7&validator=87e4b706891e51f731ed44be28da8352&lang=UK&job_id=16136",
       "candidateId": "tcand-7282379bdd5efb33c4039202",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-01",
       "city": "",
       "collectedAt": "2026-11-01",
@@ -11512,7 +11703,12 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "phd",
       "url": "https://www.slu.se/en/about-slu/work-at-slu/jobs-and-vacancies/doktorand-i-biologi/",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.872866+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:04.872866+00:00",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:45:12.508191+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "open",
@@ -11523,7 +11719,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1452415933/?locale=en_US",
       "candidateId": "tcand-73f33969eae17aa7b6318b80",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -11655,7 +11851,12 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "postdoc",
       "url": "https://jobs.univie.ac.at/job/Senior-Scientist-in-Atmospheric-Data-Assimilation/1452415933/",
-      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00"
+      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:31:17.675135+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "open",
@@ -11996,7 +12197,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://jobs.helsinki.fi/talentcommunity/apply/1374672557/?locale=en_GB",
       "candidateId": "tcand-840e61a1e1ad604074fee5a3",
       "caution": "官方公告与公开说明已复核；申请受理仍未确认，未重复尝试已知登录入口。",
-      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-01",
       "city": "",
       "collectedAt": "2026-11-01",
@@ -12011,7 +12212,7 @@ export const publicReleaseDataset = {
       "deadlineNoteEn": "12.11.2026 (23.59 Europe/Helsinki time)",
       "deadlineType": "fixed",
       "degree": "unknown",
-      "duration": "全职固定期至少3年；试用6个月；教学最多占年度工时5%。",
+      "duration": "全职、至少3年；2027年3月1日或协商开始，试用期6个月。",
       "durationEn": "全职固定期至少3年；试用6个月；教学最多占年度工时5%。",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
@@ -12124,6 +12325,30 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-researcher-in-global-development-studies/1374672557/",
           "observedAt": "2026-11-04T16:04:10.130995+00:00"
+        },
+        {
+          "field": "duration",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-researcher-in-global-development-studies/1374672557/",
+          "observedAt": "2026-11-05T00:30:14.966620+00:00"
+        },
+        {
+          "field": "materials",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-researcher-in-global-development-studies/1374672557/",
+          "observedAt": "2026-11-05T00:30:14.966620+00:00"
+        },
+        {
+          "field": "salary",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-researcher-in-global-development-studies/1374672557/",
+          "observedAt": "2026-11-05T00:30:14.966620+00:00"
+        },
+        {
+          "field": "salaryEn",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-researcher-in-global-development-studies/1374672557/",
+          "observedAt": "2026-11-05T00:30:14.966620+00:00"
         }
       ],
       "funding": "已核验为带薪博士或教职聘用；薪酬见薪酬字段。额外资助或学费安排未核实。",
@@ -12140,8 +12365,8 @@ export const publicReleaseDataset = {
       "requirements": "Applicants must hold a master’s degree and thesis with excellent grades in global development studies, social sciences, human geography, or another field relevant to the research topic.\nPrior expertise in conducting research, working or other major exposure in the context of the Brazilian Amazon forest communities and politics.\nspeaking Portuguese is a requirement of the position. English is our working language and the appointed person is expected to have advanced skills in spoken and written English.",
       "requirementsEn": "Applicants must hold a master’s degree and thesis with excellent grades in global development studies, social sciences, human geography, or another field relevant to the research topic.\nPrior expertise in conducting research, working or other major exposure in the context of the Brazilian Amazon forest communities and politics.\nspeaking Portuguese is a requirement of the position. English is our working language and the appointed person is expected to have advanced skills in spoken and written English.",
       "reviewDate": "",
-      "salary": "The annual gross salary will range from approximately €32,000 to €42,000 for the doctoral researcher depending on qualifications and experience.",
-      "salaryEn": "The annual gross salary will range from approximately €32,000 to €42,000 for the doctoral researcher depending on qualifications and experience.",
+      "salary": "税前年薪约€32,000–42,000，依资格和经验确定。",
+      "salaryEn": "Approximate gross annual salary €32,000–42,000, depending on qualifications and experience.",
       "short": "University of Helsinki",
       "source": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-researcher-in-global-development-studies/1374672557/",
       "sourceIds": [
@@ -12157,7 +12382,13 @@ export const publicReleaseDataset = {
       "titleEn": "Doctoral researcher in global development studies",
       "topics": [],
       "type": "phd",
-      "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-researcher-in-global-development-studies/1374672557/"
+      "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-researcher-in-global-development-studies/1374672557/",
+      "materials": "动机信≤1页、研究计划1500–2000词、CV≤2页、发表清单、至多2位推荐人的推荐及联系方式，以及学位和英语／葡语证明等支持材料。",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:30:14.966620+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "unknown",
@@ -12168,7 +12399,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1452526433/?locale=en_US",
       "candidateId": "tcand-8911254734633ddb16a2a066",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -12183,7 +12414,7 @@ export const publicReleaseDataset = {
       "deadlineNoteEn": "Application deadline: 11/24/2026",
       "deadlineType": "fixed_official_date_with_locale_evidence_retained",
       "degree": "unknown",
-      "duration": "以官方公告为准",
+      "duration": "2027年2月1日至2031年1月31日，20小时／周；4年期末评估通过后可转永久，并非现已永久聘任。",
       "durationEn": "See official announcement",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
@@ -12308,6 +12539,24 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://jobs.univie.ac.at/job/Senior-Lecturer-%28academic-and-instructional-teaching%29/1452526433/",
           "observedAt": "2026-11-04T18:05:57.177582+00:00"
+        },
+        {
+          "field": "duration",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Senior-Lecturer-%28academic-and-instructional-teaching%29/1452526433/",
+          "observedAt": "2026-11-05T00:31:06.319548+00:00"
+        },
+        {
+          "field": "salary",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Senior-Lecturer-%28academic-and-instructional-teaching%29/1452526433/",
+          "observedAt": "2026-11-05T00:31:06.319548+00:00"
+        },
+        {
+          "field": "salaryEn",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Senior-Lecturer-%28academic-and-instructional-teaching%29/1452526433/",
+          "observedAt": "2026-11-05T00:31:06.319548+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -12324,8 +12573,8 @@ export const publicReleaseDataset = {
       "requirements": "Completed doctoral degree in Earth Sciences/Geology\nExcellent command of German and English\nCertificate of a completed doctoral program in Earth Sciences\nWe are looking for individuals who see university teaching as an interesting and challenging career path. Preconditions for an application resp. terms of admission:\nSeveral years of independent teaching experience at a postsecondary educational institution\nExcellent didactic skills and passion for sharing knowledge and for university teaching\nIn-depth knowledge of geological methods, particularly quantitative methods and practical field-based and applied geology\nYou are a team player with strong interpersonal and communication skills.",
       "requirementsEn": "Completed doctoral degree in Earth Sciences/Geology\nExcellent command of German and English\nCertificate of a completed doctoral program in Earth Sciences\nWe are looking for individuals who see university teaching as an interesting and challenging career path. Preconditions for an application resp. terms of admission:\nSeveral years of independent teaching experience at a postsecondary educational institution\nExcellent didactic skills and passion for sharing knowledge and for university teaching\nIn-depth knowledge of geological methods, particularly quantitative methods and practical field-based and applied geology\nYou are a team player with strong interpersonal and communication skills.",
       "reviewDate": "",
-      "salary": "Fair salary: The base salary of EUR 5,079.50 (based on full-time employment - 40h per week / amount as of 01.01.2027) increases if we can take your professional experience into account.",
-      "salaryEn": "Fair salary: The base salary of EUR 5,079.50 (based on full-time employment - 40h per week / amount as of 01.01.2027) increases if we can take your professional experience into account.",
+      "salary": "€5,079.50是40小时全职基本薪酬基准（2027年1月1日口径）；岗位为20小时／周，实际兼职金额未明确。",
+      "salaryEn": "EUR 5,079.50 is the full-time 40-hour base as of 1 January 2027; the post is 20 hours/week and the actual part-time amount is not stated.",
       "short": "Universität Wien",
       "source": "https://jobs.univie.ac.at/job/Senior-Lecturer-%28academic-and-instructional-teaching%29/1452526433/",
       "sourceIds": [
@@ -12342,7 +12591,12 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "faculty",
       "url": "https://jobs.univie.ac.at/job/Senior-Lecturer-%28academic-and-instructional-teaching%29/1452526433/",
-      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00"
+      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:31:06.319548+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "invites_applications",
@@ -12353,7 +12607,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://jobs.ncl.ac.uk/talentcommunity/apply/1452441033/?locale=en_GB",
       "candidateId": "tcand-8a6db4ea56f6f92d06be6bb4",
       "caution": "官方公告与公开说明已复核；申请受理仍未确认，未重复尝试已知登录入口。",
-      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-02",
       "city": "",
       "collectedAt": "2026-11-02",
@@ -12368,8 +12622,8 @@ export const publicReleaseDataset = {
       "deadlineNoteEn": "Closing Date: 12 November 2026",
       "deadlineType": "fixed_as_stated_pending_leased_merge",
       "degree": "unknown",
-      "duration": "以官方公告为准",
-      "durationEn": "See official announcement",
+      "duration": "全职固定期最长12个月，且不晚于2027年10月31日结束；尽快开始。",
+      "durationEn": "Full time, up to 12 months but no later than 31 October 2027; start as soon as possible.",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
       "fieldEn": "See official announcement",
@@ -12499,6 +12753,36 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/",
           "observedAt": "2026-11-04T15:39:29.269227+00:00"
+        },
+        {
+          "field": "duration",
+          "status": "supported",
+          "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/",
+          "observedAt": "2026-11-05T00:43:41.953456+00:00"
+        },
+        {
+          "field": "durationEn",
+          "status": "supported",
+          "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/",
+          "observedAt": "2026-11-05T00:43:41.953456+00:00"
+        },
+        {
+          "field": "materials",
+          "status": "supported",
+          "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/",
+          "observedAt": "2026-11-05T00:43:41.953456+00:00"
+        },
+        {
+          "field": "salary",
+          "status": "supported",
+          "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/",
+          "observedAt": "2026-11-05T00:43:41.953456+00:00"
+        },
+        {
+          "field": "salaryEn",
+          "status": "supported",
+          "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/",
+          "observedAt": "2026-11-05T00:43:41.953456+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -12515,8 +12799,8 @@ export const publicReleaseDataset = {
       "requirements": "PhD near to completion in Chemical Engineering, Materials Science, Electrochemistry or a closely related discipline",
       "requirementsEn": "PhD near to completion in Chemical Engineering, Materials Science, Electrochemistry or a closely related discipline",
       "reviewDate": "",
-      "salary": "Research Assistant: £34,630 to £36,320 per annum",
-      "salaryEn": "Research Assistant: £34,630 to £36,320 per annum",
+      "salary": "Research Assistant年薪£34,630–36,320；Research Associate年薪£37,369–41,885。该段未明确税前／税后口径。",
+      "salaryEn": "Research Assistant £34,630–36,320 per annum; Research Associate £37,369–41,885 per annum; tax basis not expressly stated.",
       "short": "Newcastle University",
       "source": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/",
       "sourceIds": [
@@ -12532,16 +12816,22 @@ export const publicReleaseDataset = {
       "titleEn": "Research Assistant/Associate in Sustainable Carbon-Based Electrodes for Flow Batteries",
       "topics": [],
       "type": "research",
-      "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/"
+      "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/",
+      "materials": "最新CV及最多2页A4求职信，说明如何满足关键条件。",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:43:41.953456+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "open",
       "applicationActionability": "unknown",
-      "applicationProcess": "http://career.cuhk.edu.hk",
+      "applicationProcess": "仅接受CUHK career site在线提交；咨询邮箱不作为申请渠道。",
       "applicationProcessEn": "http://career.cuhk.edu.hk",
       "candidateId": "tcand-91bbb32c198d9fd76fdd4ba2",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -12556,7 +12846,7 @@ export const publicReleaseDataset = {
       "deadlineNoteEn": "Officially until filled; CUHK online applications only. Acceptance after login is unverified.",
       "deadlineType": "rolling",
       "degree": "unknown",
-      "duration": "以官方公告为准",
+      "duration": "通常初聘最长3年，拟2027年8月或其后开始；长期聘用／实任依表现、经费及双方意愿。杰出教授级人选可能获特别考虑即时实任，不推广到全部职级。",
       "durationEn": "See official announcement",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
@@ -12663,6 +12953,18 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en",
           "observedAt": "2026-11-04T17:59:57.824Z"
+        },
+        {
+          "field": "applicationProcess",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en",
+          "observedAt": "2026-11-05T00:36:25.081Z"
+        },
+        {
+          "field": "duration",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en",
+          "observedAt": "2026-11-05T00:36:25.081Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -12697,7 +12999,12 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "faculty",
       "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en",
-      "announcementRecheckedAt": "2026-11-04T17:59:57.824Z"
+      "announcementRecheckedAt": "2026-11-04T17:59:57.824Z",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:36:25.081Z",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
+      }
     },
     {
       "announcementStatus": "open",
@@ -12707,7 +13014,7 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T04:56:49.801Z",
       "candidateId": "tcand-93d9dca5de4bfc638ad5488d",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -12817,6 +13124,12 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://apply.interfolio.com/195462",
           "observedAt": "2026-11-04T17:59:04.746708+00:00"
+        },
+        {
+          "field": "materials",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/195462",
+          "observedAt": "2026-11-05T00:35:39.372Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -12852,7 +13165,13 @@ export const publicReleaseDataset = {
       "type": "faculty",
       "url": "https://apply.interfolio.com/195462",
       "applicationUrl": "https://dossier.interfolio.com/apply/195462",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.746708+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:04.746708+00:00",
+      "materials": "合并为1份PDF：综合求职信（信本身≤10页）、当前CV、至少3位可作推荐人的联系信息；10页限制不应误写为整份合并PDF上限。",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:35:39.372Z",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
+      }
     },
     {
       "announcementStatus": "open",
@@ -12861,7 +13180,7 @@ export const publicReleaseDataset = {
       "applicationProcessEn": "When beginning your application, be prepared to answer these questions and upload the following documents: Curriculum Vitae Cover Letter (should highlight some of your recent scholarship and achievements) Philosophy of teaching in Christian higher education Statement of Personal Faith (including your personal testimony or faith journey) Student evaluations (if available) Names and contact information for three professional references Unofficial transcripts for highest degree completed *** At PLNU, we believe in pursuin",
       "candidateId": "tcand-9e22b074ce35e809a9db00fd",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -13025,6 +13344,12 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
           "observedAt": "2026-11-04T18:01:59.001Z"
+        },
+        {
+          "field": "materials",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
+          "observedAt": "2026-11-05T00:37:18.821Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13059,7 +13384,13 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "faculty",
       "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
-      "announcementRecheckedAt": "2026-11-04T18:01:59.001Z"
+      "announcementRecheckedAt": "2026-11-04T18:01:59.001Z",
+      "materials": "CV、求职信、基督教高等教育教学理念、个人信仰声明、3位专业推荐人联系方式、已完成最高学位的非官方成绩单；学生评教如有则提供，另按公告链接回答问题。",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:37:18.821Z",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
+      }
     },
     {
       "announcementStatus": "unknown",
@@ -13070,7 +13401,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1445938133/?locale=de_DE",
       "candidateId": "tcand-9f2e85dd4a8adceca7e3d105",
       "caution": "官方公告与公开说明已复核；申请受理仍未确认，未重复尝试已知登录入口。",
-      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -13080,12 +13411,12 @@ export const publicReleaseDataset = {
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
       "currentOpenStatusCheckedAt": "2026-11-04T15:39:40.629440+00:00",
-      "deadline": "2026-11-06",
-      "deadlineNote": "Bewerbungsfrist: 06.11.2026",
-      "deadlineNoteEn": "Bewerbungsfrist: 06.11.2026",
+      "deadline": "2026-11-27",
+      "deadlineNote": "同一职位6253当前官方正文截止为2026年11月27日；网页工具旧缓存仍为11月6日，保留旧观察。未找到变更原因公告，不据此确认门户仍受理。",
+      "deadlineNoteEn": "Current official notice for job 6253: 27 November 2026. The previous reader cache showed 6 November; old evidence is retained. No reason for the date change or current portal acceptance has been established.",
       "deadlineType": "fixed_official_date_with_locale_evidence_retained",
       "degree": "unknown",
-      "duration": "以官方公告为准",
+      "duration": "全职，2027年3月1日开始；初期2年，双方同意时可能转为无固定期限，并非已保证永久聘任。",
       "durationEn": "See official announcement",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
@@ -13222,6 +13553,54 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/",
           "observedAt": "2026-11-04T15:39:40.629440+00:00"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/",
+          "observedAt": "2026-11-05T00:48:17.706Z"
+        },
+        {
+          "field": "deadlineHistory",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/",
+          "observedAt": "2026-11-05T00:48:17.706Z"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/",
+          "observedAt": "2026-11-05T00:48:17.706Z"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/",
+          "observedAt": "2026-11-05T00:48:17.706Z"
+        },
+        {
+          "field": "duration",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/",
+          "observedAt": "2026-11-05T00:48:17.706Z"
+        },
+        {
+          "field": "salary",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/",
+          "observedAt": "2026-11-05T00:48:17.706Z"
+        },
+        {
+          "field": "salaryEn",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/",
+          "observedAt": "2026-11-05T00:48:17.706Z"
+        },
+        {
+          "field": "deadline",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/",
+          "observedAt": "2026-11-05T00:48:17.706Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13238,8 +13617,8 @@ export const publicReleaseDataset = {
       "requirements": "Master- oder Diplomingenieur- oder Diplomabschluss in Elektrotechnik oder Physik mit nachweislichen Erfahrungen im Experimentalbereich bzw. in der Anwendung von Mess- und Regeltechnik.\nGute Deutsch- und Englischkenntnisse.\nBenötigte Qualifikationen:\nIhr besonderer Arbeitsstil: Sie arbeiten gerne eigenverantwortlich und strukturiert, üben Tätigkeiten zuverlässlich und genau aus, sind serviceorientiert und finden gerne Lösungen.\nSie sind ein*e Teamplayer*in und haben eine hohe soziale und kommunikative Kompetenz.\nWünschenswerte Qualifikationen:\nMehrjährige einschlägige Berufserfahrung, besonders auch Personalführung, ist von Vorteil.\nErfahrungen und Kenntnisse zu Hochspannungstechnologien, im Umgang mit Röntgenstrahlungsquellen bzw. mit optischen Lasern sind ein großes Plus.\nChemische Grundkenntnisse oder eine Zusatzausbildung zu Labortechnik sind / ist von Vorteil.\nAffinität zur handwerklichen praktischen Nutzung von mechanischen und elektrotechnischen Werkzeugen, konventionellen Werkzeugmaschinen sowie 3D-Drucktechniken sollte bestehen.",
       "requirementsEn": "Master- oder Diplomingenieur- oder Diplomabschluss in Elektrotechnik oder Physik mit nachweislichen Erfahrungen im Experimentalbereich bzw. in der Anwendung von Mess- und Regeltechnik.\nGute Deutsch- und Englischkenntnisse.\nBenötigte Qualifikationen:\nIhr besonderer Arbeitsstil: Sie arbeiten gerne eigenverantwortlich und strukturiert, üben Tätigkeiten zuverlässlich und genau aus, sind serviceorientiert und finden gerne Lösungen.\nSie sind ein*e Teamplayer*in und haben eine hohe soziale und kommunikative Kompetenz.\nWünschenswerte Qualifikationen:\nMehrjährige einschlägige Berufserfahrung, besonders auch Personalführung, ist von Vorteil.\nErfahrungen und Kenntnisse zu Hochspannungstechnologien, im Umgang mit Röntgenstrahlungsquellen bzw. mit optischen Lasern sind ein großes Plus.\nChemische Grundkenntnisse oder eine Zusatzausbildung zu Labortechnik sind / ist von Vorteil.\nAffinität zur handwerklichen praktischen Nutzung von mechanischen und elektrotechnischen Werkzeugen, konventionellen Werkzeugmaschinen sowie 3D-Drucktechniken sollte bestehen.",
       "reviewDate": "",
-      "salary": "Faires Gehalt : Das Grundgehalt von EUR 3.510,30 € (auf Basis Vollzeit, 14x pro Jahr, Betrag per 01.01.2027) erhöht sich, wenn wir Berufserfahrungen anrechnen können. Vertragsdauer: Die Vollzeitstelle ist anfänglich auf zwei Jahre befristet und kann im gegenseitigen Einvernehmen in ein unbe",
-      "salaryEn": "Faires Gehalt : Das Grundgehalt von EUR 3.510,30 € (auf Basis Vollzeit, 14x pro Jahr, Betrag per 01.01.2027) erhöht sich, wenn wir Berufserfahrungen anrechnen können. Vertragsdauer: Die Vollzeitstelle ist anfänglich auf zwei Jahre befristet und kann im gegenseitigen Einvernehmen in ein unbe",
+      "salary": "公告全职基准€3,510.30，按每年14次支付，金额口径为2027年1月1日，可按认可经验上调；该段未明确税前／税后。",
+      "salaryEn": "Full-time base EUR 3,510.30, paid 14 times per year, amount as of 1 January 2027; recognised experience may increase it; tax basis not explicit in this passage.",
       "short": "Universität Wien",
       "source": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/",
       "sourceIds": [
@@ -13255,7 +13634,25 @@ export const publicReleaseDataset = {
       "titleEn": "Leiter*in Laborgerätetechnik",
       "topics": [],
       "type": "research",
-      "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/"
+      "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/",
+      "deadlineHistory": [
+        {
+          "kind": "previous_public_dataset",
+          "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/",
+          "value": "2026-11-06"
+        },
+        {
+          "kind": "current_native_visible_notice",
+          "observedAt": "2026-11-05T00:48:17.706Z",
+          "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/",
+          "value": "2026-11-27"
+        }
+      ],
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:48:17.706Z",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
+      }
     },
     {
       "announcementStatus": "open",
@@ -13264,7 +13661,7 @@ export const publicReleaseDataset = {
       "applicationProcessEn": "Application packets should include: a. A formal cover letter summarizing qualifications, b. a statement describing Teaching and Research philosophy (2-pg max), c. a statement describing Extension philosophy (2-pg. max). d. a current curriculum vitae, and e. the names and contact information of three professional references who can assess the applicant’s qualifications for this position.",
       "candidateId": "tcand-9fa8fc34b015de6b38639660",
       "caution": "公开表单混有短信同意、岗位兴趣登记和推荐／提醒功能，尚未确认岗位正式申请受理。",
-      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -13402,7 +13799,12 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "faculty",
       "url": "https://jobs.apply.vt.edu/jobs/assistant-associate-professor-of-turfgrass-science-blacksburg-virginia-united-states",
-      "applicationRouteCheckedAt": "2026-11-04T16:08:58.527Z"
+      "applicationRouteCheckedAt": "2026-11-04T16:08:58.527Z",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:37:47.348Z",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
+      }
     },
     {
       "announcementStatus": "open",
@@ -13413,7 +13815,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1453458833/?locale=en_US",
       "candidateId": "tcand-a36518c6f10e7487a6fb7579",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -13428,7 +13830,7 @@ export const publicReleaseDataset = {
       "deadlineNoteEn": "Application deadline: 11/30/2026",
       "deadlineType": "fixed_as_officially_stated_timezone_unknown",
       "degree": "unknown",
-      "duration": "以官方公告为准",
+      "duration": "2027年3月1日或其后尽快开始；合同先限1年，目标延长至3年。资金覆盖3年的说明不等同于首份合同保证3年。",
       "durationEn": "See official announcement",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
@@ -13547,6 +13949,18 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://jobs.univie.ac.at/job/PhD-Position-Analyzing-Polymer-Degradation-by-Soil-Enzymes/1453458833/",
           "observedAt": "2026-11-04T17:59:05.012121+00:00"
+        },
+        {
+          "field": "duration",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/PhD-Position-Analyzing-Polymer-Degradation-by-Soil-Enzymes/1453458833/",
+          "observedAt": "2026-11-05T00:31:06.319548+00:00"
+        },
+        {
+          "field": "materials",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/PhD-Position-Analyzing-Polymer-Degradation-by-Soil-Enzymes/1453458833/",
+          "observedAt": "2026-11-05T00:31:06.319548+00:00"
         }
       ],
       "funding": "A fully funded position (full funding for 3 years) in accordance with the collective bargaining agreement (basic salary of EUR 3776,10 on a full-time basis)",
@@ -13581,7 +13995,13 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "phd",
       "url": "https://jobs.univie.ac.at/job/PhD-Position-Analyzing-Polymer-Degradation-by-Soil-Enzymes/1453458833/",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.012121+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:05.012121+00:00",
+      "materials": "CV（含至少2位推荐人联系方式）、本科和硕士成绩单、说明与岗位匹配的动机信；只接受官方招聘门户提交。",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:31:06.319548+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "open",
@@ -13592,7 +14012,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1448831533/?locale=en_US",
       "candidateId": "tcand-a671a2724da2f96f77b88f29",
       "caution": "官方公告与公开说明已复核；申请受理仍未确认，未重复尝试已知登录入口。",
-      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -13607,7 +14027,7 @@ export const publicReleaseDataset = {
       "deadlineNoteEn": "Application deadline: 11/08/2026",
       "deadlineType": "fixed_official_literal_or_same_role_native_DOM_corroborated_timezone_unknown",
       "degree": "unknown",
-      "duration": "以官方公告为准",
+      "duration": "博士雇佣目标总期4年；初限1.5年，若雇主未在首12个月提出不续约声明，则自动延长至4年。2026年12月1日可开始，最迟12月15日。",
       "durationEn": "See official announcement",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
@@ -13714,6 +14134,24 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/",
           "observedAt": "2026-11-04T15:39:40.629440+00:00"
+        },
+        {
+          "field": "duration",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/",
+          "observedAt": "2026-11-05T00:48:19.073Z"
+        },
+        {
+          "field": "salary",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/",
+          "observedAt": "2026-11-05T00:48:19.073Z"
+        },
+        {
+          "field": "salaryEn",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/",
+          "observedAt": "2026-11-05T00:48:19.073Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13730,8 +14168,8 @@ export const publicReleaseDataset = {
       "requirements": "Completed master or diploma in the atmospheric sciences (e.g., meteorology, climatology), or a related field; Strong programming skills; Data analysis and interpretation experience; A good team spirit and willingness to collaborate; Very good command of the English language.\nThese skills would be an advantage: Experience with Lagrangian transport models; Expert knowledge of programming, preferably in Python and/or Fortran; Experience with space-industry based emissions and their impact on the atmosphere.",
       "requirementsEn": "Completed master or diploma in the atmospheric sciences (e.g., meteorology, climatology), or a related field; Strong programming skills; Data analysis and interpretation experience; A good team spirit and willingness to collaborate; Very good command of the English language.\nThese skills would be an advantage: Experience with Lagrangian transport models; Expert knowledge of programming, preferably in Python and/or Fortran; Experience with space-industry based emissions and their impact on the atmosphere.",
       "reviewDate": "2026-11-01",
-      "salary": "The basic salary of EUR 3.776,10 (on a full-time Basis) increases if we can credit professional experience",
-      "salaryEn": "The basic salary of EUR 3.776,10 (on a full-time Basis) increases if we can credit professional experience",
+      "salary": "公告全职基本薪酬基准€3,776.10；本岗位30小时／周，实际金额与该段支付周期未明确，不能把全职基准直接当作实际薪资。",
+      "salaryEn": "EUR 3,776.10 is a full-time base; the advertised post is 30 hours/week. Actual amount and payment frequency are not specified in this passage.",
       "short": "University of Vienna",
       "source": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/",
       "sourceIds": [
@@ -13747,7 +14185,12 @@ export const publicReleaseDataset = {
       "titleEn": "PhD position in inverse modelling of greenhouse gases and radioactivity in the atmosphere (4 years)",
       "topics": [],
       "type": "phd",
-      "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/"
+      "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:48:19.073Z",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
+      }
     },
     {
       "announcementStatus": "unknown",
@@ -13758,7 +14201,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1453283233/?locale=de_DE",
       "candidateId": "tcand-a6c8f814c9d81333f520ba54",
       "caution": "本轮公开读取失败；保留旧事实与未知状态，不把失败判断为关闭。",
-      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -13773,7 +14216,7 @@ export const publicReleaseDataset = {
       "deadlineNoteEn": "Bewerbungsfrist: 11.11.2026",
       "deadlineType": "fixed_official_date_with_locale_evidence_retained",
       "degree": "unknown",
-      "duration": "以官方公告为准",
+      "duration": "替补岗位：2026年12月1日至2027年11月30日，10小时／周；可能延长，但不作保证。",
       "durationEn": "See official announcement",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
@@ -13856,6 +14299,24 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
           "observedAt": "2026-11-04T16:04:10.130995+00:00"
+        },
+        {
+          "field": "duration",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
+          "observedAt": "2026-11-05T00:34:29.491Z"
+        },
+        {
+          "field": "salary",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
+          "observedAt": "2026-11-05T00:34:29.491Z"
+        },
+        {
+          "field": "salaryEn",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
+          "observedAt": "2026-11-05T00:34:29.491Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13872,8 +14333,8 @@ export const publicReleaseDataset = {
       "requirements": "Sie haben eine universitäre Ausbildung in den Natur- oder Lebenswissenschaften (mindestens BA/BSc oder gleichwertig). Sie bringen gutes technisches und chemisches Verständnis mit. Sie haben gute Englischkenntnisse (Gru",
       "requirementsEn": "Sie haben eine universitäre Ausbildung in den Natur- oder Lebenswissenschaften (mindestens BA/BSc oder gleichwertig). Sie bringen gutes technisches und chemisches Verständnis mit. Sie haben gute Englischkenntnisse (Gru",
       "reviewDate": "",
-      "salary": "Faires Gehalt : Das Grundgehalt von EUR 3.131,30 (für 40h) erhöht sich, wenn wir Berufserfahrungen anrechnen können. Gleiche Chancen für alle : Wir freuen uns über jede zusätzliche Persönlichkeit im Team . So einfach bewerben Sie sich: Mit Lebenslauf / kurzem Motivationsschreiben Abschlussz",
-      "salaryEn": "Faires Gehalt : Das Grundgehalt von EUR 3.131,30 (für 40h) erhöht sich, wenn wir Berufserfahrungen anrechnen können. Gleiche Chancen für alle : Wir freuen uns über jede zusätzliche Persönlichkeit im Team . So einfach bewerben Sie sich: Mit Lebenslauf / kurzem Motivationsschreiben Abschlussz",
+      "salary": "公告€3,131.30是40小时全职基本薪酬基准；本岗位为10小时／周，实际金额及该段支付周期未明确，不能直接按全职数额展示为本岗位所得。",
+      "salaryEn": "EUR 3,131.30 is the 40-hour base; this position is 10 hours/week. Actual part-time amount and payment frequency are not specified in this passage.",
       "short": "Universität Wien",
       "source": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
       "sourceIds": [
@@ -13889,7 +14350,12 @@ export const publicReleaseDataset = {
       "titleEn": "Technische*r Laborassistent*in Großgerät",
       "topics": [],
       "type": "research",
-      "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/"
+      "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:34:29.491Z",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
+      }
     },
     {
       "announcementStatus": "open",
@@ -14042,13 +14508,13 @@ export const publicReleaseDataset = {
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
-      "applicationProcess": "",
+      "applicationProcess": "在线提交CV、求职信、科研及教学陈述（各≤2页），至少3位推荐人；申请提交后即自动发出推荐信邀请，推荐信应在筛选日期前到达。",
       "applicationProcessEn": "",
       "applicationRouteCheckedAt": "2026-11-04T04:51:57.313Z",
       "applicationUrl": "https://jobs.montana.edu/postings/53487/pre_apply",
       "candidateId": "tcand-abc7536b8b07e29496311f5c",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -14170,6 +14636,12 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://jobs.montana.edu/postings/53036",
           "observedAt": "2026-11-04T17:59:04.945858+00:00"
+        },
+        {
+          "field": "applicationProcess",
+          "status": "supported",
+          "url": "https://jobs.montana.edu/postings/53036",
+          "observedAt": "2026-11-05T00:32:22.718790+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14204,7 +14676,12 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "faculty",
       "url": "https://jobs.montana.edu/postings/53036",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.945858+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:04.945858+00:00",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:32:22.718790+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "unknown",
@@ -14215,7 +14692,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://jobs.bridgew.edu/postings/34048/pre_apply",
       "candidateId": "tcand-b3e45e9d5b4db49e89fe4d9c",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -14307,6 +14784,12 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://jobs.bridgew.edu/postings/33838",
           "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "materials",
+          "status": "supported",
+          "url": "https://jobs.bridgew.edu/postings/33838",
+          "observedAt": "2026-11-05T00:31:49.905495+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14341,7 +14824,13 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "faculty",
       "url": "https://jobs.bridgew.edu/postings/33838",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.141703+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:05.141703+00:00",
+      "materials": "至少3位专业推荐人条目、CV、求职信、本科教学／指导陈述，以及展示地理空间技术用于自然地理的教学材料，覆盖入门与中高级课程。",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:31:49.905495+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "open",
@@ -14351,7 +14840,7 @@ export const publicReleaseDataset = {
       "applicationRouteCheckedAt": "2026-11-04T04:56:53.025Z",
       "candidateId": "tcand-b3f4060e0159c979020c6a80",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -14467,6 +14956,12 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://apply.interfolio.com/192961",
           "observedAt": "2026-11-04T17:59:04.746708+00:00"
+        },
+        {
+          "field": "materials",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/192961",
+          "observedAt": "2026-11-05T00:36:04.906Z"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14502,7 +14997,13 @@ export const publicReleaseDataset = {
       "type": "faculty",
       "url": "https://apply.interfolio.com/192961",
       "applicationUrl": "https://dossier.interfolio.com/apply/192961",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.746708+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:04.746708+00:00",
+      "materials": "求职信、完整CV、包含科研／教学／服务理念与计划的个人陈述（≤2页）、3位推荐人姓名及联系方式。",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:36:04.906Z",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
+      }
     },
     {
       "announcementStatus": "open",
@@ -14513,7 +15014,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://aalto.wd3.myworkdayjobs.com/aalto/job/Otaniemi-Espoo-Finland/Doctoral-Researcher--sustainability-of-Power-to-X--PtX--value-chains_R48457/apply",
       "candidateId": "tcand-b4ebd5f45a12d0cccd8ef3cc",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -14524,11 +15025,11 @@ export const publicReleaseDataset = {
       "currentOpenStatus": "unknown",
       "currentOpenStatusCheckedAt": "2026-11-04T17:59:05.077032+00:00",
       "deadline": "2026-11-22",
-      "deadlineNote": "please submit your application no later than 22.11.2026",
+      "deadlineNote": "最晚2026年11月22日通过Workday提交；找到合适人选可提前招满，未来日期不保证当前仍受理。",
       "deadlineNoteEn": "please submit your application no later than 22.11.2026",
       "deadlineType": "fixed_as_officially_stated_timezone_unknown",
       "degree": "unknown",
-      "duration": "以官方公告为准",
+      "duration": "2027年1月1日或协商开始；初聘2年，首6个月须取得化学工程博士学习权。之后续约依评估、修订计划和可用经费，非保证。",
       "durationEn": "See official announcement",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
@@ -14647,6 +15148,36 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
           "observedAt": "2026-11-04T17:59:05.077032+00:00"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
+          "observedAt": "2026-11-05T00:45:12.508191+00:00"
+        },
+        {
+          "field": "duration",
+          "status": "supported",
+          "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
+          "observedAt": "2026-11-05T00:45:12.508191+00:00"
+        },
+        {
+          "field": "materials",
+          "status": "supported",
+          "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
+          "observedAt": "2026-11-05T00:45:12.508191+00:00"
+        },
+        {
+          "field": "salary",
+          "status": "supported",
+          "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
+          "observedAt": "2026-11-05T00:45:12.508191+00:00"
+        },
+        {
+          "field": "salaryEn",
+          "status": "supported",
+          "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
+          "observedAt": "2026-11-05T00:45:12.508191+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14663,8 +15194,8 @@ export const publicReleaseDataset = {
       "requirements": "Master’s Degree: In Chemical Engineering, Electrical Engineering, Energy Systems Engineering, or a closely related field.\nOptimization background: Solid experience applying mathematical programming (e.g., MILP, MINLP) to energy or process systems.\nProgramming proficiency: Demonstrated skills in optimization or modeling environments (e.g., GAMS, Python, Julia, or MATLAB).\nDesirable (Considered an Advantage): Assessment Methodologies: Knowledge of TEA and LCA methodologies.",
       "requirementsEn": "Master’s Degree: In Chemical Engineering, Electrical Engineering, Energy Systems Engineering, or a closely related field.\nOptimization background: Solid experience applying mathematical programming (e.g., MILP, MINLP) to energy or process systems.\nProgramming proficiency: Demonstrated skills in optimization or modeling environments (e.g., GAMS, Python, Julia, or MATLAB).\nDesirable (Considered an Advantage): Assessment Methodologies: Knowledge of TEA and LCA methodologies.",
       "reviewDate": "",
-      "salary": "The starting salary for a Doctoral Researcher is about 3140 €/month (gross).",
-      "salaryEn": "The starting salary for a Doctoral Researcher is about 3140 €/month (gross).",
+      "salary": "博士研究员起薪约€3,140／月（税前）。",
+      "salaryEn": "Starting doctoral-researcher salary about €3,140/month gross.",
       "short": "Aalto University",
       "source": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
       "sourceIds": [
@@ -14681,17 +15212,23 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "phd",
       "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.077032+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:05.077032+00:00",
+      "materials": "英文求职／动机信、CV、至少2位推荐人联系方式、成绩单与学位证明。",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:45:12.508191+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "unknown",
       "applicationActionability": "unknown",
-      "applicationProcess": "",
+      "applicationProcess": "通过ARIeS在线门户；至少3封推荐信收到后才视为完整申请。签证支持由学校酌定，不据此承诺支持或一概排除。",
       "applicationProcessEn": "",
       "applicationUrl": "https://academicpositions.harvard.edu/postings/16823/pre_apply",
       "candidateId": "tcand-b6e5706456fd780f7a9096dd",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -14795,6 +15332,18 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://academicpositions.harvard.edu/postings/16742",
           "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "applicationProcess",
+          "status": "supported",
+          "url": "https://academicpositions.harvard.edu/postings/16742",
+          "observedAt": "2026-11-05T00:32:50.766189+00:00"
+        },
+        {
+          "field": "materials",
+          "status": "supported",
+          "url": "https://academicpositions.harvard.edu/postings/16742",
+          "observedAt": "2026-11-05T00:32:50.766189+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14829,7 +15378,13 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "faculty",
       "url": "https://academicpositions.harvard.edu/postings/16742",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.141703+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:05.141703+00:00",
+      "materials": "求职信、CV、教学／指导陈述、科研陈述、服务陈述；填3–5位推荐人，提交后系统邀请推荐信。至少3封到齐申请才完整，其中至少1位不能是本科、研究生或博士后导师。",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:32:50.766189+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "open",
@@ -14840,7 +15395,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1453323233/?locale=en_US",
       "candidateId": "tcand-b8fad45d333c2616c9177d51",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -15008,7 +15563,12 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "phd",
       "url": "https://jobs.univie.ac.at/job/Scientific-project-assistant-predoctoral/1453323233/",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.077032+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:05.077032+00:00",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:30:48.312469+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "open",
@@ -15314,7 +15874,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://jobs.charlotte.edu/postings/71052/pre_apply",
       "candidateId": "tcand-c41d0c97633d2c8d07f85758",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -15464,7 +16024,12 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "faculty",
       "url": "https://jobs.charlotte.edu/postings/71052",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.678433+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:04.678433+00:00",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:32:50.766189+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "unknown",
@@ -15475,7 +16040,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://uscjobs.sc.edu/postings/215190/pre_apply",
       "candidateId": "tcand-d2b8194a6fdb7d3906b6f039",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -15625,7 +16190,12 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "faculty",
       "url": "https://uscjobs.sc.edu/postings/214857",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.141703+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:05.141703+00:00",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:32:50.766189+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "open",
@@ -15636,7 +16206,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://appstate.peopleadmin.com/postings/56483/pre_apply",
       "candidateId": "tcand-d57e401f4c4cf854dfeead4c",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。 官方入职日期及ABD资格表述存在冲突，保留双方，不选择其一。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established. Official start-date and eligibility/ABD statements conflict; preserve both, do not choose a value.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -15791,7 +16361,12 @@ export const publicReleaseDataset = {
       "url": "https://appstate.peopleadmin.com/postings/56189",
       "startDate": "官方表格2027-07-01；正文2027年8月，冲突待机构确认",
       "startDateEn": "Table: 1 July 2027; narrative: August 2027. Conflict awaiting institutional clarification.",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.141703+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:05.141703+00:00",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:45:12.508191+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "invites_applications",
@@ -15800,7 +16375,7 @@ export const publicReleaseDataset = {
       "applicationProcessEn": "Apply online by submitting a cover letter, resume, and a copy of your transcript(s).",
       "candidateId": "tcand-d6316d31a9abac6640770b9c",
       "caution": "可见申请区包含推荐他人表单，不能据此确认岗位正式申请受理。",
-      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-02",
       "city": "",
       "collectedAt": "2026-11-02",
@@ -15980,7 +16555,12 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "research",
       "url": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574",
-      "applicationRouteCheckedAt": "2026-11-04T16:09:10.241Z"
+      "applicationRouteCheckedAt": "2026-11-04T16:09:10.241Z",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:32:50.766189+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "unknown",
@@ -15991,7 +16571,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://spartantalent.uncg.edu/postings/35916/pre_apply",
       "candidateId": "tcand-d9639cf9c040c3ba49793b20",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -16111,7 +16691,12 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "faculty",
       "url": "https://spartantalent.uncg.edu/postings/35916",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.205665+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:05.205665+00:00",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:33:52.639323+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "open",
@@ -16883,10 +17468,10 @@ export const publicReleaseDataset = {
       "applicationProcess": "",
       "applicationProcessEn": "",
       "applicationRouteCheckedAt": "2026-11-04T04:52:56.916Z",
-      "applicationUrl": "https://uscjobs.sc.edu/postings/214650/pre_apply",
+      "applicationUrl": "https://uscjobs.sc.edu/postings/215659/pre_apply",
       "candidateId": "tcand-f5409773fd25ffaaf26d7f7e",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Official public notice read; no repeated known login route, current acceptance not established.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -16897,8 +17482,8 @@ export const publicReleaseDataset = {
       "currentOpenStatus": "unknown",
       "currentOpenStatusCheckedAt": "2026-11-04T17:59:05.205665+00:00",
       "deadline": "",
-      "deadlineNote": "2026-12-01开始审查，之后直至招满；不是固定申请截止。",
-      "deadlineNoteEn": "Review begins 2026-12-01 and continues until filled; not a fixed closing date.",
+      "deadlineNote": "本轮官网正文写2027年1月29日开始审查，招满为止；旧快照为2026年12月1日，保留历史，未找到变更说明。这些均非固定申请截止。",
+      "deadlineNoteEn": "Current notice: review starts 29 January 2027 and continues until filled. Prior saved notice said 1 December 2026; the reason for the change is unconfirmed. Neither is a fixed closing date.",
       "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
@@ -17002,6 +17587,36 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://uscjobs.sc.edu/postings/214311",
           "observedAt": "2026-11-04T17:59:05.205665+00:00"
+        },
+        {
+          "field": "applicationUrl",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214311",
+          "observedAt": "2026-11-05T00:33:52.639323+00:00"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214311",
+          "observedAt": "2026-11-05T00:33:52.639323+00:00"
+        },
+        {
+          "field": "deadlineNoteEn",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214311",
+          "observedAt": "2026-11-05T00:33:52.639323+00:00"
+        },
+        {
+          "field": "reviewDate",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214311",
+          "observedAt": "2026-11-05T00:33:52.639323+00:00"
+        },
+        {
+          "field": "reviewDateHistory",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214311",
+          "observedAt": "2026-11-05T00:33:52.639323+00:00"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -17017,7 +17632,7 @@ export const publicReleaseDataset = {
       "releaseStatus": "likely_open / needs_review",
       "requirements": "Required Education and Experience Master’s degree in Geography, GIScience, Geospatial Analytics, Geo-Informatics, or a related field by the time of appointment. Candidates must demonstrate the ability to teach undergraduate courses in GIScience and related areas. This position is not eligible for visa sponsorship. Applicants must be authorized to work in the United States at the time of hire. Preferred Qualifications Master’s degree in Geography, GIScience, Geospatial Analytics, Geo-Informatics, or a related field by the time of appointment. Candidates must demonstrate the ability to teach undergraduate courses in GIScience and related areas. Th\nPreferred Qualifications Master’s degree in Geography, GIScience, Geospatial Analytics, Geo-Informatics, or a related field by the time of appointment. Candidates must demonstrate the ability to teach undergraduate courses in GIScience and related areas. The department is particularly interested in candidates with experience teaching geospatial data science or related topics, curriculum development experience, professional engagement related to teaching and learning, an",
       "requirementsEn": "Required Education and Experience Master’s degree in Geography, GIScience, Geospatial Analytics, Geo-Informatics, or a related field by the time of appointment. Candidates must demonstrate the ability to teach undergraduate courses in GIScience and related areas. This position is not eligible for visa sponsorship. Applicants must be authorized to work in the United States at the time of hire. Preferred Qualifications Master’s degree in Geography, GIScience, Geospatial Analytics, Geo-Informatics, or a related field by the time of appointment. Candidates must demonstrate the ability to teach undergraduate courses in GIScience and related areas. Th\nPreferred Qualifications Master’s degree in Geography, GIScience, Geospatial Analytics, Geo-Informatics, or a related field by the time of appointment. Candidates must demonstrate the ability to teach undergraduate courses in GIScience and related areas. The department is particularly interested in candidates with experience teaching geospatial data science or related topics, curriculum development experience, professional engagement related to teaching and learning, an",
-      "reviewDate": "2026-12-01",
+      "reviewDate": "2027-01-29",
       "salary": "未公布或尚未核验",
       "salaryEn": "Not stated or not verified",
       "short": "University of South Carolina",
@@ -17036,7 +17651,26 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "faculty",
       "url": "https://uscjobs.sc.edu/postings/214311",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.205665+00:00"
+      "announcementRecheckedAt": "2026-11-04T17:59:05.205665+00:00",
+      "reviewDateHistory": [
+        {
+          "kind": "previous_saved_observation",
+          "observedAt": "2026-11-04T17:59:05.205665+00:00",
+          "url": "https://uscjobs.sc.edu/postings/214311",
+          "value": "2026-12-01"
+        },
+        {
+          "kind": "current_visible_notice",
+          "observedAt": "2026-11-05T00:33:29.954Z",
+          "url": "https://uscjobs.sc.edu/postings/214311",
+          "value": "2027-01-29"
+        }
+      ],
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:33:52.639323+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
+      }
     },
     {
       "announcementStatus": "unknown",
@@ -17047,7 +17681,7 @@ export const publicReleaseDataset = {
       "applicationUrl": "https://jobs.univie.ac.at/talentcommunity/apply/1453340933/?locale=en_US",
       "candidateId": "tcand-fa1891c47c61fdfef56ccd4a",
       "caution": "官方公告与公开说明已复核；申请受理仍未确认，未重复尝试已知登录入口。",
-      "cautionEn": "Public notice or route rechecked; application acceptance remains unverified. No personal data, terms acceptance, account creation or application submission.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-11-03",
       "city": "",
       "collectedAt": "2026-11-03",
@@ -17196,7 +17830,12 @@ export const publicReleaseDataset = {
       "titleEn": "University Assistant postdoctoral",
       "topics": [],
       "type": "postdoc",
-      "url": "https://jobs.univie.ac.at/job/University-Assistant-postdoctoral/1453340933/"
+      "url": "https://jobs.univie.ac.at/job/University-Assistant-postdoctoral/1453340933/",
+      "sourceReview": {
+        "attemptedAt": "2026-11-05T00:29:17.582493+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
+      }
     },
     {
       "announcementStatus": "open",
@@ -17425,8 +18064,9 @@ export const publicReleaseDataset = {
       "announcementStatus": "open",
       "sourceReview": {
         "status": "source-reviewed",
-        "attemptedAt": "2026-11-04T16:32:27Z",
-        "scope": "specific official opportunity detail, not complete institution/source coverage"
+        "attemptedAt": "2026-11-05T00:34:33.634Z",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
       },
       "fieldEvidence": [
         {
@@ -17550,7 +18190,7 @@ export const publicReleaseDataset = {
       "officialJobReference": "PA2026/3144",
       "geo": null,
       "caution": "公告内容已核验；申请需登录，登录后受理状态未核实。未来截止日期不等于门户当前受理。未投递申请。",
-      "cautionEn": "Official content verified; application requires login and acceptance after login is unverified. A future deadline is not proof of portal acceptance. No application submitted.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "language": "英语；具体要求见官方公告",
       "languageEn": "English; see the official requirements",
       "releaseStatus": "likely_open / needs_review",
@@ -17620,8 +18260,9 @@ export const publicReleaseDataset = {
       "announcementStatus": "open",
       "sourceReview": {
         "status": "source-reviewed",
-        "attemptedAt": "2026-11-04T16:32:19Z",
-        "scope": "specific official opportunity detail, not complete institution/source coverage"
+        "attemptedAt": "2026-11-05T00:34:35.904Z",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
       },
       "fieldEvidence": [
         {
@@ -17775,7 +18416,7 @@ export const publicReleaseDataset = {
       "officialJobReference": "PA2026/3115",
       "geo": null,
       "caution": "公告内容已核验；申请需登录，登录后受理状态未核实。未来截止日期不等于门户当前受理。未投递申请。",
-      "cautionEn": "Official content verified; application requires login and acceptance after login is unverified. A future deadline is not proof of portal acceptance. No application submitted.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "language": "英语；具体要求见官方公告",
       "languageEn": "English; see the official requirements",
       "releaseStatus": "likely_open / needs_review",
@@ -17845,8 +18486,9 @@ export const publicReleaseDataset = {
       "announcementStatus": "open",
       "sourceReview": {
         "status": "source-reviewed",
-        "attemptedAt": "2026-11-04T16:32:15Z",
-        "scope": "specific official opportunity detail, not complete institution/source coverage"
+        "attemptedAt": "2026-11-05T00:34:37.357Z",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "native_browser_DOM"
       },
       "fieldEvidence": [
         {
@@ -17988,7 +18630,7 @@ export const publicReleaseDataset = {
       "officialJobReference": "PA2026/3079",
       "geo": null,
       "caution": "公告内容已核验；申请需登录，登录后受理状态未核实。未来截止日期不等于门户当前受理。未投递申请。",
-      "cautionEn": "Official content verified; application requires login and acceptance after login is unverified. A future deadline is not proof of portal acceptance. No application submitted.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "language": "英语；具体要求见官方公告",
       "languageEn": "English; see the official requirements",
       "releaseStatus": "likely_open / needs_review",
@@ -18057,8 +18699,9 @@ export const publicReleaseDataset = {
       "announcementStatus": "open",
       "sourceReview": {
         "status": "source-reviewed",
-        "attemptedAt": "2026-11-04T16:32:23Z",
-        "scope": "specific official opportunity detail, not complete institution/source coverage"
+        "attemptedAt": "2026-11-05T00:30:14.966620+00:00",
+        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
+        "method": "web_reader_may_be_cached"
       },
       "fieldEvidence": [
         {
@@ -18188,7 +18831,7 @@ export const publicReleaseDataset = {
       "officialJobReference": "PA2026/3081",
       "geo": null,
       "caution": "公告内容已核验；申请需登录，登录后受理状态未核实。未来截止日期不等于门户当前受理。未投递申请。",
-      "cautionEn": "Official content verified; application requires login and acceptance after login is unverified. A future deadline is not proof of portal acceptance. No application submitted.",
+      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "language": "英语；具体要求见官方公告",
       "languageEn": "English; see the official requirements",
       "releaseStatus": "likely_open / needs_review",
@@ -18237,15 +18880,15 @@ export const publicReleaseDataset = {
   },
   "counts": {
     "verified_open": 18,
-    "likely_open / needs_review": 50,
-    "closed": 0,
-    "expired": 8,
-    "insufficient_evidence": 25,
+    "likely_open / needs_review": 49,
+    "closed": 1,
+    "expired": 9,
+    "insufficient_evidence": 24,
     "blocked": 0,
     "resource_only": 84
   },
   "opportunityRecords": 101,
-  "datasetSha256": "2a35383334dd799d156dfe8ab10f5eb4ffcd5e3dcaf1c72748445cd36c85c3a1",
+  "datasetSha256": "ba48786bb9215aa5285f2fa134693c8fbc2d34bb2690cde3f251ca12cf8a80c5",
   "availabilityReview": {
     "planned": 34,
     "new_public_records": 12,
@@ -18275,6 +18918,16 @@ export const publicReleaseDataset = {
     "actualRechecks": 2,
     "newOpen": 0,
     "unknownRetained": 2,
+    "privateEvidencePublished": false
+  },
+  "applicationStatusFollowup": {
+    "plannedRecords": 50,
+    "newPublicNoticeReads": 46,
+    "recentObservationsReused": 2,
+    "knownRestrictedEntrancesNotRetried": 2,
+    "newVerifiedOpen": 0,
+    "newExplicitClosure": 1,
+    "recordsWithFieldCorrections": 23,
     "privateEvidencePublished": false
   }
 };
