@@ -1,6 +1,7 @@
-import {opportunityState,isConcreteOpportunity,opportunityStatusLabel} from './opportunity.mjs?v=open51-csu-20261104';
+import {calendarDate} from './calendar-date.mjs?v=product-ready-20261106';
+import {opportunityState,isConcreteOpportunity,opportunityStatusLabel} from './opportunity.mjs?v=product-ready-20261106';
 export const RELEASE_STATUSES=['verified_open','likely_open / needs_review','closed','expired','insufficient_evidence','blocked','resource_only'];
-export function releaseStatus(record,today=new Date().toISOString().slice(0,10)){
+export function releaseStatus(record,today=calendarDate()){
  const s=opportunityState(record,today);
  if(!isConcreteOpportunity(record))return 'resource_only';
  if(s.state==='closed')return 'closed';

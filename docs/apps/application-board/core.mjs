@@ -1,3 +1,4 @@
+import {calendarDate} from './calendar-date.mjs?v=product-ready-20261106';
 export const STAGES=['saved','preparing','submitted','interview','offer','closed'];
 export const MATERIAL_STATES=['missing','draft','ready'];
 export const KEY='application-board-v1';
@@ -28,7 +29,7 @@ export function mergeRecords(existing,incoming){
  const ids=new Set(existing.map(r=>r.id));if(incoming.some(r=>ids.has(r.id)))throw Error('Import contains existing IDs; nothing was changed');
  const rows=[...existing,...incoming];if(rows.length>MAX)throw Error('Maximum 500 opportunities');return rows.map(validateRecord);
 }
-export function daysLeft(deadline,today=new Date().toISOString().slice(0,10)){if(!deadline)return null;if(!validDate(deadline)||!validDate(today)||!today)throw Error('Invalid date');return Math.round((Date.parse(deadline+'T00:00:00Z')-Date.parse(today+'T00:00:00Z'))/86400000);}
+export function daysLeft(deadline,today=calendarDate()){if(!deadline)return null;if(!validDate(deadline)||!validDate(today)||!today)throw Error('Invalid date');return Math.round((Date.parse(deadline+'T00:00:00Z')-Date.parse(today+'T00:00:00Z'))/86400000);}
 export function filtered(records,{query='',stage='all',country='all'}={}){const q=query.trim().toLowerCase();return records.filter(r=>(stage==='all'||r.stage===stage)&&(country==='all'||r.country===country)&&[r.title,r.institution,r.country,r.notes].join(' ').toLowerCase().includes(q));}
 export function csv(records){const fields=['title','institution','country','type','deadline','stage','url','verified','notes'];const cell=v=>{let s=String(v??'');if(/^[\s]*[=+\-@]/.test(s))s="'"+s;return '"'+s.replaceAll('"','""')+'"';};return [fields.map(cell).join(','),...records.map(r=>fields.map(k=>cell(r[k])).join(','))].join('\r\n');}
 export function updateStage(record,stage,at=new Date().toISOString()){if(!STAGES.includes(stage))throw Error('Invalid stage');if(record.stage===stage)return record;return validateRecord({...record,stage,history:[...record.history,{at,action:'Stage changed to '+stage}]});}

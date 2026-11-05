@@ -1,3 +1,4 @@
+import {calendarDate} from './calendar-date.mjs?v=product-ready-20261106';
 // Conservative facets: never infer eligibility from missing requirements.
 export function fundingKind(job){
  if(job.status==='resource'||job.status==='programme')return 'unspecified';
@@ -13,7 +14,7 @@ export function collapseProgrammeRows(rows){const ids=new Set(rows.map(r=>r.j.id
 export function sourceName(job){
  try{return new URL(job.url).hostname.replace(/^www\./,'');}catch{return '';}
 }
-export function deadlineInfo(deadline,today=new Date().toISOString().slice(0,10)){
+export function deadlineInfo(deadline,today=calendarDate()){
  if(!/^\d{4}-\d{2}-\d{2}$/.test(deadline||''))return {kind:'unknown',days:null};
  const target=Date.parse(deadline+'T00:00:00Z'),now=Date.parse(today+'T00:00:00Z');
  if(!Number.isFinite(target)||!Number.isFinite(now)||new Date(target).toISOString().slice(0,10)!==deadline)return {kind:'unknown',days:null};
@@ -81,7 +82,7 @@ function currentEvidence(job,status,today){
   return status==='open'?(positive.test(e.quote)||continuing||invited||wur||usc||frankfurt||manchester||museum||csu||emailCall||csod)&&!negative.test(e.quote)&&!negative.test(e.invitationQuote||''):negative.test(e.quote);
  });
 }
-export function opportunityState(job={},today=new Date().toISOString().slice(0,10)){
+export function opportunityState(job={},today=calendarDate()){
  const concrete=isConcreteOpportunity(job),conflict=hasCriticalConflict(job),deadline=opportunityDeadlineInfo(job,today);
  const declared=job.currentOpenStatus||job.current_open_status||'unknown';
  const availability=['open','closed'].includes(declared)&&currentEvidence(job,declared,today)?declared:'unknown';
@@ -95,24 +96,52 @@ export function opportunityState(job={},today=new Date().toISOString().slice(0,1
  const state=conflict?'conflict':!concrete?'programme':announcement==='closed'||availability==='closed'?'closed':deadline.kind==='past'?'past':notYetOpen?'not_yet_open':eligible?'open':'unknown';
  return {state,contentReviewStatus:job.contentReviewStatus||'unknown',announcementStatus:announcement,applicationPortalStatus:portal,conflict,deadline,eligibleForOpenRecommendation:eligible};
 }
-export function opportunityStatusLabel(job,lang='zh',today=new Date().toISOString().slice(0,10)){
+export function opportunityStatusLabel(job,lang='zh',today=calendarDate()){
  const s=opportunityState(job,today),en=lang==='en';
  if(s.state==='programme')return en?'Programme information · current intake unverified':'项目资料 · 当期招生待核实';
  if(s.state==='conflict')return en?'Conflicting information · verify official source':'信息存在冲突 · 请核对官网';
  if(s.state==='closed')return en?'Stated closed · historical record retained':'已明确关闭 · 保留历史记录';
  if(s.state==='past')return en?'Past deadline · current acceptance unknown; recheck official source':'截止日期已过 · 当前受理状态未知，需复核官网';
  if(s.state==='not_yet_open')return en?'Not yet open':'尚未开放';
- if(s.state==='open')return s.applicationPortalStatus==='not_applicable'?(en?'Official email application call · delivery not tested':'官方公告接收邮箱申请 · 未测试投递回执'):(en?'Acceptance confirmed at last check · recheck before applying':'核对时确认受理 · 申请前请复核');
+ if(s.state==='open')return s.applicationPortalStatus==='not_applicable'?(en?'Official email application call · delivery not tested':'官方公告接收邮箱申请 · 未测试投递回执'):(en?'Official notice open · check application requirements':'官方公告在招 · 请核对申请要求');
  if(s.announcementStatus==='open')return s.applicationPortalStatus==='not_applicable'?(en?'Email application notice · current validity needs review':'邮箱申请公告 · 当前有效性需复核'):(en?'Announcement says open · portal acceptance unverified':'公告显示开放 · 门户受理待核实');
  return en?'Current availability unverified':'当前开放状态待核实';
 }
-export function opportunityDeadlineLabel(job,lang='zh',today=new Date().toISOString().slice(0,10)){
+export function opportunityDeadlineLabel(job,lang='zh',today=calendarDate()){
  const en=lang==='en';
  if(hasCriticalConflict(job))return en?'Conflicting dates or conditions · verify source':'日期或条件存在冲突 · 请核对原文';
  if(!isConcreteOpportunity(job))return en?'Standing programme · check current intake':'常设项目 · 请核对当期招生';
+ if(job.deadlineType==='rolling'&&!job.reviewDate&&job.deadlineNote)return job.deadlineNote;
  if(job.deadlineType==='rolling')return (en?'Until filled as stated · review starts ':'公告称招满为止 · 开始评审 ')+(job.reviewDate||'—');
  const d=opportunityDeadlineInfo(job,today);
- return d.kind==='unknown'?(en?'Deadline not verified':'截止日期待核实'):d.kind==='past'?(en?'Past deadline':'日期已过'):d.kind==='today'?(en?'Due date today · verify local time':'截止日期为今日 · 请核对当地时间'):(en?d.days+' calendar days to stated date': '距公告日期 '+d.days+' 个日历日');
+ return d.kind==='unknown'?(en?'Deadline not verified':'截止日期待核实'):d.kind==='past'?(en?'Past deadline':'日期已过'):d.kind==='today'?(en?'Due date today · verify local time':'截止日期为今日 · 请核对当地时间'):(en?d.days+' calendar days to stated date': '距截止日期 '+d.days+' 个日历日');
 }
 export function confirmedBachelor(job){return job.bachelorEligible===true&&typeof job.bachelorEvidence==='string'&&job.bachelorEvidence.trim().length>0;}
 export function confirmedEnglishOnly(job){return job.englishOnly===true&&typeof job.englishOnlyEvidence==='string'&&job.englishOnlyEvidence.trim().length>0;}
+
+export function applicationEntryLabel(job,lang='zh',today=calendarDate()){
+ const en=lang==='en',mode=job.applicationActionability||'',portal=job.applicationPortalStatus||'';
+ if(portal==='closed')return en?'Application portal explicitly closed':'申请系统明确停止受理';
+ if(portal==='login_required')return en?'Login required; post-login acceptance unverified':'需要登录；登录后的受理状态未核验';
+ if(mode==='email_application_instructions_verified'||portal==='not_applicable')return en?'Official email instructions available; delivery not tested':'官网提供邮箱申请说明；未测试投递或回执';
+ if(mode==='public_email_start_verified')return en?'Public email entry step accessible; later steps unverified':'已进入公开邮箱起始页；后续步骤与提交未核验';
+ if(mode==='public_identity_start_verified'||mode==='public_application_start_verified')return en?'Public application start accessible; final submission unverified':'公开申请起始页可访问；未验证完整提交';
+ if(mode.startsWith('public_form_'))return en?'Public application form observed; no application submitted':'已查看公开申请表；未实际提交申请';
+ if(opportunityState(job,today).eligibleForOpenRecommendation)return en?'Official acceptance notice checked; submission not tested':'官网受理说明已核对；未测试完整提交';
+ return en?'Current application acceptance unverified':'当前申请受理情况未核验';
+}
+
+export function applicationTimingLabel(job,lang='zh',today=calendarDate()){
+ const en=lang==='en';
+ if(hasCriticalConflict(job))return en?'Conflicting dates · no countdown':'日期存在冲突 · 不计算剩余天数';
+ if(!isConcreteOpportunity(job))return en?'Programme information · current intake unverified':'项目资料 · 当期招生及截止时间待核实';
+ const date=effectiveDeadline(job),info=opportunityDeadlineInfo(job,today),prefix=en?'Deadline: ':'截止时间：';
+ if(date&&info.days!==null){
+  if(info.days<0)return prefix+date+(en?' · stated date has passed':' · 公告截止日期已过');
+  if(info.days===0)return prefix+date+(en?' · due date today; check source time zone':' · 公告截止日期为今天，具体时刻请查官网');
+  return prefix+date+(en?` · ${info.days} calendar days left`:` · 距截止 ${info.days} 天`);
+ }
+ if(job.deadlineType==='rolling')return (en?'Deadline: Until filled; no fixed deadline':'截止安排：招满为止，无固定截止日')+(job.reviewDate?(en?' · review starts ':' · 开始评审 ')+job.reviewDate:'');
+ if(['review_start','priority','first_review','guaranteed_consideration'].includes(job.deadlineKind))return (en?'Review / priority date (not a final deadline): ':'评审／优先日期（不是最终截止）：')+(job.reviewDate||job.priorityDeadline||job.deadline||'—');
+ return en?'Fixed application deadline unverified':'固定截止时间待核实';
+}
