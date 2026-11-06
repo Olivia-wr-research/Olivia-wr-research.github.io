@@ -5,7 +5,7 @@ import {matchesGeo} from './geography-filters.mjs?v=product-ready-20261106';
 import {setupCommunity} from './geography-community.mjs?v=product-ready-20261106';
 import {opportunityCategory,catalogCounts} from './geography-catalog.mjs?v=product-ready-20261106';
 import {fieldForLanguage,field,language,t} from './i18n.mjs?v=product-ready-20261106';
-import {publicOpportunityLabel as opportunityStatusLabel,applicationTimingLabel,effectiveDeadline} from './opportunity.mjs?v=product-ready-20261106';
+import {publicOpportunityLabel as opportunityStatusLabel,applicationTimingLabel,effectiveDeadline} from './opportunity.mjs?v=public-copy-20261107';
 const node=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 export function typeLabel(type,lang='zh'){
  const labels={'masters-intake':['硕士当期招生','Master’s intake'],'phd-programme':['博士学位项目','Doctoral programme'],'masters-programme':['硕士学位项目','Master’s programme'],'phd-intake':['博士当期招生','Doctoral intake'],'phd-project':['博士研究项目','Doctoral project'],phd:['博士机会','Doctoral opportunity'],PhD:['博士机会','Doctoral opportunity'],postdoc:['博士后','Postdoctoral role'],faculty:['教职','Faculty position'],research:['研究岗位','Research role'],'research-fellow':['研究员','Research fellow'],learning:['学习资源','Learning resource']};

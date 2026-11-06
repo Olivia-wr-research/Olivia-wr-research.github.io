@@ -1,13 +1,13 @@
 import {calendarDate} from './calendar-date.mjs?v=product-ready-20261106';
 import {publicReleaseDataset} from './public-data.mjs';
 import {newestCollected,setupCollectionSort} from './opportunity-sort.mjs?v=product-ready-20261106';
-import {initRoutes,navigate} from './routes.mjs?v=product-ready-20261106';
-import {applicationEntryLabel,applicationTimingLabel,fundingKind,sourceName,deadlineInfo,publicOpportunityLabel as opportunityStatusLabel,opportunityDeadlineLabel,opportunityDeadlineInfo,opportunityState,effectiveDeadline,collapseProgrammeRows,programmeRounds} from './opportunity.mjs?v=product-ready-20261106';
+import {initRoutes,navigate} from './routes.mjs?v=public-copy-20261107';
+import {applicationEntryLabel,applicationTimingLabel,fundingKind,sourceName,deadlineInfo,publicOpportunityLabel as opportunityStatusLabel,opportunityDeadlineLabel,opportunityDeadlineInfo,opportunityState,effectiveDeadline,collapseProgrammeRows,programmeRounds} from './opportunity.mjs?v=public-copy-20261107';
 import {geographyCatalog as geographyOpportunities} from './geography-catalog.mjs?v=product-ready-20261106';
-import {setupGeographyUI,typeLabel,applicationNotes} from './geography-ui.mjs?v=note-palette-20261106';
+import {setupGeographyUI,typeLabel,applicationNotes} from './geography-ui.mjs?v=public-copy-20261107';
 import {initLanguage,field,language,t} from './i18n.mjs?v=product-ready-20261106';
 import {classifySnapshot,summarizeCoverage} from './data-quality.mjs?v=product-ready-20261106';
-import {setupJourney} from './journey.mjs?v=product-ready-20261106';
+import {setupJourney} from './journey.mjs?v=public-copy-20261107';
 import {positions,checkedAt} from './positions.mjs?v=07';
 import {PROFILE_KEY,profile,terms,match,canonicalTerm} from './matching.mjs?v=product-ready-20261106';
 import {KEY,parseBackup,backup,validateRecord,safeUrl,validDate,daysLeft} from './core.mjs?v=product-ready-20261106';

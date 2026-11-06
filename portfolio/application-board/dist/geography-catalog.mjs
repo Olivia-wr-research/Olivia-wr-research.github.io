@@ -2,7 +2,7 @@ import {calendarDate} from './calendar-date.mjs?v=product-ready-20261106';
 import {applyReviewedCatalogUpdates} from './catalog-review.mjs';
 import {publicReleaseDataset} from './public-data.mjs';
 import {reviewedCatalogUpdates} from './reviewed-updates.mjs';
-import {opportunityState} from './opportunity.mjs?v=product-ready-20261106';
+import {opportunityState} from './opportunity.mjs?v=public-copy-20261107';
 import {geographyOpportunities} from './geography-opportunities.mjs';
 import {geographyOctober18} from './geography-oct18.mjs';
 import {geographyProgrammesEurope} from './geography-programmes-europe.mjs';

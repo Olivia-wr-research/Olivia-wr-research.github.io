@@ -1,6 +1,6 @@
 import {calendarDate} from './calendar-date.mjs?v=product-ready-20261106';
 import {routeURL,parseRoute,REPORT_VERSION} from './research-core.mjs';
-import {applicationTimingLabel,applicationEntryLabel,programmeRounds,publicOpportunityLabel as opportunityStatusLabel,effectiveDeadline,hasCriticalConflict} from './opportunity.mjs?v=product-ready-20261106';
+import {applicationTimingLabel,applicationEntryLabel,programmeRounds,publicOpportunityLabel as opportunityStatusLabel,effectiveDeadline,hasCriticalConflict} from './opportunity.mjs?v=public-copy-20261107';
 import {field,language,t,localizedResearch} from './i18n.mjs?v=product-ready-20261106';
 import {profileStats} from './mentor-core.mjs';
 import {pilotOpportunityEvidence,pilotApplicationLinks} from './research-opportunity-evidence.mjs';
