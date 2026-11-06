@@ -1,6 +1,6 @@
 import {CV_MATCH_ENABLED} from "./features.mjs";
 import {field,language,t} from './i18n.mjs?v=product-ready-20261106';
-import {publicOpportunityLabel as opportunityStatusLabel,applicationTimingLabel,opportunityDeadlineLabel,effectiveDeadline} from './opportunity.mjs?v=product-ready-20261106';
+import {publicOpportunityLabel as opportunityStatusLabel,applicationTimingLabel,opportunityDeadlineLabel,effectiveDeadline} from './opportunity.mjs?v=public-copy-20261107';
 import {researchUnits,sourcePortals,topicChoices,methodChoices,suggestFromText,cvFileText} from './explore.mjs?v=06';
 const $=s=>document.querySelector(s),node=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 const button=(text,fn,cls)=>{const n=node('button',text,cls);n.type='button';n.onclick=fn;return n;};

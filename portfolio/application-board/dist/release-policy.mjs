@@ -1,5 +1,5 @@
 import {calendarDate} from './calendar-date.mjs?v=product-ready-20261106';
-import {opportunityState,isConcreteOpportunity,opportunityStatusLabel} from './opportunity.mjs?v=product-ready-20261106';
+import {opportunityState,isConcreteOpportunity,opportunityStatusLabel} from './opportunity.mjs?v=public-copy-20261107';
 export const RELEASE_STATUSES=['verified_open','likely_open / needs_review','closed','expired','insufficient_evidence','blocked','resource_only'];
 export function releaseStatus(record,today=calendarDate()){
  const s=opportunityState(record,today);

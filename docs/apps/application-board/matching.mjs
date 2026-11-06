@@ -1,4 +1,4 @@
-import {opportunityDeadlineInfo} from './opportunity.mjs?v=product-ready-20261106';
+import {opportunityDeadlineInfo} from './opportunity.mjs?v=public-copy-20261107';
 import {daysLeft} from './core.mjs?v=product-ready-20261106';
 export const PROFILE_KEY='doctoral-compass-profile-v1';
 export function terms(value){return [...new Set(String(value||'').split(/[,，;；\n]/).map(s=>s.trim().toLowerCase()).filter(Boolean))].slice(0,30);}

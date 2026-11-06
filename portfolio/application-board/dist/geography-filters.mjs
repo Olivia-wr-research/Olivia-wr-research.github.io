@@ -1,6 +1,6 @@
 import {calendarDate} from './calendar-date.mjs?v=product-ready-20261106';
 import {opportunityCategory} from './geography-catalog.mjs?v=product-ready-20261106';
-import {fundingKind,opportunityState,opportunityDeadlineInfo,isConcreteOpportunity} from './opportunity.mjs?v=product-ready-20261106';
+import {fundingKind,opportunityState,opportunityDeadlineInfo,isConcreteOpportunity} from './opportunity.mjs?v=public-copy-20261107';
 export function trackOf(j){return ['programme','intake','study'].includes(opportunityCategory(j))?'study':'work';}
 export function levelOf(j){
  if(j.degreeType==='masters'||/^masters?[-_]/i.test(j.type||''))return 'masters';
