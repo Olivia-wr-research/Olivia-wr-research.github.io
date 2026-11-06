@@ -1,6 +1,6 @@
 {
   "format": "terrafar-public-dataset-v1",
-  "asOf": "2026-11-06",
+  "asOf": "2026-11-07",
   "records": [
     {
       "applicationProcess": "打开下方官方项目页，查看申请说明及当期招生入口。",
@@ -8128,6 +8128,27 @@
           "status": "supported",
           "url": "https://morehouse.peopleadmin.com/postings/15370/print_preview",
           "observedAt": "2026-11-05T00:30:14.966620+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://morehouse.peopleadmin.com/postings/15370/print_preview",
+          "observedAt": "2026-11-06T16:54:58.086Z",
+          "quote": "August 1, 2027"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://morehouse.peopleadmin.com/postings/15370/print_preview",
+          "observedAt": "2026-11-06T16:54:58.086Z",
+          "quote": "statement of teaching philosophy"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://morehouse.peopleadmin.com/postings/15370/print_preview",
+          "observedAt": "2026-11-06T16:54:58.086Z",
+          "quote": "sample(s) of published work"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8164,11 +8185,15 @@
       "url": "https://morehouse.peopleadmin.com/postings/15370/print_preview",
       "applicationUrl": "https://morehouse.peopleadmin.com/postings/15370/pre_apply",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:30:14.966620+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "native_browser_DOM"
+        "attemptedAt": "2026-11-06T16:54:58.086Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
       },
-      "applicationPortalStatus": "login_required"
+      "applicationPortalStatus": "login_required",
+      "announcementRecheckedAt": "2026-11-06T16:54:58.086Z",
+      "materials": "求职信、CV、教学理念陈述、已发表作品样本；另说明支持黑人学生和有色人种男性学生达成课程目标的经验。正式学术成绩单由入选者提供。",
+      "materialsEn": "Cover letter, CV, teaching philosophy and sample(s) of published work; identify strengths and experience helping Black students and men of color achieve curricular goals. Official transcript required of the selected candidate.",
+      "startDate": "2027-08-01"
     },
     {
       "announcementStatus": "open",
@@ -9412,8 +9437,8 @@
       "deadlineNoteEn": "Bewerbungsfrist: 19.11.2026",
       "deadlineType": "fixed_official_date_with_locale_evidence_retained",
       "degree": "unknown",
-      "duration": "以官方公告为准",
-      "durationEn": "See official announcement",
+      "duration": "育儿假替岗，预计至2027年5月28日；可能延长，但不保证。全职每周40小时。",
+      "durationEn": "Parental-leave replacement expected through 28 May 2027; possible further extension is not guaranteed. Full-time 40 hours/week.",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
       "fieldEn": "See official announcement",
@@ -9549,6 +9574,27 @@
           "status": "unknown",
           "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452586933/",
           "observedAt": "2026-11-04T17:59:04.872866+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452586933/",
+          "observedAt": "2026-11-06T16:55:08.969Z",
+          "quote": "05.02.2027"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452586933/",
+          "observedAt": "2026-11-06T16:55:08.969Z",
+          "quote": "28.05.2027"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452586933/",
+          "observedAt": "2026-11-06T16:55:08.969Z",
+          "quote": "Motivationsschreiben (maximal 1 Seite)"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -9583,12 +9629,15 @@
       "topics": [],
       "type": "postdoc",
       "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452586933/",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.872866+00:00",
+      "announcementRecheckedAt": "2026-11-06T16:55:08.969Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:30:48.312469+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-06T16:55:08.969Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "materials": "科研CV（列博士和硕士／文凭论文题目）、最多1页动机信、硕士／文凭结业证明、博士完成证明、发表清单。",
+      "materialsEn": "Academic CV including doctoral and master/diploma thesis topics; motivation letter of maximum one page; completed master/diploma evidence; completed doctorate evidence; publication list.",
+      "startDate": "2027-02-05"
     },
     {
       "announcementStatus": "open",
@@ -10413,6 +10462,34 @@
           "status": "unknown",
           "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-in-Archaelogy-or-Geoscience/1375701157/",
           "observedAt": "2026-11-04T17:59:04.872866+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-in-Archaelogy-or-Geoscience/1375701157/",
+          "observedAt": "2026-11-06T16:55:14.933Z",
+          "quote": "single PDF file"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-in-Archaelogy-or-Geoscience/1375701157/",
+          "observedAt": "2026-11-06T16:55:14.933Z",
+          "quote": "Two letters of recommendation"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-in-Archaelogy-or-Geoscience/1375701157/",
+          "observedAt": "2026-11-06T16:55:14.933Z",
+          "quote": "1 January 2027"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-in-Archaelogy-or-Geoscience/1375701157/",
+          "observedAt": "2026-11-06T16:55:14.933Z",
+          "quote": "€2,700 per month"
         }
       ],
       "funding": "已核验为带薪博士或教职聘用；薪酬见薪酬字段。额外资助或学费安排未核实。",
@@ -10429,8 +10506,8 @@
       "requirements": "Hold a Master's degree or equivalent in a field relevant to the proposed doctoral research. Applicants who are close to completing their Master's degree are also encouraged to apply.\nFor this position, excellent written and spoken English is required.",
       "requirementsEn": "Hold a Master's degree or equivalent in a field relevant to the proposed doctoral research. Applicants who are close to completing their Master's degree are also encouraged to apply.\nFor this position, excellent written and spoken English is required.",
       "reviewDate": "",
-      "salary": "The starting gross salary is approximately €2,700 per month.\nstarting gross salary is approximately €2,700 per month",
-      "salaryEn": "The starting gross salary is approximately €2,700 per month.\nstarting gross salary is approximately €2,700 per month",
+      "salary": "起薪约税前每月€2,700；公告薪酬体系含岗位要求等级与个人绩效因素，不能推断绩效在此金额之外另加。",
+      "salaryEn": "Starting gross salary approximately €2,700/month; salary system includes requirement level and personal performance, without evidence of an additional payment beyond this figure.",
       "short": "University of Helsinki",
       "source": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-in-Archaelogy-or-Geoscience/1375701157/",
       "sourceIds": [
@@ -10448,12 +10525,15 @@
       "topics": [],
       "type": "phd",
       "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-in-Archaelogy-or-Geoscience/1375701157/",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.872866+00:00",
+      "announcementRecheckedAt": "2026-11-06T16:55:14.933Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:30:48.312469+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-06T16:55:14.933Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "materials": "合并为一个PDF：最多2页动机信、CV（如有则含发表清单）、两封推荐信并附推荐人联系方式。",
+      "materialsEn": "One PDF containing a motivation letter of maximum two pages, CV with publications if applicable, and two recommendation letters including referees’ contact information.",
+      "startDate": "2027-01-01"
     },
     {
       "announcementStatus": "unknown",
@@ -11258,6 +11338,20 @@
           "status": "supported",
           "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-on-Education-Related-Inequalities/1375905057/",
           "observedAt": "2026-11-05T00:43:41.953456+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-on-Education-Related-Inequalities/1375905057/",
+          "observedAt": "2026-11-06T16:55:11.440Z",
+          "quote": "18 January 2027"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-on-Education-Related-Inequalities/1375905057/",
+          "observedAt": "2026-11-06T16:55:11.440Z",
+          "quote": "€2,700-€3,300"
         }
       ],
       "funding": "已核验为带薪博士或教职聘用；薪酬见薪酬字段。额外资助或学费安排未核实。",
@@ -11274,8 +11368,8 @@
       "requirements": "The appointee to the position must hold a master’s degree in demography, public health/epidemiology, quantitative sociology or political science, philosophy, statistics, population genetics or another relevant field by the beginning of the employment.\nFor a successful applicant, strong quantitative methods skills are required.\nThe appointee needs to have a strong command of written English.",
       "requirementsEn": "The appointee to the position must hold a master’s degree in demography, public health/epidemiology, quantitative sociology or political science, philosophy, statistics, population genetics or another relevant field by the beginning of the employment.\nFor a successful applicant, strong quantitative methods skills are required.\nThe appointee needs to have a strong command of written English.",
       "reviewDate": "",
-      "salary": "The starting monthly gross salary range will be approximately €2,700-€3,300 depending on the appointee’s qualifications and experience.",
-      "salaryEn": "The starting monthly gross salary range will be approximately €2,700-€3,300 depending on the appointee’s qualifications and experience.",
+      "salary": "起薪约税前每月€2,700–3,300，依资格和经验确定。",
+      "salaryEn": "Starting gross monthly salary approximately €2,700–3,300 depending on qualifications and experience.",
       "short": "University of Helsinki",
       "source": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-on-Education-Related-Inequalities/1375905057/",
       "sourceIds": [
@@ -11292,13 +11386,14 @@
       "topics": [],
       "type": "phd",
       "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-on-Education-Related-Inequalities/1375905057/",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.872866+00:00",
+      "announcementRecheckedAt": "2026-11-06T16:55:11.440Z",
       "materials": "英文CV、编号发表清单（如有）、1–2页兴趣陈述，说明技能／研究经历及拟对项目的贡献。",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:43:41.953456+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-06T16:55:11.440Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "startDate": "2027-01-18"
     },
     {
       "announcementStatus": "open",
@@ -12651,6 +12746,20 @@
           "status": "supported",
           "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-researcher-in-global-development-studies/1374672557/",
           "observedAt": "2026-11-05T00:30:14.966620+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-researcher-in-global-development-studies/1374672557/",
+          "observedAt": "2026-11-06T16:54:51.915Z",
+          "quote": "1 March 2027"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-researcher-in-global-development-studies/1374672557/",
+          "observedAt": "2026-11-06T16:54:51.915Z",
+          "quote": "12 November 2026"
         }
       ],
       "funding": "已核验为带薪博士或教职聘用；薪酬见薪酬字段。额外资助或学费安排未核实。",
@@ -12687,10 +12796,14 @@
       "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-researcher-in-global-development-studies/1374672557/",
       "materials": "动机信≤1页、研究计划1500–2000词、CV≤2页、发表清单、至多2位推荐人的推荐及联系方式，以及学位和英语／葡语证明等支持材料。",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:30:14.966620+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-06T16:54:51.915Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "announcementRecheckedAt": "2026-11-06T16:54:51.915Z",
+      "startDate": "2027-03-01",
+      "startDateNote": "2027年3月1日或另行协商。",
+      "startDateNoteEn": "1 March 2027 or as agreed."
     },
     {
       "announcementStatus": "unknown",
@@ -13099,6 +13212,20 @@
           "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/",
           "observedAt": "2026-11-06T07:43:15.823Z",
           "quote": "maximum of two A4 pages"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/",
+          "observedAt": "2026-11-06T16:54:55.021Z",
+          "quote": "12 November 2026"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/",
+          "observedAt": "2026-11-06T16:54:55.021Z",
+          "quote": "29884"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13135,11 +13262,12 @@
       "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/",
       "materials": "最新CV及最多两页A4求职信，说明如何满足关键条件。",
       "sourceReview": {
-        "attemptedAt": "2026-11-06T07:43:15.823Z",
-        "scope": "specific official notice; no login, identity entry or submission",
+        "attemptedAt": "2026-11-06T16:54:55.021Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
         "method": "actual_native_browser_public_read"
       },
-      "materialsEn": "Up-to-date CV and cover letter of maximum two A4 pages explaining how the key criteria are met."
+      "materialsEn": "Up-to-date CV and cover letter of maximum two A4 pages explaining how the key criteria are met.",
+      "announcementRecheckedAt": "2026-11-06T16:54:55.021Z"
     },
     {
       "announcementStatus": "open",
@@ -14507,8 +14635,8 @@
       "currentOpenStatus": "unknown",
       "currentOpenStatusCheckedAt": "2026-11-04T15:39:40.629440+00:00",
       "deadline": "2026-11-08",
-      "deadlineNote": "Application deadline: 11/08/2026",
-      "deadlineNoteEn": "Application deadline: 11/08/2026",
+      "deadlineNote": "官网明确列出2026年11月8日截止；另写11月1日开始评审、持续遴选至决定。后一句不作为延期依据；登录后的受理状态未知。",
+      "deadlineNoteEn": "Official deadline 8 November 2026; review starts November 1 and search continues until a decision. The latter does not establish an extension. Authenticated acceptance unknown.",
       "deadlineType": "fixed_official_literal_or_same_role_native_DOM_corroborated_timezone_unknown",
       "degree": "unknown",
       "duration": "博士雇佣期目标为4年，初始合同1.5年；如雇主未在前12个月作出不延长声明，自动延至4年。",
@@ -14657,6 +14785,27 @@
           "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/",
           "observedAt": "2026-11-06T07:42:42.091Z",
           "quote": "With contact details of two persons"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/",
+          "observedAt": "2026-11-06T16:54:36.322Z",
+          "quote": "08.11.2026"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/",
+          "observedAt": "2026-11-06T16:54:36.322Z",
+          "quote": "latest starting date is 15 December 2026."
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/",
+          "observedAt": "2026-11-06T16:54:36.322Z",
+          "quote": "1 November, 2026"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14692,12 +14841,16 @@
       "type": "phd",
       "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/",
       "sourceReview": {
-        "attemptedAt": "2026-11-06T07:42:42.091Z",
-        "scope": "specific official notice; no login, identity entry or submission",
+        "attemptedAt": "2026-11-06T16:54:36.322Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
         "method": "actual_native_browser_public_read"
       },
       "materials": "简短动机信、含发表清单的CV、2位可应要求提供推荐的联系人。",
-      "materialsEn": "Short motivation letter, CV including publications, and contact details of 2 people who can provide recommendations on request."
+      "materialsEn": "Short motivation letter, CV including publications, and contact details of 2 people who can provide recommendations on request.",
+      "announcementRecheckedAt": "2026-11-06T16:54:36.322Z",
+      "startDate": "2026-12-01",
+      "startDateNote": "最晚2026-12-15到岗；按官方说明。",
+      "startDateNoteEn": "Latest start date 15 December 2026, as stated."
     },
     {
       "announcementStatus": "unknown",
@@ -14873,6 +15026,20 @@
           "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
           "observedAt": "2026-11-05T13:51:10.866149+00:00",
           "quote": "11.11.2026"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
+          "observedAt": "2026-11-06T16:54:38.205Z",
+          "quote": "Abschlusszeugnis (BSc. Abschluss)"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
+          "observedAt": "2026-11-06T16:54:38.205Z",
+          "quote": "01.12.2026"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14908,14 +15075,18 @@
       "type": "research",
       "url": "https://jobs.univie.ac.at/job/Technischer-Laborassistentin-Gro%C3%9Fger%C3%A4t/1453283233/",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T13:51:10.866149+00:00",
-        "scope": "specific public notice and starter only; no identity fields, consent, login or submission",
-        "method": "actual_native_browser_visible_AX"
+        "attemptedAt": "2026-11-06T16:54:38.205Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
       },
       "contractEndDateRaw": "30.11.2027",
       "officialJobReference": "6409",
       "startDateRaw": "01.12.2026",
-      "workHoursRaw": "10,00 h/week"
+      "workHoursRaw": "10,00 h/week",
+      "announcementRecheckedAt": "2026-11-06T16:54:38.205Z",
+      "materials": "CV／简短动机信、理学学士学位证明，以及必要的其他文件。",
+      "materialsEn": "CV/short motivation letter, BSc degree certificate, and further documents where necessary.",
+      "startDate": "2026-12-01"
     },
     {
       "announcementStatus": "open",
@@ -15801,6 +15972,20 @@
           "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
           "observedAt": "2026-11-06T07:43:53.153Z",
           "quote": "available funding"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
+          "observedAt": "2026-11-06T16:55:18.359Z",
+          "quote": "January 1, 2027"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
+          "observedAt": "2026-11-06T16:55:18.359Z",
+          "quote": "22.11.2026"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -15835,13 +16020,16 @@
       "topics": [],
       "type": "phd",
       "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.077032+00:00",
+      "announcementRecheckedAt": "2026-11-06T16:55:18.359Z",
       "materials": "英文求职／动机信、CV、至少2位推荐人联系方式、成绩单与学位证明。",
       "sourceReview": {
-        "attemptedAt": "2026-11-06T07:43:53.153Z",
-        "scope": "specific official notice; no login, identity entry or submission",
+        "attemptedAt": "2026-11-06T16:55:18.359Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
         "method": "actual_native_browser_public_read"
-      }
+      },
+      "startDate": "2027-01-01",
+      "startDateNote": "2027年1月1日或双方协商。",
+      "startDateNoteEn": "1 January 2027 or as mutually agreed."
     },
     {
       "announcementStatus": "unknown",
@@ -18501,6 +18689,34 @@
           "status": "unknown",
           "url": "https://jobs.univie.ac.at/job/University-Assistant-postdoctoral/1453340933/",
           "observedAt": "2026-11-04T16:04:10.130995+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/University-Assistant-postdoctoral/1453340933/",
+          "observedAt": "2026-11-06T16:54:39.675Z",
+          "quote": "01.01.2027"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/University-Assistant-postdoctoral/1453340933/",
+          "observedAt": "2026-11-06T16:54:39.675Z",
+          "quote": "5.014,30"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/University-Assistant-postdoctoral/1453340933/",
+          "observedAt": "2026-11-06T16:54:39.675Z",
+          "quote": "14x per year"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/University-Assistant-postdoctoral/1453340933/",
+          "observedAt": "2026-11-06T16:54:39.675Z",
+          "quote": "motivation (1-2 pages)"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -18517,8 +18733,8 @@
       "requirements": "Phd in a relevant field\nExperience in population and co-occurrence analyses as well comparative genomic analyses for metabolic reconstruction.\nExperience in using a range of bioinformatical tools but also lab-based methods to study microbial interactions.\nIn-depth understanding of Patescibacteria and knowledge of microbial processes in wastewater treatment systems, including phosphorus removal and polyphosphate-accumulating organisms.\nExperience in molecular techniques like fluorescence in situ hybridization and PCR-based methods.",
       "requirementsEn": "Phd in a relevant field\nExperience in population and co-occurrence analyses as well comparative genomic analyses for metabolic reconstruction.\nExperience in using a range of bioinformatical tools but also lab-based methods to study microbial interactions.\nIn-depth understanding of Patescibacteria and knowledge of microbial processes in wastewater treatment systems, including phosphorus removal and polyphosphate-accumulating organisms.\nExperience in molecular techniques like fluorescence in situ hybridization and PCR-based methods.",
       "reviewDate": "",
-      "salary": "Fair salary: The basic gross salary of EUR 5.014,30 (on full-time basis, 14x per year) increases if we can credit professional experience.",
-      "salaryEn": "Fair salary: The basic gross salary of EUR 5.014,30 (on full-time basis, 14x per year) increases if we can credit professional experience.",
+      "salary": "全职税前基本薪酬€5,014.30，每年发放14次；认可相关经历时可提高。",
+      "salaryEn": "Basic gross salary €5,014.30 on a full-time basis, paid 14 times per year; credited experience may increase it.",
       "short": "Universität Wien",
       "source": "https://jobs.univie.ac.at/job/University-Assistant-postdoctoral/1453340933/",
       "sourceIds": [
@@ -18536,10 +18752,14 @@
       "type": "postdoc",
       "url": "https://jobs.univie.ac.at/job/University-Assistant-postdoctoral/1453340933/",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:29:17.582493+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-06T16:54:39.675Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "announcementRecheckedAt": "2026-11-06T16:54:39.675Z",
+      "materials": "1–2页动机信（说明资格、相关经历与研究兴趣）、含发表清单的CV、大学学位／成绩证明，以及2位推荐人的联系方式。",
+      "materialsEn": "Motivation letter of 1–2 pages addressing qualifications, experience and research interests; CV with publications; university certificates including grades; contact information for two references.",
+      "startDate": "2027-01-01"
     },
     {
       "announcementStatus": "open",
@@ -19607,7 +19827,7 @@
     "resource_only": 84
   },
   "opportunityRecords": 101,
-  "datasetSha256": "4db30b0ecf8c5081f0ccd6e594d0c4410b3dbdbd648120ffddadd259865c9126",
+  "datasetSha256": "241cfbb8bc4dc406e72df8eb97e37e905dd3f7c5f854a44550b785021d77a8fd",
   "availabilityReview": {
     "planned": 34,
     "new_public_records": 12,
