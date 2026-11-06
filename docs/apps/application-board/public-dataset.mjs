@@ -8657,7 +8657,7 @@ export const publicReleaseDataset = {
       "applicationProcess": "Please submit your application to the University of Helsinki Recruitment System via the Apply Now button",
       "applicationProcessEn": "Please submit your application to the University of Helsinki Recruitment System via the Apply Now button",
       "applicationRouteCheckedAt": "2026-11-04T05:48:09.081Z",
-      "applicationUrl": "https://jobs.helsinki.fi/talentcommunity/apply/1374784157/?locale=en_GB",
+      "applicationUrl": "https://jobs.helsinki.fi/talentcommunity/apply/1374784257/?locale=fi_FI",
       "candidateId": "tcand-256dd28e1f4a27848f3198f8",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
       "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
@@ -8666,17 +8666,17 @@ export const publicReleaseDataset = {
       "collectedAt": "2026-11-02",
       "contentReviewObservedAt": "2026-11-02T00:23:53.363489+00:00",
       "contentReviewStatus": "verified",
-      "country": "未核实",
-      "countryEn": "Unknown",
+      "country": "芬兰",
+      "countryEn": "Finland",
       "currentOpenStatus": "unknown",
       "currentOpenStatusCheckedAt": "2026-11-04T17:59:05.077032+00:00",
       "deadline": "2026-12-15",
       "deadlineNote": "15 December 2026 at 23:59 (Europe/Helsinki time)",
       "deadlineNoteEn": "15 December 2026 at 23:59 (Europe/Helsinki time)",
-      "deadlineType": "fixed_as_stated_pending_leased_merge",
-      "degree": "unknown",
-      "duration": "以官方公告为准",
-      "durationEn": "See official announcement",
+      "deadlineType": "fixed",
+      "degree": "master",
+      "duration": "36个月全职MSCA博士雇佣合同；须在标准6个月试用期结束前取得博士学习资格。",
+      "durationEn": "36-month full-time MSCA doctoral contract; doctoral study right required by the end of the standard 6-month probation.",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
       "fieldEn": "See official announcement",
@@ -8812,6 +8812,62 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784157/",
           "observedAt": "2026-11-04T17:59:05.077032+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784257/",
+          "observedAt": "2026-11-06T10:48:25.827Z",
+          "quote": "5264"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784257/",
+          "observedAt": "2026-11-06T10:48:25.827Z",
+          "quote": "15 December 2026 at 23:59 (Europe/Helsinki time)."
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784257/",
+          "observedAt": "2026-11-06T10:48:25.827Z",
+          "quote": "36‑month full-time EU MSCA contract and fully funded doctoral position"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784257/",
+          "observedAt": "2026-11-06T10:48:25.827Z",
+          "quote": "3 639,85 €"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784257/",
+          "observedAt": "2026-11-06T10:48:25.827Z",
+          "quote": "546,15 €"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784257/",
+          "observedAt": "2026-11-06T10:48:25.827Z",
+          "quote": "507,69 €"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784257/",
+          "observedAt": "2026-11-06T10:48:25.827Z",
+          "quote": "6-month probationary period"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784257/",
+          "observedAt": "2026-11-06T10:48:25.827Z",
+          "quote": "Employment commences: 1 October 2027"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8828,10 +8884,10 @@ export const publicReleaseDataset = {
       "requirements": "Applicants cannot have been awarded a doctoral degree.\nmust not have resided or carried out their main activity (work, studies, etc.) in the country of the recruiting organisation for more than 12 months in the 36 months immediately before their recruitment date.",
       "requirementsEn": "Applicants cannot have been awarded a doctoral degree.\nmust not have resided or carried out their main activity (work, studies, etc.) in the country of the recruiting organisation for more than 12 months in the 36 months immediately before their recruitment date.",
       "reviewDate": "",
-      "salary": "3 639,85 € per month before taxes\nAdditionally, a monthly mobility allowance 546,15 € per month before taxes will be paid.\nIf applicable, a conditional monthly family allowance of 507,69 € per month before taxes is paid.",
-      "salaryEn": "3 639,85 € per month before taxes\nAdditionally, a monthly mobility allowance 546,15 € per month before taxes will be paid.\nIf applicable, a conditional monthly family allowance of 507,69 € per month before taxes is paid.",
+      "salary": "税前每月生活津贴€3,639.85，另有税前每月流动津贴€546.15；符合条件时另付税前每月家庭津贴€507.69。",
+      "salaryEn": "Gross monthly living allowance €3,639.85 plus gross monthly mobility allowance €546.15; conditional gross monthly family allowance €507.69 if applicable.",
       "short": "University of Helsinki",
-      "source": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784157/",
+      "source": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784257/",
       "sourceIds": [
         "doc-3ed886c0343da851",
         "doc-446f8d108f9611b8"
@@ -8846,13 +8902,14 @@ export const publicReleaseDataset = {
       "titleEn": "Doctoral Researcher (MSCA), Exploiting Migration to Influence and Destabilise Societies",
       "topics": [],
       "type": "phd",
-      "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784157/",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.077032+00:00",
+      "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784257/",
+      "announcementRecheckedAt": "2026-11-06T10:48:25.827Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:31:17.675135+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-06T10:48:25.827Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "startDate": "2027-10-01"
     },
     {
       "announcementStatus": "unknown",
@@ -11398,6 +11455,20 @@ export const publicReleaseDataset = {
           "status": "unknown",
           "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/login",
           "observedAt": "2026-11-04T18:01:29.905Z"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?mobile=true&needsRedirect=false",
+          "observedAt": "2026-11-06T10:50:01.796Z",
+          "quote": "2026-10827"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?mobile=true&needsRedirect=false",
+          "observedAt": "2026-11-06T10:50:01.796Z",
+          "quote": "Application review will begin December 1, 2026."
         }
       ],
       "funding": "未公布或尚未核验",
@@ -11431,13 +11502,13 @@ export const publicReleaseDataset = {
       "titleEn": "Assistant Professor - Environmental and Natural Resources Policy",
       "topics": [],
       "type": "faculty",
-      "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?in_iframe=1",
+      "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?mobile=true&needsRedirect=false",
       "applicationUrl": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/login",
-      "announcementRecheckedAt": "2026-11-04T18:01:29.905Z",
+      "announcementRecheckedAt": "2026-11-06T10:50:01.796Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:38:28.770Z",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "native_browser_DOM"
+        "attemptedAt": "2026-11-06T10:50:01.796Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
       }
     },
     {
@@ -13410,6 +13481,13 @@ export const publicReleaseDataset = {
           "status": "supported",
           "url": "https://apply.interfolio.com/195462",
           "observedAt": "2026-11-05T00:35:39.372Z"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://apply.interfolio.com/195462",
+          "observedAt": "2026-11-06T10:51:05.008Z",
+          "quote": "Dec 11, 2026 at 11:59 PM Eastern Time"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13445,12 +13523,12 @@ export const publicReleaseDataset = {
       "type": "faculty",
       "url": "https://apply.interfolio.com/195462",
       "applicationUrl": "https://dossier.interfolio.com/apply/195462",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.746708+00:00",
+      "announcementRecheckedAt": "2026-11-06T10:51:05.008Z",
       "materials": "合并为1份PDF：综合求职信（信本身≤10页）、当前CV、至少3位可作推荐人的联系信息；10页限制不应误写为整份合并PDF上限。",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:35:39.372Z",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "native_browser_DOM"
+        "attemptedAt": "2026-11-06T10:51:05.008Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
       }
     },
     {
@@ -13471,8 +13549,8 @@ export const publicReleaseDataset = {
       "currentOpenStatus": "unknown",
       "currentOpenStatusCheckedAt": "2026-11-04T18:01:59.001Z",
       "deadline": "",
-      "deadlineNote": "2026年12月1日之后开始审查并安排面试，公告称门户开放至招满；实际手动申请第1/6步为注册／登录，登录后受理未知。不是固定截止。",
-      "deadlineNoteEn": "Review and interview scheduling begin after 1 December 2026; the notice says the portal remains open until filled. The actual route begins with Create Account/Sign In; acceptance after login is unverified. Not a fixed deadline.",
+      "deadlineNote": "2026年12月1日之后开始评审和安排面试；公告称门户开放至招满，不是12月1日固定截止；登录后受理未核验。",
+      "deadlineNoteEn": "Review and interview scheduling begin after December 1, 2026. The notice states the portal remains open until filled; December 1 is not a fixed deadline. Authenticated acceptance unverified.",
       "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
@@ -13678,6 +13756,34 @@ export const publicReleaseDataset = {
           "status": "supported",
           "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego%2C-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541/apply/applyManually",
           "observedAt": "2026-11-05T05:51:07.305Z"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
+          "observedAt": "2026-11-06T10:50:00.433Z",
+          "quote": "R0004541"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
+          "observedAt": "2026-11-06T10:50:00.433Z",
+          "quote": "The committee will begin reviewing applications and scheduling interviews after December 1, 2026."
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
+          "observedAt": "2026-11-06T10:50:00.433Z",
+          "quote": "The application portal will remain open until the position is filled."
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
+          "observedAt": "2026-11-06T10:50:00.433Z",
+          "quote": "Appointment begins August 16, 2027"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13712,17 +13818,18 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "faculty",
       "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
-      "announcementRecheckedAt": "2026-11-04T18:01:59.001Z",
+      "announcementRecheckedAt": "2026-11-06T10:50:00.433Z",
       "materials": "CV、求职信、基督教高等教育教学理念、个人信仰声明、3位专业推荐人联系方式、已完成最高学位的非官方成绩单；学生评教如有则提供，另按公告链接回答问题。",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T05:51:07.305Z",
-        "scope": "specific official role and observed first application route only; no login, submission or whole-source completeness claim",
-        "method": "actual_native_browser_visible_DOM"
+        "attemptedAt": "2026-11-06T10:50:00.433Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
       },
       "applicationPortalStatus": "login_required",
       "applicationRouteCheckedAt": "2026-11-05T05:51:07.305Z",
       "applicationUrl": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego%2C-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541/apply/applyManually",
-      "reviewDateRaw": "after December 1, 2026"
+      "reviewDateRaw": "after December 1, 2026",
+      "startDate": "2027-08-16"
     },
     {
       "announcementStatus": "unknown",
@@ -15138,7 +15245,7 @@ export const publicReleaseDataset = {
       }
     },
     {
-      "announcementStatus": "unknown",
+      "announcementStatus": "open",
       "applicationActionability": "unknown",
       "applicationProcess": "",
       "applicationProcessEn": "",
@@ -15244,6 +15351,27 @@ export const publicReleaseDataset = {
           "status": "supported",
           "url": "https://jobs.bridgew.edu/postings/33838",
           "observedAt": "2026-11-05T00:31:49.905495+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.bridgew.edu/postings/33838",
+          "observedAt": "2026-11-06T10:48:48.474Z",
+          "quote": "F00655P"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.bridgew.edu/postings/33838",
+          "observedAt": "2026-11-06T10:48:48.474Z",
+          "quote": "12/31/2026"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.bridgew.edu/postings/33838",
+          "observedAt": "2026-11-06T10:48:48.474Z",
+          "quote": "is accepting applications"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -15269,8 +15397,8 @@ export const publicReleaseDataset = {
       ],
       "sourceType": "official-employer",
       "status": "listed",
-      "statusLabel": "当前开放状态待核实",
-      "statusLabelEn": "Current availability unverified",
+      "statusLabel": "公告显示开放 · 门户受理待核实",
+      "statusLabelEn": "Announcement says open · portal acceptance unverified",
       "summary": "physical geography",
       "summaryEn": "physical geography",
       "title": "Assistant Professor, Department of Geography",
@@ -15278,12 +15406,12 @@ export const publicReleaseDataset = {
       "topics": [],
       "type": "faculty",
       "url": "https://jobs.bridgew.edu/postings/33838",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.141703+00:00",
+      "announcementRecheckedAt": "2026-11-06T10:48:48.474Z",
       "materials": "至少3位专业推荐人条目、CV、求职信、本科教学／指导陈述，以及展示地理空间技术用于自然地理的教学材料，覆盖入门与中高级课程。",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:31:49.905495+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
+        "attemptedAt": "2026-11-06T10:48:48.474Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
       }
     },
     {
@@ -15416,6 +15544,27 @@ export const publicReleaseDataset = {
           "status": "supported",
           "url": "https://apply.interfolio.com/192961",
           "observedAt": "2026-11-05T00:36:04.906Z"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://faculty.tamu.edu/JobDetail?JobId=192961",
+          "observedAt": "2026-11-06T10:50:07.695Z",
+          "quote": "191233"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://faculty.tamu.edu/JobDetail?JobId=192961",
+          "observedAt": "2026-11-06T10:50:07.695Z",
+          "quote": "https://apply.interfolio.com/192961"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://faculty.tamu.edu/JobDetail?JobId=192961",
+          "observedAt": "2026-11-06T10:50:07.695Z",
+          "quote": "Initial review of applications will begin on November 1, 2026, and continue until the position is filled."
         }
       ],
       "funding": "未公布或尚未核验",
@@ -15449,14 +15598,14 @@ export const publicReleaseDataset = {
       "titleEn": "Assistant Professor Energy Geography",
       "topics": [],
       "type": "faculty",
-      "url": "https://apply.interfolio.com/192961",
+      "url": "https://faculty.tamu.edu/JobDetail?JobId=192961",
       "applicationUrl": "https://dossier.interfolio.com/apply/192961",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.746708+00:00",
+      "announcementRecheckedAt": "2026-11-06T10:50:07.695Z",
       "materials": "求职信、完整CV、包含科研／教学／服务理念与计划的个人陈述（≤2页）、3位推荐人姓名及联系方式。",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:36:04.906Z",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "native_browser_DOM"
+        "attemptedAt": "2026-11-06T10:50:07.695Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
       }
     },
     {
@@ -19042,9 +19191,9 @@ export const publicReleaseDataset = {
       "announcementStatus": "open",
       "sourceReview": {
         "status": "source-reviewed",
-        "attemptedAt": "2026-11-05T00:34:37.357Z",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "native_browser_DOM"
+        "attemptedAt": "2026-11-06T10:48:29.680Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
       },
       "fieldEvidence": [
         {
@@ -19181,6 +19330,20 @@ export const publicReleaseDataset = {
           "status": "supported",
           "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
           "observedAt": "2026-11-04T16:32:15Z"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-06T10:48:29.680Z",
+          "quote": "PA2026/3079"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983398/type:job/where:4/apply:1",
+          "observedAt": "2026-11-06T10:48:29.680Z",
+          "quote": "01.Dec.2026"
         }
       ],
       "officialJobReference": "PA2026/3079",
@@ -19198,7 +19361,8 @@ export const publicReleaseDataset = {
       "applicationProcessEn": "Submit through Lund University’s Varbi recruitment system; login is required. Documents are specified in the notice; acceptance after login and final submission are unverified.",
       "startDate": "as soon as possible according to agreement, no later than May 1st 2027",
       "checkedAt": "2026-11-04T16:32:15Z",
-      "collectedAt": "2026-11-04"
+      "collectedAt": "2026-11-04",
+      "announcementRecheckedAt": "2026-11-06T10:48:29.680Z"
     },
     {
       "id": "geo-tcand-90025f25903467f96cc4e901",
@@ -19444,7 +19608,7 @@ export const publicReleaseDataset = {
     "resource_only": 84
   },
   "opportunityRecords": 101,
-  "datasetSha256": "ddae355c26dac153871dfc7d36cfc2d68265f2a4d7abb7443f072a8111d9f425",
+  "datasetSha256": "4db30b0ecf8c5081f0ccd6e594d0c4410b3dbdbd648120ffddadd259865c9126",
   "availabilityReview": {
     "planned": 34,
     "new_public_records": 12,
