@@ -8999,17 +8999,17 @@
       "applicationProcess": "All material should be submitted electronically through the following link: https://academicjobsonline.org/ajo/jobs/33131 .",
       "applicationProcessEn": "All material should be submitted electronically through the following link: https://academicjobsonline.org/ajo/jobs/33131 .",
       "applicationRouteCheckedAt": "2026-11-04T04:51:23.080Z",
-      "applicationUrl": "https://academicjobsonline.org/ajo/jobs/33131/apply",
+      "applicationUrl": "https://academicjobsonline.org/ajo?apply-5244-33131",
       "candidateId": "tcand-300f95e2f52d600da844b5c7",
       "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
       "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
       "checkedAt": "2026-10-31",
-      "city": "",
+      "city": "Durham, North Carolina",
       "collectedAt": "2026-10-31",
       "contentReviewObservedAt": "2026-10-31T09:14:09Z",
       "contentReviewStatus": "verified",
-      "country": "未核实",
-      "countryEn": "Unknown",
+      "country": "美国",
+      "countryEn": "United States",
       "currentOpenStatus": "unknown",
       "currentOpenStatusCheckedAt": "2026-11-04T17:59:04.678433+00:00",
       "deadline": "2026-12-15",
@@ -9141,14 +9141,35 @@
           "url": "https://academicjobsonline.org/ajo/jobs/33131",
           "observedAt": "2026-11-06T17:20:26.103Z",
           "quote": "only request letters if you are shortlisted"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://academicjobsonline.org/ajo/jobs/33131",
+          "observedAt": "2026-11-06T17:20:26.103Z",
+          "quote": "Duke University, International Comparative Studies"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://academicjobsonline.org/ajo/jobs/33131",
+          "observedAt": "2026-11-06T17:20:26.103Z",
+          "quote": "durham, North Carolina 27708, United States of America"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://academicjobsonline.org/ajo/jobs/33131",
+          "observedAt": "2026-11-06T17:20:26.103Z",
+          "quote": "https://academicjobsonline.org/ajo?apply-5244-33131"
         }
       ],
       "funding": "未公布或尚未核验",
       "fundingEn": "Not stated or not verified",
       "geo": null,
       "id": "geo-tcand-300f95e2f52d600da844b5c7",
-      "institution": "International Comparative Studies",
-      "institutionEn": "International Comparative Studies",
+      "institution": "杜克大学 · 国际比较研究项目",
+      "institutionEn": "Duke University · International Comparative Studies",
       "language": "未单独核验",
       "languageEn": "Not separately verified",
       "methods": [],
@@ -9159,7 +9180,7 @@
       "reviewDate": "",
       "salary": "未公布或尚未核验",
       "salaryEn": "Not stated or not verified",
-      "short": "International Comparative Studies",
+      "short": "Duke University",
       "source": "https://academicjobsonline.org/ajo/jobs/33131",
       "sourceIds": [
         "geo-e094084c954ea7f4"
@@ -20113,7 +20134,7 @@
     "resource_only": 84
   },
   "opportunityRecords": 101,
-  "datasetSha256": "4aeaf310b0bb26a63f5efe6e421d602285168eb868b699cd3c47dd7ccae32ed9",
+  "datasetSha256": "3b65a659bead230ca1e136eee85e5635843b3751d5f58d08c184a3d9fb7a7246",
   "availabilityReview": {
     "planned": 34,
     "new_public_records": 12,
