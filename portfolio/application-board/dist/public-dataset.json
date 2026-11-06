@@ -3956,6 +3956,13 @@
           "status": "unknown",
           "url": "https://uscjobs.sc.edu/postings/213942",
           "observedAt": "2026-11-04T17:59:04.678433+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/213942",
+          "observedAt": "2026-11-06T17:19:06.629Z",
+          "quote": "August 16, 2027"
         }
       ],
       "funding": "全职长聘轨道教职",
@@ -3988,9 +3995,9 @@
       ],
       "sourceReview": {
         "status": "source-reviewed",
-        "attemptedAt": "2026-11-05T00:31:49.905495+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
+        "attemptedAt": "2026-11-06T17:19:06.629Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
       },
       "sourceType": "official-employer",
       "status": "listed",
@@ -4009,7 +4016,8 @@
       "type": "faculty",
       "url": "https://uscjobs.sc.edu/postings/213942",
       "deadlineNoteEn": "Review begins 2026-11-01 and continues until filled; not a fixed closing date.",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.678433+00:00"
+      "announcementRecheckedAt": "2026-11-06T17:19:06.629Z",
+      "startDate": "2027-08-16"
     },
     {
       "announcementStatus": "open",
@@ -7667,8 +7675,8 @@
       "deadlineNoteEn": "Bewerbungsfrist: 30.11.2026",
       "deadlineType": "fixed_official_date_with_locale_evidence_retained",
       "degree": "unknown",
-      "duration": "以官方公告为准",
-      "durationEn": "See official announcement",
+      "duration": "固定期限2027年1月1日至2032年12月31日，每周40小时。",
+      "durationEn": "Fixed term January 1, 2027 to December 31, 2032, 40 hours/week.",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
       "fieldEn": "See official announcement",
@@ -7816,6 +7824,20 @@
           "status": "unknown",
           "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452443033/",
           "observedAt": "2026-11-04T18:05:57.177582+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452443033/",
+          "observedAt": "2026-11-06T17:20:03.290Z",
+          "quote": "01.01.2027"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452443033/",
+          "observedAt": "2026-11-06T17:20:03.290Z",
+          "quote": "31.12.2032"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -7850,12 +7872,13 @@
       "topics": [],
       "type": "postdoc",
       "url": "https://jobs.univie.ac.at/job/Universit%C3%A4tsassistentin-Postdoc/1452443033/",
-      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00",
+      "announcementRecheckedAt": "2026-11-06T17:20:03.290Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:31:06.319548+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-06T17:20:03.290Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "startDate": "2027-01-01"
     },
     {
       "announcementStatus": "unknown",
@@ -7981,6 +8004,13 @@
           "status": "supported",
           "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai",
           "observedAt": "2026-11-05T00:36:24.660Z"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai",
+          "observedAt": "2026-11-06T17:20:41.646Z",
+          "quote": "August 2027"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8015,12 +8045,13 @@
       "topics": [],
       "type": "faculty",
       "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001U9&tz=GMT%2B08%3A00&tzname=Asia%2FShanghai",
-      "announcementRecheckedAt": "2026-11-04T17:59:37.832Z",
+      "announcementRecheckedAt": "2026-11-06T17:20:41.646Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:36:24.660Z",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "native_browser_DOM"
-      }
+        "attemptedAt": "2026-11-06T17:20:41.646Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "startDate": "2027-08"
     },
     {
       "announcementStatus": "open",
@@ -8214,8 +8245,8 @@
       "currentOpenStatus": "unknown",
       "currentOpenStatusCheckedAt": "2026-11-04T16:45:47.585Z",
       "deadline": "",
-      "deadlineNote": "2026年11月9日前提交可获完整审查；之后继续考虑直至招满，不是固定截止。",
-      "deadlineNoteEn": "Full consideration for submissions by 9 November 2026; materials considered until filled, not a fixed closing date.",
+      "deadlineNote": "2026年11月9日及之前提交可获完整考虑，具体时刻和时区未说明；之后继续考虑至招满，不是固定截止日。",
+      "deadlineNoteEn": "Applications submitted by November 9, 2026 receive full consideration; materials continue to be considered until filled. This is not a fixed deadline.",
       "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
@@ -8289,6 +8320,20 @@
           "status": "unknown",
           "url": "https://binghamton.interviewexchange.com/candapply.jsp?JOBID=205082#pageTop",
           "observedAt": "2026-11-04T16:45:47.585Z"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://binghamton.interviewexchange.com/jobofferdetails.jsp?JOBID=205082",
+          "observedAt": "2026-11-06T17:21:14.842Z",
+          "quote": "November 9, 2026"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://binghamton.interviewexchange.com/jobofferdetails.jsp?JOBID=205082",
+          "observedAt": "2026-11-06T17:21:14.842Z",
+          "quote": "Names and contact information for at least three references"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8327,10 +8372,14 @@
       "deadlineKind": "priority",
       "priorityDate": "2026-11-09",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:37:28.531Z",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "native_browser_DOM"
-      }
+        "attemptedAt": "2026-11-06T17:21:14.842Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "announcementRecheckedAt": "2026-11-06T17:21:14.842Z",
+      "materials": "侧重科研及外部经费记录／潜力的求职信、CV、研究陈述、教学理念、至少3位推荐人的姓名和联系方式。",
+      "materialsEn": "Cover letter focusing on research and external-funding record/potential; CV; research statement; teaching philosophy; names and contact information for at least three references.",
+      "priorityDeadline": "2026-11-09"
     },
     {
       "announcementStatus": "unknown",
@@ -8461,11 +8510,11 @@
       "topics": [],
       "type": "faculty",
       "url": "https://jobs.montana.edu/postings/52857",
-      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00",
+      "announcementRecheckedAt": "2026-11-06T17:19:04.409Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:31:49.905495+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
+        "attemptedAt": "2026-11-06T17:19:04.409Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
       }
     },
     {
@@ -8629,6 +8678,13 @@
           "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states",
           "observedAt": "2026-11-06T07:18:22.958Z",
           "quote": "August 16, 2027"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states",
+          "observedAt": "2026-11-06T17:22:53.489Z",
+          "quote": "August 16, 2027"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -8665,15 +8721,17 @@
       "url": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states",
       "applicationUrl": "https://careers.ua.edu/jobs/bcas-assistant-professor-of-geography-in-geography-and-the-environment-530827-tuscaloosa-alabama-united-states#apply",
       "sourceReview": {
-        "attemptedAt": "2026-11-06T07:18:22.958Z",
-        "scope": "specific official notice; no login, identity entry or submission",
+        "attemptedAt": "2026-11-06T17:22:53.489Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
         "method": "actual_native_browser_public_read"
       },
       "officialJobReference": "530827",
       "reviewDateRaw": "Review of applications will begin November 2026",
       "materials": "说明资格及申请动机的求职信、CV、研究陈述、教学陈述、3位专业推荐人的联系方式。",
       "materialsEn": "Application letter outlining qualifications and interest, CV, research statement, teaching statement, and contact information for 3 professional references.",
-      "startDateRaw": "August 16, 2027"
+      "startDateRaw": "August 16, 2027",
+      "announcementRecheckedAt": "2026-11-06T17:22:53.489Z",
+      "startDate": "2027-08-16"
     },
     {
       "announcementStatus": "invites_applications",
@@ -8927,9 +8985,9 @@
       "topics": [],
       "type": "phd",
       "url": "https://jobs.helsinki.fi/job/Helsinki-Doctoral-Researcher-%28MSCA%29%2C-Exploiting-Migration-to-Influence-and-Destabilise-Societies/1374784257/",
-      "announcementRecheckedAt": "2026-11-06T10:48:25.827Z",
+      "announcementRecheckedAt": "2026-11-06T17:20:34.959Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-06T10:48:25.827Z",
+        "attemptedAt": "2026-11-06T17:20:34.959Z",
         "scope": "specific official notice; no login or submission; not portal acceptance verification",
         "method": "actual_native_browser_public_read"
       },
@@ -8954,13 +9012,13 @@
       "countryEn": "Unknown",
       "currentOpenStatus": "unknown",
       "currentOpenStatusCheckedAt": "2026-11-04T17:59:04.678433+00:00",
-      "deadline": "2026-12-14",
-      "deadlineNote": "AJO表格列2026-12-14 23:59:59*，正文称12月14日前保证考虑；时区未说明，不据此推断逾期受理。",
-      "deadlineNoteEn": "AJO lists 14 December 2026, 23:59:59*, while the text guarantees consideration by that date; timezone not stated and later acceptance not inferred.",
+      "deadline": "2026-12-15",
+      "deadlineNote": "AJO平台显示申请截止为2026年12月15日12:59 PM ChinaTime；正文保证截至12月14日收到的申请获得考虑。分别保留两处表述，不把优先考虑日当作最终截止。",
+      "deadlineNoteEn": "AJO displays an application deadline of December 15, 2026, 12:59 PM ChinaTime. The narrative guarantees consideration for applications received by December 14. The priority date is not substituted for the portal deadline.",
       "deadlineType": "fixed",
       "degree": "unknown",
-      "duration": "以官方公告为准",
-      "durationEn": "See official announcement",
+      "duration": "原文称初始可续聘四年，并明确列2027年7月1日至2031年6月1日；保留两处表述，不自行改动结束日期。",
+      "durationEn": "The notice describes an initial renewable four-year term and separately specifies July 1, 2027 to June 1, 2031; both statements are retained without changing the stated end date.",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
       "fieldEn": "See official announcement",
@@ -9048,6 +9106,41 @@
           "status": "unknown",
           "url": "https://academicjobsonline.org/ajo/jobs/33131",
           "observedAt": "2026-11-04T17:59:04.678433+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://academicjobsonline.org/ajo/jobs/33131",
+          "observedAt": "2026-11-06T17:20:26.103Z",
+          "quote": "2026/12/15 12:59 PM ChinaTime"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://academicjobsonline.org/ajo/jobs/33131",
+          "observedAt": "2026-11-06T17:20:26.103Z",
+          "quote": "December 14, 2026 are guaranteed consideration"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://academicjobsonline.org/ajo/jobs/33131",
+          "observedAt": "2026-11-06T17:20:26.103Z",
+          "quote": "July 1, 2027, and ends June 1, 2031"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://academicjobsonline.org/ajo/jobs/33131",
+          "observedAt": "2026-11-06T17:20:26.103Z",
+          "quote": "no more than 28 pages"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://academicjobsonline.org/ajo/jobs/33131",
+          "observedAt": "2026-11-06T17:20:26.103Z",
+          "quote": "only request letters if you are shortlisted"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -9082,12 +9175,16 @@
       "topics": [],
       "type": "faculty",
       "url": "https://academicjobsonline.org/ajo/jobs/33131",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.678433+00:00",
+      "announcementRecheckedAt": "2026-11-06T17:20:26.103Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:31:17.675135+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-06T17:20:26.103Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "materials": "申请信、CV、最多28页写作样本／发表作品、1页教学陈述及1份曾授课程大纲；3位推荐人姓名和联系方式，入围后才索取推荐信。",
+      "materialsEn": "Application letter, CV, writing sample/publication of no more than 28 pages, one-page teaching statement, one syllabus from a course taught, and names/contact details of three recommenders; letters requested only if shortlisted.",
+      "priorityDeadline": "2026-12-14",
+      "startDate": "2027-07-01"
     },
     {
       "announcementStatus": "open",
@@ -9834,13 +9931,13 @@
       "type": "faculty",
       "url": "https://apply.interfolio.com/195249",
       "applicationUrl": "https://dossier.interfolio.com/apply/195249",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.746708+00:00",
+      "announcementRecheckedAt": "2026-11-06T17:23:12.492Z",
       "fundingCondition": "岗位经费以可用预算为前提；未公布保证资助。",
       "materials": "兴趣信、CV、覆盖未来3–5年方向的研究陈述、教学陈述、至多3篇同行评审代表作；保密推荐信在初审后向部分候选人索取。",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:35:49.686Z",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "native_browser_DOM"
+        "attemptedAt": "2026-11-06T17:23:12.492Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
       }
     },
     {
@@ -10559,8 +10656,8 @@
       "deadlineNoteEn": "Review begins 2026-11-12 and continues until filled; not a fixed closing date.",
       "deadlineType": "rolling",
       "degree": "unknown",
-      "duration": "以官方公告为准",
-      "durationEn": "See official announcement",
+      "duration": "表格拟2027年8月1日开始，正文另写最早2027年秋季；具体入职安排以校方确认为准。",
+      "durationEn": "Table proposes August 1, 2027; narrative states as soon as Fall 2027. Exact appointment arrangements require employer confirmation.",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
       "fieldEn": "See official announcement",
@@ -10669,6 +10766,20 @@
           "url": "https://www.gwu.jobs/postings/129037",
           "observedAt": "2026-11-06T07:47:16.217Z",
           "quote": "Email and phone number of three professional references"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://www.gwu.jobs/postings/129037",
+          "observedAt": "2026-11-06T17:19:25.837Z",
+          "quote": "08/01/2027"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://www.gwu.jobs/postings/129037",
+          "observedAt": "2026-11-06T17:19:25.837Z",
+          "quote": "Fall 2027"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -10703,14 +10814,15 @@
       "topics": [],
       "type": "faculty",
       "url": "https://www.gwu.jobs/postings/129037",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.205665+00:00",
+      "announcementRecheckedAt": "2026-11-06T17:19:25.837Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-06T07:47:16.217Z",
-        "scope": "specific official notice; no login, identity entry or submission",
+        "attemptedAt": "2026-11-06T17:19:25.837Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
         "method": "actual_native_browser_public_read"
       },
       "materials": "求职信、CV、研究兴趣陈述、教学兴趣／理念陈述、全部大学阶段成绩单（申请时可用非正式版；到任后须立即提交正式版），以及3位专业推荐人的邮箱和电话。",
-      "materialsEn": "Cover letter, CV, research statement, teaching statement, transcripts of all college work (unofficial accepted for application; official required upon employment), and email/phone details of 3 professional references."
+      "materialsEn": "Cover letter, CV, research statement, teaching statement, transcripts of all college work (unofficial accepted for application; official required upon employment), and email/phone details of 3 professional references.",
+      "startDate": "2027-08-01"
     },
     {
       "announcementStatus": "open",
@@ -10997,8 +11109,8 @@
       "currentOpenStatus": "unknown",
       "currentOpenStatusCheckedAt": "2026-11-04T18:56:23.098Z",
       "deadline": "",
-      "deadlineNote": "立即开始评审，招满为止；2026年12月1日前收到的申请优先评审。这不是固定最终截止。预计2027年秋季入职，仍须最终预算批准。公开姓名／邮箱起始表单可见，未填写或提交，后续受理未知。",
-      "deadlineNoteEn": "Review begins immediately and continues until filled; applications received before December 1, 2026 receive priority. This is not a fixed final deadline. Fall 2027 start is pending final budgetary approval. Public name/email starter visible; no fields or submission; downstream acceptance unknown.",
+      "deadlineNote": "立即开始评审并持续至招满；2026年12月1日之前收到者优先，未将12月1日当作最终截止。",
+      "deadlineNoteEn": "Review begins immediately and continues until filled; applications received before December 1, 2026 receive priority. December 1 is not treated as a final deadline.",
       "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
@@ -11136,6 +11248,20 @@
           "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611",
           "observedAt": "2026-11-06T07:17:31.665Z",
           "quote": "3-page research plan"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611",
+          "observedAt": "2026-11-06T17:22:56.886Z",
+          "quote": "before December 1, 2026"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611",
+          "observedAt": "2026-11-06T17:22:56.886Z",
+          "quote": "until the position is filled"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -11174,14 +11300,15 @@
       "priorityDate": "2026-12-01",
       "applicationUrl": "https://jobs.shu.edu/jobs/assistant-professor-tenure-track-sustainable-biology-and-environmental-science-south-orange-new-jersey-united-states-e0357c25-83d0-438d-a8a1-8caa050e3611",
       "sourceReview": {
-        "attemptedAt": "2026-11-06T07:17:31.665Z",
-        "scope": "specific official notice; no login, identity entry or submission",
+        "attemptedAt": "2026-11-06T17:22:56.886Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
         "method": "actual_native_browser_public_read"
       },
       "materials": "含职位编号的求职信、CV、3页研究计划、教学理念、3封近期推荐信。",
       "materialsEn": "Cover letter with job code, CV, 3-page research plan, teaching philosophy, and 3 current reference letters.",
       "officialJobReference": "497508",
-      "reviewDateRaw": "Review of applications will begin immediately and will continue until the position is filled. Applications received before December 1, 2026 will receive priority review."
+      "reviewDateRaw": "Review of applications will begin immediately and will continue until the position is filled. Applications received before December 1, 2026 will receive priority review.",
+      "announcementRecheckedAt": "2026-11-06T17:22:56.886Z"
     },
     {
       "announcementStatus": "invites_applications",
@@ -11598,9 +11725,9 @@
       "type": "faculty",
       "url": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/job?mobile=true&needsRedirect=false",
       "applicationUrl": "https://careers-usu.icims.com/jobs/10827/assistant-professor---environmental-and-natural-resources-policy/login",
-      "announcementRecheckedAt": "2026-11-06T10:50:01.796Z",
+      "announcementRecheckedAt": "2026-11-06T17:22:45.137Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-06T10:50:01.796Z",
+        "attemptedAt": "2026-11-06T17:22:45.137Z",
         "scope": "specific official notice; no login or submission; not portal acceptance verification",
         "method": "actual_native_browser_public_read"
       }
@@ -11971,8 +12098,8 @@
       "deadlineNoteEn": "30 November 2026",
       "deadlineType": "fixed",
       "degree": "unknown",
-      "duration": "以官方公告为准",
-      "durationEn": "See official announcement",
+      "duration": "2027年4月1日或协商开始；博士雇佣及薪酬按官方公告与本地集体协议。",
+      "durationEn": "Start April 1, 2027 or by agreement; doctoral employment and salary follow the official notice and local collective agreement.",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
       "fieldEn": "See official announcement",
@@ -12066,6 +12193,13 @@
           "status": "unknown",
           "url": "https://www.slu.se/en/about-slu/work-at-slu/jobs-and-vacancies/doktorand-i-biologi/",
           "observedAt": "2026-11-04T17:59:04.872866+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://www.slu.se/en/about-slu/work-at-slu/jobs-and-vacancies/doktorand-i-biologi/",
+          "observedAt": "2026-11-06T17:20:05.839Z",
+          "quote": "2027-04-01, or upon agreement."
         }
       ],
       "funding": "Employment as a doctoral student (4-year programme)",
@@ -12100,12 +12234,13 @@
       "topics": [],
       "type": "phd",
       "url": "https://www.slu.se/en/about-slu/work-at-slu/jobs-and-vacancies/doktorand-i-biologi/",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.872866+00:00",
+      "announcementRecheckedAt": "2026-11-06T17:20:05.839Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:45:12.508191+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-06T17:20:05.839Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "startDate": "2027-04-01"
     },
     {
       "announcementStatus": "open",
@@ -12214,6 +12349,34 @@
           "status": "unknown",
           "url": "https://jobs.univie.ac.at/job/Senior-Scientist-in-Atmospheric-Data-Assimilation/1452415933/",
           "observedAt": "2026-11-04T18:05:57.177582+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Senior-Scientist-in-Atmospheric-Data-Assimilation/1452415933/",
+          "observedAt": "2026-11-06T17:20:23.302Z",
+          "quote": "EUR 5014.30"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Senior-Scientist-in-Atmospheric-Data-Assimilation/1452415933/",
+          "observedAt": "2026-11-06T17:20:23.302Z",
+          "quote": "14 times per year"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Senior-Scientist-in-Atmospheric-Data-Assimilation/1452415933/",
+          "observedAt": "2026-11-06T17:20:23.302Z",
+          "quote": "1 January 2026"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Senior-Scientist-in-Atmospheric-Data-Assimilation/1452415933/",
+          "observedAt": "2026-11-06T17:20:23.302Z",
+          "quote": "01.12.2026"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -12230,8 +12393,8 @@
       "requirements": "PhD / Doctoral degree in meteorology, physics, mathematics or a related subject; Good communication skills and ability to work in a team; Profound programming skills; Experience in numerical modelling; Expertise in data assimilation; Excellent command of written and spoken English.",
       "requirementsEn": "PhD / Doctoral degree in meteorology, physics, mathematics or a related subject; Good communication skills and ability to work in a team; Profound programming skills; Experience in numerical modelling; Expertise in data assimilation; Excellent command of written and spoken English.",
       "reviewDate": "",
-      "salary": "The gross salary of at least EUR 5014.30 (payable 14 times per year / amount as of 1 January 2026) increases if we can credit professional experience",
-      "salaryEn": "The gross salary of at least EUR 5014.30 (payable 14 times per year / amount as of 1 January 2026) increases if we can credit professional experience",
+      "salary": "税前基本薪酬至少€5,014.30，每年14次；金额按2026年1月1日口径，认可相关经验时可增加。",
+      "salaryEn": "Gross salary at least €5,014.30, payable 14 times/year, amount as of January 1, 2026; credited experience may increase it.",
       "short": "University of Vienna",
       "source": "https://jobs.univie.ac.at/job/Senior-Scientist-in-Atmospheric-Data-Assimilation/1452415933/",
       "sourceIds": [
@@ -12248,12 +12411,13 @@
       "topics": [],
       "type": "postdoc",
       "url": "https://jobs.univie.ac.at/job/Senior-Scientist-in-Atmospheric-Data-Assimilation/1452415933/",
-      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00",
+      "announcementRecheckedAt": "2026-11-06T17:20:23.302Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:31:17.675135+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-06T17:20:23.302Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "startDate": "2026-12-01"
     },
     {
       "announcementStatus": "open",
@@ -12972,6 +13136,13 @@
           "status": "supported",
           "url": "https://jobs.univie.ac.at/job/Senior-Lecturer-%28academic-and-instructional-teaching%29/1452526433/",
           "observedAt": "2026-11-05T00:31:06.319548+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Senior-Lecturer-%28academic-and-instructional-teaching%29/1452526433/",
+          "observedAt": "2026-11-06T17:19:53.561Z",
+          "quote": "01.02.2027"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13006,12 +13177,13 @@
       "topics": [],
       "type": "faculty",
       "url": "https://jobs.univie.ac.at/job/Senior-Lecturer-%28academic-and-instructional-teaching%29/1452526433/",
-      "announcementRecheckedAt": "2026-11-04T18:05:57.177582+00:00",
+      "announcementRecheckedAt": "2026-11-06T17:19:53.561Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:31:06.319548+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-06T17:19:53.561Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "startDate": "2027-02-01"
     },
     {
       "announcementStatus": "invites_applications",
@@ -13440,6 +13612,13 @@
           "status": "supported",
           "url": "https://cuhk.taleo.net/careersection/iam/accessmanagement/login.jsf?lang=en&redirectionURI=https%3A%2F%2Fcuhk.taleo.net%2Fcareersection%2Fapplication.jss%3Flang%3Den%26type%3D1%26csNo%3D10080%26portal%3D10115020119%26reqNo%3D125923%26isOnLogoutPage%3Dtrue&TARGET=https%3A%2F%2Fcuhk.taleo.net%2Fcareersection%2Fapplication.jss%3Flang%3Den%26type%3D1%26csNo%3D10080%26portal%3D10115020119%26reqNo%3D125923%26isOnLogoutPage%3Dtrue",
           "observedAt": "2026-11-05T05:51:57.598Z"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en",
+          "observedAt": "2026-11-06T17:21:18.811Z",
+          "quote": "August 2027"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13474,15 +13653,16 @@
       "topics": [],
       "type": "faculty",
       "url": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en",
-      "announcementRecheckedAt": "2026-11-04T17:59:57.824Z",
+      "announcementRecheckedAt": "2026-11-06T17:21:18.811Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T05:51:57.598Z",
-        "scope": "specific official role and observed first application route only; no login, submission or whole-source completeness claim",
-        "method": "actual_native_browser_visible_DOM"
+        "attemptedAt": "2026-11-06T17:21:18.811Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
       },
       "applicationPortalStatus": "login_required",
       "applicationRouteCheckedAt": "2026-11-05T05:51:57.598Z",
-      "applicationUrl": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en"
+      "applicationUrl": "https://cuhk.taleo.net/careersection/cu_career_teach/jobdetail.ftl?job=260001QC&lang=en",
+      "startDate": "2027-08"
     },
     {
       "announcementStatus": "open",
@@ -13650,10 +13830,10 @@
       "type": "faculty",
       "url": "https://apply.interfolio.com/195462",
       "applicationUrl": "https://dossier.interfolio.com/apply/195462",
-      "announcementRecheckedAt": "2026-11-06T10:51:05.008Z",
+      "announcementRecheckedAt": "2026-11-06T17:23:15.352Z",
       "materials": "合并为1份PDF：综合求职信（信本身≤10页）、当前CV、至少3位可作推荐人的联系信息；10页限制不应误写为整份合并PDF上限。",
       "sourceReview": {
-        "attemptedAt": "2026-11-06T10:51:05.008Z",
+        "attemptedAt": "2026-11-06T17:23:15.352Z",
         "scope": "specific official notice; no login or submission; not portal acceptance verification",
         "method": "actual_native_browser_public_read"
       }
@@ -13945,10 +14125,10 @@
       "topics": [],
       "type": "faculty",
       "url": "https://pointloma.wd1.myworkdayjobs.com/en-US/PLNUCareers/job/Point-Loma-Campus---San-Diego-CA/Full-Time--Tenure-Track-Faculty-in-Environmental-Studies-or-Environmental-Humanities-for-the-School-of-Humanities--Arts--and-Public-Engagement_R0004541",
-      "announcementRecheckedAt": "2026-11-06T10:50:00.433Z",
+      "announcementRecheckedAt": "2026-11-06T17:23:00.256Z",
       "materials": "CV、求职信、基督教高等教育教学理念、个人信仰声明、3位专业推荐人联系方式、已完成最高学位的非官方成绩单；学生评教如有则提供，另按公告链接回答问题。",
       "sourceReview": {
-        "attemptedAt": "2026-11-06T10:50:00.433Z",
+        "attemptedAt": "2026-11-06T17:23:00.256Z",
         "scope": "specific official notice; no login or submission; not portal acceptance verification",
         "method": "actual_native_browser_public_read"
       },
@@ -14167,6 +14347,13 @@
           "status": "supported",
           "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/",
           "observedAt": "2026-11-05T00:48:17.706Z"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Leiterin-Laborger%C3%A4tetechnik/1445938133/",
+          "observedAt": "2026-11-06T17:20:01.792Z",
+          "quote": "01.03.2027"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14215,10 +14402,12 @@
         }
       ],
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:48:17.706Z",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "native_browser_DOM"
-      }
+        "attemptedAt": "2026-11-06T17:20:01.792Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "announcementRecheckedAt": "2026-11-06T17:20:01.792Z",
+      "startDate": "2027-03-01"
     },
     {
       "announcementStatus": "open",
@@ -14409,14 +14598,15 @@
       "url": "https://jobs.apply.vt.edu/jobs/assistant-associate-professor-of-turfgrass-science-blacksburg-virginia-united-states",
       "applicationRouteCheckedAt": "2026-11-06T07:17:44.012Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-06T07:17:44.012Z",
-        "scope": "specific official notice; no login, identity entry or submission",
+        "attemptedAt": "2026-11-06T17:18:59.556Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
         "method": "actual_native_browser_public_read"
       },
       "officialJobReference": "538297",
       "reviewDateRaw": "12/04/2026 (Open until filled)",
       "materials": "求职信、教学与研究理念陈述（最多2页）、推广服务理念陈述（最多2页）、CV、3位专业推荐人的姓名与联系方式。",
-      "materialsEn": "Cover letter, teaching/research philosophy statement (maximum 2 pages), Extension philosophy statement (maximum 2 pages), CV, and names/contact details of 3 professional references."
+      "materialsEn": "Cover letter, teaching/research philosophy statement (maximum 2 pages), Extension philosophy statement (maximum 2 pages), CV, and names/contact details of 3 professional references.",
+      "announcementRecheckedAt": "2026-11-06T17:18:59.556Z"
     },
     {
       "announcementStatus": "open",
@@ -14573,6 +14763,13 @@
           "status": "supported",
           "url": "https://jobs.univie.ac.at/job/PhD-Position-Analyzing-Polymer-Degradation-by-Soil-Enzymes/1453458833/",
           "observedAt": "2026-11-05T00:31:06.319548+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/PhD-Position-Analyzing-Polymer-Degradation-by-Soil-Enzymes/1453458833/",
+          "observedAt": "2026-11-06T17:20:06.805Z",
+          "quote": "01.03.2027 or soon thereafter"
         }
       ],
       "funding": "A fully funded position (full funding for 3 years) in accordance with the collective bargaining agreement (basic salary of EUR 3776,10 on a full-time basis)",
@@ -14607,13 +14804,14 @@
       "topics": [],
       "type": "phd",
       "url": "https://jobs.univie.ac.at/job/PhD-Position-Analyzing-Polymer-Degradation-by-Soil-Enzymes/1453458833/",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.012121+00:00",
+      "announcementRecheckedAt": "2026-11-06T17:20:06.805Z",
       "materials": "CV（含至少2位推荐人联系方式）、本科和硕士成绩单、说明与岗位匹配的动机信；只接受官方招聘门户提交。",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:31:06.319548+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-06T17:20:06.805Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "startDate": "2027-03-01"
     },
     {
       "announcementStatus": "open",
@@ -15373,6 +15571,13 @@
           "status": "supported",
           "url": "https://jobs.montana.edu/postings/53036",
           "observedAt": "2026-11-05T00:32:22.718790+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.montana.edu/postings/53036",
+          "observedAt": "2026-11-06T17:19:49.119Z",
+          "quote": "August 15, 2027"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -15407,12 +15612,13 @@
       "topics": [],
       "type": "faculty",
       "url": "https://jobs.montana.edu/postings/53036",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.945858+00:00",
+      "announcementRecheckedAt": "2026-11-06T17:19:49.119Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:32:22.718790+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-06T17:19:49.119Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "startDate": "2027-08-15"
     },
     {
       "announcementStatus": "open",
@@ -15576,10 +15782,10 @@
       "topics": [],
       "type": "faculty",
       "url": "https://jobs.bridgew.edu/postings/33838",
-      "announcementRecheckedAt": "2026-11-06T10:48:48.474Z",
+      "announcementRecheckedAt": "2026-11-06T17:20:38.773Z",
       "materials": "至少3位专业推荐人条目、CV、求职信、本科教学／指导陈述，以及展示地理空间技术用于自然地理的教学材料，覆盖入门与中高级课程。",
       "sourceReview": {
-        "attemptedAt": "2026-11-06T10:48:48.474Z",
+        "attemptedAt": "2026-11-06T17:20:38.773Z",
         "scope": "specific official notice; no login or submission; not portal acceptance verification",
         "method": "actual_native_browser_public_read"
       }
@@ -15770,10 +15976,10 @@
       "type": "faculty",
       "url": "https://faculty.tamu.edu/JobDetail?JobId=192961",
       "applicationUrl": "https://dossier.interfolio.com/apply/192961",
-      "announcementRecheckedAt": "2026-11-06T10:50:07.695Z",
+      "announcementRecheckedAt": "2026-11-06T17:21:39.472Z",
       "materials": "求职信、完整CV、包含科研／教学／服务理念与计划的个人陈述（≤2页）、3位推荐人姓名及联系方式。",
       "sourceReview": {
-        "attemptedAt": "2026-11-06T10:50:07.695Z",
+        "attemptedAt": "2026-11-06T17:21:39.472Z",
         "scope": "specific official notice; no login or submission; not portal acceptance verification",
         "method": "actual_native_browser_public_read"
       }
@@ -16038,8 +16244,8 @@
       "applicationProcessEn": "",
       "applicationUrl": "https://academicpositions.harvard.edu/postings/16823/pre_apply",
       "candidateId": "tcand-b6e5706456fd780f7a9096dd",
-      "caution": "已复核官方公开公告；未重复进入已知登录入口，申请系统当前受理状态仍未确认。",
-      "cautionEn": "Public notice facts and observed application links checked; no account login or submission. Notice existence, a future date, or an Apply link alone does not establish current portal acceptance.",
+      "caution": "旧16742公告入口提供的Print／Apply链接指向16823；本轮保留原永久ID和入口，不据此合并招聘轮次或确认当前受理。",
+      "cautionEn": "The old 16742 notice links Print/Apply to 16823. Original ID and URL are retained; recruitment-round equivalence and current acceptance are not inferred.",
       "checkedAt": "2026-10-31",
       "city": "",
       "collectedAt": "2026-10-31",
@@ -16155,6 +16361,13 @@
           "status": "supported",
           "url": "https://academicpositions.harvard.edu/postings/16742",
           "observedAt": "2026-11-05T00:32:50.766189+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://academicpositions.harvard.edu/postings/16742",
+          "observedAt": "2026-11-06T17:19:16.064Z",
+          "quote": "/postings/16823/print_preview"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -16189,12 +16402,12 @@
       "topics": [],
       "type": "faculty",
       "url": "https://academicpositions.harvard.edu/postings/16742",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.141703+00:00",
+      "announcementRecheckedAt": "2026-11-06T17:19:16.064Z",
       "materials": "求职信、CV、教学／指导陈述、科研陈述、服务陈述；填3–5位推荐人，提交后系统邀请推荐信。至少3封到齐申请才完整，其中至少1位不能是本科、研究生或博士后导师。",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:32:50.766189+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
+        "attemptedAt": "2026-11-06T17:19:16.064Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
       }
     },
     {
@@ -16221,8 +16434,8 @@
       "deadlineNoteEn": "Application deadline: 11/23/2026",
       "deadlineType": "fixed_as_officially_stated_timezone_unknown",
       "degree": "unknown",
-      "duration": "以官方公告为准",
-      "durationEn": "See official announcement",
+      "duration": "2027年1月1日至12月31日，每周30小时；不据此保证整个博士培养期的合同或资助。",
+      "durationEn": "January 1 to December 31, 2027, 30 hours/week; this does not guarantee a contract or funding throughout a doctorate.",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
       "fieldEn": "See official announcement",
@@ -16340,6 +16553,34 @@
           "status": "unknown",
           "url": "https://jobs.univie.ac.at/job/Scientific-project-assistant-predoctoral/1453323233/",
           "observedAt": "2026-11-04T17:59:05.077032+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Scientific-project-assistant-predoctoral/1453323233/",
+          "observedAt": "2026-11-06T17:19:52.086Z",
+          "quote": "01.01.2027"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Scientific-project-assistant-predoctoral/1453323233/",
+          "observedAt": "2026-11-06T17:19:52.086Z",
+          "quote": "31.12.2027"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Scientific-project-assistant-predoctoral/1453323233/",
+          "observedAt": "2026-11-06T17:19:52.086Z",
+          "quote": "3 minutes"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/Scientific-project-assistant-predoctoral/1453323233/",
+          "observedAt": "2026-11-06T17:19:52.086Z",
+          "quote": "Two-page concept note"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -16374,12 +16615,15 @@
       "topics": [],
       "type": "phd",
       "url": "https://jobs.univie.ac.at/job/Scientific-project-assistant-predoctoral/1453323233/",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.077032+00:00",
+      "announcementRecheckedAt": "2026-11-06T17:19:52.086Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:30:48.312469+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-06T17:19:52.086Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "materials": "最长3分钟动机视频（在科研CV中放链接）、科研CV、两页博士项目构想、学位证明及硕士／Diplom论文PDF。",
+      "materialsEn": "Motivation video of maximum 3 minutes, linked in the academic CV; academic CV; two-page doctoral project concept; degree certificates and master/diploma thesis PDF.",
+      "startDate": "2027-01-01"
     },
     {
       "announcementStatus": "open",
@@ -16822,6 +17066,13 @@
           "url": "https://jobs.charlotte.edu/postings/71052",
           "observedAt": "2026-11-06T07:48:09.505Z",
           "quote": "Open Until Filled Yes"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://jobs.charlotte.edu/postings/71052",
+          "observedAt": "2026-11-06T17:20:18.353Z",
+          "quote": "The expected salary is $85,000."
         }
       ],
       "funding": "未公布或尚未核验",
@@ -16838,8 +17089,8 @@
       "requirements": "到任时须取得地理学、城市／区域／环境规划或密切相关领域博士；须有教学指导能力，以及开展有理论基础、面向实际规划问题的外部资助研究的记录或潜力。",
       "requirementsEn": "PhD in Geography, Urban/Regional/Environmental Planning or a closely related field by appointment; evidence or strong potential in teaching/mentoring and theoretically grounded, externally funded research addressing planning problems.",
       "reviewDate": "2026-12-01",
-      "salary": "The expected salary is $85,000.",
-      "salaryEn": "The expected salary is $85,000.",
+      "salary": "预计薪酬US$85,000；该句未明确支付周期或税前税后。",
+      "salaryEn": "Expected salary US$85,000; the quoted sentence does not specify payment period or tax basis.",
       "short": "University of North Carolina at Charlotte",
       "source": "https://jobs.charlotte.edu/postings/71052",
       "sourceIds": [
@@ -16856,10 +17107,10 @@
       "topics": [],
       "type": "faculty",
       "url": "https://jobs.charlotte.edu/postings/71052",
-      "announcementRecheckedAt": "2026-11-04T17:59:04.678433+00:00",
+      "announcementRecheckedAt": "2026-11-06T17:20:18.353Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-06T07:48:09.505Z",
-        "scope": "specific official notice; no login, identity entry or submission",
+        "attemptedAt": "2026-11-06T17:20:18.353Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
         "method": "actual_native_browser_public_read"
       }
     },
@@ -16988,6 +17239,13 @@
           "status": "unknown",
           "url": "https://uscjobs.sc.edu/postings/214857",
           "observedAt": "2026-11-04T17:59:05.141703+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214857",
+          "observedAt": "2026-11-06T17:20:36.286Z",
+          "quote": "August 16, 2027"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -17022,12 +17280,13 @@
       "topics": [],
       "type": "faculty",
       "url": "https://uscjobs.sc.edu/postings/214857",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.141703+00:00",
+      "announcementRecheckedAt": "2026-11-06T17:20:36.286Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:32:50.766189+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-06T17:20:36.286Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "startDate": "2027-08-16"
     },
     {
       "announcementStatus": "open",
@@ -17193,11 +17452,11 @@
       "url": "https://appstate.peopleadmin.com/postings/56189",
       "startDate": "官方表格2027-07-01；正文2027年8月，冲突待机构确认",
       "startDateEn": "Table: 1 July 2027; narrative: August 2027. Conflict awaiting institutional clarification.",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.141703+00:00",
+      "announcementRecheckedAt": "2026-11-06T17:19:28.881Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:45:12.508191+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
+        "attemptedAt": "2026-11-06T17:19:28.881Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
       }
     },
     {
@@ -17417,12 +17676,13 @@
       "url": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574",
       "applicationRouteCheckedAt": "2026-11-05T13:42:36.313123+00:00",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T13:42:36.313123+00:00",
-        "scope": "specific public notice and starter only; no identity fields, consent, login or submission",
-        "method": "actual_native_browser_visible_AX"
+        "attemptedAt": "2026-11-06T17:21:34.108Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
       },
       "applicationUrl": "https://explore.msujobs.msstate.edu/jobs/research-associate-i-or-ii-main-campus-starkville-ms-mississippi-united-states-7e64c0aa-eb8c-4898-a1ac-9a660943b574",
-      "officialJobReference": "511197"
+      "officialJobReference": "511197",
+      "announcementRecheckedAt": "2026-11-06T17:21:34.108Z"
     },
     {
       "announcementStatus": "unknown",
@@ -17519,6 +17779,13 @@
           "status": "unknown",
           "url": "https://spartantalent.uncg.edu/postings/35916",
           "observedAt": "2026-11-04T17:59:05.205665+00:00"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://spartantalent.uncg.edu/postings/35916",
+          "observedAt": "2026-11-06T17:19:02.054Z",
+          "quote": "August 1, 2027"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -17553,12 +17820,13 @@
       "topics": [],
       "type": "faculty",
       "url": "https://spartantalent.uncg.edu/postings/35916",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.205665+00:00",
+      "announcementRecheckedAt": "2026-11-06T17:19:02.054Z",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:33:52.639323+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-06T17:19:02.054Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
+      },
+      "startDate": "2027-08-01"
     },
     {
       "announcementStatus": "open",
@@ -18507,6 +18775,13 @@
           "url": "https://uscjobs.sc.edu/postings/214311",
           "observedAt": "2026-11-06T07:48:34.300Z",
           "quote": "Reference letters will be requested after committee review"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214311",
+          "observedAt": "2026-11-06T17:20:39.595Z",
+          "quote": "08/16/2027"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -18541,7 +18816,7 @@
       "topics": [],
       "type": "faculty",
       "url": "https://uscjobs.sc.edu/postings/214311",
-      "announcementRecheckedAt": "2026-11-04T17:59:05.205665+00:00",
+      "announcementRecheckedAt": "2026-11-06T17:20:39.595Z",
       "reviewDateHistory": [
         {
           "kind": "previous_saved_observation",
@@ -18557,12 +18832,13 @@
         }
       ],
       "sourceReview": {
-        "attemptedAt": "2026-11-06T07:48:34.300Z",
-        "scope": "specific official notice; no login, identity entry or submission",
+        "attemptedAt": "2026-11-06T17:20:39.595Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
         "method": "actual_native_browser_public_read"
       },
       "materials": "说明学术与教学理念的求职信、CV、3位专业推荐人的姓名及邮箱、最多2份曾授课程的教学大纲；推荐信在委员会审查后另行索取。",
-      "materialsEn": "Cover letter describing academic/teaching philosophy, CV, names/emails of 3 professional references, and no more than 2 sample syllabi from previously taught courses; letters requested after committee review."
+      "materialsEn": "Cover letter describing academic/teaching philosophy, CV, names/emails of 3 professional references, and no more than 2 sample syllabi from previously taught courses; letters requested after committee review.",
+      "startDate": "2027-08-16"
     },
     {
       "announcementStatus": "unknown",
@@ -18988,9 +19264,9 @@
       "announcementStatus": "open",
       "sourceReview": {
         "status": "source-reviewed",
-        "attemptedAt": "2026-11-05T00:34:33.634Z",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "native_browser_DOM"
+        "attemptedAt": "2026-11-06T17:19:47.884Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
       },
       "fieldEvidence": [
         {
@@ -19126,7 +19402,8 @@
       "applicationProcessEn": "Submit through Lund University’s Varbi recruitment system; login is required. Documents are specified in the notice; acceptance after login and final submission are unverified.",
       "startDate": "1 February 2027 or as agreed",
       "checkedAt": "2026-11-04T16:32:27Z",
-      "collectedAt": "2026-11-04"
+      "collectedAt": "2026-11-04",
+      "announcementRecheckedAt": "2026-11-06T17:19:47.884Z"
     },
     {
       "id": "geo-tcand-7832b4c8ecc603c54e9e2148",
@@ -19184,9 +19461,9 @@
       "announcementStatus": "open",
       "sourceReview": {
         "status": "source-reviewed",
-        "attemptedAt": "2026-11-05T00:34:35.904Z",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "native_browser_DOM"
+        "attemptedAt": "2026-11-06T17:19:56.636Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
       },
       "fieldEvidence": [
         {
@@ -19352,7 +19629,8 @@
       "applicationProcessEn": "Submit through Lund University’s Varbi recruitment system; login is required. Documents are specified in the notice; acceptance after login and final submission are unverified.",
       "startDate": "2027-01-07 or due agreement",
       "checkedAt": "2026-11-04T16:32:19Z",
-      "collectedAt": "2026-11-04"
+      "collectedAt": "2026-11-04",
+      "announcementRecheckedAt": "2026-11-06T17:19:56.636Z"
     },
     {
       "id": "geo-tcand-657d1f254d2a1e9113ce7d1c",
@@ -19410,7 +19688,7 @@
       "announcementStatus": "open",
       "sourceReview": {
         "status": "source-reviewed",
-        "attemptedAt": "2026-11-06T10:48:29.680Z",
+        "attemptedAt": "2026-11-06T17:20:20.731Z",
         "scope": "specific official notice; no login or submission; not portal acceptance verification",
         "method": "actual_native_browser_public_read"
       },
@@ -19581,7 +19859,7 @@
       "startDate": "as soon as possible according to agreement, no later than May 1st 2027",
       "checkedAt": "2026-11-04T16:32:15Z",
       "collectedAt": "2026-11-04",
-      "announcementRecheckedAt": "2026-11-06T10:48:29.680Z"
+      "announcementRecheckedAt": "2026-11-06T17:20:20.731Z"
     },
     {
       "id": "geo-tcand-90025f25903467f96cc4e901",
@@ -19638,9 +19916,9 @@
       "announcementStatus": "open",
       "sourceReview": {
         "status": "source-reviewed",
-        "attemptedAt": "2026-11-05T00:30:14.966620+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
+        "attemptedAt": "2026-11-06T17:19:22.768Z",
+        "scope": "specific official notice; no login or submission; not portal acceptance verification",
+        "method": "actual_native_browser_public_read"
       },
       "fieldEvidence": [
         {
@@ -19765,6 +20043,13 @@
           "status": "supported",
           "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
           "observedAt": "2026-11-04T16:32:23Z"
+        },
+        {
+          "field": "official_notice_recheck",
+          "status": "supported",
+          "url": "https://lu.varbi.com/en/what:job/jobID:983518/type:job/where:4/apply:1",
+          "observedAt": "2026-11-06T17:19:22.768Z",
+          "quote": "2027-02-01"
         }
       ],
       "officialJobReference": "PA2026/3081",
@@ -19780,9 +20065,10 @@
       "materialsEn": "English PDF with CV and publications, past research/future interests (maximum two pages), contact details of at least two referees, doctoral certificate/supporting documents and a short interest statement.",
       "applicationProcess": "通过隆德大学Varbi招聘系统提交，需登录。公开公告说明了申请材料；登录后的受理与最终提交未核验。",
       "applicationProcessEn": "Submit through Lund University’s Varbi recruitment system; login is required. Documents are specified in the notice; acceptance after login and final submission are unverified.",
-      "startDate": "2027-02-01 or due agreement",
+      "startDate": "2027-02-01",
       "checkedAt": "2026-11-04T16:32:23Z",
-      "collectedAt": "2026-11-04"
+      "collectedAt": "2026-11-04",
+      "announcementRecheckedAt": "2026-11-06T17:19:22.768Z"
     }
   ],
   "newRecords": 63,
@@ -19827,7 +20113,7 @@
     "resource_only": 84
   },
   "opportunityRecords": 101,
-  "datasetSha256": "241cfbb8bc4dc406e72df8eb97e37e905dd3f7c5f854a44550b785021d77a8fd",
+  "datasetSha256": "4aeaf310b0bb26a63f5efe6e421d602285168eb868b699cd3c47dd7ccae32ed9",
   "availabilityReview": {
     "planned": 34,
     "new_public_records": 12,
