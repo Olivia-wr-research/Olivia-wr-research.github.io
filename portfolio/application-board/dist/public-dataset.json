@@ -10511,6 +10511,27 @@
           "status": "unknown",
           "url": "https://www.gwu.jobs/postings/129037",
           "observedAt": "2026-11-04T17:59:05.205665+00:00"
+        },
+        {
+          "field": "requirements",
+          "status": "supported",
+          "url": "https://www.gwu.jobs/postings/129037",
+          "observedAt": "2026-11-06T07:47:16.217Z",
+          "quote": "by the time of appointment"
+        },
+        {
+          "field": "materials",
+          "status": "supported",
+          "url": "https://www.gwu.jobs/postings/129037",
+          "observedAt": "2026-11-06T07:47:16.217Z",
+          "quote": "Unofficial transcripts will suffice"
+        },
+        {
+          "field": "materials",
+          "status": "supported",
+          "url": "https://www.gwu.jobs/postings/129037",
+          "observedAt": "2026-11-06T07:47:16.217Z",
+          "quote": "Email and phone number of three professional references"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -10524,11 +10545,11 @@
       "methods": [],
       "recordKind": "concrete_opportunity",
       "releaseStatus": "likely_open / needs_review",
-      "requirements": "Minimum Qualifications: Applicants must have a PhD in geography, environmental science, or a closely related field by the time of appointment. Applicants must have demonstrated research or teaching experience using field and quantitative methods or geospatial methods. Advertised Salary: $85,000-$100,000 Other Benefits: The successful applicant will be eligible for GW’s comprehensive benefits package including employee medical insurance. For benefits details please see https://hr.gwu.edu/benefits-programs Other Information: The Department of Geography and Environment brings together geographers and environmental scientists studying relationships between the physica",
-      "requirementsEn": "Minimum Qualifications: Applicants must have a PhD in geography, environmental science, or a closely related field by the time of appointment. Applicants must have demonstrated research or teaching experience using field and quantitative methods or geospatial methods. Advertised Salary: $85,000-$100,000 Other Benefits: The successful applicant will be eligible for GW’s comprehensive benefits package including employee medical insurance. For benefits details please see https://hr.gwu.edu/benefits-programs Other Information: The Department of Geography and Environment brings together geographers and environmental scientists studying relationships between the physica",
+      "requirements": "到任时须取得地理学、环境科学或密切相关领域博士；须有使用野外及定量方法或地理空间方法的科研或教学经历。",
+      "requirementsEn": "PhD in geography, environmental science or a closely related field by appointment; demonstrated research or teaching using field and quantitative methods or geospatial methods.",
       "reviewDate": "2026-11-12",
-      "salary": "Advertised Salary: $85,000-$100,000 Other Benefits: The successful applicant will be eligible for GW’s comprehensive benefits package including employee medical insurance. For benefits details please see https://hr.gwu.edu/benefits-programs Other Information: The Department of Geography and Envir",
-      "salaryEn": "Advertised Salary: $85,000-$100,000 Other Benefits: The successful applicant will be eligible for GW’s comprehensive benefits package including employee medical insurance. For benefits details please see https://hr.gwu.edu/benefits-programs Other Information: The Department of Geography and Envir",
+      "salary": "公告薪酬区间US$85,000–100,000；该栏未明确支付周期或税前税后。",
+      "salaryEn": "Advertised salary range US$85,000–100,000; payment period and tax basis are not specified in that field.",
       "short": "The George Washington University",
       "source": "https://www.gwu.jobs/postings/129037",
       "sourceIds": [
@@ -10547,10 +10568,12 @@
       "url": "https://www.gwu.jobs/postings/129037",
       "announcementRecheckedAt": "2026-11-04T17:59:05.205665+00:00",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:32:07.527223+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-06T07:47:16.217Z",
+        "scope": "specific official notice; no login, identity entry or submission",
+        "method": "actual_native_browser_public_read"
+      },
+      "materials": "求职信、CV、研究兴趣陈述、教学兴趣／理念陈述、全部大学阶段成绩单（申请时可用非正式版；到任后须立即提交正式版），以及3位专业推荐人的邮箱和电话。",
+      "materialsEn": "Cover letter, CV, research statement, teaching statement, transcripts of all college work (unofficial accepted for application; official required upon employment), and email/phone details of 3 professional references."
     },
     {
       "announcementStatus": "open",
@@ -12830,8 +12853,8 @@
       "deadlineNoteEn": "Closing Date: 12 November 2026",
       "deadlineType": "fixed_as_stated_pending_leased_merge",
       "degree": "unknown",
-      "duration": "全职固定期最长12个月，且不晚于2027年10月31日结束；尽快开始。",
-      "durationEn": "Full time, up to 12 months but no later than 31 October 2027; start as soon as possible.",
+      "duration": "固定期限12个月，但最晚不超过2027年10月31日。",
+      "durationEn": "Fixed term of 12 months, but no later than 31 October 2027.",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
       "fieldEn": "See official announcement",
@@ -12991,6 +13014,20 @@
           "status": "supported",
           "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/",
           "observedAt": "2026-11-05T00:43:41.953456+00:00"
+        },
+        {
+          "field": "duration",
+          "status": "supported",
+          "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/",
+          "observedAt": "2026-11-06T07:43:15.823Z",
+          "quote": "12 months (but no later than 31/10/2027)"
+        },
+        {
+          "field": "materials",
+          "status": "supported",
+          "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/",
+          "observedAt": "2026-11-06T07:43:15.823Z",
+          "quote": "maximum of two A4 pages"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -13025,12 +13062,13 @@
       "topics": [],
       "type": "research",
       "url": "https://jobs.ncl.ac.uk/job/Newcastle-Research-AssistantAssociate-in-Sustainable-Carbon-Based-Electrodes-for-Flow-Batteries/1452441033/",
-      "materials": "最新CV及最多2页A4求职信，说明如何满足关键条件。",
+      "materials": "最新CV及最多两页A4求职信，说明如何满足关键条件。",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:43:41.953456+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
-      }
+        "attemptedAt": "2026-11-06T07:43:15.823Z",
+        "scope": "specific official notice; no login, identity entry or submission",
+        "method": "actual_native_browser_public_read"
+      },
+      "materialsEn": "Up-to-date CV and cover letter of maximum two A4 pages explaining how the key criteria are met."
     },
     {
       "announcementStatus": "open",
@@ -14366,8 +14404,8 @@
       "deadlineNoteEn": "Application deadline: 11/08/2026",
       "deadlineType": "fixed_official_literal_or_same_role_native_DOM_corroborated_timezone_unknown",
       "degree": "unknown",
-      "duration": "博士雇佣目标总期4年；初限1.5年，若雇主未在首12个月提出不续约声明，则自动延长至4年。2026年12月1日可开始，最迟12月15日。",
-      "durationEn": "See official announcement",
+      "duration": "博士雇佣期目标为4年，初始合同1.5年；如雇主未在前12个月作出不延长声明，自动延至4年。",
+      "durationEn": "Doctoral employment envisaged for 4 years, initially limited to 1.5 years; extends to 4 years if the employer does not issue a non-extension declaration within the first 12 months.",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
       "fieldEn": "See official announcement",
@@ -14491,6 +14529,27 @@
           "status": "supported",
           "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/",
           "observedAt": "2026-11-05T00:48:19.073Z"
+        },
+        {
+          "field": "duration",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/",
+          "observedAt": "2026-11-06T07:42:42.091Z",
+          "quote": "Initially limited to 1.5 years"
+        },
+        {
+          "field": "duration",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/",
+          "observedAt": "2026-11-06T07:42:42.091Z",
+          "quote": "within the first 12 months"
+        },
+        {
+          "field": "materials",
+          "status": "supported",
+          "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/",
+          "observedAt": "2026-11-06T07:42:42.091Z",
+          "quote": "With contact details of two persons"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -14526,10 +14585,12 @@
       "type": "phd",
       "url": "https://jobs.univie.ac.at/job/PhD-position-in-inverse-modelling-of-greenhouse-gases-and-radioactivity-in-the-atmosphere-%284-years%29/1448831533/",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:48:19.073Z",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "native_browser_DOM"
-      }
+        "attemptedAt": "2026-11-06T07:42:42.091Z",
+        "scope": "specific official notice; no login, identity entry or submission",
+        "method": "actual_native_browser_public_read"
+      },
+      "materials": "简短动机信、含发表清单的CV、2位可应要求提供推荐的联系人。",
+      "materialsEn": "Short motivation letter, CV including publications, and contact details of 2 people who can provide recommendations on request."
     },
     {
       "announcementStatus": "unknown",
@@ -15421,8 +15482,8 @@
       "deadlineNoteEn": "please submit your application no later than 22.11.2026",
       "deadlineType": "fixed_as_officially_stated_timezone_unknown",
       "degree": "unknown",
-      "duration": "2027年1月1日或协商开始；初聘2年，首6个月须取得化学工程博士学习权。之后续约依评估、修订计划和可用经费，非保证。",
-      "durationEn": "See official announcement",
+      "duration": "初始合同2年；前6个月内须申请并取得化学工程博士项目学习资格。首期结束前评估通过后可延长，仍取决于进展、修订计划和可用资金。",
+      "durationEn": "Initial contract of 2 years. A doctoral study right in Chemical Engineering must be obtained within the first 6 months. Extension after successful evaluation depends on progress, the revised project plan and available funding.",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
       "fieldEn": "See official announcement",
@@ -15570,6 +15631,27 @@
           "status": "supported",
           "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
           "observedAt": "2026-11-05T00:45:12.508191+00:00"
+        },
+        {
+          "field": "duration",
+          "status": "supported",
+          "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
+          "observedAt": "2026-11-06T07:43:53.153Z",
+          "quote": "initially for 2 years"
+        },
+        {
+          "field": "duration",
+          "status": "supported",
+          "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
+          "observedAt": "2026-11-06T07:43:53.153Z",
+          "quote": "During the first 6 months"
+        },
+        {
+          "field": "duration",
+          "status": "supported",
+          "url": "https://www.aalto.fi/en/open-positions/doctoral-researcher-sustainability-of-power-to-x-ptx-value-chains",
+          "observedAt": "2026-11-06T07:43:53.153Z",
+          "quote": "available funding"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -15607,9 +15689,9 @@
       "announcementRecheckedAt": "2026-11-04T17:59:05.077032+00:00",
       "materials": "英文求职／动机信、CV、至少2位推荐人联系方式、成绩单与学位证明。",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:45:12.508191+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
+        "attemptedAt": "2026-11-06T07:43:53.153Z",
+        "scope": "specific official notice; no login, identity entry or submission",
+        "method": "actual_native_browser_public_read"
       }
     },
     {
@@ -16277,8 +16359,8 @@
       "currentOpenStatus": "unknown",
       "currentOpenStatusCheckedAt": "2026-11-04T17:59:04.678433+00:00",
       "deadline": "",
-      "deadlineNote": "2026-12-01开始审查，之后直至招满；不是固定申请截止。",
-      "deadlineNoteEn": "Review begins 2026-12-01 and continues until filled; not a fixed closing date.",
+      "deadlineNote": "正文标题虽写Application Deadline，随后说明2026年12月1日开始评审，且Open Until Filled为Yes；12月1日不是确认的最终截止。已知登录受理未重试。",
+      "deadlineNoteEn": "Although headed Application Deadline, the text states review begins December 1, 2026, and Open Until Filled is Yes. December 1 is not a confirmed final deadline. Known authenticated acceptance was not retested.",
       "deadlineType": "rolling",
       "degree": "unknown",
       "duration": "以官方公告为准",
@@ -16382,6 +16464,27 @@
           "status": "unknown",
           "url": "https://jobs.charlotte.edu/postings/71052",
           "observedAt": "2026-11-04T17:59:04.678433+00:00"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://jobs.charlotte.edu/postings/71052",
+          "observedAt": "2026-11-06T07:48:09.505Z",
+          "quote": "Review of applications will begin on"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://jobs.charlotte.edu/postings/71052",
+          "observedAt": "2026-11-06T07:48:09.505Z",
+          "quote": "December 1, 2026"
+        },
+        {
+          "field": "deadlineNote",
+          "status": "supported",
+          "url": "https://jobs.charlotte.edu/postings/71052",
+          "observedAt": "2026-11-06T07:48:09.505Z",
+          "quote": "Open Until Filled Yes"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -16395,8 +16498,8 @@
       "methods": [],
       "recordKind": "concrete_opportunity",
       "releaseStatus": "likely_open / needs_review",
-      "requirements": "Qualifications: Candidates must hold a Ph.D. in Geography, Urban, Regional or Environmental Planning, or a closely related field by the date of appointment. The successful candidate will demonstrate: (1) evidence of, or strong potential for, excellence in teaching and mentoring undergraduate and graduate students in urban planning, geography, and their area of specialization; and (2) an active record of, or clear promise for, establishing a high-impact, externally funded research program that is theoretically grounded and translates innovative qualitative, quantitative and/or mixed-methods approaches into real-world planning pr\nCandidates must hold a Ph.D. in Geography, Urban, Regional or Environmental Planning, or a closely related field by the date of appointment.",
-      "requirementsEn": "Qualifications: Candidates must hold a Ph.D. in Geography, Urban, Regional or Environmental Planning, or a closely related field by the date of appointment. The successful candidate will demonstrate: (1) evidence of, or strong potential for, excellence in teaching and mentoring undergraduate and graduate students in urban planning, geography, and their area of specialization; and (2) an active record of, or clear promise for, establishing a high-impact, externally funded research program that is theoretically grounded and translates innovative qualitative, quantitative and/or mixed-methods approaches into real-world planning pr\nCandidates must hold a Ph.D. in Geography, Urban, Regional or Environmental Planning, or a closely related field by the date of appointment.",
+      "requirements": "到任时须取得地理学、城市／区域／环境规划或密切相关领域博士；须有教学指导能力，以及开展有理论基础、面向实际规划问题的外部资助研究的记录或潜力。",
+      "requirementsEn": "PhD in Geography, Urban/Regional/Environmental Planning or a closely related field by appointment; evidence or strong potential in teaching/mentoring and theoretically grounded, externally funded research addressing planning problems.",
       "reviewDate": "2026-12-01",
       "salary": "The expected salary is $85,000.",
       "salaryEn": "The expected salary is $85,000.",
@@ -16418,9 +16521,9 @@
       "url": "https://jobs.charlotte.edu/postings/71052",
       "announcementRecheckedAt": "2026-11-04T17:59:04.678433+00:00",
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:32:50.766189+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "web_reader_may_be_cached"
+        "attemptedAt": "2026-11-06T07:48:09.505Z",
+        "scope": "specific official notice; no login, identity entry or submission",
+        "method": "actual_native_browser_public_read"
       }
     },
     {
@@ -18039,6 +18142,34 @@
           "status": "supported",
           "url": "https://uscjobs.sc.edu/postings/214311",
           "observedAt": "2026-11-05T00:33:52.639323+00:00"
+        },
+        {
+          "field": "requirements",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214311",
+          "observedAt": "2026-11-06T07:48:34.300Z",
+          "quote": "at the time of hire"
+        },
+        {
+          "field": "requirements",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214311",
+          "observedAt": "2026-11-06T07:48:34.300Z",
+          "quote": "not eligible for visa sponsorship"
+        },
+        {
+          "field": "materials",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214311",
+          "observedAt": "2026-11-06T07:48:34.300Z",
+          "quote": "no more than 2 sample syllabi"
+        },
+        {
+          "field": "materials",
+          "status": "supported",
+          "url": "https://uscjobs.sc.edu/postings/214311",
+          "observedAt": "2026-11-06T07:48:34.300Z",
+          "quote": "Reference letters will be requested after committee review"
         }
       ],
       "funding": "未公布或尚未核验",
@@ -18052,8 +18183,8 @@
       "methods": [],
       "recordKind": "concrete_opportunity",
       "releaseStatus": "likely_open / needs_review",
-      "requirements": "Required Education and Experience Master’s degree in Geography, GIScience, Geospatial Analytics, Geo-Informatics, or a related field by the time of appointment. Candidates must demonstrate the ability to teach undergraduate courses in GIScience and related areas. This position is not eligible for visa sponsorship. Applicants must be authorized to work in the United States at the time of hire. Preferred Qualifications Master’s degree in Geography, GIScience, Geospatial Analytics, Geo-Informatics, or a related field by the time of appointment. Candidates must demonstrate the ability to teach undergraduate courses in GIScience and related areas. Th\nPreferred Qualifications Master’s degree in Geography, GIScience, Geospatial Analytics, Geo-Informatics, or a related field by the time of appointment. Candidates must demonstrate the ability to teach undergraduate courses in GIScience and related areas. The department is particularly interested in candidates with experience teaching geospatial data science or related topics, curriculum development experience, professional engagement related to teaching and learning, an",
-      "requirementsEn": "Required Education and Experience Master’s degree in Geography, GIScience, Geospatial Analytics, Geo-Informatics, or a related field by the time of appointment. Candidates must demonstrate the ability to teach undergraduate courses in GIScience and related areas. This position is not eligible for visa sponsorship. Applicants must be authorized to work in the United States at the time of hire. Preferred Qualifications Master’s degree in Geography, GIScience, Geospatial Analytics, Geo-Informatics, or a related field by the time of appointment. Candidates must demonstrate the ability to teach undergraduate courses in GIScience and related areas. Th\nPreferred Qualifications Master’s degree in Geography, GIScience, Geospatial Analytics, Geo-Informatics, or a related field by the time of appointment. Candidates must demonstrate the ability to teach undergraduate courses in GIScience and related areas. The department is particularly interested in candidates with experience teaching geospatial data science or related topics, curriculum development experience, professional engagement related to teaching and learning, an",
+      "requirements": "到任时须取得地理学、GIScience、地理空间分析、地理信息学或相关领域硕士，并能教授本科GIScience课程；本职位不提供签证担保，到任时须有美国工作许可。",
+      "requirementsEn": "Master’s in Geography, GIScience, Geospatial Analytics, Geo-Informatics or a related field by appointment, with ability to teach undergraduate GIScience. No visa sponsorship; US work authorization required at hire.",
       "reviewDate": "2027-01-29",
       "salary": "未公布或尚未核验",
       "salaryEn": "Not stated or not verified",
@@ -18089,10 +18220,12 @@
         }
       ],
       "sourceReview": {
-        "attemptedAt": "2026-11-05T00:33:52.639323+00:00",
-        "scope": "specific public notice facts and visible links; no whole-source completeness or submission claim",
-        "method": "native_browser_DOM"
-      }
+        "attemptedAt": "2026-11-06T07:48:34.300Z",
+        "scope": "specific official notice; no login, identity entry or submission",
+        "method": "actual_native_browser_public_read"
+      },
+      "materials": "说明学术与教学理念的求职信、CV、3位专业推荐人的姓名及邮箱、最多2份曾授课程的教学大纲；推荐信在委员会审查后另行索取。",
+      "materialsEn": "Cover letter describing academic/teaching philosophy, CV, names/emails of 3 professional references, and no more than 2 sample syllabi from previously taught courses; letters requested after committee review."
     },
     {
       "announcementStatus": "unknown",
@@ -19310,7 +19443,7 @@
     "resource_only": 84
   },
   "opportunityRecords": 101,
-  "datasetSha256": "0fc06fd0e74c88c71057730ff442f01ddc3bb5f479e58d351a0457ddc994d46c",
+  "datasetSha256": "ddae355c26dac153871dfc7d36cfc2d68265f2a4d7abb7443f072a8111d9f425",
   "availabilityReview": {
     "planned": 34,
     "new_public_records": 12,
