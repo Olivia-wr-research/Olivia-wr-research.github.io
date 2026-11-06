@@ -25,7 +25,7 @@ test('two-week filter includes day zero and day fourteen, excludes past, day fif
 test('rolling, programme, conflict and review dates never turn into fixed deadlines',()=>{
  assert.match(applicationTimingLabel({...job,deadlineType:'rolling',reviewDate:'2026-11-15'},'zh',day),/招满为止，无固定截止日.*开始评审/);
  assert.match(applicationTimingLabel({...job,deadlineConflict:true},'zh',day),/不计算剩余天数/);
- assert.match(applicationTimingLabel({...job,type:'phd-programme'},'zh',day),/项目资料/);
+ assert.match(applicationTimingLabel({...job,type:'phd-programme'},'zh',day),/学位项目/);
  assert.match(applicationTimingLabel({...job,deadlineKind:'priority'},'zh',day),/不是最终截止/);
 });
 test('dates that are today or past do not claim that the portal has closed',()=>{
