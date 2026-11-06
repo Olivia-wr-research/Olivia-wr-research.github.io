@@ -134,7 +134,7 @@ export function applicationEntryLabel(job,lang='zh',today=calendarDate()){
 export function applicationTimingLabel(job,lang='zh',today=calendarDate()){
  const en=lang==='en';
  if(hasCriticalConflict(job))return en?'Conflicting dates · no countdown':'日期存在冲突 · 不计算剩余天数';
- if(!isConcreteOpportunity(job))return en?'Programme information · current intake unverified':'项目资料 · 当期招生及截止时间待核实';
+ if(!isConcreteOpportunity(job))return en?'Programme information · see official application arrangements':'学位项目 · 申请安排见项目官网';
  const date=effectiveDeadline(job),info=opportunityDeadlineInfo(job,today),prefix=en?'Deadline: ':'截止时间：';
  if(date&&info.days!==null){
   if(info.days<0)return prefix+date+(en?' · stated date has passed':' · 公告截止日期已过');
@@ -143,5 +143,11 @@ export function applicationTimingLabel(job,lang='zh',today=calendarDate()){
  }
  if(job.deadlineType==='rolling')return (en?'Deadline: Until filled; no fixed deadline':'截止安排：招满为止，无固定截止日')+(job.reviewDate?(en?' · review starts ':' · 开始评审 ')+job.reviewDate:'');
  if(['review_start','priority','first_review','guaranteed_consideration'].includes(job.deadlineKind))return (en?'Review / priority date (not a final deadline): ':'评审／优先日期（不是最终截止）：')+(job.reviewDate||job.priorityDeadline||job.deadline||'—');
- return en?'Fixed application deadline unverified':'固定截止时间待核实';
+ return en?'See official application dates':'截止安排见官方说明';
+}
+
+// Public copy is intentionally separate from evidence and release decisions.
+export function publicOpportunityLabel(job,lang='zh',today=calendarDate()){
+ const state=opportunityState(job,today).state,en=lang==='en';
+ return ({closed:en?'Applications closed':'申请已结束',past:en?'Deadline passed':'截止日期已过',not_yet_open:en?'Applications not yet open':'尚未开始申请',programme:en?'Programme information':'学位项目信息',conflict:en?'Conflicting source details':'来源信息存在差异'})[state]||'';
 }

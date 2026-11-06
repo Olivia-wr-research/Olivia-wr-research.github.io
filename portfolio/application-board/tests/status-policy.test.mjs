@@ -1,7 +1,7 @@
 import {comparisonStatusFields} from '../dist/journey.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {opportunityState,opportunityStatusLabel,opportunityDeadlineInfo,opportunityDeadlineLabel,effectiveDeadline} from '../dist/opportunity.mjs';
+import {opportunityState,opportunityStatusLabel,publicOpportunityLabel,opportunityDeadlineInfo,opportunityDeadlineLabel,effectiveDeadline} from '../dist/opportunity.mjs';
 import {matchesGeo,trackOf} from '../dist/geography-filters.mjs';
 import {catalogCounts} from '../dist/geography-catalog.mjs';
 import {sheetRow} from '../dist/geography-ui.mjs';
@@ -36,6 +36,16 @@ test('counts use the same eligibility predicate as filters',()=>{
 });
 
 test('comparison uses the same localized status and conservative deadline as detail and export',()=>{
- const j=job({currentOpenStatus:'unknown',deadlineType:'rolling',reviewDate:'2026-11-15'}),v=comparisonStatusFields(j,'en',today);assert.equal(v.status,opportunityStatusLabel(j,'en',today));assert.match(v.deadline,/Until filled/);assert.match(v.deadline,/no fixed deadline/);assert.doesNotMatch(v.deadline,/days to/);
+ const j=job({currentOpenStatus:'unknown',deadlineType:'rolling',reviewDate:'2026-11-15'}),v=comparisonStatusFields(j,'en',today);assert.equal(v.status,publicOpportunityLabel(j,'en',today));assert.match(v.deadline,/Until filled/);assert.match(v.deadline,/no fixed deadline/);assert.doesNotMatch(v.deadline,/days to/);
  const c=comparisonStatusFields(job({deadlineConflict:true}),'en',today);assert.match(c.deadline,/Conflicting/);assert.match(c.status,/Conflicting/);
+});
+
+test('public copy hides audit labels without admitting unknown records to open recommendations',()=>{
+ const unknown=job({currentOpenStatus:'unknown'});
+ for(const lang of ['zh','en'])assert.equal(publicOpportunityLabel(unknown,lang,today),'');
+ assert.equal(matchesGeo(unknown,{track:'all',time:'open'},today),false);
+ assert.equal(publicOpportunityLabel(job(),'zh',today),'');
+ assert.equal(publicOpportunityLabel(job({announcementStatus:'closed'}),'zh',today),'申请已结束');
+ assert.equal(publicOpportunityLabel(job({deadline:'2026-10-30'}),'en',today),'Deadline passed');
+ assert.equal(publicOpportunityLabel(job({type:'phd-programme',status:'programme'}),'zh',today),'学位项目信息');
 });

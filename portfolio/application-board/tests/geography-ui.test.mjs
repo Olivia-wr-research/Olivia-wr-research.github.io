@@ -8,6 +8,6 @@ test('TSV export carries the same expired deadline status as cards and compariso
   type:'phd',degree:'phd',deadline:'2026-10-15',statusLabel:'Applications open',statusLabelEn:'Applications open',
   funding:'unknown',salary:'unknown',summary:'Summary',requirements:'unknown',language:'unknown',url:'https://example.org/job',
   topics:[],methods:[]};
- assert.equal(sheetRow(row,0,'zh')[14],'截止日期已过 · 当前受理状态未知，需复核官网');
- assert.equal(sheetRow(row,0,'en')[14],'Past deadline · current acceptance unknown; recheck official source');
+ assert.equal(sheetRow(row,0,'zh')[14],'截止日期已过');
+ assert.equal(sheetRow(row,0,'en')[14],'Deadline passed');
 });
