@@ -1,0 +1,9 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {pendingApplicationState} from '../scripts/terrafar_pending_policy.mjs';
+const base={state:'unknown',conflict:false,deadline:{kind:'future'},applicationPortalStatus:'unknown'};
+const job={url:'https://example.test/job/1',applicationActionability:'can_start_public_application',contentReviewStatus:'verified',applicationRouteEvidence:{kind:'job_bound_read_only_form',announcementUrl:'https://example.test/job/1',sourceSha256:'a'.repeat(64),portalSha256:'b'.repeat(64),checkedAt:'2026-10-31T00:00:00Z',requiredSupplementsChecked:1,submitted:false}};
+test('job-bound visible form enables starting an application, not verified acceptance',()=>{const r=pendingApplicationState(base,job,'2026-10-31');assert.equal(r.state,'application_available');assert.equal(r.eligibleForOpenRecommendation,true);assert.equal(r.applicationPortalStatus,'unknown');});
+test('closed, expired, conflicting and programme rows stay outside recommendation',()=>{for(const state of ['closed','past','conflict','not_yet_open','programme']){const b={...base,state};assert.equal(pendingApplicationState(b,job,'2026-10-31'),b);}assert.equal(pendingApplicationState({...base,conflict:true},job,'2026-10-31').eligibleForOpenRecommendation,undefined);});
+test('stale, future, generic, unverified and malformed route proof cannot promote',()=>{for(const patch of [{checkedAt:'2026-10-20'},{checkedAt:'2026-11-01'},{kind:'generic_homepage'},{sourceSha256:'x'},{announcementUrl:'https://other.test/'}])assert.equal(pendingApplicationState(base,{...job,applicationRouteEvidence:{...job.applicationRouteEvidence,...patch}},'2026-10-31'),base);assert.equal(pendingApplicationState(base,{...job,contentReviewStatus:'unknown'},'2026-10-31'),base);});
+test('due today remains time-uncertain',()=>{const b={...base,deadline:{kind:'today'}};assert.equal(pendingApplicationState(b,job,'2026-10-31'),b);});
