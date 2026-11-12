@@ -8,7 +8,7 @@ from urllib.error import URLError
 
 APP = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(APP / "scripts"))
-from terrafar_refresh_public import refresh, refresh_record
+from terrafar_refresh_public import recheck_provider, refresh, refresh_record
 
 NOTICE = """<main><h2>Postdoctoral fellowship</h2><span>Job #JPF05508</span>
 <h3>Application Window</h3><p>Open date: September 28, 2026</p>
@@ -75,8 +75,8 @@ class PublicRefreshTest(unittest.TestCase):
         row = next(r for r in rows if r["id"] == "geo-oct17-wur-governance-postdoc")
         evidence = next(e for e in row["fieldEvidence"] if e["field"] == "current_open_status")
         notice = "<h1>" + row["titleEn"] + "</h1><p>" + evidence["quote"] + "</p>"
-        self.assertEqual(refresh_record(row, "2026-11-12", NOW.isoformat(), lambda _: notice), "review_required")
-        self.assertEqual(refresh_record(row, "2026-11-12", NOW.isoformat(), lambda _: notice + "<p>Applications are closed.</p>"), "closed")
+        self.assertEqual(recheck_provider(row, "wur", evidence, lambda _: notice), "review_required")
+        self.assertEqual(recheck_provider(row, "wur", evidence, lambda _: notice + "<p>Applications are closed.</p>"), "closed")
 
     def test_frankfurt_needs_exact_notice_deadline_and_bound_rendered_form(self):
         rows = json.loads((APP / "dist/public-dataset.json").read_text())["records"]
@@ -92,3 +92,35 @@ class PublicRefreshTest(unittest.TestCase):
         self.assertEqual(refresh_record(row, "2026-11-12", NOW.isoformat(), pages.__getitem__), "refreshed")
         pages[row["url"]] = notice.replace("29.11.2026", "28.11.2026")
         self.assertEqual(refresh_record(row, "2026-11-12", NOW.isoformat(), pages.__getitem__), "review_required")
+
+    def test_usc_binds_official_posting_to_exact_live_form_and_deadline(self):
+        rows = json.loads((APP / "dist/public-dataset.json").read_text())["records"]
+        row = next(r for r in rows if r.get("officialJobReference") == "REQ20182024")
+        evidence = next(e for e in row["fieldEvidence"] if e["field"] == "current_open_status")
+        notice = (
+            f'<h1>{row["titleEn"]}</h1><p>Job ID REQ20182024</p>'
+            '<a href="https://facultypositions.usc.edu/FAS/application/position?postingId=REQ20182024">Apply</a>'
+        )
+        form = (
+            f'<p>Position: {row["titleEn"]}</p><p>Submission Deadline: 12/01/2026</p>'
+            '<p>Posting: <a href="https://usccareers.usc.edu/search-jobs/REQ20182024">REQ20182024</a></p>'
+            f'<p>{evidence["quote"]}</p>'
+            '<input name="applicant.nameFirst"><input name="applicant.nameLast">'
+            '<input name="applicant.emailPrimary">'
+        )
+        pages = {row["url"]: notice, row["applicationUrl"]: form}
+        self.assertEqual(refresh_record(row, "2026-11-13", NOW.isoformat(), pages.__getitem__), "refreshed")
+        for changed in (
+            form.replace("REQ20182024", "REQ20182023"),
+            form.replace("12/01/2026", "12/02/2026"),
+            form.replace('name="applicant.emailPrimary"', 'name="applicant.emailPrimary" disabled'),
+        ):
+            pages[row["applicationUrl"]] = changed
+            self.assertEqual(refresh_record(row, "2026-11-13", NOW.isoformat(), pages.__getitem__), "review_required")
+
+    def test_deferred_wur_does_not_request_the_form(self):
+        rows = json.loads((APP / "dist/public-dataset.json").read_text())["records"]
+        row = next(r for r in rows if r["id"] == "geo-oct17-wur-governance-postdoc")
+        def unexpected_request(_):
+            self.fail("Deferred form must not be fetched")
+        self.assertEqual(refresh_record(row, "2026-11-13", NOW.isoformat(), unexpected_request), "deferred_endpoint")

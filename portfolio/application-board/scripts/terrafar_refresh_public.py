@@ -119,6 +119,7 @@ OFFICIAL_HOSTS = {
     "karriere.uni-frankfurt.de", "careers.humboldt.edu",
     "careers.pageuppeople.com", "secure.dc4.pageuppeople.com",
     "jobs.ethz.ch", "emea2.softfactors.com",
+    "usccareers.usc.edu", "facultypositions.usc.edu",
 }
 RENDERED_HOSTS = {"www.wur.nl", "karriere.uni-frankfurt.de", "emea2.softfactors.com"}
 CSU_CAMPUSES = {"562442": "nr", "561701": "hm", "563191": "hm", "562584": "hm", "560304": "fl"}
@@ -152,6 +153,8 @@ def provider_for(row):
         return "frankfurt"
     if re.fullmatch(r"https://jobs\.ethz\.ch/job/view/JOPG_ethz_[A-Za-z0-9]+", url):
         return "eth"
+    if re.fullmatch(r"https://usccareers\.usc\.edu/job/[^?#]+/\d+/\d+", url):
+        return "usc"
     reference = row.get("officialJobReference")
     campus = CSU_CAMPUSES.get(reference)
     if campus and re.match(
@@ -192,12 +195,35 @@ def recheck_provider(row, provider, evidence, read_page):
         ) and {"first_name", "last_name", "email"} <= page.fields else "review_required"
 
     deadline = dt.date.fromisoformat(row["deadline"])
+    if provider == "usc":
+        reference = row.get("officialJobReference")
+        if not isinstance(reference, str) or not re.fullmatch(r"REQ\d+", reference):
+            return "review_required"
+        landing = f"https://facultypositions.usc.edu/FAS/application/position?postingId={reference}"
+        form_url = f"https://facultypositions.usc.edu/FAS/application/step1?requisitionId={reference}"
+        if (landing not in page.links or not includes(body, f"Job ID {reference}")
+                or form_url != row.get("applicationUrl") or form_url != evidence.get("url")):
+            return "review_required"
+        form, form_body = parse_page(read_page, form_url)
+        if (f"https://usccareers.usc.edu/search-jobs/{reference}" not in form.links
+                or not includes(form_body, f"Position: {title}", f"Posting: {reference}")):
+            return "review_required"
+        if EXPLICIT_CLOSURE.search(form_body):
+            return "closed"
+        required = {"applicant.nameFirst", "applicant.nameLast", "applicant.emailPrimary"}
+        date_literal = deadline.strftime("%m/%d/%Y")
+        dates = re.findall(r"Submission Deadline:\s*(\d{2}/\d{2}/\d{4})", form_body)
+        if (dates == [date_literal] and required <= form.fields
+                and includes(form_body, evidence.get("quote"))):
+            return "refreshed"
+        return "review_required"
+
     if provider == "eth":
         reference = row["url"].split("JOPG_ethz_", 1)[1]
         form_url = evidence.get("url")
         expected_url = f"https://emea2.softfactors.com/job-opening/rgum-{reference}#!/?lang=en"
         stated = re.search(
-            rf"The application deadline is {deadline.day}(?:st|nd|rd|th)? {deadline:%B %Y}\s*\.",
+            rf"(?:The application deadline is|The deadline for applications is) {deadline.day}(?:st|nd|rd|th)? {deadline:%B %Y}\s*\.",
             body,
         )
         if not stated or form_url != expected_url or form_url != row.get("applicationUrl"):
@@ -285,6 +311,9 @@ def refresh_record(row, today, observed_at, read_page):
     if not row.get("deadline") or row["deadline"] <= today:
         return "outside_window"
 
+    if row["id"] == "geo-oct17-wur-governance-postdoc":
+        return "deferred_endpoint"
+
     if provider:
         evidence = next((e for e in row.get("fieldEvidence", []) if
             e.get("field") == "current_open_status" and e.get("status") == "supported"
@@ -365,7 +394,7 @@ def refresh(app, output, read_page=fetch, now=None):
         outcomes[outcome] = outcomes.get(outcome, 0) + 1
         if outcome != "unsupported":
             reviewed.append({"id": row["id"], "deadline": row.get("deadline"), "result": outcome})
-        if outcome in {"review_required", "source_unavailable", "closed"}:
+        if outcome in {"review_required", "source_unavailable", "deferred_endpoint", "closed"}:
             # Keep historical evidence but stop recommending the conflicting route.
             row["currentOpenStatus"] = "closed" if outcome == "closed" else "unknown"
             if outcome == "closed":
