@@ -43,7 +43,14 @@ jobs:
           printf '%s\n' 'pypdf==7.0.1 --hash=sha256:6131b764b046282357037309e7ef2a1b7679d4a5c53eed3db2bfbf7c673ddc2b' > "$RUNNER_TEMP/pdf-requirements.txt"
           python3 -m venv "$RUNNER_TEMP/review-python"
           "$RUNNER_TEMP/review-python/bin/python" -m pip install --require-hashes --no-deps -r "$RUNNER_TEMP/pdf-requirements.txt"
+      - name: Install rendered evidence reader
+        run: |
+          npm install --prefix "$RUNNER_TEMP/review-browser" --ignore-scripts --no-audit --no-fund playwright-core@1.65.0
+          command -v google-chrome
       - name: Recheck official evidence and stage public files
+        env:
+          TERRAFAR_PLAYWRIGHT_MODULE: ${{ runner.temp }}/review-browser/node_modules/playwright-core/index.mjs
+          TERRAFAR_CHROME: /usr/bin/google-chrome
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/terrafar-site"
