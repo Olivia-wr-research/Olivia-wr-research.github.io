@@ -7,6 +7,7 @@ from html.parser import HTMLParser
 from io import BytesIO
 import unicodedata
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -72,8 +73,16 @@ def fetch(reference):
     url = HOST + reference if re.fullmatch(r"JPF\d{5}", reference) else reference
     parsed = urlsplit(url)
     if (parsed.scheme != "https" or parsed.netloc not in OFFICIAL_HOSTS
-            or parsed.fragment):
+            or (parsed.fragment and parsed.hostname != "emea2.softfactors.com")):
         raise ValueError("Unexpected official URL")
+    if os.getenv("TERRAFAR_PLAYWRIGHT_MODULE") and parsed.hostname in RENDERED_HOSTS:
+        try:
+            return subprocess.check_output(
+                ["node", str(Path(__file__).with_name("terrafar_read_application.mjs")), url],
+                timeout=55, stderr=subprocess.DEVNULL, text=True,
+            )
+        except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as error:
+            raise URLError("Official browser evidence unavailable") from error
     pdf = parsed.path.endswith(".pdf")
     with build_opener(NoRedirect()).open(url, timeout=12) as response:
         expected = "application/pdf" if pdf else "text/html"
@@ -100,7 +109,9 @@ OFFICIAL_HOSTS = {
     "aprecruit.berkeley.edu", "www.uni-bonn.de", "www.wur.nl",
     "karriere.uni-frankfurt.de", "careers.humboldt.edu",
     "careers.pageuppeople.com", "secure.dc4.pageuppeople.com",
+    "jobs.ethz.ch", "emea2.softfactors.com",
 }
+RENDERED_HOSTS = {"www.wur.nl", "karriere.uni-frankfurt.de", "emea2.softfactors.com"}
 CSU_CAMPUSES = {"562442": "nr", "561701": "hm", "563191": "hm", "562584": "hm", "560304": "fl"}
 EXPLICIT_CLOSURE = re.compile(
     CLOSED.pattern + r"|Bewerbungsfrist (?:ist )?abgelaufen|keine Bewerbungen mehr|vacancy (?:is |has been )?closed",
@@ -130,6 +141,8 @@ def provider_for(row):
         return "wur"
     if re.fullmatch(r"https://karriere\.uni-frankfurt\.de/gu-frankfurt/job/\d+", url):
         return "frankfurt"
+    if re.fullmatch(r"https://jobs\.ethz\.ch/job/view/JOPG_ethz_[A-Za-z0-9]+", url):
+        return "eth"
     reference = row.get("officialJobReference")
     campus = CSU_CAMPUSES.get(reference)
     if campus and re.match(
@@ -169,7 +182,27 @@ def recheck_provider(row, provider, evidence, read_page):
             body, evidence.get("quote"), evidence.get("applicationFormTitle")
         ) and {"first_name", "last_name", "email"} <= page.fields else "review_required"
 
+    deadline = dt.date.fromisoformat(row["deadline"])
+    if provider == "eth":
+        reference = row["url"].split("JOPG_ethz_", 1)[1]
+        form_url = evidence.get("url")
+        expected_url = f"https://emea2.softfactors.com/job-opening/rgum-{reference}#!/?lang=en"
+        stated = re.search(
+            rf"The application deadline is {deadline.day}(?:st|nd|rd|th)? {deadline:%B %Y}\.",
+            body,
+        )
+        if not stated or form_url != expected_url or form_url != row.get("applicationUrl"):
+            return "review_required"
+        form, text = parse_page(read_page, form_url)
+        if includes(text, evidence.get("applicationFormTitle")) and EXPLICIT_CLOSURE.search(text):
+            return "closed"
+        return "refreshed" if includes(
+            text, evidence.get("applicationFormTitle"), evidence.get("quote")
+        ) and {"field_firstName", "field_lastName", "email"} <= form.fields else "review_required"
+
     reference = row.get("officialJobReference")
+    if provider == "frankfurt" and not includes(body, deadline.strftime("%d.%m.%Y")):
+        return "review_required"
     if not includes(body, evidence.get("referenceQuote") or reference, evidence.get("invitationQuote")):
         return "review_required"
     if provider == "frankfurt" and evidence.get("applicationMethod") == "email":
@@ -179,7 +212,7 @@ def recheck_provider(row, provider, evidence, read_page):
     if form_url != row.get("applicationUrl") or not form_url:
         return "review_required"
     if provider == "frankfurt":
-        if form_url != row["url"].replace("/job/", "/apply/"):
+        if form_url not in page.links or form_url != row["url"].replace("/job/", "/apply/"):
             return "review_required"
         required = {"email", "first_name", "last_name"}
     else:
@@ -222,7 +255,8 @@ def refresh_record(row, today, observed_at, read_page):
         evidence = next((e for e in row.get("fieldEvidence", []) if
             e.get("field") == "current_open_status" and e.get("status") == "supported"
             and e.get("value") == "open"
-            and (e.get("applicationWindow") or {}).get("closes") == row["deadline"]), None)
+            and ((e.get("applicationWindow") or {}).get("closes") == row["deadline"]
+                 or (provider == "eth" and e.get("pageKind") == "application_portal"))), None)
         if evidence is None:
             return "review_required"
         try:
