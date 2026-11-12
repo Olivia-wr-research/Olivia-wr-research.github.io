@@ -39,7 +39,9 @@ try {
     const target = new URL(request.url());
     const vendorRead = target.hostname === vendor &&
       ['xhr', 'fetch', 'script', 'stylesheet'].includes(request.resourceType());
-    const officialHost = target.hostname === root || target.hostname.endsWith('.' + root) || vendorRead;
+    const wurFormRead = address.hostname === 'www.wur.nl' &&
+      target.hostname === 'api.ats-platform.com' && ['xhr', 'fetch'].includes(request.resourceType());
+    const officialHost = target.hostname === root || target.hostname.endsWith('.' + root) || vendorRead || wurFormRead;
     if (target.protocol !== 'https:' || !officialHost ||
         !['GET', 'HEAD', 'OPTIONS'].includes(request.method()) ||
         (request.isNavigationRequest() && (target.hostname !== address.hostname || target.pathname !== address.pathname))) {
