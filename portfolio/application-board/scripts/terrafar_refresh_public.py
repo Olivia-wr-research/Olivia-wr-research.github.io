@@ -11,6 +11,7 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import sys
 from urllib.error import URLError
 from urllib.parse import parse_qs, urlsplit
 from urllib.request import HTTPRedirectHandler, build_opener
@@ -79,9 +80,11 @@ def fetch(reference):
         try:
             return subprocess.check_output(
                 ["node", str(Path(__file__).with_name("terrafar_read_application.mjs")), url],
-                timeout=55, stderr=subprocess.DEVNULL, text=True,
+                timeout=55, stderr=subprocess.PIPE, text=True,
             )
         except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as error:
+            details = re.search(r"browser-check:[a-z_]+:[A-Za-z]+", getattr(error, "stderr", "") or "")
+            print(f"Official browser {parsed.hostname}: {details.group() if details else type(error).__name__}", file=sys.stderr)
             raise URLError("Official browser evidence unavailable") from error
     pdf = parsed.path.endswith(".pdf")
     with build_opener(NoRedirect()).open(url, timeout=12) as response:
@@ -188,7 +191,7 @@ def recheck_provider(row, provider, evidence, read_page):
         form_url = evidence.get("url")
         expected_url = f"https://emea2.softfactors.com/job-opening/rgum-{reference}#!/?lang=en"
         stated = re.search(
-            rf"The application deadline is {deadline.day}(?:st|nd|rd|th)? {deadline:%B %Y}\.",
+            rf"The application deadline is {deadline.day}(?:st|nd|rd|th)? {deadline:%B %Y}\s*\.",
             body,
         )
         if not stated or form_url != expected_url or form_url != row.get("applicationUrl"):
@@ -291,6 +294,28 @@ def refresh_record(row, today, observed_at, read_page):
     return "refreshed"
 
 
+def retain_browser_observation(row, observations, now):
+    """Use a same-day, explicitly verified observation when CI cannot reach its source."""
+    for observation in observations:
+        if (observation["id"] != row["id"] or observation["url"] != row["url"]
+                or observation["deadline"] != row.get("deadline")):
+            continue
+        checked = dt.datetime.fromisoformat(observation["observedAt"])
+        zone = ZoneInfo("Asia/Shanghai")
+        if not checked.tzinfo or checked > now or checked.astimezone(zone).date() != now.astimezone(zone).date():
+            continue
+        for evidence in row.get("fieldEvidence", []):
+            if evidence.get("field") != "current_open_status" or evidence.get("value") != "open":
+                continue
+            canonical = json.dumps(evidence, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+            if hashlib.sha256(canonical.encode()).hexdigest() != observation["evidenceSha256"]:
+                continue
+            evidence["observedAt"] = checked.isoformat()
+            row["currentOpenStatusCheckedAt"] = checked.isoformat()
+            return True
+    return False
+
+
 def refresh(app, output, read_page=fetch, now=None):
     now = now or dt.datetime.now(dt.timezone.utc)
     today = now.astimezone(ZoneInfo("Asia/Shanghai")).date().isoformat()
@@ -298,10 +323,14 @@ def refresh(app, output, read_page=fetch, now=None):
     records = dataset["records"]
     if len({row["id"] for row in records}) != len(records) or dataset["asOf"] > today:
         raise ValueError("Invalid published baseline")
+    receipt = app / "scripts/terrafar_confirmed_observations.json"
+    observations = json.loads(receipt.read_text()) if receipt.is_file() else []
     outcomes = {}
     reviewed = []
     for row in sorted(records, key=lambda r: r.get("deadline") or "9999"):
         outcome = refresh_record(row, today, now.isoformat(), read_page)
+        if outcome == "source_unavailable" and retain_browser_observation(row, observations, now):
+            outcome = "retained_browser_observation"
         outcomes[outcome] = outcomes.get(outcome, 0) + 1
         if outcome != "unsupported":
             reviewed.append({"id": row["id"], "deadline": row.get("deadline"), "result": outcome})
@@ -321,7 +350,7 @@ console.log(JSON.stringify(classifyPublicRecords(data.records, data.today)));"""
         input=json.dumps({"records": records, "today": today}).encode(),
     ))
     dataset.update(classified)
-    dataset.update(asOf=today, newRecords=0, correctedRecords=0, routeUpdates=outcomes.get("refreshed", 0))
+    dataset.update(asOf=today, newRecords=0, correctedRecords=0, routeUpdates=outcomes.get("refreshed", 0) + outcomes.get("retained_browser_observation", 0))
     canonical = json.dumps(dataset["records"], ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     dataset["datasetSha256"] = hashlib.sha256(canonical.encode()).hexdigest()
     raw = json.dumps(dataset, ensure_ascii=False, indent=2)

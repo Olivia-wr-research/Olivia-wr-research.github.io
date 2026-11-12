@@ -12,16 +12,15 @@ if (address.protocol !== 'https:' || address.username || address.password || add
     address.search || !path?.test(address.pathname)) {
   throw Error('Unrecognized official application URL');
 }
-const { chromium } = await import(pathToFileURL(process.env.TERRAFAR_PLAYWRIGHT_MODULE));
-const browser = await chromium.launch({
-  executablePath: process.env.TERRAFAR_CHROME,
-  headless: true,
-});
+let browser;
+let stage = "launch";
 const escapeHtml = (value) => value.replace(/[&<>"]/g, (c) => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;',
 }[c]));
 
 try {
+  const { chromium } = await import(pathToFileURL(process.env.TERRAFAR_PLAYWRIGHT_MODULE));
+  browser = await chromium.launch({ executablePath: process.env.TERRAFAR_CHROME, headless: true });
   const context = await browser.newContext({ serviceWorkers: 'block', acceptDownloads: false });
   const root = {
     'www.wur.nl': 'wur.nl',
@@ -42,9 +41,11 @@ try {
   });
   const page = await context.newPage();
   page.setDefaultTimeout(10000);
+  stage = "navigation";
   const response = await page.goto(address.href, { waitUntil: 'domcontentloaded', timeout: 18000 });
   if (!response?.ok() || page.url() !== address.href) throw Error('Unexpected official page response');
 
+  stage = "official_content";
   let scope = page.locator('body');
   let labels = [];
   if (address.hostname === 'www.wur.nl') {
@@ -66,6 +67,7 @@ try {
     labels = [['field_firstName', /^First Name/], ['field_lastName', /^Last Name/], ['email', /^Email/]];
   }
 
+  stage = "application_fields";
   const fields = [];
   for (const [key, name] of labels) {
     const input = scope.getByRole('textbox', { name }).first();
@@ -80,6 +82,9 @@ try {
   const anchors = links.map((url) => '<a href="' + escapeHtml(url) + '"></a>');
   const inputs = fields.map((field) => '<input name="' + field + '">');
   process.stdout.write('<p>' + escapeHtml(text) + '</p>' + anchors.join('') + inputs.join(''));
+} catch (error) {
+  console.error(`browser-check:${stage}:${error.name}`);
+  process.exitCode = 1;
 } finally {
-  await browser.close();
+  await browser?.close();
 }
