@@ -87,3 +87,19 @@ test('CSU public email-start evidence is bound to advert, campus, job and curren
 });
 
 test('CSU priority dates are neither fixed cutoffs nor invented review-start dates',()=>{for(const ref of ['562442','562584','560304','563191']){const r=data.records.find(r=>r.officialJobReference===ref);assert.equal(r.deadlineType,'rolling');assert.equal(r.deadlineKind,'priority');assert.ok(!r.reviewStart);assert.ok(!r.reviewDate);assert.ok(/优先/.test(r.deadlineNote));assert.ok(opportunityState(r,data.asOf).eligibleForOpenRecommendation);}});
+
+test('ETH official API evidence needs the same application, deadline and accepting state',()=>{
+ const row=structuredClone(data.records.find(r=>r.id==='geo-tcand-7ab0df62a033c7fffba2c58f'));
+ const evidence=row.fieldEvidence.find(e=>e.field==='current_open_status');
+ Object.assign(evidence,{pageKind:'official_application_api',
+  apiUrl:'https://emea2.softfactors.com/api/assessment/job-opening/rgum-JGkTxzSSshnLQNNlbX',
+  applicationNoticeTitle:row.titleEn,acceptsApplications:true,providerState:'published',
+  applicationWindow:{closes:row.deadline},observedAt:'2026-11-12T12:00:00Z'});
+ assert.equal(opportunityState(row,'2026-11-12').eligibleForOpenRecommendation,true);
+ for(const changes of [{acceptsApplications:false},{apiUrl:evidence.apiUrl+'other'},{providerState:'draft'},{applicationNoticeTitle:'Different role'},{applicationWindow:{closes:'2026-11-16'}}]){
+  const copy=structuredClone(row);
+  Object.assign(copy.fieldEvidence.find(e=>e.field==='current_open_status'),changes);
+  assert.equal(opportunityState(copy,'2026-11-12').eligibleForOpenRecommendation,false);
+ }
+ assert.equal(opportunityState(row,'2026-11-16').eligibleForOpenRecommendation,false);
+});

@@ -54,6 +54,8 @@ function currentEvidence(job,status,today){
   // a generic form, login page or application button is still insufficient.
   const ethReference=(()=>{try{const u=new URL(job.url);return u.hostname==='jobs.ethz.ch'?u.pathname.match(/\/JOPG_ethz_(\w+)$/)?.[1]:null;}catch{return null;}})();
   const invited=Boolean(ethReference)&&path?.hostname==='emea2.softfactors.com'&&path.pathname===`/job-opening/rgum-${ethReference}`&&!path.username&&!path.password&&e.pageKind==='application_portal'&&e.jobReference===ethReference&&e.applicationFormTitle===`Application for ${job.titleEn||job.title}`&&e.formStage==='public_identity_form'&&['field_firstName','field_lastName','email'].every(k=>e.availableFormFields?.includes(k))&&e.quote==='We look forward to receiving your application.';
+  // The official form's own public API can explicitly confirm acceptance.
+  const apiInvited=Boolean(ethReference)&&path?.href===job.applicationUrl&&path.hostname==='emea2.softfactors.com'&&path.pathname===`/job-opening/rgum-${ethReference}`&&e.pageKind==='official_application_api'&&e.apiUrl===`https://emea2.softfactors.com/api/assessment/job-opening/rgum-${ethReference}`&&e.jobReference===ethReference&&e.applicationNoticeTitle===(job.titleEn||job.title)&&e.acceptsApplications===true&&e.providerState==='published'&&w.closes===job.deadline&&deadlineInfo(w.closes,today).kind==='future'&&e.quote==='We look forward to receiving your application.';
   // Additional observed invitations are valid only with the matching public
   // form, requisition, usable fields and the same stated submission date.
   const fields=(names)=>names.every(k=>e.availableFormFields?.includes(k));
@@ -79,7 +81,7 @@ function currentEvidence(job,status,today){
   // job-alert or referral form. Never infer final submission or receipt.
   const csodId=announced?.hostname==='mbcc-mass.csod.com'&&announced.pathname.match(/^\/ux\/ats\/careersite\/1\/home\/requisition\/(\d+)$/)?.[1];
   const csod=Boolean(csodId)&&!announced.username&&!announced.password&&announced.searchParams.get('c')==='mbcc-mass'&&path?.hostname===announced.hostname&&!path.username&&!path.password&&path.pathname===`/ux/ats/careersite/1/requisition/${csodId}/application`&&path.searchParams.get('c')==='mbcc-mass'&&e.officialNoticeUrl===job.url&&e.jobReference===`req${csodId}`&&job.officialJobReference===e.jobReference&&e.applicationFormTitle===(job.titleEn||job.title)&&e.pageKind==='application_portal'&&e.formStage==='public_identity_form'&&e.formStep==='Step 1 of 4'&&fields(['First Name','Last Name','Email','Upload Resume/CV'])&&e.invitationQuote==='Ready to apply?'&&e.quote.startsWith('Before continuing with this application, please have your current resume available')&&job.deadlineType==='rolling'&&w.deadlineKind==='until_filled'&&w.deadlineQuote==='Open until filled.';
-  return status==='open'?(positive.test(e.quote)||continuing||invited||wur||usc||frankfurt||manchester||museum||csu||emailCall||csod)&&!negative.test(e.quote)&&!negative.test(e.invitationQuote||''):negative.test(e.quote);
+  return status==='open'?(positive.test(e.quote)||continuing||invited||apiInvited||wur||usc||frankfurt||manchester||museum||csu||emailCall||csod)&&!negative.test(e.quote)&&!negative.test(e.invitationQuote||''):negative.test(e.quote);
  });
 }
 export function opportunityState(job={},today=calendarDate()){
