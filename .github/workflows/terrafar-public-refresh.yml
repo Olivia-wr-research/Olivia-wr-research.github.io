@@ -1,0 +1,67 @@
+name: TERRAFAR Public Review and Refresh
+
+on:
+  schedule:
+    - cron: '47 2 * * *'
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish the checked site when the repository has enabled automatic Pages deployment
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths: ['docs/**', 'portfolio/application-board/**', '.github/workflows/terrafar-public-refresh.yml']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: terrafar-public-pages
+  cancel-in-progress: false
+
+jobs:
+  review:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify baseline and automation
+        working-directory: portfolio/application-board
+        run: |
+          diff -r dist ../../docs/apps/application-board
+          node --test tests/*.test.mjs
+          python3 -m unittest discover -s tests
+      - name: Recheck official evidence and stage public files
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/terrafar-site"
+          git archive HEAD:docs | tar -xf - -C "$RUNNER_TEMP/terrafar-site"
+          python3 portfolio/application-board/scripts/terrafar_refresh_public.py \
+            --app portfolio/application-board \
+            --output "$RUNNER_TEMP/terrafar-site/apps/application-board" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/terrafar-site
+
+  deploy:
+    if: vars.TERRAFAR_AUTO_PAGES == 'true' && (github.event_name != 'workflow_dispatch' || inputs.publish)
+    needs: review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy validated public site
+        id: deployment
+        uses: actions/deploy-pages@v4
