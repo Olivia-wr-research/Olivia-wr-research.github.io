@@ -8,7 +8,7 @@ from urllib.error import URLError
 
 APP = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(APP / "scripts"))
-from terrafar_refresh_public import refresh
+from terrafar_refresh_public import refresh, refresh_record
 
 NOTICE = """<main><h2>Postdoctoral fellowship</h2><span>Job #JPF05508</span>
 <h3>Application Window</h3><p>Open date: September 28, 2026</p>
@@ -56,3 +56,24 @@ class PublicRefreshTest(unittest.TestCase):
             with self.assertRaises(URLError):
                 refresh(APP, Path(temp), unavailable, NOW)
             self.assertEqual(list(Path(temp).iterdir()), [])
+
+    def test_bonn_requires_live_notice_to_bind_the_same_pdf_and_exact_invitation(self):
+        rows = json.loads((APP / "dist/public-dataset.json").read_text())["records"]
+        row = next(r for r in rows if r.get("officialJobReference") == "2026/447")
+        evidence = next(e for e in row["fieldEvidence"] if e["field"] == "current_open_status")
+        notice = f'<p>2026/447</p><a href="{evidence["url"]}">Official PDF</a>'
+        pdf_text = evidence["invitationQuote"] + " " + evidence["quote"].replace("2026/447", "2026/ 447")
+        pages = {row["url"]: notice, evidence["url"]: pdf_text}
+        self.assertEqual(refresh_record(row, "2026-11-12", NOW.isoformat(), pages.__getitem__), "refreshed")
+        pages[evidence["url"]] = pdf_text.replace("22th November", "23th November")
+        self.assertEqual(refresh_record(row, "2026-11-12", NOW.isoformat(), pages.__getitem__), "review_required")
+        pages[row["url"]] = notice.replace("2026_447.pdf", "2026_448.pdf")
+        self.assertEqual(refresh_record(row, "2026-11-12", NOW.isoformat(), pages.__getitem__), "review_required")
+
+    def test_wur_announcement_without_application_fields_stays_held(self):
+        rows = json.loads((APP / "dist/public-dataset.json").read_text())["records"]
+        row = next(r for r in rows if r["id"] == "geo-oct17-wur-governance-postdoc")
+        evidence = next(e for e in row["fieldEvidence"] if e["field"] == "current_open_status")
+        notice = "<h1>" + row["titleEn"] + "</h1><p>" + evidence["quote"] + "</p>"
+        self.assertEqual(refresh_record(row, "2026-11-12", NOW.isoformat(), lambda _: notice), "review_required")
+        self.assertEqual(refresh_record(row, "2026-11-12", NOW.isoformat(), lambda _: notice + "<p>Applications are closed.</p>"), "closed")
