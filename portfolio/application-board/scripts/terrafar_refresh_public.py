@@ -194,7 +194,7 @@ def recheck_provider(row, provider, evidence, read_page):
             body, evidence.get("quote"), evidence.get("applicationFormTitle")
         ) and {"first_name", "last_name", "email"} <= page.fields else "review_required"
 
-    deadline = dt.date.fromisoformat(row["deadline"])
+    deadline = dt.date.fromisoformat(row["deadline"]) if row.get("deadline") else None
     if provider == "usc":
         reference = row.get("officialJobReference")
         if not isinstance(reference, str) or not re.fullmatch(r"REQ\d+", reference):
@@ -308,7 +308,9 @@ def refresh_record(row, today, observed_at, read_page):
         return "unsupported"
     if row.get("status") in {"closed", "expired", "programme", "resource"} or row.get("announcementStatus") == "closed":
         return "historical"
-    if not row.get("deadline") or row["deadline"] <= today:
+    # Only the existing PageUp rule supports an explicitly rolling window.
+    rolling = provider == "pageup" and row.get("deadlineType") == "rolling" and not row.get("deadline")
+    if not rolling and (not row.get("deadline") or row["deadline"] <= today):
         return "outside_window"
 
     if row["id"] == "geo-oct17-wur-governance-postdoc":
@@ -318,7 +320,9 @@ def refresh_record(row, today, observed_at, read_page):
         evidence = next((e for e in row.get("fieldEvidence", []) if
             e.get("field") == "current_open_status" and e.get("status") == "supported"
             and e.get("value") == "open"
-            and ((e.get("applicationWindow") or {}).get("closes") == row["deadline"]
+            and ((rolling and (e.get("applicationWindow") or {}).get("deadlineKind") == "until_filled"
+                  and "open until filled" in (e.get("invitationQuote") or "").lower())
+                 or (not rolling and (e.get("applicationWindow") or {}).get("closes") == row["deadline"])
                  or (provider == "eth" and e.get("pageKind") in {"application_portal", "official_application_api"}))), None)
         if evidence is None:
             return "review_required"
