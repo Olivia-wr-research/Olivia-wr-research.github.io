@@ -76,19 +76,25 @@ def fetch(reference):
     if (parsed.scheme != "https" or parsed.netloc not in OFFICIAL_HOSTS
             or (parsed.fragment and parsed.hostname != "emea2.softfactors.com")):
         raise ValueError("Unexpected official URL")
-    if os.getenv("TERRAFAR_PLAYWRIGHT_MODULE") and parsed.hostname in RENDERED_HOSTS:
+    eth_api = parsed.hostname == "emea2.softfactors.com" and bool(
+        re.fullmatch(r"/api/assessment/job-opening/rgum-[A-Za-z0-9]+", parsed.path)
+    )
+    if os.getenv("TERRAFAR_PLAYWRIGHT_MODULE") and parsed.hostname in RENDERED_HOSTS and not eth_api:
         try:
             return subprocess.check_output(
                 ["node", str(Path(__file__).with_name("terrafar_read_application.mjs")), url],
-                timeout=55, stderr=subprocess.PIPE, text=True,
+                timeout=72, stderr=subprocess.PIPE, text=True,
             )
         except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as error:
             details = re.search(r"browser-check:[a-z_]+:[A-Za-z]+", getattr(error, "stderr", "") or "")
             print(f"Official browser {parsed.hostname}: {details.group() if details else type(error).__name__}", file=sys.stderr)
+            trace = re.search(r"browser-network:[a-zA-Z0-9:.,-]+", getattr(error, "stderr", "") or "")
+            if trace:
+                print(trace.group()[:1000], file=sys.stderr)
             raise URLError("Official browser evidence unavailable") from error
     pdf = parsed.path.endswith(".pdf")
     with build_opener(NoRedirect()).open(url, timeout=12) as response:
-        expected = "application/pdf" if pdf else "text/html"
+        expected = "application/json" if eth_api else ("application/pdf" if pdf else "text/html")
         if response.headers.get_content_type() != expected:
             raise ValueError("Unexpected official response type")
         raw = response.read(2_000_001)
@@ -196,12 +202,37 @@ def recheck_provider(row, provider, evidence, read_page):
         )
         if not stated or form_url != expected_url or form_url != row.get("applicationUrl"):
             return "review_required"
-        form, text = parse_page(read_page, form_url)
-        if includes(text, evidence.get("applicationFormTitle")) and EXPLICIT_CLOSURE.search(text):
+        api_url = f"https://emea2.softfactors.com/api/assessment/job-opening/rgum-{reference}"
+        response = json.loads(read_page(api_url))
+        if not isinstance(response, dict):
+            return "review_required"
+        description = response.get("description")
+        title_by_language = description.get("title") if isinstance(description, dict) else None
+        if not isinstance(title_by_language, dict) or title_by_language.get("en") != title:
+            return "review_required"
+        if response.get("canApply") is False and response.get("state") == "published":
             return "closed"
-        return "refreshed" if includes(
-            text, evidence.get("applicationFormTitle"), evidence.get("quote")
-        ) and {"field_firstName", "field_lastName", "email"} <= form.fields else "review_required"
+        if response.get("canApply") is not True or response.get("state") != "published":
+            return "review_required"
+        welcome = response.get("jobWelcomeText")
+        if not isinstance(welcome, dict) or not isinstance(welcome.get("en"), str):
+            return "review_required"
+        parser = VisibleText()
+        parser.feed(welcome["en"])
+        invitation = plain(" ".join(parser.parts))
+        quote = "We look forward to receiving your application."
+        if not includes(invitation, quote) or EXPLICIT_CLOSURE.search(invitation):
+            return "review_required"
+        # Record the evidence actually read, without renewing the old form observation.
+        evidence.pop("formStage", None)
+        evidence.pop("availableFormFields", None)
+        evidence.pop("applicationFormTitle", None)
+        evidence.update(
+            pageKind="official_application_api", apiUrl=api_url, quote=quote,
+            applicationNoticeTitle=title, acceptsApplications=True, providerState="published",
+            applicationWindow={"closes": row["deadline"]},
+        )
+        return "refreshed"
 
     reference = row.get("officialJobReference")
     if provider == "frankfurt" and not includes(body, deadline.strftime("%d.%m.%Y")):
@@ -259,7 +290,7 @@ def refresh_record(row, today, observed_at, read_page):
             e.get("field") == "current_open_status" and e.get("status") == "supported"
             and e.get("value") == "open"
             and ((e.get("applicationWindow") or {}).get("closes") == row["deadline"]
-                 or (provider == "eth" and e.get("pageKind") == "application_portal"))), None)
+                 or (provider == "eth" and e.get("pageKind") in {"application_portal", "official_application_api"}))), None)
         if evidence is None:
             return "review_required"
         try:
