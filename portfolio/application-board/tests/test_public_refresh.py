@@ -77,3 +77,18 @@ class PublicRefreshTest(unittest.TestCase):
         notice = "<h1>" + row["titleEn"] + "</h1><p>" + evidence["quote"] + "</p>"
         self.assertEqual(refresh_record(row, "2026-11-12", NOW.isoformat(), lambda _: notice), "review_required")
         self.assertEqual(refresh_record(row, "2026-11-12", NOW.isoformat(), lambda _: notice + "<p>Applications are closed.</p>"), "closed")
+
+    def test_frankfurt_needs_exact_notice_deadline_and_bound_rendered_form(self):
+        rows = json.loads((APP / "dist/public-dataset.json").read_text())["records"]
+        row = next(r for r in rows if r.get("officialJobReference") == "G316-2026")
+        form = "<h1>" + row["titleEn"] + "</h1><p>Bewerbung senden</p>" + "".join(
+            f'<input name="{field}">' for field in ("first_name", "last_name", "email")
+        )
+        notice = (
+            f'<h1>{row["titleEn"]}</h1><p>G316-2026 29.11.2026 Direkt hier online bewerben.</p>'
+            f'<a href="{row["applicationUrl"]}">Apply</a>'
+        )
+        pages = {row["url"]: notice, row["applicationUrl"]: form}
+        self.assertEqual(refresh_record(row, "2026-11-12", NOW.isoformat(), pages.__getitem__), "refreshed")
+        pages[row["url"]] = notice.replace("29.11.2026", "28.11.2026")
+        self.assertEqual(refresh_record(row, "2026-11-12", NOW.isoformat(), pages.__getitem__), "review_required")
