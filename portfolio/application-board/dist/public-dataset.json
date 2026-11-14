@@ -16455,8 +16455,8 @@
       "deadlineNoteEn": "Application deadline: 11/23/2026",
       "deadlineType": "fixed_as_officially_stated_timezone_unknown",
       "degree": "unknown",
-      "duration": "2027年1月1日至12月31日，每周30小时；不据此保证整个博士培养期的合同或资助。",
-      "durationEn": "January 1 to December 31, 2027, 30 hours/week; this does not guarantee a contract or funding throughout a doctorate.",
+      "duration": "2027年1月1日至12月31日，每周30小时；合同可能延至2030年12月31日，不保证续约或博士全程资助。",
+      "durationEn": "Initially 1 January–31 December 2027, 30 hours per week; the contract may be extended until 31 December 2030. Renewal and funding for the full doctorate are not guaranteed.",
       "field": "研究方向见原公告",
       "fieldConflicts": [],
       "fieldEn": "See official announcement",
@@ -20134,7 +20134,7 @@
     "resource_only": 84
   },
   "opportunityRecords": 101,
-  "datasetSha256": "3b65a659bead230ca1e136eee85e5635843b3751d5f58d08c184a3d9fb7a7246",
+  "datasetSha256": "bb1c3e63a9479e43aa0515660c6a13005eeeb55c91cd2f3ad7cb0357133ab848",
   "availabilityReview": {
     "planned": 34,
     "new_public_records": 12,
