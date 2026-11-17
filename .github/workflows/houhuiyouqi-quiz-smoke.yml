@@ -54,3 +54,20 @@ jobs:
           await browser.close();
           })().catch(err=>{console.error(err);process.exit(1)});
           JS
+
+      - name: Verify public GitHub Pages URL serves the V2 app and its assets
+        run: |
+          set -e
+          base="https://olivia-wr-research.github.io/apps/houhuiyouqi-quiz/"
+          ok=0
+          for attempt in 1 2 3 4 5 6 7 8; do
+            status=$(curl --connect-timeout 8 --max-time 15 -L -sS -o /tmp/hhyq-public.html -w '%{http_code}' "$base?check=20261117" || true)
+            if [ "$status" = "200" ] && grep -q 'v2.js' /tmp/hhyq-public.html; then ok=1; break; fi
+            echo "Attempt $attempt public index HTTP: $status"
+            sleep 8
+          done
+          test "$ok" = 1
+          curl --connect-timeout 8 --max-time 15 -LfSs "$base""v2.js?v=20261117-3" -o /tmp/hhyq-public.js
+          curl --connect-timeout 8 --max-time 15 -LfSs "$base""v2.css?v=20261117-3" -o /tmp/hhyq-public.css
+          grep -q '友情' /tmp/hhyq-public.js
+          echo "PASS: public GitHub Pages serves index and live V2 JS/CSS"
