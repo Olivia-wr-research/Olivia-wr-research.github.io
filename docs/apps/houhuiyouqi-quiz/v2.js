@@ -9,8 +9,8 @@ const templates=[
 {id:'magazine',name:'C · 友情人物特刊',desc:'人设像杂志封面'},
 {id:'danmu',name:'D · 弹幕破防卡',desc:'适合朋友圈互相贴脸'}];
 const photoSources={
-ma:{url:'https://commons.wikimedia.org/wiki/Special:FilePath/180115%20%E8%8B%B1%E9%9B%84%E6%9C%AC%E8%89%B22018%20%E9%A6%96%E6%98%A0%E7%A4%BC%20%E7%BA%A2%E6%AF%AF%20%E9%A9%AC%E5%A4%A9%E5%AE%87%206.jpg?width=850',credit:'Wikimedia Commons：180115 英雄本色2018 首映礼 红毯 马天宇 6.jpg',source:'https://commons.wikimedia.org/wiki/Category:Ma_Tianyu_in_2018'},
-zhang:{url:'https://commons.wikimedia.org/wiki/Special:FilePath/Alina%20Zhang%20Meng%20cropped.jpg?width=850',credit:'Wikimedia Commons：Alina Zhang Meng cropped.jpg',source:'https://commons.wikimedia.org/wiki/File:Alina_Zhang_Meng_cropped.jpg'}};
+ma:{url:'https://commons.wikimedia.org/wiki/Special:FilePath/180115%20%E8%8B%B1%E9%9B%84%E6%9C%AC%E8%89%B22018%20%E9%A6%96%E6%98%A0%E7%A4%BC%20%E7%BA%A2%E6%AF%AF%20%E9%A9%AC%E5%A4%A9%E5%AE%87%206.jpg?width=850',credit:'RayOfSunshine · CC BY 2.5 · 马天宇红毯照片（海报裁剪排版）',source:'https://commons.wikimedia.org/wiki/Category:Ma_Tianyu_in_2018'},
+zhang:{url:'https://commons.wikimedia.org/wiki/Special:FilePath/Alina%20Zhang%20Meng%20cropped.jpg?width=850',credit:'rayofsunshine · CC BY 2.5 · 张萌人物照片（原图已裁剪，海报再次排版）',source:'https://commons.wikimedia.org/wiki/File:Alina_Zhang_Meng_cropped.jpg'}};
 const characters=[
 {id:'li',name:'厉娜',title:'友情「已读但不强制原谅」派',stamp:'不和好也可以是结局',meme:'别人：都这么久了，你还不翻篇？\n你：日历会自动翻页，关系又不是自动续费。',caption:'表面：没什么好说的。\n心里：发生过的事，不会因为时间久就变成没发生。',touch:'你不是把旧事记成账本，而是知道有些伤口不能靠一句“算了吧”解决。你可以允许对方把话说完，也允许自己保留感受。对你来说，体面的告别和重新开始一样值得尊重。',weak:'太习惯自己消化情绪，别人可能不知道你真的有多难过。',mission:'你的友情通关提示：不必为了证明大度，把还没愈合的事轻轻带过。',scenetitle:'节目对应：厉娜与许飞车上对谈，以及“不一定继续做朋友”的表达',scenesrc:EVIDENCE,pair:'许飞',tags:['边界先于和解','慢热但记得','可以体面告别'],dims:[24,80,29,34,40],theme:'#748b95'},
 {id:'xu',name:'许飞',title:'友情「往事售后客服」派',stamp:'工单可以关闭，话要说完',meme:'别人：都过去十几年了。\n你：时间是过去了，我的未读消息还没处理。',caption:'嘴上：都过去了。\n脑内：那段友情的复盘文档已自动打开第18版。',touch:'你在意的不是赢一场争论，而是想知道两个人为什么从亲近走到了这里。你愿意翻开旧信，也愿意试着把没说完的话讲出来。但你慢慢会明白：表达你的版本很重要，接受对方未必给你同一种答案也很重要。',weak:'你有时候把“说清楚”误当成“还能回到从前”。',mission:'你的友情通关提示：说完想说的话，就已经完成了自己的那一部分。',scenetitle:'节目对应：许飞读介绍信落泪、与厉娜谈过往及询问能否重新做朋友',scenesrc:EVIDENCE,pair:'厉娜',tags:['未完待续型','复盘十级学者','情感存档'],dims:[83,38,62,50,58],theme:'#7b9b91'},
@@ -119,7 +119,7 @@ document.querySelectorAll('[data-template]').forEach(x=>x.onclick=()=>{selectedT
 $('#character-preview').onchange=x=>{current=C[x.target.value];history.replaceState({},'',location.pathname+'?r='+current.id);renderResult()};
 $('#upload-button').onclick=()=>$('#photo-upload').click();
 $('#photo-upload').onchange=handleUpload;
-const credit=photoSources[current.id];if(credit&&!customPhotos[current.id]){$('#image-credit').innerHTML='<br>照片资料来源：<a href="'+e(credit.source)+'" target="_blank" rel="noopener noreferrer">'+e(credit.credit)+'</a>。'}
+const credit=photoSources[current.id];if(credit&&!customPhotos[current.id]){$('#image-credit').innerHTML='<br>照片资料来源：<a href="'+e(credit.source)+'" target="_blank" rel="noopener noreferrer">'+e(credit.credit)+'</a>；<a href="https://creativecommons.org/licenses/by/2.5/" target="_blank" rel="noopener noreferrer">图片许可 CC BY 2.5</a>。'}
 renderAllPreviews();
 }
 function scoreForTests(a){const totals=[0,0,0,0,0];a.forEach((pick,i)=>Q[i].opts[pick][1].forEach((v,j)=>totals[j]+=v));return totals.map(t=>Math.max(0,Math.min(100,50+t*2.5)))}
@@ -174,6 +174,7 @@ rounded(ctx,82,1160,736,235,26,'#fbf6ef');ctx.fillStyle='#283e48';ctx.font='26px
 textPos(ctx,'很像我 · 但是这个结果我先发给朋友',91,1475,19,'#f5dbad');
 textPos(ctx,'非官方趣味游戏 / 不是嘉宾真实发言',91,1530,15,'#bdc6c1');
 }
+if(img&&photoSources[c.id]&&!customPhotos[c.id]){textPos(ctx,'PHOTO: RAYOFSUNSHINE / CC BY 2.5',90,t==='ticket'?1510:(t==='magazine'?1550:1580),15,(t==='ticket'||t==='magazine')?'#65727a':'#f7e5d3')}
 }
 async function renderAllPreviews(){if(!current)return;const id=current.id;const im=await photoImg(id);if(!current||current.id!==id)return;for(const t of templates){let cvs=document.getElementById('canvas-'+t.id);if(cvs)drawCanvas(cvs,current,im,t.id)}}
 async function download(){if(!current)return;let b=$('#download');b.disabled=true;b.textContent='正在生成海报…';try{let cvs=document.createElement('canvas');cvs.width=1080;cvs.height=1920;const im=await photoImg(current.id);drawCanvas(cvs,current,im,selectedTemplate);await new Promise((resolve,reject)=>cvs.toBlob(blob=>{if(!blob)return reject(Error('canvas'));const url=URL.createObjectURL(blob);let a=document.createElement('a');a.href=url;a.download='后会友期-友情嘴替-'+current.name+'-'+selectedTemplate+'.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),8000);resolve()},'image/png'));toast(im?'海报已保存，带上照片发朋友圈吧！':'海报已保存，若要真人照片可上传后重新导出')}
