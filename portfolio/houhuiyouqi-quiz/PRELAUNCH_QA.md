@@ -68,3 +68,14 @@
 - 保留独立的数据规则、模板和CI验收，防止视觉修改破坏实际答题、照片上传与图片导出。
 
 **发布决策：审核通过后由项目方合并 PR。此审核分支不自动合并。**
+
+## 7. 实际验收结果（2026-11-18补记）
+
+- [x] 审核分支 Chromium 端到端检查通过：[run #44141933968](https://github.com/Olivia-wr-research/Olivia-wr-research.github.io/actions/runs/44141933968)。
+- [x] **独立预览网址经公网HTTP与Chromium真实访问检查通过**：[run #44142438770（attempt 2）](https://github.com/Olivia-wr-research/Olivia-wr-research.github.io/actions/runs/44142438770)。
+- [x] 实际网页：[审核预览入口](https://olivia-wr-research.github.io/apps/hhyq-prelaunch-review/)；正式地址仍保持原版，未将PR合并。
+- [x] 完成移动端、桌面、照片上传与持久化、四种海报PNG格式和1080×1920尺寸、八个角色结果的自动测试。
+- [ ] **阻断项仍在：8张公开图片授权与静态托管**；不要把用户当前浏览器里的照片当作所有访问者都能看到。
+- [ ] iOS Safari/微信浏览器真机及目标观众可用性测试尚未完成，不应宣称「全部完美」。
+
+补充：先前预览页的首轮404发生在其GitHub Pages部署完成之前，是验证/部署竞态；在部署成功后重跑公开访问与浏览器流程已全部通过。
