@@ -5,13 +5,18 @@ on:
     paths:
       - 'docs/apps/houhuiyouqi-quiz/**'
       - '.github/workflows/houhuiyouqi-quiz-smoke.yml'
+  pull_request:
+    paths:
+      - 'docs/apps/houhuiyouqi-quiz/**'
+      - 'portfolio/houhuiyouqi-quiz/**'
+      - '.github/workflows/houhuiyouqi-quiz-smoke.yml'
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
   smoke:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -55,7 +60,27 @@ jobs:
           })().catch(err=>{console.error(err);process.exit(1)});
           JS
 
+      - name: Verify draft on narrow phones, desktop, photos and all poster exports
+        env:
+          QUIZ_PLAYWRIGHT: ${{ runner.temp }}/quiz-browser/node_modules/playwright-core
+          QUIZ_CHROME: /usr/bin/google-chrome
+          QUIZ_QA_OUT: ${{ runner.temp }}/hhyq-qa
+        run: |
+          curl --fail --silent http://127.0.0.1:8765/apps/houhuiyouqi-quiz/ >/dev/null || (
+            python3 -m http.server 8765 --bind 127.0.0.1 --directory docs >/tmp/hhyq-http-2.log 2>&1 & sleep 2
+          )
+          node portfolio/houhuiyouqi-quiz/qa-check.mjs
+      - name: Keep visual review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: houhuiyouqi-visual-qa
+          path: ${{ runner.temp }}/hhyq-qa/*.png
+          if-no-files-found: ignore
+          retention-days: 14
+
       - name: Verify public GitHub Pages URL serves the V2 app and its assets
+        if: github.event_name != 'pull_request'
         run: |
           set -e
           base="https://olivia-wr-research.github.io/apps/houhuiyouqi-quiz/"
