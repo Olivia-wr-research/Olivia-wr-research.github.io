@@ -95,8 +95,15 @@ $('#back').onclick=()=>{if(step===0)home();else{step--;saveProgress();renderQues
 $('#forward').onclick=()=>{if(answers[step]<0)return;if(step===Q.length-1){current=scoreResult();sessionStorage.removeItem('hhyq-progress');history.replaceState({},'',location.pathname+'?r='+current.id);renderResult()}else{step++;saveProgress();renderQuestion()}};
 }
 function renderChoice(){document.querySelectorAll('[data-ans]').forEach(b=>b.classList.toggle('active',Number(b.dataset.ans)===answers[step]));$('#forward').disabled=false}
-function scoreResult(){const totals=[0,0,0,0,0];answers.forEach((a,i)=>Q[i].opts[a][1].forEach((v,k)=>totals[k]+=v));const dims=totals.map(t=>Math.max(0,Math.min(100,50+t*2.5)));
-const ranking=characters.map((c,i)=>({c,dist:c.dims.reduce((s,v,k)=>s+(v-dims[k])**2*(k===4?1.12:1),0)+i*.00001})).sort((a,b)=>a.dist-b.dist);ranking[0].c.runner=ranking[1].c.name;return ranking[0].c;
+const choiceAnchors = {"li":[2,1,2,2,2,2,1,1,0,3],"xu":[3,3,3,3,1,0,0,2,3,2],"zhang":[0,0,0,0,0,0,3,3,3,0],"ma":[1,1,1,2,2,1,1,1,0,1],"wen":[1,2,3,1,1,3,0,0,2,0],"wang":[2,0,1,2,3,1,1,1,0,3],"qing":[0,0,3,0,0,0,3,3,2,0],"bai":[3,3,1,3,3,1,1,2,1,2]};
+function scoreResult(){
+const v=scoreForTests(answers);
+const ranking=characters.map((c,i)=>{
+const dimensions=c.dims.reduce((sum,x,k)=>sum+(x-v[k])**2*(k===4?1.12:1),0)/50000;
+const choices=answers.reduce((sum,a,k)=>sum+(a!==choiceAnchors[c.id][k]),0)/Q.length;
+return {c,dist:.4*choices+.6*dimensions+i*0.0000001};
+}).sort((a,b)=>a.dist-b.dist);
+ranking[0].c.runner=ranking[1].c.name;return ranking[0].c;
 }
 function getPhotoSrc(id){return customPhotos[id]||(photoSources[id]&&photoSources[id].url)||''}
 function picture(id){const src=getPhotoSrc(id);if(!src)return '';
