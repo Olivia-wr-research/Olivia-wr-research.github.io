@@ -59,16 +59,16 @@ const Q=[
 ['很感动，但“感动”和“原谅”是两件事。',[-1,2,1,0,-1]],
 ['先不回复，我需要自己把心情安顿好。',[-1,1,-2,-1,0]],
 ['直接约TA坐下来，一次把话讲清楚。',[2,-1,2,2,1]]]},
-{scene:'08 / 观察室提问：满分还是零分',fact:'节目相关情境：观察嘉宾曾讨论“满分朋友”和“零分朋友”。',title:'观察室问：一段友情曾经100分，现在可能只剩10分。你认同哪个说法？',opts:[
-['至少曾经100分，不会因为现在的10分就抹掉。',[1,-1,0,0,2]],
-['过去是过去，今天怎么相处就按今天算。',[-2,2,0,0,-2]],
-['分数不重要，先弄明白为什么走到了这一步。',[2,0,2,0,1]],
-['别打分了，先给关系安排一次重新体验。',[2,-1,1,2,0]]]},
-{scene:'09 / 狼人杀同桌局',fact:'节目相关情境：节目曾播出五人狼人杀游戏片段。',title:'狼人杀同桌偏偏坐着你曾经闹翻的那个人。TA说“信我”。你会？',opts:[
-['这游戏先别带私人恩怨，认真玩完。',[0,1,1,1,-1]],
-['“你说信我我就信？给证据！”',[-1,1,2,2,-1]],
-['嘴上说不信，心里还保留一点偏爱。',[1,-1,-1,1,2]],
-['“游戏结束之后，我们能不能也聊聊？”',[2,0,2,1,1]]]},
+{scene:'08 / 布达拉宫友情合影',fact:'节目对应：第5期好友团在布达拉宫拍摄旅行合影。以下为原创互动情境。',title:'旅行团终于拍合照了。你在朋友圈发图之前最可能做什么？',opts:[
+['先给每个人发原图，选照片这事必须一起开心。',[2,-1,1,2,1]],
+['悄悄留一张最好看的，纪念不用给所有人看。',[-1,1,-2,-1,1]],
+['我的表情不好看也不重拍，真实的旅程比照片重要。',[-1,2,0,0,-2]],
+['认真协调每个人的站位和想法，争取拍到大家满意。',[2,0,2,1,0]]]},
+{scene:'09 / 五人狼人杀游戏局',fact:'节目对应：芒果TV 11月13日加更版《5人狼人杀游戏局》。以下是原创游戏情境，并非嘉宾真实发言。',title:'狼人杀局开了，朋友第一轮就把票投给你，你会怎么接？',opts:[
+['“行，咱们先把这局打漂亮，输赢都不记仇。”',[0,0,1,2,-1]],
+['“先别急，凭什么怀疑我？把逻辑讲出来！”',[-1,1,2,2,-1]],
+['嘴上喊“绝交五分钟”，转头又和TA同一阵营。',[1,-1,1,2,2]],
+['“游戏结束，走，咱们去吃点好吃的。”',[2,0,1,1,1]]]},
 {scene:'10 / 后会友期：最后一站',fact:'节目核心命题：重逢之后可以继续同行，也可以体面告别，不强制和好。',title:'车要到站了，旧友问你：“我们以后还会见面吗？”你最想回答？',opts:[
 ['“有机会的。下次，我主动约。”',[2,-1,2,2,1]],
 ['“不知道，但能把这段旅程走完已经很好了。”',[-1,1,0,-1,-1]],
@@ -76,12 +76,12 @@ const Q=[
 ['“我会记得你，也会继续走自己的路。”',[-2,2,-1,-1,0]]]}
 ];
 const app=document.getElementById('app');
-let answers=Array(Q.length).fill(-1),step=0,current=null,selectedTemplate='cinema',customPhotos={},imgCache={};
+let answers=Array(Q.length).fill(-1),step=0,current=null,selectedTemplate='cinema',customPhotos={},imgCache={},portraitFocus={};
 const $=s=>document.querySelector(s);
 const e=s=>String(s).replace(/[&<>"']/g,k=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[k]));
 function toast(s){const t=$('#toast');if(!t)return;t.textContent=s;t.classList.add('on');clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.remove('on'),3000)}
 function nav(dark=false){return '<div class="v2-nav '+(dark?'dark':'')+'"><a href="'+APP_PATH+'" class="v2-brand">HOU HUI YOU QI / 后会友期</a><span class="v2-mini">非官方粉丝创作 · V2</span></div>'}
-function reset(){step=0;answers=Array(Q.length).fill(-1);sessionStorage.removeItem('hhyq-progress');history.replaceState({},'',location.pathname);renderQuestion()}
+function reset(){step=0;answers=Array(Q.length).fill(-1);try{sessionStorage.removeItem('hhyq-progress')}catch{}history.replaceState({},'',location.pathname);renderQuestion()}
 function saveProgress(){try{sessionStorage.setItem('hhyq-progress',JSON.stringify({answers,step}))}catch{}}
 function resume(){try{const s=JSON.parse(sessionStorage.getItem('hhyq-progress'));if(s&&Array.isArray(s.answers)&&s.answers.length===Q.length&&s.answers.every(a=>a>=-1&&a<4)){answers=s.answers;step=Math.max(0,Math.min(Q.length-1,s.step||0));return true}}catch{}return false}
 function home(){document.title='谁是你的友情嘴替｜后会友期非官方趣味测试';window.scrollTo(0,0);
@@ -89,12 +89,12 @@ app.innerHTML='<main class="v2-home">'+nav()+'<div class="v2-hero"><section><div
 $('#start').onclick=reset;const c=$('#continue');if(c)c.onclick=()=>{resume();renderQuestion()};
 }
 function renderQuestion(){document.title='第'+(step+1)+'站｜后会友期友情人格测试';window.scrollTo(0,0);let q=Q[step];
-app.innerHTML='<main class="v2-shell">'+nav(true)+'<div class="v2-body"><div class="v2-prog-head"><span>友情售后工单 · 第'+(step+1)+'站</span><span>'+(step+1)+' / '+Q.length+'</span></div><div class="v2-progress"><div style="width:'+Math.round(step/Q.length*100)+'%"></div></div><div class="v2-episode">'+e(q.scene)+'</div><section class="v2-question"><h2>'+e(q.title)+'</h2><p class="notice">'+e(q.fact)+'<br><small>以下为原创情境选项，不是嘉宾在节目中的真实作答。</small></p>'+q.opts.map((o,i)=>'<button data-ans="'+i+'" class="v2-choice '+(answers[step]===i?'active':'')+'"><b>'+('ABCD'[i])+'</b><span>'+e(o[0])+'</span></button>').join('')+'</section><div class="v2-qfoot"><button class="v2-textbtn" id="back">'+(step?'← 上一站':'← 回首页')+'</button><button class="v2-btn dark" id="forward" '+(answers[step]<0?'disabled':'')+'>'+(step===Q.length-1?'揭晓我的互联网嘴替 →':'下一站 →')+'</button></div><div class="v2-deco">没有标准答案，第一反应最像你的友情相处方式。</div></div></main>';
+app.innerHTML='<main class="v2-shell">'+nav(true)+'<div class="v2-body"><div class="v2-prog-head"><span>友情售后工单 · 第'+(step+1)+'站</span><span>'+(step+1)+' / '+Q.length+'</span></div><div class="v2-progress" role="progressbar" aria-label="测试进度" aria-valuemin="0" aria-valuemax="10" aria-valuenow="'+(step+1)+'"><div style="width:'+Math.round((step+1)/Q.length*100)+'%"></div></div><div class="v2-episode">'+e(q.scene)+'</div><section class="v2-question"><h2>'+e(q.title)+'</h2><p class="notice">'+e(q.fact)+'<br><small>以下为原创情境选项，不是嘉宾在节目中的真实作答。</small></p>'+q.opts.map((o,i)=>'<button data-ans="'+i+'" class="v2-choice '+(answers[step]===i?'active':'')+'" aria-pressed="'+(answers[step]===i?'true':'false')+'"><b>'+('ABCD'[i])+'</b><span>'+e(o[0])+'</span></button>').join('')+'</section><div class="v2-qfoot"><button class="v2-textbtn" id="back">'+(step?'← 上一站':'← 回首页')+'</button><button class="v2-btn dark" id="forward" '+(answers[step]<0?'disabled':'')+'>'+(step===Q.length-1?'揭晓我的互联网嘴替 →':'下一站 →')+'</button></div><div class="v2-deco">没有标准答案，第一反应最像你的友情相处方式。</div></div></main>';
 document.querySelectorAll('[data-ans]').forEach(b=>b.onclick=()=>{answers[step]=Number(b.dataset.ans);saveProgress();renderChoice()});
 $('#back').onclick=()=>{if(step===0)home();else{step--;saveProgress();renderQuestion()}};
 $('#forward').onclick=()=>{if(answers[step]<0)return;if(step===Q.length-1){current=scoreResult();sessionStorage.removeItem('hhyq-progress');history.replaceState({},'',location.pathname+'?r='+current.id);renderResult()}else{step++;saveProgress();renderQuestion()}};
 }
-function renderChoice(){document.querySelectorAll('[data-ans]').forEach(b=>b.classList.toggle('active',Number(b.dataset.ans)===answers[step]));$('#forward').disabled=false}
+function renderChoice(){document.querySelectorAll('[data-ans]').forEach(b=>{const chosen=Number(b.dataset.ans)===answers[step];b.classList.toggle('active',chosen);b.setAttribute('aria-pressed',String(chosen))});$('#forward').disabled=false}
 const choiceAnchors = {"li":[2,1,2,2,2,2,1,1,0,3],"xu":[3,3,3,3,1,0,0,2,3,2],"zhang":[0,0,0,0,0,0,3,3,3,0],"ma":[1,1,1,2,2,1,1,1,0,1],"wen":[1,2,3,1,1,3,0,0,2,0],"wang":[2,0,1,2,3,1,1,1,0,3],"qing":[0,0,3,0,0,0,3,3,2,0],"bai":[3,3,1,3,3,1,1,2,1,2]};
 function scoreResult(){
 const v=scoreForTests(answers);
@@ -105,12 +105,26 @@ return {c,dist:.4*choices+.6*dimensions+i*0.0000001};
 }).sort((a,b)=>a.dist-b.dist);
 ranking[0].c.runner=ranking[1].c.name;return ranking[0].c;
 }
+
+/* Editorial, answer-dependent reasons; illustrative, not a scientific assessment. */
+const answerInsights={
+ 0:['你会把记得一个人落实成具体行动。','你更愿意先给自己一点缓冲。','你珍惜过去，但不强迫关系重新打开。','你愿意给一段迟到的解释留入口。'],
+ 3:['你对新朋友加入持开放态度。','你很在意自己在关系里的独特位置。','你认可亲密不需要互相独占。','你更倾向于把担心当面说清楚。'],
+ 7:['你习惯先把快乐分享给大家。','你会悄悄收藏属于自己的好瞬间。','你比照片是否完美更在乎真实体验。','你愿意付出协调成本，让大家都舒服。'],
+ 8:['你在游戏里更在乎尽兴，不想记仇。','遇到质疑，你首先希望把证据讲明白。','你擅长用玩笑化解小别扭。','你会主动把朋友拉回轻松的相处节奏。']
+};
+function evidenceBlock(c){
+ if(!answers.every(a=>a>=0&&a<4))return '<p class="v2-reason-note">这是供分享的人物画像。亲自完成10道题后，还能看到对应选择的专属解释。</p>';
+ const choices=[0,3,7,8].map(i=>({i,match:answers[i]===choiceAnchors[c.id][i],text:answerInsights[i][answers[i]]}));
+ const selected=choices.sort((a,b)=>Number(b.match)-Number(a.match)).slice(0,3).sort((a,b)=>a.i-b.i);
+ return '<div class="v2-evidence">'+selected.map(v=>'<div class="v2-evidence-row"><span>第'+(v.i+1)+'题</span><p>'+e(v.text)+'</p></div>').join('')+'</div><p class="v2-reason-note">只是说明这次选择如何参与趣味匹配，不是科学人格测量。</p>';
+}
 function getPhotoSrc(id){return customPhotos[id]||(photoSources[id]&&photoSources[id].url)||''}
 function picture(id){const src=getPhotoSrc(id);if(!src)return '';
 return '<img data-character-photo="'+id+'" src="'+e(src)+'" crossorigin="anonymous" alt="'+e(C[id].name)+'人物照片" onerror="this.style.display=\'none\';this.parentElement.classList.add(\'photo-unavailable\');" />'}
 function characterCard(c){let has=getPhotoSrc(c.id);
 return '<section class="v2-character"><div class="v2-photo"><div class="fallback-art"><span class="word">'+e(c.name)+'</span><span class="sub">你的友情类型 / '+(has?'照片加载失败可自行更换':'请上传有权使用的角色照片')+'</span></div>'+picture(c.id)+'<span class="v2-portrait-tag">'+(has?'人物照片 / 可更换':'人物姓名艺术卡 / 待添加照片')+'</span></div><div class="v2-character-copy"><div class="smallcaps">YOUR FRIENDSHIP TYPE</div><h2>'+e(c.title)+'</h2><div class="quot">'+e(c.stamp)+'</div><div class="v2-hashtags">'+c.tags.map(t=>'<span>#'+e(t)+'</span>').join('')+'</div></div></section>'}
-function resultDetails(c){return '<section class="v2-analysis"><div class="v2-section-label">01 / 你的互联网弹幕</div><div class="v2-bubble">'+e(c.meme).replace(/\n/g,'<br>')+'</div><div class="v2-section-label">02 / 表面和内心两套系统</div><p class="v2-p">'+e(c.caption).replace(/\n/g,'<br>')+'</p><div class="v2-section-label">03 / 说点真正戳心的</div><p class="v2-p">'+e(c.touch)+'</p><div class="v2-section-label">04 / 友情翻车预警</div><p class="v2-p">'+e(c.weak)+'</p><div class="v2-section-label">05 / 下一站小纸条</div><div class="v2-soul">'+e(c.mission)+'</div><div class="v2-scene"><b>节目对应情境：</b>'+e(c.scenetitle.replace('节目对应：',''))+'<br><a href="'+e(c.scenesrc)+'" target="_blank" rel="noopener noreferrer">查看芒果TV节目资料 ↗</a><br><small>人物标签与梗文案均为原创趣味类比，并非嘉宾真实发言或科学测评。</small></div><div class="v2-actions"><button class="v2-btn dark" id="go-poster">选我的海报 ↓</button><button class="v2-btn outline" id="share-link">↗ 分享结果</button><button class="v2-btn outline" id="restart">↺ 再测一次</button></div><p class="v2-cta-note">节目里不一定每段友情都要和好。你也不用把自己活成哪位嘉宾，这是一次好玩的关系投射。</p></section>'}
+function resultDetails(c){return '<section class="v2-analysis"><div class="v2-section-label">01 / 你的互联网弹幕</div><div class="v2-bubble">'+e(c.meme).replace(/\n/g,'<br>')+'</div><div class="v2-section-label">02 / 表面和内心两套系统</div><p class="v2-p">'+e(c.caption).replace(/\n/g,'<br>')+'</p><div class="v2-section-label">03 / 你的真实选择线索</div>'+evidenceBlock(c)+'<div class="v2-section-label">04 / 说点真正戳心的</div><p class="v2-p">'+e(c.touch)+'</p><div class="v2-section-label">05 / 友情翻车预警</div><p class="v2-p">'+e(c.weak)+'</p><div class="v2-section-label">06 / 下一站小纸条</div><div class="v2-soul">'+e(c.mission)+'</div><div class="v2-scene"><b>节目对应情境：</b>'+e(c.scenetitle.replace('节目对应：',''))+'<br><a href="'+e(c.scenesrc)+'" target="_blank" rel="noopener noreferrer">查看芒果TV节目资料 ↗</a><br><small>人物标签与梗文案均为原创趣味类比，并非嘉宾真实发言或科学测评。</small></div><div class="v2-actions"><button class="v2-btn dark" id="go-poster">选我的海报 ↓</button><button class="v2-btn outline" id="share-link">↗ 分享结果</button><button class="v2-btn outline" id="restart">↺ 再测一次</button></div><p class="v2-cta-note">节目里不一定每段友情都要和好。你也不用把自己活成哪位嘉宾，这是一次好玩的关系投射。</p></section>'}
 function resultHTML(c){return '<main class="v2-shell">'+nav(true)+'<header class="v2-result-head"><div class="eyebrow">RESULT / 友情嘴替鉴定书</div><h1>你测出了 <span style="color:#ad7b4c">'+e(c.name)+'</span> 型</h1><p>你不是被“判定”为某位真人，只是在某种友情处境下，与你选中的节目人物原型相似。</p></header><div class="v2-result-grid">'+characterCard(c)+resultDetails(c)+'</div><section class="v2-panel" id="poster-chooser"><h2>来，选一张你愿意发朋友圈的海报</h2><p>四种排版不是换色皮肤。点击就能预览并选用。下方可以切换人物检查每张卡片是否好看。</p><div class="v2-templates">'+templates.map(t=>'<button class="v2-template '+(t.id===selectedTemplate?'active':'')+'" data-template="'+t.id+'"><canvas id="canvas-'+t.id+'" width="270" height="480" aria-label="'+e(t.name)+'预览"></canvas><strong>'+e(t.name)+'</strong><small>'+e(t.desc)+'</small></button>').join('')+'</div><div class="v2-design-toolbar"><select id="character-preview" class="v2-select" aria-label="预览其他角色">'+characters.map(p=>'<option value="'+p.id+'" '+(p.id===c.id?'selected':'')+'>'+e(p.name)+'</option>').join('')+'</select><button class="v2-btn dark" id="download">保存当前海报 PNG ↓</button><button class="v2-btn outline" id="upload-button">上传/替换人物照片</button><button class="v2-btn outline" id="copy-caption">复制朋友圈文案</button></div><div class="v2-banner"><b>关于照片：</b>只有部分人物有可核实来源的公开许可图片。其他人物不再显示灰色人形冒充真图——请使用「上传/替换人物照片」选择你有权使用的照片，预览与导出同步更新。你上传的图片仅留在当前浏览器，不会上传到服务器；分享链接不会携带你的图片。</div></section><footer class="v2-footer">《后会友期》非官方粉丝互动作品。题目参考芒果TV公开节目情境，结果是原创设定，不代表真人真实人格。<br>节目资料：<a href="'+EVIDENCE+'" target="_blank" rel="noopener noreferrer">芒果TV官方节目页</a>。<span id="image-credit"></span></footer><input hidden id="photo-upload" type="file" accept="image/jpeg,image/png,image/webp"></main>'}
 function renderResult(){if(!current)return home();window.scrollTo(0,0);document.title='我是'+current.name+'型友情人格｜后会友期人物测试';app.innerHTML=resultHTML(current);
 $('#restart').onclick=reset;$('#share-link').onclick=share;$('#go-poster').onclick=()=>document.getElementById('poster-chooser').scrollIntoView({behavior:'smooth'});
