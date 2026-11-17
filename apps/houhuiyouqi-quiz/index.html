@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#142536">
+<meta name="description" content="10道关于成年友情的选择题，测测你的相处方式最像《后会友期》哪位嘉宾。非官方趣味测试。">
+<title>如果再见，你会怎么说｜后会友期 · 友情人物测试</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=ZCOOL+XiaoWei&display=swap');
+:root{--ink:#182733;--muted:#60707c;--cream:#f8f3e9;--gold:#d7a76e;--line:rgba(31,53,69,.14);--r:22px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#142536;color:var(--ink);font-family:'Noto Sans SC',-apple-system,BlinkMacSystemFont,"PingFang SC",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit;cursor:pointer;border:0}a{color:inherit}
+#app{min-height:100svh}
+.screen{min-height:100svh;animation:enter .52s ease both}
+@keyframes enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.container{max-width:1120px;margin:auto;padding:0 24px}
+.topline{display:flex;align-items:center;justify-content:space-between;padding:27px 0;position:relative;z-index:2}
+.mark{font-size:12px;letter-spacing:2.2px;font-weight:700;color:#f8f5ec;text-decoration:none}
+.edition{color:#d4d9da;font-size:11px;letter-spacing:1.5px}
+.hero{min-height:100svh;overflow:hidden;color:#fff;position:relative;background:linear-gradient(180deg,#182d40 0%,#345670 39%,#b88f79 67%,#253c4e 100%)}
+.hero:before{content:'';position:absolute;top:23%;right:12%;height:260px;width:260px;border-radius:50%;background:radial-gradient(circle,#eed1ad 0,#f0c4a1 31%,rgba(246,207,161,.42) 55%,transparent 75%);filter:blur(1px);opacity:.89}
+.hero:after{content:'';position:absolute;bottom:-4%;width:130%;height:37%;left:-15%;background:#162b39;clip-path:polygon(0 53%,10% 38%,21% 56%,35% 29%,49% 55%,61% 31%,74% 47%,87% 24%,100% 40%,100% 100%,0 100%);opacity:.9}
+.hero-line{position:absolute;left:-10%;width:120%;height:1px;background:rgba(255,255,255,.16);transform:rotate(-5deg);top:74%;z-index:1}
+.hero-line:after{content:'';position:absolute;top:19px;left:0;width:100%;height:1px;background:rgba(255,255,255,.12)}
+.hero-content{position:relative;z-index:3;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;min-height:calc(100svh - 105px);padding-bottom:60px}
+.kicker{text-transform:uppercase;letter-spacing:4px;font-size:11px;color:#f3d8b5;font-weight:700;line-height:1.6}
+.hero h1{font-family:'ZCOOL XiaoWei','Songti SC',serif;font-weight:400;font-size:clamp(57px,7.8vw,109px);line-height:1.09;letter-spacing:2px;margin:25px 0 20px;text-shadow:0 10px 50px rgba(0,0,0,.16)}
+.hero h1 em{font-style:normal;color:#f2c58d}
+.lead{font-size:17px;line-height:2.0;color:#ebedf0;max-width:430px;margin-bottom:32px}
+.primary{background:#edc491;color:#1d2d3b;border-radius:999px;padding:17px 32px;font-weight:700;letter-spacing:.3px;box-shadow:0 9px 30px rgba(0,0,0,.15);transition:transform .2s,background .2s}
+.primary:hover{transform:translateY(-2px);background:#f5d4a8}
+.secondary{background:transparent;color:inherit;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:13px 23px}
+.hero-note{margin-top:16px;color:#dadbdb;font-size:12px;letter-spacing:.4px}
+.postcards{height:500px;max-width:510px;margin-left:auto;position:relative;display:flex;align-items:center;justify-content:center}
+.photo-card{position:absolute;width:53%;height:68%;background:#e6dfd4;border:8px solid #e7e1d5;border-bottom:30px solid #e7e1d5;box-shadow:0 24px 80px rgba(5,12,24,.5);overflow:hidden;transition:transform .3s}
+.photo-card img{width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(.96)}
+.photo-card:nth-child(1){transform:translate(-41px,-30px) rotate(-12deg);z-index:2}
+.photo-card:nth-child(2){transform:translate(100px,21px) rotate(12deg);z-index:1}
+.photo-card:nth-child(3){transform:translate(-104px,92px) rotate(-2deg) scale(.79);z-index:3}
+.polaroid-stamp{position:absolute;color:#f5e5cf;bottom:20px;right:-8px;font-size:12px;letter-spacing:2px;transform:rotate(-8deg);z-index:4}
+.rail{height:7px;width:250px;background:rgba(252,238,218,.4);position:absolute;bottom:40px;left:10px;border-radius:10px;transform:rotate(-5deg)}
+.footer{z-index:4;position:absolute;bottom:20px;left:0;width:100%;font-size:11px;color:rgba(255,255,255,.65)}
+.footer .container{display:flex;justify-content:space-between;gap:12px}
+.quiz-bg{background:linear-gradient(160deg,#f8f2e8,#e7ece9 90%);min-height:100svh}
+.quiz-bg .topline .mark{color:#2b4555}
+.quiz-bg .edition{color:#627682}
+.quiz-shell{max-width:760px;margin:5vh auto 0;padding:0 24px 90px}
+.prog-head{display:flex;justify-content:space-between;color:#677883;font-size:12px;letter-spacing:1px;font-weight:600;margin-bottom:14px}
+.progress{height:5px;border-radius:12px;background:#d8dbd6;overflow:hidden}
+.progress>div{height:100%;background:#b88c64;transition:width .35s}
+.question-card{margin:35px 0;background:rgba(255,255,255,.76);border:1px solid rgba(255,255,255,.85);border-radius:28px;padding:clamp(25px,5vw,52px);box-shadow:0 12px 50px rgba(23,54,66,.08)}
+.q-overline{font-size:12px;color:#ab7a4b;letter-spacing:2px;font-weight:700;margin-bottom:18px}
+.question-card h2{font-family:'ZCOOL XiaoWei','Songti SC',serif;font-size:clamp(25px,4.6vw,39px);line-height:1.55;letter-spacing:1px;font-weight:400;margin:0 0 35px}
+.answers{display:grid;gap:12px}
+.option{width:100%;display:flex;gap:15px;align-items:center;padding:17px 19px;text-align:left;color:#243643;background:#fbf9f4;border:1.5px solid #e6e2d8;border-radius:16px;line-height:1.7;font-size:14px;transition:all .18s}
+.option i{font-style:normal;flex:0 0 27px;height:27px;border-radius:50%;display:grid;place-items:center;color:#ae8965;border:1px solid #d7c5aa;font-size:12px}
+.option:hover,.option.selected{border-color:#c58c54;background:#f7eddd;transform:translateX(2px)}
+.option.selected i{background:#b78a5e;border-color:#b78a5e;color:#fff}
+.q-actions{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.ghost{background:transparent;color:#607381;font-weight:600;font-size:13px}
+.next{background:#203c4e;color:#fff;border-radius:999px;padding:14px 29px;font-size:14px;font-weight:600}
+.next:disabled{opacity:.38;cursor:not-allowed}
+.result-bg{min-height:100svh;background:linear-gradient(150deg,#f3e8d9,#f7f5ed 45%,#d9e5e6)}
+.result-header{text-align:center;padding:20px 24px 26px}
+.result-header .tiny{color:#9d7755;font-size:12px;letter-spacing:3px}
+.result-header h1{font-family:'ZCOOL XiaoWei','Songti SC',serif;font-size:clamp(36px,7vw,67px);font-weight:400;margin:16px 0 5px;line-height:1.2}
+.result-header .sub{color:#60727a;font-size:14px}
+.result-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:20px;max-width:1050px;margin:0 auto;padding:0 22px 60px;align-items:start}
+.identity{background:#1c3346;color:#fff;border-radius:22px;overflow:hidden;box-shadow:0 15px 50px rgba(22,51,67,.23)}
+.identity-photo{height:410px;position:relative;background:linear-gradient(130deg,#ac9b8c,#2f5367);overflow:hidden}
+.identity-photo>img{width:100%;height:100%;object-fit:cover;filter:saturate(.78) contrast(.95)}
+.identity-photo:after{content:'';position:absolute;inset:25% 0 0;background:linear-gradient(to bottom,transparent,rgba(18,36,51,.6))}
+.identity-name{position:absolute;z-index:2;bottom:27px;left:28px}
+.identity-name small{font-size:12px;letter-spacing:3px;color:#f6d9aa}
+.identity-name h2{font-family:'ZCOOL XiaoWei','Songti SC',serif;font-size:clamp(43px,6vw,65px);font-weight:400;letter-spacing:3px;margin:3px 0}
+.identity-details{padding:28px}
+.identity-details .quote{font-family:'ZCOOL XiaoWei','Songti SC',serif;font-size:23px;line-height:1.55;color:#f9e0b7}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.tags span{font-size:11px;border:1px solid rgba(255,255,255,.32);color:#e4e7e5;border-radius:20px;padding:7px 11px}
+.divine{font-size:12px;color:#d7dde0;line-height:1.8}
+.insights{padding:32px;background:rgba(255,255,255,.83);border-radius:22px;box-shadow:0 15px 50px rgba(22,51,67,.06)}
+.insights h3{font-size:12px;letter-spacing:3px;font-weight:700;color:#ac7a4a;margin:0 0 8px}
+.insights p{font-size:15px;line-height:1.95;color:#394d58;margin:10px 0 28px}
+.insights strong{color:#1d3343}
+.longline{height:1px;background:#e5ded2;margin:26px 0}
+.bond{background:#edf2ed;border-radius:16px;padding:19px 20px}
+.bond .part{color:#527074;font-size:12px}
+.bond b{display:block;margin:6px 0;font-size:17px}
+.actionbar{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.actionbar button{padding:13px 20px;border-radius:999px;font-size:13px;font-weight:600}
+.darkbtn{background:#203e51;color:#fff}
+.lightbtn{background:#f3e3d2;color:#704e33}
+.outlinebtn{background:transparent;color:#395060;border:1px solid #9cb0b6}
+.notice{margin-top:16px;font-size:12px;color:#637681;line-height:1.8}
+.sources{text-align:center;color:#758088;font-size:11px;line-height:1.9;padding:0 22px 30px}
+.sources a{text-decoration:underline;text-underline-offset:3px}
+.toast{position:fixed;z-index:20;bottom:30px;left:50%;transform:translateX(-50%);padding:13px 22px;border-radius:20px;background:#203d50;color:#fff;font-size:13px;box-shadow:0 10px 24px #162d3650;opacity:0;transition:opacity .25s;pointer-events:none;max-width:92vw}
+.toast.on{opacity:1}
+.hidden{display:none!important}
+.hero .tiny-disclaimer{margin-top:23px;font-size:10px;opacity:.8;line-height:1.75}
+@media(max-width:760px){
+.container{padding:0 21px}.topline{padding:21px 0}.edition{font-size:10px}
+.hero-content{display:flex;flex-direction:column;align-items:stretch;justify-content:start;gap:0;padding-top:10px;padding-bottom:95px}
+.hero h1{font-size:clamp(57px,13vw,80px);margin:16px 0}.lead{font-size:14px;line-height:1.85;margin:8px 0 23px}
+.postcards{margin:12px auto 0;height:255px;width:100%;max-width:380px;order:-1}.photo-card{width:41%;height:84%;border-width:6px;border-bottom-width:17px}
+.photo-card:nth-child(1){transform:translate(-40px,-9px) rotate(-11deg)}
+.photo-card:nth-child(2){transform:translate(85px,-3px) rotate(10deg)}
+.photo-card:nth-child(3){transform:translate(-104px,42px) rotate(-3deg) scale(.75)}
+.polaroid-stamp{bottom:-2px;right:4px}
+.hero:before{width:200px;height:200px;top:14%;right:4%}
+.hero:after{height:23%}
+.hero-line{top:84%}
+.hero .footer{position:relative;bottom:auto;padding:12px 0 24px}
+.hero .footer .container{flex-wrap:wrap}
+.question-card{margin:30px 0;padding:27px 20px;border-radius:22px}.question-card h2{font-size:28px}
+.option{padding:15px 14px;font-size:13.5px}
+.result-layout{grid-template-columns:1fr;max-width:560px;padding:0 16px 35px;gap:15px}
+.result-header{padding:12px 16px 22px}
+.identity-photo{height:420px}
+.insights{padding:25px 21px}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div><div class="toast" id="toast" role="status"></div>
+<input class="hidden" id="upload" type="file" accept="image/*">
+<script>
+'use strict';
+const SITE='https://olivia-wr-research.github.io/apps/houhuiyouqi-quiz/';
+const photos={
+  ma:'https://commons.wikimedia.org/wiki/Special:FilePath/180115_%E8%8B%B1%E9%9B%84%E6%9C%AC%E8%89%B22018_%E9%A6%96%E6%98%A0%E7%A4%BC_%E7%BA%A2%E6%AF%AF_%E9%A9%AC%E5%A4%A9%E5%AE%87_6.jpg?width=640',
+  zhang:'https://commons.wikimedia.org/wiki/Special:FilePath/Alina_Zhang_Meng_cropped.jpg?width=640',
+  xu:'https://musicyyds.sztu.edu.cn/__local/E/5B/1C/C19B63B7CD3D4A50FBEF343CB81_724B9AED_D643.jpeg',
+  li:'https://n.sinaimg.cn/ent/transform/20170104/7Pfd-fxzczfc6852407.jpg',
+  wen:'https://www.bqweekly.com/uploads/20260418/ac231bf229f8165ad60fea3607c3cd9d.jpg',
+  wang:'https://chinesemov.com/images/actors2/Wang-Zixuan-Actress-1.jpg',
+  qing:'https://q9.itc.cn/images01/20240525/f3f71114185141a4999aeeb511041464.png',
+  bai:'' 
+};
+const resultData={
+  ma:{id:'ma',name:'马天宇',title:'温柔的边界守护者',line:'你不是不在乎，你只是终于学会：真心不等于无限让步。',tags:['边界感','安静体贴','清醒克制'],traits:[-0.55,-0.35,-0.4,-0.5],why:'别人以为你不主动，就是不想靠近。但其实你对感情的感受很细，只是不喜欢用热闹证明亲密。当一句话让你不舒服，你往往先沉默、再慢慢确定自己的界限。你可以理解别人的难处，也会认真守住自己的生活。',blind:'你太擅长体面离开，以至于在意你的人不一定知道你曾经认真等过。',gift:'允许别人理解得慢一点，但不必反复解释到自己精疲力尽。',pair:'张萌',pairLine:'一个擅长靠近，一个珍惜距离；差异可能让你们学会温柔而清楚地表达需求。',color:'#8299ab',src:'https://commons.wikimedia.org/wiki/File:180115_%E8%8B%B1%E9%9B%84%E6%9C%AC%E8%89%B22018_%E9%A6%96%E6%98%A0%E7%A4%BC_%E7%BA%A2%E6%AF%AF_%E9%A9%AC%E5%A4%A9%E5%AE%87_6.jpg'},
+  zhang:{id:'zhang',name:'张萌',title:'永远记得为你留一份的人',line:'哪怕很久没联系，你的记忆里，也给重要的人留着座位。',tags:['主动修复','热情直接','记住细节'],traits:[0.85,0.75,0.7,0.75],why:'你像那种旅行时看到一件小东西，会突然想起某位旧友的人。你相信关系可以被重新点亮，也愿意先迈出那一步。你能带来热度和行动力，却有时会忘了：对方也许还需要一点安全距离。',blind:'你习惯用“我是在为你好”表达关心，可你的好意偶尔会跑在对方的感受前面。',gift:'真正的靠近，不只需要勇气，还需要征求对方的意愿。',pair:'马天宇',pairLine:'你的热情会融化僵局；对方的边界也提醒你，温柔不等于越界。',color:'#bd8166',src:'https://commons.wikimedia.org/wiki/File:Alina_Zhang_Meng_cropped.jpg'},
+  xu:{id:'xu',name:'许飞',title:'把未说完的话写成歌的人',line:'你可以沉默很久，但真正重视的故事，你还想写一个后记。',tags:['情感存档','自省表达','留有余地'],traits:[0.25,0.15,0.92,-0.25],why:'你对旧事有惊人的记忆力，不一定记住日期，却会记住一句话带来的重量。你愿意反复琢磨“是不是哪里误会了”，也渴望有天坐下来，把每个人的版本都讲清楚。你看起来云淡风轻，心里却常常保留着一扇门。',blind:'你有时把理解误当成重来，忘了对方也有选择不回应的自由。',gift:'写完那封心里的信，不一定要寄出去；有时表达本身就是终点。',pair:'厉娜',pairLine:'一个愿意追溯缘由，一个选择照顾当下；彼此尊重，才有可能听见答案。',color:'#799c93',src:'https://musicyyds.sztu.edu.cn/info/1085/1869.htm'},
+  li:{id:'li',name:'厉娜',title:'安静把人生翻到下一页的人',line:'你承认曾经很重要，但不会为了证明重要而困在昨天。',tags:['内在坚定','慢热谨慎','自我修复'],traits:[-0.85,-0.7,-0.9,-0.5],why:'热闹的场合你并不是没有情绪，只是更愿意先把它放在心里。对你来说，不是每段关系都一定要得到解释；有些事发生过，重量不会消失，但你依旧能继续生活。你的平静里藏着自己走过的很多路。',blind:'你太能自己消化委屈，别人可能误以为你没有受到伤害。',gift:'不愿意重来是你的权利；但让亲近的人看见你的真实感受，也不是示弱。',pair:'许飞',pairLine:'一个试着追问，一个练习放下；即使方向不同，也能给彼此留下一点体面。',color:'#8a9097',src:'https://ent.sina.cn/music/yneidi/2017-01-04/detail-ifxzczfc6852555.d.html'},
+  wen:{id:'wen',name:'文吉儿',title:'把唯一当作认真承诺的人',line:'你想要的不是被所有人喜欢，而是被重要的人坚定地选择。',tags:['情感浓度','细腻敏锐','重视承诺'],traits:[0.95,-0.78,0.85,-0.25],why:'你可以接受朋友有很多朋友，却很难接受那些曾经说好的默契悄悄变了样。你会注意到消息里的语气，也会反复想一段关系从哪里开始失衡。你在意的不是排位，而是自己的真心有没有被同样郑重地对待。',blind:'当你把期待放得很深，可能会不自觉地要求别人以相同方式表达爱。',gift:'关系的亲密并不总有统一刻度；说清期待，比暗自对比分量更有用。',pair:'王子璇',pairLine:'一个重视关系的独特性，一个更看重说清边界；表达方式不同，不等于不重视。',color:'#af8aa3',src:'https://www.bqweekly.com/culture/2007.html'},
+  wang:{id:'wang',name:'王子璇',title:'把真实摊在阳光下的人',line:'你不想靠猜维持关系，宁愿把不舒服说出来。',tags:['清晰表达','自主意识','拒绝讨好'],traits:[-0.3,0.9,-0.35,0.25],why:'你不一定是最会解释的人，但你不喜欢问题长期悬在空气里。遇到误解，你更希望大家谈清楚发生了什么，而不是用“都过去了”匆匆盖过。你愿意面对不同意见，也非常在意自己能否保留选择的空间。',blind:'表达得太快、太直接时，可能让还没准备好的人觉得无处可退。',gift:'坚定可以与耐心同时存在，不必把每次沟通都变成当场结案。',pair:'文吉儿',pairLine:'一个希望被重视，一个希望被理解；明确的规则能让感情少一点误读。',color:'#a89783',src:'https://act.chinesemov.com/actors/Wang-Zixuan-Actress'},
+  qing:{id:'qing',name:'青稚',title:'不甘心就这样散场的行动派',line:'你不擅长认输，包括对那些曾经和你并肩的人。',tags:['行动优先','强烈投入','重视并肩'],traits:[0.48,0.28,0.65,0.96],why:'遇到问题时，你的第一反应常是“那我们做点什么”。你相信很多裂痕可以靠重新并肩、一次真诚的行动慢慢修补。你身上有很强的投入感，甚至在没有结果时也愿意再试一次。但对方不一定想跟你用同样的速度前进。',blind:'你容易把想解决问题的急切，传递成“现在就得有答案”的压力。',gift:'行动可以表达诚意，但关系的修复需要两个节奏都被尊重。',pair:'白小纯',pairLine:'一个想继续冲线，一个要先确认规则；真正的默契来自彼此听懂。',color:'#a78d65',src:'https://www.sohu.com/a/781452432_121387814'},
+  bai:{id:'bai',name:'白小纯',title:'有话就直说的清醒玩家',line:'你可以很在乎，但不愿再拿含糊不清的话赌一次真心。',tags:['直来直往','自主判断','看重公平'],traits:[-0.25,0.98,-0.88,0.82],why:'你不喜欢别人替你解释自己的感受。关系有问题，你希望把事情的边界、彼此的责任和当时的选择都说明白。你有自己的判断，也会为自己的利益发声；对你来说，真正的亲密不是处处让步，而是相互尊重。',blind:'过于强调事实与边界时，有些更细软的情绪会来不及被听见。',gift:'把话说清楚很重要，把对方说话的空间留下来，也一样重要。',pair:'青稚',pairLine:'一个急于证明行动，一个坚持公平清楚；彼此理解比谁赢更重要。',color:'#8b9a8f',src:'https://www.baike.com/wikiid/7459633726093131795'}
+};
+const questions=[
+ {scene:'出发前 · 一封没寄出的信',title:'手机突然弹出一位很久没有联系的旧友发来的消息：“最近还好吗？”',opts:[['马上回：“好久不见！你怎么样？”',[1,0.7,0.8,0.8]],['看着对话框很久，最后打下一句“还好”',[-0.5,-0.7,0.4,-0.7]],['先问问自己：我真的还想恢复联系吗？',[-1,-0.25,-1,-0.4]],['问一句“你怎么突然想起我了？”',[-0.2,1,-0.6,0.6]]]},
+ {scene:'第一站 · 车窗外的晚霞',title:'朋友约好的旅行临时出了变故，你最在意的是？',opts:[['我们还能不能一起完成这段旅程？',[0.95,0.2,0.9,0.7]],['我希望对方先把真实原因告诉我',[-0.15,1,-0.4,0.3]],['没关系，各自调整计划也很好',[-0.9,-0.3,-0.9,-0.3]],['我会有点失落，但不想给对方压力',[0.5,-0.8,0.6,-0.4]]]},
+ {scene:'第二站 · 一张合照',title:'整理相册时，翻到一张你们当年笑得特别开心的合照。',opts:[['想发给TA，说“你还记得这天吗？”',[0.8,0.6,1,0.9]],['自己保存下来，偶尔想起就好',[-0.4,-0.85,0.9,-0.5]],['不否认快乐，只是现在不想再打开',[-0.95,-0.4,-0.85,-0.1]],['会想起当时的委屈，想把它讲清楚',[-0.1,0.9,-0.2,0.4]]]},
+ {scene:'第三站 · 长桌晚餐',title:'饭桌上有人开了一个关于你的玩笑，你其实不舒服。',opts:[['当场轻轻指出：“这个玩笑我不太喜欢。”',[-0.4,1,-0.3,0.8]],['装作没事，回去之后慢慢消化',[-0.6,-0.9,-0.5,-0.5]],['私下找TA聊，问是不是有误解',[0.75,0.55,0.85,0.4]],['先观察气氛，等合适时机再说',[0.3,-0.4,0.5,-0.6]]]},
+ {scene:'第四站 · 山路分岔',title:'最好的朋友想走一条和你完全不同的路，你会怎么做？',opts:[['先支持TA，再一起商量能不能兼顾',[0.95,0.3,0.85,0.55]],['尊重，亲密也不意味着方向相同',[-0.9,-0.1,-0.8,-0.4]],['问清楚为什么改变，不想靠猜测理解',[0.05,1,0.3,0.35]],['会难过，曾经说好一起走到最后',[0.85,-0.7,0.95,-0.2]]]},
+ {scene:'第五站 · 意外的争执',title:'对方说：“你根本不理解我。”你会先回应什么？',opts:[['“那你告诉我，我到底漏掉了什么。”',[0.75,0.55,0.8,0.4]],['“我有我的视角，也请你尊重。”',[-0.45,0.9,-0.7,0.6]],['“先别吵了，我们都冷静一下。”',[-0.6,-0.8,-0.55,-0.55]],['“我想一起解决，不想再耗着。”',[0.35,0.7,0.15,1]]]},
+ {scene:'第六站 · 夜车经过无名站',title:'你最难放下的，是哪一种友情遗憾？',opts:[['当时明明在乎，却一直没说出口',[0.55,-0.8,0.95,-0.55]],['曾经很合拍，后来没人再主动靠近',[0.9,0.05,0.75,0.5]],['事情被误解，彼此再没机会说清楚',[-0.2,0.95,0.35,0.1]],['我曾为了维持关系委屈自己',[-0.8,0.5,-0.95,0.25]]]},
+ {scene:'第七站 · 雪山下的提问',title:'如果可以只对一位旧友说一句话，你更想说？',opts:[['“那年你送我的东西，我一直留着。”',[0.75,-0.25,0.95,-0.35]],['“以后我们都别再勉强自己了。”',[-0.95,-0.3,-0.95,-0.3]],['“如果你愿意，我们再认真聊一次。”',[0.8,0.7,0.95,0.65]],['“我的感受也应该被听见。”',[-0.4,1,-0.6,0.8]]]},
+ {scene:'第八站 · 并肩跑向终点',title:'朋友在关键时刻需要你帮忙，但你当天真的很累。',opts:[['还是过去，我想亲眼确认TA没事',[0.9,0.25,0.85,1]],['会说明自己的情况，帮忙找别的办法',[-0.3,0.9,-0.4,0.35]],['先休息，真正的朋友会理解我的状态',[-1,-0.45,-0.8,-0.3]],['心里想去但没去，后来有点后悔',[0.7,-0.9,0.7,-0.7]]]},
+ {scene:'终点之前 · 如果还会有期',title:'故事快结束了，你希望自己学会的，是——',opts:[['有些关系值得我再迈出一步',[0.85,0.65,0.9,0.8]],['喜欢一个人，也可以守住自己的边界',[-0.8,0.2,-0.7,-0.15]],['不管结局如何，先认真说出真实的话',[0.05,1,0.05,0.55]],['不再追究答案，但仍感谢曾经相遇',[-0.4,-0.8,-0.85,-0.45]]]}
+];
+let index=0,answers=Array(questions.length).fill(-1),current=null,customPhoto={};
+const $=s=>document.querySelector(s),app=$('#app');
+const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function toast(s){const t=$('#toast');t.textContent=s;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),3100)}
+function nav(title){return '<div class="topline container"><a class="mark" href="'+SITE+'">HOU HUI YOU QI <span style="color:#e1b788">/</span> FRIENDSHIP</a><span class="edition">'+title+'</span></div>'}
+function imgTag(k,style){const p=photos[k];return p?'<img src="'+escapeHTML(customPhoto[k]||p)+'" style="'+(style||'')+'" alt="'+escapeHTML(resultData[k].name)+'的公开人物照片" loading="lazy" onerror="this.style.display=\'none\';this.parentNode.style.background=\'linear-gradient(145deg,#385568,#a78471)\'">':'<div style="height:100%;display:flex;align-items:center;justify-content:center;font-size:54px;font-family:serif;color:#e8d5bc">待补照片</div>'}
+function showHome(){
+ document.title='如果再见，你会怎么说｜后会友期 · 趣味测试';
+ app.innerHTML='<main class="screen hero">'+nav('非官方 · 友情测试')+'<div class="container hero-content"><section><div class="kicker">A little journey into friendship<br>10 questions · 8 stories</div><h1>如果再见，<br><em>你会</em>怎么说？</h1><p class="lead">有人带着答案出发，有人把过去留在风里。<br>10道关于友情的选择题，测测你最像《后会友期》里的哪位旧友。</p><button class="primary" id="start">开始这段旅程 ↗</button><div class="hero-note">约 2 分钟 · 10 道情境题 · 8 种友情画像</div><div class="tiny-disclaimer">独立粉丝创作 · 不代表节目组、嘉宾本人或真实人格测评</div></section><div class="postcards"><div class="photo-card">'+imgTag('ma')+'</div><div class="photo-card">'+imgTag('zhang')+'</div><div class="photo-card">'+imgTag('wen')+'</div><div class="polaroid-stamp">SOME PEOPLE, SOME STORIES — 2026</div><div class="rail"></div></div></div><div class="footer"><div class="container"><span>有些故事不一定有结尾，但都曾经真实发生。</span><span>MADE FOR FRIENDSHIP · FAN WORK</span></div></div></main>';
+ $('#start').onclick=()=>{index=0;answers=Array(questions.length).fill(-1);history.replaceState({},'',location.pathname);showQuestion()};
+}
+function showQuestion(){
+ window.scrollTo(0,0);const q=questions[index];document.title='第'+(index+1)+'题｜后会友期人物测试';
+ app.innerHTML='<main class="screen quiz-bg">'+nav('友情旅程 · '+(index+1).toString().padStart(2,'0')+'/10')+'<div class="quiz-shell"><div class="prog-head"><span>THE JOURNEY CONTINUES</span><span>QUESTION '+(index+1)+' / '+questions.length+'</span></div><div class="progress"><div style="width:'+Math.round(index/questions.length*100)+'%"></div></div><div class="question-card"><div class="q-overline">'+escapeHTML(q.scene)+'</div><h2>'+escapeHTML(q.title)+'</h2><div class="answers">'+q.opts.map((o,i)=>'<button class="option '+(answers[index]===i?'selected':'')+'" data-id="'+i+'"><i>'+('ABCD'[i])+'</i><span>'+escapeHTML(o[0])+'</span></button>').join('')+'</div></div><div class="q-actions"><button class="ghost" id="prev">'+(index?'← 上一题':'← 返回首页')+'</button><button class="next" id="next" '+(answers[index]<0?'disabled':'')+'>'+(index===questions.length-1?'揭晓我的答案 ↗':'下一题 →')+'</button></div><div style="text-align:center;margin-top:31px;color:#a9a69f;font-size:12px">直觉选择就好，这里没有标准答案。</div></div></main>';
+ document.querySelectorAll('.option').forEach(b=>b.onclick=()=>{answers[index]=+b.dataset.id;document.querySelectorAll('.option').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');$('#next').disabled=false;});
+ $('#prev').onclick=()=>{if(index>0){index--;showQuestion()}else showHome()};
+ $('#next').onclick=()=>{if(answers[index]<0)return;if(index===questions.length-1){current=scoreResult();history.replaceState({},'',location.pathname+'?r='+current.id);showResult()}else{index++;showQuestion()}};
+}
+function scoreResult(){
+ const v=[0,0,0,0];answers.forEach((a,i)=>questions[i].opts[a][1].forEach((x,k)=>v[k]+=x));v.forEach((x,k)=>v[k]/=questions.length);
+ const items=Object.values(resultData).map((p,i)=>({p,d:p.traits.reduce((sum,x,k)=>sum+Math.pow(x-v[k],2)*(k===2?1.12:1),0)+i*0.00001})).sort((a,b)=>a.d-b.d);
+ current=items[0].p;current.second=items[1].p;return current;
+}
+function showResult(){
+ if(!current)return showHome();window.scrollTo(0,0);document.title='我测出了 '+current.name+'｜后会友期友情测试';
+ const k=current.id,p=current,second=current.second||null;
+ app.innerHTML='<main class="screen result-bg">'+nav('我的友情画像')+'<div class="result-header"><div class="tiny">THE FRIENDSHIP PORTRAIT / '+escapeHTML(p.id.toUpperCase())+'</div><h1>原来，你更像 <span style="color:#ad7a51">'+escapeHTML(p.name)+'</span></h1><div class="sub">你不是某一个角色，而是在某个瞬间，和TA有相似的选择。</div></div><div class="result-layout"><section class="identity"><div class="identity-photo">'+imgTag(k,k==='qing'?'object-position:86% center':'')+'<div class="identity-name"><small>YOUR FRIENDSHIP TYPE</small><h2>'+escapeHTML(p.name)+'</h2></div></div><div class="identity-details"><div class="quote">“'+escapeHTML(p.line)+'”</div><div class="tags">'+p.tags.map(t=>'<span># '+escapeHTML(t)+'</span>').join('')+'</div><div class="divine">你是「'+escapeHTML(p.title)+'」<br>有些相似，是因为我们都曾在一段关系里认真过。</div></div></section><section class="insights"><h3>01 / 为什么是 TA</h3><p>'+escapeHTML(p.why)+'</p><h3>02 / 别人可能没看见的你</h3><p>'+escapeHTML(p.blind)+'</p><h3>03 / 留给你的下一站</h3><p>'+escapeHTML(p.gift)+'</p><div class="longline"></div><div class="bond"><div class="part">友情搭子 / 反差组合</div><b>你 × '+escapeHTML(p.pair)+'</b><div style="font-size:13px;line-height:1.75;color:#4d6066">'+escapeHTML(p.pairLine)+'</div></div>'+(second?'<p style="font-size:12px;color:#819096;margin-top:15px">你与「'+escapeHTML(second.name)+'」的相处方式也有些相近。</p>':'')+'<div class="actionbar"><button id="download" class="darkbtn">↓ 保存分享海报</button><button id="share" class="lightbtn">↗ 分享给朋友</button><button id="again" class="outlinebtn">↺ 重新测试</button></div><div class="notice">海报会尝试加载人物照片。若来源限制了图片导出，可点“换一张照片”，上传你有权使用的图片后重新生成。<br><button id="changePhoto" class="ghost" style="text-decoration:underline;margin-top:8px">＋ 换一张人物照片</button></div></section></div><div class="sources">基于《后会友期》公开节目设置创作的人物相似度游戏，不代表嘉宾真实心理特征。<br>照片采用公开人物资料页面或授权图库外链；<a href="https://www.mgtv.com/act/2026/hhyq2026/" target="_blank" rel="noopener">节目官方入口</a> · <a href="'+escapeHTML(p.src)+'" target="_blank" rel="noopener">该人物图片来源</a> · 非商业粉丝测试</div></main>';
+ $('#again').onclick=showHome;
+ $('#share').onclick=shareResult;
+ $('#download').onclick=downloadPoster;
+ $('#changePhoto').onclick=()=>$('#upload').click();
+ $('#upload').onchange=e=>{const f=e.target.files&&e.target.files[0];if(!f)return;if(!f.type.startsWith('image/'))return toast('请选择图片文件');const reader=new FileReader;reader.onload=()=>{customPhoto[current.id]=reader.result;showResult();toast('已换图，再试着保存海报吧')};reader.readAsDataURL(f)};
+}
+async function shareResult(){const url=location.href;const text='我的《后会友期》友情画像竟然是「'+current.name+'」——'+current.title+'。你也来测测！';try{if(navigator.share)await navigator.share({title:'你像《后会友期》哪位嘉宾？',text,url});else if(navigator.clipboard){await navigator.clipboard.writeText(text+'\n'+url);toast('分享文字和结果链接已复制')}else{copyFallback(text+'\n'+url);toast('分享链接已复制')}}catch(e){if(e.name!=='AbortError')toast('分享暂不可用，请复制浏览器地址')}}
+function copyFallback(s){const i=document.createElement('textarea');i.value=s;i.style.position='fixed';i.style.top='-9999px';document.body.appendChild(i);i.select();document.execCommand('copy');i.remove()}
+function roundRect(c,x,y,w,h,r){c.beginPath();c.roundRect(x,y,w,h,r);c.fill()}
+function wrap(c,t,x,y,maxWidth,lineHeight,maxLines){let line='',lines=0;for(const char of t){if(c.measureText(line+char).width>maxWidth&&line){c.fillText(line,x,y+lines*lineHeight);lines++;if(lines>=maxLines)return;line=''}line+=char}if(line)c.fillText(line,x,y+lines*lineHeight)}
+function loadCanvasPhoto(src){return new Promise((resolve,reject)=>{if(!src)return reject(new Error('no image'));let im=new Image();im.crossOrigin='anonymous';im.onload=()=>resolve(im);im.onerror=()=>reject(new Error('image cors error'));im.src=src;setTimeout(()=>reject(new Error('image timeout')),6000)})}
+function cropImage(c,img,x,y,w,h){let ratio=Math.max(w/img.naturalWidth,h/img.naturalHeight);let iw=img.naturalWidth*ratio,ih=img.naturalHeight*ratio;c.drawImage(img,x+(w-iw)/2,y+(h-ih)/2,iw,ih)}
+async function downloadPoster(){
+ const btn=$('#download');btn.disabled=true;btn.textContent='正在绘制海报…';
+ try{
+ const W=900,H=1600;const cv=document.createElement('canvas');cv.width=W;cv.height=H;const c=cv.getContext('2d');
+ let gr=c.createLinearGradient(0,0,W,H);gr.addColorStop(0,'#1c3547');gr.addColorStop(.55,'#516a77');gr.addColorStop(1,'#ad8d74');c.fillStyle=gr;c.fillRect(0,0,W,H);
+ c.fillStyle='rgba(247,214,165,.7)';c.beginPath();c.arc(690,280,140,0,Math.PI*2);c.fill();
+ c.fillStyle='#223d4e';c.beginPath();c.moveTo(0,1180);c.lineTo(270,930);c.lineTo(470,1110);c.lineTo(740,870);c.lineTo(900,990);c.lineTo(900,H);c.lineTo(0,H);c.fill();
+ c.fillStyle='rgba(255,249,235,.92)';c.font='bold 23px sans-serif';c.fillText('HOU HUI YOU QI  /  FRIENDSHIP',62,80);
+ c.fillStyle='#ebc99f';c.font='23px sans-serif';c.fillText('你是哪一种朋友？ · NO. '+Object.keys(resultData).indexOf(current.id).toString().padStart(2,'0'),62,135);
+ c.save();c.shadowColor='#142535';c.shadowBlur=45;c.shadowOffsetY=20;c.fillStyle='#f4ebe0';roundRect(c,84,195,732,930,13);c.restore();
+ c.save();c.beginPath();c.rect(107,219,686,700);c.clip();
+ let showed=false;try{const img=await loadCanvasPhoto(customPhoto[current.id]||photos[current.id]);cropImage(c,img,107,219,686,700);showed=true}catch(e){
+ let g=c.createLinearGradient(107,219,793,919);g.addColorStop(0,current.color);g.addColorStop(1,'#233b4e');c.fillStyle=g;c.fillRect(107,219,686,700);
+ c.fillStyle='rgba(255,255,255,.16)';c.beginPath();c.arc(450,510,110,0,7);c.fill();c.beginPath();c.ellipse(450,850,255,225,0,0,7);c.fill();
+ }
+ c.restore();
+ const fade=c.createLinearGradient(0,680,0,922);fade.addColorStop(0,'transparent');fade.addColorStop(1,'rgba(8,25,40,.68)');c.fillStyle=fade;c.fillRect(107,680,686,239);
+ c.font='bold 98px "Songti SC",serif';c.fillStyle='#fff';c.fillText(current.name,145,861);
+ c.fillStyle='#304351';c.font='24px sans-serif';c.fillText('你的友情人格｜'+current.title,132,1002);
+ c.fillStyle='#5a6b72';c.font='20px sans-serif';c.fillText(current.tags.map(x=>'#'+x).join('   '),132,1058);
+ c.fillStyle='#e9c8a0';c.font='bold 27px sans-serif';c.fillText('“',70,1231);
+ c.fillStyle='#fff5e7';c.font='34px "Songti SC",sans-serif';wrap(c,current.line,103,1234,690,54,3);
+ c.fillStyle='#fff';c.globalAlpha=.5;c.fillRect(72,1413,754,1);c.globalAlpha=1;
+ c.font='24px sans-serif';c.fillStyle='#f7dfbc';c.fillText('测测你是哪位《后会友期》旧友',76,1468);
+ c.font='18px sans-serif';c.fillStyle='#e2d8ca';c.fillText('olivia-wr-research.github.io/apps/houhuiyouqi-quiz/',76,1512);
+ c.font='16px sans-serif';c.fillText('非官方趣味测试 · 不代表任何真人的心理测评',76,1554);
+ cv.toBlob(blob=>{if(!blob){toast('海报生成失败，请尝试截图');return}let url=URL.createObjectURL(blob);let a=document.createElement('a');a.href=url;a.download='后会友期-我的友情画像-'+current.name+'.png';a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);toast(showed?'海报已生成，快分享给朋友吧':'海报已生成；人物图片受跨域限制，使用了装饰背景，可上传照片后重试')},'image/png');
+ }catch(e){toast('海报导出失败，请尝试截图保存')}finally{btn.disabled=false;btn.textContent='↓ 保存分享海报'}
+}
+function init(){const params=new URLSearchParams(location.search);let result=params.get('r');if(result&&resultData[result]){current=resultData[result];showResult()}else showHome()}
+window.addEventListener('popstate',init);init();
+</script>
+</body></html>
