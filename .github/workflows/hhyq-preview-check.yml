@@ -1,0 +1,64 @@
+name: HhYq public prelaunch preview verification
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/apps/hhyq-prelaunch-review/**'
+      - '.github/workflows/hhyq-preview-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check published preview files
+        run: |
+          node --check docs/apps/hhyq-prelaunch-review/v2.js
+          grep -q 'noindex,nofollow' docs/apps/hhyq-prelaunch-review/index.html
+          grep -q '布达拉宫友情合影' docs/apps/hhyq-prelaunch-review/v2.js
+      - name: Verify public Pages preview and assets (not production)
+        run: |
+          base="https://olivia-wr-research.github.io/apps/hhyq-prelaunch-review/"
+          ok=0
+          for n in $(seq 1 16); do
+            status=$(curl -L -sS --connect-timeout 10 --max-time 18 -o /tmp/hhyq-review.html -w '%{http_code}' "$base?audit=20261118" || true)
+            echo "Round $n HTTP=$status"
+            if [ "$status" = "200" ] && grep -q '上线前审核预览' /tmp/hhyq-review.html; then ok=1; break; fi
+            sleep 8
+          done
+          test "$ok" -eq 1
+          curl -fsSL "$base""v2.js?verify=20261118" | grep -q '布达拉宫友情合影'
+          curl -fsSL "$base""v2.css?verify=20261118" | grep -q 'v2-quickactions'
+          echo "PASS public preview HTML/JS/CSS"
+      - name: Smoke test publicly hosted preview in Chromium
+        run: |
+          npm install --prefix "$RUNNER_TEMP/hhyq-preview-browser" --ignore-scripts --no-audit --no-fund playwright-core@1.65.0
+          export QUIZ_PW="$RUNNER_TEMP/hhyq-preview-browser/node_modules/playwright-core"
+          node <<'JS'
+          const {chromium}=require(process.env.QUIZ_PW);
+          (async()=>{
+            const browser=await chromium.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});
+            const page=await browser.newPage({viewport:{width:375,height:812},acceptDownloads:true});
+            const errors=[];page.on('pageerror',e=>errors.push(e.message));
+            const u='https://olivia-wr-research.github.io/apps/hhyq-prelaunch-review/';
+            await page.goto(u,{waitUntil:'domcontentloaded'});
+            await page.locator('#start').waitFor();
+            await page.locator('#start').click();
+            for(let i=0;i<10;i++){await page.locator('[data-ans="0"]').click();await page.locator('#forward').click()}
+            await page.locator('#fast-poster').waitFor();
+            await page.locator('#fast-poster').click();
+            const visible=await page.locator('#poster-chooser').isVisible();
+            if(!visible)throw Error('poster chooser missing');
+            const [file]=await Promise.all([page.waitForEvent('download',{timeout:25000}),page.locator('#download').click()]);
+            if(!file.suggestedFilename().endsWith('.png'))throw Error('no PNG download');
+            if(errors.length)throw Error('browser errors: '+JSON.stringify(errors));
+            console.log('PASS public preview home, 10 questions, quick poster and PNG download');
+            await browser.close();
+          })().catch(e=>{console.error(e);process.exit(1)});
+          JS
