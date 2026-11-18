@@ -101,7 +101,7 @@ for(const id of ids){
  await page.locator('.v2-result-grid').waitFor();
  assert.equal(await page.locator('#poster-chooser').isVisible(),true);
  assert.ok((await page.locator('.v2-result-head h1').innerText()).length>3);
- assert.ok((await page.locator('.v2-banner').innerText()).includes('公共静态资源'));await page.waitForFunction(()=>{const i=document.querySelector('[data-character-photo]');return i?.complete && i.naturalWidth>0});assert.ok((await page.locator('[data-character-photo]').getAttribute('src')).includes('./photos/'));
+ assert.ok((await page.locator('.v2-banner').innerText()).includes('公共静态资源'));await page.waitForFunction(()=>{const i=document.querySelector('[data-character-photo]');return i?.complete && i.naturalWidth>0});const photoSrc=await page.locator('[data-character-photo]').getAttribute('src');if(id===before)assert.ok(photoSrc.startsWith('data:image/jpeg'),'self-uploaded photo should persist locally');else assert.equal(photoSrc,'./photos/'+id+'.webp','public photo path mismatch for '+id);
  if(id==='xu') await shot('07-share-result');
 }
 status('8/8 deep-link result screens and truthful photo notice');
