@@ -25,15 +25,83 @@ const photoSources = {
 };
 
 const characters = [
-{id:'li',name:'厉娜',title:'友情「已读但不强制原谅」派',stamp:'不和好也可以是结局',meme:'别人：都这么久了，你还不翻篇？\n你：日历会自动翻页，关系又不是自动续费。',caption:'表面：没什么好说的。\n心里：发生过的事，不会因为时间久就变成没发生。',touch:'你不是把旧事记成账本，而是知道有些伤口不能靠一句“算了吧”解决。你可以允许对方把话说完，也允许自己保留感受。对你来说，体面的告别和重新开始一样值得尊重。',weak:'太习惯自己消化情绪，别人可能不知道你真的有多难过。',mission:'你的友情通关提示：不必为了证明大度，把还没愈合的事轻轻带过。',scenetitle:'节目对应：厉娜与许飞车上对谈，以及“不一定继续做朋友”的表达',scenesrc:EVIDENCE,pair:'许飞',tags:['边界先于和解','慢热但记得','可以体面告别'],dims:[18,80,27,28,30],theme:'#748b95'},
-{id:'xu',name:'许飞',title:'友情「往事售后客服」派',stamp:'工单可以关闭，话要说完',meme:'别人：都过去十几年了。\n你：时间是过去了，我的未读消息还没处理。',caption:'嘴上：都过去了。\n脑内：那段友情的复盘文档已自动打开第18版。',touch:'你在意的不是赢一场争论，而是想知道两个人为什么从亲近走到了这里。你愿意翻开旧信，也愿意试着把没说完的话讲出来。但你慢慢会明白：表达你的版本很重要，接受对方未必给你同一种答案也很重要。',weak:'你有时候把“说清楚”误当成“还能回到从前”。',mission:'你的友情通关提示：说完想说的话，就已经完成了自己的那一部分。',scenetitle:'节目对应：许飞读介绍信落泪、与厉娜谈过往及询问能否重新做朋友',scenesrc:EVIDENCE,pair:'厉娜',tags:['未完待续型','复盘十级学者','情感存档'],dims:[85,35,81,37,70],theme:'#7b9b91'},
-{id:'zhang',name:'张萌',title:'友情「删了微信也要送杯子」派',stamp:'朋友可以断联，礼物不能缺席',meme:'别人：都断联了还买礼物？\n你：好友可以不在列表，但还在我的购物灵感里。',caption:'嘴上：没关系，不联系就算了。\n购物车：这杯子TA应该会喜欢。',touch:'你是那种看到一个小物件就会突然想到某个旧友的人。对你来说，关系不是一道非黑即白的选择题。你愿意主动靠近，也容易在热情里忘记：对方或许还没有准备好。你的勇敢很珍贵，尊重对方的节奏也很重要。',weak:'好意跑得比沟通快，偶尔会变成别人感受到的压力。',mission:'你的友情通关提示：送礼物之前，先确认对方愿不愿意重新打开那扇门。',scenetitle:'节目对应：张萌提到断联期间仍记得马天宇喜欢收藏马克杯',scenesrc:EPISODE,pair:'马天宇',tags:['纪念型人格','礼物派','热情先行'],dims:[82,35,68,78,62],theme:'#a8825f'},
-{id:'ma',name:'马天宇',title:'友情「边界感保安队长」派',stamp:'请先刷卡，再进我的舒适区',meme:'别人：我们关系这么好，你还分什么边界？\n你：好朋友也得敲门，门禁不是装饰。',caption:'表面：我只想自己待会儿。\n真心：我很珍惜你，但我不能把所有空间都交出去。',touch:'你喜欢的是彼此尊重、允许各自独处的关系。对方太急于替你安排时，你会迅速感到疲惫。你不一定少情，也不一定冷淡；你只是更相信，长久的亲密应该留得下自由活动的空间。',weak:'你习惯用退后表示不舒服，别人可能根本没有收到通知。',mission:'你的友情通关提示：边界明确很酷，偶尔解释清楚会更省力。',scenetitle:'节目对应：马天宇谈享受独处，并就张萌的相处方式表达边界感',scenesrc:EVIDENCE,pair:'张萌',tags:['独处是刚需','越界提醒器','尊重双向选择'],dims:[28,91,38,27,30],theme:'#66808f'},
-{id:'wen',name:'文吉儿',title:'友情「唯一好友单推人」派',stamp:'我不是要绑住你，只想确定我很重要',meme:'别人：朋友又不是单选题。\n你：我知道啊，我只是想当那道压轴大题。',caption:'嘴上：你交新朋友没关系。\n心里：那我们的专属默契，还有没有名字？',touch:'你能接受朋友拥有自己的世界，却很在意某种只有彼此才懂的连接是否还存在。你会记住过去的承诺，也会敏锐地察觉关系的微小变化。你想要的并不是控制，而是一份被认真放在心上的确定感。',weak:'当亲密的定义不一样时，你可能把对方的自由误读成自己不够重要。',mission:'你的友情通关提示：与其猜自己是不是唯一，不如说出你真正想被怎样对待。',scenetitle:'节目对应：文吉儿与王子璇对好友“唯一性”的期待差异',scenesrc:EPISODE,pair:'王子璇',tags:['专属感','记得承诺','需要确定'],dims:[54,34,50,29,93],theme:'#a0726f'},
-{id:'wang',name:'王子璇',title:'友情「好友列表非单选」派',stamp:'亲密不是独占，真诚才是必选',meme:'别人：我是你唯一的朋友吗？\n你：你是重要的人，但我的通讯录不参加排他赛。',caption:'表面：大家都能好好相处。\n心里：为什么我交新朋友，也需要交一份解释报告？',touch:'你珍惜亲密，也看重相处中的选择空间。对你来说，友谊不是占有权证明，而是各自都能自然做自己。可当对方特别需要确定感时，你的轻松可能被听成疏远；你也需要学会把“重要”说得更具体。',weak:'过分相信“对方应该懂”，往往让沉默变成了误解。',mission:'你的友情通关提示：自由是底色，让对方感到被珍惜也并不矛盾。',scenetitle:'节目对应：王子璇与文吉儿围绕朋友关系及亲密期待的讨论',scenesrc:EPISODE,pair:'文吉儿',tags:['不排他','自在优先','直给沟通'],dims:[40,82,73,52,21],theme:'#7d9a86'},
-{id:'qing',name:'青稚',title:'友情「土皇帝回宫」派',stamp:'这宫我还没退，这队也还没散',meme:'别人：不是都散伙了吗，还这么上头？\n你：队可以掉线，土皇帝不能轻易退位。',caption:'嘴上：各走各的也行。\n行动：但这队要是还能救，我还是会回头拉一把。',touch:'你很重视并肩作战积累出来的默契，所以当合作变了味，你往往比别人更难受。你可能嘴硬、可能急着争个结果，但心里其实还希望彼此能再次好好配合。有些关系不是不重要，而是你们还没学会用同一种速度沟通。',weak:'你太想立刻推进局面，反而可能让需要冷静的人更想后退。',mission:'你的友情通关提示：想重组一支队伍，第一步也许不是冲锋，而是听清对方想去哪。',scenetitle:'节目对应：青稚与白小纯在旅行中出现分歧、落泪与尝试重新同行',scenesrc:EVIDENCE,pair:'白小纯',tags:['土皇帝','不想散场','行动先行'],dims:[87,29,65,90,61],theme:'#6f8894'},
-{id:'bai',name:'白小纯',title:'友情「先对线后搬行李」派',stamp:'道理要讲，忙也能帮',meme:'别人：你俩不是吵架了吗？\n你：吵归吵，行李那么重，手也不能闲着啊。',caption:'表面：这件事我有我的观点。\n真心：但我也没说不在乎你。',touch:'你不是遇事会轻易低头的人，讲道理、保留立场对你很重要。可这不妨碍你在具体的事上伸手帮忙。你知道关系的复杂就在这里：情绪可以拧巴，行动里却仍然留着温度。',weak:'当你太在意把事情讲对，别人可能只听到了你的态度，没有看到你的关心。',mission:'你的友情通关提示：观点可以先放桌上，心意也值得被对方看见。',scenetitle:'节目对应：白小纯与青稚争执后仍帮忙搬行李、邀请回屋',scenesrc:EVIDENCE,pair:'青稚',tags:['行动派嘴替','不服软但会帮忙','理性在线'],dims:[44,65,88,79,34],theme:'#7f8f8a'}
+{id:'li',name:'厉娜',title:'友情「已读但不强制原谅」派',stamp:'我画地为牢啊，厉娜',meme:'别人：都这么久了，你还不翻篇？\n你：日历会自动翻页，关系又不是自动续费。',caption:'表面：没什么好说的。\n心里：发生过的事，不会因为时间久就变成没发生。',touch:'你不是把旧事记成账本，而是知道有些伤口不能靠一句“算了吧”解决。你可以允许对方把话说完，也允许自己保留感受。对你来说，体面的告别和重新开始一样值得尊重。',weak:'太习惯自己消化情绪，别人可能不知道你真的有多难过。',mission:'你的友情通关提示：不必为了证明大度，把还没愈合的事轻轻带过。',scenetitle:'节目对应：厉娜与许飞车上对谈，以及“不一定继续做朋友”的表达',scenesrc:EVIDENCE,pair:'许飞',tags:['边界先于和解','慢热但记得','可以体面告别'],dims:[18,80,27,28,30],theme:'#748b95'},
+{id:'xu',name:'许飞',title:'友情「往事售后客服」派',stamp:'我等这一刻等了十五年',meme:'别人：都过去十几年了。\n你：时间是过去了，我的未读消息还没处理。',caption:'嘴上：都过去了。\n脑内：那段友情的复盘文档已自动打开第18版。',touch:'你在意的不是赢一场争论，而是想知道两个人为什么从亲近走到了这里。你愿意翻开旧信，也愿意试着把没说完的话讲出来。但你慢慢会明白：表达你的版本很重要，接受对方未必给你同一种答案也很重要。',weak:'你有时候把“说清楚”误当成“还能回到从前”。',mission:'你的友情通关提示：说完想说的话，就已经完成了自己的那一部分。',scenetitle:'节目对应：许飞读介绍信落泪、与厉娜谈过往及询问能否重新做朋友',scenesrc:EVIDENCE,pair:'厉娜',tags:['未完待续型','复盘十级学者','情感存档'],dims:[85,35,81,37,70],theme:'#7b9b91'},
+{id:'zhang',name:'张萌',title:'友情「删了微信也要送杯子」派',stamp:'备注删了，记得还在',meme:'别人：都断联了还买礼物？\n你：好友可以不在列表，但还在我的购物灵感里。',caption:'嘴上：没关系，不联系就算了。\n购物车：这杯子TA应该会喜欢。',touch:'你是那种看到一个小物件就会突然想到某个旧友的人。对你来说，关系不是一道非黑即白的选择题。你愿意主动靠近，也容易在热情里忘记：对方或许还没有准备好。你的勇敢很珍贵，尊重对方的节奏也很重要。',weak:'好意跑得比沟通快，偶尔会变成别人感受到的压力。',mission:'你的友情通关提示：送礼物之前，先确认对方愿不愿意重新打开那扇门。',scenetitle:'节目对应：张萌提到断联期间仍记得马天宇喜欢收藏马克杯',scenesrc:EPISODE,pair:'马天宇',tags:['纪念型人格','礼物派','热情先行'],dims:[82,35,68,78,62],theme:'#a8825f'},
+{id:'ma',name:'马天宇',title:'友情「边界感保安队长」派',stamp:'不仅识字，还念给青稚听',meme:'别人：我们关系这么好，你还分什么边界？\n你：好朋友也得敲门，门禁不是装饰。',caption:'表面：我只想自己待会儿。\n真心：我很珍惜你，但我不能把所有空间都交出去。',touch:'你喜欢的是彼此尊重、允许各自独处的关系。对方太急于替你安排时，你会迅速感到疲惫。你不一定少情，也不一定冷淡；你只是更相信，长久的亲密应该留得下自由活动的空间。',weak:'你习惯用退后表示不舒服，别人可能根本没有收到通知。',mission:'你的友情通关提示：边界明确很酷，偶尔解释清楚会更省力。',scenetitle:'节目对应：马天宇谈享受独处，并就张萌的相处方式表达边界感',scenesrc:EVIDENCE,pair:'张萌',tags:['独处是刚需','越界提醒器','尊重双向选择'],dims:[28,91,38,27,30],theme:'#66808f'},
+{id:'wen',name:'文吉儿',title:'友情「唯一好友单推人」派',stamp:'我不想做朋友了',meme:'别人：朋友又不是单选题。\n你：我知道啊，我只是想当那道压轴大题。',caption:'嘴上：你交新朋友没关系。\n心里：那我们的专属默契，还有没有名字？',touch:'你能接受朋友拥有自己的世界，却很在意某种只有彼此才懂的连接是否还存在。你会记住过去的承诺，也会敏锐地察觉关系的微小变化。你想要的并不是控制，而是一份被认真放在心上的确定感。',weak:'当亲密的定义不一样时，你可能把对方的自由误读成自己不够重要。',mission:'你的友情通关提示：与其猜自己是不是唯一，不如说出你真正想被怎样对待。',scenetitle:'节目对应：文吉儿与王子璇对好友“唯一性”的期待差异',scenesrc:EPISODE,pair:'王子璇',tags:['专属感','记得承诺','需要确定'],dims:[54,34,50,29,93],theme:'#a0726f'},
+{id:'wang',name:'王子璇',title:'友情「好友列表非单选」派',stamp:'重要不用限量',meme:'别人：我是你唯一的朋友吗？\n你：你是重要的人，但我的通讯录不参加排他赛。',caption:'表面：大家都能好好相处。\n心里：为什么我交新朋友，也需要交一份解释报告？',touch:'你珍惜亲密，也看重相处中的选择空间。对你来说，友谊不是占有权证明，而是各自都能自然做自己。可当对方特别需要确定感时，你的轻松可能被听成疏远；你也需要学会把“重要”说得更具体。',weak:'过分相信“对方应该懂”，往往让沉默变成了误解。',mission:'你的友情通关提示：自由是底色，让对方感到被珍惜也并不矛盾。',scenetitle:'节目对应：王子璇与文吉儿围绕朋友关系及亲密期待的讨论',scenesrc:EPISODE,pair:'文吉儿',tags:['不排他','自在优先','直给沟通'],dims:[40,82,73,52,21],theme:'#7d9a86'},
+{id:'qing',name:'青稚',title:'友情「土皇帝回宫」派',stamp:'队可以掉线，人不能先走',meme:'别人：不是都散伙了吗，还这么上头？\n你：队可以掉线，土皇帝不能轻易退位。',caption:'嘴上：各走各的也行。\n行动：但这队要是还能救，我还是会回头拉一把。',touch:'你很重视并肩作战积累出来的默契，所以当合作变了味，你往往比别人更难受。你可能嘴硬、可能急着争个结果，但心里其实还希望彼此能再次好好配合。有些关系不是不重要，而是你们还没学会用同一种速度沟通。',weak:'你太想立刻推进局面，反而可能让需要冷静的人更想后退。',mission:'你的友情通关提示：想重组一支队伍，第一步也许不是冲锋，而是听清对方想去哪。',scenetitle:'节目对应：青稚与白小纯在旅行中出现分歧、落泪与尝试重新同行',scenesrc:EVIDENCE,pair:'白小纯',tags:['土皇帝','不想散场','行动先行'],dims:[87,29,65,90,61],theme:'#6f8894'},
+{id:'bai',name:'白小纯',title:'友情「先对线后搬行李」派',stamp:'明明是很好的陈礼根',meme:'别人：你俩不是吵架了吗？\n你：吵归吵，行李那么重，手也不能闲着啊。',caption:'表面：这件事我有我的观点。\n真心：但我也没说不在乎你。',touch:'你不是遇事会轻易低头的人，讲道理、保留立场对你很重要。可这不妨碍你在具体的事上伸手帮忙。你知道关系的复杂就在这里：情绪可以拧巴，行动里却仍然留着温度。',weak:'当你太在意把事情讲对，别人可能只听到了你的态度，没有看到你的关心。',mission:'你的友情通关提示：观点可以先放桌上，心意也值得被对方看见。',scenetitle:'节目对应：白小纯与青稚争执后仍帮忙搬行李、邀请回屋',scenesrc:EVIDENCE,pair:'青稚',tags:['行动派嘴替','不服软但会帮忙','理性在线'],dims:[44,65,88,79,34],theme:'#7f8f8a'}
 ];
+
+const NICK = {li:'画地为牢本人', xu:'老兵烧烤', zhang:'马克杯守墓人', ma:'郊区返乡人', wen:'友情仅退款', wang:'不做朋友了', qing:'雷王', bai:'一本摊开的书'};
+
+/* 真梗层：每条都对应节目公开片段或网友二创，不发明新梗 */
+/* 首页卡片专用短梗：卡片窄，必须一行放得下 */
+const CASTMEME = {
+  li:'我画地为牢啊。', xu:'等了十五年。', zhang:'好友不在列表也行。', ma:'人类好可怕。',
+  wen:'那三万退我。', wang:'又不是单选题。', qing:'土皇帝还没退位。', bai:'道理讲完，行李得搬。'
+};
+const MEME2 = {
+  li:  ['别人：都这么久了，你还不翻篇？', '你：我画地为牢啊。'],
+  xu:  ['别人：都过去十五年了。', '你：我等这一刻等了十五年了，厉娜。'],
+  zhang:['别人：都删微信了还送杯子？', '你：好友可以不在列表，杯子不能。'],
+  ma:  ['别人：怎么不多交几个朋友？', '你：人类好可怕，我要回郊区了。'],
+  wen: ['别人：朋友又不是只能有一个。', '你：那三万写序费，退我。'],
+  wang:['别人：你朋友挺多的吧。', '你：朋友又不是单选题。'],
+  qing:['别人：都散伙了还这么上头？', '你：土皇帝还没退位。'],
+  bai: ['别人：你俩不是刚吵完？', '你：道理讲完了，行李还得搬。']
+};
+const MEMES = {
+  li: [
+    ['我画地为牢啊，厉娜','网友二创 · 抖音同名话题 40 亿播放','全网最出圈的填空题：后半句永远落回“我画地为牢”——不原谅也不放手，自己把自己关在原地。'],
+    ['不是不原谅，是不强制原谅','节目片段 · 车上对谈','把“原谅”从义务里摘出来：我可以不恨你，但也不必假装什么都没发生。']
+  ],
+  xu: [
+    ['老兵烧烤，今天出摊','节目片段 · 烧烤时把扇子转向，不让油烟飘过去','被镜头拍下的那个动作：整晚扇子只朝自己这边扇。老兵没解释，他只是在做。'],
+    ['我等这一刻等了十五年了，厉娜','节目片段 · 被剪成全网 BGM','十五年后再见，第一句不是责怪，是“我等这一刻”。']
+  ],
+  zhang:[
+    ['马克杯守墓人','节目片段 · 断联多年仍记得对方收藏马克杯','关系可以删掉，爱好删不掉——你喜欢什么，我还记得。'],
+    ['好友可以不在列表，礼物不能缺席','网友二创','微信删了，购物车还留着。']
+  ],
+  ma: [
+    ['人类好可怕，我要回郊区了','节目片段 · 密友数测出零','全场都在算谁朋友多，他算出来是零，然后给出了最诚实的反应。'],
+    ['不仅识字，还大声念给青稚听','节目片段 · 当众念出那张心结卡','白小纯把心事写下来，他不但读了，还念给当事人听——摊开的书，遇上一个识字的人。'],
+    ['马克杯收藏家 · 边界感保安队长','网友二创','一边收杯子，一边守门禁。']
+  ],
+  wen: [
+    ['友情仅退款','网友二创 · 三万写序费','朋友写序要三万，关系一崩就申请退款——用电商语言讲友情。'],
+    ['我不想做朋友了','节目原话','不绕弯，不体面，直接说出口。']
+  ],
+  wang:[
+    ['朋友又不是单选题','节目原话','把“唯一”这道题，直接改成多选。'],
+    ['我的通讯录不参加排他赛','网友二创','扩写版：朋友可以有很多个，重要不需要限量。']
+  ],
+  qing:[
+    ['土皇帝还没退位','网友考古 · 训练严苛的老外号','队散了、人走了，他还是那个不服输的队霸。'],
+    ['雷王 · 雷神杯那位','荣誉墙 · 雷神杯冠军','奖杯摆在那儿，外号就下不来。'],
+    ['队可以掉线，人不能先走','节目片段 · 落泪后仍想重组','哭完第一句还是“能不能再组一次”。']
+  ],
+  bai: [
+    ['白小纯是一本摊开的书，可惜青稚不识字','网友二创','他什么都写在脸上，对方却读不懂——这本书白摊了。'],
+    ['明明是很好的陈礼根','网友二创 · 本名梗','本名叫陈礼根，人挺好的，只是梗盖过了名字。'],
+    ['主打一个事事有回应，事事没着落','节目片段 · 狼人杀开麦当预言家','答应得很痛快，落地很随机。']
+  ]
+};
+/* 只写节目里真实同框过的组合；第二名若不是固定搭档，就不显示关系卡 */
+const PAIRS = {
+  'li-xu':  '你画地为牢，TA 把这段关系当成句号。烧烤时 TA 还是会把扇子转向另一边，但那不等于 TA 要回头。',
+  'xu-li':  '你要把话说完，TA 已经把门锁上。你的「我等了十五年」，在 TA 那儿是「不用等」。',
+  'zhang-ma':'你记得 TA 喜欢什么杯子，TA 记得的是一扇关着的门。礼物送得出去，边界送不进去。',
+  'ma-zhang':'你需要敲门，TA 直接推门进来还带着礼物。你不讨厌那份心意，只是不喜欢没有门禁。',
+  'wen-wang':'你想要一个「唯一」，TA 觉得「重要」不需要限量。三万块写序费退得回来，位置退不回来。',
+  'wang-wen':'你觉得朋友不该是单选题，TA 把你的自由读成了「我不够重要」。',
+  'qing-bai':'一个把训练当全部，一个把心事写在脸上。摊开的书遇上不识字的人，先对账，再搬行李。',
+  'bai-qing':'你写「训练像坐牢」，TA 当众念了出来。吵归吵，行李还是你搬的。'
+};
+const HOTLINES = [['我画地为牢啊，厉娜','li'],['我等这一刻等了十五年了','xu'],['人类好可怕，我要回郊区了','ma'],['白小纯是一本摊开的书','bai'],['土皇帝还没退位','qing'],['老兵烧烤出摊了','xu'],['明明是很好的陈礼根','bai'],['朋友又不是单选题','wang'],['我不想做朋友了','wen'],['马克杯还记得','zhang'],['训练像坐牢','bai'],['雷王','qing'],['友情仅退款','wen'],['这宫我还没退','qing']];
 
 const Q = [
   {
@@ -535,8 +603,13 @@ function nav(dark) {
 /* ---------------- 首屏 ---------------- */
 function castStrip() {
   return '<div class="cast">' + characters.map(c =>
-    '<figure><img src="' + e(photoSources[c.id].url) + '" alt="' + e(c.name) + '" loading="lazy" decoding="async" onerror="this.style.visibility=\'hidden\'"><figcaption>' + e(c.name) + '</figcaption></figure>'
+    '<figure data-person="' + c.id + '"><img src="' + e(photoSources[c.id].url) + '" alt="' + e(c.name) + '" loading="lazy" decoding="async" onerror="this.style.visibility=\'hidden\'"><figcaption><span class="cast-name">' + e(c.name) + '</span><span class="cast-meme">' + e(CASTMEME[c.id] || '') + '</span></figcaption></figure>'
   ).join('') + '</div>';
+}
+function heatStrip() {
+  const items = ['抖音主话题 40 亿播放', '715 个热搜', '235 个 TOP10'].concat(HOTLINES.map(x => x[0]));
+  const one = items.map(t => '<span class="hstrip-item">' + e(t) + '</span>').join('');
+  return '<div class="hstrip" aria-hidden="true"><div class="hstrip-track">' + one + one + '</div></div>';
 }
 function home() {
   document.title = '谁是你的友情嘴替？｜后会友期 · 友情人物测试';
@@ -545,7 +618,7 @@ function home() {
   let hasProgress = false;
   try { hasProgress = !!sessionStorage.getItem('hhyq-progress'); } catch (err) { }
   app.innerHTML =
-    '<main class="home">' + nav(true) +
+    '<main class="home">' + nav(true) + heatStrip() +
       '<div class="hero">' +
         '<div class="hero-copy">' +
           '<div class="kicker">Friendship / 友情售后中心</div>' +
@@ -568,6 +641,33 @@ function home() {
   $('#start').onclick = reset;
   const c = $('#continue');
   if (c) c.onclick = () => { if (resume()) renderQuestion(); else { reset(); } };
+  app.querySelectorAll('[data-person]').forEach(el => {
+    el.onclick = () => openCastSheet(characters.find(x => x.id === el.dataset.person));
+  });
+}
+
+/* 首页：点开幕后，看这个人最出圈的那一句 */
+function openCastSheet(p) {
+  if (!p) return;
+  let sheet = document.getElementById('msheet');
+  if (!sheet) {
+    sheet = document.createElement('div');
+    sheet.id = 'msheet';
+    sheet.className = 'msheet';
+    sheet.innerHTML = '<div class="msheet-in"><div class="msheet-tag"></div>' +
+      '<p class="msheet-q"></p><p class="msheet-src"></p><p class="msheet-why"></p>' +
+      '<button class="btn btn--ghost btn--sm" id="mclose">知道了</button></div>';
+    document.body.appendChild(sheet);
+  }
+  const top = (MEMES[p.id] || [])[0] || ['', ''];
+  sheet.querySelector('.msheet-tag').textContent = p.name + ' · 最出圈的那一句';
+  sheet.querySelector('.msheet-q').textContent = '「' + top[0] + '」';
+  sheet.querySelector('.msheet-src').textContent = top[1] || '';
+  sheet.querySelector('.msheet-why').textContent = top[2] || '';
+  sheet.classList.add('on');
+  const close = () => sheet.classList.remove('on');
+  sheet.querySelector('#mclose').onclick = close;
+  sheet.onclick = ev => { if (ev.target === sheet) close(); };
 }
 
 /* ---------------- 答题 ---------------- */
@@ -666,6 +766,8 @@ function scoreResult() {
   const ranking = characters.map(c => ({ c, dist: scoreDistanceFor(c, answers) }))
     .sort((a, b) => a.dist - b.dist || characters.indexOf(a.c) - characters.indexOf(b.c));
   ranking[0].c.runner = ranking[1].c.name;
+  ranking[0].c.runnerId = ranking[1].c.id;
+  ranking[0].c.match = Math.max(38, Math.min(96, Math.round(100 - ranking[0].dist * 74)));
   return ranking[0].c;
 }
 function evidenceBlock(c) {
@@ -727,8 +829,37 @@ function photoImg(id) {
 }
 
 /* ---------------- 结果 ---------------- */
+function openMemeSheet(c, m) {
+  if (!m) return;
+  let sheet = document.getElementById('msheet');
+  if (!sheet) {
+    sheet = document.createElement('div');
+    sheet.id = 'msheet';
+    sheet.className = 'msheet';
+    sheet.innerHTML = '<div class="msheet-in"><div class="msheet-tag">这句梗的出处</div>' +
+      '<p class="msheet-q"></p><p class="msheet-src"></p><p class="msheet-why"></p>' +
+      '<button class="btn btn--ghost btn--sm" id="mclose">知道了</button></div>';
+    document.body.appendChild(sheet);
+  }
+  sheet.querySelector('.msheet-q').textContent = '「' + m[0] + '」';
+  sheet.querySelector('.msheet-src').textContent = m[1];
+  sheet.querySelector('.msheet-why').textContent = m[2] || '';
+  sheet.classList.add('on');
+  const close = () => sheet.classList.remove('on');
+  sheet.querySelector('#mclose').onclick = close;
+  sheet.onclick = ev => { if (ev.target === sheet) close(); };
+}
+function pairLine(c) {
+  const rid = c.runnerId || '';
+  const hit = PAIRS[c.id + '-' + rid];
+  if (hit) return hit;
+  const other = characters.find(p => p.id === rid);
+  if (!other) return '';
+  // 不是节目固定搭档时，不编造关系，只做两组人设的正面对撞
+  return '你的「' + c.tags[0] + '」撞上 TA 的「' + other.tags[0] + '」——同一件事，你们用的是两套语法。';
+}
 function resultHTML(c) {
-  const meme = c.meme.split('\n');
+  const meme = MEME2[c.id] || c.meme.split('\n');
   const caption = c.caption.split('\n');
   const k = s => s.split('：')[0];
   const v = s => s.split('：').slice(1).join('：');
@@ -738,7 +869,8 @@ function resultHTML(c) {
         '<div class="verdict-eyebrow">Result / 友情嘴替鉴定书</div>' +
         '<h1>' + e(c.name) + '<small>型</small></h1>' +
         '<div class="vtype">' + e(c.title) + '</div>' +
-        (fromQuiz ? '<div class="vmatch">根据10道选择匹配</div>' : '') +
+        (fromQuiz ? '<div class="vmatch"><b>' + (c.match || 0) + '</b><span>% 匹配度</span></div>' : '') +
+        '<div class="valias"># 网友外号 · ' + e(NICK[c.id] || '') + '</div>' +
         '<span class="stamp">' + e(c.stamp) + '</span>' +
       '</div>' +
       '<figure class="portrait">' +
@@ -771,8 +903,16 @@ function resultHTML(c) {
           '<br><a href="' + e(c.scenesrc) + '" target="_blank" rel="noopener noreferrer">查看芒果TV节目资料 ↗</a>' +
           '<br>人物标签与梗文案均为原创趣味类比，不是嘉宾真实发言，也不是科学测评。</div>' +
         '<div class="sec-actions"><button class="btn btn--dark btn--sm" id="poster-cta">选海报 ↓</button>' +
-          '<button class="btn btn--ghost btn--sm" id="share-2">分享结果</button>' +
           '<button class="btn btn--ghost btn--sm" id="restart">再测一次</button></div>' +
+      '</section>' +
+
+      '<section class="sec"><div class="sec-label">07 <b>全网都在刷的梗</b></div>' +
+        '<div class="memewall">' +
+          (MEMES[c.id] || []).map((m, i) => '<button class="mcard" data-meme="' + i + '"><p class="mcard-q">「' + e(m[0]) + '」</p><p class="mcard-src">' + e(m[1]) + '</p><span class="mcard-more">点开看出处 →</span></button>').join('') +
+        '</div>' +
+        '<p class="memetip">↑ 点任意一张，看这句梗到底从哪来</p>' +
+        (pairLine(c) ? '<div class="duocard"><b>你们这对 · ' + e(c.runner || '') + '</b><p>' + e(pairLine(c)) + '</p></div>' : '') +
+        '<p class="mnote">以上为网友二创与节目公开片段的趣味改写，不是嘉宾本人发言，也不构成对真实性格的判断。</p>' +
       '</section>' +
     '</div>' +
 
@@ -819,7 +959,8 @@ function resultHTML(c) {
 
 function renderResult() {
   if (!current) return home();
-  document.title = '我是' + current.name + '型友情嘴替｜后会友期人物测试';
+  const tline = (MEME2[current.id] || [''])[1] || current.stamp;
+  document.title = '我是' + current.name + '型：' + current.stamp + '｜后会友期';
   document.body.classList.add('has-bar');
   window.scrollTo(0, 0);
   app.innerHTML = resultHTML(current);
@@ -829,9 +970,11 @@ function renderResult() {
   $('#poster-cta').onclick = toPoster;
   $('#bar-poster').onclick = () => download();
   $('#share-link').onclick = share;
-  $('#share-2').onclick = share;
   $('#bar-share').onclick = share;
   $('#restart').onclick = reset;
+  app.querySelectorAll('.mcard').forEach(el => {
+    el.onclick = () => openMemeSheet(current, MEMES[current.id][+el.dataset.meme]);
+  });
   $('#download').onclick = download;
   $('#copy-caption').onclick = copyCaption;
   $('#upload-button').onclick = () => $('#photo-upload').click();
@@ -874,14 +1017,15 @@ async function copyText(text) {
 }
 function copyCaption() {
   copyText('我测出了《后会友期》里的「' + current.name + '」型友情嘴替——' + current.title + '。\n' +
-    current.stamp + '\n不是我对号入座，是这档节目在我心里装监控了。\n你测出谁？ ' + APP_PATH)
+    current.stamp + '\n不是我对号入座，是这档节目在我心里装监控了。\n你测出谁？ ' + APP_PATH + 'share/' + current.id + '.html')
     .then(() => toast('朋友圈文案已复制'));
 }
 async function share() {
+  if (isWeChat()) { copyCaption(); return; }
   const text = '我测出了《后会友期》友情嘴替：' + current.title + '。你也来测测！';
-  const url = APP_PATH + '?r=' + current.id;
+  const url = APP_PATH + 'share/' + current.id + '.html';
   try {
-    if (navigator.share) await navigator.share({ title: '谁是你的友情嘴替？', text, url });
+    if (navigator.share) await navigator.share({ title: '我是' + current.name + '型：' + current.stamp, text, url });
     else { await copyText(text + '\n' + url); toast('结果链接已复制'); }
   } catch (err) {
     if (err.name !== 'AbortError') { await copyText(text + '\n' + url); toast('结果链接已复制'); }
@@ -1084,6 +1228,18 @@ function barcode(ctx, x, y, w, h, seedStr, color) {
   }
 }
 
+/* 票根备注：每人固定一句，已手工避开“印章”和“派别名”，三处不重复 */
+const REMARK = {
+  li:    '已读不回，也是一种回复',
+  xu:    '老兵烧烤，今天出摊',
+  zhang: '马克杯守墓人',
+  ma:    '人类好可怕，我要回郊区了',
+  wen:   '友情仅退款',
+  wang:  '我的通讯录不参加排他赛',
+  qing:  '雷王 · 雷神杯那位',
+  bai:   '我是一本摊开的书，可惜青稚不识字'
+};
+function remarkOf(c) { return REMARK[c.id] || c.stamp; }
 function drawPoster(cvs, c, img, t, qrReady) {
   const ctx = cvs.getContext('2d');
   const W = 900, H = 1600;
@@ -1167,13 +1323,22 @@ function drawPoster(cvs, c, img, t, qrReady) {
     /* 存根：二维码放在这里 */
     spaced(ctx, 'DESTINATION', 84, 1310, 16, DUST, 3, FMONO);
     block(ctx, '下一站：把话说完，再各自好好走', 84, 1360, 470, 29, INK, FSERIF, '400', 44, 2);
-    spaced(ctx, '2026 · SZX → 后会友期', 84, 1462, 16, '#8B9498', 1, FSANS);
+    /* 备注栏：车票上那句手写体梗 */
+    ctx.strokeStyle = 'rgba(18,36,47,.18)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(84, 1440); ctx.lineTo(W - 320, 1440); ctx.stroke();
+    spaced(ctx, '备注 / REMARK', 84, 1468, 12, '#A88355', 2, FMONO);
+    const rk = remarkOf(c);
+    font(ctx, 26, FSERIF);
+    let rfs = 26;
+    while (rfs > 15 && ctx.measureText('「' + rk + '」').width > W - 404) { rfs -= 1; font(ctx, rfs, FSERIF); }
+    ctx.fillStyle = INK;
+    ctx.fillText('「' + rk + '」', 84, 1494);
     if (qrReady) {
       drawQR(ctx, APP_PATH, W - 268, 1292, 168, INK, PAPER);
       spaced(ctx, '扫码测你的嘴替', W - 268, 1486, 13, DUST, 0, FSANS);
     }
-    spaced(ctx, '非官方粉丝创作 · 票据仅供收藏', 84, 1516, 13, '#96907F', 0, FSANS);
-    if (img) spaced(ctx, '人物照片由网站维护者提供', W - 296, 1516, 12, '#96907F', 0, FSANS);
+    spaced(ctx, '非官方粉丝创作 · 票据仅供收藏', 84, 1532, 11, '#96907F', 0, FSANS);
+    if (img) spaced(ctx, '人物照片由网站维护者提供', W - 300, 1532, 10, '#96907F', 0, FSANS);
   }
 
   else if (t === 'magazine') {
@@ -1227,12 +1392,15 @@ function drawPoster(cvs, c, img, t, qrReady) {
       const fs = compact ? 26 : 31, blh = compact ? 40 : 48, flh = compact ? 38 : 46;
       const pTop = compact ? 38 : 46, pBot = compact ? 20 : 26, gap = compact ? 12 : 18;
       const rows = [];
-      c.meme.split('\n').forEach(line => {
+      (MEME2[c.id] || c.meme.split('\n')).forEach(line => {
         const who = line.split('：')[0];
         const txt = line.slice(who.length + 1);
-        font(ctx, fs, FSANS, '600');
+        const you = (who === '你');
+        const fs2 = you ? Math.round(fs * 1.28) : fs;
+        const lh2 = you ? Math.round(blh * 1.28) : blh;
+        font(ctx, fs2, FSANS, you ? '700' : '600');
         const n = wrapCJK(ctx, txt, innerW - 44, 2).length;
-        rows.push({ kind: 'meme', label: who, txt, n, h: pTop + n * blh + pBot });
+        rows.push({ kind: 'meme', label: who, txt, n, you, fs: fs2, lh: lh2, h: pTop + n * lh2 + pBot + (you ? 14 : 0) });
       });
       font(ctx, compact ? 25 : 30, FSANS, '600');
       const fn = wrapCJK(ctx, c.weak, innerW - 44, 3).length;
@@ -1270,12 +1438,14 @@ function drawPoster(cvs, c, img, t, qrReady) {
     cy += 102;
 
     P.rows.forEach(r => {
-      const bg = r.kind === 'reply' ? '#F6E4C9' : '#EDE3D2';
-      const lb = r.kind === 'meme' ? '#A88355' : '#7C8B93';
+      const you = !!r.you;
+      const bg = you ? NIGHT : (r.kind === 'reply' ? '#F6E4C9' : '#EDE3D2');
+      const lb = you ? '#D9A05B' : (r.kind === 'meme' ? '#A88355' : '#7C8B93');
+      const tc = you ? '#FFF4E2' : INK;
       rr(ctx, cardX + padX, cy, innerW, r.h, 18, bg);
-      spaced(ctx, r.label, cardX + padX + 22, cy + P.pTop - 6, 14, lb, 1, FSANS);
-      const lh = r.kind === 'meme' ? P.blh : P.flh;
-      block(ctx, r.txt, cardX + padX + 22, cy + P.pTop + 50, innerW - 44, P.fs, INK, FSANS, '600', lh, 3);
+      spaced(ctx, r.label, cardX + padX + 22, cy + P.pTop - 6, you ? 16 : 14, lb, you ? 3 : 1, FSANS);
+      const lh = r.lh || (r.kind === 'meme' ? P.blh : P.flh);
+      block(ctx, r.txt, cardX + padX + 22, cy + P.pTop + (you ? 50 : 50), innerW - 44, r.fs || P.fs, tc, FSANS, you ? '700' : '600', lh, you ? 2 : 3);
       cy += r.h + P.gap;
     });
 
@@ -1330,6 +1500,7 @@ async function drawPreviews() {
 }
 
 /* ---------------- 保存 ---------------- */
+function isWeChat() { return /MicroMessenger/i.test(navigator.userAgent || ''); }
 function mobileSaveMode() {
   const ua = navigator.userAgent || '';
   return /iPad|iPhone|iPod|MicroMessenger/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
@@ -1342,20 +1513,17 @@ function showPosterSaveSheet(blob, filename, canvas) {
   mask.innerHTML =
     '<section class="sheet-dialog" role="dialog" aria-modal="true" aria-label="保存友情海报">' +
       '<div class="sheet-head"><strong>海报做好了</strong><button type="button" id="sheet-close" aria-label="关闭">✕</button></div>' +
-      '<p>在 iPhone 或微信里，<b>长按下面这张图 → 保存到相册</b>。也可以点「系统分享」或「下载原图」。</p>' +
+      '<p>' + (isWeChat() ? '长按下面这张图 → <b>保存到相册</b>；长按没反应就直接<b>截屏</b>，发朋友圈效果一样。' : '点「下载原图」保存，或长按图片 → 保存到相册。') + '</p>' +
       '<div class="sheet-preview"><img id="sheet-img" alt="已生成的友情人物海报，可长按保存"></div>' +
-      '<div class="sheet-actions"><button class="btn btn--dark" id="sheet-share">系统分享 / 存储</button>' +
+      '<div class="sheet-actions">' + (isWeChat() ? '' : '<button class="btn btn--dark" id="sheet-share">系统分享 / 存储</button>') +
       '<a class="btn btn--ghost" id="sheet-file" download="' + e(filename) + '">下载原图</a></div>' +
-      '<small>如果微信限制了保存，可以用浏览器打开，或直接截图保留海报。</small>' +
+      '<small>' + (isWeChat() ? '还是不行？点右上角 ⋯ → 在浏览器打开，再长按保存。' : '保存后在相册里就能直接发朋友圈。') + '</small>' +
     '</section>';
   document.body.appendChild(mask);
 
-  const preview = mask.querySelector('.sheet-preview');
-  canvas.className = 'sheet-canvas';
-  preview.prepend(canvas);
   const picture = mask.querySelector('#sheet-img');
-  picture.src = url;
-  picture.onerror = () => { picture.onerror = null; picture.src = canvas.toDataURL('image/png'); };
+  // 微信/iOS 不给 blob: 图片"保存到相册"，data URI 的成功率高得多；canvas 不再重复塞进弹层
+  picture.src = canvas.toDataURL('image/jpeg', 0.92);
   mask.querySelector('#sheet-file').href = url;
 
   const close = () => { URL.revokeObjectURL(url); mask.remove(); document.removeEventListener('keydown', esc); };
@@ -1363,7 +1531,8 @@ function showPosterSaveSheet(blob, filename, canvas) {
   document.addEventListener('keydown', esc);
   mask.querySelector('#sheet-close').onclick = close;
   mask.onclick = ev => { if (ev.target === mask) close(); };
-  mask.querySelector('#sheet-share').onclick = async () => {
+  const shareBtn = mask.querySelector('#sheet-share');
+  if (shareBtn) shareBtn.onclick = async () => {
     try {
       const file = new File([blob], filename, { type: 'image/png' });
       if (navigator.canShare && navigator.canShare({ files: [file] }) && navigator.share) {
