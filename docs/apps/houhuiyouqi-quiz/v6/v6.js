@@ -3,7 +3,7 @@
    非官方粉丝创作：情境来自公开节目片段，人物标签与文案为原创趣味类比。 */
 
 const APP_PATH = 'https://olivia-wr-research.github.io/apps/houhuiyouqi-quiz/';
-const MEDIA_ROOT = APP_PATH + 'v6/';
+const MEDIA_ROOT = new URL('/apps/houhuiyouqi-quiz/v6/', location.origin).href;
 const EPISODE = 'https://www.mgtv.com/h/914227.html';
 const EVIDENCE = 'https://www.mgtv.com/act/2026/hhyq2026/';
 
@@ -1115,7 +1115,7 @@ function ensureQR() {
   if (window.qrcode) { qrLib = window.qrcode; return Promise.resolve(true); }
   return new Promise(resolve => {
     const s = document.createElement('script');
-    s.src = APP_PATH + 'qrcode.js'; s.async = true;
+    s.src = new URL('/apps/houhuiyouqi-quiz/qrcode.js', location.origin).href; s.async = true;
     s.onload = () => { qrLib = window.qrcode; resolve(!!qrLib); };
     s.onerror = () => resolve(false);
     document.head.appendChild(s);
