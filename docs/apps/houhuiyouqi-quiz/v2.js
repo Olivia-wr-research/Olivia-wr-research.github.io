@@ -195,8 +195,55 @@ textPos(ctx,'非官方趣味游戏 / 不是嘉宾真实发言',91,1530,15,'#bdc6
 if(img&&photoSources[c.id]&&!customPhotos[c.id]){textPos(ctx,'用户提供人物照片 / 非官方粉丝测试',90,t==='ticket'?1510:(t==='magazine'?1550:1580),15,(t==='ticket'||t==='magazine')?'#65727a':'#f7e5d3')}
 }
 async function renderAllPreviews(){if(!current)return;const id=current.id;for(const t of templates){const cvs=document.getElementById('canvas-'+t.id);if(cvs)drawCanvas(cvs,current,null,t.id)}const im=await photoImg(id);if(!current||current.id!==id)return;for(const t of templates){const cvs=document.getElementById('canvas-'+t.id);if(cvs)drawCanvas(cvs,current,im,t.id)}}
-async function download(){if(!current)return;let b=$('#download');b.disabled=true;b.textContent='正在生成海报…';try{let cvs=document.createElement('canvas');cvs.width=1080;cvs.height=1920;const im=await photoImg(current.id);drawCanvas(cvs,current,im,selectedTemplate);await new Promise((resolve,reject)=>cvs.toBlob(blob=>{if(!blob)return reject(Error('canvas'));const url=URL.createObjectURL(blob);let a=document.createElement('a');a.href=url;a.download='后会友期-友情嘴替-'+current.name+'-'+selectedTemplate+'.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),8000);resolve()},'image/png'));toast(im?'海报已保存，带上照片发朋友圈吧！':'海报已保存，若要真人照片可上传后重新导出')}
-catch(err){toast('图片生成失败，可先截图或更换照片再试')}finally{b.disabled=false;b.textContent='保存当前海报 PNG ↓'}}
+
+function mobileSaveMode(){
+ const ua=(navigator.userAgent||'');
+ return /iPad|iPhone|iPod|MicroMessenger/i.test(ua) || (navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+}
+function showPosterSaveSheet(blob,filename,dataUrl){
+ const existing=document.getElementById('poster-save-sheet');if(existing)existing.remove();
+ const url=URL.createObjectURL(blob);
+ const mask=document.createElement('div');mask.className='v2-save-overlay';mask.id='poster-save-sheet';
+ mask.innerHTML='<section class="v2-save-dialog" role="dialog" aria-modal="true" aria-label="保存友情海报"><div class="v2-save-head"><strong>你的专属海报已生成</strong><button type="button" id="poster-save-close" aria-label="关闭">✕</button></div><p>在 iPhone 或微信里，<b>长按下方图片 → 保存到相册</b>。也可点击「系统分享」或「下载原图」。</p><div class="v2-save-preview"><img id="poster-save-image" alt="已生成的友情人物海报，可长按保存"></div><div class="v2-save-actions"><button class="v2-btn dark" id="poster-native-share">系统分享 / 存储</button><a class="v2-btn outline" id="poster-save-file" download="'+e(filename)+'">下载原图</a></div><small>如果微信限制保存，请通过浏览器打开，或使用截图保留海报。</small></section>';
+ document.body.appendChild(mask);
+ document.getElementById('poster-save-image').src=dataUrl;
+ document.getElementById('poster-save-file').href=url;
+ const close=()=>{URL.revokeObjectURL(url);mask.remove();document.removeEventListener('keydown',esc)};
+ function esc(ev){if(ev.key==='Escape')close()}
+ document.addEventListener('keydown',esc);
+ document.getElementById('poster-save-close').onclick=close;
+ mask.onclick=(ev)=>{if(ev.target===mask)close()};
+ document.getElementById('poster-native-share').onclick=async()=>{
+   try{
+     const file=new File([blob],filename,{type:'image/png'});
+     if(navigator.canShare && navigator.canShare({files:[file]})&&navigator.share)await navigator.share({files:[file],title:'《后会友期》友情海报'});
+     else toast('此浏览器未提供图片系统分享，请长按上方海报保存');
+   }catch(err){if(err.name!=='AbortError')toast('系统分享不可用，请长按上方图片保存')}
+ };
+}
+async function download(){
+ if(!current)return;
+ const b=$('#download');b.disabled=true;b.textContent='正在生成海报…';
+ try{
+   const im=await photoImg(current.id);
+   if(!im)throw Error('person_image_missing');
+   const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1920;
+   drawCanvas(canvas,current,im,selectedTemplate);
+   const blob=await new Promise((resolve,reject)=>canvas.toBlob(v=>v?resolve(v):reject(Error('png_export_failed')),'image/png'));
+   const filename='后会友期-友情嘴替-'+current.name+'-'+selectedTemplate+'.png';
+   if(mobileSaveMode()){
+     showPosterSaveSheet(blob,filename,canvas.toDataURL('image/png'));
+     toast('海报已生成，可长按保存到相册');
+   }else{
+     const url=URL.createObjectURL(blob);
+     const a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();
+     setTimeout(()=>URL.revokeObjectURL(url),8000);
+     toast('已下载高清海报，准备分享吧');
+   }
+ }catch(err){
+   toast(err.message==='person_image_missing'?'人物照片尚未加载，请刷新页面后重试':'海报生成失败，请刷新或尝试更换图片');
+ }finally{b.disabled=false;b.textContent='保存当前海报 PNG ↓'}
+}
 async function init(){try{const t=localStorage.getItem('hhyq-template');if(templates.some(x=>x.id===t))selectedTemplate=t}catch{}
 try{portraitFocus=JSON.parse(localStorage.getItem('hhyq-focus')||'{}')||{}}catch{portraitFocus={}}await restorePhotos();const r=new URL(location.href).searchParams.get('r');if(r&&C[r]){current=C[r];renderResult()}else home()}
 window.addEventListener('popstate',()=>{const r=new URL(location.href).searchParams.get('r');if(r&&C[r]){current=C[r];renderResult()}else home()});
