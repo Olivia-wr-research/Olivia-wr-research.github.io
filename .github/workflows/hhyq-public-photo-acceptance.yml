@@ -1,0 +1,88 @@
+name: HHYQ public-site eight-photo acceptance
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/hhyq-public-photo-acceptance.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public:
+    name: Public HTTP / mobile screenshot & 8-photo checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Wait for final GitHub Pages release
+        run: |
+          set -euo pipefail
+          base="https://olivia-wr-research.github.io/apps/houhuiyouqi-quiz/"
+          ok=0
+          for attempt in $(seq 1 24); do
+            status=$(curl -L -sS --connect-timeout 10 --max-time 20 -o /tmp/hhyq-public-index.html -w '%{http_code}' "$base?acceptance=$attempt" || true)
+            if [ "$status" = "200" ] && grep -q '20261118-photo-beta-1' /tmp/hhyq-public-index.html; then
+              ok=1
+              break
+            fi
+            echo "Attempt $attempt: public index HTTP=$status, awaiting final asset version"
+            sleep 8
+          done
+          test "$ok" -eq 1
+          echo "PASS final public index version"
+      - name: Verify all eight published WebP images and exact SHA blobs
+        run: |
+          set -euo pipefail
+          base="https://olivia-wr-research.github.io/apps/houhuiyouqi-quiz/photos/"
+          for id in li xu zhang ma wen wang qing bai; do
+            curl --fail --show-error --silent --location --retry 3 --retry-delay 3 "$base$id.webp" -o "/tmp/hhyq-$id.webp"
+            test "$(wc -c <"/tmp/hhyq-$id.webp")" -gt 8000
+          done
+          python3 - <<'PY'
+          import hashlib
+          from pathlib import Path
+          expected={
+            'xu':'a13c3a19ffe3cd64dfa345ec0e3d59cce68b0bca',
+            'ma':'4e17297abc907dcf071c6acdd83904a07f68aefc',
+            'wang':'5e7511f066a427116a9d8eaf7e49c6822b7b35bd',
+            'li':'9e0d0eea58980144216bd833dc19d18dc7931d8b',
+            'wen':'3e2d848ee67b27e124c46eccc1593ff141b24e66',
+            'zhang':'127829141f4d45b993d33efc8c1861266f616fd6',
+            'qing':'5037cb8a984a764979b41c1b0abfcbbc5e3dc19d',
+            'bai':'21041fd41843c6e4476e6ac378a9ccceda0e54b4'}
+          for name,want in expected.items():
+            data=Path(f'/tmp/hhyq-{name}.webp').read_bytes()
+            assert data.startswith(b'RIFF') and data[8:12]==b'WEBP',f'{name} wrong image MIME'
+            got=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+            assert got==want,f'{name} mismatch: {got}'
+            print('PASS '+name+' '+str(len(data))+' B '+got[:10])
+          PY
+      - name: Browser opens every publicly hosted result portrait on mobile
+        run: |
+          npm install --prefix "$RUNNER_TEMP/hhyq-public-browser" --ignore-scripts --no-audit --no-fund playwright-core@1.65.0
+          export HHYQ_PW="$RUNNER_TEMP/hhyq-public-browser/node_modules/playwright-core"
+          node <<'JS'
+          const {chromium}=require(process.env.HHYQ_PW);
+          (async()=>{
+            const browser=await chromium.launch({headless:true,executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});
+            const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,deviceScaleFactor:2,
+              userAgent:'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1'});
+            const page=await context.newPage();
+            const errors=[];page.on('pageerror',e=>errors.push(e.message));
+            const base='https://olivia-wr-research.github.io/apps/houhuiyouqi-quiz/';
+            for(const id of ['li','xu','zhang','ma','wen','wang','qing','bai']){
+              await page.goto(base+'?r='+id,{waitUntil:'domcontentloaded'});
+              await page.waitForFunction(()=>{const i=document.querySelector('[data-character-photo]');return i?.complete&&i.naturalWidth>0},{timeout:20000});
+              const src=await page.locator('[data-character-photo]').getAttribute('src');
+              if(src!=='./photos/'+id+'.webp')throw Error('Wrong picture: '+id+' '+src);
+            }
+            await page.locator('#download').click();
+            await page.locator('#poster-save-sheet').waitFor();
+            await page.waitForFunction(()=>!!document.querySelector('.v2-save-canvas'));
+            if(errors.length)throw Error(JSON.stringify(errors));
+            console.log('PASS all 8 online images and phone poster save sheet');
+            await browser.close();
+          })().catch(e=>{console.error(e);process.exit(1)});
+          JS
