@@ -97,3 +97,74 @@ button{touch-action:manipulation}
 .v2-templates{grid-template-columns:repeat(2,minmax(0,1fr))}.v2-panel{padding:0 15px 42px}
 }
 @media(prefers-reduced-motion:reduce){.v2-template,.v2-choice{transition:none!important}}
+
+/* Prelaunch polish — lightweight, dependency-free and reduced-motion aware. */
+:focus-visible{outline:3px solid #d5995d;outline-offset:4px}
+.v2-btn,.v2-textbtn,.v2-choice,.v2-template{transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease,border-color .18s ease}
+.v2-btn:not(:disabled):hover{transform:translateY(-2px);box-shadow:0 7px 23px rgba(21,48,65,.16)}
+.v2-btn:not(:disabled):active,.v2-choice:active{transform:translateY(1px) scale(.995)}
+.v2-bubble{white-space:normal;border:1px solid #d9e3d9}
+.v2-evidence{display:grid;gap:10px;margin:13px 0 7px}
+.v2-evidence-row{background:#f8f5ee;border:1px solid #eae2d7;border-radius:12px;padding:12px 15px;display:flex;align-items:flex-start;gap:12px}
+.v2-evidence-row span{flex:0 0 auto;border-radius:12px;background:#e6d3bd;color:#6e533c;font-size:11px;font-weight:800;padding:5px 8px;line-height:1.4}
+.v2-evidence-row p{flex:1;margin:0;font-size:13px;line-height:1.65;color:#465e69}
+.v2-reason-note{color:#829098;font-size:11px;line-height:1.7;margin:9px 0 22px}
+.v2-focus{background:#fffdf8;border:1px solid #d8d6cc;border-radius:13px;padding:10px 12px;display:flex;align-items:center;gap:12px;font-size:12px;color:#355262;flex-wrap:wrap}
+.v2-focus input{width:115px;max-width:40vw;accent-color:#a67752;cursor:pointer}
+.v2-focus output{min-width:32px;text-align:right;font-variant-numeric:tabular-nums;color:#8d765e}
+.v2-result-head h1{letter-spacing:.018em}
+.v2-photo img{object-fit:cover;object-position:center 42%;min-width:100%;min-height:100%}
+.v2-photo{isolation:isolate}
+.v2-template{overflow:hidden}
+.v2-template.active{background:#fffcf6;box-shadow:0 0 0 2px #a97952,0 10px 32px rgba(51,79,85,.16)}
+.v2-templates{align-items:start}
+.v2-result-grid,.v2-panel{animation:v2-reveal .46s cubic-bezier(.2,.7,.2,1) both}
+@keyframes v2-reveal{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){
+ .v2-result-head h1{font-size:clamp(36px,9.3vw,55px)}
+ .v2-photo{height:min(112vw,460px)}
+ .v2-portrait-tag{font-size:10px;max-width:calc(100% - 30px)}
+ .v2-focus{width:100%;justify-content:space-between}
+ .v2-focus input{flex:1;width:auto;min-width:85px}
+ .v2-question{box-shadow:0 13px 36px rgba(53,78,83,.07)}
+}
+@media(max-width:350px){
+ .v2-hero h1{font-size:49px}
+ .v2-templates{gap:9px}
+ .v2-panel{padding:0 10px 40px}
+ .v2-template strong{font-size:12px}
+ .v2-choice{padding:13px 11px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+ .v2-result-grid,.v2-panel{transform:none!important;opacity:1!important}
+}
+
+/* The primary share action is visible immediately after results appear. */
+.v2-quickactions{display:flex;align-items:center;justify-content:center;gap:11px;flex-wrap:wrap;margin:18px 0 10px}
+.v2-quickactions .v2-btn{min-height:45px;padding:12px 24px}
+.v2-head-note{display:block;color:#8c8b80;font-size:11px;line-height:1.7;max-width:560px;margin:8px auto 0}
+@media(max-width:760px){
+ .v2-quickactions{gap:9px}
+ .v2-quickactions .v2-btn{flex:1;max-width:220px;padding:12px 10px;font-size:12px}
+ .v2-result-head{padding-bottom:15px}
+}
+
+/* Mobile share-sheet: the image stays visible so a long press can save it. */
+.v2-save-overlay{position:fixed;inset:0;z-index:2000;background:rgba(14,30,41,.84);display:grid;place-items:center;padding:max(12px,env(safe-area-inset-top)) 14px max(12px,env(safe-area-inset-bottom));overflow-y:auto}
+.v2-save-dialog{width:min(440px,100%);max-height:96svh;overflow-y:auto;background:#fffaf2;border-radius:22px;padding:18px 17px 20px;box-shadow:0 18px 70px #081c29aa;color:#263e4c}
+.v2-save-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.v2-save-head strong{font-size:18px}
+.v2-save-head button{background:#ecdfcd;color:#253b49;width:36px;height:36px;border-radius:50%}
+.v2-save-dialog p{font-size:13px;line-height:1.8;color:#586b74;margin:9px 0 11px}
+.v2-save-preview{background:#e9dac4;max-height:min(53svh,550px);overflow:auto;text-align:center;border-radius:12px;line-height:0}
+.v2-save-preview img{width:auto;height:auto;max-width:100%;max-height:50svh;object-fit:contain;display:inline-block;-webkit-touch-callout:default;user-select:auto;-webkit-user-select:auto}
+.v2-save-actions{display:flex;gap:8px;margin-top:13px;flex-wrap:wrap}
+.v2-save-actions .v2-btn{font-size:12px;flex:1;min-width:125px;padding:11px 9px;text-decoration:none}
+.v2-save-dialog>small{display:block;color:#829099;line-height:1.8;margin-top:10px}
+@media(max-width:360px){.v2-save-dialog{padding:12px}.v2-save-dialog p{font-size:12px}}
+
+/* Save-sheet canvas backs up image rendering in WebKit, ensuring no blank preview. */
+.v2-save-preview{position:relative;display:flex;align-items:center;justify-content:center}
+.v2-save-preview .v2-save-canvas{width:auto;height:auto;max-width:100%;max-height:50svh;display:block;object-fit:contain}
+.v2-save-preview #poster-save-image{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;max-width:none;max-height:none;pointer-events:auto;background:transparent}

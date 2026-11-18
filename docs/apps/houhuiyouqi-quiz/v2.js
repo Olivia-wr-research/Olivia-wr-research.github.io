@@ -8,9 +8,11 @@ const templates=[
 {id:'ticket',name:'B · 友情车票',desc:'一张不退票的关系单'},
 {id:'magazine',name:'C · 友情人物特刊',desc:'人设像杂志封面'},
 {id:'danmu',name:'D · 弹幕破防卡',desc:'适合朋友圈互相贴脸'}];
-const photoSources={
-ma:{url:'https://commons.wikimedia.org/wiki/Special:FilePath/180115%20%E8%8B%B1%E9%9B%84%E6%9C%AC%E8%89%B22018%20%E9%A6%96%E6%98%A0%E7%A4%BC%20%E7%BA%A2%E6%AF%AF%20%E9%A9%AC%E5%A4%A9%E5%AE%87%206.jpg?width=850',credit:'RayOfSunshine · CC BY 2.5 · 马天宇红毯照片（海报裁剪排版）',source:'https://commons.wikimedia.org/wiki/Category:Ma_Tianyu_in_2018'},
-zhang:{url:'https://commons.wikimedia.org/wiki/Special:FilePath/Alina%20Zhang%20Meng%20cropped.jpg?width=850',credit:'rayofsunshine · CC BY 2.5 · 张萌人物照片（原图已裁剪，海报再次排版）',source:'https://commons.wikimedia.org/wiki/File:Alina_Zhang_Meng_cropped.jpg'}};
+const photoSources=Object.fromEntries(
+ ['li','xu','zhang','ma','wen','wang','qing','bai'].map(id=>[
+  id,{url:'./photos/'+id+'.webp',credit:'人物照片由站点维护者提供；据其说明来自官方小红书发布。版权归原权利人。',origin:'provided'}
+ ])
+);
 const characters=[
 {id:'li',name:'厉娜',title:'友情「已读但不强制原谅」派',stamp:'不和好也可以是结局',meme:'别人：都这么久了，你还不翻篇？\n你：日历会自动翻页，关系又不是自动续费。',caption:'表面：没什么好说的。\n心里：发生过的事，不会因为时间久就变成没发生。',touch:'你不是把旧事记成账本，而是知道有些伤口不能靠一句“算了吧”解决。你可以允许对方把话说完，也允许自己保留感受。对你来说，体面的告别和重新开始一样值得尊重。',weak:'太习惯自己消化情绪，别人可能不知道你真的有多难过。',mission:'你的友情通关提示：不必为了证明大度，把还没愈合的事轻轻带过。',scenetitle:'节目对应：厉娜与许飞车上对谈，以及“不一定继续做朋友”的表达',scenesrc:EVIDENCE,pair:'许飞',tags:['边界先于和解','慢热但记得','可以体面告别'],dims:[24,80,29,34,40],theme:'#748b95'},
 {id:'xu',name:'许飞',title:'友情「往事售后客服」派',stamp:'工单可以关闭，话要说完',meme:'别人：都过去十几年了。\n你：时间是过去了，我的未读消息还没处理。',caption:'嘴上：都过去了。\n脑内：那段友情的复盘文档已自动打开第18版。',touch:'你在意的不是赢一场争论，而是想知道两个人为什么从亲近走到了这里。你愿意翻开旧信，也愿意试着把没说完的话讲出来。但你慢慢会明白：表达你的版本很重要，接受对方未必给你同一种答案也很重要。',weak:'你有时候把“说清楚”误当成“还能回到从前”。',mission:'你的友情通关提示：说完想说的话，就已经完成了自己的那一部分。',scenetitle:'节目对应：许飞读介绍信落泪、与厉娜谈过往及询问能否重新做朋友',scenesrc:EVIDENCE,pair:'厉娜',tags:['未完待续型','复盘十级学者','情感存档'],dims:[83,38,62,50,58],theme:'#7b9b91'},
@@ -59,16 +61,16 @@ const Q=[
 ['很感动，但“感动”和“原谅”是两件事。',[-1,2,1,0,-1]],
 ['先不回复，我需要自己把心情安顿好。',[-1,1,-2,-1,0]],
 ['直接约TA坐下来，一次把话讲清楚。',[2,-1,2,2,1]]]},
-{scene:'08 / 观察室提问：满分还是零分',fact:'节目相关情境：观察嘉宾曾讨论“满分朋友”和“零分朋友”。',title:'观察室问：一段友情曾经100分，现在可能只剩10分。你认同哪个说法？',opts:[
-['至少曾经100分，不会因为现在的10分就抹掉。',[1,-1,0,0,2]],
-['过去是过去，今天怎么相处就按今天算。',[-2,2,0,0,-2]],
-['分数不重要，先弄明白为什么走到了这一步。',[2,0,2,0,1]],
-['别打分了，先给关系安排一次重新体验。',[2,-1,1,2,0]]]},
-{scene:'09 / 狼人杀同桌局',fact:'节目相关情境：节目曾播出五人狼人杀游戏片段。',title:'狼人杀同桌偏偏坐着你曾经闹翻的那个人。TA说“信我”。你会？',opts:[
-['这游戏先别带私人恩怨，认真玩完。',[0,1,1,1,-1]],
-['“你说信我我就信？给证据！”',[-1,1,2,2,-1]],
-['嘴上说不信，心里还保留一点偏爱。',[1,-1,-1,1,2]],
-['“游戏结束之后，我们能不能也聊聊？”',[2,0,2,1,1]]]},
+{scene:'08 / 布达拉宫友情合影',fact:'节目对应：第5期好友团在布达拉宫拍摄旅行合影。以下为原创互动情境。',title:'旅行团终于拍合照了。你在朋友圈发图之前最可能做什么？',opts:[
+['先给每个人发原图，选照片这事必须一起开心。',[2,-1,1,2,1]],
+['悄悄留一张最好看的，纪念不用给所有人看。',[-1,1,-2,-1,1]],
+['我的表情不好看也不重拍，真实的旅程比照片重要。',[-1,2,0,0,-2]],
+['认真协调每个人的站位和想法，争取拍到大家满意。',[2,0,2,1,0]]]},
+{scene:'09 / 五人狼人杀游戏局',fact:'节目对应：芒果TV 11月13日加更版《5人狼人杀游戏局》。以下是原创游戏情境，并非嘉宾真实发言。',title:'狼人杀局开了，朋友第一轮就把票投给你，你会怎么接？',opts:[
+['“行，咱们先把这局打漂亮，输赢都不记仇。”',[0,0,1,2,-1]],
+['“先别急，凭什么怀疑我？把逻辑讲出来！”',[-1,1,2,2,-1]],
+['嘴上喊“绝交五分钟”，转头又和TA同一阵营。',[1,-1,1,2,2]],
+['“游戏结束，走，咱们去吃点好吃的。”',[2,0,1,1,1]]]},
 {scene:'10 / 后会友期：最后一站',fact:'节目核心命题：重逢之后可以继续同行，也可以体面告别，不强制和好。',title:'车要到站了，旧友问你：“我们以后还会见面吗？”你最想回答？',opts:[
 ['“有机会的。下次，我主动约。”',[2,-1,2,2,1]],
 ['“不知道，但能把这段旅程走完已经很好了。”',[-1,1,0,-1,-1]],
@@ -76,12 +78,12 @@ const Q=[
 ['“我会记得你，也会继续走自己的路。”',[-2,2,-1,-1,0]]]}
 ];
 const app=document.getElementById('app');
-let answers=Array(Q.length).fill(-1),step=0,current=null,selectedTemplate='cinema',customPhotos={},imgCache={};
+let answers=Array(Q.length).fill(-1),step=0,current=null,selectedTemplate='cinema',customPhotos={},imgCache={},portraitFocus={};
 const $=s=>document.querySelector(s);
 const e=s=>String(s).replace(/[&<>"']/g,k=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[k]));
 function toast(s){const t=$('#toast');if(!t)return;t.textContent=s;t.classList.add('on');clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.remove('on'),3000)}
 function nav(dark=false){return '<div class="v2-nav '+(dark?'dark':'')+'"><a href="'+APP_PATH+'" class="v2-brand">HOU HUI YOU QI / 后会友期</a><span class="v2-mini">非官方粉丝创作 · V2</span></div>'}
-function reset(){step=0;answers=Array(Q.length).fill(-1);sessionStorage.removeItem('hhyq-progress');history.replaceState({},'',location.pathname);renderQuestion()}
+function reset(){step=0;answers=Array(Q.length).fill(-1);try{sessionStorage.removeItem('hhyq-progress')}catch{}history.replaceState({},'',location.pathname);renderQuestion()}
 function saveProgress(){try{sessionStorage.setItem('hhyq-progress',JSON.stringify({answers,step}))}catch{}}
 function resume(){try{const s=JSON.parse(sessionStorage.getItem('hhyq-progress'));if(s&&Array.isArray(s.answers)&&s.answers.length===Q.length&&s.answers.every(a=>a>=-1&&a<4)){answers=s.answers;step=Math.max(0,Math.min(Q.length-1,s.step||0));return true}}catch{}return false}
 function home(){document.title='谁是你的友情嘴替｜后会友期非官方趣味测试';window.scrollTo(0,0);
@@ -89,12 +91,12 @@ app.innerHTML='<main class="v2-home">'+nav()+'<div class="v2-hero"><section><div
 $('#start').onclick=reset;const c=$('#continue');if(c)c.onclick=()=>{resume();renderQuestion()};
 }
 function renderQuestion(){document.title='第'+(step+1)+'站｜后会友期友情人格测试';window.scrollTo(0,0);let q=Q[step];
-app.innerHTML='<main class="v2-shell">'+nav(true)+'<div class="v2-body"><div class="v2-prog-head"><span>友情售后工单 · 第'+(step+1)+'站</span><span>'+(step+1)+' / '+Q.length+'</span></div><div class="v2-progress"><div style="width:'+Math.round(step/Q.length*100)+'%"></div></div><div class="v2-episode">'+e(q.scene)+'</div><section class="v2-question"><h2>'+e(q.title)+'</h2><p class="notice">'+e(q.fact)+'<br><small>以下为原创情境选项，不是嘉宾在节目中的真实作答。</small></p>'+q.opts.map((o,i)=>'<button data-ans="'+i+'" class="v2-choice '+(answers[step]===i?'active':'')+'"><b>'+('ABCD'[i])+'</b><span>'+e(o[0])+'</span></button>').join('')+'</section><div class="v2-qfoot"><button class="v2-textbtn" id="back">'+(step?'← 上一站':'← 回首页')+'</button><button class="v2-btn dark" id="forward" '+(answers[step]<0?'disabled':'')+'>'+(step===Q.length-1?'揭晓我的互联网嘴替 →':'下一站 →')+'</button></div><div class="v2-deco">没有标准答案，第一反应最像你的友情相处方式。</div></div></main>';
+app.innerHTML='<main class="v2-shell">'+nav(true)+'<div class="v2-body"><div class="v2-prog-head"><span>友情售后工单 · 第'+(step+1)+'站</span><span>'+(step+1)+' / '+Q.length+'</span></div><div class="v2-progress" role="progressbar" aria-label="测试进度" aria-valuemin="0" aria-valuemax="10" aria-valuenow="'+(step+1)+'"><div style="width:'+Math.round((step+1)/Q.length*100)+'%"></div></div><div class="v2-episode">'+e(q.scene)+'</div><section class="v2-question"><h2>'+e(q.title)+'</h2><p class="notice">'+e(q.fact)+'<br><small>以下为原创情境选项，不是嘉宾在节目中的真实作答。</small></p>'+q.opts.map((o,i)=>'<button data-ans="'+i+'" class="v2-choice '+(answers[step]===i?'active':'')+'" aria-pressed="'+(answers[step]===i?'true':'false')+'"><b>'+('ABCD'[i])+'</b><span>'+e(o[0])+'</span></button>').join('')+'</section><div class="v2-qfoot"><button class="v2-textbtn" id="back">'+(step?'← 上一站':'← 回首页')+'</button><button class="v2-btn dark" id="forward" '+(answers[step]<0?'disabled':'')+'>'+(step===Q.length-1?'揭晓我的互联网嘴替 →':'下一站 →')+'</button></div><div class="v2-deco">没有标准答案，第一反应最像你的友情相处方式。</div></div></main>';
 document.querySelectorAll('[data-ans]').forEach(b=>b.onclick=()=>{answers[step]=Number(b.dataset.ans);saveProgress();renderChoice()});
 $('#back').onclick=()=>{if(step===0)home();else{step--;saveProgress();renderQuestion()}};
 $('#forward').onclick=()=>{if(answers[step]<0)return;if(step===Q.length-1){current=scoreResult();sessionStorage.removeItem('hhyq-progress');history.replaceState({},'',location.pathname+'?r='+current.id);renderResult()}else{step++;saveProgress();renderQuestion()}};
 }
-function renderChoice(){document.querySelectorAll('[data-ans]').forEach(b=>b.classList.toggle('active',Number(b.dataset.ans)===answers[step]));$('#forward').disabled=false}
+function renderChoice(){document.querySelectorAll('[data-ans]').forEach(b=>{const chosen=Number(b.dataset.ans)===answers[step];b.classList.toggle('active',chosen);b.setAttribute('aria-pressed',String(chosen))});$('#forward').disabled=false}
 const choiceAnchors = {"li":[2,1,2,2,2,2,1,1,0,3],"xu":[3,3,3,3,1,0,0,2,3,2],"zhang":[0,0,0,0,0,0,3,3,3,0],"ma":[1,1,1,2,2,1,1,1,0,1],"wen":[1,2,3,1,1,3,0,0,2,0],"wang":[2,0,1,2,3,1,1,1,0,3],"qing":[0,0,3,0,0,0,3,3,2,0],"bai":[3,3,1,3,3,1,1,2,1,2]};
 function scoreResult(){
 const v=scoreForTests(answers);
@@ -105,21 +107,37 @@ return {c,dist:.4*choices+.6*dimensions+i*0.0000001};
 }).sort((a,b)=>a.dist-b.dist);
 ranking[0].c.runner=ranking[1].c.name;return ranking[0].c;
 }
+
+/* Editorial, answer-dependent reasons; illustrative, not a scientific assessment. */
+const answerInsights={
+ 0:['你会把记得一个人落实成具体行动。','你更愿意先给自己一点缓冲。','你珍惜过去，但不强迫关系重新打开。','你愿意给一段迟到的解释留入口。'],
+ 3:['你对新朋友加入持开放态度。','你很在意自己在关系里的独特位置。','你认可亲密不需要互相独占。','你更倾向于把担心当面说清楚。'],
+ 7:['你习惯先把快乐分享给大家。','你会悄悄收藏属于自己的好瞬间。','你比照片是否完美更在乎真实体验。','你愿意付出协调成本，让大家都舒服。'],
+ 8:['你在游戏里更在乎尽兴，不想记仇。','遇到质疑，你首先希望把证据讲明白。','你擅长用玩笑化解小别扭。','你会主动把朋友拉回轻松的相处节奏。']
+};
+function evidenceBlock(c){
+ if(!answers.every(a=>a>=0&&a<4)||scoreResult().id!==c.id)return '<p class="v2-reason-note">这是供分享或预览的人物画像。亲自完成10道题后，只有与你的实际匹配结果对应的页面才会显示专属答题线索。</p>';
+ const choices=[0,3,7,8].map(i=>({i,match:answers[i]===choiceAnchors[c.id][i],text:answerInsights[i][answers[i]]}));
+ const selected=choices.sort((a,b)=>Number(b.match)-Number(a.match)).slice(0,3).sort((a,b)=>a.i-b.i);
+ return '<div class="v2-evidence">'+selected.map(v=>'<div class="v2-evidence-row"><span>第'+(v.i+1)+'题</span><p>'+e(v.text)+'</p></div>').join('')+'</div><p class="v2-reason-note">只是说明这次选择如何参与趣味匹配，不是科学人格测量。</p>';
+}
 function getPhotoSrc(id){return customPhotos[id]||(photoSources[id]&&photoSources[id].url)||''}
+function getFocus(id){return Math.min(95,Math.max(5,Number(portraitFocus[id]??42)))}
 function picture(id){const src=getPhotoSrc(id);if(!src)return '';
-return '<img data-character-photo="'+id+'" src="'+e(src)+'" crossorigin="anonymous" alt="'+e(C[id].name)+'人物照片" onerror="this.style.display=\'none\';this.parentElement.classList.add(\'photo-unavailable\');" />'}
+return '<img data-character-photo="'+id+'" src="'+e(src)+'" style="object-position:center '+getFocus(id)+'%" crossorigin="anonymous" alt="'+e(C[id].name)+'人物照片" onerror="this.style.display=\'none\';this.parentElement.classList.add(\'photo-unavailable\');" />'}
 function characterCard(c){let has=getPhotoSrc(c.id);
 return '<section class="v2-character"><div class="v2-photo"><div class="fallback-art"><span class="word">'+e(c.name)+'</span><span class="sub">你的友情类型 / '+(has?'照片加载失败可自行更换':'请上传有权使用的角色照片')+'</span></div>'+picture(c.id)+'<span class="v2-portrait-tag">'+(has?'人物照片 / 可更换':'人物姓名艺术卡 / 待添加照片')+'</span></div><div class="v2-character-copy"><div class="smallcaps">YOUR FRIENDSHIP TYPE</div><h2>'+e(c.title)+'</h2><div class="quot">'+e(c.stamp)+'</div><div class="v2-hashtags">'+c.tags.map(t=>'<span>#'+e(t)+'</span>').join('')+'</div></div></section>'}
-function resultDetails(c){return '<section class="v2-analysis"><div class="v2-section-label">01 / 你的互联网弹幕</div><div class="v2-bubble">'+e(c.meme).replace(/\n/g,'<br>')+'</div><div class="v2-section-label">02 / 表面和内心两套系统</div><p class="v2-p">'+e(c.caption).replace(/\n/g,'<br>')+'</p><div class="v2-section-label">03 / 说点真正戳心的</div><p class="v2-p">'+e(c.touch)+'</p><div class="v2-section-label">04 / 友情翻车预警</div><p class="v2-p">'+e(c.weak)+'</p><div class="v2-section-label">05 / 下一站小纸条</div><div class="v2-soul">'+e(c.mission)+'</div><div class="v2-scene"><b>节目对应情境：</b>'+e(c.scenetitle.replace('节目对应：',''))+'<br><a href="'+e(c.scenesrc)+'" target="_blank" rel="noopener noreferrer">查看芒果TV节目资料 ↗</a><br><small>人物标签与梗文案均为原创趣味类比，并非嘉宾真实发言或科学测评。</small></div><div class="v2-actions"><button class="v2-btn dark" id="go-poster">选我的海报 ↓</button><button class="v2-btn outline" id="share-link">↗ 分享结果</button><button class="v2-btn outline" id="restart">↺ 再测一次</button></div><p class="v2-cta-note">节目里不一定每段友情都要和好。你也不用把自己活成哪位嘉宾，这是一次好玩的关系投射。</p></section>'}
-function resultHTML(c){return '<main class="v2-shell">'+nav(true)+'<header class="v2-result-head"><div class="eyebrow">RESULT / 友情嘴替鉴定书</div><h1>你测出了 <span style="color:#ad7b4c">'+e(c.name)+'</span> 型</h1><p>你不是被“判定”为某位真人，只是在某种友情处境下，与你选中的节目人物原型相似。</p></header><div class="v2-result-grid">'+characterCard(c)+resultDetails(c)+'</div><section class="v2-panel" id="poster-chooser"><h2>来，选一张你愿意发朋友圈的海报</h2><p>四种排版不是换色皮肤。点击就能预览并选用。下方可以切换人物检查每张卡片是否好看。</p><div class="v2-templates">'+templates.map(t=>'<button class="v2-template '+(t.id===selectedTemplate?'active':'')+'" data-template="'+t.id+'"><canvas id="canvas-'+t.id+'" width="270" height="480" aria-label="'+e(t.name)+'预览"></canvas><strong>'+e(t.name)+'</strong><small>'+e(t.desc)+'</small></button>').join('')+'</div><div class="v2-design-toolbar"><select id="character-preview" class="v2-select" aria-label="预览其他角色">'+characters.map(p=>'<option value="'+p.id+'" '+(p.id===c.id?'selected':'')+'>'+e(p.name)+'</option>').join('')+'</select><button class="v2-btn dark" id="download">保存当前海报 PNG ↓</button><button class="v2-btn outline" id="upload-button">上传/替换人物照片</button><button class="v2-btn outline" id="copy-caption">复制朋友圈文案</button></div><div class="v2-banner"><b>关于照片：</b>只有部分人物有可核实来源的公开许可图片。其他人物不再显示灰色人形冒充真图——请使用「上传/替换人物照片」选择你有权使用的照片，预览与导出同步更新。你上传的图片仅留在当前浏览器，不会上传到服务器；分享链接不会携带你的图片。</div></section><footer class="v2-footer">《后会友期》非官方粉丝互动作品。题目参考芒果TV公开节目情境，结果是原创设定，不代表真人真实人格。<br>节目资料：<a href="'+EVIDENCE+'" target="_blank" rel="noopener noreferrer">芒果TV官方节目页</a>。<span id="image-credit"></span></footer><input hidden id="photo-upload" type="file" accept="image/jpeg,image/png,image/webp"></main>'}
+function resultDetails(c){return '<section class="v2-analysis"><div class="v2-section-label">01 / 你的互联网弹幕</div><div class="v2-bubble">'+e(c.meme).replace(/\n/g,'<br>')+'</div><div class="v2-section-label">02 / 表面和内心两套系统</div><p class="v2-p">'+e(c.caption).replace(/\n/g,'<br>')+'</p><div class="v2-section-label">03 / 你的真实选择线索</div>'+evidenceBlock(c)+'<div class="v2-section-label">04 / 说点真正戳心的</div><p class="v2-p">'+e(c.touch)+'</p><div class="v2-section-label">05 / 友情翻车预警</div><p class="v2-p">'+e(c.weak)+'</p><div class="v2-section-label">06 / 下一站小纸条</div><div class="v2-soul">'+e(c.mission)+'</div><div class="v2-scene"><b>节目对应情境：</b>'+e(c.scenetitle.replace('节目对应：',''))+'<br><a href="'+e(c.scenesrc)+'" target="_blank" rel="noopener noreferrer">查看芒果TV节目资料 ↗</a><br><small>人物标签与梗文案均为原创趣味类比，并非嘉宾真实发言或科学测评。</small></div><div class="v2-actions"><button class="v2-btn dark" id="go-poster">选我的海报 ↓</button><button class="v2-btn outline" id="share-link">↗ 分享结果</button><button class="v2-btn outline" id="restart">↺ 再测一次</button></div><p class="v2-cta-note">节目里不一定每段友情都要和好。你也不用把自己活成哪位嘉宾，这是一次好玩的关系投射。</p></section>'}
+function resultHTML(c){return '<main class="v2-shell">'+nav(true)+'<header class="v2-result-head"><div class="eyebrow">RESULT / 友情嘴替鉴定书</div><h1>你测出了 <span style="color:#ad7b4c">'+e(c.name)+'</span> 型</h1><p>你不是被“判定”为某位真人，只是在某种友情处境下，与你选中的节目人物原型相似。</p><div class="v2-quickactions"><button class="v2-btn dark" id="fast-poster">一键选海报 ↓</button><button class="v2-btn outline" id="fast-share">分享人设 ↗</button></div><small class="v2-head-note">分享链接可显示网站公共人物照片。你自己替换的图片仅保留在本机，不会自动同步给朋友。</small></header><div class="v2-result-grid">'+characterCard(c)+resultDetails(c)+'</div><section class="v2-panel" id="poster-chooser"><h2>来，选一张你愿意发朋友圈的海报</h2><p>四种排版不是换色皮肤。点击就能预览并选用。下方可以切换人物检查每张卡片是否好看。</p><div class="v2-templates">'+templates.map(t=>'<button class="v2-template '+(t.id===selectedTemplate?'active':'')+'" data-template="'+t.id+'"><canvas id="canvas-'+t.id+'" width="270" height="480" aria-label="'+e(t.name)+'预览"></canvas><strong>'+e(t.name)+'</strong><small>'+e(t.desc)+'</small></button>').join('')+'</div><div class="v2-design-toolbar"><select id="character-preview" class="v2-select" aria-label="预览其他角色">'+characters.map(p=>'<option value="'+p.id+'" '+(p.id===c.id?'selected':'')+'>'+e(p.name)+'</option>').join('')+'</select><button class="v2-btn dark" id="download">保存当前海报 PNG ↓</button><button class="v2-btn outline" id="upload-button">上传/替换人物照片</button><label class="v2-focus" for="photo-focus">照片上下位置 <input type="range" min="5" max="95" step="1" id="photo-focus" value="'+getFocus(c.id)+'" aria-label="调整人物照片的垂直位置"><output id="photo-focus-value">'+getFocus(c.id)+'%</output></label><button class="v2-btn outline" id="copy-caption">复制朋友圈文案</button></div><div class="v2-banner"><b>关于照片：</b>八位人物的默认照片已作为网站公共静态资源部署，其他人打开也能看到。你在浏览器里自行替换的照片仍仅保存在本设备，不会修改别人看到的默认照片。</div></section><footer class="v2-footer">《后会友期》非官方粉丝互动作品。题目参考芒果TV公开节目情境，结果是原创设定，不代表真人真实人格。<br>节目资料：<a href="'+EVIDENCE+'" target="_blank" rel="noopener noreferrer">芒果TV官方节目页</a>。<span id="image-credit"></span></footer><input hidden id="photo-upload" type="file" accept="image/jpeg,image/png,image/webp"></main>'}
 function renderResult(){if(!current)return home();window.scrollTo(0,0);document.title='我是'+current.name+'型友情人格｜后会友期人物测试';app.innerHTML=resultHTML(current);
-$('#restart').onclick=reset;$('#share-link').onclick=share;$('#go-poster').onclick=()=>document.getElementById('poster-chooser').scrollIntoView({behavior:'smooth'});
+$('#restart').onclick=reset;$('#share-link').onclick=share;$('#go-poster').onclick=()=>document.getElementById('poster-chooser').scrollIntoView({behavior:'smooth'});$('#fast-poster').onclick=()=>document.getElementById('poster-chooser').scrollIntoView({behavior:'smooth'});$('#fast-share').onclick=share;
 $('#download').onclick=download;$('#copy-caption').onclick=copyCaption;
 document.querySelectorAll('[data-template]').forEach(x=>x.onclick=()=>{selectedTemplate=x.dataset.template;localStorage.setItem('hhyq-template',selectedTemplate);document.querySelectorAll('[data-template]').forEach(y=>y.classList.toggle('active',x===y));toast('已选中'+templates.find(t=>t.id===selectedTemplate).name)});
 $('#character-preview').onchange=x=>{current=C[x.target.value];history.replaceState({},'',location.pathname+'?r='+current.id);renderResult()};
 $('#upload-button').onclick=()=>$('#photo-upload').click();
 $('#photo-upload').onchange=handleUpload;
-const credit=photoSources[current.id];if(credit&&!customPhotos[current.id]){$('#image-credit').innerHTML='<br>照片资料来源：<a href="'+e(credit.source)+'" target="_blank" rel="noopener noreferrer">'+e(credit.credit)+'</a>；<a href="https://creativecommons.org/licenses/by/2.5/" target="_blank" rel="noopener noreferrer">图片许可 CC BY 2.5</a>。'}
+$('#photo-focus').oninput=(ev)=>{const v=Number(ev.target.value);portraitFocus[current.id]=v;$('#photo-focus-value').textContent=v+'%';try{localStorage.setItem('hhyq-focus',JSON.stringify(portraitFocus))}catch{}const im=document.querySelector('[data-character-photo]');if(im)im.style.objectPosition='center '+v+'%';renderAllPreviews()};
+const credit=photoSources[current.id];if(credit&&!customPhotos[current.id]){$('#image-credit').textContent=' 默认照片：'+credit.credit+' 本站非官方，未将公开发布标为开放许可。'}
 renderAllPreviews();
 }
 function scoreForTests(a){const totals=[0,0,0,0,0];a.forEach((pick,i)=>Q[i].opts[pick][1].forEach((v,j)=>totals[j]+=v));return totals.map(t=>Math.max(0,Math.min(100,50+t*2.5)))}
@@ -134,13 +152,13 @@ function compressFile(file){return new Promise((resolve,reject)=>{const fr=new F
 async function handleUpload(ev){const file=ev.target.files&&ev.target.files[0];if(!file)return;if(!file.type.startsWith('image/'))return toast('请选择照片文件');if(file.size>18*1024*1024)return toast('请使用小于18MB的图片');try{const uri=await compressFile(file);customPhotos[current.id]=uri;delete imgCache[current.id];await savePhoto(current.id,uri);renderResult();toast('照片已更新，并用于所有海报！')}catch{toast('照片读取失败，请换张图片')}}
 function photoImg(id){const src=getPhotoSrc(id);if(!src)return Promise.resolve(null);if(imgCache[id]&&imgCache[id].src===src)return imgCache[id].promise;const promise=new Promise(resolve=>{const im=new Image();if(!src.startsWith('data:'))im.crossOrigin='anonymous';let called=false;const finish=a=>{if(called)return;called=true;clearTimeout(timer);resolve(a)};im.onload=()=>finish(im);im.onerror=()=>finish(null);const timer=setTimeout(()=>finish(null),7000);im.src=src});imgCache[id]={src,promise};return promise}
 function rounded(ctx,x,y,w,h,r,fill){ctx.fillStyle=fill;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill()}
-function fillImage(ctx,img,x,y,w,h){if(!img)return false;try{const sc=Math.max(w/img.naturalWidth,h/img.naturalHeight),sw=img.naturalWidth*sc,sh=img.naturalHeight*sc;ctx.drawImage(img,x+(w-sw)/2,y+(h-sh)/2,sw,sh);return true}catch{return false}}
+function fillImage(ctx,img,x,y,w,h,id){if(!img)return false;try{const sc=Math.max(w/img.naturalWidth,h/img.naturalHeight),sw=img.naturalWidth*sc,sh=img.naturalHeight*sc;ctx.drawImage(img,x+(w-sw)/2,y-Math.max(0,sh-h)*getFocus(id)/100,sw,sh);return true}catch{return false}}
 function textWrap(ctx,text,x,y,width,lineHeight,limit){let line='',row=0;for(const char of text){if(char==='\n'){ctx.fillText(line,x,y+row*lineHeight);row++;line='';continue}if(ctx.measureText(line+char).width>width&&line){ctx.fillText(line,x,y+row*lineHeight);row++;line='';if(row>=limit)return}line+=char}if(line&&row<limit)ctx.fillText(line,x,y+row*lineHeight)}
 function textPos(ctx,t,x,y,size,color,bold=false){ctx.fillStyle=color;ctx.font=(bold?'700 ':'400 ')+size+'px "Noto Sans SC","PingFang SC",sans-serif';ctx.fillText(t,x,y)}
 function fallbackCanvas(ctx,x,y,w,h,c){const grad=ctx.createLinearGradient(x,y,x+w,y+h);grad.addColorStop(0,'#879d9a');grad.addColorStop(.55,c.theme);grad.addColorStop(1,'#183648');ctx.fillStyle=grad;ctx.fillRect(x,y,w,h);ctx.fillStyle='#efc58f';ctx.globalAlpha=.65;ctx.beginPath();ctx.arc(x+w*.76,y+h*.26,Math.min(w,h)*.13,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
 ctx.fillStyle='#1c3542';ctx.beginPath();ctx.moveTo(x,y+h*.68);ctx.lineTo(x+w*.37,y+h*.39);ctx.lineTo(x+w*.57,y+h*.61);ctx.lineTo(x+w*.81,y+h*.36);ctx.lineTo(x+w,y+h*.6);ctx.lineTo(x+w,y+h);ctx.lineTo(x,y+h);ctx.fill();
 ctx.fillStyle='#fff3dd';ctx.font='92px "Songti SC",serif';ctx.fillText(c.name,x+45,y+h*.82);textPos(ctx,'上传人物照片即可替换这张艺术卡',x+43,y+h*.91,18,'#efdbba')}
-function putPhoto(ctx,img,x,y,w,h,c){ctx.save();ctx.beginPath();ctx.rect(x,y,w,h);ctx.clip();if(!fillImage(ctx,img,x,y,w,h))fallbackCanvas(ctx,x,y,w,h,c);ctx.restore()}
+function putPhoto(ctx,img,x,y,w,h,c){ctx.save();ctx.beginPath();ctx.rect(x,y,w,h);ctx.clip();if(!fillImage(ctx,img,x,y,w,h,c.id))fallbackCanvas(ctx,x,y,w,h,c);ctx.restore()}
 function gradient(ctx,c1,c2){let g=ctx.createLinearGradient(0,0,900,1600);g.addColorStop(0,c1);g.addColorStop(1,c2);ctx.fillStyle=g;ctx.fillRect(0,0,900,1600)}
 function drawCanvas(cvs,c,img,t){
 const ctx=cvs.getContext('2d');const W=900,H=1600;ctx.setTransform(cvs.width/W,0,0,cvs.height/H,0,0);ctx.clearRect(0,0,W,H);const name=c.name,one=c.stamp;
@@ -174,12 +192,64 @@ rounded(ctx,82,1160,736,235,26,'#fbf6ef');ctx.fillStyle='#283e48';ctx.font='26px
 textPos(ctx,'很像我 · 但是这个结果我先发给朋友',91,1475,19,'#f5dbad');
 textPos(ctx,'非官方趣味游戏 / 不是嘉宾真实发言',91,1530,15,'#bdc6c1');
 }
-if(img&&photoSources[c.id]&&!customPhotos[c.id]){textPos(ctx,'PHOTO: RAYOFSUNSHINE / CC BY 2.5',90,t==='ticket'?1510:(t==='magazine'?1550:1580),15,(t==='ticket'||t==='magazine')?'#65727a':'#f7e5d3')}
+if(img&&photoSources[c.id]&&!customPhotos[c.id]){textPos(ctx,'用户提供人物照片 / 非官方粉丝测试',90,t==='ticket'?1510:(t==='magazine'?1550:1580),15,(t==='ticket'||t==='magazine')?'#65727a':'#f7e5d3')}
 }
-async function renderAllPreviews(){if(!current)return;const id=current.id;const im=await photoImg(id);if(!current||current.id!==id)return;for(const t of templates){let cvs=document.getElementById('canvas-'+t.id);if(cvs)drawCanvas(cvs,current,im,t.id)}}
-async function download(){if(!current)return;let b=$('#download');b.disabled=true;b.textContent='正在生成海报…';try{let cvs=document.createElement('canvas');cvs.width=1080;cvs.height=1920;const im=await photoImg(current.id);drawCanvas(cvs,current,im,selectedTemplate);await new Promise((resolve,reject)=>cvs.toBlob(blob=>{if(!blob)return reject(Error('canvas'));const url=URL.createObjectURL(blob);let a=document.createElement('a');a.href=url;a.download='后会友期-友情嘴替-'+current.name+'-'+selectedTemplate+'.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),8000);resolve()},'image/png'));toast(im?'海报已保存，带上照片发朋友圈吧！':'海报已保存，若要真人照片可上传后重新导出')}
-catch(err){toast('图片生成失败，可先截图或更换照片再试')}finally{b.disabled=false;b.textContent='保存当前海报 PNG ↓'}}
+async function renderAllPreviews(){if(!current)return;const id=current.id;for(const t of templates){const cvs=document.getElementById('canvas-'+t.id);if(cvs)drawCanvas(cvs,current,null,t.id)}const im=await photoImg(id);if(!current||current.id!==id)return;for(const t of templates){const cvs=document.getElementById('canvas-'+t.id);if(cvs)drawCanvas(cvs,current,im,t.id)}}
+
+function mobileSaveMode(){
+ const ua=(navigator.userAgent||'');
+ return /iPad|iPhone|iPod|MicroMessenger/i.test(ua) || (navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+}
+function showPosterSaveSheet(blob,filename,canvas){
+ const existing=document.getElementById('poster-save-sheet');if(existing)existing.remove();
+ const url=URL.createObjectURL(blob);
+ const mask=document.createElement('div');mask.className='v2-save-overlay';mask.id='poster-save-sheet';
+ mask.innerHTML='<section class="v2-save-dialog" role="dialog" aria-modal="true" aria-label="保存友情海报"><div class="v2-save-head"><strong>你的专属海报已生成</strong><button type="button" id="poster-save-close" aria-label="关闭">✕</button></div><p>在 iPhone 或微信里，<b>长按下方图片 → 保存到相册</b>。也可点击「系统分享」或「下载原图」。</p><div class="v2-save-preview"><img id="poster-save-image" alt="已生成的友情人物海报，可长按保存"></div><div class="v2-save-actions"><button class="v2-btn dark" id="poster-native-share">系统分享 / 存储</button><a class="v2-btn outline" id="poster-save-file" download="'+e(filename)+'">下载原图</a></div><small>如果微信限制保存，请通过浏览器打开，或使用截图保留海报。</small></section>';
+ document.body.appendChild(mask);
+ const preview=mask.querySelector('.v2-save-preview');
+ canvas.className='v2-save-canvas';
+ preview.prepend(canvas);
+ const picture=mask.querySelector('#poster-save-image');
+ picture.src=url;
+ picture.onerror=()=>{picture.onerror=null;picture.src=canvas.toDataURL('image/png')};
+ document.getElementById('poster-save-file').href=url;
+ const close=()=>{URL.revokeObjectURL(url);mask.remove();document.removeEventListener('keydown',esc)};
+ function esc(ev){if(ev.key==='Escape')close()}
+ document.addEventListener('keydown',esc);
+ document.getElementById('poster-save-close').onclick=close;
+ mask.onclick=(ev)=>{if(ev.target===mask)close()};
+ document.getElementById('poster-native-share').onclick=async()=>{
+   try{
+     const file=new File([blob],filename,{type:'image/png'});
+     if(navigator.canShare && navigator.canShare({files:[file]})&&navigator.share)await navigator.share({files:[file],title:'《后会友期》友情海报'});
+     else toast('此浏览器未提供图片系统分享，请长按上方海报保存');
+   }catch(err){if(err.name!=='AbortError')toast('系统分享不可用，请长按上方图片保存')}
+ };
+}
+async function download(){
+ if(!current)return;
+ const b=$('#download');b.disabled=true;b.textContent='正在生成海报…';
+ try{
+   const im=await photoImg(current.id);
+   if(!im)throw Error('person_image_missing');
+   const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1920;
+   drawCanvas(canvas,current,im,selectedTemplate);
+   const blob=await new Promise((resolve,reject)=>canvas.toBlob(v=>v?resolve(v):reject(Error('png_export_failed')),'image/png'));
+   const filename='后会友期-友情嘴替-'+current.name+'-'+selectedTemplate+'.png';
+   if(mobileSaveMode()){
+     showPosterSaveSheet(blob,filename,canvas);
+     toast('海报已生成，可长按保存到相册');
+   }else{
+     const url=URL.createObjectURL(blob);
+     const a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();
+     setTimeout(()=>URL.revokeObjectURL(url),8000);
+     toast('已下载高清海报，准备分享吧');
+   }
+ }catch(err){
+   toast(err.message==='person_image_missing'?'人物照片尚未加载，请刷新页面后重试':'海报生成失败，请刷新或尝试更换图片');
+ }finally{b.disabled=false;b.textContent='保存当前海报 PNG ↓'}
+}
 async function init(){try{const t=localStorage.getItem('hhyq-template');if(templates.some(x=>x.id===t))selectedTemplate=t}catch{}
-await restorePhotos();const r=new URL(location.href).searchParams.get('r');if(r&&C[r]){current=C[r];renderResult()}else home()}
+try{portraitFocus=JSON.parse(localStorage.getItem('hhyq-focus')||'{}')||{}}catch{portraitFocus={}}await restorePhotos();const r=new URL(location.href).searchParams.get('r');if(r&&C[r]){current=C[r];renderResult()}else home()}
 window.addEventListener('popstate',()=>{const r=new URL(location.href).searchParams.get('r');if(r&&C[r]){current=C[r];renderResult()}else home()});
 init();
