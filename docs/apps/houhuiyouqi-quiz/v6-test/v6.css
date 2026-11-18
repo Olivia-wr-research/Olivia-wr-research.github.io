@@ -1,0 +1,7 @@
+/* V6: simpler, more readable question cards. Existing V3 style remains untouched. */
+.qcard .qhead{padding-bottom:10px}
+.qcard .qhead h2{line-height:1.5;letter-spacing:.005em}
+.stopline{letter-spacing:.04em}
+.opt-text{line-height:1.65}
+@media(max-width:480px){.qcard .qhead h2{font-size:clamp(24px,6.6vw,32px)}.opts .opt{min-height:66px}}
+@media(prefers-reduced-motion:reduce){.opt,.btn{transition:none!important}}
