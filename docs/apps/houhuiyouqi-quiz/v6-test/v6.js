@@ -14,14 +14,14 @@ const templates = [
 ];
 
 const photoSources = {
-  li:    { url: '../photos/xu.webp', credit: '人物照片由站点维护者提供；据其说明来自官方平台发布，版权归原权利人。' },
-  xu:    { url: '../photos/li.webp', credit: '人物照片由站点维护者提供；据其说明来自官方平台发布，版权归原权利人。' },
-  zhang: { url: '../photos/zhang.webp', credit: '人物照片由站点维护者提供；据其说明来自官方平台发布，版权归原权利人。' },
-  ma:    { url: '../photos/ma.webp', credit: '人物照片由站点维护者提供；据其说明来自官方平台发布，版权归原权利人。' },
-  wen:   { url: '../photos/wen.webp', credit: '人物照片由站点维护者提供；据其说明来自官方平台发布，版权归原权利人。' },
-  wang:  { url: '../photos/wang.webp', credit: '人物照片由站点维护者提供；据其说明来自官方平台发布，版权归原权利人。' },
-  qing:  { url: '../photos/qing.webp', credit: '人物照片由站点维护者提供；据其说明来自官方平台发布，版权归原权利人。' },
-  bai:   { url: '../photos/bai.webp', credit: '人物照片由站点维护者提供；据其说明来自官方平台发布，版权归原权利人。' }
+  li:    { url: './photos-hd/li.webp', credit: '人物照片由站点维护者提供；据其说明来自官方平台发布，版权归原权利人。' },
+  xu:    { url: './photos-hd/xu.webp', credit: '人物照片由站点维护者提供；据其说明来自官方平台发布，版权归原权利人。' },
+  zhang: { url: './photos-hd/zhang.webp', credit: '人物照片由站点维护者提供；据其说明来自官方平台发布，版权归原权利人。' },
+  ma:    { url: './photos-hd/ma.webp', credit: '人物照片由站点维护者提供；据其说明来自官方平台发布，版权归原权利人。' },
+  wen:   { url: './photos-hd/wen.webp', credit: '人物照片由站点维护者提供；据其说明来自官方平台发布，版权归原权利人。' },
+  wang:  { url: './photos-hd/wang.webp', credit: '人物照片由站点维护者提供；据其说明来自官方平台发布，版权归原权利人。' },
+  qing:  { url: './photos-hd/qing.webp', credit: '人物照片由站点维护者提供；据其说明来自官方平台发布，版权归原权利人。' },
+  bai:   { url: './photos-hd/bai.webp', credit: '人物照片由站点维护者提供；据其说明来自官方平台发布，版权归原权利人。' }
 };
 
 const characters = [
@@ -891,7 +891,7 @@ async function share() {
 function dbOpen() {
   return new Promise((resolve, reject) => {
     if (!window.indexedDB) return reject(Error('No DB'));
-    const r = indexedDB.open('hhyq-photos', 1);
+    const r = indexedDB.open('hhyq-v6-hd-custom-photos', 1);
     r.onupgradeneeded = () => r.result.createObjectStore('pictures');
     r.onsuccess = () => resolve(r.result);
     r.onerror = () => reject(r.error);
