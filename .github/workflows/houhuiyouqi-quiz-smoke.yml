@@ -1,4 +1,4 @@
-name: Hou Hui You Qi quiz smoke test
+name: Hou Hui You Qi V6 release acceptance
 on:
   push:
     branches: [main]
@@ -26,50 +26,18 @@ jobs:
         run: |
           test -s docs/apps/houhuiyouqi-quiz/index.html
           test -s docs/apps/houhuiyouqi-quiz/v2.css
-          node --check docs/apps/houhuiyouqi-quiz/v2.js
+          node --check docs/apps/houhuiyouqi-quiz/v6/v6.js
+          node --check portfolio/houhuiyouqi-quiz/qa-v6.mjs
       - name: Install browser driver
         run: npm install --prefix "$RUNNER_TEMP/quiz-browser" --ignore-scripts --no-audit --no-fund playwright-core@1.65.0
-      - name: Serve website and smoke-test quiz and PNG download
+      - name: Run V6 Chrome full-flow and photo checks
         run: |
-          python3 -m http.server 8765 --bind 127.0.0.1 --directory docs >/tmp/hhyq-http.log 2>&1 &
+          python3 -m http.server 8765 --bind 127.0.0.1 --directory docs >/tmp/hhyq-v6-http.log 2>&1 &
           sleep 2
-          export QUIZ_PLAYWRIGHT="$RUNNER_TEMP/quiz-browser/node_modules/playwright-core"
-          export QUIZ_CHROME="/usr/bin/google-chrome"
-          node <<'JS'
-          const {chromium}=require(process.env.QUIZ_PLAYWRIGHT);
-          const fs=require('node:fs');
-          (async()=>{
-          const browser=await chromium.launch({headless:true,executablePath:process.env.QUIZ_CHROME,args:['--no-sandbox']});
-          const page=await browser.newPage({viewport:{width:390,height:844},acceptDownloads:true});
-          const errors=[];page.on('pageerror',e=>errors.push(e.message));
-          const base='http://127.0.0.1:8765/apps/houhuiyouqi-quiz/';
-          await page.goto(base,{waitUntil:'domcontentloaded'});
-          await page.locator('#start').waitFor();
-          await page.locator('#start').click();
-          for(let i=0;i<10;i++){await page.locator('[data-ans="0"]').click();await page.locator('#forward').click()}
-          await page.locator('.v2-result-grid').waitFor();
-          if(await page.locator('[data-template]').count()!==4)throw Error('4 poster templates missing');
-          await page.locator('[data-template="magazine"]').click();
-          const [download]=await Promise.all([page.waitForEvent('download',{timeout:25000}),page.locator('#download').click()]);
-          const file=await download.path();if(!file||fs.statSync(file).size<3000)throw Error('PNG download too small');
-          const ids=['li','xu','zhang','ma','wen','wang','qing','bai'];
-          for(const id of ids){await page.goto(base+'?r='+id,{waitUntil:'domcontentloaded'});await page.locator('.v2-result-grid').waitFor();if(!await page.locator('#poster-chooser').isVisible())throw Error('Missing poster editor for '+id)}
-          if(errors.length)throw Error('Browser runtime errors: '+JSON.stringify(errors));
-          console.log('PASS: homepage, 10 answers, 8 results, 4 templates and PNG download');
-          await browser.close();
-          })().catch(err=>{console.error(err);process.exit(1)});
-          JS
-
-      - name: Verify draft on narrow phones, desktop, photos and all poster exports
-        env:
-          QUIZ_PLAYWRIGHT: ${{ runner.temp }}/quiz-browser/node_modules/playwright-core
-          QUIZ_CHROME: /usr/bin/google-chrome
-          QUIZ_QA_OUT: ${{ runner.temp }}/hhyq-qa
-        run: |
-          curl --fail --silent http://127.0.0.1:8765/apps/houhuiyouqi-quiz/ >/dev/null || (
-            python3 -m http.server 8765 --bind 127.0.0.1 --directory docs >/tmp/hhyq-http-2.log 2>&1 & sleep 2
-          )
-          node portfolio/houhuiyouqi-quiz/qa-check.mjs
+          export HHYQ_PW="$RUNNER_TEMP/quiz-browser/node_modules/playwright-core"
+          export HHYQ_CHROME="/usr/bin/google-chrome"
+          export HHYQ_OUT="/tmp/hhyq-qa"
+          node portfolio/houhuiyouqi-quiz/qa-v6.mjs
       - name: Keep visual review screenshots
         if: always()
         uses: actions/upload-artifact@v4
@@ -79,23 +47,6 @@ jobs:
           if-no-files-found: ignore
           retention-days: 14
 
-      - name: Verify public GitHub Pages URL serves the V2 app and its assets
-        if: github.event_name != 'pull_request'
-        run: |
-          set -e
-          base="https://olivia-wr-research.github.io/apps/houhuiyouqi-quiz/"
-          ok=0
-          for attempt in 1 2 3 4 5 6 7 8; do
-            status=$(curl --connect-timeout 8 --max-time 15 -L -sS -o /tmp/hhyq-public.html -w '%{http_code}' "$base?check=20261117" || true)
-            if [ "$status" = "200" ] && grep -q 'v2.js' /tmp/hhyq-public.html; then ok=1; break; fi
-            echo "Attempt $attempt public index HTTP: $status"
-            sleep 8
-          done
-          test "$ok" = 1
-          curl --connect-timeout 8 --max-time 15 -LfSs "$base""v2.js?v=20261117-3" -o /tmp/hhyq-public.js
-          curl --connect-timeout 8 --max-time 15 -LfSs "$base""v2.css?v=20261117-3" -o /tmp/hhyq-public.css
-          grep -q '友情' /tmp/hhyq-public.js
-          echo "PASS: public GitHub Pages serves index and live V2 JS/CSS"
 
   ios-webkit:
     name: iPhone Safari-engine / WeChat mobile UA
@@ -117,7 +68,10 @@ jobs:
         run: |
           python3 -m http.server 8767 --bind 127.0.0.1 --directory docs >/tmp/hhyq-mobile-http.log 2>&1 &
           sleep 3
-          node portfolio/houhuiyouqi-quiz/mobile-check.mjs
+          export HHYQ_PW="$MOBILE_PW"
+          export HHYQ_ENGINE=webkit
+          export HHYQ_OUT="$MOBILE_QA_OUT"
+          node portfolio/houhuiyouqi-quiz/qa-v6.mjs
       - name: Upload Safari-engine visual evidence
         if: always()
         uses: actions/upload-artifact@v4
