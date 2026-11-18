@@ -200,13 +200,18 @@ function mobileSaveMode(){
  const ua=(navigator.userAgent||'');
  return /iPad|iPhone|iPod|MicroMessenger/i.test(ua) || (navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
 }
-function showPosterSaveSheet(blob,filename,dataUrl){
+function showPosterSaveSheet(blob,filename,canvas){
  const existing=document.getElementById('poster-save-sheet');if(existing)existing.remove();
  const url=URL.createObjectURL(blob);
  const mask=document.createElement('div');mask.className='v2-save-overlay';mask.id='poster-save-sheet';
  mask.innerHTML='<section class="v2-save-dialog" role="dialog" aria-modal="true" aria-label="保存友情海报"><div class="v2-save-head"><strong>你的专属海报已生成</strong><button type="button" id="poster-save-close" aria-label="关闭">✕</button></div><p>在 iPhone 或微信里，<b>长按下方图片 → 保存到相册</b>。也可点击「系统分享」或「下载原图」。</p><div class="v2-save-preview"><img id="poster-save-image" alt="已生成的友情人物海报，可长按保存"></div><div class="v2-save-actions"><button class="v2-btn dark" id="poster-native-share">系统分享 / 存储</button><a class="v2-btn outline" id="poster-save-file" download="'+e(filename)+'">下载原图</a></div><small>如果微信限制保存，请通过浏览器打开，或使用截图保留海报。</small></section>';
  document.body.appendChild(mask);
- document.getElementById('poster-save-image').src=dataUrl;
+ const preview=mask.querySelector('.v2-save-preview');
+ canvas.className='v2-save-canvas';
+ preview.prepend(canvas);
+ const picture=mask.querySelector('#poster-save-image');
+ picture.src=url;
+ picture.onerror=()=>{picture.onerror=null;picture.src=canvas.toDataURL('image/png')};
  document.getElementById('poster-save-file').href=url;
  const close=()=>{URL.revokeObjectURL(url);mask.remove();document.removeEventListener('keydown',esc)};
  function esc(ev){if(ev.key==='Escape')close()}
@@ -232,7 +237,7 @@ async function download(){
    const blob=await new Promise((resolve,reject)=>canvas.toBlob(v=>v?resolve(v):reject(Error('png_export_failed')),'image/png'));
    const filename='后会友期-友情嘴替-'+current.name+'-'+selectedTemplate+'.png';
    if(mobileSaveMode()){
-     showPosterSaveSheet(blob,filename,canvas.toDataURL('image/png'));
+     showPosterSaveSheet(blob,filename,canvas);
      toast('海报已生成，可长按保存到相册');
    }else{
      const url=URL.createObjectURL(blob);
