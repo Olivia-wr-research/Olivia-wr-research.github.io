@@ -149,3 +149,17 @@ button{touch-action:manipulation}
  .v2-quickactions .v2-btn{flex:1;max-width:220px;padding:12px 10px;font-size:12px}
  .v2-result-head{padding-bottom:15px}
 }
+
+/* Mobile share-sheet: the image stays visible so a long press can save it. */
+.v2-save-overlay{position:fixed;inset:0;z-index:2000;background:rgba(14,30,41,.84);display:grid;place-items:center;padding:max(12px,env(safe-area-inset-top)) 14px max(12px,env(safe-area-inset-bottom));overflow-y:auto}
+.v2-save-dialog{width:min(440px,100%);max-height:96svh;overflow-y:auto;background:#fffaf2;border-radius:22px;padding:18px 17px 20px;box-shadow:0 18px 70px #081c29aa;color:#263e4c}
+.v2-save-head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.v2-save-head strong{font-size:18px}
+.v2-save-head button{background:#ecdfcd;color:#253b49;width:36px;height:36px;border-radius:50%}
+.v2-save-dialog p{font-size:13px;line-height:1.8;color:#586b74;margin:9px 0 11px}
+.v2-save-preview{background:#e9dac4;max-height:min(53svh,550px);overflow:auto;text-align:center;border-radius:12px;line-height:0}
+.v2-save-preview img{width:auto;height:auto;max-width:100%;max-height:50svh;object-fit:contain;display:inline-block;-webkit-touch-callout:default;user-select:auto;-webkit-user-select:auto}
+.v2-save-actions{display:flex;gap:8px;margin-top:13px;flex-wrap:wrap}
+.v2-save-actions .v2-btn{font-size:12px;flex:1;min-width:125px;padding:11px 9px;text-decoration:none}
+.v2-save-dialog>small{display:block;color:#829099;line-height:1.8;margin-top:10px}
+@media(max-width:360px){.v2-save-dialog{padding:12px}.v2-save-dialog p{font-size:12px}}
