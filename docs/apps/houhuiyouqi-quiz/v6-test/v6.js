@@ -781,7 +781,7 @@ function resultHTML(c) {
       '<p class="sub">四款是不同的版式，不是换色。点一下就能预览，选好后保存成 1080×1920 的图片。</p>' +
       '<div class="tmpl-grid">' + templates.map(t =>
         '<button class="tmpl" data-template="' + t.id + '" aria-pressed="' + (t.id === selectedTemplate) + '">' +
-          '<canvas id="canvas-' + t.id + '" width="270" height="480" aria-label="' + e(t.name) + ' 海报预览"></canvas>' +
+          '<canvas id="canvas-' + t.id + '" width="720" height="1280" aria-label="' + e(t.name) + ' 海报预览"></canvas>' +
           '<div class="tmpl-label"><strong>' + e(t.name) + '</strong><em>' + e(t.desc) + '</em></div>' +
         '</button>').join('') + '</div>' +
       '<div class="tools">' +
