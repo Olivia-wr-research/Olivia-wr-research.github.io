@@ -101,7 +101,7 @@ for(const id of ids){
  await page.locator('.v2-result-grid').waitFor();
  assert.equal(await page.locator('#poster-chooser').isVisible(),true);
  assert.ok((await page.locator('.v2-result-head h1').innerText()).length>3);
- assert.ok((await page.locator('.v2-banner').innerText()).includes('只存储在本设备'));
+ assert.ok((await page.locator('.v2-banner').innerText()).includes('公共静态资源'));await page.waitForFunction(()=>{const i=document.querySelector('[data-character-photo]');return i?.complete && i.naturalWidth>0});assert.ok((await page.locator('[data-character-photo]').getAttribute('src')).includes('./photos/'));
  if(id==='xu') await shot('07-share-result');
 }
 status('8/8 deep-link result screens and truthful photo notice');
@@ -110,10 +110,10 @@ const clean=await browser.newContext({viewport:{width:375,height:812}});
 const fresh=await clean.newPage();
 await fresh.goto(root+'?r=wen',{waitUntil:'domcontentloaded'});
 await fresh.locator('#poster-chooser').waitFor();
-assert.equal(await fresh.locator('[data-character-photo]').count(),0,'photo incorrectly leaked between users');
+await fresh.waitForFunction(()=>{const i=document.querySelector('[data-character-photo]');return i?.complete && i.naturalWidth>0});assert.ok((await fresh.locator('[data-character-photo]').getAttribute('src')).includes('./photos/'),'fresh visitor must see published photo');
 assert.equal(await fresh.locator('.v2-evidence-row').count(),0,'personalized answers incorrectly leaked to share recipients');
 await fresh.screenshot({path:path.join(output,'08-fresh-browser-result.png'),fullPage:true,animations:'disabled'});
-status('fresh visitor cannot see local photo or private answer trail');
+status('fresh visitor sees public cast photo but no local custom upload or private answer trail');
 await clean.close();
 assert.deepEqual(events,[],'Browser page errors');
 status('no JavaScript page errors');
