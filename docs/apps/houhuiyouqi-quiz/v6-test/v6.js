@@ -35,6 +35,8 @@ const characters = [
 {id:'bai',name:'白小纯',title:'友情「先对线后搬行李」派',stamp:'明明是很好的陈礼根',meme:'别人：你俩不是吵架了吗？\n你：吵归吵，行李那么重，手也不能闲着啊。',caption:'表面：这件事我有我的观点。\n真心：但我也没说不在乎你。',touch:'你不是遇事会轻易低头的人，讲道理、保留立场对你很重要。可这不妨碍你在具体的事上伸手帮忙。你知道关系的复杂就在这里：情绪可以拧巴，行动里却仍然留着温度。',weak:'当你太在意把事情讲对，别人可能只听到了你的态度，没有看到你的关心。',mission:'你的友情通关提示：观点可以先放桌上，心意也值得被对方看见。',scenetitle:'节目对应：白小纯与青稚争执后仍帮忙搬行李、邀请回屋',scenesrc:EVIDENCE,pair:'青稚',tags:['行动派嘴替','不服软但会帮忙','理性在线'],dims:[44,65,88,79,34],theme:'#7f8f8a'}
 ];
 
+const C = Object.fromEntries(characters.map(p => [p.id, p]));
+
 const NICK = {li:'麦当劳点了', xu:'画地为牢本人', zhang:'马克杯保管员', ma:'郊区返乡人', wen:'唯一好友单推人', wang:'通讯录非单选', qing:'雷王', bai:'一本摊开的书'};
 
 /* 真梗层：每条都对应节目公开片段或网友二创，不发明新梗 */
@@ -604,7 +606,7 @@ function nav(dark) {
 /* ---------------- 首屏 ---------------- */
 function castStrip() {
   return '<div class="cast">' + characters.map(c =>
-    '<figure data-person="' + c.id + '"><img src="' + e(photoSources[c.id].url) + '" alt="' + e(c.name) + '" loading="lazy" decoding="async" onerror="this.style.visibility=\'hidden\'"><figcaption><span class="cast-name">' + e(c.name) + '</span><span class="cast-meme">' + e(CASTMEME[c.id] || '') + '</span></figcaption></figure>'
+    '<figure data-person="' + c.id + '"><img src="' + e(photoSources[c.id].url) + '" alt="' + e(c.name) + '" loading="eager" decoding="async" width="480" height="640" data-hhyq-photo="' + c.id + '"><figcaption><span class="cast-name">' + e(c.name) + '</span><span class="cast-meme">' + e(CASTMEME[c.id] || '') + '</span></figcaption></figure>'
   ).join('') + '</div>';
 }
 function heatStrip() {
@@ -821,8 +823,8 @@ function photoImg(id) {
     let done = false;
     const finish = a => { if (done) return; done = true; clearTimeout(timer); resolve(a); };
     im.onload = () => finish(im);
-    im.onerror = () => finish(null);
-    const timer = setTimeout(() => finish(null), 7000);
+    im.onerror = () => { if (!im.dataset.posterFallback) { im.dataset.posterFallback = '1'; im.src = new URL('./share-cover-' + id + '.jpg', location.href).href; } else finish(null); };
+    const timer = setTimeout(() => finish(null), 18000);
     im.src = src;
   });
   imgCache[id] = { src, promise };
@@ -875,7 +877,7 @@ function resultHTML(c) {
         '<span class="stamp">' + e(c.stamp) + '</span>' +
       '</div>' +
       '<figure class="portrait">' +
-        '<div class="portrait-frame"><img id="portrait-img" src="' + e(getPhotoSrc(c.id)) + '" alt="' + e(c.name) + ' 人物照片" crossorigin="anonymous" style="object-position:center ' + getFocus(c.id) + '%" onerror="this.style.opacity=0"></div>' +
+        '<div class="portrait-frame"><img id="portrait-img" src="' + e(getPhotoSrc(c.id)) + '" alt="' + e(c.name) + ' 人物照片" data-hhyq-photo="' + c.id + '" style="object-position:center ' + getFocus(c.id) + '%"></div>' +
         '<div class="figcap"><span>人物照片 / 可更换</span><button class="editlink" id="edit-photo">换成我的图</button></div>' +
       '</figure>' +
       '<div class="verdict-foot">' +
@@ -1587,4 +1589,16 @@ window.addEventListener('popstate', () => {
   const r = new URL(location.href).searchParams.get('r');
   if (r && C[r]) { current = C[r]; fromQuiz = false; renderResult(); } else home();
 });
+
+/* Keep portraits visible in mobile browsers with flaky WebP loading. */
+document.addEventListener('error', event => {
+  const img = event.target;
+  if (!(img instanceof HTMLImageElement)) return;
+  const id = img.getAttribute('data-hhyq-photo');
+  if (!id || !photoSources[id]) return;
+  if (img.dataset.hhyqFallback === '1') { img.classList.add('photo-unavailable'); return; }
+  img.dataset.hhyqFallback = '1';
+  img.src = new URL('./share-cover-' + id + '.jpg', location.href).href;
+}, true);
+
 init();

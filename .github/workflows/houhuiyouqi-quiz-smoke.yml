@@ -43,7 +43,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: houhuiyouqi-visual-qa
-          path: ${{ runner.temp }}/hhyq-qa/*.png
+          path: /tmp/hhyq-qa/*.png
           if-no-files-found: ignore
           retention-days: 14
 

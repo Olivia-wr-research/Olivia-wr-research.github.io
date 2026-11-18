@@ -76,3 +76,11 @@
 .cast figcaption{display:flex;flex-direction:column;align-items:flex-start;gap:5px}
 .cast-name{font-weight:700}
 .cast-meme{font-family:"Songti SC","STSong",serif;font-size:10.5px;line-height:1.4;color:rgba(242,232,216,.86);white-space:nowrap}
+
+/* V6 test-stage mobile photo visibility parity with the production release. */
+@media(max-width:860px){
+  .hero{align-items:stretch}
+  .hero-cast{width:100%;min-width:0;align-self:stretch;margin-top:0}
+  .cast{max-width:none}
+  .cast img{width:100%;height:auto;aspect-ratio:3/4;background:#132B3A}
+}
