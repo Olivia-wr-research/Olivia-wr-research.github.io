@@ -1,0 +1,90 @@
+/* V6: simpler, more readable question cards. Existing V3 style remains untouched. */
+.qcard .qhead{padding-bottom:10px}
+.qcard .qhead h2{line-height:1.5;letter-spacing:.005em}
+.stopline{letter-spacing:.04em}
+.opt-text{line-height:1.65}
+@media(max-width:480px){.qcard .qhead h2{font-size:clamp(24px,6.6vw,32px)}.opts .opt{min-height:66px}}
+@media(prefers-reduced-motion:reduce){.opt,.btn{transition:none!important}}
+
+/* ---- 结果页：匹配度大字 + 网友外号 ---- */
+.vmatch{display:flex;align-items:baseline;gap:7px;margin-top:12px}
+.vmatch b{font-size:34px;line-height:1;font-weight:400;font-family:"Songti SC","STSong",serif;color:#F2E8D8}
+.vmatch span{font-size:11px;letter-spacing:.14em;color:#8FA3AA;text-transform:uppercase}
+
+/* ---- 保存层：海报完整比例，不再被裁成一截 ---- */
+/* 图片回到常规流，由自身撑开容器（原样式是 absolute，靠 canvas 撑高度） */
+.sheet-preview{display:block;background:transparent;overflow:visible}
+.sheet-preview img{position:static;display:block;width:auto;height:auto;max-width:100%;max-height:44svh;margin:0 auto;object-fit:contain;background:#0B1E2B}
+
+/* 外号与印章各占一行，避免并排重叠 */
+.valias{display:block;margin:10px 0 4px;font-family:ui-monospace,"SF Mono",monospace;font-size:11px;letter-spacing:.14em;color:#EFC58C;border-bottom:1px solid rgba(217,160,91,.5);padding-bottom:3px}
+.verdict-head .stamp{display:block;width:max-content;max-width:100%}
+
+/* ---- 07 梗墙：从满页散文里跳出来的深色卡 ---- */
+.memewall{display:grid;gap:9px}
+.mcard{background:#0B1E2B;color:#F2E8D8;padding:15px 16px 14px;border-left:3px solid #D9A05B}
+.mcard-q{font-family:"Songti SC","STSong",serif;font-size:17px;line-height:1.55;letter-spacing:.01em}
+.mcard-src{margin-top:9px;font-family:ui-monospace,"SF Mono",monospace;font-size:10.5px;line-height:1.6;letter-spacing:.05em;color:#9DB0B5}
+.duocard{margin-top:12px;padding:15px 16px;background:rgba(11,30,43,.05);border:1px solid rgba(11,30,43,.16)}
+.duocard b{display:inline-block;background:#D9A05B;color:#0B1E2B;font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.16em;padding:3px 9px}
+.duocard p{margin-top:11px;font-size:13.5px;line-height:1.85;color:#1C2B33}
+.mnote{margin-top:11px;font-size:10.5px;line-height:1.7;color:#8FA3AA}
+
+/* ---- 首屏热度跑马灯：轨道绝对定位，避免 max-content 撑宽父容器 ---- */
+.hstrip{position:relative;height:34px;overflow:hidden;margin:0 0 clamp(16px,2.6vw,24px);border-bottom:1px solid rgba(242,232,216,.14);contain:layout paint}
+.hstrip-track{position:absolute;left:0;top:50%;display:flex;width:max-content;animation:hslide 38s linear infinite}
+.hstrip-item{font-family:ui-monospace,"SF Mono",monospace;font-size:11px;letter-spacing:.13em;color:#C9B79B;padding:0 15px 0 0;white-space:nowrap}
+.hstrip-item::after{content:"◆";margin-left:15px;color:#D9A05B;opacity:.8}
+@keyframes hslide{from{transform:translate(0,-50%)}to{transform:translate(-50%,-50%)}}
+@media (prefers-reduced-motion:reduce){.hstrip-track{animation:none}}
+
+/* 跑马灯两侧淡出，避免文字贴边像被裁 */
+.hstrip{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26px,#000 calc(100% - 26px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 26px,#000 calc(100% - 26px),transparent 100%)}
+
+/* 弹幕主次反转：别人的质疑是引子，你的回击才是主角 */
+.bubble{font-size:13px;font-weight:400;line-height:1.75;color:#6B7A80;padding:15px 16px 18px}
+.bubble em{display:block;margin-top:13px;padding-top:13px;border-top:1px solid rgba(11,30,43,.14);
+  font-family:"Songti SC","STSong",serif;font-style:normal;font-size:clamp(22px,6.2vw,27px);
+  line-height:1.5;letter-spacing:.01em;color:#0B1E2B;font-weight:400}
+
+/* ---- 梗卡：可点 + 出处闪卡 ---- */
+.mcard{display:block;width:100%;text-align:left;border:0;border-left:3px solid #D9A05B;cursor:pointer;font:inherit;transition:transform .18s ease,background .18s ease}
+.mcard:active{transform:scale(.985);background:#10283A}
+.mcard-more{display:inline-block;margin-top:10px;font-family:ui-monospace,"SF Mono",monospace;font-size:10px;letter-spacing:.1em;color:#D9A05B;opacity:.85}
+.memetip{margin-top:9px;font-family:ui-monospace,"SF Mono",monospace;font-size:10.5px;letter-spacing:.06em;color:#8FA3AA}
+
+.msheet{position:fixed;inset:0;z-index:80;display:flex;align-items:flex-end;background:rgba(6,18,26,.62);opacity:0;pointer-events:none;transition:opacity .24s ease}
+.msheet.on{opacity:1;pointer-events:auto}
+.msheet-in{width:100%;max-width:560px;margin:0 auto;background:#0B1E2B;color:#F2E8D8;padding:22px 22px 26px;transform:translateY(18px);transition:transform .26s cubic-bezier(.2,.8,.2,1)}
+.msheet.on .msheet-in{transform:translateY(0)}
+.msheet-tag{display:inline-block;background:#D9A05B;color:#0B1E2B;font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.16em;padding:4px 10px}
+.msheet-q{margin-top:16px;font-family:"Songti SC","STSong",serif;font-size:22px;line-height:1.5;color:#FFF4E2}
+.msheet-src{margin-top:12px;font-family:ui-monospace,"SF Mono",monospace;font-size:11px;letter-spacing:.05em;color:#9DB0B5}
+.msheet-why{margin-top:14px;padding-top:14px;border-top:1px solid rgba(242,232,216,.16);font-size:13.5px;line-height:1.9;color:#DCD0BC}
+.msheet-in .btn{margin-top:18px}
+
+/* 闪卡内的按钮：深底上要看得见 */
+.msheet-in .btn{background:transparent;border:1px solid rgba(242,232,216,.55);color:#F6EAD8;font-weight:600}
+.msheet-in .btn:active{background:rgba(242,232,216,.12)}
+
+/* ---- 首页人物卡：带一句梗，可点开 ---- */
+.cast figure{cursor:pointer}
+.cast-meme{display:block;margin-top:5px;font-family:"Songti SC","STSong",serif;font-size:11px;line-height:1.45;color:rgba(242,232,216,.72);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cast figcaption{align-items:flex-start}
+
+/* 首页卡片：名字与短梗上下两行，梗更亮一档 */
+.cast figcaption{display:flex;flex-direction:column;align-items:flex-start;gap:5px}
+.cast-name{font-weight:700}
+.cast-meme{font-family:"Songti SC","STSong",serif;font-size:10.5px;line-height:1.4;color:rgba(242,232,216,.86);white-space:nowrap}
+
+/* V6 production mobile image fixes */
+.cast img{background:#132B3A;object-fit:cover}
+.cast figure{min-width:0}
+.cast img.photo-unavailable,.portrait-frame img.photo-unavailable{opacity:1;background:#132B3A}
+@media(max-width:860px){
+ .hero{align-items:stretch}
+ .hero-cast{width:100%;min-width:0;align-self:stretch;margin-top:0}
+ .cast{max-width:none;min-height:130px}
+ .cast figure{flex-shrink:0}
+ .cast img{width:100%;height:auto;aspect-ratio:3/4}
+}
