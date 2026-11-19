@@ -1,0 +1,25 @@
+name: TERRAFAR IA Card Sort checks
+on:
+  pull_request:
+    paths:
+      - 'docs/apps/terrafar-card-sort/**'
+      - '.github/workflows/terrafar-ia-card-sort.yml'
+  push:
+    paths:
+      - 'docs/apps/terrafar-card-sort/**'
+      - '.github/workflows/terrafar-ia-card-sort.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax
+        run: node --check docs/apps/terrafar-card-sort/app.js
+      - name: Five-person flow regression tests
+        run: node --test docs/apps/terrafar-card-sort/tests/*.test.cjs
