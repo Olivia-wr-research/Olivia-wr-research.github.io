@@ -3,7 +3,7 @@
 统计代码已安装在正式首页、`/v6/index.html` 和八位人物的 `/v6/share/*.html`。V6 内测页不加载统计脚本。
 
 ## 当前状态
-**待激活。** 目前无法从已打开的 Umami Cloud 网站列表确认已添加网站，故 `analytics.js` 中 `WEBSITE_ID` 留空。留空时不加载 Umami 远程脚本，不发送访问数据。
+**已启用网站端统计。** 2026-11-19 站点维护者提供 Website ID `eb5fafdb-5785-44d4-a4c0-00cfc6072304`，已写入 `analytics.js`。请在 Umami 后台验证实际进入的访客与事件：Website ID 格式正确并不等于已经证明账号收到数据。
 
 在 [Umami Cloud](https://cloud.umami.is/analytics/eu/websites) 点击“添加网站”，名称可用“后会友期 · 友情人物测试”，域名填写 `olivia-wr-research.github.io`（不是完整路径）。保存后，从“追踪代码 / Tracking code”复制形如 `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` 的 **Website ID**。只需将 `analytics.js` 的 `WEBSITE_ID = ''` 更新为该值，再发布即可启用。Website ID 本身是公开标识，不是密码或 API 密钥。
 
@@ -25,3 +25,9 @@
 
 ## 查看与验收
 正式启用后访问 Umami 网站 Dashboard 查看 PV/Visitors，Events 查看上述事件及转化漏斗。分别验证一次打开首页、一次开始、一次完整答题、一次保存海报、一次分享，以及打开一张独立分享页。由于同一浏览器可能有广告拦截，必要时使用未阻拦统计请求的浏览器核验。
+
+## 2026-11-19 启用记录
+- Website ID：`eb5fafdb-5785-44d4-a4c0-00cfc6072304`（由网站维护者提供，属于公开统计标识）
+- 正式版加载 `/v6/analytics.js?v=20261119-active01`
+- 仅在 `olivia-wr-research.github.io` 的《后会友期》生产路径请求 Umami；测试版保持不采集
+- 上线后应检查 Dashboard 的访客、PV 和 Events（`quiz_start`、`quiz_complete`），确认真实事件到达
