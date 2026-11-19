@@ -12,6 +12,17 @@ const browser=isWebkit
 const root='http://127.0.0.1:'+(isWebkit?'8767':'8765')+'/apps/houhuiyouqi-quiz/';
 const out=process.env.HHYQ_OUT||(isWebkit?'/tmp/hhyq-mobile-results':'/tmp/hhyq-qa');
 const ids=['li','xu','zhang','ma','wen','wang','qing','bai'];
+// Static wiring checks: prevent accidental rollback of the active Website ID
+// or omission of the tracking script from any public entry point.
+const analytics=fs.readFileSync('docs/apps/houhuiyouqi-quiz/v6/analytics.js','utf8');
+const siteHtml=fs.readFileSync('docs/apps/houhuiyouqi-quiz/index.html','utf8');
+assert.match(analytics, /const WEBSITE_ID = 'eb5fafdb-5785-44d4-a4c0-00cfc6072304'/, 'Umami production Website ID not installed');
+assert.ok(siteHtml.includes('analytics.js?v=20261119-umami-live01'),'Public homepage uses outdated analytics script');
+for(const person of ids) {
+  const share=fs.readFileSync('docs/apps/houhuiyouqi-quiz/v6/share/'+person+'.html','utf8');
+  assert.ok(share.includes('analytics.js?v=20261119-umami-live01'),'Missing share-page tracker for '+person);
+}
+
 fs.mkdirSync(out,{recursive:true});
 const iphone='Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1';
 const context=await browser.newContext({viewport:{width:390,height:844},acceptDownloads:true,...(isWebkit?{userAgent:iphone,isMobile:true,hasTouch:true,deviceScaleFactor:2}:{})});

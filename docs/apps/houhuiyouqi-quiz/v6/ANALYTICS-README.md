@@ -3,9 +3,9 @@
 统计代码已安装在正式首页、`/v6/index.html` 和八位人物的 `/v6/share/*.html`。V6 内测页不加载统计脚本。
 
 ## 当前状态
-**待激活。** 目前无法从已打开的 Umami Cloud 网站列表确认已添加网站，故 `analytics.js` 中 `WEBSITE_ID` 留空。留空时不加载 Umami 远程脚本，不发送访问数据。
+**已启用。** Website ID 已从账号内 Umami Settings 页核验并写入 `analytics.js`：`eb5fafdb-5785-44d4-a4c0-00cfc6072304`。网站域名核对为 `olivia-wr-research.github.io`。只有在 GitHub Pages 生产域名的公开网页打开、浏览器未阻止远程跟踪请求时才会尝试向 Umami 发送统计数据。启用不代表已经确认 Umami 收到了事件。
 
-在 [Umami Cloud](https://cloud.umami.is/analytics/eu/websites) 点击“添加网站”，名称可用“后会友期 · 友情人物测试”，域名填写 `olivia-wr-research.github.io`（不是完整路径）。保存后，从“追踪代码 / Tracking code”复制形如 `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` 的 **Website ID**。只需将 `analytics.js` 的 `WEBSITE_ID = ''` 更新为该值，再发布即可启用。Website ID 本身是公开标识，不是密码或 API 密钥。
+现有 Umami Cloud 网站已经创建，后台地址：https://cloud.umami.is/analytics/eu/websites/eb5fafdb-5785-44d4-a4c0-00cfc6072304 。Website ID 是公开标识，不是密码或 API 密钥；后续换站点时需同步更新此 ID。
 
 ## 定义
 - 自动 PV（访问次数）及访客数：Umami 跟踪脚本加载后自动记录页面浏览，访客数是匿名估算。
@@ -21,7 +21,7 @@
 ## 隐私与限制
 不向统计 API 发送逐题答案、用户上传照片、姓名、联系方式或自定义访客 ID。设置 `data-exclude-search` 与 `data-exclude-hash`，避免提交 URL 查询参数。限定 GitHub Pages 站点域名，不对测试页或其他站点自动采集数据。浏览器拦截、网络故障或 DNT 会降低可计数人数。Umami Cloud 是第三方处理方，实际网络请求会涉及浏览器技术信息；运营者需核查适用隐私规则。
 
-匿名 UV 不能等同准确的真人个体数，PV 不能等同答题数。**未启用之前无法追溯历史统计。**
+匿名 UV 不能等同准确的真人个体数，PV 不能等同答题数。**本次启用之前产生的历史访问无法追溯。** 实际产生数据的起始时间以 Umami 接收第一条事件为准。
 
 ## 查看与验收
 正式启用后访问 Umami 网站 Dashboard 查看 PV/Visitors，Events 查看上述事件及转化漏斗。分别验证一次打开首页、一次开始、一次完整答题、一次保存海报、一次分享，以及打开一张独立分享页。由于同一浏览器可能有广告拦截，必要时使用未阻拦统计请求的浏览器核验。
