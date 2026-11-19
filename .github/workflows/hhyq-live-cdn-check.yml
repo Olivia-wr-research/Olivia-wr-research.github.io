@@ -1,0 +1,40 @@
+name: Verify public V6 speed assets after release
+on:
+  push:
+    branches: [perf/hhyq-v6-fast-open-20261119]
+    paths: [.github/workflows/hhyq-live-cdn-check.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-public-cdn:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify live GitHub Pages homepage and lightweight photo assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://olivia-wr-research.github.io/apps/houhuiyouqi-quiz"
+          for attempt in {1..8}; do
+            echo "Public CDN check attempt $attempt"
+            ok=1
+            index_code=$(curl --connect-timeout 10 --max-time 30 -sSL -o /tmp/hhyq-public.html -w '%{http_code}' "$base/?audit=2672-$attempt" || true)
+            echo "index HTTP $index_code"
+            if [[ "$index_code" != "200" ]] || ! grep -Fq 'v6/v6.js?v=20261119-fast01' /tmp/hhyq-public.html; then ok=0; fi
+            for resource in v6/photos-thumb/li.webp v6/photos-thumb/xu.webp v6/photos-screen/xu.webp v6/share-cover-xu.jpg; do
+              target="/tmp/$(basename "$resource")"
+              code=$(curl --connect-timeout 10 --max-time 30 -sSL -o "$target" -w '%{http_code}' "$base/$resource?audit=2672-$attempt" || true)
+              bytes=$(wc -c < "$target" || echo 0)
+              mimetype=$(file -b --mime-type "$target" || true)
+              echo "$resource: HTTP=$code bytes=$bytes type=$mimetype"
+              if [[ "$code" != "200" || "$bytes" -lt 5000 ]]; then ok=0; fi
+            done
+            if [[ "$ok" == "1" ]]; then
+              echo "PASS live page, new JS reference, and all public optimized image URLs"
+              exit 0
+            fi
+            sleep 8
+          done
+          echo "FAIL Live CDN not yet serving the optimized asset set"
+          exit 1
