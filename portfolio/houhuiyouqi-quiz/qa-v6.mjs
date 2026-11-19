@@ -47,6 +47,12 @@ if(!isWebkit){
 const largeAtHome=await page.evaluate(()=>performance.getEntriesByType('resource').filter(x=>x.name.includes('/v6/photos-hd/')).length);
 assert.equal(largeAtHome,0,'Heavy original photos loaded on home screen');
 console.log('PASS home loads small portraits only; eight images swipe correctly');
+const photoBase='docs/apps/houhuiyouqi-quiz/v6/';
+const homeBytes=ids.reduce((n,id)=>n+fs.statSync(photoBase+'photos-thumb/'+id+'.webp').size,0);
+const screenBytes=ids.reduce((n,id)=>n+fs.statSync(photoBase+'photos-screen/'+id+'.webp').size,0);
+assert.ok(homeBytes<600000,'Home portrait payload too large: '+homeBytes);
+assert.ok(screenBytes<2400000,'Screen photos payload too large: '+screenBytes);
+console.log('PASS WebP byte budgets: 8 thumbnails '+homeBytes+' bytes, 8 screen photos '+screenBytes+' bytes');
 
 /* No old choices or poster preferences may survive a fresh visit. */
 await page.evaluate(()=>{
@@ -78,6 +84,8 @@ for(const id of ids){
  await page.locator('#portrait-img').waitFor();
  await checkLoaded('#portrait-img');
  assert.ok((await page.locator('#portrait-img').getAttribute('src')).includes('/v6/photos-screen/'+id+'.webp'),'portrait mismatched '+id);
+ const firstResultHeavy=await page.evaluate(()=>performance.getEntriesByType('resource').filter(x=>x.name.includes('/v6/photos-hd/')).length);
+ assert.equal(firstResultHeavy,0,'HD poster image loaded before the user reaches poster editor');
  assert.ok(await page.locator('#poster-chooser').isVisible(),'poster missing '+id);
  assert.equal(await page.locator('.ev').count(),0,'Private answers exposed in share result '+id);
  await checkWidth('result '+id);

@@ -1025,7 +1025,7 @@ function renderResult() {
 
   const credit = photoSources[current.id];
   if (credit && !customPhotos[current.id]) $('#image-credit').textContent = '默认照片：' + credit.credit;
-  drawPreviews();
+  schedulePosterPreviews();
 }
 
 /* ---------------- 分享 / 文件 ---------------- */
@@ -1502,6 +1502,39 @@ function drawPoster(cvs, c, img, t, qrReady) {
   }
 }
 
+let posterPreviewObserver = null;
+let posterPreviewScrollHandler = null;
+function schedulePosterPreviews() {
+  if (posterPreviewObserver) { posterPreviewObserver.disconnect(); posterPreviewObserver = null; }
+  if (posterPreviewScrollHandler) {
+    window.removeEventListener('scroll', posterPreviewScrollHandler);
+    posterPreviewScrollHandler = null;
+  }
+  const chooser = document.getElementById('poster-chooser');
+  if (!chooser) return;
+  let started = false;
+  const begin = () => {
+    if (started) return;
+    started = true;
+    if (posterPreviewObserver) { posterPreviewObserver.disconnect(); posterPreviewObserver = null; }
+    if (posterPreviewScrollHandler) {
+      window.removeEventListener('scroll', posterPreviewScrollHandler);
+      posterPreviewScrollHandler = null;
+    }
+    drawPreviews();
+  };
+  posterPreviewScrollHandler = () => {
+    if (chooser.getBoundingClientRect().top < window.innerHeight + 300) begin();
+  };
+  if ('IntersectionObserver' in window) {
+    posterPreviewObserver = new IntersectionObserver(entries => {
+      if (entries.some(item => item.isIntersecting)) begin();
+    }, { rootMargin: '300px 0px' });
+    posterPreviewObserver.observe(chooser);
+  }
+  window.addEventListener('scroll', posterPreviewScrollHandler, { passive: true });
+  posterPreviewScrollHandler();
+}
 let qrPromise = null;
 async function drawPreviews() {
   if (!current) return;
