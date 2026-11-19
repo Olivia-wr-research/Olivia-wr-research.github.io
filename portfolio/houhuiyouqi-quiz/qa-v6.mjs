@@ -155,7 +155,7 @@ assert.equal(await page.locator('.ev').count(),3,'Personalized result explanatio
 assert.equal(await page.locator('[data-template]').count(),4,'Expected 4 poster choices');
 assert.equal(new URL(page.url()).searchParams.has('r'),false,'Completed quiz should not persist result in URL');
 await page.screenshot({path:path.join(out,'03-result.png'),fullPage:true,animations:'disabled'});
-await page.locator('#share-link').click();
+await page.locator('#bar-share').click();
 assert.ok((await page.evaluate(()=>window.__hhyqEvents||[])).includes('share_clicked'),'Missing share-click telemetry');
 console.log('PASS full 10-question automatic advance, anonymous event hooks, three answer clues, four templates');
 if(isWebkit){
