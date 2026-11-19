@@ -618,31 +618,81 @@ function castStrip() {
   }).join('') + '</div>';
 }
 let castObserver = null;
+let castWindowScrollHandler = null;
+let castWindowResizeHandler = null;
 function loadCastImages(strip) {
   if (castObserver) { castObserver.disconnect(); castObserver = null; }
-  const pending = [...strip.querySelectorAll('img[data-src]')];
-  const load = img => {
-    if (!img.dataset.src) return;
-    img.src = img.dataset.src;
-    img.removeAttribute('data-src');
-    if (castObserver) castObserver.unobserve(img);
-  };
-  const loadNearby = () => {
-    const r = strip.getBoundingClientRect();
-    for (const img of pending) {
-      if (!img.dataset.src) continue;
-      const p = img.getBoundingClientRect();
-      if (p.left <= r.right + 260 && p.right >= r.left - 260) load(img);
+  if (castWindowScrollHandler) {
+    window.removeEventListener('scroll', castWindowScrollHandler);
+    castWindowScrollHandler = null;
+  }
+  if (castWindowResizeHandler) {
+    window.removeEventListener('resize', castWindowResizeHandler);
+    castWindowResizeHandler = null;
+  }
+  const pictures = [...strip.querySelectorAll('img[data-hhyq-photo]')];
+  const originalQueue = [];
+  let activeLoads = 0;
+
+  const promoteOriginals = () => {
+    while (activeLoads < 2 && originalQueue.length) {
+      const img = originalQueue.shift();
+      if (!img.isConnected || !strip.isConnected) continue;
+      const id = img.dataset.hhyqPhoto;
+      const full = new Image();
+      activeLoads++;
+      full.decoding = 'async';
+      full.onload = () => {
+        if (img.isConnected && strip.isConnected && img.dataset.hhyqPhoto === id) {
+          // Never replace a visible thumbnail until the actual HD photo is downloaded.
+          img.src = full.src;
+          img.dataset.hdReady = '1';
+          img.classList.remove('photo-unavailable');
+        }
+        activeLoads--;
+        promoteOriginals();
+      };
+      full.onerror = () => {
+        img.dataset.hdFailed = '1'; // Retain the visible preview if the HD request fails.
+        activeLoads--;
+        promoteOriginals();
+      };
+      full.src = photoSources[id].url;
     }
   };
+  const nearby = () => {
+    if (!strip.isConnected) return;
+    const r = strip.getBoundingClientRect();
+    const verticallyNear = r.top < window.innerHeight + 100 && r.bottom > -100;
+    for (const img of pictures) {
+      const p = img.getBoundingClientRect();
+      const withinLoadRange = p.left <= r.right + 240 && p.right >= r.left - 240;
+      if (withinLoadRange && img.dataset.src) {
+        img.src = img.dataset.src;
+        img.removeAttribute('data-src');
+        if (castObserver) castObserver.unobserve(img);
+      }
+      if (verticallyNear && p.left <= r.right + 40 && p.right >= r.left - 40 &&
+          img.src && !img.dataset.hdQueued && !img.dataset.hdReady) {
+        img.dataset.hdQueued = '1';
+        originalQueue.push(img);
+      }
+    }
+    promoteOriginals();
+  };
   if ('IntersectionObserver' in window) {
-    castObserver = new IntersectionObserver(entries => {
-      for (const entry of entries) if (entry.isIntersecting) load(entry.target);
-    }, { root: strip, rootMargin: '0px 240px' });
-    for (const img of pending) castObserver.observe(img);
+    castObserver = new IntersectionObserver(nearby, {root: strip, rootMargin: '0px 240px'});
+    for (const img of pictures) if (img.dataset.src) castObserver.observe(img);
   }
-  strip.addEventListener('scroll', loadNearby, { passive: true });
-  loadNearby();
+  strip.addEventListener('scroll', nearby, {passive: true});
+  castWindowScrollHandler = nearby;
+  window.addEventListener('scroll', castWindowScrollHandler, {passive: true});
+  castWindowResizeHandler = nearby;
+  window.addEventListener('resize', castWindowResizeHandler, {passive: true});
+  // The light previews and interactive title appear first; originals load afterward.
+  nearby();
+  if ('requestIdleCallback' in window) requestIdleCallback(nearby, {timeout: 250});
+  else setTimeout(nearby, 100);
 }
 function heatStrip() {
   const items = ['前两期正片均破 1.4 亿播放', '连续 8 天登顶', '有效播放市占率 75.1%'].concat(HOTLINES.map(x => x[0]));
@@ -1025,6 +1075,20 @@ function renderResult() {
 
   const credit = photoSources[current.id];
   if (credit && !customPhotos[current.id]) $('#image-credit').textContent = '默认照片：' + credit.credit;
+  // Show a screen-size preview immediately, then replace it with the original HD photo.
+  const shown = $('#portrait-img'), personId = current.id;
+  if (shown && !customPhotos[personId] && credit) {
+    const hd = new Image();
+    hd.decoding = 'async';
+    hd.onload = () => {
+      if (shown.isConnected && current && current.id === personId && !customPhotos[personId]) {
+        shown.src = credit.url;
+        shown.dataset.hdReady = '1';
+        shown.classList.remove('photo-unavailable');
+      }
+    };
+    hd.src = credit.url;
+  }
   schedulePosterPreviews();
 }
 
