@@ -15,6 +15,22 @@ const ids=['li','xu','zhang','ma','wen','wang','qing','bai'];
 fs.mkdirSync(out,{recursive:true});
 const iphone='Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1';
 const context=await browser.newContext({viewport:{width:390,height:844},acceptDownloads:true,...(isWebkit?{userAgent:iphone,isMobile:true,hasTouch:true,deviceScaleFactor:2}:{})});
+await context.addInitScript(() => {
+  window.__hhyqEvents = [];
+  Object.defineProperty(window,'hhyqAnalytics',{
+    configurable:true,
+    get(){ return window.__hhyqTracker; },
+    set(analytics) {
+      window.__hhyqTracker = {
+        enabled: analytics.enabled,
+        track(name) {
+          window.__hhyqEvents.push(name);
+          return analytics.track(name);
+        }
+      };
+    }
+  });
+});
 const page=await context.newPage();
 page.setDefaultTimeout(20000);
 const errors=[];
@@ -124,6 +140,7 @@ await page.screenshot({path:path.join(out,'02-share.png'),fullPage:true,animatio
 console.log('PASS 8/8 direct result pages, photos, and phone share landings');
 await page.goto(root,{waitUntil:'domcontentloaded'});
 await page.locator('#start').click();
+assert.ok((await page.evaluate(()=>window.__hhyqEvents||[])).includes('quiz_start'),'Missing quiz_start telemetry');
 for(let i=0;i<10;i++){
  assert.equal(await page.locator('[data-ans]').count(),4,'options on question '+(i+1));
  await page.locator('[data-ans="'+(i%4)+'"]').click();
@@ -132,15 +149,19 @@ for(let i=0;i<10;i++){
  ,i+2,{timeout:12000});
 }
 await page.locator('.verdict').waitFor();
+assert.equal(await page.evaluate(()=>(window.__hhyqEvents||[]).filter(x=>x==='quiz_complete').length),1,'Completed quiz must produce exactly one completion event');
 await checkLoaded('#portrait-img');
 assert.equal(await page.locator('.ev').count(),3,'Personalized result explanation missing');
 assert.equal(await page.locator('[data-template]').count(),4,'Expected 4 poster choices');
 assert.equal(new URL(page.url()).searchParams.has('r'),false,'Completed quiz should not persist result in URL');
 await page.screenshot({path:path.join(out,'03-result.png'),fullPage:true,animations:'disabled'});
-console.log('PASS full 10-question automatic advance, three answer clues, four templates');
+await page.locator('#share-link').click();
+assert.ok((await page.evaluate(()=>window.__hhyqEvents||[])).includes('share_clicked'),'Missing share-click telemetry');
+console.log('PASS full 10-question automatic advance, anonymous event hooks, three answer clues, four templates');
 if(isWebkit){
  await page.locator('#download').click();
  await page.locator('#poster-sheet').waitFor({timeout:35000});
+ assert.ok((await page.evaluate(()=>window.__hhyqEvents||[])).includes('poster_generated'),'Missing mobile poster-generated event');
  await page.waitForFunction(()=>{const im=document.querySelector('#sheet-img');return im?.complete&&im.naturalWidth===1080&&im.naturalHeight===1920},{},{timeout:30000});
  await page.screenshot({path:path.join(out,'04-ios-save.png'),fullPage:false,animations:'disabled'});
  await page.locator('#sheet-close').click();
@@ -171,6 +192,7 @@ if(isWebkit){
  assert.equal(buf.toString('hex',0,8),'89504e470d0a1a0a','Not PNG');
  assert.equal(buf.readUInt32BE(16),1080,'Wrong PNG width');
  assert.equal(buf.readUInt32BE(20),1920,'Wrong PNG height');
+ assert.ok((await page.evaluate(()=>window.__hhyqEvents||[])).includes('poster_generated'),'Missing desktop poster-generated event');
  console.log('PASS Chromium poster export PNG 1080x1920');
  await page.reload({waitUntil:'domcontentloaded'});
  await page.locator('#start').waitFor();
