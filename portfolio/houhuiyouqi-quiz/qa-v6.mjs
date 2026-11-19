@@ -43,6 +43,16 @@ for(const id of ids) {
   }, id, {timeout:15000});
 }
 await checkLoaded('.cast img[data-hhyq-photo]',8);
+// The final displayed source for all eight portraits must be their original HD assets.
+for(const id of ids) {
+  await page.locator('.cast img[data-hhyq-photo="'+id+'"]').evaluate(el =>
+    el.scrollIntoView({behavior:'instant',block:'nearest',inline:'center'}));
+  await page.waitForFunction(id => {
+    const img=document.querySelector('.cast img[data-hhyq-photo="'+id+'"]');
+    return img?.dataset.hdReady==='1' && img.complete &&
+      img.naturalWidth>0 && img.currentSrc.includes('/v6/photos-hd/'+id+'.webp');
+  },id,{timeout:35000});
+}
 await page.locator('.cast').evaluate(el => { el.scrollLeft = 0; });
 await checkWidth('home');
 const strip=await page.locator('.cast').evaluate(el=>({width:el.clientWidth,scroll:el.scrollWidth}));
@@ -52,9 +62,9 @@ if(!isWebkit){
  for(const w of [320,375,390,768,1280]){await page.setViewportSize({width:w,height:844});await checkWidth('home '+w);}
  await page.setViewportSize({width:390,height:844});
 }
-const largeAtHome=await page.evaluate(()=>performance.getEntriesByType('resource').filter(x=>x.name.includes('/v6/photos-hd/')).length);
-assert.equal(largeAtHome,0,'Heavy original photos loaded on home screen');
-console.log('PASS home loads small portraits only; eight images swipe correctly');
+const hdHome=await page.evaluate(()=>performance.getEntriesByType('resource').filter(x=>x.name.includes('/v6/photos-hd/')).length);
+assert.ok(hdHome>=8,'All eight original HD photos must be available when swiping the gallery');
+console.log('PASS homepage displays original HD portraits after quick lightweight previews');
 const photoBase='docs/apps/houhuiyouqi-quiz/v6/';
 const homeBytes=ids.reduce((n,id)=>n+fs.statSync(photoBase+'photos-thumb/'+id+'.webp').size,0);
 const screenBytes=ids.reduce((n,id)=>n+fs.statSync(photoBase+'photos-screen/'+id+'.webp').size,0);
@@ -91,14 +101,19 @@ for(const id of ids){
  await page.goto(root+'?r='+id,{waitUntil:'domcontentloaded'});
  await page.locator('#portrait-img').waitFor();
  await checkLoaded('#portrait-img');
- assert.ok((await page.locator('#portrait-img').getAttribute('src')).includes('/v6/photos-screen/'+id+'.webp'),'portrait mismatched '+id);
- const firstResultHeavy=await page.evaluate(()=>performance.getEntriesByType('resource').filter(x=>x.name.includes('/v6/photos-hd/')).length);
- assert.equal(firstResultHeavy,0,'HD poster image loaded before the user reaches poster editor');
+ await page.waitForFunction(id => {
+   const im=document.querySelector('#portrait-img');
+   return im?.dataset.hdReady==='1' && im.complete &&
+     im.naturalWidth>0 && im.currentSrc.includes('/v6/photos-hd/'+id+'.webp');
+ },id,{timeout:35000});
+ assert.ok((await page.locator('#portrait-img').getAttribute('src')).includes('/v6/photos-hd/'+id+'.webp'),'result must show original HD photo '+id);
  assert.ok(await page.locator('#poster-chooser').isVisible(),'poster missing '+id);
  assert.equal(await page.locator('.ev').count(),0,'Private answers exposed in share result '+id);
  await checkWidth('result '+id);
  await page.goto(root+'v6/share/'+id+'.html',{waitUntil:'domcontentloaded'});
  await checkLoaded('.pic img');
+ const shareSrc=await page.locator('.pic img').getAttribute('src');
+ assert.ok(shareSrc.includes('/photos-hd/'+id+'.webp'),'Public share page is not using an original HD portrait '+id);
  const og=await page.locator('meta[property="og:image"]').getAttribute('content');
  assert.ok(og.endsWith('/v6/share-cover-'+id+'.jpg'),'Incorrect social share image '+id);
  await checkWidth('share '+id);
@@ -162,6 +177,7 @@ if(isWebkit){
 }
 const fallbackContext=await browser.newContext({viewport:{width:375,height:812},...(isWebkit?{userAgent:iphone,isMobile:true,hasTouch:true}:{})});
 await fallbackContext.route('**/v6/photos-screen/li.webp',route=>route.abort());
+await fallbackContext.route('**/v6/photos-hd/li.webp',route=>route.abort());
 const fallback=await fallbackContext.newPage();
 fallback.on('pageerror',e=>errors.push(e.message));
 await fallback.goto(root+'?r=li',{waitUntil:'domcontentloaded'});
@@ -170,7 +186,7 @@ await fallback.waitForFunction(()=>{
   return im?.complete&&im.naturalWidth>0&&im.currentSrc.includes('share-cover-li.jpg');
 },{},{timeout:25000});
 await fallbackContext.close();
-console.log('PASS WebP network failure -> visible JPG fallback');
+console.log('PASS both HD and preview failures -> visible JPG fallback');
 assert.deepEqual(errors,[],'Unexpected browser JavaScript errors');
 await browser.close();
 console.log('SUCCESS: HOUHUIYOUQI V6 '+(isWebkit?'WEBKIT':'CHROMIUM')+' ACCEPTANCE');
