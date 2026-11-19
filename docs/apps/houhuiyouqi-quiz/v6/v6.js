@@ -593,6 +593,10 @@ let customPhotos = {}, imgCache = {}, portraitFocus = {};
 let fromQuiz = false, advancing = false;
 
 const $ = s => document.querySelector(s);
+function trackUsage(name) {
+  try { if (window.hhyqAnalytics) window.hhyqAnalytics.track(name); }
+  catch (_) { /* Analytics is strictly nonessential. */ }
+}
 const e = s => String(s).replace(/[&<>"']/g, k => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[k]));
 
 function toast(msg) {
@@ -770,6 +774,7 @@ function openCastSheet(p) {
 
 /* ---------------- 答题 ---------------- */
 function reset() {
+  trackUsage('quiz_start');
   step = 0; answers = Array(Q.length).fill(-1); fromQuiz = false;
   selectedTemplate = 'cinema';
   try { sessionStorage.removeItem('hhyq-progress'); } catch (err) { }
@@ -825,6 +830,7 @@ function next() {
   if (answers[step] < 0) return;
   if (step === Q.length - 1) {
     current = scoreResult(); fromQuiz = true;
+    trackUsage('quiz_complete');
     try { sessionStorage.removeItem('hhyq-progress'); } catch (err) { }
     history.replaceState({}, '', location.pathname);
     renderResult();
@@ -1040,6 +1046,7 @@ function resultHTML(c) {
     '</div></section>' +
 
     '<footer class="foot"><div class="foot-inner">' +
+      '<span>隐私说明：如启用匿名访问统计，仅记录页面浏览及开始、完成、海报生成、分享操作；不上传逐题答案、个人上传的照片或联系方式。</span>' +
       '<span>《后会友期》非官方粉丝互动作品 · 题目参考芒果TV公开节目情境 · 结果为原创设定</span>' +
       '<span>节目资料：<a href="' + EVIDENCE + '" target="_blank" rel="noopener noreferrer">芒果TV官方节目页</a></span>' +
       '<span id="image-credit"></span>' +
@@ -1061,7 +1068,10 @@ function renderResult() {
   window.scrollTo(0, 0);
   app.innerHTML = resultHTML(current);
 
-  const toPoster = () => document.getElementById('poster-chooser').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const toPoster = () => {
+    trackUsage('poster_view_requested');
+    document.getElementById('poster-chooser').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
   $('#go-poster').onclick = toPoster;
   $('#poster-cta').onclick = toPoster;
   $('#bar-poster').onclick = () => download();
@@ -1136,19 +1146,31 @@ async function copyText(text) {
   try { await navigator.clipboard.writeText(text); } catch (err) { fallbackCopy(text); }
 }
 function copyCaption() {
+  trackUsage('share_copy_requested');
   copyText('我测出了《后会友期》里的「' + current.name + '」型友情嘴替——' + current.title + '。\n' +
     current.stamp + '\n不是我对号入座，是这档节目在我心里装监控了。\n你测出谁？ ' + SHARE_PATH + current.id + '.html')
     .then(() => toast('朋友圈文案已复制'));
 }
 async function share() {
+  trackUsage('share_clicked');
   if (isWeChat()) { copyCaption(); return; }
   const text = '我测出了《后会友期》友情嘴替：' + current.title + '。你也来测测！';
   const url = SHARE_PATH + current.id + '.html';
   try {
-    if (navigator.share) await navigator.share({ title: '我是' + current.name + '型：' + current.stamp, text, url });
-    else { await copyText(text + '\n' + url); toast('结果链接已复制'); }
+    if (navigator.share) {
+      await navigator.share({ title: '我是' + current.name + '型：' + current.stamp, text, url });
+      trackUsage('share_native_completed');
+    } else {
+      trackUsage('share_copy_requested');
+      await copyText(text + '\n' + url);
+      toast('结果链接已复制');
+    }
   } catch (err) {
-    if (err.name !== 'AbortError') { await copyText(text + '\n' + url); toast('结果链接已复制'); }
+    if (err.name !== 'AbortError') {
+      trackUsage('share_copy_requested');
+      await copyText(text + '\n' + url);
+      toast('结果链接已复制');
+    }
   }
 }
 
@@ -1706,6 +1728,7 @@ async function download() {
     if (!qrLib) await ensureQR();
     drawPoster(canvas, current, im, selectedTemplate, !!qrLib);
     const blob = await new Promise((resolve, reject) => canvas.toBlob(v => v ? resolve(v) : reject(Error('png_export_failed')), 'image/png'));
+    trackUsage('poster_generated');
     const filename = '后会友期-友情嘴替-' + current.name + '-' + selectedTemplate + '.png';
     if (mobileSaveMode()) {
       showPosterSaveSheet(blob, filename, canvas);
