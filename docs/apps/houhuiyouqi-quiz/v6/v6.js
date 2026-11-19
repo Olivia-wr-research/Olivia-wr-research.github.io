@@ -619,11 +619,16 @@ function castStrip() {
 }
 let castObserver = null;
 let castWindowScrollHandler = null;
+let castWindowResizeHandler = null;
 function loadCastImages(strip) {
   if (castObserver) { castObserver.disconnect(); castObserver = null; }
   if (castWindowScrollHandler) {
     window.removeEventListener('scroll', castWindowScrollHandler);
     castWindowScrollHandler = null;
+  }
+  if (castWindowResizeHandler) {
+    window.removeEventListener('resize', castWindowResizeHandler);
+    castWindowResizeHandler = null;
   }
   const pictures = [...strip.querySelectorAll('img[data-hhyq-photo]')];
   const originalQueue = [];
@@ -682,7 +687,8 @@ function loadCastImages(strip) {
   strip.addEventListener('scroll', nearby, {passive: true});
   castWindowScrollHandler = nearby;
   window.addEventListener('scroll', castWindowScrollHandler, {passive: true});
-  window.addEventListener('resize', nearby, {passive: true});
+  castWindowResizeHandler = nearby;
+  window.addEventListener('resize', castWindowResizeHandler, {passive: true});
   // The light previews and interactive title appear first; originals load afterward.
   nearby();
   if ('requestIdleCallback' in window) requestIdleCallback(nearby, {timeout: 250});
