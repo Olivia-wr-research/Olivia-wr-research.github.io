@@ -4,6 +4,9 @@
 
 const APP_PATH = 'https://olivia-wr-research.github.io/apps/houhuiyouqi-quiz/';
 const MEDIA_ROOT = new URL('/apps/houhuiyouqi-quiz/v6/', location.origin).href;
+const SHARE_PATH = MEDIA_ROOT + 'share/';
+const thumbnailSrc = id => MEDIA_ROOT + 'photos-thumb/' + id + '.webp';
+const screenPhotoSrc = id => customPhotos[id] || MEDIA_ROOT + 'photos-screen/' + id + '.webp';
 const EPISODE = 'https://www.mgtv.com/h/914227.html';
 const EVIDENCE = 'https://www.mgtv.com/act/2026/hhyq2026/';
 
@@ -606,9 +609,40 @@ function nav(dark) {
 
 /* ---------------- 首屏 ---------------- */
 function castStrip() {
-  return '<div class="cast">' + characters.map(c =>
-    '<figure data-person="' + c.id + '"><img src="' + e(photoSources[c.id].url) + '" alt="' + e(c.name) + '" loading="eager" decoding="async" width="480" height="640" data-hhyq-photo="' + c.id + '"><figcaption><span class="cast-name">' + e(c.name) + '</span><span class="cast-meme">' + e(CASTMEME[c.id] || '') + '</span></figcaption></figure>'
-  ).join('') + '</div>';
+  return '<div class="cast">' + characters.map((c, i) => {
+    const url = e(thumbnailSrc(c.id));
+    const attr = i < 4
+      ? 'src="' + url + '" loading="eager" fetchpriority="' + (i === 0 ? 'high' : 'low') + '"'
+      : 'data-src="' + url + '" loading="lazy" fetchpriority="low"';
+    return '<figure data-person="' + c.id + '"><img ' + attr + ' alt="' + e(c.name) + '" decoding="async" width="360" height="540" data-hhyq-photo="' + c.id + '"><figcaption><span class="cast-name">' + e(c.name) + '</span><span class="cast-meme">' + e(CASTMEME[c.id] || '') + '</span></figcaption></figure>';
+  }).join('') + '</div>';
+}
+let castObserver = null;
+function loadCastImages(strip) {
+  if (castObserver) { castObserver.disconnect(); castObserver = null; }
+  const pending = [...strip.querySelectorAll('img[data-src]')];
+  const load = img => {
+    if (!img.dataset.src) return;
+    img.src = img.dataset.src;
+    img.removeAttribute('data-src');
+    if (castObserver) castObserver.unobserve(img);
+  };
+  const loadNearby = () => {
+    const r = strip.getBoundingClientRect();
+    for (const img of pending) {
+      if (!img.dataset.src) continue;
+      const p = img.getBoundingClientRect();
+      if (p.left <= r.right + 260 && p.right >= r.left - 260) load(img);
+    }
+  };
+  if ('IntersectionObserver' in window) {
+    castObserver = new IntersectionObserver(entries => {
+      for (const entry of entries) if (entry.isIntersecting) load(entry.target);
+    }, { root: strip, rootMargin: '0px 240px' });
+    for (const img of pending) castObserver.observe(img);
+  }
+  strip.addEventListener('scroll', loadNearby, { passive: true });
+  loadNearby();
 }
 function heatStrip() {
   const items = ['前两期正片均破 1.4 亿播放', '连续 8 天登顶', '有效播放市占率 75.1%'].concat(HOTLINES.map(x => x[0]));
@@ -638,7 +672,7 @@ function home() {
       '</div>' +
     '</main>';
   const strip = $('.cast');
-  if (strip) strip.scrollLeft = 0;
+  if (strip) { strip.scrollLeft = 0; loadCastImages(strip); }
   $('#start').onclick = reset;
   app.querySelectorAll('[data-person]').forEach(el => {
     el.onclick = () => openCastSheet(characters.find(x => x.id === el.dataset.person));
@@ -863,7 +897,7 @@ function resultHTML(c) {
         '<span class="stamp">' + e(c.stamp) + '</span>' +
       '</div>' +
       '<figure class="portrait">' +
-        '<div class="portrait-frame"><img id="portrait-img" src="' + e(getPhotoSrc(c.id)) + '" alt="' + e(c.name) + ' 人物照片" data-hhyq-photo="' + c.id + '" style="object-position:center ' + getFocus(c.id) + '%"></div>' +
+        '<div class="portrait-frame"><img id="portrait-img" src="' + e(screenPhotoSrc(c.id)) + '" alt="' + e(c.name) + ' 人物照片" data-hhyq-photo="' + c.id + '" style="object-position:center ' + getFocus(c.id) + '%"></div>' +
         '<div class="figcap"><span>人物照片 / 可更换</span><button class="editlink" id="edit-photo">换成我的图</button></div>' +
       '</figure>' +
       '<div class="verdict-foot">' +
@@ -1005,13 +1039,13 @@ async function copyText(text) {
 }
 function copyCaption() {
   copyText('我测出了《后会友期》里的「' + current.name + '」型友情嘴替——' + current.title + '。\n' +
-    current.stamp + '\n不是我对号入座，是这档节目在我心里装监控了。\n你测出谁？ ' + APP_PATH + 'share/' + current.id + '.html')
+    current.stamp + '\n不是我对号入座，是这档节目在我心里装监控了。\n你测出谁？ ' + SHARE_PATH + current.id + '.html')
     .then(() => toast('朋友圈文案已复制'));
 }
 async function share() {
   if (isWeChat()) { copyCaption(); return; }
   const text = '我测出了《后会友期》友情嘴替：' + current.title + '。你也来测测！';
-  const url = APP_PATH + 'share/' + current.id + '.html';
+  const url = SHARE_PATH + current.id + '.html';
   try {
     if (navigator.share) await navigator.share({ title: '我是' + current.name + '型：' + current.stamp, text, url });
     else { await copyText(text + '\n' + url); toast('结果链接已复制'); }
@@ -1564,10 +1598,18 @@ async function init() {
   try { sessionStorage.removeItem('hhyq-progress'); } catch (err) { }
   try { localStorage.removeItem('hhyq-template'); } catch (err) { }
   try { portraitFocus = JSON.parse(localStorage.getItem('hhyq-focus') || '{}') || {}; } catch (err) { portraitFocus = {}; }
-  await restorePhotos();
   const r = new URL(location.href).searchParams.get('r');
-  if (r && C[r]) { current = C[r]; fromQuiz = false; renderResult(); }
-  else home();
+  if (r && C[r]) {
+    current = C[r]; fromQuiz = false; renderResult();
+    // Show the public portrait immediately; recover optional custom photo later.
+    restorePhotos().then(() => {
+      if (customPhotos[r] && current && current.id === r && !fromQuiz) renderResult();
+    });
+  } else {
+    home();
+    // Browser photo storage is optional and must never block the home screen.
+    restorePhotos();
+  }
 }
 window.addEventListener('popstate', () => {
   const r = new URL(location.href).searchParams.get('r');

@@ -31,7 +31,11 @@ async function checkWidth(label){
 }
 await page.goto(root,{waitUntil:'domcontentloaded'});
 await page.locator('#start').waitFor();
+assert.equal(await page.locator('.cast img[data-hhyq-photo]').count(),8);
+await checkLoaded('.cast figure:nth-child(-n+4) img',4);
+await page.locator('.cast').evaluate(el => { el.scrollLeft = el.scrollWidth; el.dispatchEvent(new Event('scroll')); });
 await checkLoaded('.cast img[data-hhyq-photo]',8);
+await page.locator('.cast').evaluate(el => { el.scrollLeft = 0; });
 await checkWidth('home');
 const strip=await page.locator('.cast').evaluate(el=>({width:el.clientWidth,scroll:el.scrollWidth}));
 assert.ok(strip.width>275&&strip.scroll>strip.width,'mobile photo carousel hidden or not scrollable');
@@ -40,7 +44,9 @@ if(!isWebkit){
  for(const w of [320,375,390,768,1280]){await page.setViewportSize({width:w,height:844});await checkWidth('home '+w);}
  await page.setViewportSize({width:390,height:844});
 }
-console.log('PASS homepage: eight visible portraits and mobile horizontal photo carousel');
+const largeAtHome=await page.evaluate(()=>performance.getEntriesByType('resource').filter(x=>x.name.includes('/v6/photos-hd/')).length);
+assert.equal(largeAtHome,0,'Heavy original photos loaded on home screen');
+console.log('PASS home loads small portraits only; eight images swipe correctly');
 
 /* No old choices or poster preferences may survive a fresh visit. */
 await page.evaluate(()=>{
@@ -71,7 +77,7 @@ for(const id of ids){
  await page.goto(root+'?r='+id,{waitUntil:'domcontentloaded'});
  await page.locator('#portrait-img').waitFor();
  await checkLoaded('#portrait-img');
- assert.ok((await page.locator('#portrait-img').getAttribute('src')).includes('/v6/photos-hd/'+id+'.webp'),'portrait mismatched '+id);
+ assert.ok((await page.locator('#portrait-img').getAttribute('src')).includes('/v6/photos-screen/'+id+'.webp'),'portrait mismatched '+id);
  assert.ok(await page.locator('#poster-chooser').isVisible(),'poster missing '+id);
  assert.equal(await page.locator('.ev').count(),0,'Private answers exposed in share result '+id);
  await checkWidth('result '+id);
