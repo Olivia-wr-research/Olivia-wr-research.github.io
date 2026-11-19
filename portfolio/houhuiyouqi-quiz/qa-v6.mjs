@@ -33,7 +33,15 @@ await page.goto(root,{waitUntil:'domcontentloaded'});
 await page.locator('#start').waitFor();
 assert.equal(await page.locator('.cast img[data-hhyq-photo]').count(),8);
 await checkLoaded('.cast figure:nth-child(-n+4) img',4);
-await page.locator('.cast').evaluate(el => { el.scrollLeft = el.scrollWidth; el.dispatchEvent(new Event('scroll')); });
+// Move through all portrait cards as a real user does, including intermediate cards.
+for(const id of ids) {
+  await page.locator('.cast img[data-hhyq-photo="'+id+'"]').evaluate(el =>
+    el.scrollIntoView({behavior:'instant',block:'nearest',inline:'center'}));
+  await page.waitForFunction(id => {
+    const img=document.querySelector('.cast img[data-hhyq-photo="'+id+'"]');
+    return img?.complete && img.naturalWidth>0;
+  }, id, {timeout:15000});
+}
 await checkLoaded('.cast img[data-hhyq-photo]',8);
 await page.locator('.cast').evaluate(el => { el.scrollLeft = 0; });
 await checkWidth('home');
