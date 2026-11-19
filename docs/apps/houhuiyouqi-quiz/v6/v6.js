@@ -653,9 +653,24 @@ function loadCastImages(strip) {
         promoteOriginals();
       };
       full.onerror = () => {
-        img.dataset.hdFailed = '1'; // Retain the visible preview if the HD request fails.
-        activeLoads--;
-        promoteOriginals();
+        // Prefer a real full-resolution portrait JPEG over a text-covered share card.
+        const jpeg = new Image();
+        jpeg.decoding = 'async';
+        jpeg.onload = () => {
+          if (img.isConnected && strip.isConnected && img.dataset.hhyqPhoto === id) {
+            img.src = jpeg.src;
+            img.dataset.hdReady = 'jpeg';
+            img.classList.remove('photo-unavailable');
+          }
+          activeLoads--;
+          promoteOriginals();
+        };
+        jpeg.onerror = () => {
+          img.dataset.hdFailed = '1'; // Retain the visible preview if both full-size sources fail.
+          activeLoads--;
+          promoteOriginals();
+        };
+        jpeg.src = MEDIA_ROOT + 'photos-hd-jpeg/' + id + '.jpg';
       };
       full.src = photoSources[id].url;
     }
@@ -892,7 +907,15 @@ function photoImg(id) {
     let done = false;
     const finish = a => { if (done) return; done = true; clearTimeout(timer); resolve(a); };
     im.onload = () => finish(im);
-    im.onerror = () => { if (!im.dataset.posterFallback) { im.dataset.posterFallback = '1'; im.src = MEDIA_ROOT + 'share-cover-' + id + '.jpg'; } else finish(null); };
+    im.onerror = () => {
+      if (!im.dataset.posterFallback) {
+        im.dataset.posterFallback = 'jpeg';
+        im.src = MEDIA_ROOT + 'photos-hd-jpeg/' + id + '.jpg';
+      } else if (im.dataset.posterFallback === 'jpeg') {
+        im.dataset.posterFallback = 'cover';
+        im.src = MEDIA_ROOT + 'share-cover-' + id + '.jpg';
+      } else finish(null);
+    };
     const timer = setTimeout(() => finish(null), 18000);
     im.src = src;
   });
@@ -1086,6 +1109,17 @@ function renderResult() {
         shown.dataset.hdReady = '1';
         shown.classList.remove('photo-unavailable');
       }
+    };
+    hd.onerror = () => {
+      const jpeg = new Image();
+      jpeg.onload = () => {
+        if (shown.isConnected && current && current.id === personId && !customPhotos[personId]) {
+          shown.src = jpeg.src;
+          shown.dataset.hdReady = 'jpeg';
+          shown.classList.remove('photo-unavailable');
+        }
+      };
+      jpeg.src = MEDIA_ROOT + 'photos-hd-jpeg/' + personId + '.jpg';
     };
     hd.src = credit.url;
   }
@@ -1719,12 +1753,17 @@ document.addEventListener('error', event => {
   if (!(img instanceof HTMLImageElement)) return;
   const id = img.getAttribute('data-hhyq-photo');
   if (!id || !photoSources[id]) return;
-  if (img.dataset.hhyqFallback === '1') {
+  if (img.dataset.hhyqFallback === '2') {
     img.classList.add('photo-unavailable');
     return;
   }
+  if (img.dataset.hhyqFallback === '1') {
+    img.dataset.hhyqFallback = '2';
+    img.src = MEDIA_ROOT + 'share-cover-' + id + '.jpg';
+    return;
+  }
   img.dataset.hhyqFallback = '1';
-  img.src = MEDIA_ROOT + 'share-cover-' + id + '.jpg';
+  img.src = MEDIA_ROOT + 'photos-hd-jpeg/' + id + '.jpg';
 }, true);
 
 init();

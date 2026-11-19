@@ -71,6 +71,8 @@ const screenBytes=ids.reduce((n,id)=>n+fs.statSync(photoBase+'photos-screen/'+id
 assert.ok(homeBytes<600000,'Home portrait payload too large: '+homeBytes);
 assert.ok(screenBytes<2400000,'Screen photos payload too large: '+screenBytes);
 console.log('PASS WebP byte budgets: 8 thumbnails '+homeBytes+' bytes, 8 screen photos '+screenBytes+' bytes');
+const fullJpgCount=ids.filter(id => fs.statSync(photoBase+'photos-hd-jpeg/'+id+'.jpg').size>50000).length;
+assert.equal(fullJpgCount,8,'All eight high-resolution JPEG portraits must be present');
 
 /* No old choices or poster preferences may survive a fresh visit. */
 await page.evaluate(()=>{
@@ -183,10 +185,10 @@ fallback.on('pageerror',e=>errors.push(e.message));
 await fallback.goto(root+'?r=li',{waitUntil:'domcontentloaded'});
 await fallback.waitForFunction(()=>{
   const im=document.querySelector('#portrait-img');
-  return im?.complete&&im.naturalWidth>0&&im.currentSrc.includes('share-cover-li.jpg');
+  return im?.complete&&im.naturalWidth>400&&im.currentSrc.includes('photos-hd-jpeg/li.jpg');
 },{},{timeout:25000});
 await fallbackContext.close();
-console.log('PASS both HD and preview failures -> visible JPG fallback');
+console.log('PASS WebP failure -> matching full-resolution JPEG portrait (not share cover)');
 assert.deepEqual(errors,[],'Unexpected browser JavaScript errors');
 await browser.close();
 console.log('SUCCESS: HOUHUIYOUQI V6 '+(isWebkit?'WEBKIT':'CHROMIUM')+' ACCEPTANCE');
