@@ -28,7 +28,7 @@ function setup(query){
   return {get:id=>document.getElementById(id)};
 }
 function participate(slot,boundary=5){
-  const ui=setup('?p='+slot),$=ui.get;
+  const ui=setup('?p=P'+slot),$=ui.get;
   $('begin').onclick();
   assert.equal($('sort').hidden,false);
   for(let i=0;i<10;i++){
