@@ -1,11 +1,11 @@
 /* Anonymous usage telemetry for 后会友期 V6 (Umami Cloud).
-   To activate, set WEBSITE_ID to the UUID shown under Umami > Websites > Tracking code.
-   The user's Umami account currently has no configured website; leave this blank until verified.
+   Website ID supplied by the site owner. Please verify incoming data in the Umami dashboard.
+   The tracker only runs on the official GitHub Pages hostname.
    No cookies, account IDs, uploaded photos, quiz answers or free text are sent by our event hooks.
 */
 (() => {
   'use strict';
-  const WEBSITE_ID = '';
+  const WEBSITE_ID = 'eb5fafdb-5785-44d4-a4c0-00cfc6072304';
   const HOST = 'olivia-wr-research.github.io';
   const APP_PREFIX = '/apps/houhuiyouqi-quiz/';
   const VALID_ID = /^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$/i;
