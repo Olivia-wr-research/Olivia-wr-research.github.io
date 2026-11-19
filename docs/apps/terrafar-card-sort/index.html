@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="远境 TERRAFAR 信息架构探索：10 张卡片，5 位真实参与者的匿名开放式卡片分类试测。">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>远境 · 10 张卡片分类测试</title>
+  <link rel="stylesheet" href="./style.css?v=1">
+  <script src="./app.js?v=1" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="mast">
+      <a class="brand" href="../application-board/" aria-label="远境正式网站（离开测试）">远境<span>TERRAFAR</span></a>
+      <span class="tag">IA RESEARCH · PILOT 01</span>
+    </header>
+
+    <main id="participant" class="main">
+      <div class="eyebrow">探索式用户研究 · OPEN CARD SORT</div>
+      <section id="intro" class="stage" aria-labelledby="intro-title">
+        <div class="hero">
+          <p class="kicker">一场没有标准答案的小测试</p>
+          <h1 id="intro-title">你会把这些功能，<em>放在一起吗？</em></h1>
+          <p class="lead">假设你在使用一个寻找海外学习和研究机会的网站。这里有 10 张功能卡，请按照你自己的理解分组，再给每组起一个名字。</p>
+        </div>
+        <div class="metrics">
+          <div><strong>10</strong><span>张功能卡</span></div>
+          <div><strong>2–6</strong><span>个自定义分组</span></div>
+          <div><strong>约 5–8 分钟</strong><span>一次完成</span></div>
+        </div>
+        <div class="panel start-panel">
+          <label for="participant-slot">你的匿名测试编号</label>
+          <select id="participant-slot" aria-label="匿名测试编号">
+            <option value="P1">参与者 P1</option><option value="P2">参与者 P2</option>
+            <option value="P3">参与者 P3</option><option value="P4">参与者 P4</option>
+            <option value="P5">参与者 P5</option>
+          </select>
+          <p class="muted" id="slot-hint">研究者会给每位参与者不同的 P1–P5 链接。编号只用于区分五份反馈，不代表姓名。</p>
+          <ul class="guidelines">
+            <li>不要先打开远境网站，也不需要猜测原有栏目。</li>
+            <li>先只决定哪些卡属于一组；下一步再给每组命名。</li>
+            <li>不收集姓名、联系方式或简历，请勿在备注中填写个人信息。</li>
+          </ul>
+          <p class="privacy">本页面没有统计脚本或服务器收件箱；你的回答只在本机生成结果码。点击“复制结果”并发给研究者之后，对方才能收到数据。可以随时退出而不分享。</p>
+          <button id="begin" class="btn primary" type="button">开始整理 10 张卡 <span aria-hidden="true">↗</span></button>
+        </div>
+      </section>
+
+      <section id="sort" class="stage" aria-labelledby="sort-title" hidden>
+        <div class="stepbar"><span>第 1 / 3 步</span><span>先分组，不起名字</span></div>
+        <h1 id="sort-title" class="section-title">哪些功能应该放在一起？</h1>
+        <p class="lead small">每张卡下面选一个分组。分组没有预设含义，你可以增加或删除空分组。请把全部 10 张卡分好，至少使用 2 个分组。</p>
+        <div class="panel group-panel">
+          <div class="panel-head"><h2>你的分组</h2><button id="add-group" class="btn secondary small-btn" type="button">＋ 新增分组</button></div>
+          <div id="group-list" class="group-list" aria-live="polite"></div>
+        </div>
+        <div class="sort-caption"><h2>功能卡片 <span id="assigned-count">0 / 10</span></h2><span>卡片顺序已随机化</span></div>
+        <div id="card-list" class="card-grid"></div>
+        <div class="actions"><button id="sort-back" class="btn ghost" type="button">返回说明</button><button id="sort-next" class="btn primary" type="button">完成分组 →</button></div>
+        <p id="sort-error" class="error" role="alert" hidden></p>
+      </section>
+
+      <section id="label" class="stage" aria-labelledby="label-title" hidden>
+        <div class="stepbar"><span>第 2 / 3 步</span><span>给每组起名字</span></div>
+        <h1 id="label-title" class="section-title">你会怎么称呼这些分组？</h1>
+        <p class="lead small">请用你自己的话命名，像给 App 的栏目起名字一样。没有标准答案，也不需要采用远境原来的菜单词。</p>
+        <div id="label-list" class="labels"></div>
+        <div class="panel question-panel">
+          <h2>最后两个小问题</h2>
+          <label for="hardest">哪张卡最难决定放在哪里？（可跳过）</label>
+          <select id="hardest"><option value="">没有特别难的</option></select>
+          <label for="reason">为什么难放？或者你希望网站怎么组织？（可跳过）</label>
+          <textarea id="reason" rows="3" maxlength="240" placeholder="例如：我觉得研究者信息既能用来找方向，也能用来判断岗位。不要填写私人信息。"></textarea>
+          <label for="clarity">整体分类有多容易？（可跳过）</label>
+          <select id="clarity"><option value="">不评分</option><option value="1">1 · 非常困难</option><option value="2">2 · 较困难</option><option value="3">3 · 一般</option><option value="4">4 · 较容易</option><option value="5">5 · 非常容易</option></select>
+        </div>
+        <div class="actions"><button id="label-back" class="btn ghost" type="button">← 调整分组</button><button id="label-next" class="btn primary" type="button">生成匿名结果 →</button></div>
+        <p id="label-error" class="error" role="alert" hidden></p>
+      </section>
+
+      <section id="finish" class="stage" aria-labelledby="finish-title" hidden>
+        <div class="stepbar"><span>第 3 / 3 步</span><span>分享结果</span></div>
+        <h1 id="finish-title" class="section-title">完成了！最后请把结果发给研究者。</h1>
+        <p class="lead small">结果还没有被任何人收到。请点击复制，回到微信或聊天窗口，粘贴整段结果码发送；如果复制失败，也可以下载 JSON 文件。</p>
+        <div class="panel summary-panel">
+          <div id="finish-summary"></div>
+          <label for="result-code">你的匿名结果码（可复制）</label>
+          <textarea id="result-code" readonly rows="5" spellcheck="false"></textarea>
+          <div class="button-grid">
+            <button id="copy-result" class="btn primary" type="button">复制结果码</button>
+            <button id="share-result" class="btn secondary" type="button">通过系统分享</button>
+            <button id="download-result" class="btn secondary" type="button">下载 JSON</button>
+          </div>
+          <p id="share-status" class="success" role="status"></p>
+        </div>
+        <p class="muted">谢谢。请不要在同一编号下重复提交；需要修改时，请告诉研究者以哪一份为准。</p>
+      </section>
+    </main>
+
+    <main id="researcher" class="main" hidden>
+      <div class="eyebrow">研究者工作台 · 仅本地计算</div>
+      <section class="hero">
+        <h1>五人卡片分类 · <em>数据分析台</em></h1>
+        <p class="lead">将五位参与者发回的 <code>TFIA1:</code> 结果码粘贴到下面，每行一份。分析在你的浏览器本地进行，不发送到任何服务器。</p>
+      </section>
+      <div class="panel research-panel">
+        <h2>发送给 5 位参与者的测试链接</h2>
+        <div id="invite-links" class="invite-links"></div>
+        <p class="muted">请找 5 位与目标用户相关、不了解原菜单结构的人。每人一个编号；参与者完成后，把结果码发回给你。</p>
+        <hr>
+        <label for="response-input">粘贴收到的结果码（每行一份）</label>
+        <textarea id="response-input" rows="7" spellcheck="false" placeholder="TFIA1:…&#10;TFIA1:…"></textarea>
+        <div class="button-grid">
+          <button id="analyze" class="btn primary" type="button">分析已收回答</button>
+          <button id="export-data" class="btn secondary" type="button" disabled>导出明细 CSV</button>
+          <button id="export-matrix" class="btn secondary" type="button" disabled>导出共组矩阵 CSV</button>
+        </div>
+        <p id="analysis-error" class="error" role="alert" hidden></p>
+      </div>
+      <section id="analysis-output" hidden>
+        <div id="sample-summary" class="metrics"></div>
+        <div class="panel"><h2>共组次数最多的卡片组合</h2><p class="muted">仅为本次样本的描述性次数；不代表总体概率或显著性。</p><div id="pairs"></div></div>
+        <div class="panel"><h2>10 × 10 共组矩阵</h2><p class="muted">单元格表示两张卡被同一位参与者放在同一组的次数。对角线为有效参与人数。</p><div id="matrix" class="matrix-wrap"></div></div>
+        <div class="panel"><h2>每位参与者的原始分类与命名</h2><div id="raw-results"></div></div>
+        <div class="panel"><h2>研究解释边界</h2><p class="muted">5 人是定性先导测试，不能证明信息架构已被验证。请结合参与者原话，形成导航假设，再用树测试或找更多目标用户验证。</p></div>
+      </section>
+    </main>
+    <footer class="footer"><span>远境 TERRAFAR · IA pilot</span><span>匿名、自愿、无后端上传 · 仅用于信息架构探索</span></footer>
+  </div>
+</body>
+</html>
