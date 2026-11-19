@@ -31,7 +31,19 @@ async function checkWidth(label){
 }
 await page.goto(root,{waitUntil:'domcontentloaded'});
 await page.locator('#start').waitFor();
+assert.equal(await page.locator('.cast img[data-hhyq-photo]').count(),8);
+await checkLoaded('.cast figure:nth-child(-n+4) img',4);
+// Move through all portrait cards as a real user does, including intermediate cards.
+for(const id of ids) {
+  await page.locator('.cast img[data-hhyq-photo="'+id+'"]').evaluate(el =>
+    el.scrollIntoView({behavior:'instant',block:'nearest',inline:'center'}));
+  await page.waitForFunction(id => {
+    const img=document.querySelector('.cast img[data-hhyq-photo="'+id+'"]');
+    return img?.complete && img.naturalWidth>0;
+  }, id, {timeout:15000});
+}
 await checkLoaded('.cast img[data-hhyq-photo]',8);
+await page.locator('.cast').evaluate(el => { el.scrollLeft = 0; });
 await checkWidth('home');
 const strip=await page.locator('.cast').evaluate(el=>({width:el.clientWidth,scroll:el.scrollWidth}));
 assert.ok(strip.width>275&&strip.scroll>strip.width,'mobile photo carousel hidden or not scrollable');
@@ -40,7 +52,15 @@ if(!isWebkit){
  for(const w of [320,375,390,768,1280]){await page.setViewportSize({width:w,height:844});await checkWidth('home '+w);}
  await page.setViewportSize({width:390,height:844});
 }
-console.log('PASS homepage: eight visible portraits and mobile horizontal photo carousel');
+const largeAtHome=await page.evaluate(()=>performance.getEntriesByType('resource').filter(x=>x.name.includes('/v6/photos-hd/')).length);
+assert.equal(largeAtHome,0,'Heavy original photos loaded on home screen');
+console.log('PASS home loads small portraits only; eight images swipe correctly');
+const photoBase='docs/apps/houhuiyouqi-quiz/v6/';
+const homeBytes=ids.reduce((n,id)=>n+fs.statSync(photoBase+'photos-thumb/'+id+'.webp').size,0);
+const screenBytes=ids.reduce((n,id)=>n+fs.statSync(photoBase+'photos-screen/'+id+'.webp').size,0);
+assert.ok(homeBytes<600000,'Home portrait payload too large: '+homeBytes);
+assert.ok(screenBytes<2400000,'Screen photos payload too large: '+screenBytes);
+console.log('PASS WebP byte budgets: 8 thumbnails '+homeBytes+' bytes, 8 screen photos '+screenBytes+' bytes');
 
 /* No old choices or poster preferences may survive a fresh visit. */
 await page.evaluate(()=>{
@@ -71,7 +91,9 @@ for(const id of ids){
  await page.goto(root+'?r='+id,{waitUntil:'domcontentloaded'});
  await page.locator('#portrait-img').waitFor();
  await checkLoaded('#portrait-img');
- assert.ok((await page.locator('#portrait-img').getAttribute('src')).includes('/v6/photos-hd/'+id+'.webp'),'portrait mismatched '+id);
+ assert.ok((await page.locator('#portrait-img').getAttribute('src')).includes('/v6/photos-screen/'+id+'.webp'),'portrait mismatched '+id);
+ const firstResultHeavy=await page.evaluate(()=>performance.getEntriesByType('resource').filter(x=>x.name.includes('/v6/photos-hd/')).length);
+ assert.equal(firstResultHeavy,0,'HD poster image loaded before the user reaches poster editor');
  assert.ok(await page.locator('#poster-chooser').isVisible(),'poster missing '+id);
  assert.equal(await page.locator('.ev').count(),0,'Private answers exposed in share result '+id);
  await checkWidth('result '+id);
@@ -139,7 +161,7 @@ if(isWebkit){
  await context.close();
 }
 const fallbackContext=await browser.newContext({viewport:{width:375,height:812},...(isWebkit?{userAgent:iphone,isMobile:true,hasTouch:true}:{})});
-await fallbackContext.route('**/v6/photos-hd/li.webp',route=>route.abort());
+await fallbackContext.route('**/v6/photos-screen/li.webp',route=>route.abort());
 const fallback=await fallbackContext.newPage();
 fallback.on('pageerror',e=>errors.push(e.message));
 await fallback.goto(root+'?r=li',{waitUntil:'domcontentloaded'});
