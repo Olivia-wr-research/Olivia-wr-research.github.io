@@ -161,7 +161,7 @@ if(isWebkit){
  await context.close();
 }
 const fallbackContext=await browser.newContext({viewport:{width:375,height:812},...(isWebkit?{userAgent:iphone,isMobile:true,hasTouch:true}:{})});
-await fallbackContext.route('**/v6/photos-hd/li.webp',route=>route.abort());
+await fallbackContext.route('**/v6/photos-screen/li.webp',route=>route.abort());
 const fallback=await fallbackContext.newPage();
 fallback.on('pageerror',e=>errors.push(e.message));
 await fallback.goto(root+'?r=li',{waitUntil:'domcontentloaded'});
