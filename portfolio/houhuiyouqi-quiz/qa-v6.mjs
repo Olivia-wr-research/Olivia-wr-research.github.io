@@ -41,6 +41,32 @@ if(!isWebkit){
  await page.setViewportSize({width:390,height:844});
 }
 console.log('PASS homepage: eight visible portraits and mobile horizontal photo carousel');
+
+/* No old choices or poster preferences may survive a fresh visit. */
+await page.evaluate(()=>{
+  sessionStorage.setItem('hhyq-progress',JSON.stringify({step:6,answers:Array(10).fill(2)}));
+  localStorage.setItem('hhyq-template','magazine');
+});
+await page.reload({waitUntil:'domcontentloaded'});
+await page.locator('#start').waitFor();
+assert.equal(await page.locator('#continue').count(),0,'Legacy resume button must be removed');
+assert.equal(await page.evaluate(()=>sessionStorage.getItem('hhyq-progress')),null,'Legacy answer storage not removed');
+assert.equal(await page.evaluate(()=>localStorage.getItem('hhyq-template')),null,'Legacy poster choice not removed');
+await page.locator('#start').click();
+assert.equal(await page.locator('[role="progressbar"]').getAttribute('aria-valuenow'),'1','New quiz should start on question 1');
+await page.locator('[data-ans="1"]').click();
+await page.waitForFunction(()=>Number(document.querySelector('[role="progressbar"]')?.getAttribute('aria-valuenow'))===2);
+assert.equal(await page.evaluate(()=>sessionStorage.getItem('hhyq-progress')),null,'New quiz progress must not be saved');
+await page.locator('#back').click();
+assert.equal(await page.locator('[data-ans="1"]').getAttribute('aria-pressed'),'true','Back must preserve current-run answers');
+await page.locator('[data-ans="0"]').click();
+await page.waitForFunction(()=>Number(document.querySelector('[role="progressbar"]')?.getAttribute('aria-valuenow'))===2);
+await page.reload({waitUntil:'domcontentloaded'});
+await page.locator('#start').waitFor();
+assert.equal(await page.locator('#continue').count(),0,'Reloading mid-quiz offered resume');
+assert.equal(await page.locator('[data-ans]').count(),0,'Reload leaked last run choices');
+console.log('PASS fresh start, old selections removed, back/edit preserved during current run');
+
 for(const id of ids){
  await page.goto(root+'?r='+id,{waitUntil:'domcontentloaded'});
  await page.locator('#portrait-img').waitFor();
@@ -70,6 +96,7 @@ await page.locator('.verdict').waitFor();
 await checkLoaded('#portrait-img');
 assert.equal(await page.locator('.ev').count(),3,'Personalized result explanation missing');
 assert.equal(await page.locator('[data-template]').count(),4,'Expected 4 poster choices');
+assert.equal(new URL(page.url()).searchParams.has('r'),false,'Completed quiz should not persist result in URL');
 await page.screenshot({path:path.join(out,'03-result.png'),fullPage:true,animations:'disabled'});
 console.log('PASS full 10-question automatic advance, three answer clues, four templates');
 if(isWebkit){
@@ -79,6 +106,9 @@ if(isWebkit){
  await page.screenshot({path:path.join(out,'04-ios-save.png'),fullPage:false,animations:'disabled'});
  await page.locator('#sheet-close').click();
  assert.equal(await page.locator('#poster-sheet').count(),0);
+ await page.reload({waitUntil:'domcontentloaded'});
+ await page.locator('#start').waitFor();
+ assert.equal(await page.locator('.verdict').count(),0,'Safari reload retained old result');
  await context.close();
  const wechat='Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.51';
  const wx=await browser.newContext({userAgent:wechat,viewport:{width:375,height:812},isMobile:true,hasTouch:true,deviceScaleFactor:2});
@@ -103,6 +133,9 @@ if(isWebkit){
  assert.equal(buf.readUInt32BE(16),1080,'Wrong PNG width');
  assert.equal(buf.readUInt32BE(20),1920,'Wrong PNG height');
  console.log('PASS Chromium poster export PNG 1080x1920');
+ await page.reload({waitUntil:'domcontentloaded'});
+ await page.locator('#start').waitFor();
+ assert.equal(await page.locator('.verdict').count(),0,'Chrome reload retained old result');
  await context.close();
 }
 const fallbackContext=await browser.newContext({viewport:{width:375,height:812},...(isWebkit?{userAgent:iphone,isMobile:true,hasTouch:true}:{})});

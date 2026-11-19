@@ -618,8 +618,6 @@ function home() {
   document.title = '谁是你的友情嘴替？｜后会友期 · 友情人物测试';
   document.body.classList.remove('has-bar');
   window.scrollTo(0, 0);
-  let hasProgress = false;
-  try { hasProgress = !!sessionStorage.getItem('hhyq-progress'); } catch (err) { }
   app.innerHTML =
     '<main class="home">' + nav(true) + heatStrip() +
       '<div class="hero">' +
@@ -630,7 +628,6 @@ function home() {
           '<div class="meta"><span>10 题</span><span>约 3 分钟</span><span>8 位原型</span><span>4 款海报</span></div>' +
           '<div class="cta-row">' +
             '<button class="btn" id="start">开始测试 →</button>' +
-            (hasProgress ? '<button class="btn btn--light" id="continue">继续上次答题</button>' : '') +
           '</div>' +
           '<p class="legal">没有标准答案。别选最正确的，选更接近真实自己的。此为非官方趣味测试，不代表嘉宾真实人格或科学心理测量。</p>' +
         '</div>' +
@@ -642,8 +639,6 @@ function home() {
   const strip = $('.cast');
   if (strip) strip.scrollLeft = 0;
   $('#start').onclick = reset;
-  const c = $('#continue');
-  if (c) c.onclick = () => { if (resume()) renderQuestion(); else { reset(); } };
   app.querySelectorAll('[data-person]').forEach(el => {
     el.onclick = () => openCastSheet(characters.find(x => x.id === el.dataset.person));
   });
@@ -676,21 +671,11 @@ function openCastSheet(p) {
 /* ---------------- 答题 ---------------- */
 function reset() {
   step = 0; answers = Array(Q.length).fill(-1); fromQuiz = false;
+  selectedTemplate = 'cinema';
   try { sessionStorage.removeItem('hhyq-progress'); } catch (err) { }
   history.replaceState({}, '', location.pathname);
   renderQuestion();
 }
-function saveProgress() { try { sessionStorage.setItem('hhyq-progress', JSON.stringify({ answers, step })); } catch (err) { } }
-function resume() {
-  try {
-    const s = JSON.parse(sessionStorage.getItem('hhyq-progress'));
-    if (s && Array.isArray(s.answers) && s.answers.length === Q.length && s.answers.every(a => a >= -1 && a < 4)) {
-      answers = s.answers; step = Math.max(0, Math.min(Q.length - 1, s.step || 0)); return true;
-    }
-  } catch (err) { }
-  return false;
-}
-
 function renderQuestion() {
   document.title = '第' + (step + 1) + '站｜后会友期 · 友情人物测试';
   document.body.classList.remove('has-bar');
@@ -722,14 +707,13 @@ function renderQuestion() {
     '</main>';
 
   document.querySelectorAll('[data-ans]').forEach(b => b.onclick = () => choose(Number(b.dataset.ans)));
-  $('#back').onclick = () => { if (step === 0) home(); else { step--; saveProgress(); renderQuestion(); } };
+  $('#back').onclick = () => { if (step === 0) home(); else { step--; renderQuestion(); } };
   document.onkeydown = onKey;
 }
 
 function choose(i) {
   if (advancing) return;
   answers[step] = i;
-  saveProgress();
   document.querySelectorAll('[data-ans]').forEach(b => {
     const on = Number(b.dataset.ans) === i;
     b.setAttribute('aria-pressed', String(on));
@@ -742,9 +726,9 @@ function next() {
   if (step === Q.length - 1) {
     current = scoreResult(); fromQuiz = true;
     try { sessionStorage.removeItem('hhyq-progress'); } catch (err) { }
-    history.replaceState({}, '', location.pathname + '?r=' + current.id);
+    history.replaceState({}, '', location.pathname);
     renderResult();
-  } else { step++; saveProgress(); renderQuestion(); }
+  } else { step++; renderQuestion(); }
 }
 function onKey(ev) {
   const k = ev.key.toLowerCase();
@@ -986,13 +970,12 @@ function renderResult() {
 
   document.querySelectorAll('[data-template]').forEach(x => x.onclick = () => {
     selectedTemplate = x.dataset.template;
-    try { localStorage.setItem('hhyq-template', selectedTemplate); } catch (err) { }
     document.querySelectorAll('[data-template]').forEach(y => y.setAttribute('aria-pressed', String(y === x)));
     toast('已选中' + templates.find(t => t.id === selectedTemplate).name);
   });
   $('#character-preview').onchange = ev => {
     current = C[ev.target.value]; fromQuiz = false;
-    history.replaceState({}, '', location.pathname + '?r=' + current.id);
+    history.replaceState({}, '', location.pathname);
     renderResult();
   };
   $('#photo-focus').oninput = ev => {
@@ -1575,10 +1558,9 @@ async function download() {
 
 /* ---------------- 启动 ---------------- */
 async function init() {
-  try {
-    const t = localStorage.getItem('hhyq-template');
-    if (templates.some(x => x.id === t)) selectedTemplate = t;
-  } catch (err) { }
+  // Clear selections saved by earlier versions; every reload starts a fresh run.
+  try { sessionStorage.removeItem('hhyq-progress'); } catch (err) { }
+  try { localStorage.removeItem('hhyq-template'); } catch (err) { }
   try { portraitFocus = JSON.parse(localStorage.getItem('hhyq-focus') || '{}') || {}; } catch (err) { portraitFocus = {}; }
   await restorePhotos();
   const r = new URL(location.href).searchParams.get('r');
