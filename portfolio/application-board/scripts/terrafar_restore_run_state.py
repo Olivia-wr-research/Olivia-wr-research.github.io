@@ -16,6 +16,7 @@ import terrafar_source_adapters as source_adapters
 
 APP = Path(__file__).resolve().parents[1]
 MAINT = APP / "maintenance/terrafar-source-audit"
+RUNNER_VERSION_MIGRATIONS = {"40059887717": "b80237b98e497239cabbe28754d449c30186b9bf974da56748a8ce9995690711"}
 
 
 def sha(data: bytes) -> str:
@@ -44,6 +45,67 @@ def read_json(path: Path) -> dict:
     return value
 
 
+def validate_capture_artifact(artifact_dir: Path, expected_actions_run_id: str) -> dict | None:
+    # Validate a census checkpoint independently of its separate release gate.
+    artifact_path = artifact_dir / "artifact_manifest.json"
+    if not artifact_path.is_file():
+        return None
+    metadata = read_json(artifact_path)
+    if metadata.get("format") != "terrafar-full-census-artifact-v1":
+        raise ValueError("census_artifact_format_unsupported")
+    if metadata.get("capture_status") != "complete":
+        raise ValueError("census_artifact_evidence_capture_incomplete")
+    if str(metadata.get("actions_run_id")) != str(expected_actions_run_id):
+        raise ValueError("census_artifact_actions_run_id_mismatch")
+    expected_certificate_sha = metadata.get("state_encryption_certificate_sha256")
+    if expected_certificate_sha:
+        certificate = MAINT / "state_archive_recipient.pem"
+        if not certificate.is_file() or sha(certificate.read_bytes()) != expected_certificate_sha:
+            raise ValueError("census_artifact_state_recipient_certificate_mismatch")
+    run_dir = artifact_dir / "run"
+    manifest_path = run_dir / "manifest.json"
+    report_path = run_dir / "daily_report.json"
+    results_path = run_dir / "source_checks.jsonl"
+    state_path = artifact_dir / "state/state.json"
+    ledger_path = artifact_dir / "state/candidate_ledger.json"
+    for path in (manifest_path, report_path, results_path, state_path, ledger_path):
+        if not path.is_file():
+            raise FileNotFoundError(f"census_artifact_required_file_missing:{path.name}")
+    for key, path in {
+        "run_manifest_sha256": manifest_path,
+        "daily_report_sha256": report_path,
+        "source_checks_sha256": results_path,
+        "state_sha256": state_path,
+        "candidate_ledger_sha256": ledger_path,
+    }.items():
+        if sha(path.read_bytes()) != metadata.get(key):
+            raise ValueError(f"census_artifact_hash_mismatch:{key}")
+    manifest = read_json(manifest_path)
+    report = read_json(report_path)
+    if manifest.get("status") != "complete" or manifest.get("run_id") != metadata.get("program_run_id"):
+        raise ValueError("census_artifact_run_manifest_incomplete_or_mismatched")
+    if report.get("run_id") != manifest.get("run_id") or report.get("result_conservation") is not True:
+        raise ValueError("census_artifact_daily_report_incomplete_or_mismatched")
+    planned_ids = manifest.get("planned_source_ids")
+    rows = [json.loads(line) for line in results_path.read_text(encoding="utf-8").splitlines() if line.strip()]
+    result_ids = [row.get("source_id") for row in rows]
+    expected_count = metadata.get("planned_sources")
+    expected_result_rows = metadata.get("result_rows", expected_count)
+    if (not isinstance(planned_ids, list) or len(planned_ids) != expected_count
+            or len(set(planned_ids)) != len(planned_ids) or len(rows) != expected_count
+            or expected_result_rows != len(rows)
+            or len(set(result_ids)) != len(result_ids) or set(result_ids) != set(planned_ids)
+            or report.get("planned_sources") != expected_count):
+        raise ValueError("census_artifact_source_scope_reconciliation_failed")
+    expected_plan_hash = metadata.get("planned_source_sha256")
+    if expected_plan_hash and sha(("\n".join(planned_ids) + "\n").encode()) != expected_plan_hash:
+        raise ValueError("census_artifact_planned_source_hash_mismatch")
+    state = read_json(state_path)
+    if state.get("last_run_id") != manifest.get("run_id"):
+        raise ValueError("census_artifact_state_program_run_id_mismatch")
+    return metadata
+
+
 def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, current_actions_run_id: str,
             current_registry: Path, allow_legacy: bool = False, review_results_path: Path | None = None) -> dict:
     if not origin_actions_run_id or not current_actions_run_id or origin_actions_run_id == current_actions_run_id:
@@ -55,6 +117,7 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
         raise FileNotFoundError("restore_artifact_missing_state_or_provenance")
     state_bytes = state_path.read_bytes()
     provenance = read_json(provenance_path)
+    capture_metadata = validate_capture_artifact(artifact_dir, str(origin_actions_run_id))
     state = json.loads(state_bytes)
     provenance_format = provenance.get("format")
     if provenance_format not in {None, "terrafar-maintenance-state-v1"}:
@@ -65,6 +128,8 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
         raise ValueError("restore_origin_run_id_mismatch")
     if source_run_id == str(current_actions_run_id):
         raise ValueError("same_actions_run_cannot_satisfy_cross_run_restore")
+    if capture_metadata and capture_metadata.get("program_run_id") != state.get("last_run_id"):
+        raise ValueError("census_artifact_program_run_id_mismatch")
     if sha(state_bytes) != provenance.get("state_sha256"):
         raise ValueError("restored_state_hash_mismatch")
     if (not isinstance(state, dict) or state.get("schema_version") != provenance.get("state_schema_version")
@@ -82,8 +147,12 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
     compatibility = provenance.get("state_compatibility_version", 1) if not legacy else 1
     if not legacy and compatibility not in {1, 3}:
         raise ValueError("restored_state_compatibility_version_unsupported")
+    runner_migrated_from = None
     if not legacy and compatibility == 3 and provenance.get("runner_sha256") != runner_sha():
-        raise ValueError("restored_runner_version_mismatch")
+        approved_previous_runner = RUNNER_VERSION_MIGRATIONS.get(str(origin_actions_run_id))
+        if provenance.get("runner_sha256") != approved_previous_runner:
+            raise ValueError("restored_runner_version_mismatch")
+        runner_migrated_from = approved_previous_runner
     if not legacy and compatibility == 3 and provenance.get("adapter_implementation_sha256") != adapter_implementation_sha():
         raise ValueError("restored_adapter_implementation_version_mismatch")
     if not legacy and compatibility == 3 and provenance.get("candidate_ledger_implementation_sha256") != candidate_ledger_implementation_sha():
@@ -226,8 +295,11 @@ def restore(artifact_dir: Path, destination: Path, origin_actions_run_id: str, c
         "candidate_ledger_migrated_from_legacy_queue": ledger_migrated,
         "candidate_ledger_schema_migrated": bool(not legacy and ledger_schema_migrated),
         "state_compatibility_migrated_from": compatibility if compatibility < 3 else None,
+        "runner_sha_migrated_from": runner_migrated_from,
         "candidate_ledger_policy_demoted_task_count": policy_demoted_task_count,
         "candidate_ledger_task_ids_unique": len(ledger.get("tasks", {})) == len(set(ledger.get("tasks", {}))),
+        "origin_evidence_capture_status": capture_metadata.get("capture_status") if capture_metadata else "validated_legacy_v3_state",
+        "origin_release_gate_status": capture_metadata.get("release_gate_status") if capture_metadata else None,
     }
     (destination / "restore_verification.json").write_text(json.dumps(restored_meta, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return restored_meta

@@ -1,0 +1,334 @@
+name: TERRAFAR complete initial source census
+
+on:
+  push:
+    branches: ['codex/terrafar-full-coverage-quality-gate-20261024']
+    paths:
+      - '.github/workflows/terrafar-full-census.yml'
+      - 'portfolio/application-board/scripts/terrafar_source_audit.py'
+      - 'portfolio/application-board/scripts/terrafar_source_adapters.py'
+      - 'portfolio/application-board/scripts/terrafar_candidate_ledger.py'
+      - 'portfolio/application-board/scripts/terrafar_restore_run_state.py'
+      - 'portfolio/application-board/scripts/terrafar_state_archive.py'
+      - 'portfolio/application-board/scripts/terrafar_maintenance_artifact.py'
+      - 'portfolio/application-board/maintenance/terrafar-source-audit/registry/**'
+      - 'portfolio/application-board/maintenance/terrafar-source-audit/adapter_catalog.json'
+      - 'portfolio/application-board/maintenance/terrafar-source-audit/state_archive_recipient.pem'
+  workflow_dispatch:
+    inputs:
+      restore_actions_run_id:
+        description: Actions run ID containing the state to restore
+        required: false
+        default: ''
+      restore_artifact_name:
+        description: Exact state artifact name from that run
+        required: false
+        default: ''
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  group: terrafar-initial-census
+  cancel-in-progress: false
+
+jobs:
+  all-registered-sources:
+    if: ${{ github.ref == 'refs/heads/codex/terrafar-full-coverage-quality-gate-20261024' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      TZ: Asia/Shanghai
+      STATE_DIR: /tmp/terrafar-initial-census-state-${{ github.run_id }}
+      CENSUS_RUN_ID: terrafar-full-census-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - name: Check out the exact reviewed feature-branch commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Select the latest complete state checkpoint from this feature branch
+        id: restore_checkpoint
+        env:
+          INPUT_RESTORE_ACTIONS_RUN_ID: ${{ github.event.inputs.restore_actions_run_id || '' }}
+          INPUT_RESTORE_ARTIFACT_NAME: ${{ github.event.inputs.restore_artifact_name || '' }}
+        run: |
+          set -euo pipefail
+          if [[ -n "$INPUT_RESTORE_ACTIONS_RUN_ID" || -n "$INPUT_RESTORE_ARTIFACT_NAME" ]]; then
+            [[ -n "$INPUT_RESTORE_ACTIONS_RUN_ID" && -n "$INPUT_RESTORE_ARTIFACT_NAME" ]] || { echo 'Both restore inputs must be supplied together.' >&2; exit 2; }
+            echo "run_id=$INPUT_RESTORE_ACTIONS_RUN_ID" >> "$GITHUB_OUTPUT"
+            echo "artifact_name=$INPUT_RESTORE_ARTIFACT_NAME" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          api="https://api.github.com/repos/$GITHUB_REPOSITORY"
+          runs="$(curl --fail --silent --show-error --location --get \
+            --data-urlencode "branch=$GITHUB_REF_NAME" \
+            --data-urlencode 'status=completed' --data-urlencode 'per_page=100' \
+            -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2022-11-28' \
+            "$api/actions/runs")"
+          while IFS=$'\t' read -r run_id run_attempt; do
+            [[ -n "$run_id" && "$run_id" != "$GITHUB_RUN_ID" ]] || continue
+            jobs="$(curl --fail --silent --show-error --location \
+              -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2022-11-28' \
+              "$api/actions/runs/$run_id/jobs?per_page=100")"
+            capture_steps_ok="$(jq -r '[.jobs[] | select(.name=="all-registered-sources") | .steps[] | select(.name=="Export auditable metadata for the review workspace" or .name=="Preserve public diagnostics and encrypted state checkpoint") | .conclusion] as $steps | ($steps|length)==2 and all($steps[]; .=="success")' <<<"$jobs")"
+            [[ "$capture_steps_ok" == true ]] || continue
+            artifact_name="terrafar-full-census-$run_id-$run_attempt"
+            artifacts="$(curl --fail --silent --show-error --location \
+              -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2022-11-28' \
+              "$api/actions/runs/$run_id/artifacts?per_page=100")"
+            artifact_exists="$(jq -r --arg name "$artifact_name" '[.artifacts[] | select(.name==$name and .expired==false)] | length>0' <<<"$artifacts")"
+            if [[ "$artifact_exists" != true ]]; then
+              echo 'previous_complete_capture_artifact_missing_or_expired; refusing to roll back to an older checkpoint' >&2
+              exit 2
+            fi
+            echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
+            echo "artifact_name=$artifact_name" >> "$GITHUB_OUTPUT"
+            echo "restore_source=previous_census_run" >> "$GITHUB_OUTPUT"
+            exit 0
+          done < <(jq -r '.workflow_runs[] | select(.path==".github/workflows/terrafar-full-census.yml" and .head_branch==env.GITHUB_REF_NAME) | [.id,.run_attempt] | @tsv' <<<"$runs")
+          echo 'run_id=40059887717' >> "$GITHUB_OUTPUT"
+          echo 'artifact_name=terrafar-source-maintenance-state-v3-40059887717-1' >> "$GITHUB_OUTPUT"
+          echo 'restore_source=trusted_legacy_bootstrap' >> "$GITHUB_OUTPUT"
+      - name: Download the actual production state and candidate ledger
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ steps.restore_checkpoint.outputs.artifact_name }}
+          run-id: ${{ steps.restore_checkpoint.outputs.run_id }}
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/terrafar-production-origin-download
+      - name: Decrypt private state when restoring a protected census archive
+        working-directory: portfolio/application-board
+        env:
+          TERRAFAR_STATE_DECRYPTION_KEY: ${{ secrets.TERRAFAR_STATE_DECRYPTION_KEY }}
+          CHECKPOINT_ORIGIN_ACTIONS_RUN_ID: ${{ steps.restore_checkpoint.outputs.run_id }}
+          CHECKPOINT_ORIGIN_ARTIFACT_NAME: ${{ steps.restore_checkpoint.outputs.artifact_name }}
+        run: |
+          set -euo pipefail
+          download="$RUNNER_TEMP/terrafar-production-origin-download"
+          origin="$RUNNER_TEMP/terrafar-production-origin"
+          if [[ -f "$download/private_state.cms" ]]; then
+            if [[ -z "${TERRAFAR_STATE_DECRYPTION_KEY:-}" ]]; then
+              echo 'Encrypted state restore requires the TERRAFAR_STATE_DECRYPTION_KEY Actions secret.' >&2
+              exit 2
+            fi
+            if [[ -f "$download/artifact_manifest.json" ]]; then
+              manifest="$download/artifact_manifest.json"
+              manifest_format="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1],encoding="utf-8")).get("format", ""))' "$manifest")"
+            elif [[ -f "$download/maintenance_artifact_manifest.json" ]]; then
+              manifest="$download/maintenance_artifact_manifest.json"
+              manifest_format="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1],encoding="utf-8")).get("format", ""))' "$manifest")"
+            else
+              echo 'Encrypted checkpoint has no supported capture manifest.' >&2
+              exit 2
+            fi
+            expected_cert="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1],encoding="utf-8")).get("state_encryption_certificate_sha256", ""))' "$manifest")"
+          python3 - "$manifest" "$manifest_format" "$CHECKPOINT_ORIGIN_ACTIONS_RUN_ID" "$CHECKPOINT_ORIGIN_ARTIFACT_NAME" <<'PY'
+          import json,sys
+          metadata=json.load(open(sys.argv[1],encoding='utf-8'))
+          if metadata.get('format')!=sys.argv[2] or metadata.get('capture_status')!='complete':
+              raise SystemExit('encrypted checkpoint manifest is incomplete or has an unsupported format')
+          if str(metadata.get('actions_run_id'))!=sys.argv[3]:
+              raise SystemExit('encrypted checkpoint origin run does not match the selected Actions run')
+          expected_name=metadata.get('artifact_name') or f"terrafar-full-census-{metadata.get('actions_run_id')}-{metadata.get('run_attempt')}"
+          if expected_name!=sys.argv[4]:
+              raise SystemExit('encrypted checkpoint artifact name does not match its selected capture manifest')
+          PY
+            expected_archive="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1],encoding="utf-8")).get("encrypted_state_sha256", ""))' "$manifest")"
+            actual_cert="$(sha256sum maintenance/terrafar-source-audit/state_archive_recipient.pem | cut -d ' ' -f 1)"
+            [[ -n "$expected_cert" && "$expected_cert" == "$actual_cert" ]] || { echo 'Encrypted state recipient certificate does not match its capture manifest.' >&2; exit 2; }
+            if [[ -n "$expected_archive" ]]; then
+              actual_archive="$(sha256sum "$download/private_state.cms" | cut -d ' ' -f 1)"
+              [[ "$expected_archive" == "$actual_archive" ]] || { echo 'Encrypted state archive hash does not match its capture manifest.' >&2; exit 2; }
+            fi
+            if [[ "$manifest_format" != 'terrafar-full-census-artifact-v1' && "$manifest_format" != 'terrafar-source-maintenance-public-artifact-v1' ]]; then
+              echo 'Encrypted checkpoint format is unsupported.' >&2
+              exit 2
+            fi
+            python3 scripts/terrafar_state_archive.py decrypt \
+              --input "$download/private_state.cms" \
+              --destination "$origin" \
+              --recipient-certificate maintenance/terrafar-source-audit/state_archive_recipient.pem
+            if [[ -d "$download/run" ]]; then cp -a "$download/run" "$origin/run"; fi
+            if [[ "$manifest_format" == 'terrafar-full-census-artifact-v1' ]]; then
+              cp "$manifest" "$origin/artifact_manifest.json"
+            fi
+          else
+            mkdir -p "$origin"
+            cp -a "$download/." "$origin/"
+          fi
+      - name: Validate and restore without replacing the production state
+        working-directory: portfolio/application-board
+        env:
+          RESTORE_ACTIONS_RUN_ID: ${{ steps.restore_checkpoint.outputs.run_id }}
+        run: |
+          python3 scripts/terrafar_restore_run_state.py \
+            --artifact-dir "$RUNNER_TEMP/terrafar-production-origin" \
+            --destination "$STATE_DIR" \
+            --origin-actions-run-id "$RESTORE_ACTIONS_RUN_ID" \
+            --current-actions-run-id "$GITHUB_RUN_ID" \
+            --registry maintenance/terrafar-source-audit/registry/source_registry.json
+      - name: Freeze every registered source into the explicit initial scope
+        working-directory: portfolio/application-board
+        run: |
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib
+          registry=pathlib.Path('maintenance/terrafar-source-audit/registry/source_registry.json')
+          rows=json.loads(registry.read_text())['sources']
+          ids=[r['source_id'] for r in rows if r.get('active') and r.get('enabled_for_daily_audit')]
+          assert len(ids)==411 and len(ids)==len(set(ids)), 'initial source set changed; review scope before proceeding'
+          target=pathlib.Path(os.environ['RUNNER_TEMP'])/'terrafar-full-source-ids.json'
+          target.write_text(json.dumps({'source_ids':ids,'registry_sha256':hashlib.sha256(registry.read_bytes()).hexdigest()},indent=2)+'\n')
+          print(json.dumps({'planned_unique_source_ids':len(ids),'registry_sha256':hashlib.sha256(registry.read_bytes()).hexdigest()}))
+          PY
+      - name: Really attempt all 411 sources with the existing access safeguards
+        working-directory: portfolio/application-board
+        run: |
+          python3 -u scripts/terrafar_source_audit.py run --live \
+            --source-ids-file "$RUNNER_TEMP/terrafar-full-source-ids.json" \
+            --budget 411 --concurrency 3 --timeout 15 --retries 1 \
+            --per-host-delay 1 --http-request-budget 6000 \
+            --require-state --require-candidate-ledger \
+            --state-dir "$STATE_DIR" --run-id "$CENSUS_RUN_ID"
+      - name: Export auditable metadata for the review workspace
+        id: export
+        if: always()
+        working-directory: portfolio/application-board
+        env:
+          RESTORE_ACTIONS_RUN_ID: ${{ steps.restore_checkpoint.outputs.run_id }}
+        run: |
+          set -euo pipefail
+          trap 'rm -rf "$RUNNER_TEMP/terrafar-full-census-state-private"' EXIT
+          python3 - <<'PY'
+          import hashlib,json,os,pathlib,shutil,subprocess,sys
+          sys.path.insert(0,'scripts')
+          import terrafar_candidate_ledger as candidate_ledger
+          import terrafar_source_adapters as source_adapters
+          import terrafar_maintenance_artifact as public_artifact
+          root=pathlib.Path('maintenance/terrafar-source-audit/runs')/os.environ['CENSUS_RUN_ID']
+          state=pathlib.Path(os.environ['STATE_DIR'])
+          export=pathlib.Path(os.environ['RUNNER_TEMP'])/'terrafar-full-census-export'
+          private_state=pathlib.Path(os.environ['RUNNER_TEMP'])/'terrafar-full-census-state-private'
+          private_state.mkdir(mode=0o700,parents=True,exist_ok=False); (export/'run').mkdir(parents=True,exist_ok=True)
+          for name in ('manifest.json','source_checks.jsonl','initial_release_gate.json'):
+              source=root/name
+              if source.is_file(): shutil.copy2(source,export/'run'/name)
+          for name in ('state.json','candidate_ledger.json','restore_verification.json','agent_batch.json'):
+              source=state/name
+              if source.is_file(): shutil.copy2(source,private_state/name)
+          # Keep the durable ledger in the artifact for a later run, but never print it or
+          # candidate text to public workflow logs. Per-source checks remain auditable.
+          checks_path=export/'run/source_checks.jsonl'
+          if checks_path.is_file():
+              safe_lines=[]
+              for line in checks_path.read_text(encoding='utf-8').splitlines():
+                  if not line.strip(): continue
+                  row=json.loads(line)
+                  row=public_artifact.sanitize_source_row(row)
+                  safe_lines.append(json.dumps(row,ensure_ascii=False,separators=(',',':')))
+              checks_path.write_text('\n'.join(safe_lines)+'\n',encoding='utf-8')
+          report_path=root/'daily_report.json'
+          if report_path.is_file():
+              safe_report=public_artifact.sanitize_report(json.loads(report_path.read_text(encoding='utf-8')))
+              (export/'run/daily_report.json').write_text(json.dumps(safe_report,ensure_ascii=False,sort_keys=True)+'\n',encoding='utf-8')
+              report=safe_report
+              ready=report.get('planned_sources')==411 and report.get('complete_success_count')==411
+              gate={'initial_scope_complete':ready,'source_count':411,'complete_sources':report.get('complete_success_count'),
+                    'publication_authorized':False,'human_sample_review':'not_performed',
+                    'reason':'all-source completion and actual user review are required before release'}
+              gate_path=root/'initial_release_gate.json'
+              gate_path.write_text(json.dumps(gate,indent=2)+'\n')
+              shutil.copy2(gate_path,export/'run/initial_release_gate.json')
+              md=['# Initial full-source census','',
+                  f"- Run: `{report.get('run_id','unknown')}`",
+                  f"- Planned / executed sources: {report.get('planned_sources','unknown')} / {report.get('executed_sources','unknown')}",
+                  f"- Complete configured-range checks: {report.get('complete_success_count','unknown')}",
+                  '- Candidate-level material is excluded from this public report.',
+                  '', 'Publication remains gated by source scope and actual human review.', '']
+              (export/'run/daily_report.md').write_text('\n'.join(md),encoding='utf-8')
+              summary={key:report.get(key) for key in ('run_id','planned_sources','executed_sources','network_metrics','status_counts','complete_success_count','candidate_review_tasks','candidate_ledger_status_counts','candidate_data_written_to_formal_site')}
+              with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as out:
+                  out.write('# Initial full-source census\n\n```json\n'+json.dumps(summary,ensure_ascii=False,indent=2)+'\n```\n\nPublication remains gated.\n')
+          required=[private_state/'state.json',private_state/'candidate_ledger.json',private_state/'restore_verification.json',export/'run/manifest.json',export/'run/daily_report.json',export/'run/source_checks.jsonl']
+          missing=[path.name for path in required if not path.is_file()]
+          if missing: raise SystemExit('evidence_capture_missing_required_files:'+','.join(missing))
+          state_bytes=(private_state/'state.json').read_bytes(); ledger_bytes=(private_state/'candidate_ledger.json').read_bytes()
+          source_bytes=(export/'run/source_checks.jsonl').read_bytes(); manifest=json.loads((export/'run/manifest.json').read_text())
+          ledger=json.loads(ledger_bytes); state_json=json.loads(state_bytes)
+          verification=json.loads((private_state/'restore_verification.json').read_text())
+          if verification.get('origin_actions_run_id')!=os.environ['RESTORE_ACTIONS_RUN_ID']:
+              raise SystemExit('restored_origin_actions_run_id_mismatch')
+          if verification.get('current_actions_run_id')!=os.environ['GITHUB_RUN_ID']:
+              raise SystemExit('restored_current_actions_run_id_mismatch')
+          provenance={
+              'format':'terrafar-maintenance-state-v1','origin_actions_run_id':os.environ['GITHUB_RUN_ID'],
+              'origin_run_attempt':os.environ['GITHUB_RUN_ATTEMPT'],'origin_program_run_id':os.environ['CENSUS_RUN_ID'],
+              'state_compatibility_version':3,'artifact_name':f"terrafar-full-census-{os.environ['GITHUB_RUN_ID']}-{os.environ['GITHUB_RUN_ATTEMPT']}",
+              'state_schema_version':state_json.get('schema_version'),'candidate_ledger_schema_version':ledger.get('schema_version'),
+              'state_sha256':hashlib.sha256(state_bytes).hexdigest(),'candidate_ledger_sha256':hashlib.sha256(ledger_bytes).hexdigest(),
+              'registry_sha256':hashlib.sha256(pathlib.Path('maintenance/terrafar-source-audit/registry/source_registry.json').read_bytes()).hexdigest(),
+              'adapter_catalog_sha256':hashlib.sha256(pathlib.Path('maintenance/terrafar-source-audit/adapter_catalog.json').read_bytes()).hexdigest(),
+              'plan_sha256':manifest['plan_sha256'],
+              'runner_sha256':hashlib.sha256(pathlib.Path('scripts/terrafar_source_audit.py').read_bytes()).hexdigest(),
+              'adapter_implementation_sha256':hashlib.sha256(pathlib.Path(source_adapters.__file__).read_bytes()).hexdigest(),
+              'candidate_ledger_implementation_sha256':hashlib.sha256(pathlib.Path(candidate_ledger.__file__).read_bytes()).hexdigest(),
+              'candidate_task_count':len(ledger.get('tasks',{})),
+          }
+          if state_json.get('last_run_id')!=os.environ['CENSUS_RUN_ID'] or manifest.get('registry_sha256')!=provenance['registry_sha256']:
+              raise SystemExit('state_or_run_manifest_scope_mismatch')
+          (private_state/'provenance.json').write_text(json.dumps(provenance,indent=2)+'\n')
+          rows=[json.loads(line) for line in source_bytes.decode().splitlines() if line.strip()]
+          plan=manifest.get('planned_source_ids') or []
+          report=json.loads((export/'run/daily_report.json').read_text())
+          if len(rows)!=411 or len(set(row.get('source_id') for row in rows))!=411 or set(row.get('source_id') for row in rows)!=set(plan) or report.get('planned_sources')!=411:
+              raise SystemExit('source_results_do_not_conserve_all_planned_ids')
+          hashes={key:hashlib.sha256(path.read_bytes()).hexdigest() for key,path in {
+              'run_manifest_sha256':export/'run/manifest.json','daily_report_sha256':export/'run/daily_report.json',
+              'source_checks_sha256':export/'run/source_checks.jsonl','state_sha256':private_state/'state.json',
+              'candidate_ledger_sha256':private_state/'candidate_ledger.json'}.items()}
+          capture={'format':'terrafar-full-census-artifact-v1','capture_status':'complete',
+              'actions_run_id':os.environ['GITHUB_RUN_ID'],'run_attempt':int(os.environ['GITHUB_RUN_ATTEMPT']),
+              'program_run_id':os.environ['CENSUS_RUN_ID'],'planned_sources':411,'result_rows':len(rows),
+              'release_gate_status':'complete' if ready else 'incomplete','planned_source_sha256':hashlib.sha256(('\n'.join(plan)+'\n').encode()).hexdigest(),
+              'state_encryption_certificate_sha256':hashlib.sha256(pathlib.Path('maintenance/terrafar-source-audit/state_archive_recipient.pem').read_bytes()).hexdigest(),**hashes}
+          (export/'artifact_manifest.json').write_text(json.dumps(capture,indent=2)+'\n')
+          encrypted=export/'private_state.cms'
+          archive=subprocess.run(['python3','scripts/terrafar_state_archive.py','encrypt','--source-dir',str(private_state),
+              '--output',str(encrypted),'--recipient-certificate','maintenance/terrafar-source-audit/state_archive_recipient.pem'],
+              check=True,text=True,capture_output=True)
+          capture['encrypted_state_sha256']=hashlib.sha256(encrypted.read_bytes()).hexdigest()
+          (export/'artifact_manifest.json').write_text(json.dumps(capture,indent=2)+'\n')
+          shutil.rmtree(private_state)
+          # Only the encrypted state and public-safe source diagnostics are retained in this artifact.
+          print(archive.stdout.strip())
+          safe={'capture_status':'complete','actions_run_id':capture['actions_run_id'],'planned_sources':411,
+                'result_rows':len(rows),'release_gate_status':capture['release_gate_status'],
+                'candidate_task_count':provenance['candidate_task_count'],
+                'restored_from_actions_run_id':verification.get('origin_actions_run_id')}
+          print(json.dumps(safe))
+          with open(os.environ['GITHUB_OUTPUT'],'a') as out: out.write('capture_complete=true\n')
+          PY
+      - name: Preserve public diagnostics and encrypted state checkpoint
+        if: always() && steps.export.outputs.capture_complete == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: terrafar-full-census-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/terrafar-full-census-export/
+          if-no-files-found: error
+          retention-days: 90
+      - name: Enforce the user's complete-initial-scope release requirement
+        working-directory: portfolio/application-board
+        run: |
+          python3 - <<'PY'
+          import json,os,pathlib,sys
+          p=pathlib.Path('maintenance/terrafar-source-audit/runs')/os.environ['CENSUS_RUN_ID']/'initial_release_gate.json'
+          gate=json.loads(p.read_text())
+          print(json.dumps(gate))
+          if not gate['initial_scope_complete']:
+              print('Initial source scope is incomplete. Evidence is preserved; no site data has been published.',file=sys.stderr)
+              sys.exit(1)
+          PY
