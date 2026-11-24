@@ -102,12 +102,23 @@ assert.equal(await page.evaluate(()=>sessionStorage.getItem('hhyq-progress')),nu
 assert.equal(await page.evaluate(()=>localStorage.getItem('hhyq-template')),null,'Legacy poster choice not removed');
 await page.locator('#start').click();
 assert.equal(await page.locator('[role="progressbar"]').getAttribute('aria-valuenow'),'1','New quiz should start on question 1');
+assert.ok(await page.locator('#next').isDisabled());
 await page.locator('[data-ans="1"]').click();
+assert.equal(await page.locator('[role="progressbar"]').getAttribute('aria-valuenow'),'1');
+await page.locator('#next').click();
 await page.waitForFunction(()=>Number(document.querySelector('[role="progressbar"]')?.getAttribute('aria-valuenow'))===2);
 assert.equal(await page.evaluate(()=>sessionStorage.getItem('hhyq-progress')),null,'New quiz progress must not be saved');
 await page.locator('#back').click();
 assert.equal(await page.locator('[data-ans="1"]').getAttribute('aria-pressed'),'true','Back must preserve current-run answers');
 await page.locator('[data-ans="0"]').click();
+await page.locator('[data-ans="2"]').click();
+await page.locator('[data-ans="3"]').click();
+assert.match(await page.locator('#rank-order').innerText(), /B → A → C → D/);
+await page.getByRole('button',{name:'提前选项C'}).click();
+assert.match(await page.locator('#rank-order').innerText(), /B → C → A → D/);
+await page.locator('[data-ans="1"]').click();
+assert.match(await page.locator('#rank-order').innerText(), /C → A → D/);
+await page.locator('#next').click();
 await page.waitForFunction(()=>Number(document.querySelector('[role="progressbar"]')?.getAttribute('aria-valuenow'))===2);
 await page.reload({waitUntil:'domcontentloaded'});
 await page.locator('#start').waitFor();
@@ -143,7 +154,9 @@ await page.locator('#start').click();
 assert.ok((await page.evaluate(()=>window.__hhyqEvents||[])).includes('quiz_start'),'Missing quiz_start telemetry');
 for(let i=0;i<10;i++){
  assert.equal(await page.locator('[data-ans]').count(),4,'options on question '+(i+1));
- await page.locator('[data-ans="'+(i%4)+'"]').click();
+ const picks = i === 7 ? [1,2,3] : [i % 4];
+ for (const choice of picks) await page.locator('[data-ans="'+choice+'"]').click();
+ await page.locator('#next').click();
  if(i<9)await page.waitForFunction(expected=>
    Number(document.querySelector('[role="progressbar"]')?.getAttribute('aria-valuenow'))===expected
  ,i+2,{timeout:12000});
@@ -157,7 +170,24 @@ assert.equal(new URL(page.url()).searchParams.has('r'),false,'Completed quiz sho
 await page.screenshot({path:path.join(out,'03-result.png'),fullPage:true,animations:'disabled'});
 await page.locator('#bar-share').click();
 assert.ok((await page.evaluate(()=>window.__hhyqEvents||[])).includes('share_clicked'),'Missing share-click telemetry');
-console.log('PASS full 10-question automatic advance, anonymous event hooks, three answer clues, four templates');
+const field = page.locator('#public-result');
+const publicLink = await field.inputValue();
+assert.ok(ids.some(id => publicLink === root+'v6/share/'+id+'.html'));
+await page.locator('#include-order').check();
+assert.match(await field.inputValue(), /问问对方的版本 → 放下对错 → 允许差异/);
+await page.locator('#include-order').uncheck();
+assert.equal(await field.inputValue(), publicLink);
+await page.evaluate(() => {
+ Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async()=>{throw Error('denied')}}});
+ document.execCommand=()=>false;
+});
+await page.locator('#copy-public').click();
+await page.getByText(/浏览器阻止了自动复制/).waitFor();
+assert.equal(await field.inputValue(),publicLink);
+await page.locator('dialog .close-share').click();
+assert.equal(await page.locator('dialog[open]').count(),0);
+assert.match(await page.locator('.read').innerText(),/记忆采访员/);
+console.log('PASS ranked responses, explicit advance, optional share summary, manual copy fallback, research notes and private results');
 if(isWebkit){
  await page.locator('#download').click();
  await page.locator('#poster-sheet').waitFor({timeout:35000});

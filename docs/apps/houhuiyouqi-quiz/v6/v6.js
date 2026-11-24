@@ -456,7 +456,7 @@ const Q = [
         ]
       ],
       [
-        "想弄明白，为什么同一件事会在我们心里留下不同痕迹。",
+        "找TA聊清楚：你记得那天发生了什么？我想听听你的版本。",
         [
           2,
           0,
@@ -466,7 +466,7 @@ const Q = [
         ]
       ],
       [
-        "接受彼此有不同的记忆，不一定非要分出谁对谁错。",
+        "先把谁对谁错放一放，听彼此把话讲完。",
         [
           0,
           2,
@@ -476,7 +476,7 @@ const Q = [
         ]
       ],
       [
-        "不再纠结过去，希望以后能创造新的共同回忆。",
+        "允许这件事留下两个版本，往后相处时也给差异留点空间。",
         [
           2,
           -1,
@@ -583,14 +583,13 @@ const Q = [
   }
 ];
 const choiceAnchors = {"li":[3,0,2,2,3,3,2,2,2,2],"xu":[2,3,1,1,1,2,0,1,3,1],"zhang":[0,2,3,0,2,0,1,3,0,3],"ma":[3,0,2,2,3,0,2,2,1,0],"wen":[2,1,1,1,0,1,3,0,3,1],"wang":[0,0,2,0,3,0,2,2,1,0],"qing":[0,2,3,3,2,0,1,3,0,3],"bai":[1,2,0,2,1,2,0,0,0,1]};
-const answerInsights = [["你愿意自然接住久违的联系，不急着计算时间。","你对意外的靠近保持好奇，也会先确认对方的心意。","你会想念，却未必急着把想念说出口。","你愿意认真回应，但不把一次消息当成重启的承诺。"],["你尊重对方独处的需要，也愿意保留轻柔的关心。","你习惯把关心放在不打扰的陪伴里。","你会用具体行动分担压力，而不是只追问情绪。","你愿意明确地告诉朋友：需要时我在。"],["你认可低频但轻松的联系，也是一种稳定关系。","你会怀念那些更深入的谈话和共同生活。","你允许一段关系随着人生阶段自然变形。","你会主动尝试重新建立深入的连接。"],["你对朋友的新生活保持好奇，不要求自己事事参与。","你珍惜两人间的独特记忆，也会感到失落。","你能够同时尊重亲密与彼此独立。","你会为重要的两人空间主动创造机会。"],["你倾向先理解对方的理由，再表达自己的意见。","你重视坦诚，即使真话不一定让双方舒服。","你更喜欢提供实际帮助，让关心落地。","你尊重朋友作为独立个体的选择权。"],["你愿意用轻松方式提醒边界，而不立即升级冲突。","你习惯先整理自己的感受，弄清难过从何而来。","你相信重要的感受值得被认真听见。","你会先观察这是否是偶发的误会，再决定如何行动。"],["你会主动确认关系是否发生变化，而不是长时间猜测。","你愿意发起联系，也不愿让主动变成算账。","你愿意为自己的生活重新分配时间与精力。","你会通过暂时后退，观察一段关系的双向性。"],["你希望自己的经历与感受被朋友真正理解。","你会认真探索双方为何形成不同的记忆。","你可以接受一件事存在不止一种叙述。","你更倾向把重心放在接下来一起创造什么。"],["你会把“有空再说”变成一个可以执行的计划。","你相信日常的小联系也能够维系关系。","你允许亲密程度随着生活阶段发生变化。","你会直接表达因为错过见面而产生的失落。"],["你希望友谊留下自然、轻松的联系。","你希望重要的话得到一个被听见的机会。","你认可珍贵不一定意味着必须继续同行。","你愿意用新的方式开始，而不执着于复制从前。"]];
 
 /* ---------------- 状态 ---------------- */
 const app = document.getElementById('app');
-let answers = Array(Q.length).fill(-1);
+let answers = Q.map(() => []);
 let step = 0, current = null, selectedTemplate = 'cinema';
 let customPhotos = {}, imgCache = {}, portraitFocus = {};
-let fromQuiz = false, advancing = false;
+let fromQuiz = false;
 
 const $ = s => document.querySelector(s);
 function trackUsage(name) {
@@ -719,6 +718,7 @@ function heatStrip() {
   return '<div class="hstrip" aria-hidden="true"><div class="hstrip-track">' + one + one + '</div></div>';
 }
 function home() {
+  document.onkeydown = null;
   document.title = '谁是你的友情嘴替？｜后会友期 · 友情人物测试';
   document.body.classList.remove('has-bar');
   window.scrollTo(0, 0);
@@ -728,7 +728,7 @@ function home() {
         '<div class="hero-copy">' +
           '<div class="kicker">Friendship / 友情售后中心</div>' +
           '<h1><span>旧友重逢，</span><span>谁是你的</span><span><em>互联网嘴替？</em></span></h1>' +
-          '<p class="lead">有些关系不再像从前，却依然留在心里。<br>10 次友情选择，看看你在亲近、边界与告别之间，更像谁。</p>' +
+          '<p class="lead">有些关系不再像从前，却依然留在心里。<br>10 个友情瞬间。先选最像你的反应，也可以把后面的想法排进去。</p>' +
           '<div class="meta"><span>10 题</span><span>约 3 分钟</span><span>8 位原型</span><span>4 款海报</span></div>' +
           '<div class="cta-row">' +
             '<button class="btn" id="start">开始测试 →</button>' +
@@ -775,7 +775,7 @@ function openCastSheet(p) {
 /* ---------------- 答题 ---------------- */
 function reset() {
   trackUsage('quiz_start');
-  step = 0; answers = Array(Q.length).fill(-1); fromQuiz = false;
+  step = 0; answers = Q.map(() => []); fromQuiz = false;
   selectedTemplate = 'cinema';
   try { sessionStorage.removeItem('hhyq-progress'); } catch (err) { }
   history.replaceState({}, '', location.pathname);
@@ -799,35 +799,56 @@ function renderQuestion() {
         '<section class="qcard">' +
           '<div class="qhead"><h2>' + e(q.title) + '</h2>' +
             '</div>' +
+          '<p class="rank-hint">' + (step === 2 || step === 9 ? '先点最符合心意的一项，再按重视程度补选。' : '先点最先想到或想做的一项，再按先后补选。') + '可以只选一项，也可以全选。</p>' +
           '<div class="opts"><div class="opts-inner">' +
             q.opts.map((o, i) =>
-              '<button class="opt" data-ans="' + i + '" aria-pressed="' + (answers[step] === i) + '">' +
+              '<button class="opt" data-ans="' + i + '" aria-pressed="' + answers[step].includes(i) + '">' +
                 '<span class="opt-key">' + ('ABCD'[i]) + '</span><span class="opt-text">' + e(o[0]) + '</span></button>').join('') +
           '</div></div>' +
+          '<div id="rank-order" class="rank-order" aria-label="本题已选顺序"></div>' +
         '</section>' +
         '<div class="qfoot"><button class="qback" id="back">' + (step ? '← 上一站' : '← 回首页') + '</button>' +
-          '<span class="qhint">选完<b>自动</b>进入下一站</span></div>' +
+          '<button class="btn btn--dark" id="next">' + (step === Q.length - 1 ? '查看友情画像' : '下一站 →') + '</button></div>' +
         '<p class="qhint">没有标准答案；请按自己真实的反应作答。</p>' +
       '</div>' +
     '</main>';
 
   document.querySelectorAll('[data-ans]').forEach(b => b.onclick = () => choose(Number(b.dataset.ans)));
   $('#back').onclick = () => { if (step === 0) home(); else { step--; renderQuestion(); } };
+  $('#next').onclick = next;
+  updateOrder();
   document.onkeydown = onKey;
 }
 
 function choose(i) {
-  if (advancing) return;
-  answers[step] = i;
+  const picks = answers[step];
+  const old = picks.indexOf(i);
+  if (old < 0) picks.push(i);
+  else picks.splice(old, 1);
+  updateOrder();
+}
+function updateOrder() {
+  const picks = answers[step];
   document.querySelectorAll('[data-ans]').forEach(b => {
-    const on = Number(b.dataset.ans) === i;
-    b.setAttribute('aria-pressed', String(on));
+    const i = Number(b.dataset.ans);
+    const rank = picks.indexOf(i);
+    b.setAttribute('aria-pressed', String(rank >= 0));
+    b.querySelector('.opt-key').textContent = rank >= 0 ? String(rank + 1) : 'ABCD'[i];
   });
-  advancing = true;
-  setTimeout(() => { advancing = false; next(); }, 340);
+  $('#next').disabled = !picks.length;
+  const labels = ['第一', '第二', '第三', '第四'];
+  $('#rank-order').innerHTML = '<p aria-live="polite">' + (picks.length ? '我的顺序　' + picks.map(i => 'ABCD'[i]).join(' → ') : '点选后会在这里显示顺序。') + '</p>' +
+    (picks.length > 1 ? picks.map((i, k) => '<div class="rank-row"><span>' + labels[k] + ' · ' + e(Q[step].opts[i][0]) +
+      '</span><button type="button" data-move="' + k + '" aria-label="提前选项' + 'ABCD'[i] + '"' + (k === 0 ? ' disabled' : '') + '>提前</button></div>').join('') : '');
+  $('#rank-order').querySelectorAll('[data-move]').forEach(b => b.onclick = () => {
+    const k = Number(b.dataset.move);
+    [picks[k - 1], picks[k]] = [picks[k], picks[k - 1]];
+    updateOrder();
+    document.querySelector('[data-ans="' + picks[k - 1] + '"]').focus();
+  });
 }
 function next() {
-  if (answers[step] < 0) return;
+  if (!answers[step].length) return;
   if (step === Q.length - 1) {
     current = scoreResult(); fromQuiz = true;
     trackUsage('quiz_complete');
@@ -839,64 +860,56 @@ function next() {
 function onKey(ev) {
   const k = ev.key.toLowerCase();
   const map = { a: 0, b: 1, c: 2, d: 3, '1': 0, '2': 1, '3': 2, '4': 3 };
+  if (ev.repeat || ev.altKey || ev.ctrlKey || ev.metaKey) return;
   if (map[k] !== undefined) { choose(map[k]); return; }
-  if (k === 'arrowright' || k === 'enter') { ev.preventDefault(); next(); }
+  if (k === 'arrowright' || (k === 'enter' && !ev.target.closest('button, a, input, select'))) { ev.preventDefault(); next(); }
 }
 
 /* ---------------- 计分 ---------------- */
-function scoreForTests(a) {
-  const totals = [0, 0, 0, 0, 0];
-  a.forEach((pick, i) => Q[i].opts[pick][1].forEach((v, j) => totals[j] += v));
-  return totals.map(t => Math.max(0, Math.min(100, 50 + t * 2.5)));
+function rankedWeights(picks) {
+  const n = picks.length;
+  return picks.map((choice, rank) => ({choice, weight: (n - rank) / (n * (n + 1) / 2)}));
 }
-function scoreDistanceFor(c, a) {
-  const v = scoreForTests(a);
-  const dimensions = c.dims.reduce((sum, x, k) => sum + (x - v[k]) ** 2 * (k === 4 ? 1.12 : 1), 0) / 50000;
-  const choices = a.reduce((sum, choice, i) => sum + (choice !== choiceAnchors[c.id][i] ? 1 : 0), 0) / Q.length;
+function scoreDistanceFor(c, weighted, totals) {
+  const dimensions = c.dims.reduce((sum, x, k) => sum + (x - totals[k]) ** 2 * (k === 4 ? 1.12 : 1), 0) / 50000;
+  const choices = weighted.reduce((sum, row, i) =>
+    sum + row.reduce((miss, item) => miss + (item.choice === choiceAnchors[c.id][i] ? 0 : item.weight), 0), 0) / Q.length;
   return .4 * choices + .6 * dimensions;
 }
 function scoreResult() {
-  const ranking = characters.map(c => ({ c, dist: scoreDistanceFor(c, answers) }))
-    .sort((a, b) => a.dist - b.dist || characters.indexOf(a.c) - characters.indexOf(b.c));
-  ranking[0].c.runner = ranking[1].c.name;
-  ranking[0].c.runnerId = ranking[1].c.id;
-  ranking[0].c.match = Math.max(38, Math.min(96, Math.round(100 - ranking[0].dist * 74)));
-  return ranking[0].c;
+  const weighted = answers.map(rankedWeights);
+  const totals = [0, 0, 0, 0, 0];
+  weighted.forEach((row, i) => row.forEach(({choice, weight}) => {
+    Q[i].opts[choice][1].forEach((v, j) => totals[j] += v * weight);
+  }));
+  const dims = totals.map(t => Math.max(0, Math.min(100, 50 + t * 2.5)));
+  const ranked = characters.map(c => ({c, distance: scoreDistanceFor(c, weighted, dims)})).sort((a, b) => a.distance - b.distance);
+  return {...ranked[0].c, runner: ranked[1].c.name, runnerId: ranked[1].c.id};
 }
-function evidenceBlock(c) {
-  const real = fromQuiz && answers.every(a => Number.isInteger(a) && a >= 0 && a < 4) && scoreResult().id === c.id;
-  if (!real) {
-    return '<p class="note">这里是可分享的人物画像。自己答完10道题后，才能看到你的专属选项线索；分享链接不携带私人答案。</p>';
-  }
-  const runner = characters.find(p => p.name === c.runner);
-  if (!runner) return '<p class="note">你已完成10道题，以下人物画像由固定的游戏规则匹配，不代表心理学鉴定。</p>';
-  const picks = answers.map((choice, i) => {
-    // Difference in the winner-vs-runner margin caused by this answer, compared with all four possible options.
-    const hypothetical = [0, 1, 2, 3].map(option => {
-      const a = answers.slice(); a[i] = option;
-      return scoreDistanceFor(runner, a) - scoreDistanceFor(c, a);
-    });
-    const average = hypothetical.reduce((sum, n) => sum + n, 0) / 4;
-    return { i, delta: hypothetical[choice] - average, text: answerInsights[i][choice] };
-  });
-  const supporting = picks.filter(p => p.delta > 1e-7).sort((a, b) => b.delta - a.delta || a.i - b.i);
-  const alternative = picks.filter(p => p.delta < -1e-7).sort((a, b) => a.delta - b.delta || a.i - b.i);
-  const chosen = supporting.slice(0, 3);
-  if (alternative.length && (chosen.length < 3 || -alternative[0].delta > chosen[2].delta * 1.12)) {
-    if (chosen.length === 3) chosen.pop();
-    chosen.push(alternative[0]);
-  }
-  for (const p of [...supporting, ...alternative, ...picks]) {
-    if (chosen.length >= 3) break;
-    if (!chosen.some(x => x.i === p.i)) chosen.push(p);
-  }
-  chosen.sort((a, b) => a.i - b.i);
-  return '<div class="evidence">' + chosen.map(p => {
-    const relation = p.delta > 1e-7 ? '更接近 ' + c.name + ' 型' :
-      (p.delta < -1e-7 ? '也有点像 ' + runner.name + ' 型' : '两种人设都可能这样选');
-    return '<div class="ev"><span>第' + (p.i + 1) + '题 · ' + e(relation) + '</span><p>' + e(p.text) + '</p></div>';
-  }).join('') + '</div>' +
-    '<p class="note">线索依据本次选项对第一名与第二名游戏分数差距的影响筛选；存在“另一面”是正常的。仅是娱乐规则，不是人格测评。</p>';
+function evidenceBlock() {
+  if (!fromQuiz) return '<p class="note">这张公开卡只展示节目人物原型。完成测试可查看自己的选择顺序。</p>';
+  const scenes = [7, 5, 9];
+  const rows = scenes.map(i => '<div class="ev"><span>' + e(Q[i].scene) + '</span><ol>' +
+    answers[i].map(choice => '<li>' + e(Q[i].opts[choice][0]) + '</li>').join('') + '</ol></div>').join('');
+  return '<div class="evidence">' + rows + '</div><p class="note">这里回看三道题的原始顺序。人物匹配使用全部十题，每题总权重相同，同题越靠前权重越高。例如选三项时按 3∶2∶1 分配。人物及权重均为游戏设定。</p>';
+}
+function conversationNotes() {
+  if (!fromQuiz) return '';
+  const first = answers[7][0];
+  const nicknames = ['往事讲述员', '记忆采访员', '对话休庭员', '双版本收藏家'];
+  const starts = [
+    '你先讲自己的版本。可以说：“我记得的是这样。我想说说，那天我为什么没再开口。”',
+    '你先想听懂对方。可以问：“你是从哪一刻开始，觉得我不想理你的？”问完给对方留一点时间。',
+    '你先把对错放下。可以说：“我们先各说一遍，听完再决定哪些细节值得查。”',
+    '你先接受差异。可以说：“这件事我们可以各自记得，但我还是想知道它让你怎么了。”'
+  ];
+  const last = answers[7].at(-1);
+  const close = ['把自己的那一面也说出来','再向对方问一个具体问题','留一段不用当场裁决的对话','接受两个人可以保留不同的记忆'];
+  return '<section class="sec"><div class="sec-label"><b>两种记忆 · 此刻的' + nicknames[first] + '</b></div><p class="prose">' + starts[first] + '</p>' +
+    (answers[7].length > 1 ? '<p>排在最后的是' + close[last] + '。这也是你在意的事，只是你想留到后面。</p>' : '') +
+    '<details class="why"><summary>心理学怎样理解这一步？</summary><p>Eyal 等人（2018）在实验里比较了想象他人感受和直接询问。在其中一项实验中，交谈提供的新信息提高了判断准确性。这支持给对方说话的机会，无法保证双方会和好。</p><a href="https://pubmed.ncbi.nlm.nih.gov/29620401/" target="_blank" rel="noopener noreferrer">读研究摘要 ↗</a>' +
+    '<p>承认“我听见你是这样经历的”，仍可以保留自己的看法。Yeomans 等人（2020）研究了有分歧的对话，发现措辞会影响别人能否感到你愿意倾听。在友情里可以试一句：“你在门口等了那么久，难怪你以为我故意没来。”</p><a href="https://www.sciencedirect.com/science/article/pii/S0749597819303425" target="_blank" rel="noopener noreferrer">读对话研究 ↗</a>' +
+    '<p>如果谈完仍想保持一点距离，也有可以选择的相处方式。Khullar 等人研究年轻成人对假想友情困境的回答，区分了拉开距离、限制某些往来和结束关系。研究描述了可能的选择，无法替你判断哪一个最好。</p><a href="https://pubmed.ncbi.nlm.nih.gov/34764529/" target="_blank" rel="noopener noreferrer">读友情研究 ↗</a></details></section>';
 }
 
 /* ---------------- 照片 ---------------- */
@@ -971,7 +984,7 @@ function resultHTML(c) {
         '<div class="verdict-eyebrow">Result / 友情嘴替鉴定书</div>' +
         '<h1>' + e(c.name) + '<small>型</small></h1>' +
         '<div class="vtype">' + e(c.title) + '</div>' +
-        (fromQuiz ? '<div class="vmatch"><b>' + (c.match || 0) + '</b><span>% 匹配度</span></div>' : '') +
+        (fromQuiz ? '<div class="valias">本轮选择最接近的人物原型</div>' : '') +
         '<div class="valias"># 网友外号 · ' + e(NICK[c.id] || '') + '</div>' +
         '<span class="stamp">' + e(c.stamp) + '</span>' +
       '</div>' +
@@ -997,7 +1010,7 @@ function resultHTML(c) {
           '<div><k>' + e(k(caption[0])) + '</k><span>' + e(v(caption[0])) + '</span></div>' +
           (caption[1] ? '<div><k>' + e(k(caption[1])) + '</k><span>' + e(v(caption[1])) + '</span></div>' : '') +
         '</div></section>' +
-      '<section class="sec"><div class="sec-label">03 <b>你的选择怎么算出来的</b></div>' + evidenceBlock(c) + '</section>' +
+      '<section class="sec"><div class="sec-label">03 <b>你的选择怎么算出来的</b></div>' + evidenceBlock() + '</section>' + conversationNotes() +
       '<section class="sec"><div class="sec-label">04 <b>说点真正戳心的</b></div><p class="prose">' + e(c.touch) + '</p></section>' +
       '<section class="sec"><div class="sec-label">05 <b>友情翻车预警</b></div><p class="warn">' + e(c.weak) + '</p></section>' +
       '<section class="sec"><div class="sec-label">06 <b>下一站小纸条</b></div><p class="pull">' + e(c.mission.replace('你的友情通关提示：', '')) + '</p>' +
@@ -1008,7 +1021,9 @@ function resultHTML(c) {
           '<button class="btn btn--ghost btn--sm" id="restart">再测一次</button></div>' +
       '</section>' +
 
-      '<section class="sec"><div class="sec-label">07 <b>全网都在刷的梗</b></div>' +
+      '<section class="sec"><div class="sec-label">07 <b>节目梗与网友接话</b></div>' +
+        '<details class="why"><summary>本月玩法 · 一句话，用“厉娜”收尾</summary><p>网友把名字放在日常小事的句末，认真里带一点好笑。本站原创接句：“消息写了三遍，我决定直接问你了，厉娜。”</p><a href="https://www.36kr.com/p/4056167487280259" target="_blank" rel="noopener noreferrer">梗的来处 · 11 月 5 日报道 ↗</a></details>' +
+        '<details class="why"><summary>本月玩法 · 今天准许一个“话外题”</summary><p>11 月 18 日的新榜报道记录了网友对节目中“话外题”口误的讨论。借它写一句给旧友的开场白：“插个话外题，你还吃那家店的馄饨吗？”这是本站原创接话。</p><a href="https://m.chinaz.com/2026/1117/1788900.shtml" target="_blank" rel="noopener noreferrer">读梗的背景 ↗</a></details>' +
         '<div class="memewall">' +
           (MEMES[c.id] || []).map((m, i) => '<button class="mcard" data-meme="' + i + '"><p class="mcard-q">「' + e(m[0]) + '」</p><p class="mcard-src">' + e(m[1]) + '</p><span class="mcard-more">点开看出处 →</span></button>').join('') +
         '</div>' +
@@ -1061,6 +1076,7 @@ function resultHTML(c) {
 }
 
 function renderResult() {
+  document.onkeydown = null;
   if (!current) return home();
   const tline = (MEME2[current.id] || [''])[1] || current.stamp;
   document.title = '我是' + current.name + '型：' + current.stamp + '｜后会友期';
@@ -1137,41 +1153,73 @@ function renderResult() {
 }
 
 /* ---------------- 分享 / 文件 ---------------- */
-function fallbackCopy(text) {
+async function copyText(value) {
+  try { await navigator.clipboard.writeText(value); return true; } catch (_) { /* use legacy copy */ }
   const ta = document.createElement('textarea');
-  ta.value = text; ta.style.position = 'absolute'; ta.style.left = '-9999px';
-  document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+  ta.value = value;
+  ta.className = 'copy-buffer';
+  (document.querySelector('dialog[open]') || document.body).appendChild(ta);
+  try { ta.focus(); ta.select(); return document.execCommand('copy'); }
+  catch (_) { return false; }
+  finally { ta.remove(); }
 }
-async function copyText(text) {
-  try { await navigator.clipboard.writeText(text); } catch (err) { fallbackCopy(text); }
+function resultUrl() { return SHARE_PATH + current.id + '.html'; }
+function shareCaption() {
+  return '我的友情嘴替是' + current.name + '，' + current.title + '。如果同一件事，我们记得不一样，你会先问哪一句？';
 }
-function copyCaption() {
-  trackUsage('share_copy_requested');
-  copyText('我测出了《后会友期》里的「' + current.name + '」型友情嘴替——' + current.title + '。\n' +
-    current.stamp + '\n不是我对号入座，是这档节目在我心里装监控了。\n你测出谁？ ' + SHARE_PATH + current.id + '.html')
-    .then(() => toast('朋友圈文案已复制'));
-}
-async function share() {
-  trackUsage('share_clicked');
-  if (isWeChat()) { copyCaption(); return; }
-  const text = '我测出了《后会友期》友情嘴替：' + current.title + '。你也来测测！';
-  const url = SHARE_PATH + current.id + '.html';
-  try {
-    if (navigator.share) {
-      await navigator.share({ title: '我是' + current.name + '型：' + current.stamp, text, url });
+function copyCaption() { openShare(true); }
+function share() { trackUsage('share_clicked'); openShare(false); }
+function openShare(withCaption) {
+  const url = resultUrl();
+  const dlg = document.createElement('dialog');
+  dlg.className = 'share-dialog';
+  dlg.innerHTML = '<form method="dialog"><button class="close-share" aria-label="关闭">×</button></form><h2>把这张友情画像给朋友</h2>' +
+    '<p>朋友会看到「' + e(current.name) + '型」公开卡。' + (fromQuiz ? '勾选后，可以在文案里附上第 8 题的顺序。' : '你可以邀请朋友也来测一次。') + '</p>' +
+    (fromQuiz ? '<label class="share-opt"><input id="include-order" type="checkbox"> 文案附上我的第 8 题顺序</label>' : '') +
+    '<label for="public-result">要发给朋友的' + (withCaption ? '文案和链接' : '链接') + '</label><textarea rows="' + (withCaption ? 4 : 2) + '" id="public-result" readonly></textarea>' +
+    '<div class="share-actions"><button class="btn btn--dark" id="copy-public">复制' + (withCaption ? '文案和链接' : '结果链接') + '</button>' +
+    (navigator.share ? '<button class="btn btn--ghost" id="native-share">系统分享</button>' : '') +
+    '<button class="btn btn--ghost" id="make-poster">保存海报</button></div>' +
+    '<p role="status" class="share-status">' + (isWeChat() ? '微信里可以复制链接发给朋友，也可以打开下方人物卡，从右上角转发。' : '也可以直接选中上面的文字复制。') +
+    '</p><a href="' + e(url) + '" target="_blank" rel="noopener noreferrer">打开朋友会看到的人物卡 ↗</a>';
+  document.body.appendChild(dlg);
+  const field = dlg.querySelector('textarea');
+  const include = dlg.querySelector('#include-order');
+  const message = () => {
+    const parts = withCaption ? [shareCaption()] : [];
+    if (include && include.checked) {
+      const short = ['说出我的记忆', '问问对方的版本', '放下对错', '允许差异'];
+      parts.push('同一件事记得不一样，我想：' + answers[7].map(i => short[i]).join(' → ') + '。你会怎么排？');
+    }
+    return parts.join('\n');
+  };
+  const preview = () => {
+    const msg = message();
+    field.value = msg ? msg + '\n' + url : url;
+    field.rows = msg ? 5 : 2;
+    dlg.querySelector('#copy-public').textContent = msg ? '复制文案和链接' : '复制结果链接';
+    dlg.querySelector('label[for="public-result"]').textContent = msg ? '朋友将收到的文案和链接' : '朋友将收到的链接';
+  };
+  if (include) include.onchange = preview;
+  preview();
+  dlg.addEventListener('close', () => dlg.remove(), {once:true});
+  dlg.showModal();
+  const status = dlg.querySelector('[role="status"]');
+  dlg.querySelector('#copy-public').onclick = async () => {
+    trackUsage('share_copy_requested');
+    if (await copyText(field.value)) status.textContent = '已复制，可以粘贴给朋友了。';
+    else { field.focus(); field.select(); status.textContent = '浏览器阻止了自动复制。长按已选文字，或按 Ctrl/Cmd + C 复制。'; }
+  };
+  const native = dlg.querySelector('#native-share');
+  if (native) native.onclick = async () => {
+    try {
+      await navigator.share({title: current.name + '型 · 友情嘴替', text: message() || shareCaption(), url});
       trackUsage('share_native_completed');
-    } else {
-      trackUsage('share_copy_requested');
-      await copyText(text + '\n' + url);
-      toast('结果链接已复制');
+    } catch (err) {
+      status.textContent = err.name === 'AbortError' ? '你已取消分享。' : '系统分享暂不可用，可以复制结果链接。';
     }
-  } catch (err) {
-    if (err.name !== 'AbortError') {
-      trackUsage('share_copy_requested');
-      await copyText(text + '\n' + url);
-      toast('结果链接已复制');
-    }
-  }
+  };
+  dlg.querySelector('#make-poster').onclick = () => { dlg.close(); download(); };
 }
 
 function dbOpen() {
@@ -1476,8 +1524,8 @@ function drawPoster(cvs, c, img, t, qrReady) {
     ctx.fillStyle = INK;
     ctx.fillText('「' + rk + '」', 84, 1494);
     if (qrReady) {
-      drawQR(ctx, APP_PATH, W - 268, 1292, 168, INK, PAPER);
-      spaced(ctx, '扫码测你的嘴替', W - 268, 1486, 13, DUST, 0, FSANS);
+      drawQR(ctx, SHARE_PATH + c.id + '.html', W - 268, 1292, 168, INK, PAPER);
+      spaced(ctx, '扫码看人物卡', W - 268, 1486, 13, DUST, 0, FSANS);
     }
     spaced(ctx, '非官方粉丝创作 · 票据仅供收藏', 84, 1532, 11, '#96907F', 0, FSANS);
     if (img) spaced(ctx, '人物照片由网站维护者提供', W - 300, 1532, 10, '#96907F', 0, FSANS);
@@ -1616,8 +1664,8 @@ function drawPoster(cvs, c, img, t, qrReady) {
     spaced(ctx, '#后会友期  #友情售后中心', 56, baseY + 58, 20, '#E7C9A4', 1, FSANS);
     spaced(ctx, '非官方粉丝玩梗 · 不代表嘉宾真实发言', 56, baseY + 96, 13, '#9FB0B4', 0, FSANS);
     if (qrReady) {
-      drawQR(ctx, APP_PATH, W - 196, baseY + 20, 118, '#F2E8D8', NIGHT);
-      spaced(ctx, '扫码测你的友情嘴替', W - 196, baseY + 152, 11, '#9FB0B4', 0, FSANS);
+      drawQR(ctx, SHARE_PATH + c.id + '.html', W - 196, baseY + 20, 118, '#F2E8D8', NIGHT);
+      spaced(ctx, '扫码看这张友情画像', W - 196, baseY + 152, 11, '#9FB0B4', 0, FSANS);
     }
   }
 }

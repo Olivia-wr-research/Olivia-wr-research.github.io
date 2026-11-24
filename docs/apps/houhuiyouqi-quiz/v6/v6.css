@@ -88,3 +88,26 @@
  .cast figure{flex-shrink:0}
  .cast img{width:100%;height:auto;aspect-ratio:3/4}
 }
+
+.rank-hint,.rank-order p{font-size:14px;line-height:1.7;color:#586974}
+.rank-hint{margin:0 0 16px}
+.rank-order{border-top:1px solid #d8d0c2;margin-top:16px}
+.rank-row{display:flex;align-items:center;gap:12px;justify-content:space-between;padding:6px 0;font-size:14px;line-height:1.6}
+.rank-row button{white-space:nowrap;border:1px solid #b6aaa0;border-radius:6px;padding:6px 10px;background:transparent;color:#304956}
+.rank-row button:disabled,.qfoot button:disabled{opacity:.43;cursor:default}
+.ev ol{padding-inline-start:1.4em;line-height:1.7}
+.why{margin:16px 0;padding:16px;border:1px solid #c8b9a3;border-radius:8px;line-height:1.8}
+.why summary{cursor:pointer;font-weight:600}
+.share-dialog{width:min(440px,92vw);max-height:86vh;overflow:auto;box-sizing:border-box;border:1px solid #d3c3ad;border-radius:16px;padding:24px;color:#172f3c;background:#fbf5ea}
+.share-dialog::backdrop{background:#102331ad}
+.share-dialog h2{font-family:serif;font-size:22px;padding-right:24px}
+.share-dialog p,.share-dialog label{font-size:14px;line-height:1.7}
+.share-dialog textarea{font:inherit;font-size:14px;box-sizing:border-box;width:100%;margin-top:5px;padding:10px;resize:vertical}
+.close-share{float:right;background:transparent;font-size:24px;color:#263d46}
+.share-actions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.share-actions .btn{padding:10px 14px}
+.share-status{min-height:1.7em}
+.share-dialog a,.why a{color:#28596c;text-decoration:underline}
+.copy-buffer{position:fixed;left:0;top:0;opacity:0;pointer-events:none}
+.share-opt{display:block;margin:12px 0}
+.share-opt input{width:17px;height:17px;vertical-align:middle}
