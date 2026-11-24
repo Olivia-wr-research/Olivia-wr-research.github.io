@@ -1,7 +1,7 @@
 import {calendarDate} from './calendar-date.mjs?v=product-ready-20261106';
 import {publicReleaseDataset} from './public-data.mjs';
 import {newestCollected,setupCollectionSort} from './opportunity-sort.mjs?v=product-ready-20261106';
-import {initRoutes,navigate} from './routes.mjs?v=public-copy-20261107';
+import {initRoutes,navigate} from './routes.mjs?v=detail-static-20261124';
 import {applicationEntryLabel,applicationTimingLabel,fundingKind,sourceName,deadlineInfo,publicOpportunityLabel as opportunityStatusLabel,opportunityDeadlineLabel,opportunityDeadlineInfo,opportunityState,effectiveDeadline,collapseProgrammeRows,programmeRounds} from './opportunity.mjs?v=public-copy-20261107';
 import {geographyCatalog as geographyOpportunities} from './geography-catalog.mjs?v=product-ready-20261106';
 import {setupGeographyUI,typeLabel,applicationNotes} from './geography-ui.mjs?v=public-copy-20261107';
