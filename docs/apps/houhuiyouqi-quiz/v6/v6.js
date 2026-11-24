@@ -456,7 +456,7 @@ const Q = [
         ]
       ],
       [
-        "想弄明白，为什么同一件事会在我们心里留下不同痕迹。",
+        "找TA聊清楚：你记得那天发生了什么？我想听听你的版本。",
         [
           2,
           0,
@@ -853,7 +853,7 @@ function next() {
     current = scoreResult(); fromQuiz = true;
     trackUsage('quiz_complete');
     try { sessionStorage.removeItem('hhyq-progress'); } catch (err) { }
-    history.replaceState({}, '', location.pathname + '?r=' + current.id);
+    history.replaceState({}, '', location.pathname);
     renderResult();
   } else { step++; renderQuestion(); }
 }
@@ -1110,7 +1110,7 @@ function renderResult() {
   });
   $('#character-preview').onchange = ev => {
     current = C[ev.target.value]; fromQuiz = false;
-    history.replaceState({}, '', location.pathname + '?r=' + current.id);
+    history.replaceState({}, '', location.pathname);
     renderResult();
   };
   $('#photo-focus').oninput = ev => {
@@ -1174,7 +1174,7 @@ function openShare(withCaption) {
   const dlg = document.createElement('dialog');
   dlg.className = 'share-dialog';
   dlg.innerHTML = '<form method="dialog"><button class="close-share" aria-label="关闭">×</button></form><h2>把这张友情画像给朋友</h2>' +
-    '<p>朋友会看到「' + e(current.name) + '型」公开卡。默认分享人物卡。只有主动勾选，第 8 题的顺序才会加到分享文案里。</p>' +
+    '<p>朋友会看到「' + e(current.name) + '型」公开卡。' + (fromQuiz ? '勾选后，可以在文案里附上第 8 题的顺序。' : '你可以邀请朋友也来测一次。') + '</p>' +
     (fromQuiz ? '<label class="share-opt"><input id="include-order" type="checkbox"> 文案附上我的第 8 题顺序</label>' : '') +
     '<label for="public-result">要发给朋友的' + (withCaption ? '文案和链接' : '链接') + '</label><textarea rows="' + (withCaption ? 4 : 2) + '" id="public-result" readonly></textarea>' +
     '<div class="share-actions"><button class="btn btn--dark" id="copy-public">复制' + (withCaption ? '文案和链接' : '结果链接') + '</button>' +
