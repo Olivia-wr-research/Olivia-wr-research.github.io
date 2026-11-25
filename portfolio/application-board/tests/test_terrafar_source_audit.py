@@ -3,12 +3,15 @@ import contextlib
 from concurrent.futures import ThreadPoolExecutor
 import io
 import json
+import os
 import socket
 import subprocess
 import sys
 import tempfile
 import time
 import threading
+import shutil
+import tarfile
 import unittest
 from urllib.parse import urlsplit
 from pathlib import Path
@@ -23,6 +26,9 @@ import terrafar_candidate_ledger as candidate_ledger
 import terrafar_restore_run_state as restore_run_state
 import terrafar_source_adapters as source_adapters
 import terrafar_prepare_data_review as prepare_data_review
+import terrafar_source_reconciliation as source_reconciliation
+import terrafar_state_archive as state_archive
+import terrafar_maintenance_artifact as maintenance_artifact
 
 
 def assignment_manifest(rows):
@@ -124,6 +130,379 @@ class WorkflowRecoveryGuardTests(unittest.TestCase):
         self.assertIn('selected="$(find_valid_run \'*\' || true)"',workflow)
         self.assertIn('latest_compatible="$(find_valid_run \'*\' || true)"',workflow)
 
+    def test_full_census_uses_feature_sha_and_private_non_log_candidate_state(self):
+        workflow=(ROOT/'.github/workflows/terrafar-full-census.yml').read_text(encoding='utf-8')
+        self.assertIn('ref: ${{ github.sha }}',workflow)
+        self.assertIn('restore_actions_run_id:',workflow)
+        self.assertIn('artifact_manifest.json',workflow)
+        self.assertIn('terrafar-full-census-export',workflow)
+        self.assertNotIn('TERRAFAR_REVIEW_PACKAGE_CHUNK',workflow)
+        self.assertNotIn('base64.b64encode',workflow)
+        self.assertIn('row=public_artifact.sanitize_source_row(row)',workflow)
+        self.assertIn("github.ref == 'refs/heads/codex/terrafar-full-coverage-quality-gate-20261024'",workflow)
+        self.assertIn('TERRAFAR_STATE_DECRYPTION_KEY',workflow)
+        self.assertIn("'scripts/terrafar_state_archive.py','encrypt'",workflow)
+        self.assertIn("private_state=pathlib.Path(os.environ['RUNNER_TEMP'])/'terrafar-full-census-state-private'",workflow)
+        self.assertIn("verification.get('origin_actions_run_id')!=os.environ['RESTORE_ACTIONS_RUN_ID']",workflow)
+        self.assertIn("verification.get('current_actions_run_id')!=os.environ['GITHUB_RUN_ID']",workflow)
+        self.assertIn("shutil.rmtree(private_state)",workflow)
+        self.assertIn('private_state.cms',workflow)
+        self.assertIn("steps.export.outputs.capture_complete == 'true'",workflow)
+        self.assertNotIn("export/'state'",workflow)
+
+    def test_full_census_export_shell_syntax_is_valid(self):
+        workflow=(ROOT/'.github/workflows/terrafar-full-census.yml').read_text(encoding='utf-8')
+        export_step=workflow.split('      - name: Export auditable metadata for the review workspace\n',1)[1]
+        export_step=export_step.split('      - name: Preserve public diagnostics and encrypted state checkpoint\n',1)[0]
+        script=export_step.split('        run: |\n',1)[1]
+        script='\n'.join(line[10:] if line.startswith('          ') else line for line in script.splitlines())+'\n'
+        checked=subprocess.run(['bash','-n'],input=script,text=True,capture_output=True,check=False)
+        self.assertEqual(checked.returncode,0,checked.stderr)
+
+    def test_full_census_restore_selector_is_branch_scoped_and_shell_valid(self):
+        workflow=(ROOT/'.github/workflows/terrafar-full-census.yml').read_text(encoding='utf-8')
+        selector=workflow.split('      - name: Select the latest complete state checkpoint from this feature branch\n',1)[1]
+        selector=selector.split('      - name: Download the actual production state and candidate ledger\n',1)[0]
+        script=selector.split('        run: |\n',1)[1]
+        script='\n'.join(line[10:] if line.startswith('          ') else line for line in script.splitlines())+'\n'
+        checked=subprocess.run(['bash','-n'],input=script,text=True,capture_output=True,check=False)
+        self.assertEqual(checked.returncode,0,checked.stderr)
+        self.assertIn('curl --fail --silent --show-error --location --get',selector)
+        self.assertNotIn('gh api',selector)
+        self.assertIn('api="https://api.github.com/repos/$GITHUB_REPOSITORY"',selector)
+        self.assertIn('--data-urlencode "branch=$GITHUB_REF_NAME"',selector)
+        self.assertNotIn('GH_TOKEN: ${{ github.token }}',selector)
+        self.assertIn('select(.path==".github/workflows/terrafar-full-census.yml" and .head_branch==env.GITHUB_REF_NAME)',selector)
+        self.assertIn('Export auditable metadata for the review workspace',selector)
+        self.assertIn('Preserve public diagnostics and encrypted state checkpoint',selector)
+        self.assertIn('previous_complete_capture_artifact_missing_or_expired',selector)
+        self.assertIn("default: ''",workflow)
+
+    def test_daily_workflow_encrypts_candidate_state_and_limits_failure_uploads(self):
+        workflow=(ROOT/'.github/workflows/terrafar-source-maintenance.yml').read_text(encoding='utf-8')
+        self.assertIn('name: Decrypt the checkpoint archive when present',workflow)
+        self.assertIn('TERRAFAR_STATE_DECRYPTION_KEY',workflow)
+        self.assertIn('scripts/terrafar_maintenance_artifact.py success',workflow)
+        self.assertIn('name: Save sanitized diagnostics and encrypted candidate state',workflow)
+        self.assertIn('--output "$STATE_DIR/agent_batch.json" --limit 10 --agent opportunity_verifier >/dev/null',workflow)
+        failure_path=workflow.split('      - name: Preserve sanitized failure diagnostics only\n',1)[1]
+        self.assertIn('${{ runner.temp }}/terrafar-source-maintenance-failure/',failure_path)
+        self.assertNotIn('/candidate_ledger.json',failure_path)
+        self.assertNotIn('/agent_batch.json',failure_path)
+        self.assertNotIn('/candidate_review_queue.jsonl',failure_path)
+        self.assertNotIn('state.json',failure_path)
+        self.assertIn('17 2 * * *',workflow)
+        for step_name in ('Decrypt the checkpoint archive when present',
+                          'Verify and restore prior state across distinct Actions runs',
+                          'Build a sanitized public report and encrypted candidate checkpoint',
+                          'Build sanitized failure diagnostics'):
+            step=workflow.split(f'      - name: {step_name}\n',1)[1].split('\n      - ',1)[0]
+            script=step.split('        run: |\n',1)[1]
+            script='\n'.join(line[10:] if line.startswith('          ') else line for line in script.splitlines())+'\n'
+            checked=subprocess.run(['bash','-n'],input=script,text=True,capture_output=True,check=False)
+            self.assertEqual(checked.returncode,0,f'{step_name}: {checked.stderr}')
+
+    def test_full_census_accepts_encrypted_maintenance_checkpoint_format(self):
+        workflow=(ROOT/'.github/workflows/terrafar-full-census.yml').read_text(encoding='utf-8')
+        self.assertIn('maintenance_artifact_manifest.json',workflow)
+        self.assertIn("terrafar-source-maintenance-public-artifact-v1",workflow)
+        self.assertIn("if [[ \"$manifest_format\" == 'terrafar-full-census-artifact-v1' ]]",workflow)
+        self.assertIn('import terrafar_maintenance_artifact as public_artifact',workflow)
+        self.assertIn('row=public_artifact.sanitize_source_row(row)',workflow)
+        step=workflow.split('      - name: Decrypt private state when restoring a protected census archive\n',1)[1].split('\n      - ',1)[0]
+        script=step.split('        run: |\n',1)[1]
+        script='\n'.join(line[10:] if line.startswith('          ') else line for line in script.splitlines())+'\n'
+        checked=subprocess.run(['bash','-n'],input=script,text=True,capture_output=True,check=False)
+        self.assertEqual(checked.returncode,0,checked.stderr)
+
+    def test_full_census_publishes_only_whitelisted_report_and_retires_plaintext_smoke_uploads(self):
+        census=(ROOT/'.github/workflows/terrafar-full-census.yml').read_text(encoding='utf-8')
+        self.assertIn("safe_report=public_artifact.sanitize_report(json.loads(report_path.read_text(encoding='utf-8')))" ,census)
+        self.assertNotIn("json.dumps(report,ensure_ascii=False,indent=2)+'\\n\\nPublication",census)
+        smoke=(ROOT/'.github/workflows/terrafar-round-002-smoke.yml').read_text(encoding='utf-8')
+        self.assertIn('legacy smoke (retired)',smoke)
+        self.assertIn('Keep the old plaintext-artifact smoke run disabled',smoke)
+        self.assertNotIn('actions/upload-artifact',smoke)
+        self.assertNotIn('source_checks.jsonl',smoke)
+        self.assertNotIn('candidate_review_queue.jsonl',smoke)
+
+
+class CardLayoutContractTests(unittest.TestCase):
+    def test_public_and_build_card_styles_stay_identical_and_responsive(self):
+        build_css=ROOT/'portfolio/application-board/dist/geography-ui.css'
+        public_css=ROOT/'docs/apps/application-board/geography-ui.css'
+        self.assertEqual(build_css.read_bytes(),public_css.read_bytes())
+        css=build_css.read_text(encoding='utf-8')
+        self.assertIn('grid-template-columns:minmax(0,1fr) 190px',css)
+        self.assertIn('@media(min-width:651px) and (max-width:1050px)',css)
+        self.assertIn('@media(max-width:650px){.job{grid-template-columns:1fr',css)
+        self.assertIn('.job .side-actions .official-card-link',css)
+        self.assertIn('.job .compare-choice',css)
+
+
+class FullCensusEvidenceTests(unittest.TestCase):
+    def test_public_report_writer_drops_candidate_level_fields(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp); source=root/'report.json'; output=root/'public.json'
+            secret='private candidate sentinel'
+            source.write_text(json.dumps({'run_id':'run-1','planned_sources':411,
+                'status_counts':{'partial':1,secret:1},'network_metrics':{secret:1},
+                'candidate_ledger_status_counts':{secret:1},'http_request_budget':{secret:1},
+                'candidate_review_tasks':[{'title':secret}],
+                'candidate_titles':[secret],'notes':secret}),encoding='utf-8')
+            safe=maintenance_artifact._write_safe_report(source,output)
+            self.assertEqual(safe['run_id'],'run-1')
+            self.assertNotIn('candidate_review_tasks',safe)
+            self.assertNotIn('candidate_titles',safe)
+            self.assertNotIn('notes',safe)
+            self.assertNotIn('status_counts',safe)
+            self.assertNotIn('candidate_ledger_status_counts',safe)
+            self.assertNotIn('network_metrics',safe)
+            self.assertNotIn('http_request_budget',safe)
+            self.assertNotIn(secret,output.read_text(encoding='utf-8'))
+
+    @unittest.skipUnless(shutil.which('openssl'), 'openssl CMS is required for state archive tests')
+    def test_private_state_archive_encrypts_round_trips_and_rejects_tampering(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp); source=root/'state'; source.mkdir()
+            private_key=root/'private.pem'; cert=root/'recipient.pem'
+            generated=subprocess.run([
+                'openssl','req','-x509','-newkey','rsa:2048','-keyout',str(private_key),
+                '-out',str(cert),'-nodes','-days','1','-subj','/CN=TERRAFAR unit test recipient',
+            ],stdout=subprocess.PIPE,stderr=subprocess.PIPE,check=False)
+            self.assertEqual(generated.returncode,0,generated.stderr.decode('utf-8','replace'))
+            payload=b'private candidate title and ledger data'
+            (source/'candidate_ledger.json').write_bytes(payload)
+            encrypted=root/'private_state.cms'
+            result=state_archive.encrypt_directory(source,encrypted,cert)
+            self.assertGreater(result['encrypted_bytes'],0)
+            self.assertNotIn(payload,encrypted.read_bytes())
+            env_name='TERRAFAR_ARCHIVE_TEST_PRIVATE_KEY'
+            previous=os.environ.get(env_name)
+            os.environ[env_name]=private_key.read_text(encoding='utf-8')
+            try:
+                restored=root/'restored'
+                state_archive.decrypt_archive(encrypted,restored,cert,env_name)
+                self.assertEqual((restored/'state/candidate_ledger.json').read_bytes(),payload)
+                damaged=root/'damaged.cms'
+                damaged_bytes=bytearray(encrypted.read_bytes()); damaged_bytes[-12]^=0x20
+                damaged.write_bytes(damaged_bytes)
+                with self.assertRaises(ValueError):
+                    state_archive.decrypt_archive(damaged,root/'damaged',cert,env_name)
+            finally:
+                if previous is None: os.environ.pop(env_name,None)
+                else: os.environ[env_name]=previous
+
+    def test_state_archive_rejects_tar_path_escape(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp); buffer=io.BytesIO()
+            with tarfile.open(fileobj=buffer,mode='w:gz') as archive:
+                info=tarfile.TarInfo('state/../escaped.txt'); body=b'no'
+                info.size=len(body); archive.addfile(info,io.BytesIO(body))
+            with self.assertRaisesRegex(ValueError,'state_archive_path_rejected'):
+                state_archive._safe_extract_state(buffer.getvalue(),root/'restore')
+            self.assertFalse((root/'escaped.txt').exists())
+
+    @unittest.skipUnless(shutil.which('openssl'), 'openssl CMS is required for state archive tests')
+    def test_daily_artifact_redacts_candidate_material_and_preserves_it_encrypted(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp); state_dir=root/'state-input'; run_dir=root/'run-input'; output=root/'public-artifact'
+            state_dir.mkdir(); run_dir.mkdir()
+            private_key=root/'private.pem'; cert=root/'recipient.pem'
+            generated=subprocess.run([
+                'openssl','req','-x509','-newkey','rsa:2048','-keyout',str(private_key),
+                '-out',str(cert),'-nodes','-days','1','-subj','/CN=TERRAFAR daily artifact test',
+            ],stdout=subprocess.PIPE,stderr=subprocess.PIPE,check=False)
+            self.assertEqual(generated.returncode,0,generated.stderr.decode('utf-8','replace'))
+            registry_sha=audit.sha(registry.REGISTRY.read_bytes())
+            catalog_sha=audit.sha(source_adapters.CATALOG_PATH.read_bytes())
+            secret='private candidate title and private application evidence'
+            program_id='terrafar-maintenance-2002-1'
+            state={"schema_version":1,"last_run_id":program_id,"last_registry_sha256":registry_sha,"snapshots":{secret:{"candidate":secret}}}
+            ledger={"schema_version":candidate_ledger.SCHEMA_VERSION,"revision":1,"tasks":{"private-id":{"title":secret,"status":"pending"}}}
+            (state_dir/'state.json').write_text(json.dumps(state),encoding='utf-8')
+            (state_dir/'candidate_ledger.json').write_text(json.dumps(ledger),encoding='utf-8')
+            (state_dir/'restore_verification.json').write_text(json.dumps({"origin_actions_run_id":"2001","current_actions_run_id":"2002"}),encoding='utf-8')
+            (state_dir/'agent_batch.json').write_text(json.dumps({"tasks":[{"title":secret}]}),encoding='utf-8')
+            manifest={"run_id":program_id,"registry_sha256":registry_sha,"adapter_catalog_sha256":catalog_sha,
+                      "plan_sha256":"plan-hash","planned_source_ids":["source-1"],"planned_count":1,"status":"complete"}
+            (run_dir/'manifest.json').write_text(json.dumps(manifest),encoding='utf-8')
+            source_row={"source_id":"source-1","run_id":program_id,"outcome":"partial","attempted":True,
+                        "candidate_count":1,"candidate_rows":[{"title":secret}],"reason":secret,"attempts":[{"body":secret}],
+                        "scope":{"adapter":"university_page_snapshot","scope_kind":"single_page_snapshot_or_configured_list",
+                                 "parsed_title":secret,"headings_seen":[secret],"links_seen":2,"pagination_detected":False,
+                                 "completeness_reason":"complete page snapshot","configured_endpoint_scope":"official listing"},
+                        "evidence":[{"url":"https://example.org/jobs","excerpt":secret,"content_sha256":"hash"}],
+                        "endpoints":[{"endpoint_id":"ep-1","url":"https://example.org/jobs","outcome":"partial",
+                                       "candidate_rows":[{"title":secret}],"reason":secret,"attempts":[{"body":secret}],
+                                       "scope":{"scope_kind":"single_page_snapshot_or_configured_list","parsed_title":secret,
+                                                "headings_seen":[secret],"links_seen":2,"pagination_detected":False,
+                                                "completeness_reason":"complete page snapshot"}}]}
+            source_row['source_id']='source-1'
+            (run_dir/'source_checks.jsonl').write_text(json.dumps(source_row)+'\n',encoding='utf-8')
+            (run_dir/'candidate_review_queue.jsonl').write_text(json.dumps({"title":secret})+'\n',encoding='utf-8')
+            (run_dir/'candidate_ledger.json').write_text(json.dumps(ledger),encoding='utf-8')
+            (run_dir/'daily_report.json').write_text(json.dumps({"run_id":program_id,"planned_sources":1,
+                "executed_sources":1,"result_conservation":True,"status_counts":{"partial":1},"notes":[secret]}),encoding='utf-8')
+            (run_dir/'daily_report.md').write_text(secret,encoding='utf-8')
+            result=maintenance_artifact.build_success_artifact(
+                state_dir,run_dir,output,cert,'2002','1',program_id,registry.REGISTRY,source_adapters.CATALOG_PATH,
+                ROOT/'portfolio/application-board/scripts/terrafar_source_audit.py',
+                ROOT/'portfolio/application-board/scripts/terrafar_source_adapters.py',
+                ROOT/'portfolio/application-board/scripts/terrafar_candidate_ledger.py')
+            self.assertEqual(result['capture_status'],'complete')
+            self.assertTrue((output/'private_state.cms').is_file())
+            self.assertFalse((output/'state/candidate_ledger.json').exists())
+            self.assertFalse((output/'run/candidate_review_queue.jsonl').exists())
+            visible=b'\n'.join(path.read_bytes() for path in output.rglob('*') if path.is_file() and path.name!='private_state.cms')
+            self.assertNotIn(secret.encode(),visible)
+            self.assertNotIn(secret.encode(),(output/'private_state.cms').read_bytes())
+            public_rows=[json.loads(line) for line in (output/'run/source_checks.jsonl').read_text().splitlines()]
+            self.assertNotIn('candidate_rows',public_rows[0])
+            self.assertNotIn('reason',public_rows[0])
+            self.assertNotIn('parsed_title',public_rows[0]['scope'])
+            self.assertNotIn('headings_seen',public_rows[0]['scope'])
+            self.assertNotIn('completeness_reason',public_rows[0]['scope'])
+            self.assertNotIn('parsed_title',public_rows[0]['endpoints'][0]['scope'])
+            env_name='TERRAFAR_MAINTENANCE_TEST_PRIVATE_KEY'
+            previous=os.environ.get(env_name); os.environ[env_name]=private_key.read_text(encoding='utf-8')
+            try:
+                restored=root/'restored'
+                state_archive.decrypt_archive(output/'private_state.cms',restored,cert,env_name)
+                restored_ledger=json.loads((restored/'state/candidate_ledger.json').read_text())
+                self.assertEqual(restored_ledger['tasks']['private-id']['title'],secret)
+                private_queue=json.loads((restored/'state/last_run/candidate_review_queue.jsonl').read_text())
+                self.assertEqual(private_queue['title'],secret)
+            finally:
+                if previous is None: os.environ.pop(env_name,None)
+                else: os.environ[env_name]=previous
+
+    def test_daily_failure_artifact_excludes_state_and_candidate_text(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp); run=root/'run'; run.mkdir(); output=root/'failure'
+            secret='private failure candidate title'
+            (run/'manifest.json').write_text(json.dumps({"run_id":"run-1","planned_count":1,"status":"failed"}),encoding='utf-8')
+            (run/'daily_report.json').write_text(json.dumps({"run_id":"run-1","status_counts":{"failed":1},"notes":[secret]}),encoding='utf-8')
+            (run/'source_checks.jsonl').write_text(json.dumps({"source_id":"s1","outcome":"failed","candidate_rows":[{"title":secret}],"reason":secret})+'\n',encoding='utf-8')
+            (run/'candidate_review_queue.jsonl').write_text(json.dumps({"title":secret}),encoding='utf-8')
+            result=maintenance_artifact.build_failure_artifact(run,output,'9','1')
+            self.assertEqual(result['capture_status'],'failed_or_incomplete')
+            self.assertFalse((output/'state/state.json').exists())
+            self.assertFalse((output/'run/candidate_review_queue.jsonl').exists())
+            visible=b'\n'.join(path.read_bytes() for path in output.rglob('*') if path.is_file())
+            self.assertNotIn(secret.encode(),visible)
+
+    def test_source_reconciliation_accounts_for_all_seed_ids_without_candidate_content(self):
+        reg=registry.load(registry.REGISTRY)
+        mapping=registry.load(registry.MAINT/'registry/seed_mapping.json')
+        occurrences=registry.load(registry.MAINT/'registry/occurrence_disposition.json')
+        catalog=registry.load(source_adapters.CATALOG_PATH)
+        checks=[{'source_id':'source-a','run_id':'run-1','outcome':'checked_unchanged','content_complete':True,
+                 'target_validated':True,'attempted':True,'endpoints':[{'url':'https://example.test/jobs','outcome':'checked_unchanged',
+                   'http_status':200,'response_body_bytes':25,'adapter':'fake','scope':{'organization':'Example','opportunity_type':'PhD','pages_checked':2},
+                   'attempts':[{'request_sent':True,'http_status':200}],'robots':{'attempts':[{'request_sent':True,'http_status':200}]}}]}]
+        ledger={'tasks':{'private-candidate-id':{'source_id':'source-a','status':'pending',
+                 'candidate':{'title':'private candidate title'}}}}
+        rows,report=source_reconciliation.build_reconciliation(reg,mapping,occurrences,catalog,checks,ledger,{'tasks':{}})
+        self.assertEqual(len(rows),133)
+        self.assertEqual(len({row['registry_source_id'] for row in rows}),133)
+        self.assertEqual(report['seed_mapping_rows'],133)
+        self.assertEqual(report['candidate_review_task_status_counts'],{'pending':1})
+        self.assertNotIn('candidate_id', rows[0])
+        self.assertNotIn('private-candidate-id', json.dumps(rows,ensure_ascii=False))
+        self.assertNotIn('private candidate title', json.dumps(rows,ensure_ascii=False))
+        self.assertEqual(report['complete_range_checks'],1)
+        self.assertEqual(report['actual_network_counts']['target_http_requests'],1)
+        self.assertEqual(report['actual_network_counts']['target_http_responses'],1)
+        self.assertEqual(report['actual_network_counts']['robots_http_requests'],1)
+        self.assertEqual(report['actual_network_counts']['robots_http_responses'],1)
+        self.assertEqual(report['actual_network_counts']['target_response_body_bytes'],25)
+        self.assertEqual(report['actual_network_counts']['target_response_bodies_with_bytes'],1)
+        self.assertFalse(report['opportunity_type_coverage']['source_registry_has_explicit_opportunity_type_field'])
+
+    def test_reconciliation_counts_redirect_responses_and_flags_legacy_request_counts(self):
+        result={'source_id':'source-a','outcome':'failed','endpoints':[{
+            'http_status':200,'response_body_bytes':17,'attempts':[{
+            'request_sent':True,'http_request_count':2,'http_request_count_exact':True,'http_status':200,
+                'redirect_chain':[{'status':302,'from':'https://a.test','to':'https://b.test'}],
+            }],
+            'robots':{'attempts':[{'request_sent':True,'http_request_count':2,'http_request_count_exact':True,'http_status':200,
+                'redirect_chain':[{'status':301,'from':'https://a.test/robots.txt','to':'https://b.test/robots.txt'}]}]},
+        }]}
+        metrics=source_reconciliation.result_network_metrics(result)
+        self.assertEqual(metrics['target_http_requests'],2)
+        self.assertEqual(metrics['target_http_responses'],2)
+        self.assertEqual(metrics['robots_http_requests'],2)
+        self.assertEqual(metrics['robots_http_responses'],2)
+        self.assertTrue(metrics['http_request_counts_exact'])
+        self.assertEqual(metrics['target_response_bodies_with_bytes'],1)
+        legacy=source_reconciliation.result_network_metrics({'endpoints':[{
+            'attempts':[{'request_sent':True,'http_status':200}],
+            'robots':{'attempts':[{'request_sent':True,'http_status':200}]},
+        }]})
+        self.assertFalse(legacy['http_request_counts_exact'])
+
+    def test_full_census_checkpoint_requires_hashes_and_source_conservation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp); (root/'run').mkdir(); (root/'state').mkdir()
+            planned=['s1','s2']
+            manifest={'status':'complete','run_id':'program-run','planned_source_ids':planned}
+            report={'run_id':'program-run','result_conservation':True,'planned_sources':2}
+            rows=[{'source_id':sid} for sid in planned]
+            files={
+                'run/manifest.json':json.dumps(manifest).encode(),
+                'run/daily_report.json':json.dumps(report).encode(),
+                'run/source_checks.jsonl':(''.join(json.dumps(row)+'\n' for row in rows)).encode(),
+                'state/state.json':json.dumps({'last_run_id':'program-run'}).encode(),
+                'state/candidate_ledger.json':json.dumps({'tasks':{}}).encode(),
+            }
+            for relative,data in files.items(): (root/relative).write_bytes(data)
+            metadata={'format':'terrafar-full-census-artifact-v1','capture_status':'complete',
+                      'actions_run_id':'2001','program_run_id':'program-run','planned_sources':2}
+            for key,relative in {
+                'run_manifest_sha256':'run/manifest.json','daily_report_sha256':'run/daily_report.json',
+                'source_checks_sha256':'run/source_checks.jsonl','state_sha256':'state/state.json',
+                'candidate_ledger_sha256':'state/candidate_ledger.json'}.items():
+                metadata[key]=audit.sha((root/relative).read_bytes())
+            metadata['state_encryption_certificate_sha256']='wrong-certificate-hash'
+            (root/'artifact_manifest.json').write_text(json.dumps(metadata),encoding='utf-8')
+            with self.assertRaisesRegex(ValueError,'census_artifact_state_recipient_certificate_mismatch'):
+                restore_run_state.validate_capture_artifact(root,'2001')
+            metadata['state_encryption_certificate_sha256']=audit.sha(
+                (restore_run_state.MAINT/'state_archive_recipient.pem').read_bytes())
+            (root/'artifact_manifest.json').write_text(json.dumps(metadata),encoding='utf-8')
+            self.assertEqual(restore_run_state.validate_capture_artifact(root,'2001')['planned_sources'],2)
+            files['run/source_checks.jsonl']=json.dumps({'source_id':'s1'}).encode()
+            (root/'run/source_checks.jsonl').write_bytes(files['run/source_checks.jsonl'])
+            with self.assertRaisesRegex(ValueError,'census_artifact_hash_mismatch:source_checks_sha256'):
+                restore_run_state.validate_capture_artifact(root,'2001')
+
+    def test_one_time_runner_migration_is_bound_to_exact_origin_run_and_hash(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp); (root/'state').mkdir()
+            state={'schema_version':1,'snapshots':{},'last_run_id':'origin-program',
+                   'last_registry_sha256':audit.sha(registry.REGISTRY.read_bytes())}
+            state_bytes=json.dumps(state,sort_keys=True).encode()
+            (root/'state/state.json').write_bytes(state_bytes)
+            ledger=candidate_ledger.empty_ledger(); ledger_bytes=json.dumps(ledger,sort_keys=True).encode()
+            (root/'state/candidate_ledger.json').write_bytes(ledger_bytes)
+            old_runner=restore_run_state.RUNNER_VERSION_MIGRATIONS['40059887717']
+            provenance={'format':'terrafar-maintenance-state-v1','origin_actions_run_id':'40059887717',
+                'origin_program_run_id':'origin-program','state_compatibility_version':3,
+                'state_sha256':audit.sha(state_bytes),'state_schema_version':1,
+                'candidate_ledger_schema_version':ledger['schema_version'],'candidate_task_count':0,
+                'candidate_ledger_sha256':audit.sha(ledger_bytes),'registry_sha256':audit.sha(registry.REGISTRY.read_bytes()),
+                'adapter_catalog_sha256':audit.sha(source_adapters.CATALOG_PATH.read_bytes()),
+                'runner_sha256':old_runner,'adapter_implementation_sha256':restore_run_state.adapter_implementation_sha(),
+                'candidate_ledger_implementation_sha256':restore_run_state.candidate_ledger_implementation_sha()}
+            (root/'state/provenance.json').write_text(json.dumps(provenance),encoding='utf-8')
+            result=restore_run_state.restore(root,root/'restored','40059887717','40070000001',registry.REGISTRY)
+            self.assertEqual(result['runner_sha_migrated_from'],old_runner)
+            provenance['origin_actions_run_id']='40059887718'
+            (root/'state/provenance.json').write_text(json.dumps(provenance),encoding='utf-8')
+            with self.assertRaisesRegex(ValueError,'restored_runner_version_mismatch'):
+                restore_run_state.restore(root,root/'wrong-origin','40059887718','40070000002',registry.REGISTRY)
+
 
 class StatusAndNetworkTests(unittest.TestCase):
     def source(self, adapter='fake'):
@@ -168,6 +547,45 @@ class StatusAndNetworkTests(unittest.TestCase):
             result = audit.check_one(self.source(), 'r1', {'snapshots': {}}, 1, 0, 0)
         self.assertEqual(result['outcome'], 'partial')
         self.assertFalse(result['baseline_available'])
+
+    def test_fetch_endpoint_retries_304_unconditionally_without_semantic_baseline(self):
+        first = {'status': 304, 'url': 'https://example.test/list', 'headers': {}, 'body': b'', 'complete': True}
+        second = {'status': 200, 'url': 'https://example.test/list', 'headers': {}, 'body': b'<h1>List</h1>', 'complete': True}
+        cache = {'etag': 'transport-only-etag', 'last_modified': 'yesterday'}
+        with patch.object(audit, 'robots_gate', return_value={'allowed': True, 'status': 404, 'attempts': []}), \
+             patch.object(audit, 'http_get', side_effect=[first, second]) as get:
+            result = audit.fetch_endpoint('https://example.test/list', 1, 0, 1, True, cache)
+        self.assertEqual(result['http_status'], 200)
+        self.assertEqual(result['response_body_bytes'], len(second['body']))
+        self.assertEqual(len(result['attempts']), 2)
+        self.assertEqual(result['attempts'][0]['retry_reason'], '304_without_successful_semantic_baseline_retry_unconditional')
+        self.assertEqual(get.call_args_list[0].args[3], {})
+        self.assertEqual(get.call_args_list[1].args[3], {})
+
+    def test_network_metrics_distinguish_worker_dispatch_from_real_http(self):
+        result = {'source_id': 's1', 'attempted': True, 'outcome': 'needs_endpoint', 'endpoints': [{
+            'attempts': [
+                {'endpoint': 'robots.txt', 'request_sent': True, 'http_status': 200},
+                {'request_sent': True, 'http_request_count': 1, 'http_request_count_exact': True, 'http_status': 200},
+            ],
+            'robots': {'attempts': [{'request_sent': True, 'http_request_count': 1, 'http_request_count_exact': True, 'http_status': 200}]},
+            'http_status': 200, 'response_body_bytes': 21,
+        }]}
+        blocked = {'source_id': 's2', 'attempted': True, 'outcome': 'blocked', 'endpoints': [{
+            'attempts': [{'endpoint': 'robots.txt', 'request_sent': False, 'http_request_count': 0, 'http_request_count_exact': True, 'http_status': None}],
+            'robots': {'attempts': [{'request_sent': False, 'http_request_count': 0, 'http_request_count_exact': True, 'http_status': None}]},
+            'http_status': None, 'response_body_bytes': 0,
+        }]}
+        metrics = audit.source_run_metrics([result, blocked])
+        self.assertEqual(metrics['worker_started_sources'], 2)
+        self.assertEqual(metrics['sources_with_target_http_request'], 1)
+        self.assertEqual(metrics['sources_with_target_http_response'], 1)
+        self.assertEqual(metrics['target_http_requests_sent'], 1)
+        self.assertEqual(metrics['robots_http_requests_sent'], 1)
+        self.assertEqual(metrics['total_http_requests_sent'], 2)
+        self.assertTrue(metrics['http_request_counts_exact'])
+        self.assertEqual(metrics['target_response_bodies_with_bytes'], 1)
+        self.assertEqual(metrics['complete_range_checks'], 0)
 
     def test_304_with_successful_baseline_is_unchanged(self):
         state = {'snapshots': {audit.key_for('https://example.test/list', 'fake'):
@@ -285,6 +703,7 @@ class StatusAndNetworkTests(unittest.TestCase):
                     audit.http_get(first_url, 1, 0)
             error = caught.exception
             self.assertTrue(audit.request_sent_for_error(error))
+            self.assertEqual(error.http_request_count,1)
             self.assertTrue(audit.transport_attempted_for_error(error))
             self.assertEqual(audit.http_status_for_error(error), 302)
             self.assertEqual(audit.redirect_chain_for_error(error), [
@@ -382,8 +801,10 @@ class StatusAndNetworkTests(unittest.TestCase):
         try:
             with patch.object(audit, 'resolve_public_url', return_value=(urlsplit('https://example.test/list'), ['93.184.216.34'])), \
                  patch.object(audit, 'paced'), patch.object(audit, 'pinned_connection', return_value=fake_connection) as connect:
-                with self.assertRaisesRegex(OSError, 'synthetic transport error'):
+                with self.assertRaisesRegex(OSError, 'synthetic transport error') as captured:
                     audit.http_get('https://example.test/list', 1, 0)
+                self.assertFalse(captured.exception.http_request_count_exact)
+                self.assertEqual(captured.exception.http_request_count,0)
                 with self.assertRaises(audit.RequestBudgetExceeded):
                     audit.http_get('https://example.test/list', 1, 0)
             self.assertEqual(connect.call_count, 1)
@@ -401,6 +822,28 @@ class StatusAndNetworkTests(unittest.TestCase):
         lookup.assert_called_once_with('example.test', 443, type=audit.socket.SOCK_STREAM)
         connect.assert_called_once()
         self.assertEqual(connect.call_args.args[1], ['93.184.216.34'])
+
+    def test_http_request_count_includes_followed_redirect_requests(self):
+        class Response:
+            def __init__(self,status,headers=()): self.status=status; self.headers=headers
+            def getheaders(self): return list(self.headers)
+            def read(self,limit): return b'body'
+        connections=[]
+        for response in (Response(302,[('Location','/jobs')]),Response(200)):
+            connection=Mock(); connection.getresponse.return_value=response; connections.append(connection)
+        audit.configure_request_budget(None)
+        try:
+            with patch.object(audit,'resolve_public_url',side_effect=[
+                    (urlsplit('https://example.test/list'),['93.184.216.34']),
+                    (urlsplit('https://example.test/jobs'),['93.184.216.34'])]), \
+                 patch.object(audit,'pinned_connection',side_effect=connections), patch.object(audit,'paced'):
+                result=audit.http_get('https://example.test/list',1,0)
+            self.assertEqual(result['request_count'],2)
+            self.assertTrue(result['request_count_exact'])
+            self.assertEqual(len(result['redirect_chain']),1)
+            self.assertEqual(sum(connection.request.call_count for connection in connections),2)
+        finally:
+            audit.configure_request_budget(None)
 
     def test_required_state_restore_reads_disk_and_rejects_missing_or_corrupt_state(self):
         with tempfile.TemporaryDirectory() as tmp:
